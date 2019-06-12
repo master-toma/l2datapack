@@ -1,4 +1,4 @@
-project(Script)
+project(L2DataPack)
 cmake_minimum_required(VERSION 3.5)
 
 set(LINEAGE_2_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/..)
