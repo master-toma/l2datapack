@@ -1,0 +1,182 @@
+class iris : wizard_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @reclaim_the_land))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about trading ancient artifacts");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @reclaim_the_land))
+                {
+                    ShowPage(talker, "iris_q0327_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, i0, i1, reply, talker)
+    {
+        if (ask == @reclaim_the_land)
+        {
+            if (reply == 1 && GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                i0 = OwnItemCount(talker, @clay_urn_fragment);
+                if (i0 < 1)
+                {
+                    ShowPage(talker, "iris_q0327_02.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "iris_q0327_03.htm");
+                    DeleteItem1(talker, @clay_urn_fragment, i0);
+                    IncrementParam(talker, @PARAM_EXP, i0 * 152);
+                    SoundEffect(talker, "ItemSound.quest_itemget");
+                }
+            }
+            else if (reply == 2 && GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                i0 = OwnItemCount(talker, @brass_trinket_piece);
+                if (i0 < 1)
+                {
+                    ShowPage(talker, "iris_q0327_02.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "iris_q0327_04.htm");
+                    DeleteItem1(talker, @brass_trinket_piece, i0);
+                    IncrementParam(talker, @PARAM_EXP, i0 * 182);
+                    SoundEffect(talker, "ItemSound.quest_itemget");
+                }
+            }
+            else if (reply == 3 && GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                i0 = OwnItemCount(talker, @bronze_mirror_piece);
+                if (i0 < 1)
+                {
+                    ShowPage(talker, "iris_q0327_02.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "iris_q0327_05.htm");
+                    DeleteItem1(talker, @bronze_mirror_piece, i0);
+                    IncrementParam(talker, @PARAM_EXP, i0 * 182);
+                    SoundEffect(talker, "ItemSound.quest_itemget");
+                }
+            }
+            else if (reply == 4 && GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                i0 = OwnItemCount(talker, @jade_necklace_bead);
+                if (i0 < 1)
+                {
+                    ShowPage(talker, "iris_q0327_02.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "iris_q0327_06.htm");
+                    DeleteItem1(talker, @jade_necklace_bead, i0);
+                    IncrementParam(talker, @PARAM_EXP, i0 * 182);
+                    SoundEffect(talker, "ItemSound.quest_itemget");
+                }
+            }
+            else if (reply == 6 && GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                i1 = 0;
+                if (OwnItemCount(talker, @ancient_clay_urn))
+                {
+                    i0 = OwnItemCount(talker, @ancient_clay_urn);
+                    if (i0 > 0)
+                    {
+                        DeleteItem1(talker, @ancient_clay_urn, i0);
+                        IncrementParam(talker, @PARAM_EXP, i0 * 913);
+                        SoundEffect(talker, "ItemSound.quest_itemget");
+                    }
+
+                    i1 = 1;
+                }
+
+                if (OwnItemCount(talker, @ancient_brass_tiara))
+                {
+                    i0 = OwnItemCount(talker, @ancient_brass_tiara);
+                    if (i0 > 0)
+                    {
+                        DeleteItem1(talker, @ancient_brass_tiara, i0);
+                        IncrementParam(talker, @PARAM_EXP, i0 * 1065);
+                        SoundEffect(talker, "ItemSound.quest_itemget");
+                    }
+
+                    i1 = 1;
+                }
+
+                if (OwnItemCount(talker, @ancient_bronze_mirror))
+                {
+                    i0 = OwnItemCount(talker, @ancient_bronze_mirror);
+                    if (i0 > 0)
+                    {
+                        DeleteItem1(talker, @ancient_bronze_mirror, i0);
+                        IncrementParam(talker, @PARAM_EXP, i0 * 1065);
+                        SoundEffect(talker, "ItemSound.quest_itemget");
+                    }
+
+                    i1 = 1;
+                }
+
+                if (OwnItemCount(talker, @ancient_jade_necklace))
+                {
+                    i0 = OwnItemCount(talker, @ancient_jade_necklace);
+                    if (i0 > 0)
+                    {
+                        DeleteItem1(talker, @ancient_jade_necklace, i0);
+                        IncrementParam(talker, @PARAM_EXP, i0 * @s_double_sonic_slash52);
+                        SoundEffect(talker, "ItemSound.quest_itemget");
+                    }
+
+                    i1 = 1;
+                }
+
+                if (i1)
+                {
+                    ShowPage(talker, "iris_q0327_7.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "iris_q0327_02.htm");
+                }
+            }
+            else
+            {
+                ShowPage(talker, "iris_q0327_01.htm");
+            }
+        }
+
+        super;
+    }
+}

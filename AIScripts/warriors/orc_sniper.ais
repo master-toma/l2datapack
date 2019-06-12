@@ -1,0 +1,3 @@
+class orc_sniper : warrior_passive_use_bow
+{
+}

@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_strong_to_earth]	/* [땅에 강함] */	skill_id = 4012	level = 1	operate_type = P	effect = {{p_defence_attribute;attr_earth;-50}}	skill_end

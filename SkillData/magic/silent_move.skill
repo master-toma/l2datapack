@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_silent_move1]	/* [사일런트 무브] */	skill_id = 221	level = 1	operate_type = T	effect = {{c_mp;-5;5};{p_avoid_agro}}	mp_consume1 = 0	reuse_delay = 0	target_type = none	next_action = none	skill_end

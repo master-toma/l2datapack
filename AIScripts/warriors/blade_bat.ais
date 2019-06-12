@@ -1,0 +1,83 @@
+class blade_bat : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @diamond_gambit) == 1 && OwnItemCount(myself.c_quest0, @bat_diagram) && OwnItemCount(myself.c_quest0, @star_diamond) == 0)
+        {
+            if (Rand(10) < 2)
+            {
+                GiveItem1(myself.c_quest0, @star_diamond, 1);
+                DeleteItem1(myself.c_quest0, @bat_diagram, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @covert_business) && OwnItemCount(c1, @bat_fang) < 100)
+        {
+            i0 = Rand(10);
+            if (i0 > 5)
+            {
+                if (OwnItemCount(c1, @bat_fang) == 99)
+                {
+                    GiveItem1(c1, @bat_fang, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @bat_fang, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+            else if (i0 > 2)
+            {
+                if (OwnItemCount(c1, @bat_fang) >= 98)
+                {
+                    GiveItem1(c1, @bat_fang, 100 - OwnItemCount(c1, @bat_fang));
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @bat_fang, 2);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+            else if (OwnItemCount(c1, @bat_fang) >= 97)
+            {
+                GiveItem1(c1, @bat_fang, 100 - OwnItemCount(c1, @bat_fang));
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @bat_fang, 3);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_summon_magic_defence]	/* [소환수 마법 방어] */	skill_id = 4121	level = 1	operate_type = P	effect = {{p_defence_attribute;attr_derangement;-100}}	skill_end

@@ -1,0 +1,3 @@
+class mercenary_cleric_fix : ai_gludio_cleric_stand
+{
+}

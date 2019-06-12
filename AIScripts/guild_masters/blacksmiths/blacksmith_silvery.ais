@@ -1,0 +1,161 @@
+class blacksmith_silvery : blacksmith
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_artisan) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to Dwarf Artisan");
+            }
+
+            if (HaveMemo(talker, @path_to_artisan) == 1 && OwnItemCount(talker, @silverys_ring) == 1 && OwnItemCount(talker, @ratman_tooth) + OwnItemCount(talker, @big_ratman_tooth) < 12)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about boogle ratmen");
+            }
+
+            if (HaveMemo(talker, @path_to_artisan) == 1 && OwnItemCount(talker, @silverys_ring) == 1 && OwnItemCount(talker, @ratman_tooth) >= 10 && OwnItemCount(talker, @big_ratman_tooth) >= 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give boogle ratman's tooth");
+            }
+
+            if (HaveMemo(talker, @path_to_artisan) == 1 && OwnItemCount(talker, @pass_1st) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about the second test");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_artisan) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        ShowPage(talker, "blacksmith_silvery_q0418_01.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_artisan) == 1 && OwnItemCount(talker, @silverys_ring) == 1 && OwnItemCount(talker, @ratman_tooth) + OwnItemCount(talker, @big_ratman_tooth) < 12)
+                {
+                    ShowPage(talker, "blacksmith_silvery_q0418_07.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_artisan) == 1 && OwnItemCount(talker, @silverys_ring) == 1 && OwnItemCount(talker, @ratman_tooth) >= 10 && OwnItemCount(talker, @big_ratman_tooth) >= 2)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "blacksmith_silvery_q0418_08.htm");
+                        DeleteItem1(talker, @silverys_ring, OwnItemCount(talker, @silverys_ring));
+                        DeleteItem1(talker, @ratman_tooth, OwnItemCount(talker, @ratman_tooth));
+                        DeleteItem1(talker, @big_ratman_tooth, OwnItemCount(talker, @big_ratman_tooth));
+                        GiveItem1(talker, @pass_1st, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_artisan) == 1 && OwnItemCount(talker, @pass_1st) == 1)
+                {
+                    ShowPage(talker, "blacksmith_silvery_q0418_09.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_artisan)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "blacksmith_silvery_q0418_06.htm");
+                GiveItem1(talker, @silverys_ring, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, quest_id, reply, talker)
+    {
+        if (ask == @path_to_artisan && reply == 1)
+        {
+            if (talker.occupation != @dwarven_fighter)
+            {
+                if (talker.occupation == @artisan)
+                {
+                    ShowPage(talker, "blacksmith_silvery_q0418_02a.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "blacksmith_silvery_q0418_02.htm");
+                }
+            }
+            else if (talker.level < 19)
+            {
+                ShowPage(talker, "blacksmith_silvery_q0418_03.htm");
+            }
+            else if (OwnItemCount(talker, @pass_final) != 0)
+            {
+                ShowPage(talker, "blacksmith_silvery_q0418_04.htm");
+            }
+            else
+            {
+                FHTML_SetFileName(fhtml0, "blacksmith_silvery_q0418_05.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @path_to_artisan);
+                ShowFHTML(talker, fhtml0);
+            }
+        }
+
+        if (ask == @path_to_artisan && reply == 2)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "blacksmith_silvery_q0418_11.htm");
+                DeleteItem1(talker, @totem_spirit_claw, OwnItemCount(talker, @totem_spirit_claw));
+                GiveItem1(talker, @tatarus_letter, 1);
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,208 @@
+class leopold : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @vanquish_remnants) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about Ol Mahum");
+            }
+
+            if (HaveMemo(talker, @vanquish_remnants) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about Ol Mahum");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @leopolds_journal1) == 0 && OwnItemCount(talker, @alexandrias_book) >= 1 && OwnItemCount(talker, @nestle_memo1) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about jewels");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @nestle_memo1) == 0 && OwnItemCount(talker, @alexandrias_book) >= 1 && OwnItemCount(talker, @leopolds_journal1) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about jewels");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @alexandrias_book) == 1 && OwnItemCount(talker, @aklantos_gem4) >= 1 && OwnItemCount(talker, @aklantos_gem5) >= 1 && OwnItemCount(talker, @aklantos_gem6) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about jewels");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && (OwnItemCount(talker, @brimstone1) >= 1 || OwnItemCount(talker, @orims_instructions) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about jewels");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @vanquish_remnants) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 21)
+                        {
+                            FHTML_SetFileName(fhtml0, "leopold_q0326_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @vanquish_remnants);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "leopold_q0326_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @vanquish_remnants) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @red_cross_badge) + OwnItemCount(talker, @blue_cross_badge) + OwnItemCount(talker, @black_cross_badge) == 0)
+                        {
+                            ShowPage(talker, "leopold_q0326_04.htm");
+                        }
+                        else if (OwnItemCount(talker, @red_cross_badge) + OwnItemCount(talker, @blue_cross_badge) + OwnItemCount(talker, @black_cross_badge) < 100)
+                        {
+                            GiveItem1(talker, @adena, 60 * OwnItemCount(talker, @red_cross_badge) + 65 * OwnItemCount(talker, @blue_cross_badge) + 70 * OwnItemCount(talker, @black_cross_badge));
+                            DeleteItem1(talker, @red_cross_badge, OwnItemCount(talker, @red_cross_badge));
+                            DeleteItem1(talker, @blue_cross_badge, OwnItemCount(talker, @blue_cross_badge));
+                            DeleteItem1(talker, @black_cross_badge, OwnItemCount(talker, @black_cross_badge));
+                            ShowPage(talker, "leopold_q0326_05.htm");
+                        }
+                        else if (OwnItemCount(talker, @red_cross_badge) + OwnItemCount(talker, @blue_cross_badge) + OwnItemCount(talker, @black_cross_badge) >= 100 && OwnItemCount(talker, @black_lion_mark) == 0)
+                        {
+                            GiveItem1(talker, @black_lion_mark, 1);
+                            GiveItem1(talker, @adena, 60 * OwnItemCount(talker, @red_cross_badge) + 65 * OwnItemCount(talker, @blue_cross_badge) + 70 * OwnItemCount(talker, @black_cross_badge));
+                            DeleteItem1(talker, @red_cross_badge, OwnItemCount(talker, @red_cross_badge));
+                            DeleteItem1(talker, @blue_cross_badge, OwnItemCount(talker, @blue_cross_badge));
+                            DeleteItem1(talker, @black_cross_badge, OwnItemCount(talker, @black_cross_badge));
+                            ShowPage(talker, "leopold_q0326_06.htm");
+                        }
+                        else if (OwnItemCount(talker, @red_cross_badge) + OwnItemCount(talker, @blue_cross_badge) + OwnItemCount(talker, @black_cross_badge) >= 100 && OwnItemCount(talker, @black_lion_mark) > 0)
+                        {
+                            GiveItem1(talker, @adena, 60 * OwnItemCount(talker, @red_cross_badge) + 65 * OwnItemCount(talker, @blue_cross_badge) + 70 * OwnItemCount(talker, @black_cross_badge));
+                            DeleteItem1(talker, @red_cross_badge, OwnItemCount(talker, @red_cross_badge));
+                            DeleteItem1(talker, @blue_cross_badge, OwnItemCount(talker, @blue_cross_badge));
+                            DeleteItem1(talker, @black_cross_badge, OwnItemCount(talker, @black_cross_badge));
+                            ShowPage(talker, "leopold_q0326_09.htm");
+                        }
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @leopolds_journal1) == 0 && OwnItemCount(talker, @alexandrias_book) >= 1 && OwnItemCount(talker, @nestle_memo1) >= 1)
+                {
+                    ShowPage(talker, "leopold_q0229_01.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @nestle_memo1) == 0 && OwnItemCount(talker, @alexandrias_book) >= 1 && OwnItemCount(talker, @leopolds_journal1) >= 1)
+                {
+                    ShowPage(talker, "leopold_q0229_03.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @alexandrias_book) == 1 && OwnItemCount(talker, @aklantos_gem4) >= 1 && OwnItemCount(talker, @aklantos_gem5) >= 1 && OwnItemCount(talker, @aklantos_gem6) >= 1)
+                {
+                    ShowPage(talker, "leopold_q0229_04.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && (OwnItemCount(talker, @brimstone1) >= 1 || OwnItemCount(talker, @orims_instructions) >= 1))
+                {
+                    ShowPage(talker, "leopold_q0229_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @vanquish_remnants)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "leopold_q0326_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @vanquish_remnants)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "leopold_q0326_07.htm");
+                RemoveMemo(talker, @vanquish_remnants);
+                SoundEffect(talker, "ItemSound.quest_finish");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "leopold_q0326_08.htm");
+            }
+        }
+
+        if (ask == @test_of_witchcraft)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @nestle_memo1) >= 1)
+                {
+                    ShowPage(talker, "leopold_q0229_02.htm");
+                    DeleteItem1(talker, @nestle_memo1, 1);
+                    GiveItem1(talker, @leopolds_journal1, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

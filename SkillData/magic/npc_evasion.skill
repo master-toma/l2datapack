@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_npc_evasion]	/* [날 때릴 수 있을까] */	skill_id = 4093	level = 1	operate_type = P	effect = {{p_avoid;{all};4;diff}}	skill_end

@@ -1,0 +1,126 @@
+class mason : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @ascalons_letter1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you came because Ascalon sent you");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @iron_rose_ring) && OwnItemCount(talker, @bloody_axe_head) < 100)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask how you should help");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @iron_rose_ring) && OwnItemCount(talker, @bloody_axe_head) >= 100)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give Head of Bloody X Bodyguard");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @masons_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give Letter from Mason");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && (OwnItemCount(talker, @ascalons_letter2) || OwnItemCount(talker, @white_rose_insignia) || OwnItemCount(talker, @groots_letter) || OwnItemCount(talker, @ascalons_letter3) || OwnItemCount(talker, @mouens_order1) || OwnItemCount(talker, @mouens_order2) || OwnItemCount(talker, @mouens_letter)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask if the other person is doing well");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @ascalons_letter1))
+                {
+                    ShowPage(talker, "mason_q0223_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @iron_rose_ring) && OwnItemCount(talker, @bloody_axe_head) < 100)
+                {
+                    ShowPage(talker, "mason_q0223_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @iron_rose_ring) && OwnItemCount(talker, @bloody_axe_head) >= 100)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "mason_q0223_05.htm");
+                        GiveItem1(talker, @masons_letter, 1);
+                        DeleteItem1(talker, @iron_rose_ring, 1);
+                        DeleteItem1(talker, @bloody_axe_head, OwnItemCount(talker, @bloody_axe_head));
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @masons_letter))
+                {
+                    ShowPage(talker, "mason_q0223_06.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && (OwnItemCount(talker, @ascalons_letter2) || OwnItemCount(talker, @white_rose_insignia) || OwnItemCount(talker, @groots_letter) || OwnItemCount(talker, @ascalons_letter3) || OwnItemCount(talker, @mouens_order1) || OwnItemCount(talker, @mouens_order2) || OwnItemCount(talker, @mouens_letter)))
+                {
+                    ShowPage(talker, "mason_q0223_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_champion)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "mason_q0223_02.htm");
+            }
+            else if (reply == 2 && OwnItemCount(talker, @ascalons_letter1) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "mason_q0223_03.htm");
+                    GiveItem1(talker, @iron_rose_ring, 1);
+                    DeleteItem1(talker, @ascalons_letter1, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

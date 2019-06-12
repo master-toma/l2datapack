@@ -1,0 +1,3 @@
+class nurse_ant : ai_boss01_nurse_ant
+{
+}

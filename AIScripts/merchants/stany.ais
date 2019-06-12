@@ -1,0 +1,90 @@
+class stany : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"long_sword"; 10};
+        {"throw_knife"; 10};
+        {"bow_of_forest"; 10};
+        {"short_spear"; 10};
+        {"falchion"; 10};
+        {"sword_breaker"; 10};
+        {"composition_bow"; 10};
+        {"buzdygan"; 10};
+        {"iron_hammer"; 10};
+        {"long_spear"; 10};
+        {"saber"; 10};
+        {"handiwork_dagger"; 10};
+        {"assassin_knife"; 10};
+        {"strengthening_bow"; 10};
+        {"hand_axe"; 10};
+        {"heavy_mace"; 10};
+        {"work_hammer"; 10};
+        {"trident"; 10};
+        {"bastard_sword"; 10};
+        {"artisan's_sword"; 10};
+        {"poniard_dagger"; 10};
+        {"long_bow"; 10};
+        {"elven_bow"; 10};
+        {"dark_elven_bow"; 10};
+        {"tomahawk"; 10};
+        {"pike"; 10};
+        {"dwarven_trident"; 10};
+        {"two-handed_sword"; 10};
+        {"crimson_sword"; 10};
+        {"elven_sword"; 10};
+        {"kukuri"; 10};
+        {"gastraphetes"; 10};
+        {"spike_club"; 10};
+        {"war_hammer"; 10};
+        {"dwarven_pike"; 10};
+        {"sword_of_revolution"; 10};
+        {"maingauche"; 10};
+        {"cursed_maingauche"; 10};
+        {"strengthening_long_bow"; 10};
+        {"tarbar"; 10};
+        {"heavy_bone_club"; 10};
+        {"hammer_in_flames"; 10};
+        {"winged_spear"; 10};
+        {"cestus"; 10};
+        {"viper's_canine"; 10};
+        {"bagh-nakh"; 10};
+        {"single-edged_jamadhr"; 10};
+        {"triple-edged_jamadhr"; 10};
+        {"bich'hwa"; 10};
+        {"wooden_arrow"; 10};
+        {"bone_arrow"; 10};
+        {"fine_steel_arrow"; 10}
+    };
+    BuySellList SellList1 = {
+        {"apprentice's_staff"; 10};
+        {"relic_of_saints"; 10};
+        {"mage_staff"; 10};
+        {"crucifix_of_blessing"; 10};
+        {"voodoo_doll"; 10};
+        {"bone_staff"; 10};
+        {"scroll_of_wisdom"; 10};
+        {"branch_of_life"; 10};
+        {"proof_of_revenge"; 10};
+        {"mace_of_prayer"; 10};
+        {"doom_hammer"; 10};
+        {"mystic_staff"; 10};
+        {"staff_of_mana"; 10};
+        {"divine_tome"; 10};
+        {"sword_of_magic"; 10};
+        {"sword_of_mystic"; 10};
+        {"sword_of_occult"; 10};
+        {"dagger_of_mana"; 10};
+        {"mystic_knife"; 10};
+        {"conjure_knife"; 10};
+        {"knife_o'_silenus"; 10};
+        {"staff_of_magicpower"; 10};
+        {"blood_of_saints"; 10};
+        {"tome_of_blood"; 10};
+        {"goathead_staff"; 10};
+        {"crucifix_of_blood"; 10};
+        {"demon_fangs"; 10};
+        {"wooden_arrow"; 10};
+        {"bone_arrow"; 10};
+        {"fine_steel_arrow"; 10}
+    };
+}

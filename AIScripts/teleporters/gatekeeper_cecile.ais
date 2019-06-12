@@ -1,0 +1,10 @@
+class gatekeeper_cecile : teleporter
+{
+property:
+    TelPosList Position = {
+        {1010016; 84856; 15912; -4270; 0; 0};    // 1010016 - "1st Floor Underground Shopping Area"
+        {1010015; 85336; 16137; -3640; 0; 0};    // 1010015 - "1st Floor Lobby"
+        {1010018; 85391; 16228; -2270; 0; 0};    // 1010018 - "3rd Floor Elven Wizard Guild"
+        {1010019; 85391; 16228; -1750; 0; 0}    // 1010019 - "4th Floor Dark Wizard Guild"
+    };
+}

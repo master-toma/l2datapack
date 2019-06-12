@@ -1,0 +1,39 @@
+class dark_elf_lv2_master : guild_master_lv2
+{
+parameter:
+    int lv1_class1 = @dark_fighter;
+    int lv1_class2 = @dark_mage;
+    int lv2_class11 = @palus_knight;
+    int lv2_class12 = @assassin;
+    int lv2_class21 = @dark_wizard;
+    int lv2_class22 = @shillien_oracle;
+    int proof11 = @gaze_of_abyss;
+    int proof12 = @iron_heart;
+    int proof21 = @jewel_of_darkness;
+    int proof22 = @orb_of_abyss;
+    
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -2 && reply == 1)
+        {
+            if (talker.race == @race_dark_elf)
+            {
+                if (IsInCategory(@fighter_group, talker.occupation))
+                {
+                    ShowPage(talker, fnClassList1);
+                }
+                else if (IsInCategory(@mage_group, talker.occupation))
+                {
+                    ShowPage(talker, fnClassList2);
+                }
+            }
+            else
+            {
+                ShowPage(talker, fnClassMismatch);
+            }
+        }
+
+        super;
+    }
+}

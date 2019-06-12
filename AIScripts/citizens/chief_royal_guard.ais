@@ -1,0 +1,32 @@
+class chief_royal_guard : default_npc
+{
+parameter:
+    string fnHi = "sir_tyron001.htm";
+    string fnMyLord = "sir_tyron007.htm";
+    string fnSiegeMyLord = "sir_tyron021.htm";
+    string fnSiegeAnother = "sir_tyron022.htm";
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        if (IsMyLord(talker))
+        {
+            if (Castle_IsUnderSiege())
+            {
+                ShowPage(talker, fnSiegeMyLord);
+            }
+            else
+            {
+                ShowPage(talker, fnMyLord);
+            }
+        }
+        else if (Castle_IsUnderSiege())
+        {
+            ShowPage(talker, fnSiegeAnother);
+        }
+        else
+        {
+            OpenSiegeInfo(talker);
+        }
+    }
+}

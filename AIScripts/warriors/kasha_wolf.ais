@@ -1,0 +1,34 @@
+class kasha_wolf : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1, i0, i1)
+    {
+        c1 = GetLastAttacker();
+        if (OwnItemCount(c1, @kasha_wolf_fang) < 50 && HaveMemo(c1, @proof_of_valor))
+        {
+            i0 = Rand(100);
+            i1 = OwnItemCount(c1, @kasha_wolf_fang);
+            if (i0 <= 25 && OwnItemCount(c1, @kasha_wolf_fang) < 49)
+            {
+                GiveItem1(c1, @kasha_wolf_fang, 2);
+                i1 = i1 + 2;
+            }
+            else
+            {
+                GiveItem1(c1, @kasha_wolf_fang, 1);
+                i1 = i1 + 1;
+            }
+
+            if (i1 >= 50)
+            {
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+            else
+            {
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

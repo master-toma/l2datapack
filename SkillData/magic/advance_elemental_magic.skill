@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_advance_elemental_magic]	/* [어드밴스드 엘레멘탈 겍] */	skill_id = 180	level = 1	operate_type = P	effect = {}	skill_end

@@ -1,0 +1,163 @@
+class summoner_belthus : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @belthus_arcana) == 0 && OwnItemCount(talker, @crystal_of_starting5) == 0 && OwnItemCount(talker, @crystal_of_inprogress5) == 0 && OwnItemCount(talker, @crystal_of_foul5) == 0 && OwnItemCount(talker, @crystal_of_defeat5) == 0 && OwnItemCount(talker, @crystal_of_victory5) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Introduce as an apprentice summoning");
+            }
+
+            if (HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @belthus_arcana) == 0 && OwnItemCount(talker, @crystal_of_starting5) == 0 && OwnItemCount(talker, @crystal_of_inprogress5) == 0 && OwnItemCount(talker, @crystal_of_foul5) == 0 && OwnItemCount(talker, @crystal_of_defeat5) && OwnItemCount(talker, @crystal_of_victory5) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Say that it is really strong");
+            }
+
+            if (HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @belthus_arcana) == 0 && OwnItemCount(talker, @crystal_of_starting5) == 0 && OwnItemCount(talker, @crystal_of_inprogress5) == 0 && OwnItemCount(talker, @crystal_of_foul5) && OwnItemCount(talker, @crystal_of_defeat5) == 0 && OwnItemCount(talker, @crystal_of_victory5) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Say that you are sorry for breaking the rules");
+            }
+
+            if (HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @belthus_arcana) == 0 && OwnItemCount(talker, @crystal_of_starting5) == 0 && OwnItemCount(talker, @crystal_of_inprogress5) == 0 && OwnItemCount(talker, @crystal_of_foul5) == 0 && OwnItemCount(talker, @crystal_of_defeat5) == 0 && OwnItemCount(talker, @crystal_of_victory5))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask for an Arukana card according to the rules");
+            }
+
+            if (HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @belthus_arcana) == 0 && OwnItemCount(talker, @crystal_of_starting5) && OwnItemCount(talker, @crystal_of_inprogress5) == 0 && OwnItemCount(talker, @crystal_of_foul5) == 0 && OwnItemCount(talker, @crystal_of_defeat5) == 0 && OwnItemCount(talker, @crystal_of_victory5) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask how to start a duel");
+            }
+
+            if (HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @belthus_arcana) == 0 && OwnItemCount(talker, @crystal_of_starting5) == 0 && OwnItemCount(talker, @crystal_of_inprogress5) && OwnItemCount(talker, @crystal_of_foul5) == 0 && OwnItemCount(talker, @crystal_of_defeat5) == 0 && OwnItemCount(talker, @crystal_of_victory5) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Engage in conversation during the duel");
+            }
+
+            if (HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @belthus_arcana) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Show Arukana card");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @belthus_arcana) == 0 && OwnItemCount(talker, @crystal_of_starting5) == 0 && OwnItemCount(talker, @crystal_of_inprogress5) == 0 && OwnItemCount(talker, @crystal_of_foul5) == 0 && OwnItemCount(talker, @crystal_of_defeat5) == 0 && OwnItemCount(talker, @crystal_of_victory5) == 0)
+                {
+                    ShowPage(talker, "summoner_belthus_q0230_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @belthus_arcana) == 0 && OwnItemCount(talker, @crystal_of_starting5) == 0 && OwnItemCount(talker, @crystal_of_inprogress5) == 0 && OwnItemCount(talker, @crystal_of_foul5) == 0 && OwnItemCount(talker, @crystal_of_defeat5) && OwnItemCount(talker, @crystal_of_victory5) == 0)
+                {
+                    ShowPage(talker, "summoner_belthus_q0230_05.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @belthus_arcana) == 0 && OwnItemCount(talker, @crystal_of_starting5) == 0 && OwnItemCount(talker, @crystal_of_inprogress5) == 0 && OwnItemCount(talker, @crystal_of_foul5) && OwnItemCount(talker, @crystal_of_defeat5) == 0 && OwnItemCount(talker, @crystal_of_victory5) == 0)
+                {
+                    ShowPage(talker, "summoner_belthus_q0230_06.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @belthus_arcana) == 0 && OwnItemCount(talker, @crystal_of_starting5) == 0 && OwnItemCount(talker, @crystal_of_inprogress5) == 0 && OwnItemCount(talker, @crystal_of_foul5) == 0 && OwnItemCount(talker, @crystal_of_defeat5) == 0 && OwnItemCount(talker, @crystal_of_victory5))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "summoner_belthus_q0230_07.htm");
+                        GiveItem1(talker, @belthus_arcana, 1);
+                        DeleteItem1(talker, @crystal_of_victory5, OwnItemCount(talker, @crystal_of_victory5));
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @belthus_arcana) == 0 && OwnItemCount(talker, @crystal_of_starting5) && OwnItemCount(talker, @crystal_of_inprogress5) == 0 && OwnItemCount(talker, @crystal_of_foul5) == 0 && OwnItemCount(talker, @crystal_of_defeat5) == 0 && OwnItemCount(talker, @crystal_of_victory5) == 0)
+                {
+                    ShowPage(talker, "summoner_belthus_q0230_08.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @belthus_arcana) == 0 && OwnItemCount(talker, @crystal_of_starting5) == 0 && OwnItemCount(talker, @crystal_of_inprogress5) && OwnItemCount(talker, @crystal_of_foul5) == 0 && OwnItemCount(talker, @crystal_of_defeat5) == 0 && OwnItemCount(talker, @crystal_of_victory5) == 0)
+                {
+                    ShowPage(talker, "summoner_belthus_q0230_09.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @belthus_arcana) == 1)
+                {
+                    ShowPage(talker, "summoner_belthus_q0230_10.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_summoner)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @beginners_arcana) >= 1)
+                {
+                    ShowPage(talker, "summoner_belthus_q0230_03.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "summoner_belthus_q0230_02.htm");
+                }
+            }
+            else if (reply == 2)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    AddUseSkillDesire(talker, @s_reduce_delay, @ST_HEAL, @AMT_STAND, 1000000);
+                    ShowPage(talker, "summoner_belthus_q0230_04.htm");
+                    GiveItem1(talker, @crystal_of_starting5, 1);
+                    DeleteItem1(talker, @crystal_of_foul5, OwnItemCount(talker, @crystal_of_foul5));
+                    DeleteItem1(talker, @crystal_of_defeat5, OwnItemCount(talker, @crystal_of_defeat5));
+                    DeleteItem1(talker, @beginners_arcana, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

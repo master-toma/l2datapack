@@ -1,0 +1,91 @@
+class saint_kristina : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_healer) == 1 && OwnItemCount(talker, @secret_letter2) + OwnItemCount(talker, @secret_letter3) + OwnItemCount(talker, @secret_letter4) + OwnItemCount(talker, @secret_letter1) == 4)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask if there is an injury somewhere");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) < 9 && OwnItemCount(talker, @secret_letter2) + OwnItemCount(talker, @secret_letter3) + OwnItemCount(talker, @secret_letter4) + OwnItemCount(talker, @secret_letter1) < 4)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask if there is an injury somewhere");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) >= 9)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask if there is an injury somewhere");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && OwnItemCount(talker, @secret_letter2) + OwnItemCount(talker, @secret_letter3) + OwnItemCount(talker, @secret_letter4) + OwnItemCount(talker, @secret_letter1) == 4)
+                {
+                    ShowPage(talker, "saint_kristina_q0226_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) < 9 && OwnItemCount(talker, @secret_letter2) + OwnItemCount(talker, @secret_letter3) + OwnItemCount(talker, @secret_letter4) + OwnItemCount(talker, @secret_letter1) < 4)
+                {
+                    ShowPage(talker, "saint_kristina_q0226_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) >= 9)
+                {
+                    ShowPage(talker, "saint_kristina_q0226_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_healer)
+        {
+            if (reply == 1 && OwnItemCount(talker, @secret_letter2) + OwnItemCount(talker, @secret_letter3) + OwnItemCount(talker, @secret_letter4) + OwnItemCount(talker, @secret_letter1) == 4)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "saint_kristina_q0226_02.htm");
+                    DeleteItem1(talker, @secret_letter1, OwnItemCount(talker, @secret_letter1));
+                    DeleteItem1(talker, @secret_letter2, OwnItemCount(talker, @secret_letter2));
+                    DeleteItem1(talker, @secret_letter3, OwnItemCount(talker, @secret_letter3));
+                    DeleteItem1(talker, @secret_letter4, OwnItemCount(talker, @secret_letter4));
+                    GiveItem1(talker, @cristinas_letter, 1);
+                    SetMemoState(talker, @test_of_healer, 9);
+                }
+            }
+        }
+
+        super;
+    }
+}

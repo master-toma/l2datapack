@@ -1,0 +1,81 @@
+class langk_lizardman_warrior : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (OwnItemCount(myself.c_quest0, @einhasad_church_mark2) && OwnItemCount(myself.c_quest0, @lizardman_totem) < 20 && myself.i_quest0 == 1 && Rand(10) < 5)
+        {
+            GiveItem1(myself.c_quest0, @lizardman_totem, 1);
+            if (OwnItemCount(myself.c_quest0, @lizardman_totem) == 20)
+            {
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+            else
+            {
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_orc_monk) == 1 && OwnItemCount(myself.c_quest0, @leather_purse4) == 1 && OwnItemCount(myself.c_quest0, @langk_tooth) < 3 && myself.i_quest0 == 1)
+        {
+            if (OwnItemCount(myself.c_quest0, @ratman_fang) + OwnItemCount(myself.c_quest0, @langk_tooth) + OwnItemCount(myself.c_quest0, @felim_tooth) + OwnItemCount(myself.c_quest0, @vuku_tusk) >= 11)
+            {
+                DeleteItem1(myself.c_quest0, @vuku_tusk, OwnItemCount(myself.c_quest0, @vuku_tusk));
+                DeleteItem1(myself.c_quest0, @ratman_fang, OwnItemCount(myself.c_quest0, @ratman_fang));
+                DeleteItem1(myself.c_quest0, @langk_tooth, OwnItemCount(myself.c_quest0, @langk_tooth));
+                DeleteItem1(myself.c_quest0, @felim_tooth, OwnItemCount(myself.c_quest0, @felim_tooth));
+                DeleteItem1(myself.c_quest0, @leather_purse4, 1);
+                GiveItem1(myself.c_quest0, @leather_pouch4full, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(myself.c_quest0, @langk_tooth, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker || attacker.attack_type != @AT_FIST && attacker.attack_type != @AT_DUALFIST)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

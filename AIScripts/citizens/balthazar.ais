@@ -1,0 +1,142 @@
+class balthazar : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 4000 && talker.is_pledge_master == @FALSE)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you came because you were sent by Sir Athebaldt");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 4000 && OwnItemCount(talker, @q_black_anvil_coin) == 0 && talker.is_pledge_master == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Say that you came because you were sent by Sir Athebaldt");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 4000 && OwnItemCount(talker, @q_black_anvil_coin) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Say that you came because you were sent by Sir Athebaldt");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 5000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about Power Device and Nebulite Crystal of the Giants.");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) >= 6000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask how the siege golem research is progressing");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 4000 && talker.is_pledge_master == @FALSE)
+                {
+                    ShowPage(talker, "balthazar_q0503_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 4000 && OwnItemCount(talker, @q_black_anvil_coin) == 0 && talker.is_pledge_master == 1)
+                {
+                    ShowPage(talker, "balthazar_q0503_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 4000 && OwnItemCount(talker, @q_black_anvil_coin) == 1)
+                {
+                    ShowPage(talker, "balthazar_q0503_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 5000)
+                {
+                    if (OwnItemCount(talker, @q_titan_powerstone) < 10 || OwnItemCount(talker, @q_nebulite_crystals) < 10)
+                    {
+                        ShowPage(talker, "balthazar_q0503_07.htm");
+                    }
+                    else
+                    {
+                        DeleteItem1(talker, @q_titan_powerstone, OwnItemCount(talker, @q_titan_powerstone));
+                        DeleteItem1(talker, @q_nebulite_crystals, OwnItemCount(talker, @q_nebulite_crystals));
+                        SetMemoState(talker, @pledge_seeks_ambition, 6000);
+                        ShowPage(talker, "balthazar_q0503_08.htm");
+                        SetJournal(talker, @pledge_seeks_ambition, 6);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) >= 6000)
+                {
+                    ShowPage(talker, "balthazar_q0503_09.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @pledge_seeks_ambition)
+        {
+            if (reply == 1)
+            {
+                DeleteItem1(talker, @q_gustafs_letter2, OwnItemCount(talker, @q_gustafs_letter2));
+                SetMemoState(talker, @pledge_seeks_ambition, 5000);
+                ShowPage(talker, "balthazar_q0503_03.htm");
+                SetJournal(talker, @pledge_seeks_ambition, 5);
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "balthazar_q0503_05.htm");
+            }
+
+            if (reply == 3)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(talker, @q_rp_titans_powerstone, 1);
+                    DeleteItem1(talker, @q_gustafs_letter2, OwnItemCount(talker, @q_gustafs_letter2));
+                    DeleteItem1(talker, @q_black_anvil_coin, OwnItemCount(talker, @q_black_anvil_coin));
+                    SetMemoState(talker, @pledge_seeks_ambition, 5000);
+                    ShowPage(talker, "balthazar_q0503_06.htm");
+                    SetJournal(talker, @pledge_seeks_ambition, 5);
+                }
+            }
+        }
+
+        super;
+    }
+}

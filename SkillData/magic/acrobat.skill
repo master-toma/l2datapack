@@ -1,0 +1,2 @@
+skill_begin	skill_name = [s_acrobat1]	/* [아크로뱃] */	skill_id = 173	level = 1	operate_type = P	effect = {{p_safe_fall_height;60;diff}}	skill_end
+skill_begin	skill_name = [s_acrobat2]	/* [아크로뱃] */	skill_id = 173	level = 2	operate_type = P	effect = {{p_safe_fall_height;100;diff}}	skill_end

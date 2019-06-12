@@ -1,0 +1,40 @@
+class excuro : warrior_passive_casting_ddmagic
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_warspirit) && OwnItemCount(c1, @orims_contract) == 1 && OwnItemCount(c1, @excuros_scale) < 10)
+        {
+            GiveItem1(c1, @excuros_scale, 1);
+            if (OwnItemCount(c1, @excuros_scale) >= 10)
+            {
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+            else
+            {
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_duelist) && OwnItemCount(c1, @excuros_skin) < 3 && GetMemoState(c1, @test_of_duelist) == 2)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @excuros_skin, 1);
+                if (OwnItemCount(c1, @excuros_skin) >= 3)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

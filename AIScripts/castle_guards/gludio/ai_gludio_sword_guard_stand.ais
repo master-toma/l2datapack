@@ -1,0 +1,3 @@
+class ai_gludio_sword_guard_stand : ai_gludio_stand
+{
+}

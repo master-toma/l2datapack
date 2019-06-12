@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_toughness]	/* [터프니스] */	skill_id = 134	level = 1	operate_type = P	effect = {{p_defence_attribute;attr_hold;-20};{p_defence_attribute;attr_sleep;-20};{p_defence_attribute;attr_poison;-20}}	skill_end

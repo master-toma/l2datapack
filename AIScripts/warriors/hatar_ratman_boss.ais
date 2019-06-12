@@ -1,0 +1,43 @@
+class hatar_ratman_boss : warrior_passive_physicalspecial
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (1)
+        {
+            c1.quest_last_reward_time = GetCurrentTick();
+            if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_2c_5) && OwnItemCount(c1, @q_coin_of_old_empire) < 20)
+            {
+                if (Rand(2) == 0)
+                {
+                    GiveItem1(c1, @q_coin_of_old_empire, 1);
+                    if (OwnItemCount(c1, @q_coin_of_old_empire) >= 20)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+
+                if (Rand(20) == 0)
+                {
+                    CreateOnePrivate(@gremlin_filcher, "gremlin_filcher", 0, 1);
+                    Say(MakeFString(33512, "", "", "", "", ""));
+                }
+            }
+
+            if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_2r_2) && OwnItemCount(c1, @q_bust_of_travis) < 1)
+            {
+                if (Rand(10) == 0)
+                {
+                    CreateOnePrivate(@hatar_chieftain_kubel, "hatar_chieftain_kubel", 0, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_full_magic_defence]	/* [보스용 각종 마법 방어] */	skill_id = 4045	level = 1	operate_type = P	effect = {{p_defence_attribute;attr_hold;-100};{p_defence_attribute;attr_sleep;-100};{p_defence_attribute;attr_derangement;-100};{p_defence_attribute;attr_paralyze;-100}}	skill_end

@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_strong_to_mdamage]	/* [난 마법공격에 강해] */	skill_id = 4116	level = 1	operate_type = P	effect = {{p_magical_defence;{all};20;per}}	skill_end

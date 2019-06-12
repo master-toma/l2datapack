@@ -1,0 +1,3 @@
+class aden_mass_teleporter : mass_teleporter
+{
+}

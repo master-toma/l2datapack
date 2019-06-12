@@ -1,0 +1,3 @@
+class party_leader_pa_physicalspecial : party_leader_physicalspecial
+{
+}

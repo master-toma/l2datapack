@@ -1,0 +1,94 @@
+class shadow_b : summon_physicalattack
+{
+handler:
+    EventHandler MY_DYING(c0, c1)
+    {
+        c0 = GetLastAttacker();
+        if (c0.class_id == @unicorn_racer)
+        {
+            if (myself.sm.master)
+            {
+                c1 = myself.sm.master;
+                if (HaveMemo(c1, @test_of_summoner) && OwnItemCount(c1, @crystal_of_inprogress3))
+                {
+                    GiveItem1(c1, @crystal_of_defeat3, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                    DeleteItem1(c1, @crystal_of_inprogress3, OwnItemCount(c1, @crystal_of_inprogress3));
+                    DeleteItem1(c1, @crystal_of_starting3, OwnItemCount(c1, @crystal_of_starting3));
+                }
+            }
+        }
+        else if (c0.class_id == @pako_the_cat)
+        {
+            if (myself.sm.master)
+            {
+                c1 = myself.sm.master;
+                if (HaveMemo(c1, @test_of_summoner) && OwnItemCount(c1, @crystal_of_inprogress1))
+                {
+                    GiveItem1(c1, @crystal_of_defeat1, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                    DeleteItem1(c1, @crystal_of_inprogress1, OwnItemCount(c1, @crystal_of_inprogress1));
+                    DeleteItem1(c1, @crystal_of_starting1, OwnItemCount(c1, @crystal_of_starting1));
+                }
+            }
+        }
+        else if (c0.class_id == @mimi_the_cat)
+        {
+            if (myself.sm.master)
+            {
+                c1 = myself.sm.master;
+                if (HaveMemo(c1, @test_of_summoner) && OwnItemCount(c1, @crystal_of_inprogress2))
+                {
+                    GiveItem1(c1, @crystal_of_defeat2, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                    DeleteItem1(c1, @crystal_of_inprogress2, OwnItemCount(c1, @crystal_of_inprogress2));
+                    DeleteItem1(c1, @crystal_of_starting2, OwnItemCount(c1, @crystal_of_starting2));
+                }
+            }
+        }
+        else if (c0.class_id == @unicorn_phantasm)
+        {
+            if (myself.sm.master)
+            {
+                c1 = myself.sm.master;
+                if (HaveMemo(c1, @test_of_summoner) && OwnItemCount(c1, @crystal_of_inprogress4))
+                {
+                    GiveItem1(c1, @crystal_of_defeat4, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                    DeleteItem1(c1, @crystal_of_inprogress4, OwnItemCount(c1, @crystal_of_inprogress4));
+                    DeleteItem1(c1, @crystal_of_starting4, OwnItemCount(c1, @crystal_of_starting4));
+                }
+            }
+        }
+        else if (c0.class_id == @silhouette_tilfo)
+        {
+            if (myself.sm.master)
+            {
+                c1 = myself.sm.master;
+                if (HaveMemo(c1, @test_of_summoner) && OwnItemCount(c1, @crystal_of_inprogress6))
+                {
+                    GiveItem1(c1, @crystal_of_defeat6, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                    DeleteItem1(c1, @crystal_of_inprogress6, OwnItemCount(c1, @crystal_of_inprogress6));
+                    DeleteItem1(c1, @crystal_of_starting6, OwnItemCount(c1, @crystal_of_starting6));
+                }
+            }
+        }
+        else if (c0.class_id == @shadow_turen)
+        {
+            if (myself.sm.master)
+            {
+                c1 = myself.sm.master;
+                if (HaveMemo(c1, @test_of_summoner) && OwnItemCount(c1, @crystal_of_inprogress5))
+                {
+                    GiveItem1(c1, @crystal_of_defeat5, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                    DeleteItem1(c1, @crystal_of_inprogress5, OwnItemCount(c1, @crystal_of_inprogress5));
+                    DeleteItem1(c1, @crystal_of_starting5, OwnItemCount(c1, @crystal_of_starting5));
+                }
+            }
+        }
+
+        super;
+    }
+}

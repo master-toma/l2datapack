@@ -1,0 +1,19 @@
+class leto_shaman_ketz : warrior_aggressive_casting_ddmagic
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_1u_4) && OwnItemCount(c1, @q_totem_of_kadesh) < 1)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @q_totem_of_kadesh, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

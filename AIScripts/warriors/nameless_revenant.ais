@@ -1,0 +1,54 @@
+class nameless_revenant : warrior_passive_casting_ddmagic
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_witchcraft) == 1 && OwnItemCount(c1, @alexandrias_book) == 1 && OwnItemCount(c1, @lars_memo1) == 1 && OwnItemCount(c1, @aklantos_gem3) == 0)
+        {
+            GiveItem1(c1, @aklantos_gem3, 1);
+            SoundEffect(c1, "ItemSound.quest_itemget");
+            DeleteItem1(c1, @lars_memo1, OwnItemCount(c1, @lars_memo1));
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_reformer) == 1 && GetMemoState(c1, @trial_of_reformer) == 1 && OwnItemCount(c1, @ripped_diary) < 7 && OwnItemCount(c1, @book_of_reform) >= 1 && myself.i_quest0 == 1 && OwnItemCount(c1, @huge_nail) == 0)
+        {
+            if (OwnItemCount(c1, @ripped_diary) == 6)
+            {
+                CreateOnePrivateEx(@aruraune, "aruraune", 0, 0, FloatToInt(myself.sm.x), FloatToInt(myself.sm.y), FloatToInt(myself.sm.z), 0, 0, 0);
+                DeleteItem1(c1, @ripped_diary, OwnItemCount(c1, @ripped_diary));
+            }
+            else
+            {
+                GiveItem1(c1, @ripped_diary, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage, skill_name_id)
+    {
+        if (HaveMemo(attacker, @test_of_witchcraft) == 1 && OwnItemCount(attacker, @alexandrias_book) == 1 && OwnItemCount(attacker, @lars_memo1) == 1 && OwnItemCount(attacker, @aklantos_gem3) == 0)
+        {
+            if (myself.i_quest0 == 0)
+            {
+                myself.i_quest0 = 1;
+                Say(MakeFString(22933, "", "", "", "", ""));
+            }
+        }
+
+        if (skill_name_id / 256 == 1031)
+        {
+            myself.i_quest0 = 1;
+        }
+        else
+        {
+            myself.i_quest0 = 2;
+        }
+
+        super;
+    }
+}

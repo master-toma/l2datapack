@@ -1,0 +1,47 @@
+class abyssal_jewel_1 : citizen
+{
+handler:
+    EventHandler ATTACKED(attacker, damage)
+    {
+        if ((GetMemoState(attacker, @audience_with_earth_dragon) == 40000 || GetMemoState(attacker, @audience_with_earth_dragon) == 40001) && HaveMemo(attacker, @audience_with_earth_dragon) == 1)
+        {
+            if (myself.sm.hp < myself.sm.max_hp * 0.8 && myself.i_quest0 == 0)
+            {
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                CreateOnePrivate(@jewel_guardian_mara, "jewel_guardian_mara", 0, 1);
+                myself.i_quest0 = 1;
+            }
+
+            if (myself.sm.hp < myself.sm.max_hp * 0.4 && OwnItemCount(attacker, @q_frag_of_abyss_jewel1) == 0)
+            {
+                GiveItem1(attacker, @q_frag_of_abyss_jewel1, 1);
+                SoundEffect(attacker, "ItemSound.quest_itemget");
+            }
+        }
+
+        if (myself.sm.hp < myself.sm.max_hp * 0.1)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+}

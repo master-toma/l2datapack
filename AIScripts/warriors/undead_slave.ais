@@ -1,0 +1,3 @@
+class undead_slave : warrior_passive_casting_ddmagic
+{
+}

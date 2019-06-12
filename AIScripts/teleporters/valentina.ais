@@ -1,0 +1,11 @@
+class valentina : teleporter
+{
+property:
+    TelPosList Position = {
+        {1010007; 83314; 148012; -3400; 11000; 3};    // 1010007 - "The Town of Giran"
+        {1010014; 85391; 16228; -3640; 4400; 4};    // 1010014 - "Ivory Tower"
+        {1010020; 117110; 76883; -2670; 4900; 0};    // 1010020 - "Hunter Village"
+        {1010022; 105884; 109744; -3170; 7300; 3};    // 1010022 - "Hardin’s Private Academy"
+        {1010023; 146783; 25808; -2000; 13000; 5}    // 1010023 - "Aden Castle Town"
+    };
+}

@@ -1,0 +1,372 @@
+class orim_the_shadow : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_witchcraft) == 0 && GetOneTimeQuestFlag(talker, @test_of_witchcraft) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you want to learn black magic");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 0 && GetOneTimeQuestFlag(talker, @test_of_witchcraft) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Say that you want to learn black magic");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_diagram) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Alexandria");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @alexandrias_book) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give six jewels");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @brimstone1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give box");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_instructions) == 1 && OwnItemCount(talker, @sword_of_binding) == 0 && OwnItemCount(talker, @soultrap_crystal) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask for item that you are to find");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @sword_of_binding) >= 1 && OwnItemCount(talker, @soultrap_crystal) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Give thing that you found");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @sword_of_binding) >= 1 && OwnItemCount(talker, @zeruel_bind_crystal) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Give sealed crystal");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @orims_contract) == 0 && OwnItemCount(talker, @brakis_remains1) == 0 && OwnItemCount(talker, @brakis_remains2) == 0 && OwnItemCount(talker, @vendetta_totem) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Talk about Remains of Brakis");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @orims_contract) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Give required thing");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @orims_contract) == 0 && (OwnItemCount(talker, @brakis_remains1) >= 1 || OwnItemCount(talker, @brakis_remains2) >= 1 || OwnItemCount(talker, @vendetta_totem) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Talk about Remains of Brakis");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 0 && GetOneTimeQuestFlag(talker, @test_of_witchcraft) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.occupation == @wizard || talker.occupation == @knight || talker.occupation == @palus_knight)
+                        {
+                            if (talker.level < 39)
+                            {
+                                ShowPage(talker, "orim_the_shadow_q0229_02.htm");
+                            }
+                            else if (talker.occupation == @wizard)
+                            {
+                                ShowPage(talker, "orim_the_shadow_q0229_03.htm");
+                            }
+                            else
+                            {
+                                ShowPage(talker, "orim_the_shadow_q0229_05.htm");
+                            }
+                        }
+                        else
+                        {
+                            ShowPage(talker, "orim_the_shadow_q0229_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 0 && GetOneTimeQuestFlag(talker, @test_of_witchcraft) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_diagram) == 1)
+                {
+                    ShowPage(talker, "orim_the_shadow_q0229_09.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @alexandrias_book) == 1)
+                {
+                    if (OwnItemCount(talker, @aklantos_gem1) >= 1 && OwnItemCount(talker, @aklantos_gem2) >= 1 && OwnItemCount(talker, @aklantos_gem3) >= 1 && OwnItemCount(talker, @aklantos_gem4) >= 1 && OwnItemCount(talker, @aklantos_gem5) >= 1 && OwnItemCount(talker, @aklantos_gem6) >= 1)
+                    {
+                        ShowPage(talker, "orim_the_shadow_q0229_11.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "orim_the_shadow_q0229_10.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @brimstone1) == 1)
+                {
+                    ShowPage(talker, "orim_the_shadow_q0229_15.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_instructions) == 1 && OwnItemCount(talker, @sword_of_binding) == 0 && OwnItemCount(talker, @soultrap_crystal) == 0)
+                {
+                    ShowPage(talker, "orim_the_shadow_q0229_17.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @sword_of_binding) >= 1 && OwnItemCount(talker, @soultrap_crystal) >= 1)
+                {
+                    ShowPage(talker, "orim_the_shadow_q0229_18.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @sword_of_binding) >= 1 && OwnItemCount(talker, @zeruel_bind_crystal) >= 1)
+                {
+                    ShowPage(talker, "orim_the_shadow_q0229_19.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @orims_contract) == 0 && OwnItemCount(talker, @brakis_remains1) == 0 && OwnItemCount(talker, @brakis_remains2) == 0 && OwnItemCount(talker, @vendetta_totem) == 0)
+                {
+                    ShowPage(talker, "orim_the_shadow_q0233_01.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @orims_contract) == 1)
+                {
+                    if (OwnItemCount(talker, @portas_eye) + OwnItemCount(talker, @excuros_scale) + OwnItemCount(talker, @mordeos_talon) < 30)
+                    {
+                        ShowPage(talker, "orim_the_shadow_q0233_05.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "orim_the_shadow_q0233_06.htm");
+                        DeleteItem1(talker, @orims_contract, OwnItemCount(talker, @orims_contract));
+                        DeleteItem1(talker, @portas_eye, OwnItemCount(talker, @portas_eye));
+                        DeleteItem1(talker, @excuros_scale, OwnItemCount(talker, @excuros_scale));
+                        DeleteItem1(talker, @mordeos_talon, OwnItemCount(talker, @mordeos_talon));
+                        GiveItem1(talker, @brakis_remains1, 1);
+                    }
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @orims_contract) == 0 && (OwnItemCount(talker, @brakis_remains1) >= 1 || OwnItemCount(talker, @brakis_remains2) >= 1 || OwnItemCount(talker, @vendetta_totem) >= 1))
+                {
+                    ShowPage(talker, "orim_the_shadow_q0233_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @test_of_witchcraft)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @orims_diagram) == 0)
+                {
+                    GiveItem1(talker, @orims_diagram, 1);
+                }
+
+                ShowPage(talker, "orim_the_shadow_q0229_08.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @test_of_witchcraft)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "orim_the_shadow_q0229_04.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "orim_the_shadow_q0229_06.htm");
+            }
+
+            if (reply == 3)
+            {
+                FHTML_SetFileName(fhtml0, "orim_the_shadow_q0229_07.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @test_of_witchcraft);
+                ShowFHTML(talker, fhtml0);
+            }
+
+            if (reply == 4)
+            {
+                ShowPage(talker, "orim_the_shadow_q0229_12.htm");
+            }
+
+            if (reply == 5)
+            {
+                ShowPage(talker, "orim_the_shadow_q0229_13.htm");
+            }
+
+            if (reply == 6)
+            {
+                if (OwnItemCount(talker, @alexandrias_book) >= 1)
+                {
+                    ShowPage(talker, "orim_the_shadow_q0229_14.htm");
+                    DeleteItem1(talker, @alexandrias_book, 1);
+                    GiveItem1(talker, @brimstone1, 1);
+                    DeleteItem1(talker, @aklantos_gem1, OwnItemCount(talker, @aklantos_gem1));
+                    DeleteItem1(talker, @aklantos_gem2, OwnItemCount(talker, @aklantos_gem2));
+                    DeleteItem1(talker, @aklantos_gem3, OwnItemCount(talker, @aklantos_gem3));
+                    DeleteItem1(talker, @aklantos_gem4, OwnItemCount(talker, @aklantos_gem4));
+                    DeleteItem1(talker, @aklantos_gem5, OwnItemCount(talker, @aklantos_gem5));
+                    DeleteItem1(talker, @aklantos_gem6, OwnItemCount(talker, @aklantos_gem6));
+                    CreateOnePrivate(@drevanul_prince_zeruel, "drevanul_prince_zeruel", 0, 1);
+                }
+            }
+
+            if (reply == 7)
+            {
+                if (OwnItemCount(talker, @brimstone1) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "orim_the_shadow_q0229_16.htm");
+                        DeleteItem1(talker, @brimstone1, 1);
+                        GiveItem1(talker, @orims_instructions, 1);
+                        GiveItem1(talker, @orims_letter1, 1);
+                        GiveItem1(talker, @orims_letter2, 1);
+                    }
+                }
+            }
+
+            if (reply == 8)
+            {
+                ShowPage(talker, "orim_the_shadow_q0229_20.htm");
+            }
+
+            if (reply == 9)
+            {
+                ShowPage(talker, "orim_the_shadow_q0229_21.htm");
+            }
+
+            if (reply == 10)
+            {
+                if (OwnItemCount(talker, @zeruel_bind_crystal) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @purgatory_key, OwnItemCount(talker, @purgatory_key));
+                        DeleteItem1(talker, @sword_of_binding, OwnItemCount(talker, @sword_of_binding));
+                        DeleteItem1(talker, @ikers_amulet, OwnItemCount(talker, @ikers_amulet));
+                        DeleteItem1(talker, @orims_instructions, OwnItemCount(talker, @orims_instructions));
+                        IncrementParam(talker, @PARAM_EXP, 50000);
+                        IncrementParam(talker, @PARAM_SP, 6400);
+                        DeleteItem1(talker, @zeruel_bind_crystal, 1);
+                        GiveItem1(talker, @mark_of_witchcraft, 1);
+                        ShowPage(talker, "orim_the_shadow_q0229_22.htm");
+                        RemoveMemo(talker, @test_of_witchcraft);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @test_of_witchcraft, 1);
+                    }
+                }
+            }
+        }
+
+        if (ask == @test_of_warspirit)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "orim_the_shadow_q0233_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "orim_the_shadow_q0233_03.htm");
+            }
+
+            if (reply == 3)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "orim_the_shadow_q0233_04.htm");
+                    GiveItem1(talker, @orims_contract, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

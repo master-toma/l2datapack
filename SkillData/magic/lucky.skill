@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_lucky]	/* [럭키] */	skill_id = 194	level = 1	operate_type = P	effect = {{p_luck}}	skill_end

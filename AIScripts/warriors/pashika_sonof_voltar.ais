@@ -1,0 +1,40 @@
+class pashika_sonof_voltar : warrior_aggressive_immediate
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_glory) && OwnItemCount(c1, @necklace_of_authority) && OwnItemCount(c1, @chiantas_order1) && OwnItemCount(c1, @glove_of_voltar) && OwnItemCount(c1, @pashikas_head) == 0)
+        {
+            if (OwnItemCount(c1, @vultus_head))
+            {
+                GiveItem1(c1, @pashikas_head, 1);
+                DeleteItem1(c1, @glove_of_voltar, 1);
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @pashikas_head, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 22001)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(22001, 1000 * 200);
+        super;
+    }
+}

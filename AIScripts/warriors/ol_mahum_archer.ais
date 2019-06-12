@@ -1,0 +1,3 @@
+class ol_mahum_archer : warrior_aggressive_use_bow
+{
+}

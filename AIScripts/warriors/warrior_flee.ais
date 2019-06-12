@@ -1,0 +1,13 @@
+class warrior_flee : warrior
+{
+handler:
+    EventHandler NO_DESIRE()
+    {
+        AddMoveAroundDesire(40, 20);
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        AddFleeDesire(attacker, 30);
+    }
+}

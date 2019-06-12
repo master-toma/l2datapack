@@ -1,0 +1,4 @@
+skill_begin	skill_name = [s_fast_mana_recovery1]	/* [패스트 마나 리커버리] */	skill_id = 229	level = 1	operate_type = P	effect = {{p_mp_regen;{all};1.1;diff}}	skill_end
+skill_begin	skill_name = [s_fast_mana_recovery2]	/* [패스트 마나 리커버리] */	skill_id = 229	level = 2	operate_type = P	effect = {{p_mp_regen;{all};1.4;diff}}	skill_end
+skill_begin	skill_name = [s_fast_mana_recovery3]	/* [패스트 마나 리커버리] */	skill_id = 229	level = 3	operate_type = P	effect = {{p_mp_regen;{all};1.8;diff}}	skill_end
+skill_begin	skill_name = [s_fast_mana_recovery4]	/* [패스트 마나 리커버리] */	skill_id = 229	level = 4	operate_type = P	effect = {{p_mp_regen;{all};2.2;diff}}	skill_end

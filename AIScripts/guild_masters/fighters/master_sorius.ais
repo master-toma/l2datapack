@@ -1,0 +1,256 @@
+class master_sorius : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_elven_knight) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to Elven Knight");
+            }
+
+            if (HaveMemo(talker, @path_to_elven_knight) != 0 && OwnItemCount(talker, @kluto_box) == 0 && OwnItemCount(talker, @topaz_piece) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Speak of the Ruins of Despair");
+            }
+
+            if (HaveMemo(talker, @path_to_elven_knight) != 0 && OwnItemCount(talker, @kluto_box) == 0 && OwnItemCount(talker, @topaz_piece) > 0 && OwnItemCount(talker, @topaz_piece) < 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Speak of the Ruins of Despair");
+            }
+
+            if (HaveMemo(talker, @path_to_elven_knight) != 0 && OwnItemCount(talker, @kluto_box) == 0 && OwnItemCount(talker, @topaz_piece) >= 20 && OwnItemCount(talker, @sorius_letter1) == 0 && OwnItemCount(talker, @kluto_memo) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show the Topaz piece");
+            }
+
+            if (HaveMemo(talker, @path_to_elven_knight) != 0 && OwnItemCount(talker, @kluto_box) == 0 && OwnItemCount(talker, @topaz_piece) >= 20 && OwnItemCount(talker, @sorius_letter1) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Inquire about Kluto");
+            }
+
+            if (HaveMemo(talker, @path_to_elven_knight) != 0 && OwnItemCount(talker, @kluto_box) == 0 && OwnItemCount(talker, @topaz_piece) >= 20 && OwnItemCount(talker, @kluto_memo) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Inquire about Kluto");
+            }
+
+            if (HaveMemo(talker, @path_to_elven_knight) != 0 && OwnItemCount(talker, @kluto_box) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Talk about Kluto's box [kr]");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask about the girl that was kidnapped");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && (GetMemoState(talker, @test_of_healer) >= 6 && GetMemoState(talker, @test_of_healer) < 9))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Ask what you should do");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 9 && OwnItemCount(talker, @cristinas_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Give Letter from Holy Woman");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_knight) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        ShowPage(talker, "master_sorius_q0406_01.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_knight) != 0 && OwnItemCount(talker, @kluto_box) == 0 && OwnItemCount(talker, @topaz_piece) == 0)
+                {
+                    ShowPage(talker, "master_sorius_q0406_07.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_knight) != 0 && OwnItemCount(talker, @kluto_box) == 0 && OwnItemCount(talker, @topaz_piece) > 0 && OwnItemCount(talker, @topaz_piece) < 20)
+                {
+                    ShowPage(talker, "master_sorius_q0406_08.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_knight) != 0 && OwnItemCount(talker, @kluto_box) == 0 && OwnItemCount(talker, @topaz_piece) >= 20 && OwnItemCount(talker, @sorius_letter1) == 0 && OwnItemCount(talker, @kluto_memo) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @sorius_letter1) == 0)
+                        {
+                            GiveItem1(talker, @sorius_letter1, 1);
+                        }
+
+                        ShowPage(talker, "master_sorius_q0406_09.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_knight) != 0 && OwnItemCount(talker, @kluto_box) == 0 && OwnItemCount(talker, @topaz_piece) >= 20 && OwnItemCount(talker, @sorius_letter1) != 0)
+                {
+                    ShowPage(talker, "master_sorius_q0406_11.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_knight) != 0 && OwnItemCount(talker, @kluto_box) == 0 && OwnItemCount(talker, @topaz_piece) >= 20 && OwnItemCount(talker, @kluto_memo) != 0)
+                {
+                    ShowPage(talker, "master_sorius_q0406_11.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_knight) != 0 && OwnItemCount(talker, @kluto_box) != 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @kluto_box, OwnItemCount(talker, @kluto_box));
+                        RemoveMemo(talker, @path_to_elven_knight);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        if (OwnItemCount(talker, @elven_knight_brooch) == 0)
+                        {
+                            GiveItem1(talker, @elven_knight_brooch, 1);
+                        }
+
+                        ShowPage(talker, "master_sorius_q0406_10.htm");
+                    }
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 5)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "master_sorius_q0226_01.htm");
+                        GiveItem1(talker, @order_of_sorius, 1);
+                        SetMemoState(talker, @test_of_healer, 6);
+                    }
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && (GetMemoState(talker, @test_of_healer) >= 6 && GetMemoState(talker, @test_of_healer) < 9))
+                {
+                    ShowPage(talker, "master_sorius_q0226_02.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 9 && OwnItemCount(talker, @cristinas_letter))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "master_sorius_q0226_03.htm");
+                        DeleteItem1(talker, @cristinas_letter, 1);
+                        SetMemoState(talker, @test_of_healer, 10);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_elven_knight)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "master_sorius_q0406_06.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_elven_knight && reply == 1)
+        {
+            if (talker.occupation != @elven_fighter)
+            {
+                if (talker.occupation == @elven_knight)
+                {
+                    ShowPage(talker, "master_sorius_q0406_02a.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "master_sorius_q0406_02.htm");
+                }
+            }
+            else if (talker.level < 19)
+            {
+                ShowPage(talker, "master_sorius_q0406_03.htm");
+            }
+            else if (OwnItemCount(talker, @elven_knight_brooch) != 0)
+            {
+                ShowPage(talker, "master_sorius_q0406_04.htm");
+            }
+            else
+            {
+                ShowPage(talker, "master_sorius_q0406_05.htm");
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,11 @@
+class ai_gludio_sword_guard : ai_gludio_hold
+{
+handler:
+    EventHandler SPELLED(speller, skill_name_id)
+    {
+        if (skill_name_id == @s_seal_of_ruler)
+        {
+            AddAttackDesire(speller, @AMT_MOVE_TO_TARGET, 50000);
+        }
+    }
+}

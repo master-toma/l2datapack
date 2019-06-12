@@ -1,0 +1,12 @@
+class partisan_court_guard_bow2_04 : ai_agit01_partisan_court_guard_bow2
+{
+parameter:
+    int b02_x0 = 10;
+    int b02_y0 = -17;
+    int b02_x1 = 45812;
+    int b02_y1 = 109964;
+    int b02_z1 = -1970;
+    int b02_x2 = 44535;
+    int b02_y2 = 108850;
+    int b02_z2 = -2020;
+}

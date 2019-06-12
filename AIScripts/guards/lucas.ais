@@ -1,0 +1,123 @@
+class lucas : chief_guard
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @maryas_letter1) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Get information about Stone of Purification");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && (OwnItemCount(talker, @maryas_letter2) >= 1 || OwnItemCount(talker, @cretas_letter1) >= 1 || OwnItemCount(talker, @lucillas_handbag) >= 1 || OwnItemCount(talker, @cretas_painting1) >= 1 || OwnItemCount(talker, @lukas_letter) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Get information about Stone of Purification");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @cretas_painting2) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Get information about Stone of Purification");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @cretas_painting3) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Get information about Stone of Purification");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @symbol_of_sylvain) >= 1 || OwnItemCount(talker, @miriens_sigil2) >= 1 || OwnItemCount(talker, @miriens_sigil3) >= 1 || OwnItemCount(talker, @crystal_of_purity1) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Get information about Stone of Purification");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @maryas_letter1) >= 1)
+                {
+                    ShowPage(talker, "lucas_q0214_01.htm");
+                    DeleteItem1(talker, @maryas_letter1, 1);
+                    GiveItem1(talker, @lukas_letter, 1);
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && (OwnItemCount(talker, @maryas_letter2) >= 1 || OwnItemCount(talker, @cretas_letter1) >= 1 || OwnItemCount(talker, @lucillas_handbag) >= 1 || OwnItemCount(talker, @cretas_painting1) >= 1 || OwnItemCount(talker, @lukas_letter) >= 1))
+                {
+                    ShowPage(talker, "lucas_q0214_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @cretas_painting2) >= 1)
+                {
+                    ShowPage(talker, "lucas_q0214_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @cretas_painting3) >= 1)
+                {
+                    if (OwnItemCount(talker, @brown_scroll_scrap) < 5)
+                    {
+                        ShowPage(talker, "lucas_q0214_05.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "lucas_q0214_06.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @symbol_of_sylvain) >= 1 || OwnItemCount(talker, @miriens_sigil2) >= 1 || OwnItemCount(talker, @miriens_sigil3) >= 1 || OwnItemCount(talker, @crystal_of_purity1) >= 1))
+                {
+                    ShowPage(talker, "lucas_q0214_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_scholar)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @cretas_painting2) >= 1)
+                {
+                    ShowPage(talker, "lucas_q0214_04.htm");
+                    DeleteItem1(talker, @cretas_painting2, 1);
+                    GiveItem1(talker, @cretas_painting3, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

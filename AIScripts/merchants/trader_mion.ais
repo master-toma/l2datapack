@@ -1,0 +1,418 @@
+class trader_mion : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"necklace_of_magic"; 15};
+        {"necklace_of_knowledge"; 15};
+        {"necklace_of_anguish"; 15};
+        {"necklace_of_wisdom"; 15};
+        {"apprentice's_earing"; 15};
+        {"mage_earing"; 15};
+        {"earing_of_strength"; 15};
+        {"earing_of_wisdom"; 15};
+        {"cat'seye_earing"; 15};
+        {"magic_ring"; 15};
+        {"ring_of_knowledge"; 15};
+        {"ring_of_anguish"; 15};
+        {"ring_of_wisdom"; 15};
+        {"wooden_arrow"; 15};
+        {"bone_arrow"; 15};
+        {"key_of_thief"; 15};
+        {"spirit_ore"; 15};
+        {"soul_ore"; 15};
+        {"blessed_spiritshot_none"; 15};
+        {"spiritshot_none"; 15};
+        {"soulshot_none"; 15};
+        {"scroll_of_escape"; 15};
+        {"lesser_healing_potion"; 15};
+        {"antidote"; 15};
+        {"bandage"; 15};
+        {"quick_step_potion"; 15};
+        {"swift_attack_potion"; 15};
+        {"world_map_2"; 15};
+        {"gemstone_d"; 15}
+    };
+    
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @pipis_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Give Pippi's letter of recommendation");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) && OwnItemCount(talker, @chalis_axe) + OwnItemCount(talker, @bronks_ingot) + OwnItemCount(talker, @zimenfs_potion) == 1 && talker.flag % 10 == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Master Toma");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) && OwnItemCount(talker, @chalis_axe) + OwnItemCount(talker, @bronks_ingot) + OwnItemCount(talker, @zimenfs_potion) == 1 && talker.flag % 10 > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Master Toma");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) && OwnItemCount(talker, @chalis_pay) + OwnItemCount(talker, @bronks_pay) + OwnItemCount(talker, @zimenfs_pay) == 1 && talker.flag < 50)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give money for item");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) && OwnItemCount(talker, @chalis_pay) + OwnItemCount(talker, @bronks_pay) + OwnItemCount(talker, @zimenfs_pay) == 1 && talker.flag >= 50)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give money for item");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) && OwnItemCount(talker, @mions_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about changing occupation to Dwarven Raider");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) && (OwnItemCount(talker, @bear_pic) || OwnItemCount(talker, @tarantula_pic) || OwnItemCount(talker, @bead_parcel) || OwnItemCount(talker, @routs_tp_scroll) || OwnItemCount(talker, @succubus_undies)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask about changing occupation to Dwarven Raider");
+            }
+
+            if (HaveMemo(talker, @silk_of_tarantula) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Hear about finest court suit");
+            }
+
+            if (HaveMemo(talker, @silk_of_tarantula) == 1 && OwnItemCount(talker, @tarantula_spider_silk) < 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Ask about tarantula spider silk");
+            }
+
+            if (HaveMemo(talker, @silk_of_tarantula) == 1 && OwnItemCount(talker, @tarantula_spider_silk) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Receive compensation from Mion");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @contribution_of_mion) == 0 && OwnItemCount(talker, @lockirins_notice2) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Ask for donation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @contribution_of_mion) >= 1 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @lockirins_notice2) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 11;
+                AddChoice(11, "Say that you are thankful for the other person giving the donation");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @pipis_letter) == 1)
+                {
+                    ShowPage(talker, "trader_mion_q0417_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) && OwnItemCount(talker, @chalis_axe) + OwnItemCount(talker, @bronks_ingot) + OwnItemCount(talker, @zimenfs_potion) == 1 && talker.flag % 10 == 0)
+                {
+                    ShowPage(talker, "trader_mion_q0417_05.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) && OwnItemCount(talker, @chalis_axe) + OwnItemCount(talker, @bronks_ingot) + OwnItemCount(talker, @zimenfs_potion) == 1 && talker.flag % 10 > 0)
+                {
+                    ShowPage(talker, "trader_mion_q0417_08.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) && OwnItemCount(talker, @chalis_pay) + OwnItemCount(talker, @bronks_pay) + OwnItemCount(talker, @zimenfs_pay) == 1 && talker.flag < 50)
+                {
+                    ShowPage(talker, "trader_mion_q0417_12.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) && OwnItemCount(talker, @chalis_pay) + OwnItemCount(talker, @bronks_pay) + OwnItemCount(talker, @zimenfs_pay) == 1 && talker.flag >= 50)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "trader_mion_q0417_15.htm");
+                        GiveItem1(talker, @mions_letter, 1);
+                        DeleteItem1(talker, @chalis_pay, OwnItemCount(talker, @chalis_pay));
+                        DeleteItem1(talker, @zimenfs_pay, OwnItemCount(talker, @zimenfs_pay));
+                        DeleteItem1(talker, @bronks_pay, OwnItemCount(talker, @bronks_pay));
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) && OwnItemCount(talker, @mions_letter))
+                {
+                    ShowPage(talker, "trader_mion_q0417_13.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) && (OwnItemCount(talker, @bear_pic) || OwnItemCount(talker, @tarantula_pic) || OwnItemCount(talker, @bead_parcel) || OwnItemCount(talker, @routs_tp_scroll) || OwnItemCount(talker, @succubus_undies)))
+                {
+                    ShowPage(talker, "trader_mion_q0417_14.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @silk_of_tarantula) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 15)
+                        {
+                            if (OwnItemCount(talker, @ring_of_raccoon) < 1 && OwnItemCount(talker, @ring_of_firefly) < 1)
+                            {
+                                ShowPage(talker, "trader_mion_q0296_08.htm");
+                            }
+                            else
+                            {
+                                FHTML_SetFileName(fhtml0, "trader_mion_q0296_02.htm");
+                                FHTML_SetInt(fhtml0, "quest_id", @silk_of_tarantula);
+                                ShowFHTML(talker, fhtml0);
+                            }
+                        }
+                        else
+                        {
+                            ShowPage(talker, "trader_mion_q0296_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @silk_of_tarantula) == 1 && OwnItemCount(talker, @tarantula_spider_silk) < 1)
+                {
+                    ShowPage(talker, "trader_mion_q0296_04.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @silk_of_tarantula) == 1 && OwnItemCount(talker, @tarantula_spider_silk) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "trader_mion_q0296_05.htm");
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @tarantula_spider_silk) * 23);
+                        DeleteItem1(talker, @tarantula_spider_silk, OwnItemCount(talker, @tarantula_spider_silk));
+                    }
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @contribution_of_mion) == 0 && OwnItemCount(talker, @lockirins_notice2) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "trader_mion_q0221_01.htm");
+                        GiveItem1(talker, @contribution_of_mion, 1);
+                    }
+                }
+
+                break;
+            case 11:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @contribution_of_mion) >= 1 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @lockirins_notice2) == 0)
+                {
+                    ShowPage(talker, "trader_mion_q0221_02.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @silk_of_tarantula)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @silk_of_tarantula);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "trader_mion_q0296_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, i0, reply, talker)
+    {
+        if (ask == @path_to_scavenger && reply == 1 && OwnItemCount(talker, @pipis_letter) > 0)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                select (Rand(3))
+                {
+                case 0:
+                    ShowPage(talker, "trader_mion_q0417_02.htm");
+                    DeleteItem1(talker, @pipis_letter, 1);
+                    GiveItem1(talker, @zimenfs_potion, 1);
+                    break;
+                case 1:
+                    ShowPage(talker, "trader_mion_q0417_03.htm");
+                    DeleteItem1(talker, @pipis_letter, 1);
+                    GiveItem1(talker, @chalis_axe, 1);
+                    break;
+                case 2:
+                    ShowPage(talker, "trader_mion_q0417_04.htm");
+                    DeleteItem1(talker, @pipis_letter, 1);
+                    GiveItem1(talker, @bronks_ingot, 1);
+                    break;
+                }
+            }
+        }
+
+        if (ask == @path_to_scavenger && reply == 2)
+        {
+            ShowPage(talker, "trader_mion_q0417_06.htm");
+        }
+
+        if (ask == @path_to_scavenger && reply == 3)
+        {
+            ShowPage(talker, "trader_mion_q0417_07.htm");
+            talker.flag = talker.flag + 1;
+        }
+
+        if (ask == @path_to_scavenger && reply == 4)
+        {
+            select (Rand(2))
+            {
+            case 0:
+                ShowPage(talker, "trader_mion_q0417_06.htm");
+                break;
+            case 1:
+                ShowPage(talker, "trader_mion_q0417_11.htm");
+                break;
+            }
+        }
+
+        if (ask == @path_to_scavenger && reply == 5)
+        {
+            if (talker.flag % 10 < 2)
+            {
+                ShowPage(talker, "trader_mion_q0417_07.htm");
+                talker.flag = talker.flag + 1;
+            }
+            else if (talker.flag % 10 >= 2 && GetMemoState(talker, @path_to_scavenger) == 0)
+            {
+                ShowPage(talker, "trader_mion_q0417_09.htm");
+                if (talker.flag % 10 < 3)
+                {
+                    talker.flag = talker.flag + 1;
+                }
+            }
+            else if (talker.flag % 10 >= 3 && GetMemoState(talker, @path_to_scavenger) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "trader_mion_q0417_10.htm");
+                    GiveItem1(talker, @mions_letter, 1);
+                    DeleteItem1(talker, @chalis_axe, OwnItemCount(talker, @chalis_axe));
+                    DeleteItem1(talker, @zimenfs_potion, OwnItemCount(talker, @zimenfs_potion));
+                    DeleteItem1(talker, @bronks_ingot, OwnItemCount(talker, @bronks_ingot));
+                }
+            }
+        }
+
+        if (ask == @path_to_scavenger && reply == 6)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                select (Rand(3))
+                {
+                case 0:
+                    ShowPage(talker, "trader_mion_q0417_02.htm");
+                    DeleteItem1(talker, @zimenfs_pay, OwnItemCount(talker, @zimenfs_pay));
+                    DeleteItem1(talker, @chalis_pay, OwnItemCount(talker, @chalis_pay));
+                    DeleteItem1(talker, @bronks_pay, OwnItemCount(talker, @bronks_pay));
+                    GiveItem1(talker, @zimenfs_potion, 1);
+                    break;
+                case 1:
+                    ShowPage(talker, "trader_mion_q0417_03.htm");
+                    DeleteItem1(talker, @zimenfs_pay, OwnItemCount(talker, @zimenfs_pay));
+                    DeleteItem1(talker, @chalis_pay, OwnItemCount(talker, @chalis_pay));
+                    DeleteItem1(talker, @bronks_pay, OwnItemCount(talker, @bronks_pay));
+                    GiveItem1(talker, @chalis_axe, 1);
+                    break;
+                case 2:
+                    ShowPage(talker, "trader_mion_q0417_04.htm");
+                    DeleteItem1(talker, @zimenfs_pay, OwnItemCount(talker, @zimenfs_pay));
+                    DeleteItem1(talker, @chalis_pay, OwnItemCount(talker, @chalis_pay));
+                    DeleteItem1(talker, @bronks_pay, OwnItemCount(talker, @bronks_pay));
+                    GiveItem1(talker, @bronks_ingot, 1);
+                    break;
+                }
+            }
+        }
+
+        if (ask == @silk_of_tarantula)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "trader_mion_q0296_06.htm");
+                DeleteItem1(talker, @tarantula_spinnerette, OwnItemCount(talker, @tarantula_spinnerette));
+                RemoveMemo(talker, @silk_of_tarantula);
+                SoundEffect(talker, "ItemSound.quest_finish");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "trader_mion_q0296_07.htm");
+            }
+        }
+
+        super;
+    }
+}

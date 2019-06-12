@@ -1,0 +1,3 @@
+class warrior_passive_casting_splash : warrior_casting_splash
+{
+}

@@ -1,0 +1,24 @@
+class iz : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"cursed_tunic"; 15};
+        {"dark_hose"; 15};
+        {"white_tunic"; 15};
+        {"mage's_hose"; 15};
+        {"mage's_tunic"; 15};
+        {"hose_of_knowledge"; 15};
+        {"tunic_of_knowledge"; 15};
+        {"bronze_shield"; 15};
+        {"aspis"; 15};
+        {"hoplon"; 15};
+        {"excellence_leather_gloves"; 15};
+        {"leather_gauntlet"; 15};
+        {"gauntlet"; 15};
+        {"leather_boots"; 15};
+        {"blue_buckskin_boots"; 15};
+        {"iron_boots"; 15};
+        {"bone_helmet"; 15};
+        {"bronze_helmet"; 15}
+    };
+}

@@ -1,0 +1,274 @@
+class elder_spiron : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @crush_brigands) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about mopping up brigands");
+            }
+
+            if (HaveMemo(talker, @crush_brigands) == 1 && OwnItemCount(talker, @goblin_necklace) < 1 && OwnItemCount(talker, @goblin_pendant) < 1 && OwnItemCount(talker, @goblin_lord_pendant) < 1 && OwnItemCount(talker, @suspicious_memo) == 0 && OwnItemCount(talker, @suspicious_contract) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about mopping up brigands");
+            }
+
+            if (HaveMemo(talker, @crush_brigands) == 1 && OwnItemCount(talker, @goblin_necklace) + OwnItemCount(talker, @goblin_pendant) + OwnItemCount(talker, @goblin_lord_pendant) >= 1 && OwnItemCount(talker, @suspicious_memo) == 0 && OwnItemCount(talker, @suspicious_contract) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Receive compensation for mopping up brigands");
+            }
+
+            if (HaveMemo(talker, @crush_brigands) == 1 && OwnItemCount(talker, @suspicious_memo) == 1 && OwnItemCount(talker, @suspicious_contract) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Hear about goblin's memo pieces");
+            }
+
+            if (HaveMemo(talker, @crush_brigands) == 1 && OwnItemCount(talker, @suspicious_memo) >= 2 && OwnItemCount(talker, @suspicious_contract) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Hear about goblin's memo pieces");
+            }
+
+            if (HaveMemo(talker, @crush_brigands) == 1 && OwnItemCount(talker, @suspicious_memo) == 0 && OwnItemCount(talker, @suspicious_contract) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Receive compensation for goblin's contract and mopping up brigands");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Say that you want to receive a letter of recommendation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @lockirins_notice1) >= 1 && OwnItemCount(talker, @receipt_of_contribution1) == 0 && OwnItemCount(talker, @contribution_of_chali) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Say that you came at the request of the first elder");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_contribution1) == 0 && OwnItemCount(talker, @contribution_of_chali) == 0 && OwnItemCount(talker, @lockirins_notice1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Give Donation of Cha-Li");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @contribution_of_chali) >= 1 && OwnItemCount(talker, @receipt_of_contribution1) == 0 && OwnItemCount(talker, @lockirins_notice1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Give Donation of Cha-Li");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @contribution_of_chali) == 0 && OwnItemCount(talker, @lockirins_notice1) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_contribution1) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Say that you are collecting the donation receipt");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @crush_brigands) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_dwarf)
+                        {
+                            ShowPage(talker, "elder_spiron_q0292_00.htm");
+                        }
+                        else if (talker.level >= 5)
+                        {
+                            FHTML_SetFileName(fhtml0, "elder_spiron_q0292_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @crush_brigands);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "elder_spiron_q0292_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @crush_brigands) == 1 && OwnItemCount(talker, @goblin_necklace) < 1 && OwnItemCount(talker, @goblin_pendant) < 1 && OwnItemCount(talker, @goblin_lord_pendant) < 1 && OwnItemCount(talker, @suspicious_memo) == 0 && OwnItemCount(talker, @suspicious_contract) == 0)
+                {
+                    ShowPage(talker, "elder_spiron_q0292_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @crush_brigands) == 1 && OwnItemCount(talker, @goblin_necklace) + OwnItemCount(talker, @goblin_pendant) + OwnItemCount(talker, @goblin_lord_pendant) >= 1 && OwnItemCount(talker, @suspicious_memo) == 0 && OwnItemCount(talker, @suspicious_contract) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "elder_spiron_q0292_05.htm");
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @goblin_necklace) * 12 + OwnItemCount(talker, @goblin_pendant) * 36 + OwnItemCount(talker, @goblin_lord_pendant) * 33);
+                        DeleteItem1(talker, @goblin_necklace, OwnItemCount(talker, @goblin_necklace));
+                        DeleteItem1(talker, @goblin_pendant, OwnItemCount(talker, @goblin_pendant));
+                        DeleteItem1(talker, @goblin_lord_pendant, OwnItemCount(talker, @goblin_lord_pendant));
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @crush_brigands) == 1 && OwnItemCount(talker, @suspicious_memo) == 1 && OwnItemCount(talker, @suspicious_contract) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "elder_spiron_q0292_08.htm");
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @goblin_necklace) * 12 + OwnItemCount(talker, @goblin_pendant) * 36 + OwnItemCount(talker, @goblin_lord_pendant) * 33);
+                        DeleteItem1(talker, @goblin_necklace, OwnItemCount(talker, @goblin_necklace));
+                        DeleteItem1(talker, @goblin_pendant, OwnItemCount(talker, @goblin_pendant));
+                        DeleteItem1(talker, @goblin_lord_pendant, OwnItemCount(talker, @goblin_lord_pendant));
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @crush_brigands) == 1 && OwnItemCount(talker, @suspicious_memo) >= 2 && OwnItemCount(talker, @suspicious_contract) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "elder_spiron_q0292_09.htm");
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @goblin_necklace) * 12 + OwnItemCount(talker, @goblin_pendant) * 36 + OwnItemCount(talker, @goblin_lord_pendant) * 33);
+                        DeleteItem1(talker, @goblin_necklace, OwnItemCount(talker, @goblin_necklace));
+                        DeleteItem1(talker, @goblin_pendant, OwnItemCount(talker, @goblin_pendant));
+                        DeleteItem1(talker, @goblin_lord_pendant, OwnItemCount(talker, @goblin_lord_pendant));
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @crush_brigands) == 1 && OwnItemCount(talker, @suspicious_memo) == 0 && OwnItemCount(talker, @suspicious_contract) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "elder_spiron_q0292_10.htm");
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @goblin_necklace) * 12 + OwnItemCount(talker, @goblin_pendant) * 36 + OwnItemCount(talker, @goblin_lord_pendant) * 33 + OwnItemCount(talker, @suspicious_contract) * 100);
+                        DeleteItem1(talker, @goblin_necklace, OwnItemCount(talker, @goblin_necklace));
+                        DeleteItem1(talker, @goblin_pendant, OwnItemCount(talker, @goblin_pendant));
+                        DeleteItem1(talker, @goblin_lord_pendant, OwnItemCount(talker, @goblin_lord_pendant));
+                        DeleteItem1(talker, @suspicious_contract, OwnItemCount(talker, @suspicious_contract));
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1)
+                {
+                    ShowPage(talker, "elder_spiron_q0231_01.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @lockirins_notice1) >= 1 && OwnItemCount(talker, @receipt_of_contribution1) == 0 && OwnItemCount(talker, @contribution_of_chali) == 0)
+                {
+                    ShowPage(talker, "elder_spiron_q0221_01.htm");
+                    DeleteItem1(talker, @lockirins_notice1, OwnItemCount(talker, @lockirins_notice1));
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_contribution1) == 0 && OwnItemCount(talker, @contribution_of_chali) == 0 && OwnItemCount(talker, @lockirins_notice1) == 0)
+                {
+                    ShowPage(talker, "elder_spiron_q0221_02.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @contribution_of_chali) >= 1 && OwnItemCount(talker, @receipt_of_contribution1) == 0 && OwnItemCount(talker, @lockirins_notice1) == 0)
+                {
+                    ShowPage(talker, "elder_spiron_q0221_03.htm");
+                    DeleteItem1(talker, @contribution_of_chali, 1);
+                    GiveItem1(talker, @receipt_of_contribution1, 1);
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @contribution_of_chali) == 0 && OwnItemCount(talker, @lockirins_notice1) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_contribution1) >= 1)
+                {
+                    ShowPage(talker, "elder_spiron_q0221_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @crush_brigands)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @crush_brigands);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "elder_spiron_q0292_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @crush_brigands)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "elder_spiron_q0292_06.htm");
+                DeleteItem1(talker, @suspicious_memo, OwnItemCount(talker, @suspicious_memo));
+                RemoveMemo(talker, @crush_brigands);
+                SoundEffect(talker, "ItemSound.quest_finish");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "elder_spiron_q0292_07.htm");
+            }
+        }
+
+        super;
+    }
+}

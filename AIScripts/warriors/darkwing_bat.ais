@@ -1,0 +1,29 @@
+class darkwing_bat : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @black_winged_spies) && OwnItemCount(c1, @darkwing_bat_fang) < 70)
+        {
+            if (OwnItemCount(c1, @darkwing_bat_fang) < 69)
+            {
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+            else
+            {
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+
+            GiveItem1(c1, @darkwing_bat_fang, 1);
+            i0 = Rand(100);
+            if (OwnItemCount(c1, @darkwing_bat_fang) > 10 && OwnItemCount(c1, @darkwing_bat_fang) < 66 && i0 < 10)
+            {
+                CreateOnePrivate(@varangkas_tracker, "varangkas_tracker", 0, 1);
+                GiveItem1(c1, @varangkas_parasite, 1);
+            }
+        }
+
+        super;
+    }
+}

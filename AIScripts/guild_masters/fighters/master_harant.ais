@@ -1,0 +1,62 @@
+class master_harant : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @jennies_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about supplies");
+            }
+
+            if (HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @sentry_blade1) + OwnItemCount(talker, @sentry_blade2) + OwnItemCount(talker, @sentry_blade3) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Discuss supplies");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @jennies_letter) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "master_harant_q0325_01.htm");
+                        DeleteItem1(talker, @jennies_letter, 1);
+                        GiveItem1(talker, @sentry_blade1, 1);
+                        GiveItem1(talker, @sentry_blade2, 1);
+                        GiveItem1(talker, @sentry_blade3, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @sentry_blade1) + OwnItemCount(talker, @sentry_blade2) + OwnItemCount(talker, @sentry_blade3) > 0)
+                {
+                    ShowPage(talker, "master_harant_q0325_02.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

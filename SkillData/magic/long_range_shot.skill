@@ -1,0 +1,2 @@
+skill_begin	skill_name = [s_long_range_shot1]	/* [롱 샷] */	skill_id = 113	level = 1	operate_type = P	effect = {{p_attack_range;{bow};200;diff}}	skill_end
+skill_begin	skill_name = [s_long_range_shot2]	/* [롱 샷] */	skill_id = 113	level = 2	operate_type = P	effect = {{p_attack_range;{bow};400;diff}}	skill_end

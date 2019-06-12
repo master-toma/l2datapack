@@ -1,0 +1,24 @@
+class rakeclaw_imp_hunter : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @invaders_of_holyland))
+        {
+            i0 = Rand(100);
+            if (i0 <= 87)
+            {
+                GiveItem1(c1, @black_soulstone, 1);
+            }
+            else
+            {
+                GiveItem1(c1, @red_soulstone, 1);
+            }
+
+            SoundEffect(c1, "ItemSound.quest_itemget");
+        }
+
+        super;
+    }
+}

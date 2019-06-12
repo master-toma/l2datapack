@@ -1,0 +1,3 @@
+class giran_defend_teleporter3 : siege_instant_teleporter
+{
+}

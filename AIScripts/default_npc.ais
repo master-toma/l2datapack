@@ -1,0 +1,42 @@
+class default_npc
+{
+parameter:
+    int DesirePqSize = 50;
+    int FavorListSize = 30;
+    float IdleDesire_DecayRatio = 0.0;
+    float MoveAround_DecayRatio = 0.0;
+    float DoNothing_DecayRatio = 0.0;
+    float Attack_DecayRatio = 0.0;
+    float Chase_DecayRatio = 0.0;
+    float Flee_DecayRatio = 0.0;
+    float GetItem_DecayRatio = 0.0;
+    float Follow_DecayRatio = 0.0;
+    float Decaying_DecayRatio = 0.0;
+    float MoveToWayPoint_DecayRatio = 0.0;
+    float UseSkill_DecayRatio = 0.0;
+    float MoveTo_DecayRatio = 0.0;
+    float EffectAction_DecayRatio = 0.0;
+    float IdleDesire_BoostValue = 0.0;
+    float MoveAround_BoostValue = 0.0;
+    float DoNothing_BoostValue = 0.0;
+    float Attack_BoostValue = 0.0;
+    float Chase_BoostValue = 0.0;
+    float Flee_BoostValue = 0.0;
+    float GetItem_BoostValue = 0.0;
+    float Follow_BoostValue = 0.0;
+    float Decaying_BoostValue = 0.0;
+    float MoveToWayPoint_BoostValue = 0.0;
+    float UseSkill_BoostValue = 0.0;
+    float MoveTo_BoostValue = 0.0;
+    float EffectAction_BoostValue = 0.0;
+
+handler:
+    EventHandler NO_DESIRE()
+    {
+    }
+
+    EventHandler TALK_SELECTED(talker)
+    {
+        ShowPage(talker, "noquest.htm");
+    }
+}

@@ -1,0 +1,15 @@
+class cleric_coach : guild_coach
+{
+handler:
+    EventHandler LEARN_SKILL_REQUESTED(talker)
+    {
+        if (talker.race == myself.sm.race && IsInCategory(@cleric_group, talker.occupation))
+        {
+            ShowSkillList(talker, "");
+        }
+        else
+        {
+            ShowPage(talker, fnClassMismatch);
+        }
+    }
+}

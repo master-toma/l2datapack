@@ -1,0 +1,40 @@
+class q409_lizardman_warrior : warrior_aggressive_immediate
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_oracle) == 1 && OwnItemCount(myself.c_quest0, @lizard_captain_order) == 0 && myself.i_quest0 == 1)
+        {
+            Say(MakeFString(40910, "", "", "", "", ""));
+            GiveItem1(myself.c_quest0, @lizard_captain_order, 1);
+            SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            SetMemoState(myself.c_quest0, @path_to_oracle, 0);
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            Say(MakeFString(40909, "", "", "", "", ""));
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,178 @@
+class union_president_bernard : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_sagittarius) == 0 && GetOneTimeQuestFlag(talker, @test_of_sagittarius) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Examination of Sagittarius");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 0 && GetOneTimeQuestFlag(talker, @test_of_sagittarius) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Examination of Sagittarius");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && OwnItemCount(talker, @bernards_introduction))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask who you should go find");
+            }
+
+            if (GetMemoState(talker, @magic_coin) == 1 && HaveMemo(talker, @magic_coin) == 1 && OwnItemCount(talker, @q_coin_diagram) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about the Gold Dragon Coins");
+            }
+
+            if (GetMemoState(talker, @magic_coin) >= 3 && HaveMemo(talker, @magic_coin) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about coin collecting");
+            }
+
+            if (GetMemoState(talker, @magic_coin) == 2 && HaveMemo(talker, @magic_coin) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about coin collecting");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 0 && GetOneTimeQuestFlag(talker, @test_of_sagittarius) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if ((talker.occupation == @rogue || talker.occupation == @elven_scout || talker.occupation == @assassin) && talker.level >= 39)
+                        {
+                            FHTML_SetFileName(fhtml0, "union_president_bernard_q0224_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @test_of_sagittarius);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else if (talker.occupation == @rogue || talker.occupation == @elven_scout || talker.occupation == @assassin)
+                        {
+                            ShowPage(talker, "union_president_bernard_q0224_01.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "union_president_bernard_q0224_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 0 && GetOneTimeQuestFlag(talker, @test_of_sagittarius) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && OwnItemCount(talker, @bernards_introduction))
+                {
+                    ShowPage(talker, "union_president_bernard_q0224_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || GetMemoState(talker, @magic_coin) == 1 && HaveMemo(talker, @magic_coin) == 1 && OwnItemCount(talker, @q_coin_diagram) == 1)
+                {
+                    ShowPage(talker, "union_president_bernard_q0336_01.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || GetMemoState(talker, @magic_coin) >= 3 && HaveMemo(talker, @magic_coin) == 1)
+                {
+                    ShowPage(talker, "union_president_bernard_q0336_05.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || GetMemoState(talker, @magic_coin) == 2 && HaveMemo(talker, @magic_coin) == 1)
+                {
+                    ShowPage(talker, "union_president_bernard_q0336_02a.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @test_of_sagittarius)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "union_president_bernard_q0224_04.htm");
+                GiveItem1(talker, @bernards_introduction, 1);
+                SetMemoState(talker, @test_of_sagittarius, 1);
+                talker.flag = 0;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @magic_coin)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "union_president_bernard_q0336_02.htm");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "union_president_bernard_q0336_03.htm");
+                SetMemoState(talker, @magic_coin, 2);
+            }
+            else if (reply == 3)
+            {
+                ShowPage(talker, "union_president_bernard_q0336_04.htm");
+                SetMemoState(talker, @magic_coin, 2);
+            }
+            else if (reply == 4)
+            {
+                ShowPage(talker, "union_president_bernard_q0336_06.htm");
+            }
+        }
+
+        super;
+    }
+}

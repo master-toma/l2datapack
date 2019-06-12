@@ -1,0 +1,132 @@
+class gatekeeper_wirphy : teleporter_need_item
+{
+property:
+    TelPosList Position = {
+        {1010004; -80749; 149834; -3043; 3000; 0};    // 1010004 - "The Village of Gludin"
+        {1010011; 169008; -208272; -3506; 700; 0}    // 1010011 - "The Northeast Coast"
+    };
+    
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -6)
+        {
+            if (OwnItemCount(talker, ItemNeeded) != 0)
+            {
+                DeleteItem1(talker, ItemNeeded, 1);
+                InstantTeleport(talker, -80749, 149834, -3043);
+            }
+            else
+            {
+                ShowPage(talker, fnNoItem);
+            }
+        }
+    }
+
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @gatekeepers_favor) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Listen to gatekeeper's request");
+            }
+
+            if (HaveMemo(talker, @gatekeepers_favor) == 1 && OwnItemCount(talker, @starstone2) < 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the starstone");
+            }
+
+            if (HaveMemo(talker, @gatekeepers_favor) == 1 && OwnItemCount(talker, @starstone2) >= 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give starstone");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @gatekeepers_favor) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        FHTML_SetFileName(fhtml0, "gatekeeper_wirphy_q0297_02.htm");
+                        FHTML_SetInt(fhtml0, "quest_id", @gatekeepers_favor);
+                        ShowFHTML(talker, fhtml0);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @gatekeepers_favor) == 1 && OwnItemCount(talker, @starstone2) < 20)
+                {
+                    ShowPage(talker, "gatekeeper_wirphy_q0297_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @gatekeepers_favor) == 1 && OwnItemCount(talker, @starstone2) >= 20)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "gatekeeper_wirphy_q0297_05.htm");
+                        DeleteItem1(talker, @starstone2, OwnItemCount(talker, @starstone2));
+                        GiveItem1(talker, @gatekeeper_token, 1);
+                        RemoveMemo(talker, @gatekeepers_favor);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @gatekeepers_favor)
+        {
+            if (talker.level >= 15)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "gatekeeper_wirphy_q0297_03.htm");
+                    SetMemo(talker, @gatekeepers_favor);
+                    SoundEffect(talker, "ItemSound.quest_accept");
+                }
+            }
+            else
+            {
+                ShowPage(talker, "gatekeeper_wirphy_q0297_01.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

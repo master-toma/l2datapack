@@ -1,0 +1,3 @@
+class akaste_bone_archer : warrior_passive_use_bow
+{
+}

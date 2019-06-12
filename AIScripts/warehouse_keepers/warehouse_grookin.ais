@@ -1,0 +1,53 @@
+class warehouse_grookin : warehouse_keeper
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @long_live_lord_of_flame) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Receive gift from Grookin");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @long_live_lord_of_flame) == 1)
+                {
+                    if (OwnItemCount(talker, @bloody_axe) < 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "warehouse_grookin_q0004_01.htm");
+                            GiveItem1(talker, @bloody_axe, 1);
+                            SoundEffect(talker, "ItemSound.quest_itemget");
+                        }
+                    }
+                    else if (OwnItemCount(talker, @bloody_axe) >= 1)
+                    {
+                        ShowPage(talker, "warehouse_grookin_q0004_02.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

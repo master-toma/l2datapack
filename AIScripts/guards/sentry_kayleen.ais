@@ -1,0 +1,132 @@
+class sentry_kayleen : guard_fixed
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @kill_all_sylphs1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about the Orc hunt");
+            }
+
+            if (HaveMemo(talker, @kill_all_sylphs1) == 1 && OwnItemCount(talker, @orc_amulet2) == 0 && OwnItemCount(talker, @orc_necklace2) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the Orc hunt");
+            }
+
+            if (HaveMemo(talker, @kill_all_sylphs1) == 1 && (OwnItemCount(talker, @orc_amulet2) > 0 || OwnItemCount(talker, @orc_necklace2) > 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about the Orc hunt");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @kill_all_sylphs1) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 8 && talker.race == @race_dark_elf)
+                        {
+                            FHTML_SetFileName(fhtml0, "sentry_kayleen_q0263_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @kill_all_sylphs1);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else if (talker.race != @race_dark_elf)
+                        {
+                            ShowPage(talker, "sentry_kayleen_q0263_00.htm");
+                        }
+                        else if (talker.level < 8)
+                        {
+                            ShowPage(talker, "sentry_kayleen_q0263_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @kill_all_sylphs1) == 1 && OwnItemCount(talker, @orc_amulet2) == 0 && OwnItemCount(talker, @orc_necklace2) == 0)
+                {
+                    ShowPage(talker, "sentry_kayleen_q0263_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @kill_all_sylphs1) == 1 && (OwnItemCount(talker, @orc_amulet2) > 0 || OwnItemCount(talker, @orc_necklace2) > 0))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "sentry_kayleen_q0263_05.htm");
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @orc_amulet2) * 8 + OwnItemCount(talker, @orc_necklace2) * 15);
+                        DeleteItem1(talker, @orc_amulet2, OwnItemCount(talker, @orc_amulet2));
+                        DeleteItem1(talker, @orc_necklace2, OwnItemCount(talker, @orc_necklace2));
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @kill_all_sylphs1)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @kill_all_sylphs1);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "sentry_kayleen_q0263_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @kill_all_sylphs1)
+        {
+            if (reply == 2)
+            {
+                ShowPage(talker, "sentry_kayleen_q0263_06.htm");
+                RemoveMemo(talker, @kill_all_sylphs1);
+                SoundEffect(talker, "ItemSound.quest_finish");
+            }
+            else if (reply == 1)
+            {
+                ShowPage(talker, "sentry_kayleen_q0263_07.htm");
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_day_rest]	/* [데이 레스트] */	skill_id = 183	level = 1	operate_type = P	effect = {}	skill_end

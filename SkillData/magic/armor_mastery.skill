@@ -1,0 +1,5 @@
+skill_begin	skill_name = [s_armor_mastery11]	/* [아머 마스터리] */	skill_id = 142	level = 1	operate_type = P	effect = {{p_physical_defence;{all};9;diff}}	skill_end
+skill_begin	skill_name = [s_armor_mastery21]	/* [아머 마스터리] */	skill_id = 142	level = 2	operate_type = P	effect = {{p_physical_defence;{all};11;diff}}	skill_end
+skill_begin	skill_name = [s_armor_mastery22]	/* [아머 마스터리] */	skill_id = 142	level = 3	operate_type = P	effect = {{p_physical_defence;{all};12;diff}}	skill_end
+skill_begin	skill_name = [s_armor_mastery31]	/* [아머 마스터리] */	skill_id = 142	level = 4	operate_type = P	effect = {{p_physical_defence;{all};13;diff};{p_avoid;{armor_light};3;diff}}	skill_end
+skill_begin	skill_name = [s_armor_mastery32]	/* [아머 마스터리] */	skill_id = 142	level = 5	operate_type = P	effect = {{p_physical_defence;{all};14;diff};{p_avoid;{armor_light};3;diff}}	skill_end

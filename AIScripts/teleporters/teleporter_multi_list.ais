@@ -1,0 +1,33 @@
+class teleporter_multi_list : teleporter
+{
+property:
+    TelPosList Position1 = {
+        {1010001; -84169; 244693; -3729; 100000; 0}    // 1010001 - "Talking Island Village"
+    };
+    TelPosList Position2 = {
+        {1010001; -84169; 244693; -3729; 100000; 0}    // 1010001 - "Talking Island Village"
+    };
+    TelPosList Position3 = {
+        {1010001; -84169; 244693; -3729; 100000; 0}    // 1010001 - "Talking Island Village"
+    };
+    
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -8)
+        {
+            if (reply == 1)
+            {
+                Teleport(talker, Position1, ShopName, "", "", "");
+            }
+            else if (reply == 2)
+            {
+                Teleport(talker, Position2, ShopName, "", "", "");
+            }
+            else if (reply == 3)
+            {
+                Teleport(talker, Position3, ShopName, "", "", "");
+            }
+        }
+    }
+}

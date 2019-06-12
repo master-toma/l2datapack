@@ -1,0 +1,107 @@
+class chief_croto : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 2 && OwnItemCount(talker, @paint_of_kamuru) == 0 && OwnItemCount(talker, @necklace_of_kamuru) == 0 && OwnItemCount(talker, @letter_of_solder_detachment) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask that a mercenary be deployed");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @paint_of_kamuru) && OwnItemCount(talker, @necklace_of_kamuru) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask where to go for the investigation");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @necklace_of_kamuru))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give Necklace of Kamuru");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @letter_of_solder_detachment))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask if news was given to Valkon");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 2 && OwnItemCount(talker, @paint_of_kamuru) == 0 && OwnItemCount(talker, @necklace_of_kamuru) == 0 && OwnItemCount(talker, @letter_of_solder_detachment) == 0)
+                {
+                    ShowPage(talker, "chief_croto_q0231_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @paint_of_kamuru) && OwnItemCount(talker, @necklace_of_kamuru) == 0)
+                {
+                    ShowPage(talker, "chief_croto_q0231_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @necklace_of_kamuru))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "chief_croto_q0231_04.htm");
+                        GiveItem1(talker, @letter_of_solder_detachment, 1);
+                        DeleteItem1(talker, @necklace_of_kamuru, 1);
+                        DeleteItem1(talker, @paint_of_kamuru, OwnItemCount(talker, @paint_of_kamuru));
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @letter_of_solder_detachment))
+                {
+                    ShowPage(talker, "chief_croto_q0231_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_maestro)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "chief_croto_q0231_02.htm");
+                    GiveItem1(talker, @paint_of_kamuru, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

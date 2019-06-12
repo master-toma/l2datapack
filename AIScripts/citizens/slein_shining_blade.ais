@@ -1,0 +1,68 @@
+class slein_shining_blade : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 8 && OwnItemCount(talker, @secret_letter1) && OwnItemCount(talker, @secret_letter3) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask what the trend is");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && OwnItemCount(talker, @secret_letter3) && (OwnItemCount(talker, @secret_letter2) == 0 || OwnItemCount(talker, @secret_letter4) == 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Say that the Dark Elf disappeared");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && OwnItemCount(talker, @secret_letter2) && OwnItemCount(talker, @secret_letter3) && OwnItemCount(talker, @secret_letter4))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask what to do now");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 8 && OwnItemCount(talker, @secret_letter1) && OwnItemCount(talker, @secret_letter3) == 0)
+                {
+                    ShowPage(talker, "slein_shining_blade_q0226_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && OwnItemCount(talker, @secret_letter3) && (OwnItemCount(talker, @secret_letter2) == 0 || OwnItemCount(talker, @secret_letter4) == 0))
+                {
+                    ShowPage(talker, "slein_shining_blade_q0226_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && OwnItemCount(talker, @secret_letter2) && OwnItemCount(talker, @secret_letter3) && OwnItemCount(talker, @secret_letter4))
+                {
+                    ShowPage(talker, "slein_shining_blade_q0226_03.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

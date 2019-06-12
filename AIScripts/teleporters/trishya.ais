@@ -1,0 +1,9 @@
+class trishya : teleporter
+{
+property:
+    TelPosList Position = {
+        {1010005; -12787; 122779; -3114; 4100; 1};    // 1010005 - "The Town of Gludio"
+        {1010007; 83336; 147972; -3404; 8100; 3};    // 1010007 - "The Town of Giran"
+        {1010021; 47938; 186864; -3420; 6500; 0}    // 1010021 - "South Harbour (Entrance to Giran)"
+    };
+}

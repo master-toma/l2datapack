@@ -1,0 +1,13 @@
+class trader_carson : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"necklace_of_anguish"; 20};
+        {"necklace_of_wisdom"; 20};
+        {"earing_of_strength"; 20};
+        {"earing_of_wisdom"; 20};
+        {"cat'seye_earing"; 20};
+        {"ring_of_anguish"; 20};
+        {"ring_of_wisdom"; 20}
+    };
+}

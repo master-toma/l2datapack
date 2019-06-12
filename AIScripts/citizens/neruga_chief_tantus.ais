@@ -1,0 +1,176 @@
+class neruga_chief_tantus : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, i0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @black_winged_spies) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Listen to Baranka's conspiracy");
+            }
+
+            if (HaveMemo(talker, @black_winged_spies))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show bat fang");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) == 1 && OwnItemCount(talker, @axe_of_ceremony) == 0 && OwnItemCount(talker, @tantus_charm) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Say that you are currently challenging the Examination of Lord");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @tantus_charm) >= 1 && OwnItemCount(talker, @axe_of_ceremony) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give bone arrows");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @tantus_charm) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @axe_of_ceremony) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Thank for having received the totem");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @black_winged_spies) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_orc)
+                        {
+                            ShowPage(talker, "neruga_chief_tantus_q0275_00.htm");
+                        }
+                        else if (talker.level < 11)
+                        {
+                            ShowPage(talker, "neruga_chief_tantus_q0275_01.htm");
+                        }
+                        else
+                        {
+                            FHTML_SetFileName(fhtml0, "neruga_chief_tantus_q0275_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @black_winged_spies);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @black_winged_spies))
+                {
+                    if (OwnItemCount(talker, @darkwing_bat_fang) < 70)
+                    {
+                        ShowPage(talker, "neruga_chief_tantus_q0275_04.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "neruga_chief_tantus_q0275_05.htm");
+                        RemoveMemo(talker, @black_winged_spies);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @darkwing_bat_fang) * 50);
+                        DeleteItem1(talker, @darkwing_bat_fang, OwnItemCount(talker, @darkwing_bat_fang));
+                        DeleteItem1(talker, @varangkas_parasite, OwnItemCount(talker, @varangkas_parasite));
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) == 1 && OwnItemCount(talker, @axe_of_ceremony) == 0 && OwnItemCount(talker, @tantus_charm) == 0)
+                {
+                    ShowPage(talker, "neruga_chief_tantus_q0232_01.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @tantus_charm) >= 1 && OwnItemCount(talker, @axe_of_ceremony) == 0)
+                {
+                    if (OwnItemCount(talker, @bone_arrow) < 1000 || OwnItemCount(talker, @neruga_axe_blade) == 0)
+                    {
+                        ShowPage(talker, "neruga_chief_tantus_q0232_03.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "neruga_chief_tantus_q0232_04.htm");
+                        DeleteItem1(talker, @neruga_axe_blade, OwnItemCount(talker, @neruga_axe_blade));
+                        DeleteItem1(talker, @bone_arrow, 1000);
+                        DeleteItem1(talker, @tantus_charm, 1);
+                        GiveItem1(talker, @axe_of_ceremony, 1);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @tantus_charm) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @axe_of_ceremony) >= 1)
+                {
+                    ShowPage(talker, "neruga_chief_tantus_q0232_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @black_winged_spies)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @black_winged_spies);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "neruga_chief_tantus_q0275_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_lord)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "neruga_chief_tantus_q0232_02.htm");
+                    GiveItem1(talker, @tantus_charm, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

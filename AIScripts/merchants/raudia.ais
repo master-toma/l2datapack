@@ -1,0 +1,64 @@
+class raudia : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"hard_leather_pants"; 15};
+        {"wooden_breastplate"; 15};
+        {"tights_pants"; 15};
+        {"tights_shirt"; 15};
+        {"bone_breastplate"; 15};
+        {"bone_gaiters"; 15};
+        {"piece_bone_breastplate"; 15};
+        {"bronze_breastplate"; 15};
+        {"hard_leather_gaiters"; 15};
+        {"piece_bone_gaiters"; 15};
+        {"hard_leather_shirt"; 15};
+        {"bronze_gaiters"; 15};
+        {"puma_skin_gaiters"; 15};
+        {"ring_breastplate"; 15};
+        {"buckler"; 15};
+        {"round_shield"; 15};
+        {"bone_shield"; 15};
+        {"bronze_shield"; 15};
+        {"gloves"; 15};
+        {"leather_gloves"; 15};
+        {"bracer"; 15};
+        {"excellence_leather_gloves"; 15};
+        {"leather_shoes"; 15};
+        {"low_boots"; 15};
+        {"boots"; 15};
+        {"leather_boots"; 15};
+        {"wooden_helmet"; 15};
+        {"leather_helmet"; 15};
+        {"hard_leather_helmet"; 15};
+        {"bone_helmet"; 15}
+    };
+    BuySellList SellList1 = {
+        {"leather_hose"; 15};
+        {"leather_tunic"; 15};
+        {"hose_of_devotion"; 15};
+        {"tunic_of_devotion"; 15};
+        {"hose_of_magicpower"; 15};
+        {"tunic_of_magicpower"; 15};
+        {"cursed_hose"; 15};
+        {"cursed_tunic"; 15};
+        {"buckler"; 15};
+        {"round_shield"; 15};
+        {"bone_shield"; 15};
+        {"bronze_shield"; 15};
+        {"gloves"; 15};
+        {"leather_gloves"; 15};
+        {"bracer"; 15};
+        {"excellence_leather_gloves"; 15};
+        {"leather_shoes"; 15};
+        {"low_boots"; 15};
+        {"boots"; 15};
+        {"leather_boots"; 15};
+        {"wooden_helmet"; 15};
+        {"leather_helmet"; 15};
+        {"hard_leather_helmet"; 15};
+        {"bone_helmet"; 15};
+        {"wooden_arrow"; 15};
+        {"bone_arrow"; 15}
+    };
+}

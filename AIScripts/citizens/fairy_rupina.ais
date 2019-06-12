@@ -1,0 +1,73 @@
+class fairy_rupina : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @wish_potion) == 1 && talker.flag == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about love");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @wish_potion) == 1 && talker.flag == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (Rand(30) == 0)
+                        {
+                            ShowPage(talker, "fairy_rupina_q0334_01.htm");
+                            GiveItem1(talker, @necklace_of_grace, 1);
+                            talker.flag = 0;
+                        }
+                        else
+                        {
+                            ShowPage(talker, "fairy_rupina_q0334_02.htm");
+                            GiveItem1(talker, @scroll_of_escape, 1);
+                            talker.flag = 0;
+                        }
+
+                        Despawn();
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 2336001)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(2336001, 120 * 1000);
+        super;
+    }
+}

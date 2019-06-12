@@ -1,0 +1,99 @@
+class goblin_brigand_sub_ldr : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @diamond_gambit) == 1 && OwnItemCount(myself.c_quest0, @bronps_contract))
+        {
+            if (HaveMemo(myself.c_quest0, @diamond_gambit) == 1 && OwnItemCount(myself.c_quest0, @bronps_contract))
+            {
+                if (Rand(10) < 6)
+                {
+                    if (OwnItemCount(myself.c_quest0, @aquamarine) + OwnItemCount(myself.c_quest0, @chrysoberyl) == 19)
+                    {
+                        if (OwnItemCount(myself.c_quest0, @aquamarine) < 10)
+                        {
+                            GiveItem1(myself.c_quest0, @aquamarine, 1);
+                            SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+                        }
+                    }
+                    else if (OwnItemCount(myself.c_quest0, @aquamarine) < 10)
+                    {
+                        GiveItem1(myself.c_quest0, @aquamarine, 1);
+                        SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+                    }
+                }
+
+                if (Rand(10) < 6)
+                {
+                    if (OwnItemCount(myself.c_quest0, @aquamarine) + OwnItemCount(myself.c_quest0, @chrysoberyl) == 19)
+                    {
+                        if (OwnItemCount(myself.c_quest0, @chrysoberyl) < 10)
+                        {
+                            GiveItem1(myself.c_quest0, @chrysoberyl, 1);
+                            SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+                        }
+                    }
+                    else if (OwnItemCount(myself.c_quest0, @aquamarine) + OwnItemCount(myself.c_quest0, @chrysoberyl) < 20)
+                    {
+                        if (OwnItemCount(myself.c_quest0, @chrysoberyl) < 10)
+                        {
+                            GiveItem1(myself.c_quest0, @chrysoberyl, 1);
+                            SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+                        }
+                    }
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @crush_brigands))
+        {
+            i0 = Rand(10);
+            if (i0 > 5)
+            {
+                GiveItem1(c1, @goblin_necklace, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+            else if (i0 > 4)
+            {
+                if (OwnItemCount(c1, @suspicious_contract) < 1 && OwnItemCount(c1, @suspicious_memo) < 3)
+                {
+                    GiveItem1(c1, @suspicious_memo, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+                else if (OwnItemCount(c1, @suspicious_contract) < 1 && OwnItemCount(c1, @suspicious_memo) == 3)
+                {
+                    GiveItem1(c1, @suspicious_contract, 1);
+                    DeleteItem1(c1, @suspicious_memo, OwnItemCount(c1, @suspicious_memo));
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

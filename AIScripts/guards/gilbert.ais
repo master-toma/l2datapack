@@ -1,0 +1,212 @@
+class gilbert : chief_guard
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @guard_is_busy1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Listen about anguish");
+            }
+
+            if (HaveMemo(talker, @guard_is_busy1) == 0 && GetOneTimeQuestFlag(talker, @guard_is_busy1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Listen about anguish");
+            }
+
+            if (HaveMemo(talker, @guard_is_busy1) == 1 && OwnItemCount(talker, @orc_amulet) < 1 && OwnItemCount(talker, @orc_necklace) < 1 && OwnItemCount(talker, @werewolf_fang) < 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about the elimination again");
+            }
+
+            if (HaveMemo(talker, @guard_is_busy1) == 1 && (OwnItemCount(talker, @orc_amulet) > 0 || OwnItemCount(talker, @orc_necklace) > 0 || OwnItemCount(talker, @werewolf_fang) > 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show proof of the eliminated monster");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @gludio_guards_mark3) == 0 && OwnItemCount(talker, @mark_of_esquire) && OwnItemCount(talker, @coin_of_lords5) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @gludio_guards_mark3) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Talk about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @coin_of_lords5) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Talk about changing occupation to a Knight");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @guard_is_busy1) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 6)
+                        {
+                            FHTML_SetFileName(fhtml0, "gilbert_q0257_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @guard_is_busy1);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "gilbert_q0257_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @guard_is_busy1) == 0 && GetOneTimeQuestFlag(talker, @guard_is_busy1) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @guard_is_busy1) == 1 && OwnItemCount(talker, @orc_amulet) < 1 && OwnItemCount(talker, @orc_necklace) < 1 && OwnItemCount(talker, @werewolf_fang) < 1)
+                {
+                    ShowPage(talker, "gilbert_q0257_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @guard_is_busy1) == 1 && (OwnItemCount(talker, @orc_amulet) > 0 || OwnItemCount(talker, @orc_necklace) > 0 || OwnItemCount(talker, @werewolf_fang) > 0))
+                {
+                    ShowPage(talker, "gilbert_q0257_07.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @adena, 5 * OwnItemCount(talker, @orc_amulet) + 15 * OwnItemCount(talker, @orc_necklace) + 10 * OwnItemCount(talker, @werewolf_fang));
+                        DeleteItem1(talker, @orc_amulet, OwnItemCount(talker, @orc_amulet));
+                        DeleteItem1(talker, @orc_necklace, OwnItemCount(talker, @orc_necklace));
+                        DeleteItem1(talker, @werewolf_fang, OwnItemCount(talker, @werewolf_fang));
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @gludio_guards_mark3) == 0 && OwnItemCount(talker, @mark_of_esquire) && OwnItemCount(talker, @coin_of_lords5) == 0)
+                {
+                    ShowPage(talker, "gilbert_q0402_01.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @gludio_guards_mark3) > 0)
+                {
+                    if (OwnItemCount(talker, @giant_spider_husk) < 20)
+                    {
+                        ShowPage(talker, "gilbert_q0402_03.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "gilbert_q0402_04.htm");
+                        DeleteItem1(talker, @giant_spider_husk, OwnItemCount(talker, @giant_spider_husk));
+                        DeleteItem1(talker, @gludio_guards_mark3, 1);
+                        GiveItem1(talker, @coin_of_lords5, 1);
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @coin_of_lords5) > 0)
+                {
+                    ShowPage(talker, "gilbert_q0402_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @guard_is_busy1)
+        {
+            ShowPage(talker, "gilbert_q0257_03.htm");
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                GiveItem1(talker, @gludio_lords_mark, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @guard_is_busy1)
+        {
+            if (reply == 2)
+            {
+                ShowPage(talker, "gilbert_q0257_05.htm");
+                talker.quest_last_reward_time = GetCurrentTick();
+                DeleteItem1(talker, @gludio_lords_mark, OwnItemCount(talker, @gludio_lords_mark));
+                RemoveMemo(talker, @guard_is_busy1);
+                SoundEffect(talker, "ItemSound.quest_finish");
+            }
+            else if (reply == 3)
+            {
+                ShowPage(talker, "gilbert_q0257_06.htm");
+            }
+        }
+
+        if (ask == @path_to_knight)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "gilbert_q0402_02.htm");
+                    GiveItem1(talker, @gludio_guards_mark3, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

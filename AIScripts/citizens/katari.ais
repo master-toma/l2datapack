@@ -1,0 +1,87 @@
+class katari : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(i0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 5 || GetMemoState(talker, @trial_of_reformer) == 6)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that Sla sent you");
+            }
+
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && (GetMemoState(talker, @trial_of_reformer) == 8 || GetMemoState(talker, @trial_of_reformer) == 7))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Say that you killed the Ol Mahum Inspector");
+            }
+
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 9 && OwnItemCount(talker, @letter_of_betrayer) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Say that you killed the Ol Mahum Betrayer");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || (HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 5 || GetMemoState(talker, @trial_of_reformer) == 6))
+                {
+                    ShowPage(talker, "katari_q0227_01.htm");
+                    SetMemoState(talker, @trial_of_reformer, 6);
+                    DeleteItem1(talker, @slas_letter, OwnItemCount(talker, @slas_letter));
+                    if (Maker_GetNpcCount() == 1)
+                    {
+                        i0 = CreateOnePrivateEx(@ol_mahum_pilgrim, "ol_mahum_pilgrim", 0, 0, -4015, 40141, -3664, 0, 0, 0);
+                        CreateOnePrivateEx(@ol_mahum_inspector, "ol_mahum_inspector", 0, 0, -4034, 40201, -3665, i0, 0, 0);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && (GetMemoState(talker, @trial_of_reformer) == 8 || GetMemoState(talker, @trial_of_reformer) == 7))
+                {
+                    if (GetMemoState(talker, @trial_of_reformer) == 7)
+                    {
+                        SetMemoState(talker, @trial_of_reformer, 8);
+                    }
+
+                    ShowPage(talker, "katari_q0227_02.htm");
+                    if (Maker_GetNpcCount() < 3)
+                    {
+                        i0 = CreateOnePrivateEx(@ol_mahum_betrayer, "ol_mahum_betrayer", 0, 0, -4106, 40174, -3660, 0, 0, 0);
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 9 && OwnItemCount(talker, @letter_of_betrayer) >= 1)
+                {
+                    ShowPage(talker, "katari_q0227_03.htm");
+                    SetMemoState(talker, @trial_of_reformer, 10);
+                    DeleteItem1(talker, @letter_of_betrayer, 1);
+                    GiveItem1(talker, @kataris_letter, 1);
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

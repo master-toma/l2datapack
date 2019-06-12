@@ -1,0 +1,8 @@
+class merchant_for_chaotic : merchant
+{
+handler:
+    EventHandler TALKED(talker)
+    {
+        ShowPage(talker, fnHi);
+    }
+}

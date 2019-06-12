@@ -1,0 +1,159 @@
+class water_undine : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @wind_bangel) != 0 && OwnItemCount(talker, @ramas_diary) == 0 && OwnItemCount(talker, @water_necklace) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the Proof of Water");
+            }
+
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @ramas_diary) != 0 && OwnItemCount(talker, @sparkle_pebble) < 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the water seer");
+            }
+
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @ramas_diary) != 0 && OwnItemCount(talker, @sparkle_pebble) >= 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show the sparkle pebble");
+            }
+
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @water_necklace) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about the earth snake");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_water) == 0 && OwnItemCount(talker, @undine_charm) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Musical Note of Water");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @undine_charm) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Give water drop");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_water) == 1 && OwnItemCount(talker, @undine_charm) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Give water drop");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @wind_bangel) != 0 && OwnItemCount(talker, @ramas_diary) == 0 && OwnItemCount(talker, @water_necklace) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @ramas_diary) == 0)
+                        {
+                            GiveItem1(talker, @ramas_diary, 1);
+                        }
+
+                        ShowPage(talker, "water_undine_q0404_01.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @ramas_diary) != 0 && OwnItemCount(talker, @sparkle_pebble) < 2)
+                {
+                    ShowPage(talker, "water_undine_q0404_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @ramas_diary) != 0 && OwnItemCount(talker, @sparkle_pebble) >= 2)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @sparkle_pebble, OwnItemCount(talker, @sparkle_pebble));
+                        DeleteItem1(talker, @ramas_diary, OwnItemCount(talker, @ramas_diary));
+                        if (OwnItemCount(talker, @water_necklace) == 0)
+                        {
+                            GiveItem1(talker, @water_necklace, 1);
+                        }
+
+                        ShowPage(talker, "water_undine_q0404_03.htm");
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @water_necklace) != 0)
+                {
+                    ShowPage(talker, "water_undine_q0404_04.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_water) == 0 && OwnItemCount(talker, @undine_charm) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "water_undine_q0228_01.htm");
+                        GiveItem1(talker, @undine_charm, 1);
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @undine_charm) == 1)
+                {
+                    if (OwnItemCount(talker, @dazzling_drop) < 20)
+                    {
+                        ShowPage(talker, "water_undine_q0228_02.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "water_undine_q0228_03.htm");
+                        DeleteItem1(talker, @dazzling_drop, OwnItemCount(talker, @dazzling_drop));
+                        DeleteItem1(talker, @undine_charm, 1);
+                        GiveItem1(talker, @tone_of_water, 1);
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_water) == 1 && OwnItemCount(talker, @undine_charm) == 0)
+                {
+                    ShowPage(talker, "water_undine_q0228_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

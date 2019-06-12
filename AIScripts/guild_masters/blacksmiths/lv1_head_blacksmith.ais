@@ -1,0 +1,25 @@
+class lv1_head_blacksmith : guild_master_lv1
+{
+handler:
+    EventHandler TALKED(talker)
+    {
+        if (talker.race == @race_dwarf)
+        {
+            ShowPage(talker, fnHi);
+        }
+        else
+        {
+            ShowPage(talker, fnClassMismatch);
+        }
+    }
+
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -2 && reply == 1)
+        {
+            ShowPage(talker, fnClassList1);
+        }
+
+        super;
+    }
+}

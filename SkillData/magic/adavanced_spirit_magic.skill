@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_adavanced_spirit_magic]	/* [어드밴스드 스피릿 매직] */	skill_id = 187	level = 1	operate_type = P	effect = {}	skill_end

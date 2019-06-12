@@ -1,0 +1,3 @@
+class oren_royal_gatekeeper : castle_instant_teleporter
+{
+}

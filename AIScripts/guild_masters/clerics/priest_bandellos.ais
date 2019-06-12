@@ -1,0 +1,175 @@
+class priest_bandellos : cleric_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_healer) == 0 && GetOneTimeQuestFlag(talker, @test_of_healer) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Examination of Recovering Patient");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 0 && GetOneTimeQuestFlag(talker, @test_of_healer) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Examination of Recovering Patient");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) < 10 && GetMemoState(talker, @test_of_healer) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Report about the holy woman");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 10 && OwnItemCount(talker, @golden_statue) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Report about the holy woman");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 10 && OwnItemCount(talker, @golden_statue))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Report about the holy woman");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 0 && GetOneTimeQuestFlag(talker, @test_of_healer) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (IsInCategory(@white_magic_group, talker.occupation) && talker.level >= 39)
+                        {
+                            FHTML_SetFileName(fhtml0, "priest_bandellos_q0226_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @test_of_healer);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else if (IsInCategory(@white_magic_group, talker.occupation))
+                        {
+                            ShowPage(talker, "priest_bandellos_q0226_01.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "priest_bandellos_q0226_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 0 && GetOneTimeQuestFlag(talker, @test_of_healer) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) < 10 && GetMemoState(talker, @test_of_healer) >= 1)
+                {
+                    ShowPage(talker, "priest_bandellos_q0226_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 10 && OwnItemCount(talker, @golden_statue) == 0)
+                {
+                    ShowPage(talker, "priest_bandellos_q0226_06.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        IncrementParam(talker, @PARAM_EXP, 32000);
+                        IncrementParam(talker, @PARAM_SP, 4100);
+                        GiveItem1(talker, @mark_of_healer, 1);
+                        RemoveMemo(talker, @test_of_healer);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @test_of_healer, 1);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 10 && OwnItemCount(talker, @golden_statue))
+                {
+                    ShowPage(talker, "priest_bandellos_q0226_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @test_of_healer)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "priest_bandellos_q0226_04.htm");
+                SetMemoState(talker, @test_of_healer, 1);
+                GiveItem1(talker, @report_of_perrin, 1);
+                talker.flag = 0;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_healer)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "priest_bandellos_q0226_08.htm");
+            }
+            else if (reply == 2 && OwnItemCount(talker, @golden_statue) > 0)
+            {
+                ShowPage(talker, "priest_bandellos_q0226_09.htm");
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    IncrementParam(talker, @PARAM_EXP, 37000);
+                    IncrementParam(talker, @PARAM_SP, 4500);
+                    GiveItem1(talker, @mark_of_healer, 1);
+                    DeleteItem1(talker, @golden_statue, 1);
+                    RemoveMemo(talker, @test_of_healer);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                    SetOneTimeQuestFlag(talker, @test_of_healer, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

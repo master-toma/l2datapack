@@ -1,0 +1,3 @@
+class gargoyle_lord_sirocco : party_leader_aggressive
+{
+}

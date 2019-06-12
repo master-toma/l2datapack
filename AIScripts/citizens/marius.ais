@@ -1,0 +1,98 @@
+class marius : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @ranchers_plea) == 1 && OwnItemCount(talker, @giant_spider_skin) < 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask Marius");
+            }
+
+            if (HaveMemo(talker, @ranchers_plea) == 1 && OwnItemCount(talker, @giant_spider_skin) >= 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Receive compensation from Marius");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @ranchers_plea) == 1 && OwnItemCount(talker, @giant_spider_skin) < 10)
+                {
+                    ShowPage(talker, "marius_q0259_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @ranchers_plea) == 1 && OwnItemCount(talker, @giant_spider_skin) >= 10)
+                {
+                    ShowPage(talker, "marius_q0259_02.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @ranchers_plea)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "marius_q0259_03.htm");
+            }
+            else if (reply == 2 && OwnItemCount(talker, @giant_spider_skin) >= 10)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "marius_q0259_04.htm");
+                    GiveItem1(talker, @healing_potion, 1);
+                    DeleteItem1(talker, @giant_spider_skin, 10);
+                }
+            }
+            else if (reply == 3 && OwnItemCount(talker, @giant_spider_skin) >= 10)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "marius_q0259_05.htm");
+                    GiveItem1(talker, @wooden_arrow, 50);
+                    DeleteItem1(talker, @giant_spider_skin, 10);
+                }
+            }
+            else if (reply == 4)
+            {
+                if (OwnItemCount(talker, @giant_spider_skin) >= 10)
+                {
+                    ShowPage(talker, "marius_q0259_06.htm");
+                }
+                else if (OwnItemCount(talker, @giant_spider_skin) < 10)
+                {
+                    ShowPage(talker, "marius_q0259_07.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

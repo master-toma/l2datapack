@@ -1,0 +1,3 @@
+class virud_lizardman_warrior : warrior_aggressive
+{
+}

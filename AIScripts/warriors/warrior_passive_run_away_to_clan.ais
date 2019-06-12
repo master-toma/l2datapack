@@ -1,0 +1,3 @@
+class warrior_passive_run_away_to_clan : warrior_run_away_to_clan
+{
+}

@@ -1,0 +1,18 @@
+class ai_boss02_teleport_cube : instant_teleporter
+{
+handler:
+    EventHandler CREATED()
+    {
+        AddTimerEx(2001, 900000);
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 2001)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+}

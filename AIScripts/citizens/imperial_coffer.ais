@@ -1,0 +1,110 @@
+class imperial_coffer : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && (GetMemoState(talker, @pledge_seeks_ambition) >= 8500 && GetMemoState(talker, @pledge_seeks_ambition) < 8700) && OwnItemCount(talker, @q_imperial_key) >= 6 && talker.is_pledge_master == @FALSE)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Examine the chest");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && (GetMemoState(talker, @pledge_seeks_ambition) >= 8500 && GetMemoState(talker, @pledge_seeks_ambition) < 8700) && OwnItemCount(talker, @q_imperial_key) >= 6 && talker.is_pledge_master == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Examine the chest");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) >= 8700)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Examine the chest");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && (GetMemoState(talker, @pledge_seeks_ambition) >= 8500 && GetMemoState(talker, @pledge_seeks_ambition) < 8700) && OwnItemCount(talker, @q_imperial_key) >= 6 && talker.is_pledge_master == @FALSE)
+                {
+                    ShowPage(talker, "imperial_coffer_q0503_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && (GetMemoState(talker, @pledge_seeks_ambition) >= 8500 && GetMemoState(talker, @pledge_seeks_ambition) < 8700) && OwnItemCount(talker, @q_imperial_key) >= 6 && talker.is_pledge_master == 1)
+                {
+                    ShowPage(talker, "imperial_coffer_q0503_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) >= 8700)
+                {
+                    ShowPage(talker, "imperial_coffer_q0503_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 250301)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        Say(MakeFString(50339, "", "", "", "", ""));
+        AddTimerEx(250301, 1000 * 60 * 3);
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @pledge_seeks_ambition)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "imperial_coffer_q0503_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(talker, @q_scepter_of_judgemnt, 1);
+                    DeleteItem1(talker, @q_imperial_key, OwnItemCount(talker, @q_imperial_key));
+                    SetMemoState(talker, @pledge_seeks_ambition, 8700);
+                    ShowPage(talker, "imperial_coffer_q0503_04.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

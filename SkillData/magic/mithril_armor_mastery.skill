@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_mithril_armor_mastery]	/* [미스릴 아머 마스터리] */	skill_id = 152	level = 1	operate_type = P	effect = {}	skill_end

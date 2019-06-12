@@ -1,0 +1,122 @@
+class beltkem : guard_stand
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @arrow_for_vengeance) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about the evil creatures of the Dragon Valley");
+            }
+
+            if (HaveMemo(talker, @arrow_for_vengeance) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about weapon materials");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @arrow_for_vengeance) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 32)
+                        {
+                            FHTML_SetFileName(fhtml0, "beltkem_q0331_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @arrow_for_vengeance);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "beltkem_q0331_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @arrow_for_vengeance) == 1)
+                {
+                    if (OwnItemCount(talker, @harpy_feather) + OwnItemCount(talker, @medusa_venom) + OwnItemCount(talker, @wyrms_tooth) > 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @adena, 80 * OwnItemCount(talker, @harpy_feather) + 90 * OwnItemCount(talker, @medusa_venom) + 100 * OwnItemCount(talker, @wyrms_tooth));
+                            DeleteItem1(talker, @harpy_feather, OwnItemCount(talker, @harpy_feather));
+                            DeleteItem1(talker, @medusa_venom, OwnItemCount(talker, @medusa_venom));
+                            DeleteItem1(talker, @wyrms_tooth, OwnItemCount(talker, @wyrms_tooth));
+                            ShowPage(talker, "beltkem_q0331_05.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "beltkem_q0331_04.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @arrow_for_vengeance)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "beltkem_q0331_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @arrow_for_vengeance)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "beltkem_q0331_06.htm");
+                RemoveMemo(talker, @arrow_for_vengeance);
+                SoundEffect(talker, "ItemSound.quest_finish");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "beltkem_q0331_07.htm");
+            }
+        }
+
+        super;
+    }
+}

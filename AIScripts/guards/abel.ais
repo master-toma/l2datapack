@@ -1,0 +1,103 @@
+class abel : guard_stand
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @find_sir_windawood) == 0 && GetOneTimeQuestFlag(talker, @find_sir_windawood) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear the request of Abellos");
+            }
+
+            if (HaveMemo(talker, @find_sir_windawood) == 0 && GetOneTimeQuestFlag(talker, @find_sir_windawood) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear the request of Abellos");
+            }
+
+            if (HaveMemo(talker, @find_sir_windawood) == 1 && OwnItemCount(talker, @official_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Report the progress of search for Sir Windawood");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @find_sir_windawood) == 0 && GetOneTimeQuestFlag(talker, @find_sir_windawood) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 3)
+                        {
+                            FHTML_SetFileName(fhtml0, "abel_q0305_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @find_sir_windawood);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "abel_q0305_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @find_sir_windawood) == 0 && GetOneTimeQuestFlag(talker, @find_sir_windawood) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @find_sir_windawood) == 1 && OwnItemCount(talker, @official_letter) == 1)
+                {
+                    ShowPage(talker, "abel_q0305_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @find_sir_windawood)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                GiveItem1(talker, @official_letter, 1);
+                ShowPage(talker, "abel_q0305_04.htm");
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

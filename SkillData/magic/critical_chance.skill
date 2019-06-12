@@ -1,0 +1,3 @@
+skill_begin	skill_name = [s_critical_chance1]	/* [크리티컬 챈스] */	skill_id = 137	level = 1	operate_type = P	effect = {{p_critical_rate;20;per}}	skill_end
+skill_begin	skill_name = [s_critical_chance2]	/* [크리티컬 챈스] */	skill_id = 137	level = 2	operate_type = P	effect = {{p_critical_rate;30;per}}	skill_end
+skill_begin	skill_name = [s_critical_chance3]	/* [크리티컬 챈스] */	skill_id = 137	level = 3	operate_type = P	effect = {{p_critical_rate;40;per}}	skill_end

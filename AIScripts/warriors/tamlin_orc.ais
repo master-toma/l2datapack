@@ -1,0 +1,100 @@
+class tamlin_orc : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_glory) && OwnItemCount(c1, @necklace_of_authority) && OwnItemCount(c1, @chiantas_order3) && OwnItemCount(c1, @tamlin_orc_skull) < 20)
+        {
+            if (Rand(10) < 5)
+            {
+                if (OwnItemCount(c1, @tamlin_orc_skull) == 19)
+                {
+                    GiveItem1(c1, @tamlin_orc_skull, 1);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @tamlin_orc_skull, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_witchcraft) == 1 && OwnItemCount(c1, @vadins_crucifix) == 1)
+        {
+            if (Rand(100) < 50 && OwnItemCount(c1, @tamlin_orc_amulet) < 20)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @tamlin_orc_amulet, 1);
+                    if (OwnItemCount(c1, @tamlin_orc_amulet) >= 20)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_warspirit) && OwnItemCount(c1, @vendetta_totem) == 1 && OwnItemCount(c1, @tamlin_orc_head) < 13)
+        {
+            if (Rand(100) < 50)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @tamlin_orc_head, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_duelist) && OwnItemCount(c1, @tamrin_orcs_ring) < 10 && GetMemoState(c1, @test_of_duelist) == 1)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @tamrin_orcs_ring, 1);
+                if (OwnItemCount(c1, @tamrin_orcs_ring) >= 10)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_1c_12) && OwnItemCount(c1, @q_tamlin_ivory_charm) < 40)
+        {
+            if (Rand(10) < 8)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @q_tamlin_ivory_charm, 1);
+                    if (OwnItemCount(c1, @q_tamlin_ivory_charm) >= 40)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,87 @@
+class blacksmith_sumari : blacksmith
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @hatos_charm) >= 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @sword_into_skull) == 0 && OwnItemCount(talker, @urutu_blade) == 0 && OwnItemCount(talker, @sumaris_letter) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you are currently challenging the Examination of Lord");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @sword_into_skull) == 0 && OwnItemCount(talker, @urutu_blade) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @hatos_charm) >= 1 && OwnItemCount(talker, @sumaris_letter) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Seer Somak");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @sumaris_letter) == 0 && OwnItemCount(talker, @sword_into_skull) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @hatos_charm) >= 1 && OwnItemCount(talker, @urutu_blade) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Seer Somak");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @sword_into_skull) >= 1 && OwnItemCount(talker, @hatos_charm) == 0 && OwnItemCount(talker, @urutu_blade) == 0 && OwnItemCount(talker, @sumaris_letter) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show Totem of Urutu Tribe");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @hatos_charm) >= 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @sword_into_skull) == 0 && OwnItemCount(talker, @urutu_blade) == 0 && OwnItemCount(talker, @sumaris_letter) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "blacksmith_sumari_q0232_01.htm");
+                        GiveItem1(talker, @sumaris_letter, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @sword_into_skull) == 0 && OwnItemCount(talker, @urutu_blade) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @hatos_charm) >= 1 && OwnItemCount(talker, @sumaris_letter) >= 1)
+                {
+                    ShowPage(talker, "blacksmith_sumari_q0232_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @sumaris_letter) == 0 && OwnItemCount(talker, @sword_into_skull) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @hatos_charm) >= 1 && OwnItemCount(talker, @urutu_blade) >= 1)
+                {
+                    ShowPage(talker, "blacksmith_sumari_q0232_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @sword_into_skull) >= 1 && OwnItemCount(talker, @hatos_charm) == 0 && OwnItemCount(talker, @urutu_blade) == 0 && OwnItemCount(talker, @sumaris_letter) == 0)
+                {
+                    ShowPage(talker, "blacksmith_sumari_q0232_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

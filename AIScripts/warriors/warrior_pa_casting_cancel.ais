@@ -1,0 +1,3 @@
+class warrior_pa_casting_cancel : warrior_casting_cancel
+{
+}

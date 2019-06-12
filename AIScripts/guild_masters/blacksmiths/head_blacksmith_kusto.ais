@@ -1,0 +1,101 @@
+class head_blacksmith_kusto : master_lv3_black
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && talker.is_pledge_master == @FALSE)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Greet as the underling of Sir Athebaldt");
+            }
+
+            if (HaveMemo(talker, @pledge_seeks_ambition) == 1 && OwnItemCount(talker, @q_magipie_brooch) == 0 && OwnItemCount(talker, @q_black_anvil_coin) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Greet as the underling of Sir Athebaldt");
+            }
+
+            if (HaveMemo(talker, @pledge_seeks_ambition) == 1 && OwnItemCount(talker, @q_magipie_brooch) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show Broach of Degachi");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && OwnItemCount(talker, @q_black_anvil_coin) == 1 && OwnItemCount(talker, @q_magipie_brooch) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show Black Moru Coinage");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && talker.is_pledge_master == @FALSE)
+                {
+                    ShowPage(talker, "head_blacksmith_kusto_q0503_01a.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @pledge_seeks_ambition) == 1 && OwnItemCount(talker, @q_magipie_brooch) == 0 && OwnItemCount(talker, @q_black_anvil_coin) == 0)
+                {
+                    ShowPage(talker, "head_blacksmith_kusto_q0503_01.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @pledge_seeks_ambition) == 1 && OwnItemCount(talker, @q_magipie_brooch) == 1)
+                {
+                    ShowPage(talker, "head_blacksmith_kusto_q0503_02.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && OwnItemCount(talker, @q_black_anvil_coin) == 1 && OwnItemCount(talker, @q_magipie_brooch) == 0)
+                {
+                    ShowPage(talker, "head_blacksmith_kusto_q0503_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @pledge_seeks_ambition)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(talker, @q_black_anvil_coin, 1);
+                    DeleteItem1(talker, @q_magipie_brooch, OwnItemCount(talker, @q_magipie_brooch));
+                    ShowPage(talker, "head_blacksmith_kusto_q0503_03.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

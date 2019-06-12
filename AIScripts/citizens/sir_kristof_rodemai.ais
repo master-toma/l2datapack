@@ -1,0 +1,150 @@
+class sir_kristof_rodemai : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, pledge0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @pledge_of_blood) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you want to increase the power of your clan");
+            }
+
+            if (HaveMemo(talker, @pledge_of_blood) == 1 && GetMemoState(talker, @pledge_of_blood) == 6 && OwnItemCount(talker, @q_voucher_of_faith) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Report the test results");
+            }
+
+            if (HaveMemo(talker, @pledge_of_blood) == 1 && GetMemoState(talker, @pledge_of_blood) >= 1 && OwnItemCount(talker, @q_voucher_of_faith) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Report the test results");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @pledge_of_blood) == 0)
+                {
+                    if (talker.is_pledge_master == 1)
+                    {
+                        if (GetMemoCount(talker) < 16)
+                        {
+                            pledge0 = GetPledge(talker);
+                            if (pledge0.skill_level < 3)
+                            {
+                                ShowPage(talker, "sir_kristof_rodemai_q0501_01.htm");
+                            }
+                            else if (pledge0.skill_level == 3)
+                            {
+                                if (OwnItemCount(talker, @q_proof_of_alliance) == 1)
+                                {
+                                    ShowPage(talker, "sir_kristof_rodemai_q0501_03.htm");
+                                }
+                                else
+                                {
+                                    ShowPage(talker, "sir_kristof_rodemai_q0501_04.htm");
+                                }
+                            }
+                            else
+                            {
+                                ShowPage(talker, "sir_kristof_rodemai_q0501_02.htm");
+                            }
+                        }
+                        else
+                        {
+                            ShowPage(talker, "fullquest.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "sir_kristof_rodemai_q0501_05.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @pledge_of_blood) == 1 && GetMemoState(talker, @pledge_of_blood) == 6 && OwnItemCount(talker, @q_voucher_of_faith) == 1)
+                {
+                    ShowPage(talker, "sir_kristof_rodemai_q0501_09.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @q_voucher_of_faith, OwnItemCount(talker, @q_voucher_of_faith));
+                        GiveItem1(talker, @q_proof_of_alliance, 1);
+                        IncrementParam(talker, @PARAM_SP, 120000);
+                        RemoveMemo(talker, @pledge_of_blood);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @pledge_of_blood) == 1 && GetMemoState(talker, @pledge_of_blood) >= 1 && OwnItemCount(talker, @q_voucher_of_faith) == 0)
+                {
+                    ShowPage(talker, "sir_kristof_rodemai_q0501_10.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @pledge_of_blood)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "sir_kristof_rodemai_q0501_07.htm");
+                SetMemoState(talker, @pledge_of_blood, 1);
+                SetJournal(talker, @pledge_of_blood, 1);
+                myself.i_quest0 = 0;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @pledge_of_blood)
+        {
+            if (reply == 1)
+            {
+                FHTML_SetFileName(fhtml0, "sir_kristof_rodemai_q0501_06.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @pledge_of_blood);
+                ShowFHTML(talker, fhtml0);
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "sir_kristof_rodemai_q0501_08.htm");
+            }
+        }
+
+        super;
+    }
+}

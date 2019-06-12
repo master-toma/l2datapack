@@ -1,0 +1,255 @@
+class prefect_kasman : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @gantakis_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Give Gantaki's letter");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @fig) && (OwnItemCount(talker, @leather_purse4) == 0 || OwnItemCount(talker, @leather_pouch4full) == 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Khavatari Toruku");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @fig) == 0 && (OwnItemCount(talker, @leather_purse4) == 1 || OwnItemCount(talker, @leather_pouch4full) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about Khavatari Toruku");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @scroll_iron_will))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give iron will scroll");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_raider) == 1 && OwnItemCount(talker, @betrayer_sue_report) + OwnItemCount(talker, @betrayer_chewba_report) + OwnItemCount(talker, @betrayer_wanuk_report) + OwnItemCount(talker, @betrayer_heitafu_report) + OwnItemCount(talker, @betrayer_picubo_report) + OwnItemCount(talker, @betrayer_bumbum_report) + OwnItemCount(talker, @betrayer_minsku_report) + OwnItemCount(talker, @betrayer_chuchu_report) + OwnItemCount(talker, @betrayer_umbar_report) + OwnItemCount(talker, @betrayer_zakan_report) == 2 && OwnItemCount(talker, @head_of_betrayer) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about the orc betrayers");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_raider) == 1 && (OwnItemCount(talker, @head_of_betrayer) > 0 && OwnItemCount(talker, @head_of_betrayer) < 2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Show head of betrayer");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_raider) == 1 && OwnItemCount(talker, @head_of_betrayer) == 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Show heads of two betrayers");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask about the dynamics of the Lower Orcs");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && (OwnItemCount(talker, @chiantas_order2) || OwnItemCount(talker, @chiantas_order3) || OwnItemCount(talker, @scepter_box)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Tejakar Oroka!!");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @gantakis_letter))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "prefect_kasman_q0415_01.htm");
+                        DeleteItem1(talker, @gantakis_letter, 1);
+                        GiveItem1(talker, @fig, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @fig) && (OwnItemCount(talker, @leather_purse4) == 0 || OwnItemCount(talker, @leather_pouch4full) == 0))
+                {
+                    ShowPage(talker, "prefect_kasman_q0415_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @fig) == 0 && (OwnItemCount(talker, @leather_purse4) == 1 || OwnItemCount(talker, @leather_pouch4full) == 1))
+                {
+                    ShowPage(talker, "prefect_kasman_q0415_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @scroll_iron_will))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "prefect_kasman_q0415_04.htm");
+                        DeleteItem1(talker, @scroll_iron_will, 1);
+                        DeleteItem1(talker, @scroll_fiery_spirit, OwnItemCount(talker, @scroll_fiery_spirit));
+                        DeleteItem1(talker, @torukus_letter, OwnItemCount(talker, @torukus_letter));
+                        GiveItem1(talker, @khavatari_totem, 1);
+                        RemoveMemo(talker, @path_to_orc_monk);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_raider) == 1 && OwnItemCount(talker, @betrayer_sue_report) + OwnItemCount(talker, @betrayer_chewba_report) + OwnItemCount(talker, @betrayer_wanuk_report) + OwnItemCount(talker, @betrayer_heitafu_report) + OwnItemCount(talker, @betrayer_picubo_report) + OwnItemCount(talker, @betrayer_bumbum_report) + OwnItemCount(talker, @betrayer_minsku_report) + OwnItemCount(talker, @betrayer_chuchu_report) + OwnItemCount(talker, @betrayer_umbar_report) + OwnItemCount(talker, @betrayer_zakan_report) == 2 && OwnItemCount(talker, @head_of_betrayer) == 0)
+                {
+                    ShowPage(talker, "prefect_kasman_q0414_01.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_raider) == 1 && (OwnItemCount(talker, @head_of_betrayer) > 0 && OwnItemCount(talker, @head_of_betrayer) < 2))
+                {
+                    ShowPage(talker, "prefect_kasman_q0414_02.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_raider) == 1 && OwnItemCount(talker, @head_of_betrayer) == 2)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "prefect_kasman_q0414_03.htm");
+                        DeleteItem1(talker, @head_of_betrayer, OwnItemCount(talker, @head_of_betrayer));
+                        DeleteItem1(talker, @betrayer_sue_report, OwnItemCount(talker, @betrayer_sue_report));
+                        DeleteItem1(talker, @betrayer_chewba_report, OwnItemCount(talker, @betrayer_chewba_report));
+                        DeleteItem1(talker, @betrayer_wanuk_report, OwnItemCount(talker, @betrayer_wanuk_report));
+                        DeleteItem1(talker, @betrayer_heitafu_report, OwnItemCount(talker, @betrayer_heitafu_report));
+                        DeleteItem1(talker, @betrayer_picubo_report, OwnItemCount(talker, @betrayer_picubo_report));
+                        DeleteItem1(talker, @betrayer_bumbum_report, OwnItemCount(talker, @betrayer_bumbum_report));
+                        DeleteItem1(talker, @betrayer_minsku_report, OwnItemCount(talker, @betrayer_minsku_report));
+                        DeleteItem1(talker, @betrayer_chuchu_report, OwnItemCount(talker, @betrayer_chuchu_report));
+                        DeleteItem1(talker, @betrayer_umbar_report, OwnItemCount(talker, @betrayer_umbar_report));
+                        DeleteItem1(talker, @betrayer_zakan_report, OwnItemCount(talker, @betrayer_zakan_report));
+                        GiveItem1(talker, @mark_of_raider, 1);
+                        RemoveMemo(talker, @path_to_orc_raider);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                    }
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1))
+                {
+                    ShowPage(talker, "prefect_kasman_q0220_01.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && (OwnItemCount(talker, @chiantas_order2) || OwnItemCount(talker, @chiantas_order3) || OwnItemCount(talker, @scepter_box)))
+                {
+                    ShowPage(talker, "prefect_kasman_q0220_11.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_glory)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @scepter_of_vuku))
+                {
+                    ShowPage(talker, "prefect_kasman_q0220_02.htm");
+                }
+                else if (OwnItemCount(talker, @scepter_of_vuku) == 0 && OwnItemCount(talker, @kasmans_letter1) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "prefect_kasman_q0220_03.htm");
+                        GiveItem1(talker, @kasmans_letter1, 1);
+                    }
+                }
+                else if (OwnItemCount(talker, @scepter_of_breka) == 0 && (OwnItemCount(talker, @kasmans_letter1) || OwnItemCount(talker, @drikos_contract)))
+                {
+                    ShowPage(talker, "prefect_kasman_q0220_04.htm");
+                }
+            }
+            else if (reply == 2)
+            {
+                if (OwnItemCount(talker, @scepter_of_turek))
+                {
+                    ShowPage(talker, "prefect_kasman_q0220_05.htm");
+                }
+                else if (OwnItemCount(talker, @scepter_of_turek) == 0 && OwnItemCount(talker, @kasmans_letter2) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "prefect_kasman_q0220_06.htm");
+                        GiveItem1(talker, @kasmans_letter2, 1);
+                    }
+                }
+                else if (OwnItemCount(talker, @scepter_of_turek) == 0 && OwnItemCount(talker, @kasmans_letter2))
+                {
+                    ShowPage(talker, "prefect_kasman_q0220_07.htm");
+                }
+            }
+            else if (reply == 3)
+            {
+                if (OwnItemCount(talker, @scepter_of_lennunt))
+                {
+                    ShowPage(talker, "prefect_kasman_q0220_08.htm");
+                }
+                else if (OwnItemCount(talker, @scepter_of_lennunt) == 0 && OwnItemCount(talker, @kasmans_letter3) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "prefect_kasman_q0220_09.htm");
+                        GiveItem1(talker, @kasmans_letter3, 1);
+                    }
+                }
+                else if (OwnItemCount(talker, @scepter_of_lennunt) == 0 && OwnItemCount(talker, @kasmans_letter3))
+                {
+                    ShowPage(talker, "prefect_kasman_q0220_10.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_strong_to_fire]	/* [불에 강함] */	skill_id = 4009	level = 1	operate_type = P	effect = {{p_defence_attribute;attr_fire;-50}}	skill_end

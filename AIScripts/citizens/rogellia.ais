@@ -1,0 +1,326 @@
+class rogellia : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_elvenwizard) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to Elven Wizard");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @rogellias_letter) == 0 && OwnItemCount(talker, @appetizing_apple) == 0 && OwnItemCount(talker, @immortal_love) == 0 && OwnItemCount(talker, @charm_of_grain) == 0 && OwnItemCount(talker, @sap_of_world_tree) == 0 && OwnItemCount(talker, @lucky_potpouri) == 0 && OwnItemCount(talker, @fertility_peridot) != 0 && (OwnItemCount(talker, @magical_powers_ruby) == 0 || OwnItemCount(talker, @nobility_amethyst) == 0 || OwnItemCount(talker, @pure_aquamarine) == 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the four jewels");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @rogellias_letter) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show Rosella's letter");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @charm_of_grain) != 0 && OwnItemCount(talker, @red_down) < 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show the red fleece");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @charm_of_grain) != 0 && OwnItemCount(talker, @red_down) >= 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Show the red fleece");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @appetizing_apple) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Show the apple");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @sap_of_world_tree) != 0 && OwnItemCount(talker, @gold_leaves) < 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Show the gold leaf");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @sap_of_world_tree) != 0 && OwnItemCount(talker, @gold_leaves) >= 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Show the gold leaf");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @immortal_love) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Speak of love everlasting");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @lucky_potpouri) != 0 && OwnItemCount(talker, @amethyst) < 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Display the Nobility Amethyst");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @lucky_potpouri) != 0 && OwnItemCount(talker, @amethyst) >= 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Display the Nobility Amethyst");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @rogellias_letter) == 0 && OwnItemCount(talker, @appetizing_apple) == 0 && OwnItemCount(talker, @immortal_love) == 0 && OwnItemCount(talker, @charm_of_grain) == 0 && OwnItemCount(talker, @sap_of_world_tree) == 0 && OwnItemCount(talker, @lucky_potpouri) == 0 && OwnItemCount(talker, @fertility_peridot) != 0 && OwnItemCount(talker, @magical_powers_ruby) != 0 && OwnItemCount(talker, @nobility_amethyst) != 0 && OwnItemCount(talker, @pure_aquamarine) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 11;
+                AddChoice(11, "Show the four jewels");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        ShowPage(talker, "rogellia_q0408_01.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @rogellias_letter) == 0 && OwnItemCount(talker, @appetizing_apple) == 0 && OwnItemCount(talker, @immortal_love) == 0 && OwnItemCount(talker, @charm_of_grain) == 0 && OwnItemCount(talker, @sap_of_world_tree) == 0 && OwnItemCount(talker, @lucky_potpouri) == 0 && OwnItemCount(talker, @fertility_peridot) != 0 && (OwnItemCount(talker, @magical_powers_ruby) == 0 || OwnItemCount(talker, @nobility_amethyst) == 0 || OwnItemCount(talker, @pure_aquamarine) == 0))
+                {
+                    ShowPage(talker, "rogellia_q0408_11.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @rogellias_letter) != 0)
+                {
+                    ShowPage(talker, "rogellia_q0408_08.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @charm_of_grain) != 0 && OwnItemCount(talker, @red_down) < 5)
+                {
+                    ShowPage(talker, "rogellia_q0408_09.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @charm_of_grain) != 0 && OwnItemCount(talker, @red_down) >= 5)
+                {
+                    ShowPage(talker, "rogellia_q0408_25.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @appetizing_apple) != 0)
+                {
+                    ShowPage(talker, "rogellia_q0408_15.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @sap_of_world_tree) != 0 && OwnItemCount(talker, @gold_leaves) < 5)
+                {
+                    ShowPage(talker, "rogellia_q0408_16.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @sap_of_world_tree) != 0 && OwnItemCount(talker, @gold_leaves) >= 5)
+                {
+                    ShowPage(talker, "rogellia_q0408_26.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @immortal_love) != 0)
+                {
+                    ShowPage(talker, "rogellia_q0408_19.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @lucky_potpouri) != 0 && OwnItemCount(talker, @amethyst) < 2)
+                {
+                    ShowPage(talker, "rogellia_q0408_20.htm");
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @lucky_potpouri) != 0 && OwnItemCount(talker, @amethyst) >= 2)
+                {
+                    ShowPage(talker, "rogellia_q0408_27.htm");
+                }
+
+                break;
+            case 11:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @rogellias_letter) == 0 && OwnItemCount(talker, @appetizing_apple) == 0 && OwnItemCount(talker, @immortal_love) == 0 && OwnItemCount(talker, @charm_of_grain) == 0 && OwnItemCount(talker, @sap_of_world_tree) == 0 && OwnItemCount(talker, @lucky_potpouri) == 0 && OwnItemCount(talker, @fertility_peridot) != 0 && OwnItemCount(talker, @magical_powers_ruby) != 0 && OwnItemCount(talker, @nobility_amethyst) != 0 && OwnItemCount(talker, @pure_aquamarine) != 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @magical_powers_ruby, OwnItemCount(talker, @magical_powers_ruby));
+                        DeleteItem1(talker, @pure_aquamarine, OwnItemCount(talker, @pure_aquamarine));
+                        DeleteItem1(talker, @nobility_amethyst, OwnItemCount(talker, @nobility_amethyst));
+                        DeleteItem1(talker, @fertility_peridot, OwnItemCount(talker, @fertility_peridot));
+                        RemoveMemo(talker, @path_to_elvenwizard);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        if (OwnItemCount(talker, @eternity_diamond) == 0)
+                        {
+                            GiveItem1(talker, @eternity_diamond, 1);
+                        }
+
+                        ShowPage(talker, "rogellia_q0408_24.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_elvenwizard)
+        {
+            if (talker.occupation != @elven_mage)
+            {
+                if (talker.occupation == @elven_wizard)
+                {
+                    ShowPage(talker, "rogellia_q0408_02a.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "rogellia_q0408_03.htm");
+                }
+            }
+            else if (talker.level < 19)
+            {
+                ShowPage(talker, "rogellia_q0408_04.htm");
+            }
+            else if (OwnItemCount(talker, @eternity_diamond) != 0)
+            {
+                ShowPage(talker, "rogellia_q0408_05.htm");
+            }
+            else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @fertility_peridot) == 0)
+                {
+                    GiveItem1(talker, @fertility_peridot, 1);
+                }
+
+                ShowPage(talker, "rogellia_q0408_06.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_elvenwizard && reply == 1)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @magical_powers_ruby) != 0)
+                {
+                    ShowPage(talker, "rogellia_q0408_10.htm");
+                }
+                else if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @magical_powers_ruby) == 0 && OwnItemCount(talker, @fertility_peridot) != 0)
+                {
+                    if (OwnItemCount(talker, @rogellias_letter) == 0)
+                    {
+                        GiveItem1(talker, @rogellias_letter, 1);
+                    }
+
+                    ShowPage(talker, "rogellia_q0408_07.htm");
+                }
+            }
+        }
+
+        if (ask == @path_to_elvenwizard && reply == 2)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @pure_aquamarine) != 0)
+                {
+                    ShowPage(talker, "rogellia_q0408_13.htm");
+                }
+                else if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @pure_aquamarine) == 0 && OwnItemCount(talker, @fertility_peridot) != 0)
+                {
+                    if (OwnItemCount(talker, @appetizing_apple) == 0)
+                    {
+                        GiveItem1(talker, @appetizing_apple, 1);
+                    }
+
+                    ShowPage(talker, "rogellia_q0408_14.htm");
+                }
+            }
+        }
+
+        if (ask == @path_to_elvenwizard && reply == 3)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @nobility_amethyst) != 0)
+                {
+                    ShowPage(talker, "rogellia_q0408_17.htm");
+                }
+                else if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @nobility_amethyst) == 0 && OwnItemCount(talker, @fertility_peridot) != 0)
+                {
+                    if (OwnItemCount(talker, @immortal_love) == 0)
+                    {
+                        GiveItem1(talker, @immortal_love, 1);
+                    }
+
+                    ShowPage(talker, "rogellia_q0408_18.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

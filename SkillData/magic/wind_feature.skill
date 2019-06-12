@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_wind_feature]	/* [바람강함땅약함] */	skill_id = 4015	level = 1	operate_type = P	effect = {{p_defence_attribute;attr_wind;-50};{p_defence_attribute;attr_earth;15}}	skill_end

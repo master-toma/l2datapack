@@ -1,0 +1,89 @@
+class northwindel : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @immortal_love) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Speak of love everlasting");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @lucky_potpouri) != 0 && OwnItemCount(talker, @amethyst) < 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the Nobility Amethyst");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @lucky_potpouri) != 0 && OwnItemCount(talker, @amethyst) >= 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Display the Nobility Amethyst");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @immortal_love) != 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @immortal_love, OwnItemCount(talker, @immortal_love));
+                        if (OwnItemCount(talker, @lucky_potpouri) == 0)
+                        {
+                            GiveItem1(talker, @lucky_potpouri, 1);
+                        }
+
+                        ShowPage(talker, "northwindel_q0408_01.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @lucky_potpouri) != 0 && OwnItemCount(talker, @amethyst) < 2)
+                {
+                    ShowPage(talker, "northwindel_q0408_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @lucky_potpouri) != 0 && OwnItemCount(talker, @amethyst) >= 2)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @amethyst, OwnItemCount(talker, @amethyst));
+                        DeleteItem1(talker, @lucky_potpouri, OwnItemCount(talker, @lucky_potpouri));
+                        if (OwnItemCount(talker, @nobility_amethyst) == 0)
+                        {
+                            GiveItem1(talker, @nobility_amethyst, 1);
+                        }
+
+                        ShowPage(talker, "northwindel_q0408_03.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

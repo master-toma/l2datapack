@@ -1,0 +1,159 @@
+class flame_salamander : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @map_of_luster) == 0 && OwnItemCount(talker, @flame_earing) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the proof of flame");
+            }
+
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @map_of_luster) != 0 && OwnItemCount(talker, @key_of_flame) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the seer");
+            }
+
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @map_of_luster) != 0 && OwnItemCount(talker, @key_of_flame) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show the flame key");
+            }
+
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @flame_earing) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about the wind sylph");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_fire) == 0 && OwnItemCount(talker, @salamander_charm) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Musical Note of Fire");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @salamander_charm) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Give Crystal of Flame");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_fire) == 1 && OwnItemCount(talker, @salamander_charm) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Get information about Stone of Purification");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @map_of_luster) == 0 && OwnItemCount(talker, @flame_earing) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @map_of_luster) == 0)
+                        {
+                            GiveItem1(talker, @map_of_luster, 1);
+                        }
+
+                        ShowPage(talker, "flame_salamander_q0404_01.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @map_of_luster) != 0 && OwnItemCount(talker, @key_of_flame) == 0)
+                {
+                    ShowPage(talker, "flame_salamander_q0404_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @map_of_luster) != 0 && OwnItemCount(talker, @key_of_flame) != 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @key_of_flame, OwnItemCount(talker, @key_of_flame));
+                        DeleteItem1(talker, @map_of_luster, OwnItemCount(talker, @map_of_luster));
+                        if (OwnItemCount(talker, @flame_earing) == 0)
+                        {
+                            GiveItem1(talker, @flame_earing, 1);
+                        }
+
+                        ShowPage(talker, "flame_salamander_q0404_03.htm");
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @flame_earing) != 0)
+                {
+                    ShowPage(talker, "flame_salamander_q0404_04.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_fire) == 0 && OwnItemCount(talker, @salamander_charm) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "flame_salamander_q0228_01.htm");
+                        GiveItem1(talker, @salamander_charm, 1);
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @salamander_charm) == 1)
+                {
+                    if (OwnItemCount(talker, @flame_crystal) < 5)
+                    {
+                        ShowPage(talker, "flame_salamander_q0228_02.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "flame_salamander_q0228_03.htm");
+                        DeleteItem1(talker, @flame_crystal, OwnItemCount(talker, @flame_crystal));
+                        DeleteItem1(talker, @salamander_charm, 1);
+                        GiveItem1(talker, @tone_of_fire, 1);
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_fire) == 1 && OwnItemCount(talker, @salamander_charm) == 0)
+                {
+                    ShowPage(talker, "flame_salamander_q0228_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

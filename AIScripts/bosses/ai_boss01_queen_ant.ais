@@ -1,0 +1,214 @@
+class ai_boss01_queen_ant : default_npc
+{
+parameter:
+    string Privates = "nurse_ant:nurse_ant:2:10sec;nurse_ant:nurse_ant:2:10sec;nurse_ant:nurse_ant:2:10sec
+        ;royal_guard_ant:royal_guard_ant:1:20sec;royal_guard_ant:royal_guard_ant:1:20sec
+        ;royal_guard_ant:royal_guard_ant:1:20sec;royal_guard_ant:royal_guard_ant:1:20sec";
+    float Attack_DecayRatio = 6.6;
+    float UseSkill_DecayRatio = 66000.0;
+    float Attack_BoostValue = 500.0;
+    float UseSkill_BoostValue = 100000.0;
+
+handler:
+    EventHandler NO_DESIRE()
+    {
+        AddDoNothingDesire(40, 5);
+    }
+
+    EventHandler CREATED()
+    {
+        if (Rand(100) < 33)
+        {
+            InstantTeleportInMyTerritory(-19480, 187344, -5600, 200);
+        }
+        else if (Rand(100) < 50)
+        {
+            InstantTeleportInMyTerritory(-17928, 180912, -5520, 200);
+        }
+        else
+        {
+            InstantTeleportInMyTerritory(-23808, 182368, -5600, 200);
+        }
+
+        myself.sm.weight_point = 10;
+        CreatePrivates(Privates);
+        AddTimerEx(1001, 10000);
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 1001)
+        {
+            if (Rand(100) < 30 && myself.p_state == PSTATE_MOVE_AROUND)
+            {
+                if (Rand(100) < 50)
+                {
+                    AddEffectActionDesire(myself.sm, 3, 50 * 1000 / 30, 30);
+                }
+                else
+                {
+                    AddEffectActionDesire(myself.sm, 4, 50 * 1000 / 30, 30);
+                }
+            }
+
+            AddTimerEx(1001, 10000);
+        }
+
+        super;
+    }
+
+    EventHandler PARTY_DIED(private)
+    {
+        if (private != myself.sm)
+        {
+            CreateOnePrivate(private.class_id, private.ai, private.weight_point, private.respawn_time);
+        }
+    }
+
+    EventHandler ATTACKED(attacker, damage, skill_name_id)
+    {
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            if (Skill_GetAttribute(skill_name_id) == 12 && Rand(100) < 70 && InMyTerritory(attacker))
+            {
+                if (Skill_GetConsumeMP(@s_queen_ant_strike) < myself.sm.mp && Skill_GetConsumeHP(@s_queen_ant_strike) < myself.sm.hp && Skill_InReuseDelay(@s_queen_ant_strike) == @FALSE)
+                {
+                    AddUseSkillDesire(attacker, @s_queen_ant_strike, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+            else if (DistFromMe(attacker) > 500 && Rand(100) < 10)
+            {
+                if (Skill_GetConsumeMP(@s_queen_ant_strike) < myself.sm.mp && Skill_GetConsumeHP(@s_queen_ant_strike) < myself.sm.hp && Skill_InReuseDelay(@s_queen_ant_strike) == @FALSE)
+                {
+                    AddUseSkillDesire(attacker, @s_queen_ant_strike, @ST_ATTACK, @AMT_STAND, 1000000);
+                }
+            }
+            else if (DistFromMe(attacker) > 150 && Rand(100) < 10)
+            {
+                if (Rand(100) < 80)
+                {
+                    if (Skill_GetConsumeMP(@s_queen_ant_strike) < myself.sm.mp && Skill_GetConsumeHP(@s_queen_ant_strike) < myself.sm.hp && Skill_InReuseDelay(@s_queen_ant_strike) == @FALSE)
+                    {
+                        AddUseSkillDesire(attacker, @s_queen_ant_strike, @ST_ATTACK, @AMT_STAND, 1000000);
+                    }
+                }
+                else if (Skill_GetConsumeMP(@s_queen_ant_sprinkle) < myself.sm.mp && Skill_GetConsumeHP(@s_queen_ant_sprinkle) < myself.sm.hp && Skill_InReuseDelay(@s_queen_ant_sprinkle) == @FALSE)
+                {
+                    AddUseSkillDesire(attacker, @s_queen_ant_sprinkle, @ST_ATTACK, @AMT_STAND, 1000000);
+                }
+            }
+            else if (Rand(100) < 5)
+            {
+                if (Skill_GetConsumeMP(@s_queen_ant_brandish) < myself.sm.mp && Skill_GetConsumeHP(@s_queen_ant_brandish) < myself.sm.hp && Skill_InReuseDelay(@s_queen_ant_brandish) == @FALSE)
+                {
+                    AddUseSkillDesire(myself.sm, @s_queen_ant_brandish, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+            else if (Rand(100) < 5)
+            {
+                AddEffectActionDesire(myself.sm, 1, 60 * 1000 / 30, 3000000);
+            }
+
+            if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+            {
+                AddAttackDesire(attacker, @AMT_STAND, damage / myself.sm.max_hp / 0.05 * damage * myself.sm.weight_point * 1000);
+            }
+        }
+    }
+
+    EventHandler PARTY_ATTACKED(attacker, private, damage)
+    {
+        if ((attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id)) && private != myself.sm)
+        {
+            if (DistFromMe(attacker) > 500 && Rand(100) < 5)
+            {
+                if (Skill_GetConsumeMP(@s_queen_ant_strike) < myself.sm.mp && Skill_GetConsumeHP(@s_queen_ant_strike) < myself.sm.hp && Skill_InReuseDelay(@s_queen_ant_strike) == @FALSE)
+                {
+                    AddUseSkillDesire(attacker, @s_queen_ant_strike, @ST_ATTACK, @AMT_STAND, 1000000);
+                }
+            }
+            else if (DistFromMe(attacker) > 150 && Rand(100) < 5)
+            {
+                if (Rand(100) < 80)
+                {
+                    if (Skill_GetConsumeMP(@s_queen_ant_strike) < myself.sm.mp && Skill_GetConsumeHP(@s_queen_ant_strike) < myself.sm.hp && Skill_InReuseDelay(@s_queen_ant_strike) == @FALSE)
+                    {
+                        AddUseSkillDesire(attacker, @s_queen_ant_strike, @ST_ATTACK, @AMT_STAND, 1000000);
+                    }
+                }
+                else if (Skill_GetConsumeMP(@s_queen_ant_sprinkle) < myself.sm.mp && Skill_GetConsumeHP(@s_queen_ant_sprinkle) < myself.sm.hp && Skill_InReuseDelay(@s_queen_ant_sprinkle) == @FALSE)
+                {
+                    AddUseSkillDesire(attacker, @s_queen_ant_sprinkle, @ST_ATTACK, @AMT_STAND, 1000000);
+                }
+            }
+            else if (Rand(100) < 2)
+            {
+                if (Skill_GetConsumeMP(@s_queen_ant_brandish) < myself.sm.mp && Skill_GetConsumeHP(@s_queen_ant_brandish) < myself.sm.hp && Skill_InReuseDelay(@s_queen_ant_brandish) == @FALSE)
+                {
+                    AddUseSkillDesire(myself.sm, @s_queen_ant_brandish, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+
+            if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+            {
+                AddAttackDesire(attacker, @AMT_STAND, damage / myself.sm.max_hp / 0.05 * damage * private.weight_point * 1000);
+            }
+        }
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, damage)
+    {
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            if (DistFromMe(attacker) > 500 && Rand(100) < 3)
+            {
+                if (Skill_GetConsumeMP(@s_queen_ant_strike) < myself.sm.mp && Skill_GetConsumeHP(@s_queen_ant_strike) < myself.sm.hp && Skill_InReuseDelay(@s_queen_ant_strike) == @FALSE)
+                {
+                    AddUseSkillDesire(attacker, @s_queen_ant_strike, @ST_ATTACK, @AMT_STAND, 1000000);
+                }
+            }
+            else if (DistFromMe(attacker) > 150 && Rand(100) < 3)
+            {
+                if (Rand(100) < 80)
+                {
+                    if (Skill_GetConsumeMP(@s_queen_ant_strike) < myself.sm.mp && Skill_GetConsumeHP(@s_queen_ant_strike) < myself.sm.hp && Skill_InReuseDelay(@s_queen_ant_strike) == @FALSE)
+                    {
+                        AddUseSkillDesire(attacker, @s_queen_ant_strike, @ST_ATTACK, @AMT_STAND, 1000000);
+                    }
+                }
+                else if (Skill_GetConsumeMP(@s_queen_ant_sprinkle) < myself.sm.mp && Skill_GetConsumeHP(@s_queen_ant_sprinkle) < myself.sm.hp && Skill_InReuseDelay(@s_queen_ant_sprinkle) == @FALSE)
+                {
+                    AddUseSkillDesire(attacker, @s_queen_ant_sprinkle, @ST_ATTACK, @AMT_STAND, 1000000);
+                }
+            }
+            else if (Rand(100) < 2)
+            {
+                if (Skill_GetConsumeMP(@s_queen_ant_brandish) < myself.sm.mp && Skill_GetConsumeHP(@s_queen_ant_brandish) < myself.sm.hp && Skill_InReuseDelay(@s_queen_ant_brandish) == @FALSE)
+                {
+                    AddUseSkillDesire(myself.sm, @s_queen_ant_brandish, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+
+            if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+            {
+                AddAttackDesire(attacker, @AMT_STAND, damage / myself.sm.max_hp / 0.05 * 500);
+            }
+        }
+    }
+
+    EventHandler SEE_SPELL(speller, skill_name_id)
+    {
+        if (Skill_GetEffectPoint(skill_name_id) > 0 && Rand(100) < 15)
+        {
+            if (Skill_GetConsumeMP(@s_queen_ant_strike) < myself.sm.mp && Skill_GetConsumeHP(@s_queen_ant_strike) < myself.sm.hp && Skill_InReuseDelay(@s_queen_ant_strike) == @FALSE)
+            {
+                AddUseSkillDesire(speller, @s_queen_ant_strike, @ST_ATTACK, @AMT_STAND, 1000000);
+            }
+        }
+    }
+
+    EventHandler OUT_OF_TERRITORY()
+    {
+        RemoveAllAttackDesire();
+    }
+}

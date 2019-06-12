@@ -1,0 +1,129 @@
+class guard_moretti : guard_stand
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @reoria_letter2) > 0 && OwnItemCount(talker, @priguns_tear_letter1) + OwnItemCount(talker, @priguns_tear_letter2) + OwnItemCount(talker, @priguns_tear_letter3) + OwnItemCount(talker, @priguns_tear_letter4) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Deliver the letter of Reisa");
+            }
+
+            if (GetMemoState(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @morettis_letter) < 1 && OwnItemCount(talker, @priguns_letter) == 0 && OwnItemCount(talker, @honorary_guard) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about Ol Mahum remnants");
+            }
+
+            if (HaveMemo(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @priguns_letter) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Send reply to Pippen");
+            }
+
+            if (HaveMemo(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @honorary_guard) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about changing occupation to an Elven Ranger");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @reoria_letter2) > 0 && OwnItemCount(talker, @priguns_tear_letter1) + OwnItemCount(talker, @priguns_tear_letter2) + OwnItemCount(talker, @priguns_tear_letter3) + OwnItemCount(talker, @priguns_tear_letter4) == 0)
+                {
+                    ShowPage(talker, "guard_moretti_q0407_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || GetMemoState(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @morettis_letter) < 1 && OwnItemCount(talker, @priguns_letter) == 0 && OwnItemCount(talker, @honorary_guard) == 0)
+                {
+                    if (OwnItemCount(talker, @priguns_tear_letter1) + OwnItemCount(talker, @priguns_tear_letter2) + OwnItemCount(talker, @priguns_tear_letter3) + OwnItemCount(talker, @priguns_tear_letter4) < 1)
+                    {
+                        ShowPage(talker, "guard_moretti_q0407_04.htm");
+                    }
+                    else if (OwnItemCount(talker, @priguns_tear_letter1) + OwnItemCount(talker, @priguns_tear_letter2) + OwnItemCount(talker, @priguns_tear_letter3) + OwnItemCount(talker, @priguns_tear_letter4) > 0 && OwnItemCount(talker, @priguns_tear_letter1) + OwnItemCount(talker, @priguns_tear_letter2) + OwnItemCount(talker, @priguns_tear_letter3) + OwnItemCount(talker, @priguns_tear_letter4) < 4)
+                    {
+                        ShowPage(talker, "guard_moretti_q0407_05.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "guard_moretti_q0407_06.htm");
+                        DeleteItem1(talker, @priguns_tear_letter1, 1);
+                        DeleteItem1(talker, @priguns_tear_letter2, 1);
+                        DeleteItem1(talker, @priguns_tear_letter3, 1);
+                        DeleteItem1(talker, @priguns_tear_letter4, 1);
+                        GiveItem1(talker, @morettis_herb, 1);
+                        GiveItem1(talker, @morettis_letter, 1);
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @priguns_letter) > 0)
+                {
+                    if (OwnItemCount(talker, @morettis_herb))
+                    {
+                        ShowPage(talker, "guard_moretti_q0407_09.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "guard_moretti_q0407_07.htm");
+                        DeleteItem1(talker, @priguns_letter, 1);
+                        GiveItem1(talker, @honorary_guard, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @honorary_guard) > 0)
+                {
+                    ShowPage(talker, "guard_moretti_q0407_08.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_elven_scout)
+        {
+            if (reply == 1 && OwnItemCount(talker, @reoria_letter2) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    DeleteItem1(talker, @reoria_letter2, 1);
+                    SetMemoState(talker, @path_to_elven_scout, 1);
+                    ShowPage(talker, "guard_moretti_q0407_03.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

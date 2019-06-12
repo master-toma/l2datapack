@@ -1,0 +1,33 @@
+class warrior_casting_heal : warrior
+{
+parameter:
+    int MagicHeal = @s_npc_weakness1;
+    
+handler:
+    EventHandler ATTACKED(attacker, damage, i0)
+    {
+        i0 = FloatToInt(myself.sm.hp / myself.sm.max_hp * 100);
+        if (Rand(100) < 10 && i0 < 70)
+        {
+            if (Skill_GetConsumeMP(MagicHeal) < myself.sm.mp && Skill_GetConsumeHP(MagicHeal) < myself.sm.hp && Skill_InReuseDelay(MagicHeal) == @FALSE)
+            {
+                AddUseSkillDesire(myself.sm, MagicHeal, @ST_HEAL, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+        }
+
+        super;
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, victim, damage, i0)
+    {
+        if (Rand(100) < 30 && myself.p_state != PSTATE_ATTACK)
+        {
+            if (Skill_GetConsumeMP(MagicHeal) < myself.sm.mp && Skill_GetConsumeHP(MagicHeal) < myself.sm.hp && Skill_InReuseDelay(MagicHeal) == @FALSE)
+            {
+                AddUseSkillDesire(victim, MagicHeal, @ST_HEAL, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+        }
+
+        super;
+    }
+}

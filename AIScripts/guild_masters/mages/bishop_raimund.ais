@@ -1,0 +1,97 @@
+class bishop_raimund : human_elf_mage_lv2_master
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @einhasad_church_mark1) == 0 && OwnItemCount(talker, @coin_of_lords2) == 0 && OwnItemCount(talker, @mark_of_esquire))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @einhasad_church_mark1) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @coin_of_lords2) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about changing occupation to a Knight");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @einhasad_church_mark1) == 0 && OwnItemCount(talker, @coin_of_lords2) == 0 && OwnItemCount(talker, @mark_of_esquire))
+                {
+                    ShowPage(talker, "bishop_raimund_q0402_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @einhasad_church_mark1) > 0)
+                {
+                    if (OwnItemCount(talker, @einhasad_crucifix) < 12)
+                    {
+                        ShowPage(talker, "bishop_raimund_q0402_04.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "bishop_raimund_q0402_05.htm");
+                        DeleteItem1(talker, @einhasad_crucifix, OwnItemCount(talker, @einhasad_crucifix));
+                        DeleteItem1(talker, @einhasad_church_mark1, 1);
+                        GiveItem1(talker, @coin_of_lords2, 1);
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @coin_of_lords2) > 0)
+                {
+                    ShowPage(talker, "bishop_raimund_q0402_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_knight)
+        {
+            if (reply = 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "bishop_raimund_q0402_03.htm");
+                    GiveItem1(talker, @einhasad_church_mark1, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

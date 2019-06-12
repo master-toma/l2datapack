@@ -1,0 +1,26 @@
+class ai_gludio_cleric : default_npc
+{
+parameter:
+    float Attack_DecayRatio = 6.6;
+    float UseSkill_DecayRatio = 66000.0;
+    float Attack_BoostValue = 500.0;
+    float UseSkill_BoostValue = 100000.0;
+    int MagicHeal = @s_npc_weakness1;
+    
+handler:
+    EventHandler NO_DESIRE()
+    {
+        AddDoNothingDesire(10, 30);
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, victim, damage)
+    {
+        if (victim.hp < victim.max_hp * 0.6 && Rand(100) < 20)
+        {
+            if (Skill_GetConsumeMP(MagicHeal) < myself.sm.mp && Skill_GetConsumeHP(MagicHeal) < myself.sm.hp && Skill_InReuseDelay(MagicHeal) == @FALSE)
+            {
+                AddUseSkillDesire(victim, MagicHeal, @ST_HEAL, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+        }
+    }
+}

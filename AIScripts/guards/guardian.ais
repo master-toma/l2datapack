@@ -1,0 +1,3 @@
+class guardian : guard_move_around
+{
+}

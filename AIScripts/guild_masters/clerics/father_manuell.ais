@@ -1,0 +1,143 @@
+class father_manuell : cleric_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_oracle) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to an Elven Oracle");
+            }
+
+            if (HaveMemo(talker, @path_to_oracle) == 1 && OwnItemCount(talker, @crystal_medallion))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the prophecy");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_oracle) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (OwnItemCount(talker, @leaf_of_oracle) == 0)
+                        {
+                            FHTML_SetFileName(fhtml0, "father_manuell_q0409_01.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @path_to_oracle);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "father_manuell_q0409_04.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_oracle) == 1 && OwnItemCount(talker, @crystal_medallion))
+                {
+                    if (OwnItemCount(talker, @money_of_swindler) == 0 && OwnItemCount(talker, @dairy_of_allana) == 0 && OwnItemCount(talker, @lizard_captain_order) == 0 && OwnItemCount(talker, @half_of_dairy) == 0)
+                    {
+                        if (GetMemoState(talker, @path_to_oracle) == 2)
+                        {
+                            SetMemoState(talker, @path_to_oracle, 1);
+                            ShowPage(talker, "father_manuell_q0409_09.htm");
+                        }
+                        else
+                        {
+                            SetMemoState(talker, @path_to_oracle, 1);
+                            ShowPage(talker, "father_manuell_q0409_06.htm");
+                        }
+                    }
+                    else if (OwnItemCount(talker, @money_of_swindler) == 1 && OwnItemCount(talker, @dairy_of_allana) == 1 && OwnItemCount(talker, @lizard_captain_order) == 1 && OwnItemCount(talker, @half_of_dairy) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "father_manuell_q0409_08.htm");
+                            DeleteItem1(talker, @money_of_swindler, 1);
+                            DeleteItem1(talker, @dairy_of_allana, 1);
+                            DeleteItem1(talker, @lizard_captain_order, 1);
+                            DeleteItem1(talker, @crystal_medallion, 1);
+                            GiveItem1(talker, @leaf_of_oracle, 1);
+                            RemoveMemo(talker, @path_to_oracle);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "father_manuell_q0409_07.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_oracle)
+        {
+            if (talker.level >= 19 && talker.occupation == @elven_mage && OwnItemCount(talker, @leaf_of_oracle) == 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    SetMemo(talker, @path_to_oracle);
+                    SetMemoState(talker, @path_to_oracle, 1);
+                    SoundEffect(talker, "ItemSound.quest_accept");
+                    GiveItem1(talker, @crystal_medallion, 1);
+                    ShowPage(talker, "father_manuell_q0409_05.htm");
+                }
+            }
+            else if (talker.occupation != @elven_mage)
+            {
+                if (talker.occupation == @oracle)
+                {
+                    ShowPage(talker, "father_manuell_q0409_02a.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "father_manuell_q0409_02.htm");
+                }
+            }
+            else if (talker.level < 19 && talker.occupation == @elven_mage)
+            {
+                ShowPage(talker, "father_manuell_q0409_03.htm");
+            }
+            else if (talker.level >= 19 && talker.occupation == @elven_mage && OwnItemCount(talker, @leaf_of_oracle) == 1)
+            {
+                ShowPage(talker, "father_manuell_q0409_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

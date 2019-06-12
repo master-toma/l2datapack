@@ -1,0 +1,120 @@
+class blacksmith_rupio : blacksmith
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && (OwnItemCount(talker, @q_loot_14) + OwnItemCount(talker, @q_loot_15) + OwnItemCount(talker, @q_loot_16) + OwnItemCount(talker, @q_loot_17) < 1 && OwnItemCount(talker, @q_loot_19) + OwnItemCount(talker, @q_loot_20) + OwnItemCount(talker, @q_loot_21) + OwnItemCount(talker, @q_loot_22) < 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about relic restoration");
+            }
+
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && (OwnItemCount(talker, @q_loot_14) + OwnItemCount(talker, @q_loot_15) + OwnItemCount(talker, @q_loot_16) + OwnItemCount(talker, @q_loot_17) >= 1 || OwnItemCount(talker, @q_loot_19) + OwnItemCount(talker, @q_loot_20) + OwnItemCount(talker, @q_loot_21) + OwnItemCount(talker, @q_loot_22) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show relics that you found while carrying out a task of the Black Lion Mercenaries");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && (OwnItemCount(talker, @q_loot_14) + OwnItemCount(talker, @q_loot_15) + OwnItemCount(talker, @q_loot_16) + OwnItemCount(talker, @q_loot_17) < 1 && OwnItemCount(talker, @q_loot_19) + OwnItemCount(talker, @q_loot_20) + OwnItemCount(talker, @q_loot_21) + OwnItemCount(talker, @q_loot_22) < 1))
+                {
+                    ShowPage(talker, "blacksmith_rupio_q0333_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && (OwnItemCount(talker, @q_loot_14) + OwnItemCount(talker, @q_loot_15) + OwnItemCount(talker, @q_loot_16) + OwnItemCount(talker, @q_loot_17) >= 1 || OwnItemCount(talker, @q_loot_19) + OwnItemCount(talker, @q_loot_20) + OwnItemCount(talker, @q_loot_21) + OwnItemCount(talker, @q_loot_22) >= 1))
+                {
+                    ShowPage(talker, "blacksmith_rupio_q0333_02.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, i0, reply, talker)
+    {
+        if (ask == @hunt_of_blacklion)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @q_loot_14) == 0 || OwnItemCount(talker, @q_loot_15) == 0 || OwnItemCount(talker, @q_loot_16) == 0 || OwnItemCount(talker, @q_loot_17) == 0)
+                {
+                    ShowPage(talker, "blacksmith_rupio_q0333_03.htm");
+                }
+                else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    if (Rand(100) < 50)
+                    {
+                        GiveItem1(talker, @q_loot_18, 1);
+                        DeleteItem1(talker, @q_loot_14, 1);
+                        DeleteItem1(talker, @q_loot_15, 1);
+                        DeleteItem1(talker, @q_loot_16, 1);
+                        DeleteItem1(talker, @q_loot_17, 1);
+                        ShowPage(talker, "blacksmith_rupio_q0333_04.htm");
+                    }
+                    else
+                    {
+                        DeleteItem1(talker, @q_loot_14, 1);
+                        DeleteItem1(talker, @q_loot_15, 1);
+                        DeleteItem1(talker, @q_loot_16, 1);
+                        DeleteItem1(talker, @q_loot_17, 1);
+                        ShowPage(talker, "blacksmith_rupio_q0333_05.htm");
+                    }
+                }
+            }
+
+            if (reply == 2)
+            {
+                if (OwnItemCount(talker, @q_loot_19) == 0 || OwnItemCount(talker, @q_loot_20) == 0 || OwnItemCount(talker, @q_loot_21) == 0 || OwnItemCount(talker, @q_loot_22) == 0)
+                {
+                    ShowPage(talker, "blacksmith_rupio_q0333_06.htm");
+                }
+                else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    if (Rand(100) < 50)
+                    {
+                        GiveItem1(talker, @q_loot_23, 1);
+                        DeleteItem1(talker, @q_loot_19, 1);
+                        DeleteItem1(talker, @q_loot_20, 1);
+                        DeleteItem1(talker, @q_loot_21, 1);
+                        DeleteItem1(talker, @q_loot_22, 1);
+                        ShowPage(talker, "blacksmith_rupio_q0333_07.htm");
+                    }
+                    else
+                    {
+                        DeleteItem1(talker, @q_loot_19, 1);
+                        DeleteItem1(talker, @q_loot_20, 1);
+                        DeleteItem1(talker, @q_loot_21, 1);
+                        DeleteItem1(talker, @q_loot_22, 1);
+                        ShowPage(talker, "blacksmith_rupio_q0333_08.htm");
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

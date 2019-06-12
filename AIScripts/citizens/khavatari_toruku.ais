@@ -1,0 +1,95 @@
+class khavatari_toruku : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @fig))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Give fig");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_purse4) && OwnItemCount(talker, @leather_pouch4full) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the trial of the iron");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_purse4) == 0 && OwnItemCount(talker, @leather_pouch4full) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give 12 tokens");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @scroll_iron_will) == 1 && OwnItemCount(talker, @torukus_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about changing occupation to Paagrio Monk");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @fig))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "khavatari_toruku_q0415_01.htm");
+                        DeleteItem1(talker, @fig, 1);
+                        GiveItem1(talker, @leather_purse4, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_purse4) && OwnItemCount(talker, @leather_pouch4full) == 0)
+                {
+                    ShowPage(talker, "khavatari_toruku_q0415_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_purse4) == 0 && OwnItemCount(talker, @leather_pouch4full) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "khavatari_toruku_q0415_03.htm");
+                        DeleteItem1(talker, @leather_pouch4full, 1);
+                        GiveItem1(talker, @scroll_iron_will, 1);
+                        GiveItem1(talker, @torukus_letter, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @scroll_iron_will) == 1 && OwnItemCount(talker, @torukus_letter) == 1)
+                {
+                    ShowPage(talker, "khavatari_toruku_q0415_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

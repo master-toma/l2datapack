@@ -1,0 +1,49 @@
+class party_leader_casting_splash : warrior_casting_splash
+{
+parameter:
+    string Privates = "orc:party_private:1:20sec";
+    
+handler:
+    EventHandler CREATED()
+    {
+        myself.sm.weight_point = 10;
+        CreatePrivates(Privates);
+        super;
+    }
+
+    EventHandler PARTY_ATTACKED(attacker, private, damage, i6, i7)
+    {
+        if (private != myself.sm && (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id)))
+        {
+            i6 = Rand(100);
+            i7 = 5;
+            if (myself.c_ai0 != myself.sm && myself.c_ai0 != attacker)
+            {
+                i7 = i7 + 30;
+            }
+
+            if (DistFromMe(attacker) < 200 && myself.i_ai0 == 0)
+            {
+                if (i6 < i7)
+                {
+                    if (Skill_GetConsumeMP(SelfRangeDDMagic) < myself.sm.mp && Skill_GetConsumeHP(SelfRangeDDMagic) < myself.sm.hp && Skill_InReuseDelay(SelfRangeDDMagic) == @FALSE)
+                    {
+                        AddUseSkillDesire(myself.sm, SelfRangeDDMagic, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+
+                    myself.i_ai0 = 1;
+                }
+            }
+
+            myself.c_ai0 = attacker;
+        }
+    }
+
+    EventHandler PARTY_DIED(private)
+    {
+        if (private != myself.sm)
+        {
+            CreateOnePrivate(private.class_id, private.ai, private.weight_point, private.respawn_time);
+        }
+    }
+}

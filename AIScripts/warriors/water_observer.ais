@@ -1,0 +1,3 @@
+class water_observer : warrior_passive
+{
+}

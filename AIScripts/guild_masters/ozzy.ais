@@ -1,0 +1,366 @@
+class ozzy : elf_lv1_master
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @protect_headsprings) == 0 && GetOneTimeQuestFlag(talker, @protect_headsprings) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the World Tree");
+            }
+
+            if (HaveMemo(talker, @protect_headsprings) == 0 && GetOneTimeQuestFlag(talker, @protect_headsprings) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the World Tree");
+            }
+
+            if (HaveMemo(talker, @protect_headsprings) != 0 && OwnItemCount(talker, @hyacinth_charm1) != 0 && OwnItemCount(talker, @plague_dust) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Inquire about the water source again");
+            }
+
+            if (HaveMemo(talker, @protect_headsprings) != 0 && OwnItemCount(talker, @hyacinth_charm1) != 0 && OwnItemCount(talker, @plague_dust) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Display the Plague Dust");
+            }
+
+            if (HaveMemo(talker, @protect_headsprings) != 0 && OwnItemCount(talker, @hyacinth_charm2) != 0 && OwnItemCount(talker, @plague_dust) < 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Inquire about the water source again");
+            }
+
+            if (HaveMemo(talker, @protect_headsprings) != 0 && OwnItemCount(talker, @hyacinth_charm2) != 0 && OwnItemCount(talker, @plague_dust) >= 5 && GetOneTimeQuestFlag(talker, @protect_headsprings) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Display the Plague Dust");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 1 && OwnItemCount(talker, @letter_to_elf))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Say that you want to get Confidence of Elf");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 2 && OwnItemCount(talker, @order_of_ozzy))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask what you should do before coming");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 3 && OwnItemCount(talker, @breath_of_winds) && OwnItemCount(talker, @seed_of_verdure))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Give Breath of Wind and Seed of Fresh Greenness");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 4)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Bid farewell");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @cardiens_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Say that Cardien sent you");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) == 1 && OwnItemCount(talker, @water_of_life) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 11;
+                AddChoice(11, "Say that the task is difficult");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @water_of_life) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 12;
+                AddChoice(12, "Say that you finished the task");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @camomile_charm) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 13;
+                AddChoice(13, "Say that you finished the task");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @protect_headsprings) == 0 && GetOneTimeQuestFlag(talker, @protect_headsprings) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_elf)
+                        {
+                            ShowPage(talker, "ozzy_q0310_00.htm");
+                        }
+                        else if (talker.level >= 12)
+                        {
+                            FHTML_SetFileName(fhtml0, "ozzy_q0310_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @protect_headsprings);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "ozzy_q0310_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @protect_headsprings) == 0 && GetOneTimeQuestFlag(talker, @protect_headsprings) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @protect_headsprings) != 0 && OwnItemCount(talker, @hyacinth_charm1) != 0 && OwnItemCount(talker, @plague_dust) == 0)
+                {
+                    ShowPage(talker, "ozzy_q0310_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @protect_headsprings) != 0 && OwnItemCount(talker, @hyacinth_charm1) != 0 && OwnItemCount(talker, @plague_dust) != 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @plague_dust, OwnItemCount(talker, @plague_dust));
+                        DeleteItem1(talker, @hyacinth_charm1, OwnItemCount(talker, @hyacinth_charm1));
+                        if (OwnItemCount(talker, @hyacinth_charm2) == 0)
+                        {
+                            GiveItem1(talker, @hyacinth_charm2, 1);
+                        }
+
+                        ShowPage(talker, "ozzy_q0310_06.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @protect_headsprings) != 0 && OwnItemCount(talker, @hyacinth_charm2) != 0 && OwnItemCount(talker, @plague_dust) < 5)
+                {
+                    ShowPage(talker, "ozzy_q0310_07.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @protect_headsprings) != 0 && OwnItemCount(talker, @hyacinth_charm2) != 0 && OwnItemCount(talker, @plague_dust) >= 5 && GetOneTimeQuestFlag(talker, @protect_headsprings) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @plague_dust, OwnItemCount(talker, @plague_dust));
+                        DeleteItem1(talker, @hyacinth_charm2, OwnItemCount(talker, @hyacinth_charm2));
+                        GiveItem1(talker, @ring_of_anguish, 1);
+                        GiveItem1(talker, @adena, 2500);
+                        ShowPage(talker, "ozzy_q0310_08.htm");
+                        RemoveMemo(talker, @protect_headsprings);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @protect_headsprings, 1);
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 1 && OwnItemCount(talker, @letter_to_elf))
+                {
+                    ShowPage(talker, "ozzy_q0217_01.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 2 && OwnItemCount(talker, @order_of_ozzy))
+                {
+                    ShowPage(talker, "ozzy_q0217_04.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 3 && OwnItemCount(talker, @breath_of_winds) && OwnItemCount(talker, @seed_of_verdure))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "ozzy_q0217_05.htm");
+                        GiveItem1(talker, @scroll_of_elf_trust, 1);
+                        DeleteItem1(talker, @breath_of_winds, 1);
+                        DeleteItem1(talker, @seed_of_verdure, 1);
+                        DeleteItem1(talker, @order_of_ozzy, OwnItemCount(talker, @order_of_ozzy));
+                        SetMemoState(talker, @testimoney_of_trust, 4);
+                    }
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 4)
+                {
+                    ShowPage(talker, "ozzy_q0217_06.htm");
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @cardiens_letter) == 1)
+                {
+                    ShowPage(talker, "ozzy_q0218_01.htm");
+                }
+
+                break;
+            case 11:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) == 1 && OwnItemCount(talker, @water_of_life) == 0)
+                {
+                    ShowPage(talker, "ozzy_q0218_08.htm");
+                }
+
+                break;
+            case 12:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @water_of_life) >= 1)
+                {
+                    ShowPage(talker, "ozzy_q0218_09.htm");
+                    DeleteItem1(talker, @water_of_life, OwnItemCount(talker, @water_of_life));
+                    DeleteItem1(talker, @moonflower_charm, 1);
+                    GiveItem1(talker, @camomile_charm, 1);
+                }
+
+                break;
+            case 13:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @camomile_charm) == 1)
+                {
+                    ShowPage(talker, "ozzy_q0218_10.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @protect_headsprings)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @hyacinth_charm1) == 0)
+                {
+                    GiveItem1(talker, @hyacinth_charm1, 1);
+                }
+
+                ShowPage(talker, "ozzy_q0310_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimoney_of_trust)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "ozzy_q0217_02.htm");
+            }
+            else if (reply == 2 && OwnItemCount(talker, @letter_to_elf) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "ozzy_q0217_03.htm");
+                    GiveItem1(talker, @order_of_ozzy, 1);
+                    DeleteItem1(talker, @letter_to_elf, 1);
+                    SetMemoState(talker, @testimoney_of_trust, 2);
+                }
+            }
+        }
+
+        if (ask == @testimony_of_life)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "ozzy_q0218_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "ozzy_q0218_03.htm");
+            }
+
+            if (reply == 3)
+            {
+                ShowPage(talker, "ozzy_q0218_04.htm");
+            }
+
+            if (reply == 4)
+            {
+                ShowPage(talker, "ozzy_q0218_05.htm");
+            }
+
+            if (reply == 5)
+            {
+                ShowPage(talker, "ozzy_q0218_06.htm");
+            }
+
+            if (reply == 6)
+            {
+                if (OwnItemCount(talker, @cardiens_letter) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "ozzy_q0218_07.htm");
+                        DeleteItem1(talker, @cardiens_letter, 1);
+                        GiveItem1(talker, @moonflower_charm, 1);
+                        GiveItem1(talker, @hierarchs_letter, 1);
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

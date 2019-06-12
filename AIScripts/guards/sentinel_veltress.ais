@@ -1,0 +1,42 @@
+class sentinel_veltress : guard_stand
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_list) == 1 && OwnItemCount(talker, @cobs_medicine3) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Delivery of Cobendell's medicine");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_list) == 1 && OwnItemCount(talker, @cobs_medicine3) == 1)
+                {
+                    SetMemoState(talker, @fungus_fever, OwnItemCount(talker, @cobs_medicine1) + OwnItemCount(talker, @cobs_medicine2) + OwnItemCount(talker, @cobs_medicine3) + OwnItemCount(talker, @cobs_medicine4) + OwnItemCount(talker, @cobs_medicine5));
+                    DeleteItem1(talker, @cobs_medicine3, 1);
+                    ShowPage(talker, "sentinel_veltress_q0102_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

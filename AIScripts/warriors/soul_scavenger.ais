@@ -1,0 +1,3 @@
+class soul_scavenger : party_leader_ag_casting_ddmagic
+{
+}

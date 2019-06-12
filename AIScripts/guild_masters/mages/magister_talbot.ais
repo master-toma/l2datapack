@@ -1,0 +1,89 @@
+class magister_talbot : mage_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_shillien_oracle) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about changing occupation to a Shillien Oracle");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_shillien_oracle) == 1)
+                {
+                    if (OwnItemCount(talker, @sidras_letter1) == 1)
+                    {
+                        ShowPage(talker, "magister_talbot_q0413_01.htm");
+                    }
+                    else if (OwnItemCount(talker, @blank_sheet1) == 5 && OwnItemCount(talker, @bloody_rune1) == 0)
+                    {
+                        ShowPage(talker, "magister_talbot_q0413_03.htm");
+                    }
+                    else if (OwnItemCount(talker, @bloody_rune1) > 0 && OwnItemCount(talker, @bloody_rune1) < 5)
+                    {
+                        ShowPage(talker, "magister_talbot_q0413_04.htm");
+                    }
+                    else if (OwnItemCount(talker, @bloody_rune1) >= 5)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "magister_talbot_q0413_05.htm");
+                            DeleteItem1(talker, @bloody_rune1, OwnItemCount(talker, @bloody_rune1));
+                            GiveItem1(talker, @garmiel_book, 1);
+                            GiveItem1(talker, @prayer_of_adon, 1);
+                        }
+                    }
+                    else if (OwnItemCount(talker, @prayer_of_adon) + OwnItemCount(talker, @penitents_mark) + OwnItemCount(talker, @ashen_bones) > 0)
+                    {
+                        ShowPage(talker, "magister_talbot_q0413_06.htm");
+                    }
+                    else if (OwnItemCount(talker, @andariel_book) == 1 && OwnItemCount(talker, @garmiel_book) == 1)
+                    {
+                        ShowPage(talker, "magister_talbot_q0413_07.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_shillien_oracle)
+        {
+            if (reply == 1 && OwnItemCount(talker, @sidras_letter1) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "magister_talbot_q0413_02.htm");
+                    DeleteItem1(talker, @sidras_letter1, 1);
+                    GiveItem1(talker, @blank_sheet1, 5);
+                }
+            }
+        }
+
+        super;
+    }
+}

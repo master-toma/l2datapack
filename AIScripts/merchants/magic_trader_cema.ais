@@ -1,0 +1,39 @@
+class magic_trader_cema : merchant_for_chaotic
+{
+property:
+    BuySellList SellList0 = {
+        {"mace_of_prayer"; 20};
+        {"doom_hammer"; 20};
+        {"mystic_staff"; 20};
+        {"staff_of_mana"; 20};
+        {"divine_tome"; 20};
+        {"sword_of_magic"; 20};
+        {"sword_of_mystic"; 20};
+        {"sword_of_occult"; 20};
+        {"dagger_of_mana"; 20};
+        {"mystic_knife"; 20};
+        {"conjure_knife"; 20};
+        {"knife_o'_silenus"; 20};
+        {"staff_of_magicpower"; 20};
+        {"blood_of_saints"; 20};
+        {"tome_of_blood"; 20};
+        {"cursed_tunic"; 20};
+        {"dark_hose"; 20};
+        {"white_tunic"; 20};
+        {"mage's_hose"; 20};
+        {"mage's_tunic"; 20};
+        {"hose_of_knowledge"; 20};
+        {"tunic_of_knowledge"; 20};
+        {"bronze_shield"; 20};
+        {"aspis"; 20};
+        {"hoplon"; 20};
+        {"excellence_leather_gloves"; 20};
+        {"leather_gauntlet"; 20};
+        {"gauntlet"; 20};
+        {"leather_boots"; 20};
+        {"blue_buckskin_boots"; 20};
+        {"iron_boots"; 20};
+        {"bone_helmet"; 20};
+        {"bronze_helmet"; 20}
+    };
+}

@@ -1,0 +1,3 @@
+class castle_gate : default_npc
+{
+}

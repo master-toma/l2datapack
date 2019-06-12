@@ -1,0 +1,82 @@
+class wanderer_dorf : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 6 && OwnItemCount(talker, @tag_of_rumor))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask for information about Maphr");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 7 && OwnItemCount(talker, @tag_of_rumor))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask for information about Maphr");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 8)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask what you should do now");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 6 && OwnItemCount(talker, @tag_of_rumor))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "wanderer_dorf_q0215_01.htm");
+                        GiveItem1(talker, @grey_badge, 1);
+                        DeleteItem1(talker, @tag_of_rumor, 1);
+                        SetMemoState(talker, @trial_of_pilgrim, 8);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 7 && OwnItemCount(talker, @tag_of_rumor))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "wanderer_dorf_q0215_02.htm");
+                        GiveItem1(talker, @grey_badge, 1);
+                        DeleteItem1(talker, @tag_of_rumor, 1);
+                        SetMemoState(talker, @trial_of_pilgrim, 8);
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 8)
+                {
+                    ShowPage(talker, "wanderer_dorf_q0215_03.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

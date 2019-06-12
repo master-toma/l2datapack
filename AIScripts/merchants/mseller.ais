@@ -1,0 +1,41 @@
+class mseller : merchant
+{
+parameter:
+    string fnHi = "mseller001.htm";
+    string fnNotMyLord = "mseller002.htm";
+    string fnSiegeMyLord = "mseller003.htm";
+    string fnBuy = "mseller004.htm";
+    
+property:
+    BuySellList SellList0 = {
+        {"mticket_aden_pole_fix"; 15}
+    };
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        if (IsMyLord(talker))
+        {
+            if (Castle_IsUnderSiege())
+            {
+                ShowPage(talker, fnSiegeMyLord);
+            }
+            else
+            {
+                ShowPage(talker, fnHi);
+            }
+        }
+        else
+        {
+            ShowPage(talker, fnNotMyLord);
+        }
+    }
+
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -201 && reply == 1)
+        {
+            Sell(talker, SellList0, ShopName, fnBuy, "", "");
+        }
+    }
+}

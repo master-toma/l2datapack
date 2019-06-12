@@ -1,0 +1,223 @@
+class trader_salient : merchant_for_chaotic
+{
+property:
+    BuySellList SellList0 = {
+        {"gladius"; 50};
+        {"orcish_sword"; 50};
+        {"dirk"; 50};
+        {"hunting_bow"; 50};
+        {"long_sword"; 50};
+        {"short_spear"; 50};
+        {"falchion"; 50};
+        {"composition_bow"; 50};
+        {"saber"; 50};
+        {"assassin_knife"; 50};
+        {"hand_axe"; 50};
+        {"trident"; 50};
+        {"tights_pants"; 50};
+        {"tights_shirt"; 50};
+        {"bronze_breastplate"; 50};
+        {"hard_leather_gaiters"; 50};
+        {"hard_leather_shirt"; 50};
+        {"bronze_gaiters"; 50};
+        {"ring_breastplate"; 50};
+        {"round_shield"; 50};
+        {"bronze_shield"; 50};
+        {"leather_gloves"; 50};
+        {"bracer"; 50};
+        {"leather_shoes"; 50};
+        {"boots"; 50};
+        {"wooden_helmet"; 50};
+        {"hard_leather_helmet"; 50};
+        {"wooden_arrow"; 50};
+        {"bone_arrow"; 50}
+    };
+    BuySellList SellList1 = {
+        {"cedar_staff"; 50};
+        {"relic_of_saints"; 50};
+        {"mage_staff"; 50};
+        {"voodoo_doll"; 50};
+        {"bone_staff"; 50};
+        {"proof_of_revenge"; 50};
+        {"leather_hose"; 50};
+        {"leather_tunic"; 50};
+        {"hose_of_magicpower"; 50};
+        {"tunic_of_magicpower"; 50};
+        {"cursed_hose"; 50};
+        {"cursed_tunic"; 50};
+        {"round_shield"; 50};
+        {"bronze_shield"; 50};
+        {"leather_gloves"; 50};
+        {"bracer"; 50};
+        {"leather_shoes"; 50};
+        {"boots"; 50};
+        {"wooden_helmet"; 50};
+        {"hard_leather_helmet"; 50};
+        {"wooden_arrow"; 50};
+        {"bone_arrow"; 50}
+    };
+    
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @sense_for_business) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Speak of the Monster Eye");
+            }
+
+            if (HaveMemo(talker, @sense_for_business) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Speak of the Monster Eye");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @insect_diagram_book) == 0 && OwnItemCount(talker, @racoys_totem) >= 1 && OwnItemCount(talker, @viviantes_letter) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show Letter from Vyvyan");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @viviantes_letter) == 0 && OwnItemCount(talker, @racoys_totem) >= 1 && OwnItemCount(talker, @insect_diagram_book) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about Ant Tunnel");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @racoys_totem) == 0 && (OwnItemCount(talker, @kirunas_remains1) >= 1 || OwnItemCount(talker, @kirunas_remains2) >= 1 || OwnItemCount(talker, @vendetta_totem) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Ant Tunnel");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @sense_for_business) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 21)
+                        {
+                            FHTML_SetFileName(fhtml0, "trader_salient_q0328_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @sense_for_business);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "trader_salient_q0328_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @sense_for_business) == 1)
+                {
+                    if (OwnItemCount(talker, @monster_eye_carcass) + OwnItemCount(talker, @monster_eye_lens) + OwnItemCount(talker, @basilisk_gizzard) > 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @adena, 30 * OwnItemCount(talker, @monster_eye_carcass) + 2000 * OwnItemCount(talker, @monster_eye_lens) + 75 * OwnItemCount(talker, @basilisk_gizzard));
+                            DeleteItem1(talker, @monster_eye_carcass, OwnItemCount(talker, @monster_eye_carcass));
+                            DeleteItem1(talker, @monster_eye_lens, OwnItemCount(talker, @monster_eye_lens));
+                            DeleteItem1(talker, @basilisk_gizzard, OwnItemCount(talker, @basilisk_gizzard));
+                            ShowPage(talker, "trader_salient_q0328_05.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "trader_salient_q0328_04.htm");
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @insect_diagram_book) == 0 && OwnItemCount(talker, @racoys_totem) >= 1 && OwnItemCount(talker, @viviantes_letter) >= 1)
+                {
+                    ShowPage(talker, "trader_salient_q0233_01.htm");
+                    DeleteItem1(talker, @viviantes_letter, 1);
+                    GiveItem1(talker, @insect_diagram_book, 1);
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @viviantes_letter) == 0 && OwnItemCount(talker, @racoys_totem) >= 1 && OwnItemCount(talker, @insect_diagram_book) >= 1)
+                {
+                    ShowPage(talker, "trader_salient_q0233_02.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @racoys_totem) == 0 && (OwnItemCount(talker, @kirunas_remains1) >= 1 || OwnItemCount(talker, @kirunas_remains2) >= 1 || OwnItemCount(talker, @vendetta_totem) >= 1))
+                {
+                    ShowPage(talker, "trader_salient_q0233_03.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @sense_for_business)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "trader_salient_q0328_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @sense_for_business)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "trader_salient_q0328_06.htm");
+                RemoveMemo(talker, @sense_for_business);
+                SoundEffect(talker, "ItemSound.quest_finish");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "trader_salient_q0328_07.htm");
+            }
+        }
+
+        super;
+    }
+}

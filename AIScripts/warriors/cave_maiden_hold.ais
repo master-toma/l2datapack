@@ -1,0 +1,3 @@
+class cave_maiden_hold : warrior_aggressive
+{
+}

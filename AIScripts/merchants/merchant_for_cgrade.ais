@@ -1,0 +1,12 @@
+class merchant_for_cgrade : default_npc
+{
+parameter:
+    string fnHi = "black_merchant001.htm";
+    string fnNotEnoughCrystal = "black_merchant100.htm";
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        ShowPage(talker, fnHi);
+    }
+}

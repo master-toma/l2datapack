@@ -1,0 +1,58 @@
+class timak_orc_shaman : warrior_passive_casting_ddmagic
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_glory) && OwnItemCount(c1, @necklace_of_authority) && OwnItemCount(c1, @chiantas_order3) && OwnItemCount(c1, @timak_orc_head) < 20)
+        {
+            if (Rand(10) < 9)
+            {
+                if (OwnItemCount(c1, @timak_orc_head) == 19)
+                {
+                    GiveItem1(c1, @timak_orc_head, 1);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @timak_orc_head, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_lord) == 1 && OwnItemCount(c1, @ordeal_necklace) == 1 && OwnItemCount(c1, @hatos_charm) == 1 && OwnItemCount(c1, @sword_into_skull) == 0)
+        {
+            if (OwnItemCount(c1, @timak_orc_skull) < 10 && Rand(100) <= 100)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @timak_orc_skull, 1);
+                    if (OwnItemCount(c1, @timak_orc_skull) >= 10)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @magic_coin) && GetMemoState(c1, @magic_coin) == 3 && Rand(10) == 0)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @q_gold_wyvern, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

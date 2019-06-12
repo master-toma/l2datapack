@@ -1,0 +1,34 @@
+class summon_magicalattack : default_npc
+{
+parameter:
+    int DDMagic = @s_mega_storm_strike1;
+    
+handler:
+    EventHandler CREATED()
+    {
+        AddPetDefaultDesire_Follow(20.0);
+    }
+
+    EventHandler NO_DESIRE()
+    {
+        AddPetDefaultDesire_Follow(20.0);
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, i0, c0)
+    {
+        i0 = myself.master.target_index;
+        if (i0 <= 0)
+        {
+            return;
+        }
+
+        c0 = GetCreatureFromIndex(i0);
+        if (c0)
+        {
+            if (Skill_GetConsumeMP(DDMagic) < myself.sm.mp && Skill_GetConsumeHP(DDMagic) < myself.sm.hp && Skill_InReuseDelay(DDMagic) == @FALSE)
+            {
+                AddUseSkillDesireEx(myself.master.target_id, DDMagic, @ST_ATTACK, reply, ask, 1000000);
+            }
+        }
+    }
+}

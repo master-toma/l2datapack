@@ -1,0 +1,3 @@
+class ketra_orc_warrior_a : warrior_aggressive
+{
+}

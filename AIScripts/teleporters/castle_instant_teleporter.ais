@@ -1,0 +1,37 @@
+class castle_instant_teleporter : default_npc
+{
+parameter:
+    string fnHi = "thi.htm";
+    string fnNotMyPledge = "";
+    int pos_x1 = 1;
+    int pos_y1 = 1;
+    int pos_z1 = 1;
+    int pos_x2 = 1;
+    int pos_y2 = 1;
+    int pos_z2 = 1;
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        if (Castle_GetPledgeId() == talker.pledge_id && talker.pledge_id != 0)
+        {
+            ShowPage(talker, fnHi);
+        }
+        else
+        {
+            ShowPage(talker, fnNotMyPledge);
+        }
+    }
+
+    EventHandler TELEPORT_REQUESTED(talker)
+    {
+        if (Rand(100) < 50)
+        {
+            InstantTeleport(talker, pos_x1, pos_y1, pos_z1);
+        }
+        else
+        {
+            InstantTeleport(talker, pos_x2, pos_y2, pos_z2);
+        }
+    }
+}

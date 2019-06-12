@@ -1,0 +1,3 @@
+class white_fang : party_leader_aggressive
+{
+}

@@ -1,0 +1,164 @@
+class hermit_santiago : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_pilgrim) == 0 && GetOneTimeQuestFlag(talker, @trial_of_pilgrim) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Examination of Seeker after Truth");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 0 && GetOneTimeQuestFlag(talker, @trial_of_pilgrim) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Examination of Seeker after Truth");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) >= 1 && OwnItemCount(talker, @book_of_sage) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask where to go and what you should do");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && OwnItemCount(talker, @book_of_sage))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about Book of Wise Man");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 0 && GetOneTimeQuestFlag(talker, @trial_of_pilgrim) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (IsInCategory(@heal_group, talker.occupation) && talker.level >= 35)
+                        {
+                            FHTML_SetFileName(fhtml0, "hermit_santiago_q0215_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @trial_of_pilgrim);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else if (IsInCategory(@heal_group, talker.occupation))
+                        {
+                            ShowPage(talker, "hermit_santiago_q0215_01.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "hermit_santiago_q0215_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 0 && GetOneTimeQuestFlag(talker, @trial_of_pilgrim) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) >= 1 && OwnItemCount(talker, @book_of_sage) == 0)
+                {
+                    ShowPage(talker, "hermit_santiago_q0215_09.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && OwnItemCount(talker, @book_of_sage))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        IncrementParam(talker, @PARAM_EXP, 31000);
+                        IncrementParam(talker, @PARAM_SP, 3700);
+                        ShowPage(talker, "hermit_santiago_q0215_10.htm");
+                        GiveItem1(talker, @mark_of_pilgrim, 1);
+                        DeleteItem1(talker, @book_of_sage, 1);
+                        DeleteItem1(talker, @book_of_gerald, OwnItemCount(talker, @book_of_gerald));
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @trial_of_pilgrim, 1);
+                        RemoveMemo(talker, @trial_of_pilgrim);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @trial_of_pilgrim)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "hermit_santiago_q0215_04.htm");
+                SetMemoState(talker, @trial_of_pilgrim, 1);
+                GiveItem1(talker, @voucher_of_trial, 1);
+                talker.flag = 0;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_pilgrim)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "hermit_santiago_q0215_05.htm");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "hermit_santiago_q0215_06.htm");
+            }
+            else if (reply == 3)
+            {
+                ShowPage(talker, "hermit_santiago_q0215_07.htm");
+            }
+            else if (reply == 4)
+            {
+                ShowPage(talker, "hermit_santiago_q0215_08.htm");
+            }
+            else if (reply == 5)
+            {
+                ShowPage(talker, "hermit_santiago_q0215_05.htm");
+            }
+        }
+
+        super;
+    }
+}

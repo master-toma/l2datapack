@@ -1,0 +1,49 @@
+class spirit_of_sir_talianus : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 6 && OwnItemCount(talker, @mirror_of_orpic))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Give Report from Sir Talianus");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 6 && OwnItemCount(talker, @mirror_of_orpic))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "spirit_of_sir_talianus_q0212_01.htm");
+                        DeleteItem1(talker, @mirror_of_orpic, 1);
+                        DeleteItem1(talker, @talianuss_report, OwnItemCount(talker, @talianuss_report));
+                        GiveItem1(talker, @tear_of_confession, 1);
+                        SetMemoState(talker, @trial_of_duty, 7);
+                        Despawn();
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

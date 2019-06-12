@@ -1,0 +1,181 @@
+class poison_spider : warrior_passive_casting_curse
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @sweetest_venom) == 1 && OwnItemCount(c1, @venom_sac) < 10)
+        {
+            if (Rand(100) < 24)
+            {
+                GiveItem1(c1, @venom_sac, 1);
+                if (OwnItemCount(c1, @venom_sac) == 10)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_palus_knight) == 1 && OwnItemCount(myself.c_quest0, @morte_talisman) == 1 && myself.i_quest0 == 1 && OwnItemCount(myself.c_quest0, @predator_carapace) < 1)
+        {
+            GiveItem1(myself.c_quest0, @predator_carapace, 1);
+            SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest2, @path_to_warrior) && OwnItemCount(myself.c_quest2, @poison_spider_leg2) < 20 && myself.i_quest2 == 1)
+        {
+            GiveItem1(myself.c_quest2, @poison_spider_leg2, 1);
+            if (OwnItemCount(myself.c_quest2, @poison_spider_leg2) == 20)
+            {
+                SoundEffect(myself.c_quest2, "ItemSound.quest_middle");
+            }
+            else
+            {
+                SoundEffect(myself.c_quest2, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_knight) && OwnItemCount(myself.c_quest0, @gludio_guards_mark2) > 0 && OwnItemCount(myself.c_quest0, @poison_spider_leg1) < 20 && myself.i_quest0 == 1)
+        {
+            GiveItem1(myself.c_quest0, @poison_spider_leg1, 1);
+            if (OwnItemCount(myself.c_quest0, @poison_spider_leg1) == 20)
+            {
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+            else
+            {
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_orc_shaman) == 1 && OwnItemCount(myself.c_quest0, @spirit_net) == 1 && OwnItemCount(myself.c_quest0, @bound_durka_spirit) == 0 && OwnItemCount(myself.c_quest0, @durka_parasite) < 8)
+        {
+            i0 = Rand(10);
+            if (OwnItemCount(myself.c_quest0, @durka_parasite) == 5 && i0 < 1)
+            {
+                DeleteItem1(myself.c_quest0, @durka_parasite, OwnItemCount(myself.c_quest0, @durka_parasite));
+                CreateOnePrivate(@durka_spirit, "durka_spirit", 0, 1);
+                SoundEffect(myself.c_quest0, "Itemsound.quest_before_battle");
+            }
+            else if (OwnItemCount(myself.c_quest0, @durka_parasite) == 6 && i0 < 2)
+            {
+                DeleteItem1(myself.c_quest0, @durka_parasite, OwnItemCount(myself.c_quest0, @durka_parasite));
+                SoundEffect(myself.c_quest0, "Itemsound.quest_before_battle");
+                CreateOnePrivate(@durka_spirit, "durka_spirit", 0, 1);
+            }
+            else if (OwnItemCount(myself.c_quest0, @durka_parasite) == 7 && i0 < 2)
+            {
+                DeleteItem1(myself.c_quest0, @durka_parasite, OwnItemCount(myself.c_quest0, @durka_parasite));
+                SoundEffect(myself.c_quest0, "Itemsound.quest_before_battle");
+                CreateOnePrivate(@durka_spirit, "durka_spirit", 0, 1);
+            }
+            else if (OwnItemCount(myself.c_quest0, @durka_parasite) >= 7)
+            {
+                CreateOnePrivate(@durka_spirit, "durka_spirit", 0, 1);
+                SoundEffect(myself.c_quest0, "Itemsound.quest_before_battle");
+                DeleteItem1(myself.c_quest0, @durka_parasite, OwnItemCount(myself.c_quest0, @durka_parasite));
+            }
+            else
+            {
+                GiveItem1(myself.c_quest0, @durka_parasite, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage, weapon_class_id)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.c_quest0 = attacker;
+            myself.i_quest0 = 1;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        select (myself.i_quest2)
+        {
+        case 0:
+            myself.c_quest2 = attacker;
+            if (myself.c_quest2.equiped_weapon_class_id != @rusted_bronze_sword3)
+            {
+                myself.i_quest2 = 2;
+            }
+            else
+            {
+                myself.i_quest2 = 1;
+            }
+
+            break;
+        case 1:
+            if (myself.c_quest2.equiped_weapon_class_id != @rusted_bronze_sword3)
+            {
+                myself.i_quest2 = 2;
+            }
+
+            if (myself.c_quest2 != attacker)
+            {
+                myself.i_quest2 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.c_quest0 = attacker;
+            myself.i_quest0 = 1;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

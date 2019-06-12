@@ -1,0 +1,15 @@
+class hamrut : warrior_passive_casting_curse
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if ((GetMemoState(c1, @audience_with_earth_dragon) == 21101 || GetMemoState(c1, @audience_with_earth_dragon) == 21100 || GetMemoState(c1, @audience_with_earth_dragon) == 21001 || GetMemoState(c1, @audience_with_earth_dragon) == 21000 || GetMemoState(c1, @audience_with_earth_dragon) == 20101 || GetMemoState(c1, @audience_with_earth_dragon) == 20100 || GetMemoState(c1, @audience_with_earth_dragon) == 20001 || GetMemoState(c1, @audience_with_earth_dragon) == 20000) && OwnItemCount(c1, @q_hamrut_leg) == 0 && HaveMemo(c1, @audience_with_earth_dragon) == 1)
+        {
+            GiveItem1(c1, @q_hamrut_leg, 1);
+            SoundEffect(c1, "ItemSound.quest_itemget");
+        }
+
+        super;
+    }
+}

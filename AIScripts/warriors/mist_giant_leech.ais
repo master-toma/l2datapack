@@ -1,0 +1,23 @@
+class mist_giant_leech : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_maestro) && GetMemoState(c1, @test_of_maestro) == 4 && OwnItemCount(c1, @blood_of_leech) < 10 && OwnItemCount(c1, @ingredients_of_antidote) == 1)
+        {
+            if (OwnItemCount(c1, @blood_of_leech) == 9)
+            {
+                GiveItem1(c1, @blood_of_leech, 1);
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @blood_of_leech, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

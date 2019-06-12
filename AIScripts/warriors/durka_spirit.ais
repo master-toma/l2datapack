@@ -1,0 +1,39 @@
+class durka_spirit : warrior_aggressive_immediate
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_orc_shaman) == 1 && OwnItemCount(myself.c_quest0, @spirit_net) == 1 && OwnItemCount(myself.c_quest0, @bound_durka_spirit) == 0)
+        {
+            GiveItem1(myself.c_quest0, @bound_durka_spirit, 1);
+            DeleteItem1(myself.c_quest0, @spirit_net, 1);
+            DeleteItem1(myself.c_quest0, @durka_parasite, OwnItemCount(myself.c_quest0, @durka_parasite));
+            SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

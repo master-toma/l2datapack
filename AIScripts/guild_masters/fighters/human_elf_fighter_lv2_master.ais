@@ -1,0 +1,41 @@
+class human_elf_fighter_lv2_master : guild_master_lv2
+{
+parameter:
+    int lv1_class1 = @fighter;
+    int lv1_class2 = @elven_fighter;
+    int lv2_class11 = @warrior;
+    int lv2_class12 = @knight;
+    int lv2_class13 = @rogue;
+    int lv2_class21 = @elven_knight;
+    int lv2_class22 = @elven_scout;
+    int proof11 = @medallion_of_warrior;
+    int proof12 = @sword_of_ritual;
+    int proof13 = @beziques_recommendation;
+    int proof21 = @elven_knight_brooch;
+    int proof22 = @reoria_recommendation;
+    
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -2 && reply == 1)
+        {
+            if (IsInCategory(@fighter_group, talker.occupation) && (talker.race == @race_human || talker.race == @race_elf))
+            {
+                if (talker.race == @race_human)
+                {
+                    ShowPage(talker, fnClassList1);
+                }
+                else if (talker.race == @race_elf)
+                {
+                    ShowPage(talker, fnClassList2);
+                }
+            }
+            else
+            {
+                ShowPage(talker, fnClassMismatch);
+            }
+        }
+
+        super;
+    }
+}

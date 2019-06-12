@@ -1,0 +1,3 @@
+class queen_ant_larva : ai_boss01_queen_ant_larva
+{
+}

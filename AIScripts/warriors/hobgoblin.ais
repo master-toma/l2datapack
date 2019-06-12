@@ -1,0 +1,26 @@
+class hobgoblin : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @adept_of_taste) == 1 && OwnItemCount(c1, @ingredient_list) == 1 && OwnItemCount(c1, @red_mandragora_sap) + OwnItemCount(c1, @white_mandragora_sap) + OwnItemCount(c1, @honey) + OwnItemCount(c1, @golden_honey) + OwnItemCount(c1, @dionian_potato) + OwnItemCount(c1, @green_moss_bundle) + OwnItemCount(c1, @brown_moss_bundle) + OwnItemCount(c1, @monster_eye_meat) < 5 && OwnItemCount(c1, @panos_contract) == 1 && OwnItemCount(c1, @hobgoblin_amulet) < 30)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @hobgoblin_amulet, 1);
+                if (OwnItemCount(c1, @hobgoblin_amulet) == 30)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

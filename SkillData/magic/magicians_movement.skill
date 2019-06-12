@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_magicians_movement]	/* [매지션즈 무브먼트] */	skill_id = 118	level = 1	operate_type = P	effect = {{p_attack_speed;{armor_none;armor_light;armor_heavy};-20;per}}	skill_end

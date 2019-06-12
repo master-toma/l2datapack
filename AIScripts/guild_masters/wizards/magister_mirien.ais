@@ -1,0 +1,317 @@
+class magister_mirien : wizard_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about the cooking competition");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) == 0 && OwnItemCount(talker, @ingredient_list) == 0 && OwnItemCount(talker, @jonas_steak_dish1) + OwnItemCount(talker, @jonas_steak_dish2) + OwnItemCount(talker, @jonas_steak_dish3) + OwnItemCount(talker, @jonas_steak_dish4) + OwnItemCount(talker, @jonas_steak_dish5) == 1 && OwnItemCount(talker, @miriens_review1) + OwnItemCount(talker, @miriens_review2) + OwnItemCount(talker, @miriens_review3) + OwnItemCount(talker, @miriens_review4) + OwnItemCount(talker, @miriens_review5) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about the cooking competition");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) == 0 && OwnItemCount(talker, @ingredient_list) == 0 && OwnItemCount(talker, @jonas_steak_dish1) + OwnItemCount(talker, @jonas_steak_dish2) + OwnItemCount(talker, @jonas_steak_dish3) + OwnItemCount(talker, @jonas_steak_dish4) + OwnItemCount(talker, @jonas_steak_dish5) == 0 && OwnItemCount(talker, @miriens_review1) + OwnItemCount(talker, @miriens_review2) + OwnItemCount(talker, @miriens_review3) + OwnItemCount(talker, @miriens_review4) + OwnItemCount(talker, @miriens_review5) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about the cooking competition");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 0 && GetOneTimeQuestFlag(talker, @trial_of_scholar) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Hear about Trial of Inquirer");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 0 && GetOneTimeQuestFlag(talker, @trial_of_scholar) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Hear about Trial of Inquirer");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) == 1 && OwnItemCount(talker, @symbol_of_sylvain) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about Sylvain");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) == 1 && OwnItemCount(talker, @symbol_of_sylvain) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask about Sylvain");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil2) == 1 && OwnItemCount(talker, @symbol_of_jurek) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask about Jurek");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil2) == 1 && OwnItemCount(talker, @symbol_of_jurek) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Ask about Jurek");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_instruction) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Ask about next step");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil3) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Ask about Cronos");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1)
+                {
+                    ShowPage(talker, "magister_mirien_q0330_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) == 0 && OwnItemCount(talker, @ingredient_list) == 0 && OwnItemCount(talker, @jonas_steak_dish1) + OwnItemCount(talker, @jonas_steak_dish2) + OwnItemCount(talker, @jonas_steak_dish3) + OwnItemCount(talker, @jonas_steak_dish4) + OwnItemCount(talker, @jonas_steak_dish5) == 1 && OwnItemCount(talker, @miriens_review1) + OwnItemCount(talker, @miriens_review2) + OwnItemCount(talker, @miriens_review3) + OwnItemCount(talker, @miriens_review4) + OwnItemCount(talker, @miriens_review5) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @jonas_steak_dish1) == 1)
+                        {
+                            ShowPage(talker, "magister_mirien_q0330_02t1.htm");
+                            DeleteItem1(talker, @jonas_steak_dish1, 1);
+                            GiveItem1(talker, @miriens_review1, 1);
+                        }
+
+                        if (OwnItemCount(talker, @jonas_steak_dish2) == 1)
+                        {
+                            ShowPage(talker, "magister_mirien_q0330_02t2.htm");
+                            DeleteItem1(talker, @jonas_steak_dish2, 1);
+                            GiveItem1(talker, @miriens_review2, 1);
+                        }
+
+                        if (OwnItemCount(talker, @jonas_steak_dish3) == 1)
+                        {
+                            ShowPage(talker, "magister_mirien_q0330_02t3.htm");
+                            DeleteItem1(talker, @jonas_steak_dish3, 1);
+                            GiveItem1(talker, @miriens_review3, 1);
+                        }
+
+                        if (OwnItemCount(talker, @jonas_steak_dish4) == 1)
+                        {
+                            ShowPage(talker, "magister_mirien_q0330_02t4.htm");
+                            DeleteItem1(talker, @jonas_steak_dish4, 1);
+                            GiveItem1(talker, @miriens_review4, 1);
+                        }
+
+                        if (OwnItemCount(talker, @jonas_steak_dish5) == 1)
+                        {
+                            ShowPage(talker, "magister_mirien_q0330_02t5.htm");
+                            DeleteItem1(talker, @jonas_steak_dish5, 1);
+                            GiveItem1(talker, @miriens_review5, 1);
+                        }
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) == 0 && OwnItemCount(talker, @ingredient_list) == 0 && OwnItemCount(talker, @jonas_steak_dish1) + OwnItemCount(talker, @jonas_steak_dish2) + OwnItemCount(talker, @jonas_steak_dish3) + OwnItemCount(talker, @jonas_steak_dish4) + OwnItemCount(talker, @jonas_steak_dish5) == 0 && OwnItemCount(talker, @miriens_review1) + OwnItemCount(talker, @miriens_review2) + OwnItemCount(talker, @miriens_review3) + OwnItemCount(talker, @miriens_review4) + OwnItemCount(talker, @miriens_review5) == 1)
+                {
+                    ShowPage(talker, "magister_mirien_q0330_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 0 && GetOneTimeQuestFlag(talker, @trial_of_scholar) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if ((talker.occupation == @wizard || talker.occupation == @elven_wizard || talker.occupation == @dark_wizard) == @FALSE)
+                        {
+                            ShowPage(talker, "magister_mirien_q0214_01.htm");
+                        }
+                        else if ((talker.occupation == @wizard || talker.occupation == @elven_wizard || talker.occupation == @dark_wizard) && talker.level < 35)
+                        {
+                            ShowPage(talker, "magister_mirien_q0214_02.htm");
+                        }
+                        else
+                        {
+                            FHTML_SetFileName(fhtml0, "magister_mirien_q0214_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @trial_of_scholar);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 0 && GetOneTimeQuestFlag(talker, @trial_of_scholar) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) == 1 && OwnItemCount(talker, @symbol_of_sylvain) == 0)
+                {
+                    ShowPage(talker, "magister_mirien_q0214_05.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) == 1 && OwnItemCount(talker, @symbol_of_sylvain) == 1)
+                {
+                    ShowPage(talker, "magister_mirien_q0214_06.htm");
+                    DeleteItem1(talker, @symbol_of_sylvain, OwnItemCount(talker, @symbol_of_sylvain));
+                    DeleteItem1(talker, @miriens_sigil1, 1);
+                    GiveItem1(talker, @miriens_sigil2, 1);
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil2) == 1 && OwnItemCount(talker, @symbol_of_jurek) == 0)
+                {
+                    ShowPage(talker, "magister_mirien_q0214_07.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil2) == 1 && OwnItemCount(talker, @symbol_of_jurek) == 1)
+                {
+                    ShowPage(talker, "magister_mirien_q0214_08.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_instruction) == 1)
+                {
+                    if (talker.level < 36)
+                    {
+                        ShowPage(talker, "magister_mirien_q0214_11.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "magister_mirien_q0214_12.htm");
+                        DeleteItem1(talker, @miriens_instruction, 1);
+                        GiveItem1(talker, @miriens_sigil3, 1);
+                    }
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil3) == 1)
+                {
+                    if (OwnItemCount(talker, @symbol_of_cronos) == 0)
+                    {
+                        ShowPage(talker, "magister_mirien_q0214_13.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        IncrementParam(talker, @PARAM_EXP, 45000);
+                        IncrementParam(talker, @PARAM_SP, 5500);
+                        ShowPage(talker, "magister_mirien_q0214_14.htm");
+                        RemoveMemo(talker, @trial_of_scholar);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @trial_of_scholar, 1);
+                        DeleteItem1(talker, @symbol_of_cronos, OwnItemCount(talker, @symbol_of_cronos));
+                        DeleteItem1(talker, @miriens_sigil3, 1);
+                        GiveItem1(talker, @mark_of_scholar, 1);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @trial_of_scholar)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @miriens_sigil1) == 0)
+                {
+                    GiveItem1(talker, @miriens_sigil1, 1);
+                }
+
+                ShowPage(talker, "magister_mirien_q0214_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_scholar)
+        {
+            if (reply == 1)
+            {
+                if (talker.level < 36)
+                {
+                    if (OwnItemCount(talker, @miriens_sigil2) >= 1)
+                    {
+                        ShowPage(talker, "magister_mirien_q0214_09.htm");
+                        DeleteItem1(talker, @symbol_of_jurek, OwnItemCount(talker, @symbol_of_jurek));
+                        DeleteItem1(talker, @miriens_sigil2, 1);
+                        GiveItem1(talker, @miriens_instruction, 1);
+                    }
+                }
+                else if (OwnItemCount(talker, @miriens_sigil2) >= 1)
+                {
+                    ShowPage(talker, "magister_mirien_q0214_10.htm");
+                    DeleteItem1(talker, @symbol_of_jurek, OwnItemCount(talker, @symbol_of_jurek));
+                    DeleteItem1(talker, @miriens_sigil2, 1);
+                    GiveItem1(talker, @miriens_sigil3, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,121 @@
+class bodyguard_jax : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @old_order) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show old instructions");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @rexs_diary) == 1 && OwnItemCount(talker, @solts_map) + OwnItemCount(talker, @makels_map) < 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about map");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @rexs_diary) == 1 && OwnItemCount(talker, @solts_map) + OwnItemCount(talker, @makels_map) == 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show map that was collected");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && (OwnItemCount(talker, @combined_map) == 1 || OwnItemCount(talker, @alankells_recommend) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show map that was collected");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @old_order) == 1)
+                {
+                    ShowPage(talker, "bodyguard_jax_q0225_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @rexs_diary) == 1 && OwnItemCount(talker, @solts_map) + OwnItemCount(talker, @makels_map) < 2)
+                {
+                    ShowPage(talker, "bodyguard_jax_q0225_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @rexs_diary) == 1 && OwnItemCount(talker, @solts_map) + OwnItemCount(talker, @makels_map) == 2)
+                {
+                    ShowPage(talker, "bodyguard_jax_q0225_03.htm");
+                    DeleteItem1(talker, @rexs_diary, OwnItemCount(talker, @rexs_diary));
+                    DeleteItem1(talker, @solts_map, OwnItemCount(talker, @solts_map));
+                    DeleteItem1(talker, @lamberts_map, OwnItemCount(talker, @lamberts_map));
+                    DeleteItem1(talker, @makels_map, 1);
+                    GiveItem1(talker, @combined_map, 1);
+                    ShowRadar(talker, 10133, 157155, -2383);
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && (OwnItemCount(talker, @combined_map) == 1 || OwnItemCount(talker, @alankells_recommend) == 1))
+                {
+                    ShowPage(talker, "bodyguard_jax_q0225_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_searcher)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "bodyguard_jax_q0225_01a.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "bodyguard_jax_q0225_01b.htm");
+            }
+
+            if (reply == 3)
+            {
+                ShowPage(talker, "bodyguard_jax_q0225_01c.htm");
+            }
+
+            if (reply == 4)
+            {
+                if (OwnItemCount(talker, @old_order) >= 1)
+                {
+                    ShowPage(talker, "bodyguard_jax_q0225_01d.htm");
+                    DeleteItem1(talker, @old_order, 1);
+                    GiveItem1(talker, @rexs_diary, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

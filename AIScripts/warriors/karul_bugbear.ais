@@ -1,0 +1,70 @@
+class karul_bugbear : warrior_passive_physicalspecial
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_fate) && OwnItemCount(c1, @palus_charm) && OwnItemCount(c1, @arkenias_note) && OwnItemCount(c1, @red_fairy_dust) == 0 && OwnItemCount(c1, @pixy_garnet) && OwnItemCount(c1, @karul_bugbear_skull) < 10)
+        {
+            if (OwnItemCount(c1, @karul_bugbear_skull) == 9)
+            {
+                GiveItem1(c1, @karul_bugbear_skull, 1);
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @karul_bugbear_skull, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_summoner) && OwnItemCount(c1, @galateas_letter) == 0 && OwnItemCount(c1, @lars_list2) && OwnItemCount(c1, @karulbugbear_totem) < 30)
+        {
+            if (Rand(10) < 8)
+            {
+                if (OwnItemCount(c1, @karulbugbear_totem) == 29)
+                {
+                    GiveItem1(c1, @karulbugbear_totem, 1);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @karulbugbear_totem, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (1)
+        {
+            c1.quest_last_reward_time = GetCurrentTick();
+            if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_1c_11) && OwnItemCount(c1, @q_karul_bugbear_head) < 30)
+            {
+                if (Rand(2) == 0)
+                {
+                    GiveItem1(c1, @q_karul_bugbear_head, 1);
+                    if (OwnItemCount(c1, @q_karul_bugbear_head) >= 30)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+
+            if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_1r_3) && OwnItemCount(c1, @q_book_of_shunaiman) < 1)
+            {
+                if (Rand(10) == 0)
+                {
+                    CreateOnePrivate(@karul_chief_orooto, "karul_chief_orooto", 0, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

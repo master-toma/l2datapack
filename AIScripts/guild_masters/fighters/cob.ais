@@ -1,0 +1,116 @@
+class cob : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Delivery of Smallberry's letter");
+            }
+
+            if (HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @evergreen_amulet) > 0 && OwnItemCount(talker, @dryad_tears) < 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the medicine");
+            }
+
+            if (HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_list) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "About the Dryad Tears");
+            }
+
+            if (HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @evergreen_amulet) > 0 && OwnItemCount(talker, @dryad_tears) >= 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "About the Dryad Tears");
+            }
+
+            if (HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_list) == 0 && (OwnItemCount(talker, @cobs_medicine1) == 1 || OwnItemCount(talker, @cobs_medicine2) == 1 || OwnItemCount(talker, @cobs_medicine3) == 1 || OwnItemCount(talker, @cobs_medicine4) == 1 || OwnItemCount(talker, @cobs_medicine5) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "About the Dryad Tears");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_letter) == 1)
+                {
+                    if (OwnItemCount(talker, @alberryus_letter) > 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @evergreen_amulet, 1);
+                            DeleteItem1(talker, @alberryus_letter, 1);
+                            ShowPage(talker, "cob_q0102_03.htm");
+                        }
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @evergreen_amulet) > 0 && OwnItemCount(talker, @dryad_tears) < 10)
+                {
+                    ShowPage(talker, "cob_q0102_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_list) > 0)
+                {
+                    ShowPage(talker, "cob_q0102_07.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @evergreen_amulet) > 0 && OwnItemCount(talker, @dryad_tears) >= 10)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @evergreen_amulet, 1);
+                        DeleteItem1(talker, @dryad_tears, OwnItemCount(talker, @dryad_tears));
+                        GiveItem1(talker, @cobs_medicine1, 1);
+                        GiveItem1(talker, @cobs_medicine2, 1);
+                        GiveItem1(talker, @cobs_medicine3, 1);
+                        GiveItem1(talker, @cobs_medicine4, 1);
+                        GiveItem1(talker, @cobs_medicine5, 1);
+                        ShowPage(talker, "cob_q0102_05.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_list) == 0 && (OwnItemCount(talker, @cobs_medicine1) == 1 || OwnItemCount(talker, @cobs_medicine2) == 1 || OwnItemCount(talker, @cobs_medicine3) == 1 || OwnItemCount(talker, @cobs_medicine4) == 1 || OwnItemCount(talker, @cobs_medicine5) == 1))
+                {
+                    ShowPage(talker, "cob_q0102_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

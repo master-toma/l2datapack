@@ -1,0 +1,460 @@
+class sophia : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, i0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @hunt_of_blacklion) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the tasks of the Black Lion Mercenaries");
+            }
+
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_sophias_order1) + OwnItemCount(talker, @q_sophias_order2) + OwnItemCount(talker, @q_sophias_order3) + OwnItemCount(talker, @q_sophias_order4) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the tasks of the Black Lion Mercenaries");
+            }
+
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_sophias_order1) + OwnItemCount(talker, @q_sophias_order2) + OwnItemCount(talker, @q_sophias_order3) + OwnItemCount(talker, @q_sophias_order4) == 1 && OwnItemCount(talker, @q_undead_ash) + OwnItemCount(talker, @q_bloodyaxe_insignia) + OwnItemCount(talker, @q_delu_lizardman_fang) + OwnItemCount(talker, @q_stakato_talon) < 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) < 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about the tasks of the Black Lion Mercenaries");
+            }
+
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_sophias_order1) + OwnItemCount(talker, @q_sophias_order2) + OwnItemCount(talker, @q_sophias_order3) + OwnItemCount(talker, @q_sophias_order4) == 1 && OwnItemCount(talker, @q_undead_ash) + OwnItemCount(talker, @q_bloodyaxe_insignia) + OwnItemCount(talker, @q_delu_lizardman_fang) + OwnItemCount(talker, @q_stakato_talon) < 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about the tasks of the Black Lion Mercenaries");
+            }
+
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_sophias_order1) + OwnItemCount(talker, @q_sophias_order2) + OwnItemCount(talker, @q_sophias_order3) + OwnItemCount(talker, @q_sophias_order4) == 1 && OwnItemCount(talker, @q_undead_ash) + OwnItemCount(talker, @q_bloodyaxe_insignia) + OwnItemCount(talker, @q_delu_lizardman_fang) + OwnItemCount(talker, @q_stakato_talon) >= 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Take account of certificates brought");
+            }
+
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_sophias_order1) + OwnItemCount(talker, @q_sophias_order2) + OwnItemCount(talker, @q_sophias_order3) + OwnItemCount(talker, @q_sophias_order4) == 1 && OwnItemCount(talker, @q_undead_ash) + OwnItemCount(talker, @q_bloodyaxe_insignia) + OwnItemCount(talker, @q_delu_lizardman_fang) + OwnItemCount(talker, @q_stakato_talon) >= 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Take account of certificates brought");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level < 25)
+                        {
+                            ShowPage(talker, "sophia_q0333_01.htm");
+                        }
+                        else if (talker.level >= 25 && OwnItemCount(talker, @black_lion_mark) == 0)
+                        {
+                            ShowPage(talker, "sophia_q0333_02.htm");
+                        }
+                        else if (talker.level >= 25 && OwnItemCount(talker, @black_lion_mark) == 1)
+                        {
+                            FHTML_SetFileName(fhtml0, "sophia_q0333_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @hunt_of_blacklion);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_sophias_order1) + OwnItemCount(talker, @q_sophias_order2) + OwnItemCount(talker, @q_sophias_order3) + OwnItemCount(talker, @q_sophias_order4) == 0)
+                {
+                    ShowPage(talker, "sophia_q0333_14.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_sophias_order1) + OwnItemCount(talker, @q_sophias_order2) + OwnItemCount(talker, @q_sophias_order3) + OwnItemCount(talker, @q_sophias_order4) == 1 && OwnItemCount(talker, @q_undead_ash) + OwnItemCount(talker, @q_bloodyaxe_insignia) + OwnItemCount(talker, @q_delu_lizardman_fang) + OwnItemCount(talker, @q_stakato_talon) < 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) < 1)
+                {
+                    ShowPage(talker, "sophia_q0333_15.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_sophias_order1) + OwnItemCount(talker, @q_sophias_order2) + OwnItemCount(talker, @q_sophias_order3) + OwnItemCount(talker, @q_sophias_order4) == 1 && OwnItemCount(talker, @q_undead_ash) + OwnItemCount(talker, @q_bloodyaxe_insignia) + OwnItemCount(talker, @q_delu_lizardman_fang) + OwnItemCount(talker, @q_stakato_talon) < 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) >= 1)
+                {
+                    ShowPage(talker, "sophia_q0333_15a.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_sophias_order1) + OwnItemCount(talker, @q_sophias_order2) + OwnItemCount(talker, @q_sophias_order3) + OwnItemCount(talker, @q_sophias_order4) == 1 && OwnItemCount(talker, @q_undead_ash) + OwnItemCount(talker, @q_bloodyaxe_insignia) + OwnItemCount(talker, @q_delu_lizardman_fang) + OwnItemCount(talker, @q_stakato_talon) >= 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) == 0)
+                {
+                    i0 = OwnItemCount(talker, @q_undead_ash) + OwnItemCount(talker, @q_bloodyaxe_insignia) + OwnItemCount(talker, @q_delu_lizardman_fang) + OwnItemCount(talker, @q_stakato_talon);
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        if (i0 < 20)
+                        {
+                        }
+                        else if (i0 < 50)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @q_lions_claw, 1);
+                        }
+                        else if (i0 < 100)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @q_lions_claw, 2);
+                        }
+                        else
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @q_lions_claw, 3);
+                        }
+
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @q_undead_ash) * 35);
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @q_bloodyaxe_insignia) * 35);
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @q_delu_lizardman_fang) * 35);
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @q_stakato_talon) * 35);
+                        DeleteItem1(talker, @q_undead_ash, OwnItemCount(talker, @q_undead_ash));
+                        DeleteItem1(talker, @q_bloodyaxe_insignia, OwnItemCount(talker, @q_bloodyaxe_insignia));
+                        DeleteItem1(talker, @q_delu_lizardman_fang, OwnItemCount(talker, @q_delu_lizardman_fang));
+                        DeleteItem1(talker, @q_stakato_talon, OwnItemCount(talker, @q_stakato_talon));
+                        ShowPage(talker, "sophia_q0333_22.htm");
+                        SetMemoState(talker, @hunt_of_blacklion, 0);
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_sophias_order1) + OwnItemCount(talker, @q_sophias_order2) + OwnItemCount(talker, @q_sophias_order3) + OwnItemCount(talker, @q_sophias_order4) == 1 && OwnItemCount(talker, @q_undead_ash) + OwnItemCount(talker, @q_bloodyaxe_insignia) + OwnItemCount(talker, @q_delu_lizardman_fang) + OwnItemCount(talker, @q_stakato_talon) >= 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) >= 1)
+                {
+                    i0 = OwnItemCount(talker, @q_undead_ash) + OwnItemCount(talker, @q_bloodyaxe_insignia) + OwnItemCount(talker, @q_delu_lizardman_fang) + OwnItemCount(talker, @q_stakato_talon);
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        if (i0 < 20)
+                        {
+                        }
+                        else if (i0 < 50)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @q_lions_claw, 1);
+                        }
+                        else if (i0 < 100)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @q_lions_claw, 2);
+                        }
+                        else
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @q_lions_claw, 3);
+                        }
+
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @q_undead_ash) * 35);
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @q_bloodyaxe_insignia) * 35);
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @q_delu_lizardman_fang) * 35);
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @q_stakato_talon) * 35);
+                        DeleteItem1(talker, @q_undead_ash, OwnItemCount(talker, @q_undead_ash));
+                        DeleteItem1(talker, @q_bloodyaxe_insignia, OwnItemCount(talker, @q_bloodyaxe_insignia));
+                        DeleteItem1(talker, @q_delu_lizardman_fang, OwnItemCount(talker, @q_delu_lizardman_fang));
+                        DeleteItem1(talker, @q_stakato_talon, OwnItemCount(talker, @q_stakato_talon));
+                        ShowPage(talker, "sophia_q0333_23.htm");
+                        SetMemoState(talker, @hunt_of_blacklion, 0);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @hunt_of_blacklion)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "sophia_q0333_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, i0, reply, talker)
+    {
+        if (ask == @hunt_of_blacklion)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "sophia_q0333_05.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "sophia_q0333_06.htm");
+            }
+
+            if (reply == 3)
+            {
+                ShowPage(talker, "sophia_q0333_07.htm");
+            }
+
+            if (reply == 4)
+            {
+                ShowPage(talker, "sophia_q0333_08.htm");
+            }
+
+            if (reply == 5)
+            {
+                ShowPage(talker, "sophia_q0333_09.htm");
+            }
+
+            if (reply == 6)
+            {
+                if (OwnItemCount(talker, @q_sophias_order1) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @q_sophias_order1, 1);
+                        ShowPage(talker, "sophia_q0333_10.htm");
+                    }
+                }
+            }
+
+            if (reply == 7)
+            {
+                if (OwnItemCount(talker, @q_sophias_order2) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @q_sophias_order2, 1);
+                        ShowPage(talker, "sophia_q0333_11.htm");
+                    }
+                }
+            }
+
+            if (reply == 8)
+            {
+                if (OwnItemCount(talker, @q_sophias_order3) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @q_sophias_order3, 1);
+                        ShowPage(talker, "sophia_q0333_12.htm");
+                    }
+                }
+            }
+
+            if (reply == 9)
+            {
+                if (OwnItemCount(talker, @q_sophias_order4) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @q_sophias_order4, 1);
+                        ShowPage(talker, "sophia_q0333_13.htm");
+                    }
+                }
+            }
+
+            if (reply == 10)
+            {
+                if (OwnItemCount(talker, @q_lions_claw) < 10)
+                {
+                    ShowPage(talker, "sophia_q0333_16.htm");
+                }
+                else if (OwnItemCount(talker, @q_lions_claw) >= 10 && OwnItemCount(talker, @q_lions_eye) < 4)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @q_lions_eye, 1);
+                        i0 = Rand(100);
+                        if (i0 < 25)
+                        {
+                            GiveItem1(talker, @healing_potion, 20);
+                        }
+                        else if (i0 < 50)
+                        {
+                            if (IsInCategory(@fighter_group, talker.occupation))
+                            {
+                                GiveItem1(talker, @soulshot_d, 100);
+                            }
+                            else
+                            {
+                                GiveItem1(talker, @spiritshot_d, 50);
+                            }
+                        }
+                        else if (i0 < 75)
+                        {
+                            GiveItem1(talker, @scroll_of_escape, 20);
+                        }
+                        else
+                        {
+                            GiveItem1(talker, @swift_attack_potion, 3);
+                        }
+
+                        DeleteItem1(talker, @q_lions_claw, 10);
+                        ShowPage(talker, "sophia_q0333_17a.htm");
+                    }
+                }
+                else if (OwnItemCount(talker, @q_lions_claw) >= 10 && (OwnItemCount(talker, @q_lions_eye) >= 4 && OwnItemCount(talker, @q_lions_eye) <= 7))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @q_lions_eye, 1);
+                        i0 = Rand(100);
+                        if (i0 < 25)
+                        {
+                            GiveItem1(talker, @healing_potion, 25);
+                        }
+                        else if (i0 < 50)
+                        {
+                            if (IsInCategory(@fighter_group, talker.occupation))
+                            {
+                                GiveItem1(talker, @soulshot_d, 200);
+                            }
+                            else
+                            {
+                                GiveItem1(talker, @spiritshot_d, 100);
+                            }
+                        }
+                        else if (i0 < 75)
+                        {
+                            GiveItem1(talker, @scroll_of_escape, 20);
+                        }
+                        else
+                        {
+                            GiveItem1(talker, @swift_attack_potion, 3);
+                        }
+
+                        DeleteItem1(talker, @q_lions_claw, 10);
+                        ShowPage(talker, "sophia_q0333_18b.htm");
+                    }
+                }
+                else if (OwnItemCount(talker, @q_lions_claw) >= 10 && OwnItemCount(talker, @q_lions_eye) >= 8)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @q_lions_eye, 1);
+                        i0 = Rand(100);
+                        if (i0 < 25)
+                        {
+                            GiveItem1(talker, @healing_potion, 50);
+                        }
+                        else if (i0 < 50)
+                        {
+                            if (IsInCategory(@fighter_group, talker.occupation))
+                            {
+                                GiveItem1(talker, @soulshot_d, 400);
+                            }
+                            else
+                            {
+                                GiveItem1(talker, @spiritshot_d, 200);
+                            }
+                        }
+                        else if (i0 < 75)
+                        {
+                            GiveItem1(talker, @scroll_of_escape, 30);
+                        }
+                        else
+                        {
+                            GiveItem1(talker, @swift_attack_potion, 4);
+                        }
+
+                        DeleteItem1(talker, @q_lions_claw, 10);
+                        ShowPage(talker, "sophia_q0333_19b.htm");
+                    }
+                }
+            }
+
+            if (reply == 11)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    DeleteItem1(talker, @q_sophias_order1, OwnItemCount(talker, @q_sophias_order1));
+                    DeleteItem1(talker, @q_sophias_order2, OwnItemCount(talker, @q_sophias_order2));
+                    DeleteItem1(talker, @q_sophias_order3, OwnItemCount(talker, @q_sophias_order3));
+                    DeleteItem1(talker, @q_sophias_order4, OwnItemCount(talker, @q_sophias_order4));
+                    ShowPage(talker, "sophia_q0333_20.htm");
+                }
+            }
+
+            if (reply == 12)
+            {
+                ShowPage(talker, "sophia_q0333_21.htm");
+            }
+
+            if (reply == 13)
+            {
+                ShowPage(talker, "sophia_q0333_24a.htm");
+            }
+
+            if (reply == 14)
+            {
+                ShowPage(talker, "sophia_q0333_25b.htm");
+            }
+
+            if (reply == 15)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(talker, @adena, 1000);
+                    DeleteItem1(talker, @q_lions_claw, OwnItemCount(talker, @q_lions_claw));
+                    DeleteItem1(talker, @q_lions_eye, OwnItemCount(talker, @q_lions_eye));
+                    DeleteItem1(talker, @q_guild_coin, OwnItemCount(talker, @q_guild_coin));
+                    DeleteItem1(talker, @black_lion_mark, OwnItemCount(talker, @black_lion_mark));
+                    DeleteItem1(talker, @q_sophias_order1, OwnItemCount(talker, @q_sophias_order1));
+                    DeleteItem1(talker, @q_sophias_order2, OwnItemCount(talker, @q_sophias_order2));
+                    DeleteItem1(talker, @q_sophias_order3, OwnItemCount(talker, @q_sophias_order3));
+                    DeleteItem1(talker, @q_sophias_order4, OwnItemCount(talker, @q_sophias_order4));
+                    ShowPage(talker, "sophia_q0333_26.htm");
+                    RemoveMemo(talker, @hunt_of_blacklion);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                }
+            }
+        }
+
+        super;
+    }
+}

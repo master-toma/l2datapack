@@ -1,0 +1,124 @@
+class trader_nestle : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"necklace_of_knowledge"; 20};
+        {"necklace_of_anguish"; 20};
+        {"necklace_of_wisdom"; 20};
+        {"blue_diamond_necklace"; 20};
+        {"necklace_of_devotion"; 20};
+        {"mage_earing"; 20};
+        {"earing_of_strength"; 20};
+        {"earing_of_wisdom"; 20};
+        {"cat'seye_earing"; 20};
+        {"coral_earing"; 20};
+        {"red_cresent_earing"; 20};
+        {"ring_of_knowledge"; 20};
+        {"ring_of_anguish"; 20};
+        {"ring_of_wisdom"; 20};
+        {"blue_coral_ring"; 20};
+        {"ring_of_devotion"; 20};
+        {"world_map"; 20};
+        {"key_of_thief"; 20};
+        {"spirit_ore"; 20};
+        {"soul_ore"; 20};
+        {"wooden_arrow"; 20};
+        {"bone_arrow"; 20};
+        {"lesser_healing_potion"; 20};
+        {"antidote"; 20};
+        {"bandage"; 20};
+        {"quick_step_potion"; 20};
+        {"swift_attack_potion"; 20};
+        {"healing_potion"; 20};
+        {"advanced_antidote"; 20};
+        {"emergency_dressing"; 20};
+        {"scroll_of_escape"; 20};
+        {"scroll_of_resurrection"; 20};
+        {"scroll_of_escape_to_agit"; 20};
+        {"gemstone_d"; 20}
+    };
+    
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @leopolds_journal1) == 0 && OwnItemCount(talker, @nestle_memo1) == 0 && OwnItemCount(talker, @alexandrias_book) == 1 && OwnItemCount(talker, @aklantos_gem4) == 0 && OwnItemCount(talker, @aklantos_gem5) == 0 && OwnItemCount(talker, @aklantos_gem6) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you are looking for jewels");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @alexandrias_book) >= 1 && OwnItemCount(talker, @nestle_memo1) >= 1 && OwnItemCount(talker, @leopolds_journal1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Say that you are looking for jewels");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @alexandrias_book) == 1 && OwnItemCount(talker, @nestle_memo1) == 0 && (OwnItemCount(talker, @leopolds_journal1) == 1 || (OwnItemCount(talker, @aklantos_gem4) >= 1 || OwnItemCount(talker, @aklantos_gem5) >= 1 || OwnItemCount(talker, @aklantos_gem6) >= 1)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Say that you are looking for jewels");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @leopolds_journal1) == 0 && OwnItemCount(talker, @nestle_memo1) == 0 && OwnItemCount(talker, @alexandrias_book) == 1 && OwnItemCount(talker, @aklantos_gem4) == 0 && OwnItemCount(talker, @aklantos_gem5) == 0 && OwnItemCount(talker, @aklantos_gem6) == 0)
+                {
+                    ShowPage(talker, "trader_nestle_q0229_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @alexandrias_book) >= 1 && OwnItemCount(talker, @nestle_memo1) >= 1 && OwnItemCount(talker, @leopolds_journal1) == 0)
+                {
+                    ShowPage(talker, "trader_nestle_q0229_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @alexandrias_book) == 1 && OwnItemCount(talker, @nestle_memo1) == 0 && (OwnItemCount(talker, @leopolds_journal1) == 1 || (OwnItemCount(talker, @aklantos_gem4) >= 1 || OwnItemCount(talker, @aklantos_gem5) >= 1 || OwnItemCount(talker, @aklantos_gem6) >= 1)))
+                {
+                    ShowPage(talker, "trader_nestle_q0229_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_witchcraft)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "trader_nestle_q0229_02.htm");
+                    GiveItem1(talker, @nestle_memo1, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

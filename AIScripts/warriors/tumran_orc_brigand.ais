@@ -1,0 +1,23 @@
+class tumran_orc_brigand : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @forgotten_truth) && OwnItemCount(c1, @onyx_talisman2) && Rand(100) < 20)
+        {
+            if (OwnItemCount(c1, @ancient_scroll) == 0)
+            {
+                GiveItem1(c1, @ancient_scroll, 1);
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+            else if (OwnItemCount(c1, @ancient_clay_tablet) == 0)
+            {
+                GiveItem1(c1, @ancient_clay_tablet, 1);
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+        }
+
+        super;
+    }
+}

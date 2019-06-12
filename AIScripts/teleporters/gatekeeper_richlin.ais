@@ -1,0 +1,13 @@
+class gatekeeper_richlin : teleporter
+{
+property:
+    TelPosList Position = {
+        {1010001; -84141; 244623; -3729; 18000; 0};    // 1010001 - "Talking Island Village"
+        {1010002; 46951; 51550; -2976; 6400; 0};    // 1010002 - "The Elven Village"
+        {1010003; 9709; 15566; -4500; 6400; 0};    // 1010003 - "The Dark Elven Village"
+        {1010005; -12694; 122776; -3114; 2900; 1};    // 1010005 - "The Town of Gludio"
+        {1010008; -45158; -112583; -236; 6000; 0};    // 1010008 - "Orc Village"
+        {1010009; 115120; -178224; -917; 6000; 0};    // 1010009 - "Dwarven Village"
+        {1010012; -16730; 209417; -3691; 2400; 0}    // 1010012 - "The Southern Entrance of the Wastelands"
+    };
+}

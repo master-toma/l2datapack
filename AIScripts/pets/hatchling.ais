@@ -1,0 +1,3 @@
+class hatchling : pet_physicalattack
+{
+}

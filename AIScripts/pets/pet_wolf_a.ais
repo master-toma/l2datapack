@@ -1,0 +1,3 @@
+class pet_wolf_a : pet_physicalattack
+{
+}

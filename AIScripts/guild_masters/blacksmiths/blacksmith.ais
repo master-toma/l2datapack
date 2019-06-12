@@ -1,0 +1,3 @@
+class blacksmith : fighter_coach
+{
+}

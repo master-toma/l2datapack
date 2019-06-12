@@ -1,0 +1,30 @@
+class vanor_silenos_shaman : warrior_passive_casting_curse
+{
+handler:
+    EventHandler MY_DYING(c1, c2)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @magic_coin) && GetMemoState(c1, @magic_coin) == 3 && Rand(10) == 0)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @q_silver_unicorn, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        c2 = Pledge_GetLeader(c1);
+        if (HaveMemo(c2, @pledge_of_blood) && (GetMemoState(c2, @pledge_of_blood) >= 3 && GetMemoState(c2, @pledge_of_blood) < 6))
+        {
+            if (Rand(10) == 1)
+            {
+                GiveItem1(c1, @q_herb_of_vanor, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

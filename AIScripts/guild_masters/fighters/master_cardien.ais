@@ -1,0 +1,154 @@
+class master_cardien : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_life) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_life) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Test of Life");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_life) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Test of Life");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @cardiens_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about elder");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about the task");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @camomile_charm) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about the task");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_life) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race == @race_elf && talker.level >= 37 && IsInCategory(@elf_2nd_group, talker.occupation))
+                        {
+                            FHTML_SetFileName(fhtml0, "master_cardien_q0218_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @testimony_of_life);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else if (talker.race == @race_elf && talker.level >= 37)
+                        {
+                            ShowPage(talker, "master_cardien_q0218_01a.htm");
+                        }
+                        else if (talker.race == @race_elf)
+                        {
+                            ShowPage(talker, "master_cardien_q0218_02.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "master_cardien_q0218_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_life) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @cardiens_letter) == 1)
+                {
+                    ShowPage(talker, "master_cardien_q0218_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) == 1)
+                {
+                    ShowPage(talker, "master_cardien_q0218_06.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @camomile_charm) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        IncrementParam(talker, @PARAM_EXP, 47000);
+                        IncrementParam(talker, @PARAM_SP, 5800);
+                        DeleteItem1(talker, @camomile_charm, 1);
+                        GiveItem1(talker, @mark_of_life, 1);
+                        ShowPage(talker, "master_cardien_q0218_07.htm");
+                        RemoveMemo(talker, @testimony_of_life);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @testimony_of_life, 1);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @testimony_of_life)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @cardiens_letter) == 0)
+                {
+                    GiveItem1(talker, @cardiens_letter, 1);
+                }
+
+                ShowPage(talker, "master_cardien_q0218_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

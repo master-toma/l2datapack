@@ -1,0 +1,15 @@
+class instant_teleporter : default_npc
+{
+parameter:
+    string fnHi = "thi.htm";
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        ShowPage(talker, fnHi);
+    }
+
+    EventHandler TELEPORT_REQUESTED(talker)
+    {
+    }
+}

@@ -1,0 +1,211 @@
+class bard_rukal : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_magus) == 0 && GetOneTimeQuestFlag(talker, @test_of_magus) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Magic of Finality");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 0 && GetOneTimeQuestFlag(talker, @test_of_magus) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Magic of Finality");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @rukals_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Magic of Finality");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @parinas_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that you met Parina");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @lilac_charm) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give seeds");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Give Musical Notes of the Four Elements");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 0 && GetOneTimeQuestFlag(talker, @test_of_magus) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.occupation == @wizard || talker.occupation == @elven_wizard || talker.occupation == @dark_wizard)
+                        {
+                            if (talker.level < 39)
+                            {
+                                ShowPage(talker, "bard_rukal_q0228_02.htm");
+                            }
+                            else
+                            {
+                                FHTML_SetFileName(fhtml0, "bard_rukal_q0228_03.htm");
+                                FHTML_SetInt(fhtml0, "quest_id", @test_of_magus);
+                                ShowFHTML(talker, fhtml0);
+                            }
+                        }
+                        else
+                        {
+                            ShowPage(talker, "bard_rukal_q0228_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 0 && GetOneTimeQuestFlag(talker, @test_of_magus) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @rukals_letter) == 1)
+                {
+                    ShowPage(talker, "bard_rukal_q0228_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @parinas_letter) == 1)
+                {
+                    ShowPage(talker, "bard_rukal_q0228_06.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @lilac_charm) == 1)
+                {
+                    if (OwnItemCount(talker, @golden_seed1) >= 1 && OwnItemCount(talker, @golden_seed2) >= 1 && OwnItemCount(talker, @golden_seed3) >= 1)
+                    {
+                        ShowPage(talker, "bard_rukal_q0228_08.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "bard_rukal_q0228_07.htm");
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1)
+                {
+                    if (OwnItemCount(talker, @tone_of_water) >= 1 && OwnItemCount(talker, @tone_of_fire) >= 1 && OwnItemCount(talker, @tone_of_wind) >= 1 && OwnItemCount(talker, @tone_of_earth) >= 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            DeleteItem1(talker, @score_of_elements, OwnItemCount(talker, @score_of_elements));
+                            DeleteItem1(talker, @tone_of_water, OwnItemCount(talker, @tone_of_water));
+                            DeleteItem1(talker, @tone_of_fire, OwnItemCount(talker, @tone_of_fire));
+                            DeleteItem1(talker, @tone_of_wind, OwnItemCount(talker, @tone_of_wind));
+                            DeleteItem1(talker, @tone_of_earth, OwnItemCount(talker, @tone_of_earth));
+                            GiveItem1(talker, @mark_of_magus, 1);
+                            IncrementParam(talker, @PARAM_EXP, 50000);
+                            IncrementParam(talker, @PARAM_SP, 6400);
+                            ShowPage(talker, "bard_rukal_q0228_12.htm");
+                            RemoveMemo(talker, @test_of_magus);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            SetOneTimeQuestFlag(talker, @test_of_magus, 1);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "bard_rukal_q0228_11.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @test_of_magus)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @rukals_letter) == 0)
+                {
+                    GiveItem1(talker, @rukals_letter, 1);
+                }
+
+                ShowPage(talker, "bard_rukal_q0228_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_magus)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "bard_rukal_q0228_09.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (OwnItemCount(talker, @golden_seed3) >= 1)
+                {
+                    ShowPage(talker, "bard_rukal_q0228_10.htm");
+                    DeleteItem1(talker, @lilac_charm, OwnItemCount(talker, @lilac_charm));
+                    DeleteItem1(talker, @golden_seed1, OwnItemCount(talker, @golden_seed1));
+                    DeleteItem1(talker, @golden_seed2, OwnItemCount(talker, @golden_seed2));
+                    DeleteItem1(talker, @golden_seed3, 1);
+                    GiveItem1(talker, @score_of_elements, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

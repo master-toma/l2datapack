@@ -1,0 +1,3 @@
+class royal_guard_ant : ai_boss01_royal_guard_ant
+{
+}

@@ -1,0 +1,50 @@
+class agit_in : default_npc
+{
+parameter:
+    string fnHi = "luce001.htm";
+    string fnNotMyPledge = "luce002.htm";
+    int ain_x1 = 0;
+    int ain_y1 = 0;
+    int ain_z1 = 0;
+    int ain_x2 = 0;
+    int ain_y2 = 0;
+    int ain_z2 = 0;
+    int ain_x3 = 0;
+    int ain_y3 = 0;
+    int ain_z3 = 0;
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        if (Castle_GetPledgeId() == talker.pledge_id && talker.pledge_id != 0)
+        {
+            ShowPage(talker, fnHi);
+        }
+        else
+        {
+            ShowPage(talker, fnNotMyPledge);
+        }
+    }
+
+    EventHandler MENU_SELECTED(talker, ask, reply, fhtml0)
+    {
+        if (Castle_GetPledgeId() == talker.pledge_id && talker.pledge_id != 0)
+        {
+            if (ask == -221 && reply == 1)
+            {
+                if (Rand(100) < 33)
+                {
+                    InstantTeleport(talker, ain_x1, ain_y1, ain_z1);
+                }
+                else if (Rand(100) < 66)
+                {
+                    InstantTeleport(talker, ain_x2, ain_y2, ain_z2);
+                }
+                else
+                {
+                    InstantTeleport(talker, ain_x3, ain_y3, ain_z3);
+                }
+            }
+        }
+    }
+}

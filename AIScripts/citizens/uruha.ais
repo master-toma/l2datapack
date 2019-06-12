@@ -1,0 +1,74 @@
+class uruha : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 14 && OwnItemCount(talker, @debris_of_willow))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask why the other person interfered in eliminating the evil creatures");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 15 && OwnItemCount(talker, @book_of_darkness))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask if the evil creatures don’t need to be killed");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 14 && OwnItemCount(talker, @debris_of_willow))
+                {
+                    ShowPage(talker, "uruha_q0215_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 15 && OwnItemCount(talker, @book_of_darkness))
+                {
+                    ShowPage(talker, "uruha_q0215_03.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_pilgrim)
+        {
+            if (reply == 1 && OwnItemCount(talker, @debris_of_willow) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "uruha_q0215_02.htm");
+                    GiveItem1(talker, @book_of_darkness, 1);
+                    DeleteItem1(talker, @debris_of_willow, 1);
+                    SetMemoState(talker, @trial_of_pilgrim, 15);
+                }
+            }
+        }
+
+        super;
+    }
+}

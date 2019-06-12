@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_golem_body]	/* [골렘 몸뚱이] */	skill_id = 4003	level = 1	operate_type = P	effect = {{p_defence_attribute;attr_bow;-70};{p_defence_attribute;attr_dagger;-30};{p_defence_attribute;attr_blunt;10}}	skill_end

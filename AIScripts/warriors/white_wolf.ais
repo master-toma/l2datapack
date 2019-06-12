@@ -1,0 +1,3 @@
+class white_wolf : warrior_aggressive
+{
+}

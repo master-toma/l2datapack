@@ -1,0 +1,192 @@
+class rylith : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @millennium_love) == 0 && GetOneTimeQuestFlag(talker, @millennium_love) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Listen to a story about magic");
+            }
+
+            if (HaveMemo(talker, @millennium_love) == 0 && GetOneTimeQuestFlag(talker, @millennium_love) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Listen to a story about magic");
+            }
+
+            if (HaveMemo(talker, @millennium_love) != 0 && OwnItemCount(talker, @ryliths_letter) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Listen to a story about magic");
+            }
+
+            if (HaveMemo(talker, @millennium_love) != 0 && OwnItemCount(talker, @theons_diary) > 0 && GetOneTimeQuestFlag(talker, @millennium_love) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about smuggled goods");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @crystal_brooch) >= 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @rylith_elven_wafer) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about Certificate of Health");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @rylith_elven_wafer) >= 1 && OwnItemCount(talker, @crystal_brooch) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Say that you are thankful for the other person giving Elven wafer");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Say that you are thankful for the other person giving Elven wafer");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @millennium_love) == 0 && GetOneTimeQuestFlag(talker, @millennium_love) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        FHTML_SetFileName(fhtml0, "rylith_q0307_04.htm");
+                        FHTML_SetInt(fhtml0, "quest_id", @millennium_love);
+                        ShowPage(talker, "rylith_q0307_02.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @millennium_love) == 0 && GetOneTimeQuestFlag(talker, @millennium_love) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @millennium_love) != 0 && OwnItemCount(talker, @ryliths_letter) != 0)
+                {
+                    ShowPage(talker, "rylith_q0307_07.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @millennium_love) != 0 && OwnItemCount(talker, @theons_diary) > 0 && GetOneTimeQuestFlag(talker, @millennium_love) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @theons_diary, OwnItemCount(talker, @theons_diary));
+                        RemoveMemo(talker, @millennium_love);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @millennium_love, 1);
+                        IncrementParam(talker, @PARAM_EXP, 3600);
+                        GiveItem1(talker, @swift_attack_potion, 2);
+                        ShowPage(talker, "rylith_q0307_08.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @crystal_brooch) >= 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @rylith_elven_wafer) == 0)
+                {
+                    ShowPage(talker, "rylith_q0221_01.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @rylith_elven_wafer) >= 1 && OwnItemCount(talker, @crystal_brooch) == 0)
+                {
+                    ShowPage(talker, "rylith_q0221_04.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) == 1)
+                {
+                    ShowPage(talker, "rylith_q0221_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @millennium_love)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                if (talker.level >= 15)
+                {
+                    ShowPage(talker, "rylith_q0307_06.htm");
+                    GiveItem1(talker, @ryliths_letter, 1);
+                    SetMemo(talker, quest_id);
+                    SoundEffect(talker, "ItemSound.quest_accept");
+                }
+                else
+                {
+                    ShowPage(talker, "rylith_q0307_05.htm");
+                }
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_prosperity)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "rylith_q0221_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (OwnItemCount(talker, @crystal_brooch) >= 1)
+                {
+                    ShowPage(talker, "rylith_q0221_03.htm");
+                    DeleteItem1(talker, @crystal_brooch, 1);
+                    GiveItem1(talker, @rylith_elven_wafer, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

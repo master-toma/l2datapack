@@ -1,0 +1,231 @@
+class sage_kasian : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 16)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask who's right");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 17)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask how you should live");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @parinas_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Singing Flower");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @lilac_charm) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show seeds");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Musical Notes of the Elements");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) >= 1 && OwnItemCount(talker, @poitans_notes) >= 1 && OwnItemCount(talker, @kasians_list) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask for Book 4 in the Scriptures of Knowledge");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) >= 1 && OwnItemCount(talker, @poitans_notes) >= 1 && OwnItemCount(talker, @kasians_list) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask for Book 4 in the Scriptures of Knowledge");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @poitans_notes) == 0 && OwnItemCount(talker, @poitans_notes) == 0 && OwnItemCount(talker, @kasians_list) == 0 && OwnItemCount(talker, @treafs_ring) == 1 && (OwnItemCount(talker, @scripture_chapter_1) >= 1 && OwnItemCount(talker, @scripture_chapter_2) >= 1 && OwnItemCount(talker, @scripture_chapter_3) >= 1 && OwnItemCount(talker, @scripture_chapter_4) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Show scriptures that were collected");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 16)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "sage_kasian_q0215_01.htm");
+                        SetMemoState(talker, @trial_of_pilgrim, 17);
+                        DeleteItem1(talker, @grey_badge, OwnItemCount(talker, @grey_badge));
+                        DeleteItem1(talker, @spirit_of_flame, OwnItemCount(talker, @spirit_of_flame));
+                        DeleteItem1(talker, @statue_of_Einhasad, OwnItemCount(talker, @statue_of_Einhasad));
+                        if (OwnItemCount(talker, @book_of_sage) == 0)
+                        {
+                            GiveItem1(talker, @book_of_sage, 1);
+                        }
+
+                        if (OwnItemCount(talker, @book_of_darkness))
+                        {
+                            IncrementParam(talker, @PARAM_EXP, 5000);
+                            IncrementParam(talker, @PARAM_SP, 500);
+                            DeleteItem1(talker, @book_of_darkness, 1);
+                        }
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 17)
+                {
+                    ShowPage(talker, "sage_kasian_q0215_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @parinas_letter) == 1)
+                {
+                    ShowPage(talker, "sage_kasian_q0228_01.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @lilac_charm) == 1)
+                {
+                    if (OwnItemCount(talker, @golden_seed1) >= 1 && OwnItemCount(talker, @golden_seed2) >= 1 && OwnItemCount(talker, @golden_seed3) >= 1)
+                    {
+                        ShowPage(talker, "sage_kasian_q0228_04.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "sage_kasian_q0228_03.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1)
+                {
+                    ShowPage(talker, "sage_kasian_q0228_05.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) >= 1 && OwnItemCount(talker, @poitans_notes) >= 1 && OwnItemCount(talker, @kasians_list) == 0)
+                {
+                    if (OwnItemCount(talker, @scripture_chapter_1) >= 1 && OwnItemCount(talker, @scripture_chapter_2) >= 1 && OwnItemCount(talker, @scripture_chapter_3) >= 1)
+                    {
+                        ShowPage(talker, "sage_kasian_q0214_02.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "sage_kasian_q0214_01.htm");
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) >= 1 && OwnItemCount(talker, @poitans_notes) >= 1 && OwnItemCount(talker, @kasians_list) >= 1)
+                {
+                    if (OwnItemCount(talker, @ghouls_skin) + OwnItemCount(talker, @medusas_blood) + OwnItemCount(talker, @crimsonbinds_ichor) + OwnItemCount(talker, @encht_gargoyles_nail) < 32)
+                    {
+                        ShowPage(talker, "sage_kasian_q0214_05.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "sage_kasian_q0214_06.htm");
+                    }
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @poitans_notes) == 0 && OwnItemCount(talker, @poitans_notes) == 0 && OwnItemCount(talker, @kasians_list) == 0 && OwnItemCount(talker, @treafs_ring) == 1 && (OwnItemCount(talker, @scripture_chapter_1) >= 1 && OwnItemCount(talker, @scripture_chapter_2) >= 1 && OwnItemCount(talker, @scripture_chapter_3) >= 1 && OwnItemCount(talker, @scripture_chapter_4) >= 1))
+                {
+                    ShowPage(talker, "sage_kasian_q0214_08.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_magus)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "sage_kasian_q0228_02.htm");
+                    GiveItem1(talker, @lilac_charm, 1);
+                    DeleteItem1(talker, @parinas_letter, OwnItemCount(talker, @parinas_letter));
+                }
+            }
+        }
+
+        if (ask == @trial_of_scholar)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "sage_kasian_q0214_03.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "sage_kasian_q0214_04.htm");
+                    GiveItem1(talker, @kasians_list, 1);
+                }
+            }
+
+            if (reply == 3)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "sage_kasian_q0214_07.htm");
+                    GiveItem1(talker, @scripture_chapter_4, 1);
+                    DeleteItem1(talker, @kasians_list, OwnItemCount(talker, @kasians_list));
+                    DeleteItem1(talker, @ghouls_skin, OwnItemCount(talker, @ghouls_skin));
+                    DeleteItem1(talker, @medusas_blood, OwnItemCount(talker, @medusas_blood));
+                    DeleteItem1(talker, @crimsonbinds_ichor, OwnItemCount(talker, @crimsonbinds_ichor));
+                    DeleteItem1(talker, @encht_gargoyles_nail, OwnItemCount(talker, @encht_gargoyles_nail));
+                    DeleteItem1(talker, @poitans_notes, OwnItemCount(talker, @poitans_notes));
+                }
+            }
+        }
+
+        super;
+    }
+}

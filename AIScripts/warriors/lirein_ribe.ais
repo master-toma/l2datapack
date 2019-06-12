@@ -1,0 +1,49 @@
+class lirein_ribe : warrior_aggressive_casting_curse
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @catch_the_wind) != 0 && myself.i_quest0 == 1 && Rand(100) < 50)
+        {
+            GiveItem1(myself.c_quest0, @wind_shard, 1);
+            SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimoney_of_trust) && GetMemoState(c1, @testimoney_of_trust) == 2)
+        {
+            c1.flag = c1.flag + 1;
+            if (Rand(100) < c1.flag * 33)
+            {
+                CreateOnePrivateEx(@luell_of_zephyr_winds, "luell_of_zephyr_winds", 0, 0, FloatToInt(myself.sm.x), FloatToInt(myself.sm.y), FloatToInt(myself.sm.z), 0, 0, 0);
+                SoundEffect(c1, "Itemsound.quest_before_battle");
+                c1.flag = 0;
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

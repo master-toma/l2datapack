@@ -1,0 +1,3 @@
+class dion_royal_gatekeeper : castle_instant_teleporter
+{
+}

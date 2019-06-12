@@ -1,0 +1,59 @@
+class jundin : npc_elder
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @delf_tutorial))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show your diploma");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @delf_tutorial))
+                {
+                    if (OwnItemCount(talker, @blood_of_jundin) && GetOneTimeQuestFlag(talker, @delf_tutorial) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            DeleteRadar(talker, 29560, 11030, -4224);
+                            ShowPage(talker, "jundin_q0204_01.htm");
+                            IncrementParam(talker, @PARAM_SP, 50);
+                            DeleteItem1(talker, @blood_of_jundin, 1);
+                            RemoveMemo(talker, @delf_tutorial);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            ShowQuestionMark(talker, 7);
+                            ShowRadar(talker, 12111, 16686, -4582);
+                            SetOneTimeQuestFlag(talker, @delf_tutorial, 1);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "jundin001.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

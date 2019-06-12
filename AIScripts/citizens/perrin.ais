@@ -1,0 +1,152 @@
+class perrin : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_oracle) && OwnItemCount(talker, @crystal_medallion) && OwnItemCount(talker, @lizard_captain_order))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Allana");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 1 && OwnItemCount(talker, @report_of_perrin))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the holy woman");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Tell to explain about the holy woman before something bad happens");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that you won’t take it nicely if what was said was a lie");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_oracle) && OwnItemCount(talker, @crystal_medallion) && OwnItemCount(talker, @lizard_captain_order))
+                {
+                    if (OwnItemCount(talker, @tamatos_necklace) == 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @money_of_swindler, 1);
+                            DeleteItem1(talker, @tamatos_necklace, 1);
+                            ShowPage(talker, "perrin_q0409_04.htm");
+                        }
+                    }
+                    else if (OwnItemCount(talker, @money_of_swindler) > 0)
+                    {
+                        ShowPage(talker, "perrin_q0409_05.htm");
+                    }
+                    else if (GetMemoState(talker, @path_to_oracle) == 3)
+                    {
+                        ShowPage(talker, "perrin_q0409_06.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "perrin_q0409_01.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 1 && OwnItemCount(talker, @report_of_perrin))
+                {
+                    ShowPage(talker, "perrin_q0226_01.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 2)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "perrin_q0226_03.htm");
+                        SetMemoState(talker, @test_of_healer, 3);
+                        DeleteItem1(talker, @report_of_perrin, OwnItemCount(talker, @report_of_perrin));
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 3)
+                {
+                    ShowPage(talker, "perrin_q0226_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_oracle)
+        {
+            if (reply == 1)
+            {
+                if (GetMemoState(talker, @path_to_oracle) == 2)
+                {
+                    ShowPage(talker, "perrin_q0409_02.htm");
+                }
+            }
+            else if (reply == 2)
+            {
+                if (GetMemoState(talker, @path_to_oracle) == 2)
+                {
+                    ShowPage(talker, "perrin_q0409_03.htm");
+                }
+            }
+            else if (reply == 3)
+            {
+                if (GetMemoState(talker, @path_to_oracle) == 2)
+                {
+                    CreateOnePrivate(@tamato, "tamato", 0, 1);
+                    SetMemoState(talker, @path_to_oracle, 3);
+                }
+            }
+        }
+
+        if (ask == @test_of_healer)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "perrin_q0226_02.htm");
+                if (Maker_GetNpcCount() == 1)
+                {
+                    CreateOnePrivate(@tatoma, "tatoma", 0, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

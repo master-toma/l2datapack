@@ -1,0 +1,56 @@
+class primoz : cleric_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 8)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Einhasad");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 9)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask who you should go look for");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 8)
+                {
+                    ShowPage(talker, "primoz_q0215_01.htm");
+                    SetMemoState(talker, @trial_of_pilgrim, 9);
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 9)
+                {
+                    ShowPage(talker, "primoz_q0215_02.htm");
+                    SetMemoState(talker, @trial_of_pilgrim, 9);
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

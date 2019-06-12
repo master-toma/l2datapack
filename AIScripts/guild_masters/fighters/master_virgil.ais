@@ -1,0 +1,156 @@
+class master_virgil : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_palus_knight) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to a Palace Knight");
+            }
+
+            if (HaveMemo(talker, @path_to_palus_knight) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about changing occupation to a Palace Knight");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_palus_knight) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        ShowPage(talker, "master_virgil_q0410_01.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_palus_knight) == 1)
+                {
+                    if (OwnItemCount(talker, @pallus_talisman) == 1 && OwnItemCount(talker, @lycanthrope_skull) == 0)
+                    {
+                        ShowPage(talker, "master_virgil_q0410_07.htm");
+                    }
+                    else if (OwnItemCount(talker, @pallus_talisman) == 1 && OwnItemCount(talker, @lycanthrope_skull) > 0 && OwnItemCount(talker, @lycanthrope_skull) < 13)
+                    {
+                        ShowPage(talker, "master_virgil_q0410_08.htm");
+                    }
+                    else if (OwnItemCount(talker, @pallus_talisman) == 1 && OwnItemCount(talker, @lycanthrope_skull) >= 13)
+                    {
+                        ShowPage(talker, "master_virgil_q0410_09.htm");
+                    }
+                    else if (OwnItemCount(talker, @coffin_eternal_rest) == 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "master_virgil_q0410_11.htm");
+                            DeleteItem1(talker, @coffin_eternal_rest, 1);
+                            DeleteItem1(talker, @morte_talisman, OwnItemCount(talker, @morte_talisman));
+                            GiveItem1(talker, @gaze_of_abyss, 1);
+                            RemoveMemo(talker, @path_to_palus_knight);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                    }
+                    else if (OwnItemCount(talker, @morte_talisman) || OwnItemCount(talker, @virgils_letter))
+                    {
+                        ShowPage(talker, "master_virgil_q0410_12.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_palus_knight)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @path_to_palus_knight);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "master_virgil_q0410_06.htm");
+                GiveItem1(talker, @pallus_talisman, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @path_to_palus_knight)
+        {
+            if (reply == 1)
+            {
+                if (talker.level >= 19 && talker.occupation == @dark_fighter && OwnItemCount(talker, @gaze_of_abyss) == 0)
+                {
+                    FHTML_SetFileName(fhtml0, "master_virgil_q0410_05.htm");
+                    FHTML_SetInt(fhtml0, "quest_id", @path_to_palus_knight);
+                    ShowFHTML(talker, fhtml0);
+                }
+                else if (talker.occupation != @dark_fighter)
+                {
+                    if (talker.occupation == @palus_knight)
+                    {
+                        ShowPage(talker, "master_virgil_q0410_02a.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "master_virgil_q0410_03.htm");
+                    }
+                }
+                else if (talker.level < 19 && talker.occupation == @dark_fighter)
+                {
+                    ShowPage(talker, "master_virgil_q0410_02.htm");
+                }
+                else if (talker.level >= 19 && talker.occupation == @dark_fighter && OwnItemCount(talker, @gaze_of_abyss) == 1)
+                {
+                    ShowPage(talker, "master_virgil_q0410_04.htm");
+                }
+            }
+            else if (reply == 2 && OwnItemCount(talker, @pallus_talisman) > 0 && OwnItemCount(talker, @lycanthrope_skull) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "master_virgil_q0410_10.htm");
+                    DeleteItem1(talker, @pallus_talisman, 1);
+                    DeleteItem1(talker, @lycanthrope_skull, OwnItemCount(talker, @lycanthrope_skull));
+                    GiveItem1(talker, @virgils_letter, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

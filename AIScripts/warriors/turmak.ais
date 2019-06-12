@@ -1,0 +1,3 @@
+class turmak : warrior_aggressive_casting_splash
+{
+}

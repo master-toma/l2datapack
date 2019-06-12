@@ -1,0 +1,212 @@
+class cybellin : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @song_of_hunters) && (OwnItemCount(talker, @q_hunter_license_2) == 0 && OwnItemCount(talker, @q_hunter_license_1) == 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Introduce yourself as a member of Hunter Guild");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && (OwnItemCount(talker, @q_hunter_license_2) || OwnItemCount(talker, @q_hunter_license_1)) && OwnItemCount(talker, @q_cybellins_request) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Introduce yourself as a member of Hunter Guild");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && (OwnItemCount(talker, @q_hunter_license_2) || OwnItemCount(talker, @q_hunter_license_1)) && OwnItemCount(talker, @q_cybellins_request) && OwnItemCount(talker, @q_blood_crystal_1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about Blood Crystal");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && (OwnItemCount(talker, @q_hunter_license_2) || OwnItemCount(talker, @q_hunter_license_1)) && OwnItemCount(talker, @q_cybellins_request) && (OwnItemCount(talker, @q_blood_crystal_2) || OwnItemCount(talker, @q_blood_crystal_3) || OwnItemCount(talker, @q_blood_crystal_4) || OwnItemCount(talker, @q_blood_crystal_5) || OwnItemCount(talker, @q_blood_crystal_6) || OwnItemCount(talker, @q_blood_crystal_7) || OwnItemCount(talker, @q_blood_crystal_8) || OwnItemCount(talker, @q_blood_crystal_9) || OwnItemCount(talker, @q_blood_crystal_10)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about Blood Crystal");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && (OwnItemCount(talker, @q_hunter_license_2) || OwnItemCount(talker, @q_hunter_license_1)) && OwnItemCount(talker, @q_cybellins_request) && (OwnItemCount(talker, @q_blood_crystal_1) == 0 && OwnItemCount(talker, @q_blood_crystal_2) == 0 && OwnItemCount(talker, @q_blood_crystal_3) == 0 && OwnItemCount(talker, @q_blood_crystal_4) == 0 && OwnItemCount(talker, @q_blood_crystal_5) == 0 && OwnItemCount(talker, @q_blood_crystal_6) == 0 && OwnItemCount(talker, @q_blood_crystal_7) == 0 && OwnItemCount(talker, @q_blood_crystal_8) == 0 && OwnItemCount(talker, @q_blood_crystal_9) == 0 && OwnItemCount(talker, @q_blood_crystal_10) == 0) && OwnItemCount(talker, @q_blood_crystal_x) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Blood Crystal");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && (OwnItemCount(talker, @q_hunter_license_2) || OwnItemCount(talker, @q_hunter_license_1)) && OwnItemCount(talker, @q_cybellins_request) && OwnItemCount(talker, @q_blood_crystal_x))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Show Broken Blood Crystal");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && (OwnItemCount(talker, @q_hunter_license_2) == 0 && OwnItemCount(talker, @q_hunter_license_1) == 0))
+                {
+                    ShowPage(talker, "cybellin_q0335_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && (OwnItemCount(talker, @q_hunter_license_2) || OwnItemCount(talker, @q_hunter_license_1)) && OwnItemCount(talker, @q_cybellins_request) == 0)
+                {
+                    ShowPage(talker, "cybellin_q0335_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && (OwnItemCount(talker, @q_hunter_license_2) || OwnItemCount(talker, @q_hunter_license_1)) && OwnItemCount(talker, @q_cybellins_request) && OwnItemCount(talker, @q_blood_crystal_1))
+                {
+                    ShowPage(talker, "cybellin_q0335_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && (OwnItemCount(talker, @q_hunter_license_2) || OwnItemCount(talker, @q_hunter_license_1)) && OwnItemCount(talker, @q_cybellins_request) && (OwnItemCount(talker, @q_blood_crystal_2) || OwnItemCount(talker, @q_blood_crystal_3) || OwnItemCount(talker, @q_blood_crystal_4) || OwnItemCount(talker, @q_blood_crystal_5) || OwnItemCount(talker, @q_blood_crystal_6) || OwnItemCount(talker, @q_blood_crystal_7) || OwnItemCount(talker, @q_blood_crystal_8) || OwnItemCount(talker, @q_blood_crystal_9) || OwnItemCount(talker, @q_blood_crystal_10)))
+                {
+                    ShowPage(talker, "cybellin_q0335_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && (OwnItemCount(talker, @q_hunter_license_2) || OwnItemCount(talker, @q_hunter_license_1)) && OwnItemCount(talker, @q_cybellins_request) && (OwnItemCount(talker, @q_blood_crystal_1) == 0 && OwnItemCount(talker, @q_blood_crystal_2) == 0 && OwnItemCount(talker, @q_blood_crystal_3) == 0 && OwnItemCount(talker, @q_blood_crystal_4) == 0 && OwnItemCount(talker, @q_blood_crystal_5) == 0 && OwnItemCount(talker, @q_blood_crystal_6) == 0 && OwnItemCount(talker, @q_blood_crystal_7) == 0 && OwnItemCount(talker, @q_blood_crystal_8) == 0 && OwnItemCount(talker, @q_blood_crystal_9) == 0 && OwnItemCount(talker, @q_blood_crystal_10) == 0) && OwnItemCount(talker, @q_blood_crystal_x) == 0)
+                {
+                    ShowPage(talker, "cybellin_q0335_08.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && (OwnItemCount(talker, @q_hunter_license_2) || OwnItemCount(talker, @q_hunter_license_1)) && OwnItemCount(talker, @q_cybellins_request) && OwnItemCount(talker, @q_blood_crystal_x))
+                {
+                    ShowPage(talker, "cybellin_q0335_09.htm");
+                    DeleteItem1(talker, @q_blood_crystal_x, OwnItemCount(talker, @q_blood_crystal_x));
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @song_of_hunters)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "cybellin_q0335_03.htm");
+                    if (OwnItemCount(talker, @q_cybellins_dagger) == 0)
+                    {
+                        GiveItem1(talker, @q_cybellins_dagger, 1);
+                    }
+
+                    if (OwnItemCount(talker, @q_cybellins_request) == 0)
+                    {
+                        GiveItem1(talker, @q_cybellins_request, 1);
+                    }
+
+                    GiveItem1(talker, @q_blood_crystal_1, 1);
+                    if (OwnItemCount(talker, @q_blood_crystal_x) == 1)
+                    {
+                        DeleteItem1(talker, @q_blood_crystal_x, OwnItemCount(talker, @q_blood_crystal_x));
+                    }
+                }
+            }
+            else if (reply == 2)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "cybellin_q0335_06.htm");
+                    if (OwnItemCount(talker, @q_blood_crystal_2))
+                    {
+                        GiveItem1(talker, @adena, 200);
+                    }
+                    else if (OwnItemCount(talker, @q_blood_crystal_3))
+                    {
+                        GiveItem1(talker, @adena, 400);
+                    }
+                    else if (OwnItemCount(talker, @q_blood_crystal_4))
+                    {
+                        GiveItem1(talker, @adena, 800);
+                    }
+                    else if (OwnItemCount(talker, @q_blood_crystal_5))
+                    {
+                        GiveItem1(talker, @adena, 1600);
+                    }
+                    else if (OwnItemCount(talker, @q_blood_crystal_6))
+                    {
+                        GiveItem1(talker, @adena, 3200);
+                    }
+                    else if (OwnItemCount(talker, @q_blood_crystal_7))
+                    {
+                        GiveItem1(talker, @adena, 6400);
+                    }
+                    else if (OwnItemCount(talker, @q_blood_crystal_8))
+                    {
+                        GiveItem1(talker, @adena, 12800);
+                    }
+                    else if (OwnItemCount(talker, @q_blood_crystal_9))
+                    {
+                        GiveItem1(talker, @adena, 25600);
+                    }
+                    else if (OwnItemCount(talker, @q_blood_crystal_10))
+                    {
+                        GiveItem1(talker, @adena, 51200);
+                    }
+
+                    DeleteItem1(talker, @q_blood_crystal_2, OwnItemCount(talker, @q_blood_crystal_2));
+                    DeleteItem1(talker, @q_blood_crystal_3, OwnItemCount(talker, @q_blood_crystal_3));
+                    DeleteItem1(talker, @q_blood_crystal_4, OwnItemCount(talker, @q_blood_crystal_4));
+                    DeleteItem1(talker, @q_blood_crystal_5, OwnItemCount(talker, @q_blood_crystal_5));
+                    DeleteItem1(talker, @q_blood_crystal_6, OwnItemCount(talker, @q_blood_crystal_6));
+                    DeleteItem1(talker, @q_blood_crystal_7, OwnItemCount(talker, @q_blood_crystal_7));
+                    DeleteItem1(talker, @q_blood_crystal_8, OwnItemCount(talker, @q_blood_crystal_8));
+                    DeleteItem1(talker, @q_blood_crystal_9, OwnItemCount(talker, @q_blood_crystal_9));
+                    DeleteItem1(talker, @q_blood_crystal_10, OwnItemCount(talker, @q_blood_crystal_10));
+                }
+            }
+            else if (reply == 3)
+            {
+                ShowPage(talker, "cybellin_q0335_07.htm");
+            }
+            else if (reply == 4)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "cybellin_q0335_10.htm");
+                    DeleteItem1(talker, @q_blood_crystal_1, OwnItemCount(talker, @q_blood_crystal_1));
+                    DeleteItem1(talker, @q_cybellins_dagger, OwnItemCount(talker, @q_cybellins_dagger));
+                    DeleteItem1(talker, @q_cybellins_request, OwnItemCount(talker, @q_cybellins_request));
+                }
+            }
+        }
+
+        super;
+    }
+}

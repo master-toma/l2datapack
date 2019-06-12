@@ -1,0 +1,505 @@
+class warehouse_keeper_sorint : warehouse_keeper
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @magic_coin) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask if there’s anything you can help with");
+            }
+
+            if (HaveMemo(talker, @magic_coin) == 1 && OwnItemCount(talker, @q_kaldis_gold_dragon) == 0 && (GetMemoState(talker, @magic_coin) == 1 || GetMemoState(talker, @magic_coin) == 2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the Gold Dragon Coins of Kaldis");
+            }
+
+            if (HaveMemo(talker, @magic_coin) == 1 && OwnItemCount(talker, @q_kaldis_gold_dragon) == 1 && (GetMemoState(talker, @magic_coin) == 2 || GetMemoState(talker, @magic_coin) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about the Gold Dragon Coins of Kaldis");
+            }
+
+            if (HaveMemo(talker, @magic_coin) == 1 && OwnItemCount(talker, @q_cc_membership_3) == 1 && GetMemoState(talker, @magic_coin) == 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk in connection with the coin collectors meeting");
+            }
+
+            if (HaveMemo(talker, @magic_coin) == 1 && OwnItemCount(talker, @q_cc_membership_2) == 1 && GetMemoState(talker, @magic_coin) == 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk in connection with the coin collectors meeting");
+            }
+
+            if (HaveMemo(talker, @magic_coin) == 1 && OwnItemCount(talker, @q_cc_membership_1) == 1 && GetMemoState(talker, @magic_coin) == 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Talk in connection with the coin collectors meeting");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @magic_coin) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level < 40)
+                        {
+                            ShowPage(talker, "warehouse_keeper_sorint_q0336_01.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "warehouse_keeper_sorint_q0336_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @magic_coin) == 1 && OwnItemCount(talker, @q_kaldis_gold_dragon) == 0 && (GetMemoState(talker, @magic_coin) == 1 || GetMemoState(talker, @magic_coin) == 2))
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_06.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @magic_coin) == 1 && OwnItemCount(talker, @q_kaldis_gold_dragon) == 1 && (GetMemoState(talker, @magic_coin) == 2 || GetMemoState(talker, @magic_coin) == 1))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "warehouse_keeper_sorint_q0336_07.htm");
+                        GiveItem1(talker, @q_cc_membership_3, 1);
+                        DeleteItem1(talker, @q_coin_diagram, OwnItemCount(talker, @q_coin_diagram));
+                        DeleteItem1(talker, @q_kaldis_gold_dragon, 1);
+                        SetMemoState(talker, @magic_coin, 3);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @magic_coin) == 1 && OwnItemCount(talker, @q_cc_membership_3) == 1 && GetMemoState(talker, @magic_coin) == 3)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_10.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @magic_coin) == 1 && OwnItemCount(talker, @q_cc_membership_2) == 1 && GetMemoState(talker, @magic_coin) == 3)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_11.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @magic_coin) == 1 && OwnItemCount(talker, @q_cc_membership_1) == 1 && GetMemoState(talker, @magic_coin) == 3)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_12.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @magic_coin)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @q_coin_diagram) == 0)
+                {
+                    GiveItem1(talker, @q_coin_diagram, 1);
+                }
+
+                ShowPage(talker, "warehouse_keeper_sorint_q0336_05.htm");
+                SetMemoState(talker, @magic_coin, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @magic_coin)
+        {
+            if (reply == 1)
+            {
+                FHTML_SetFileName(fhtml0, "warehouse_keeper_sorint_q0336_03.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @magic_coin);
+                ShowFHTML(talker, fhtml0);
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "warehouse_keeper_sorint_q0336_04.htm");
+            }
+            else if (reply == 3)
+            {
+                ShowPage(talker, "warehouse_keeper_sorint_q0336_08.htm");
+            }
+            else if (reply == 4)
+            {
+                ShowPage(talker, "warehouse_keeper_sorint_q0336_09.htm");
+            }
+            else if (reply == 5)
+            {
+                if (OwnItemCount(talker, @q_cc_membership_3) == 1 && (OwnItemCount(talker, @q_blood_drevanul) == 0 || OwnItemCount(talker, @q_blood_werewolf) == 0 || OwnItemCount(talker, @q_gold_knight) == 0 || OwnItemCount(talker, @q_gold_drake) == 0 || OwnItemCount(talker, @q_silver_fairy) == 0 || OwnItemCount(talker, @q_silver_golem) == 0))
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_13.htm");
+                }
+                else if (OwnItemCount(talker, @q_cc_membership_3) == 1 && (OwnItemCount(talker, @q_blood_drevanul) >= 1 && OwnItemCount(talker, @q_blood_werewolf) >= 1 && OwnItemCount(talker, @q_gold_knight) >= 1 && OwnItemCount(talker, @q_gold_drake) >= 1 && OwnItemCount(talker, @q_silver_fairy) >= 1 && OwnItemCount(talker, @q_silver_golem) >= 1))
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_16.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @q_cc_membership_3, OwnItemCount(talker, @q_cc_membership_3));
+                        DeleteItem1(talker, @q_blood_drevanul, 1);
+                        DeleteItem1(talker, @q_blood_werewolf, 1);
+                        DeleteItem1(talker, @q_gold_knight, 1);
+                        DeleteItem1(talker, @q_gold_drake, 1);
+                        DeleteItem1(talker, @q_silver_fairy, 1);
+                        DeleteItem1(talker, @q_silver_golem, 1);
+                        GiveItem1(talker, @q_cc_membership_2, 1);
+                    }
+                }
+                else if (OwnItemCount(talker, @q_cc_membership_2) == 1 && (OwnItemCount(talker, @q_blood_basilisk) == 0 || OwnItemCount(talker, @q_blood_succubus) == 0 || OwnItemCount(talker, @q_gold_giant) == 0 || OwnItemCount(talker, @q_gold_wyrm) == 0 || OwnItemCount(talker, @q_silver_undine) == 0 || OwnItemCount(talker, @q_silver_dryad) == 0))
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_14.htm");
+                }
+                else if (OwnItemCount(talker, @q_cc_membership_2) == 1 && (OwnItemCount(talker, @q_blood_basilisk) >= 1 && OwnItemCount(talker, @q_blood_succubus) >= 1 && OwnItemCount(talker, @q_gold_giant) >= 1 && OwnItemCount(talker, @q_gold_wyrm) >= 1 && OwnItemCount(talker, @q_silver_undine) >= 1 && OwnItemCount(talker, @q_silver_dryad) >= 1))
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_17.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        DeleteItem1(talker, @q_cc_membership_2, OwnItemCount(talker, @q_cc_membership_2));
+                        DeleteItem1(talker, @q_blood_basilisk, 1);
+                        DeleteItem1(talker, @q_blood_succubus, 1);
+                        DeleteItem1(talker, @q_gold_giant, 1);
+                        DeleteItem1(talker, @q_gold_wyrm, 1);
+                        DeleteItem1(talker, @q_silver_undine, 1);
+                        DeleteItem1(talker, @q_silver_dryad, 1);
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @q_cc_membership_1, 1);
+                    }
+                }
+                else if (OwnItemCount(talker, @q_cc_membership_1) == 1)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_15.htm");
+                }
+            }
+            else if (reply == 6)
+            {
+                ShowPage(talker, "warehouse_keeper_sorint_q0336_18.htm");
+            }
+            else if (reply == 7)
+            {
+                ShowPage(talker, "warehouse_keeper_sorint_q0336_19.htm");
+            }
+            else if (reply == 8)
+            {
+                ShowPage(talker, "warehouse_keeper_sorint_q0336_20.htm");
+            }
+            else if (reply == 9)
+            {
+                ShowPage(talker, "warehouse_keeper_sorint_q0336_21.htm");
+            }
+            else if (reply == 10)
+            {
+                ShowPage(talker, "warehouse_keeper_sorint_q0336_22.htm");
+            }
+            else if (reply == 11)
+            {
+                ShowPage(talker, "warehouse_keeper_sorint_q0336_23.htm");
+            }
+            else if (reply == 20)
+            {
+                if (OwnItemCount(talker, @q_bereths_blood_dragon) >= 1 && OwnItemCount(talker, @q_gold_dragon) >= 2 && OwnItemCount(talker, @q_silver_undine) >= 2)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24a.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @inferno_staff, 1);
+                        SoundEffect(talker, "ItemSound.quest_middle");
+                        DeleteItem1(talker, @q_bereths_blood_dragon, 1);
+                        DeleteItem1(talker, @q_gold_dragon, 2);
+                        DeleteItem1(talker, @q_silver_undine, 2);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24.htm");
+                }
+            }
+            else if (reply == 21)
+            {
+                if (OwnItemCount(talker, @q_bereths_silver_dragon) >= 1 && OwnItemCount(talker, @q_manaks_blood_werewolf) >= 2 && OwnItemCount(talker, @q_manaks_silver_dryad) >= 1)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24b.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @needle_wolverine, 1);
+                        SoundEffect(talker, "ItemSound.quest_middle");
+                        DeleteItem1(talker, @q_bereths_silver_dragon, 1);
+                        DeleteItem1(talker, @q_manaks_blood_werewolf, 2);
+                        DeleteItem1(talker, @q_manaks_silver_dryad, 1);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24.htm");
+                }
+            }
+            else if (reply == 22)
+            {
+                if (OwnItemCount(talker, @q_bereths_silver_dragon) >= 1 && OwnItemCount(talker, @q_blood_dragon) >= 2 && OwnItemCount(talker, @q_silver_dragon) >= 2)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24c.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @poleaxe, 1);
+                        SoundEffect(talker, "ItemSound.quest_middle");
+                        DeleteItem1(talker, @q_bereths_silver_dragon, 1);
+                        DeleteItem1(talker, @q_blood_dragon, 2);
+                        DeleteItem1(talker, @q_silver_dragon, 2);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24.htm");
+                }
+            }
+            else if (reply == 23)
+            {
+                if (OwnItemCount(talker, @q_bereths_blood_dragon) >= 1 && OwnItemCount(talker, @q_bereths_silver_dragon) >= 1 && OwnItemCount(talker, @q_bereths_gold_dragon) >= 1)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24d.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @sword_of_limit, 1);
+                        SoundEffect(talker, "ItemSound.quest_middle");
+                        DeleteItem1(talker, @q_bereths_blood_dragon, 1);
+                        DeleteItem1(talker, @q_bereths_silver_dragon, 1);
+                        DeleteItem1(talker, @q_bereths_gold_dragon, 1);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24.htm");
+                }
+            }
+            else if (reply == 24)
+            {
+                if (OwnItemCount(talker, @q_blood_basilisk) >= 1 && OwnItemCount(talker, @q_silver_undine) >= 1)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24e.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @boots_of_seal, 1);
+                        SoundEffect(talker, "ItemSound.quest_middle");
+                        DeleteItem1(talker, @q_blood_basilisk, 1);
+                        DeleteItem1(talker, @q_silver_undine, 1);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24.htm");
+                }
+            }
+            else if (reply == 25)
+            {
+                if (OwnItemCount(talker, @q_gold_wyrm) >= 1 && OwnItemCount(talker, @q_blood_succubus) >= 1 && OwnItemCount(talker, @q_nias_silver_fairy) >= 1)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24f.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @knight_shield, 1);
+                        SoundEffect(talker, "ItemSound.quest_middle");
+                        DeleteItem1(talker, @q_gold_wyrm, 1);
+                        DeleteItem1(talker, @q_blood_succubus, 1);
+                        DeleteItem1(talker, @q_nias_silver_fairy, 1);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24.htm");
+                }
+            }
+            else if (reply == 26)
+            {
+                if (OwnItemCount(talker, @q_gold_giant) >= 1 && OwnItemCount(talker, @q_silver_dryad) >= 1 && OwnItemCount(talker, @q_nias_gold_wyvern) >= 1)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24g.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @dwarven_chain_gloves, 1);
+                        SoundEffect(talker, "ItemSound.quest_middle");
+                        DeleteItem1(talker, @q_gold_giant, 1);
+                        DeleteItem1(talker, @q_silver_dryad, 1);
+                        DeleteItem1(talker, @q_nias_gold_wyvern, 1);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24.htm");
+                }
+            }
+            else if (reply == 27)
+            {
+                if (OwnItemCount(talker, @q_manaks_blood_werewolf) >= 1 && OwnItemCount(talker, @q_manaks_gold_giant) >= 1 && OwnItemCount(talker, @q_manaks_silver_dryad) >= 1)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24h.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @shining_circlet, 1);
+                        SoundEffect(talker, "ItemSound.quest_middle");
+                        DeleteItem1(talker, @q_manaks_blood_werewolf, 1);
+                        DeleteItem1(talker, @q_manaks_gold_giant, 1);
+                        DeleteItem1(talker, @q_manaks_silver_dryad, 1);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24.htm");
+                }
+            }
+            else if (reply == 28)
+            {
+                if (OwnItemCount(talker, @q_nias_blood_medusa) >= 1 && OwnItemCount(talker, @q_blood_werewolf) >= 6 && OwnItemCount(talker, @q_silver_golem) >= 6)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24i.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @moonstone_earing, 1);
+                        SoundEffect(talker, "ItemSound.quest_middle");
+                        DeleteItem1(talker, @q_nias_blood_medusa, 1);
+                        DeleteItem1(talker, @q_blood_werewolf, 6);
+                        DeleteItem1(talker, @q_silver_golem, 6);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24.htm");
+                }
+            }
+            else if (reply == 29)
+            {
+                if (OwnItemCount(talker, @q_nias_gold_wyvern) >= 1 && OwnItemCount(talker, @q_blood_drevanul) >= 8 && OwnItemCount(talker, @q_silver_fairy) >= 7)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24j.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @earing_of_protection, 1);
+                        SoundEffect(talker, "ItemSound.quest_middle");
+                        DeleteItem1(talker, @q_nias_gold_wyvern, 1);
+                        DeleteItem1(talker, @q_blood_drevanul, 8);
+                        DeleteItem1(talker, @q_silver_fairy, 7);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24.htm");
+                }
+            }
+            else if (reply == 30)
+            {
+                if (OwnItemCount(talker, @q_nias_silver_fairy) >= 1 && OwnItemCount(talker, @q_gold_knight) >= 5 && OwnItemCount(talker, @q_gold_drake) >= 4)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24k.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @ring_of_protection, 1);
+                        SoundEffect(talker, "ItemSound.quest_middle");
+                        DeleteItem1(talker, @q_nias_silver_fairy, 1);
+                        DeleteItem1(talker, @q_gold_knight, 5);
+                        DeleteItem1(talker, @q_gold_drake, 4);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24.htm");
+                }
+            }
+            else if (reply == 31)
+            {
+                if (OwnItemCount(talker, @q_nias_blood_medusa) >= 3 && OwnItemCount(talker, @q_nias_gold_wyvern) >= 4 && OwnItemCount(talker, @q_nias_silver_fairy) >= 3)
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24l.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @necklace_of_protection, 1);
+                        SoundEffect(talker, "ItemSound.quest_middle");
+                        DeleteItem1(talker, @q_nias_blood_medusa, 3);
+                        DeleteItem1(talker, @q_nias_gold_wyvern, 4);
+                        DeleteItem1(talker, @q_nias_silver_fairy, 3);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "warehouse_keeper_sorint_q0336_24.htm");
+                }
+            }
+            else if (reply == 100)
+            {
+                ShowPage(talker, "warehouse_keeper_sorint_q0336_18a.htm");
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    DeleteItem1(talker, @q_cc_membership_1, OwnItemCount(talker, @q_cc_membership_1));
+                    DeleteItem1(talker, @q_cc_membership_2, OwnItemCount(talker, @q_cc_membership_2));
+                    DeleteItem1(talker, @q_cc_membership_3, OwnItemCount(talker, @q_cc_membership_3));
+                    RemoveMemo(talker, @magic_coin);
+                }
+            }
+        }
+
+        super;
+    }
+}

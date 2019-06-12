@@ -1,0 +1,25 @@
+class elder_keltir : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @sacrifice_to_sea) == 1 && OwnItemCount(c1, @fox_fur) < 10 && OwnItemCount(c1, @fox_fur_yarn) == 0)
+        {
+            if (Rand(10) < 4)
+            {
+                GiveItem1(c1, @fox_fur, 1);
+                if (OwnItemCount(c1, @fox_fur) == 10)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

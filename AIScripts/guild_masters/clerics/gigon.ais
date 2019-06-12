@@ -1,0 +1,164 @@
+class gigon : cleric_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_cleric) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to a Cleric");
+            }
+
+            if (HaveMemo(talker, @path_to_cleric) == 1 && OwnItemCount(talker, @letter_of_order2) == 1 && OwnItemCount(talker, @lemoniells_covenant) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Inquire about the signed oath");
+            }
+
+            if (HaveMemo(talker, @path_to_cleric) == 1 && OwnItemCount(talker, @letter_of_order2) == 1 && OwnItemCount(talker, @lemoniells_covenant) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give the written oath");
+            }
+
+            if (HaveMemo(talker, @path_to_cleric) == 1 && OwnItemCount(talker, @letter_of_order1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Inquire about the signed oath");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_cleric) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (OwnItemCount(talker, @mark_of_faith) == 0)
+                        {
+                            FHTML_SetFileName(fhtml0, "gigon_q0405_01.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @path_to_cleric);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "gigon_q0405_04.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_cleric) == 1 && OwnItemCount(talker, @letter_of_order2) == 1 && OwnItemCount(talker, @lemoniells_covenant) == 0)
+                {
+                    ShowPage(talker, "gigon_q0405_07.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_cleric) == 1 && OwnItemCount(talker, @letter_of_order2) == 1 && OwnItemCount(talker, @lemoniells_covenant) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "gigon_q0405_09.htm");
+                        DeleteItem1(talker, @lemoniells_covenant, 1);
+                        DeleteItem1(talker, @letter_of_order2, 1);
+                        GiveItem1(talker, @mark_of_faith, 1);
+                        RemoveMemo(talker, @path_to_cleric);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_cleric) == 1 && OwnItemCount(talker, @letter_of_order1) == 1)
+                {
+                    if (OwnItemCount(talker, @book_of_vivi) == 1 && OwnItemCount(talker, @book_of_simlon) > 0 && OwnItemCount(talker, @book_of_praga) == 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "gigon_q0405_08.htm");
+                            DeleteItem1(talker, @book_of_praga, 1);
+                            DeleteItem1(talker, @book_of_vivi, 1);
+                            DeleteItem1(talker, @book_of_simlon, 3);
+                            DeleteItem1(talker, @letter_of_order1, 1);
+                            GiveItem1(talker, @letter_of_order2, 1);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "gigon_q0405_06.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_cleric)
+        {
+            if (talker.level >= 19 && talker.occupation == @mage && OwnItemCount(talker, @mark_of_faith) == 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    SetMemo(talker, @path_to_cleric);
+                    SoundEffect(talker, "ItemSound.quest_accept");
+                    GiveItem1(talker, @letter_of_order1, 1);
+                    ShowPage(talker, "gigon_q0405_05.htm");
+                }
+            }
+            else if (talker.occupation != @mage)
+            {
+                if (talker.occupation == @cleric)
+                {
+                    ShowPage(talker, "gigon_q0405_02a.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "gigon_q0405_02.htm");
+                }
+            }
+            else if (talker.level < 19 && talker.occupation == @mage)
+            {
+                ShowPage(talker, "gigon_q0405_03.htm");
+            }
+            else if (talker.level >= 19 && talker.occupation == @mage && OwnItemCount(talker, @mark_of_faith) == 1)
+            {
+                ShowPage(talker, "gigon_q0405_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

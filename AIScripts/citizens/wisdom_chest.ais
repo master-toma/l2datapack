@@ -1,0 +1,90 @@
+class wisdom_chest : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, i0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @wish_potion) == 1 && talker.flag == 4)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about wisdom");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @wish_potion) == 1 && talker.flag == 4)
+                {
+                    i0 = Rand(10);
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (i0 < 2)
+                        {
+                            ShowPage(talker, "wisdom_chest_q0334_01.htm");
+                            GiveItem1(talker, @sb_ice_bolt1, 1);
+                            GiveItem1(talker, @sb_battle_heal1, 1);
+                        }
+                        else if (i0 >= 2 && i0 < 4)
+                        {
+                            ShowPage(talker, "wisdom_chest_q0334_02.htm");
+                        }
+                        else if (i0 >= 4 && i0 < 6)
+                        {
+                            ShowPage(talker, "wisdom_chest_q0334_03.htm");
+                        }
+                        else if (i0 == 6)
+                        {
+                            ShowPage(talker, "wisdom_chest_q0334_04.htm");
+                        }
+                        else if (i0 >= 7 && i0 < 9)
+                        {
+                            ShowPage(talker, "wisdom_chest_q0334_05.htm");
+                        }
+                        else if (i0 == 9)
+                        {
+                            ShowPage(talker, "wisdom_chest_q0334_06.htm");
+                            GiveItem1(talker, @sb_heart_of_paagrio1, 1);
+                        }
+
+                        talker.flag = 0;
+                        Despawn();
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 2336007)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(2336007, 120 * 1000);
+        super;
+    }
+}

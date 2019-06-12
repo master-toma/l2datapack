@@ -1,0 +1,277 @@
+class leto_lizardman_overlord : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1, i0, weapon_class_id)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_duty) && GetMemoState(c1, @trial_of_duty) == 9 && OwnItemCount(c1, @militas_article) < 20)
+        {
+            if (OwnItemCount(c1, @militas_article) == 19)
+            {
+                GiveItem1(c1, @militas_article, 1);
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @militas_article, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_sagittarius) && GetMemoState(c1, @test_of_sagittarius) == 13 && OwnItemCount(c1, @blood_of_lizardman) < 140)
+        {
+            if ((OwnItemCount(c1, @blood_of_lizardman) - 120) * 5 > Rand(100))
+            {
+                CreateOnePrivateEx(@serpent_demon_kadesh, "serpent_demon_kadesh", 0, 0, FloatToInt(myself.sm.x), FloatToInt(myself.sm.y), FloatToInt(myself.sm.z), 0, 0, 0);
+                DeleteItem1(c1, @blood_of_lizardman, OwnItemCount(c1, @blood_of_lizardman));
+                SoundEffect(c1, "Itemsound.quest_before_battle");
+            }
+            else
+            {
+                GiveItem1(c1, @blood_of_lizardman, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_champion) && OwnItemCount(c1, @mouens_order2) && OwnItemCount(c1, @leto_lizardman_fang1) < 100)
+        {
+            if (OwnItemCount(c1, @leto_lizardman_fang1) == 99)
+            {
+                GiveItem1(c1, @leto_lizardman_fang1, 1);
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @leto_lizardman_fang1, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_fate) && OwnItemCount(c1, @palus_charm) && OwnItemCount(c1, @arkenias_note) && OwnItemCount(c1, @red_fairy_dust) == 0 && OwnItemCount(c1, @pixy_garnet) && OwnItemCount(c1, @leto_overlord_skull) < 10)
+        {
+            if (OwnItemCount(c1, @leto_overlord_skull) == 9)
+            {
+                GiveItem1(c1, @leto_overlord_skull, 1);
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @leto_overlord_skull, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_summoner) && OwnItemCount(c1, @galateas_letter) == 0 && OwnItemCount(c1, @lars_list1) && OwnItemCount(c1, @letolizardman_amulet) < 30)
+        {
+            if (Rand(20) < 15)
+            {
+                if (OwnItemCount(c1, @letolizardman_amulet) == 29)
+                {
+                    GiveItem1(c1, @letolizardman_amulet, 1);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @letolizardman_amulet, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_life) && OwnItemCount(c1, @isaels_instructions) == 1 && Rand(100) < 50)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                if (OwnItemCount(c1, @talins_spear_blade) == 0)
+                {
+                    GiveItem1(c1, @talins_spear_blade, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else if (OwnItemCount(c1, @talins_spear_shaft) == 0)
+                {
+                    GiveItem1(c1, @talins_spear_shaft, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else if (OwnItemCount(c1, @talins_ruby) == 0)
+                {
+                    GiveItem1(c1, @talins_ruby, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else if (OwnItemCount(c1, @talins_aquamarine) == 0)
+                {
+                    GiveItem1(c1, @talins_aquamarine, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else if (OwnItemCount(c1, @talins_amethyst) == 0)
+                {
+                    GiveItem1(c1, @talins_amethyst, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else if (OwnItemCount(c1, @talins_peridot) == 0)
+                {
+                    GiveItem1(c1, @talins_peridot, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_witchcraft) == 1 && OwnItemCount(c1, @alexandrias_book) == 1 && OwnItemCount(c1, @ikers_list) == 1)
+        {
+            if (Rand(100) <= 70 && OwnItemCount(c1, @leto_lizardman_charm) < 20)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @leto_lizardman_charm, 1);
+                    if (OwnItemCount(c1, @leto_lizardman_charm) >= 20)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_warspirit) && OwnItemCount(c1, @pekirons_totem) == 1)
+        {
+            i0 = Rand(100);
+            if (i0 > 50)
+            {
+                if (OwnItemCount(c1, @tonars_skull) == 0)
+                {
+                    GiveItem1(c1, @tonars_skull, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else if (OwnItemCount(c1, @tonars_rib_bone) == 0)
+                {
+                    GiveItem1(c1, @tonars_rib_bone, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else if (OwnItemCount(c1, @tonars_spine) == 0)
+                {
+                    GiveItem1(c1, @tonars_spine, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else if (OwnItemCount(c1, @tonars_arm_bone) == 0)
+                {
+                    GiveItem1(c1, @tonars_arm_bone, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else if (OwnItemCount(c1, @tonars_thigh_bone) == 0)
+                {
+                    GiveItem1(c1, @tonars_thigh_bone, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_duelist) && OwnItemCount(c1, @chiefs_amulet) < 10 && GetMemoState(c1, @test_of_duelist) == 1)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @chiefs_amulet, 1);
+                if (OwnItemCount(c1, @chiefs_amulet) >= 10)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (1)
+        {
+            c1.quest_last_reward_time = GetCurrentTick();
+            if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_1u_1) && OwnItemCount(c1, @q_fang_of_narak) < 1)
+            {
+                if (Rand(10) == 0)
+                {
+                    CreateOnePrivate(@leto_chief_narak, "leto_chief_narak", 0, 1);
+                }
+            }
+
+            if (HaveMemo(c1, @song_of_hunters) && myself.sm.last_blow_weapon_class_id == @q_cybellins_dagger && (OwnItemCount(c1, @q_hunter_license_1) || OwnItemCount(c1, @q_hunter_license_2)))
+            {
+                if (Rand(2) == 0)
+                {
+                    if (OwnItemCount(c1, @q_cybellins_request))
+                    {
+                        if (OwnItemCount(c1, @q_blood_crystal_1))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_2, 1);
+                            DeleteItem1(c1, @q_blood_crystal_1, OwnItemCount(c1, @q_blood_crystal_1));
+                        }
+                        else if (OwnItemCount(c1, @q_blood_crystal_2))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_3, 1);
+                            DeleteItem1(c1, @q_blood_crystal_2, OwnItemCount(c1, @q_blood_crystal_2));
+                        }
+                        else if (OwnItemCount(c1, @q_blood_crystal_3))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_4, 1);
+                            DeleteItem1(c1, @q_blood_crystal_3, OwnItemCount(c1, @q_blood_crystal_3));
+                        }
+                        else if (OwnItemCount(c1, @q_blood_crystal_4))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_5, 1);
+                            DeleteItem1(c1, @q_blood_crystal_4, OwnItemCount(c1, @q_blood_crystal_4));
+                        }
+                        else if (OwnItemCount(c1, @q_blood_crystal_5))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_6, 1);
+                            DeleteItem1(c1, @q_blood_crystal_5, OwnItemCount(c1, @q_blood_crystal_5));
+                        }
+                        else if (OwnItemCount(c1, @q_blood_crystal_6))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_7, 1);
+                            SoundEffect(c1, "ItemSound.quest_jackpot");
+                            DeleteItem1(c1, @q_blood_crystal_6, OwnItemCount(c1, @q_blood_crystal_6));
+                        }
+                        else if (OwnItemCount(c1, @q_blood_crystal_7))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_8, 1);
+                            SoundEffect(c1, "ItemSound.quest_jackpot");
+                            DeleteItem1(c1, @q_blood_crystal_7, OwnItemCount(c1, @q_blood_crystal_7));
+                        }
+                        else if (OwnItemCount(c1, @q_blood_crystal_8))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_9, 1);
+                            SoundEffect(c1, "ItemSound.quest_jackpot");
+                            DeleteItem1(c1, @q_blood_crystal_8, OwnItemCount(c1, @q_blood_crystal_8));
+                        }
+                    }
+                }
+                else if (OwnItemCount(c1, @q_cybellins_request) && OwnItemCount(c1, @q_blood_crystal_x) == 0 && OwnItemCount(c1, @q_blood_crystal_x) == 0)
+                {
+                    DeleteItem1(c1, @q_blood_crystal_1, OwnItemCount(c1, @q_blood_crystal_1));
+                    DeleteItem1(c1, @q_blood_crystal_2, OwnItemCount(c1, @q_blood_crystal_2));
+                    DeleteItem1(c1, @q_blood_crystal_3, OwnItemCount(c1, @q_blood_crystal_3));
+                    DeleteItem1(c1, @q_blood_crystal_4, OwnItemCount(c1, @q_blood_crystal_4));
+                    DeleteItem1(c1, @q_blood_crystal_5, OwnItemCount(c1, @q_blood_crystal_5));
+                    DeleteItem1(c1, @q_blood_crystal_6, OwnItemCount(c1, @q_blood_crystal_6));
+                    DeleteItem1(c1, @q_blood_crystal_7, OwnItemCount(c1, @q_blood_crystal_7));
+                    DeleteItem1(c1, @q_blood_crystal_8, OwnItemCount(c1, @q_blood_crystal_8));
+                    GiveItem1(c1, @q_blood_crystal_x, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

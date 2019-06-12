@@ -1,0 +1,39 @@
+class serpent_demon_kadesh : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1, weapon_class_id)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_sagittarius) && GetMemoState(c1, @test_of_sagittarius) == 13 && OwnItemCount(c1, @talisman_of_kadesh) == 0)
+        {
+            if (myself.sm.last_blow_weapon_class_id == @crescent_moon_bow)
+            {
+                GiveItem1(c1, @talisman_of_kadesh, 1);
+                SetMemoState(c1, @test_of_sagittarius, 14);
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+            else
+            {
+                CreateOnePrivateEx(@serpent_demon_kadesh, "serpent_demon_kadesh", 0, 0, FloatToInt(myself.sm.x), FloatToInt(myself.sm.y), FloatToInt(myself.sm.z), 0, 0, 0);
+            }
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 22401)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(22401, 1000 * 300);
+        super;
+    }
+}

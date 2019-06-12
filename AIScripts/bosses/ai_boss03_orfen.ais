@@ -1,0 +1,196 @@
+class ai_boss03_orfen : party_leader_aggressive
+{
+parameter:
+    int b03_x1 = 0;
+    int b03_y1 = 0;
+    int b03_z1 = 0;
+    int b03_x2 = 0;
+    int b03_y2 = 0;
+    int b03_z2 = 0;
+    int b03_x3 = 0;
+    int b03_y3 = 0;
+    int b03_z3 = 0;
+    int b03_x4 = 0;
+    int b03_y4 = 0;
+    int b03_z4 = 0;
+    
+handler:
+    EventHandler CREATED(i6)
+    {
+        myself.sm.flag = 0;
+        myself.i_ai0 = 0;
+        AddTimerEx(3001, 10000);
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id, i6)
+    {
+        if (timer_id == 3001)
+        {
+            if (myself.i_ai0 == 1 && myself.sm.hp > myself.sm.max_hp * 0.95)
+            {
+                i6 = Rand(100);
+                if (i6 < 33)
+                {
+                    SetTeleportPosOnLost(b03_x2, b03_y2, b03_z2);
+                    InstantTeleport(myself.sm, b03_x2, b03_y2, b03_z2);
+                }
+                else if (i6 < 66)
+                {
+                    SetTeleportPosOnLost(b03_x3, b03_y3, b03_z3);
+                    InstantTeleport(myself.sm, b03_x3, b03_y3, b03_z3);
+                }
+                else
+                {
+                    SetTeleportPosOnLost(b03_x4, b03_y4, b03_z4);
+                    InstantTeleport(myself.sm, b03_x4, b03_y4, b03_z4);
+                }
+
+                myself.i_ai0 = 0;
+                myself.sm.flag = myself.sm.flag + 1;
+                RemoveAllAttackDesire();
+            }
+            else if (myself.i_ai0 == 1 && InMyTerritory(myself.sm) == 0)
+            {
+                SetTeleportPosOnLost(b03_x1, b03_y1, b03_z1);
+                InstantTeleport(myself.sm, b03_x1, b03_y1, b03_z1);
+            }
+
+            AddTimerEx(3001, 10000);
+        }
+
+        super;
+    }
+
+    EventHandler OUT_OF_TERRITORY(i6)
+    {
+        if (myself.i_ai0 > 0.5)
+        {
+            SetTeleportPosOnLost(b03_x1, b03_y1, b03_z1);
+            InstantTeleport(myself.sm, b03_x1, b03_y1, b03_z1);
+        }
+        else if (myself.i_ai0 < 0.5)
+        {
+            i6 = Rand(100);
+            if (i6 < 33)
+            {
+                SetTeleportPosOnLost(b03_x2, b03_y2, b03_z2);
+                InstantTeleport(myself.sm, b03_x2, b03_y2, b03_z2);
+            }
+            else if (i6 < 66)
+            {
+                SetTeleportPosOnLost(b03_x3, b03_y3, b03_z3);
+                InstantTeleport(myself.sm, b03_x3, b03_y3, b03_z3);
+            }
+            else
+            {
+                SetTeleportPosOnLost(b03_x4, b03_y4, b03_z4);
+                InstantTeleport(myself.sm, b03_x4, b03_y4, b03_z4);
+            }
+        }
+
+        RemoveAllAttackDesire();
+        myself.sm.flag = myself.sm.flag + 1;
+    }
+
+    EventHandler ATTACKED(attacker, damage, skill_name_id, i0)
+    {
+        if (myself.i_ai0 == 0 && myself.sm.max_hp * 0.5 > myself.sm.hp)
+        {
+            SetTeleportPosOnLost(b03_x1, b03_y1, b03_z1);
+            InstantTeleport(myself.sm, b03_x1, b03_y1, b03_z1);
+            myself.i_ai0 = 1;
+            RemoveAllAttackDesire();
+            myself.sm.flag = myself.sm.flag + 1;
+        }
+
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            if (DistFromMe(attacker) > 300 && Rand(100) < 10 && DistFromMe(attacker) < 1000)
+            {
+                i0 = Rand(100);
+                if (i0 < 33)
+                {
+                    Say(MakeFString(1000028, attacker.name, "", "", "", ""));
+                }
+                else if (i0 < 66)
+                {
+                    Say(MakeFString(1000029, attacker.name, "", "", "", ""));
+                }
+                else
+                {
+                    Say(MakeFString(1000030, attacker.name, "", "", "", ""));
+                }
+
+                InstantTeleport(attacker, FloatToInt(myself.sm.x), FloatToInt(myself.sm.y), FloatToInt(myself.sm.z));
+                if (Skill_GetConsumeMP(@s_orfen_strike) < myself.sm.mp && Skill_GetConsumeHP(@s_orfen_strike) < myself.sm.hp && Skill_InReuseDelay(@s_orfen_strike) == @FALSE)
+                {
+                    AddUseSkillDesire(attacker, @s_orfen_strike, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+            else if (Rand(100) < 20)
+            {
+                if (Skill_GetConsumeMP(@s_orfen_dispel) < myself.sm.mp && Skill_GetConsumeHP(@s_orfen_dispel) < myself.sm.hp && Skill_InReuseDelay(@s_orfen_dispel) == @FALSE)
+                {
+                    AddUseSkillDesire(myself.sm, @s_orfen_dispel, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+        }
+
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, damage / myself.sm.max_hp / 0.05 * 10000);
+        }
+    }
+
+    EventHandler SEE_SPELL(speller, skill_name_id, i0)
+    {
+        if (Skill_GetEffectPoint(skill_name_id) > 0 && Rand(100) < 20 && DistFromMe(speller) < 1000)
+        {
+            i0 = Rand(100);
+            if (i0 < 25)
+            {
+                Say(MakeFString(1000028, speller.name, "", "", "", ""));
+            }
+            else if (i0 < 50)
+            {
+                Say(MakeFString(1000029, speller.name, "", "", "", ""));
+            }
+            else if (i0 < 75)
+            {
+                Say(MakeFString(1000030, speller.name, "", "", "", ""));
+            }
+            else
+            {
+                Say(MakeFString(1000031, speller.name, "", "", "", ""));
+            }
+
+            InstantTeleport(speller, FloatToInt(myself.sm.x), FloatToInt(myself.sm.y), FloatToInt(myself.sm.z));
+            if (Skill_GetConsumeMP(@s_orfen_strike) < myself.sm.mp && Skill_GetConsumeHP(@s_orfen_strike) < myself.sm.hp && Skill_InReuseDelay(@s_orfen_strike) == @FALSE)
+            {
+                AddUseSkillDesire(speller, @s_orfen_strike, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+        }
+
+        super;
+    }
+
+    EventHandler PARTY_ATTACKED(attacker, private, damage)
+    {
+        if (private != myself.sm)
+        {
+            if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+            {
+                AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, damage / myself.sm.max_hp / 0.05 * damage * private.weight_point * 1000);
+            }
+        }
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, damage)
+    {
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, damage / myself.sm.max_hp / 0.05 * 3000);
+        }
+    }
+}

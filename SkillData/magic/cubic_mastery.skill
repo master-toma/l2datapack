@@ -1,0 +1,2 @@
+skill_begin	skill_name = [s_cubic_mastery1]	/* [큐빅 마스터리] */	skill_id = 143	level = 1	operate_type = P	effect = {{p_cubic_mastery;2}}	skill_end
+skill_begin	skill_name = [s_cubic_mastery2]	/* [큐빅 마스터리] */	skill_id = 143	level = 2	operate_type = P	effect = {{p_cubic_mastery;3}}	skill_end

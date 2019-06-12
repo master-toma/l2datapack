@@ -1,0 +1,15 @@
+class least_succubus_turen : warrior_aggressive_casting_sleep_magic
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @release_darkelf_elder1) == 1 && OwnItemCount(c1, @succubus_blood) == 0)
+        {
+            GiveItem1(c1, @succubus_blood, 1);
+            SoundEffect(c1, "ItemSound.quest_middle");
+        }
+
+        super;
+    }
+}

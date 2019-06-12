@@ -1,0 +1,32 @@
+class delu_lizardman : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @hunt_of_blacklion) == 1 && OwnItemCount(c1, @q_sophias_order3) >= 1)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                if (Rand(2) == 0)
+                {
+                    GiveItem1(c1, @q_delu_lizardman_fang, 1);
+                }
+
+                if (Rand(100) < 11)
+                {
+                    GiveItem1(c1, @q_cargo_box3, 1);
+                }
+            }
+        }
+
+        if (Rand(100) < 3 && HaveMemo(c1, @hunt_of_blacklion))
+        {
+            CreateOnePrivate(@delu_lizardman_headhunter, "delu_lizardman_headhunter", 0, 1);
+            CreateOnePrivate(@delu_lizardman_headhunter, "delu_lizardman_headhunter", 0, 1);
+        }
+
+        super;
+    }
+}

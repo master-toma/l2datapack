@@ -1,0 +1,222 @@
+class quilt : human_mage_lv1_master
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @seed_of_evil) == 0 && GetOneTimeQuestFlag(talker, @seed_of_evil) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask if there are any worries");
+            }
+
+            if (HaveMemo(talker, @seed_of_evil) == 0 && GetOneTimeQuestFlag(talker, @seed_of_evil) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask if there are any worries");
+            }
+
+            if (HaveMemo(talker, @seed_of_evil) != 0 && OwnItemCount(talker, @clay_tablet) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about the Seed of Evil");
+            }
+
+            if (HaveMemo(talker, @seed_of_evil) != 0 && OwnItemCount(talker, @clay_tablet) != 0 && GetOneTimeQuestFlag(talker, @seed_of_evil) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Display the clay board");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @einhasad_church_mark3) == 0 && OwnItemCount(talker, @mark_of_esquire) && OwnItemCount(talker, @coin_of_lords6) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @einhasad_church_mark3) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Talk about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @coin_of_lords6) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Talk about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 19 && OwnItemCount(talker, @recommendation_of_hollin))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Give Letter of Recommendation from High Priest Hollint");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @seed_of_evil) == 0 && GetOneTimeQuestFlag(talker, @seed_of_evil) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 21)
+                        {
+                            FHTML_SetFileName(fhtml0, "quilt_q0309_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @seed_of_evil);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "quilt_q0309_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @seed_of_evil) == 0 && GetOneTimeQuestFlag(talker, @seed_of_evil) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @seed_of_evil) != 0 && OwnItemCount(talker, @clay_tablet) == 0)
+                {
+                    ShowPage(talker, "quilt_q0309_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @seed_of_evil) != 0 && OwnItemCount(talker, @clay_tablet) != 0 && GetOneTimeQuestFlag(talker, @seed_of_evil) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @clay_tablet, OwnItemCount(talker, @clay_tablet));
+                        RemoveMemo(talker, @seed_of_evil);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @seed_of_evil, 1);
+                        GiveItem1(talker, @sickle, 1);
+                        GiveItem1(talker, @adena, 6000);
+                        ShowPage(talker, "quilt_q0309_06.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @einhasad_church_mark3) == 0 && OwnItemCount(talker, @mark_of_esquire) && OwnItemCount(talker, @coin_of_lords6) == 0)
+                {
+                    ShowPage(talker, "quilt_q0402_01.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @einhasad_church_mark3) > 0)
+                {
+                    if (OwnItemCount(talker, @horrible_skull) < 10)
+                    {
+                        ShowPage(talker, "quilt_q0402_03.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "quilt_q0402_04.htm");
+                        DeleteItem1(talker, @horrible_skull, OwnItemCount(talker, @horrible_skull));
+                        DeleteItem1(talker, @einhasad_church_mark3, 1);
+                        GiveItem1(talker, @coin_of_lords6, 1);
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @coin_of_lords6) > 0)
+                {
+                    ShowPage(talker, "quilt_q0402_05.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 19 && OwnItemCount(talker, @recommendation_of_hollin))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        IncrementParam(talker, @PARAM_EXP, 32600);
+                        IncrementParam(talker, @PARAM_SP, 4000);
+                        ShowPage(talker, "quilt_q0217_01.htm");
+                        DeleteItem1(talker, @recommendation_of_hollin, 1);
+                        GiveItem1(talker, @mark_of_trust, 1);
+                        RemoveMemo(talker, @testimoney_of_trust);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @testimoney_of_trust, 1);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @seed_of_evil)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "quilt_q0309_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_knight)
+        {
+            if (reply = 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "quilt_q0402_02.htm");
+                    GiveItem1(talker, @einhasad_church_mark3, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,20 @@
+class warrior_casting_enchant_clan : warrior_casting_enchant
+{
+handler:
+    EventHandler CLAN_ATTACKED(attacker, victim, damage, i6)
+    {
+        if (GetLifeTime() > 7 && (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id)) && myself.p_state != PSTATE_ATTACK && myself.i_ai1 == 0)
+        {
+            if (Rand(100) < 50 && GetAbnormalLevel(victim, Skill_GetAbnormalType(Buff)) <= 0 && FloatToInt(myself.sm.hp / myself.sm.max_hp * 100) > 50)
+            {
+                if (Skill_GetConsumeMP(Buff) < myself.sm.mp && Skill_GetConsumeHP(Buff) < myself.sm.hp && Skill_InReuseDelay(Buff) == @FALSE)
+                {
+                    AddUseSkillDesire(myself.sm, Buff, @ST_HEAL, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+        }
+
+        myself.i_ai1 = 1;
+        super;
+    }
+}

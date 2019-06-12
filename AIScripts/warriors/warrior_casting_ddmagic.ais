@@ -1,0 +1,43 @@
+class warrior_casting_ddmagic : warrior
+{
+parameter:
+    int DDMagic = @s_mega_storm_strike1;
+    
+handler:
+    EventHandler ATTACKED(attacker, damage, i6)
+    {
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            i6 = Rand(100);
+            if (DistFromMe(attacker) > 100)
+            {
+                if (myself.top_desire_target == attacker && i6 < 10 && myself.top_desire_target == attacker)
+                {
+                    if (Skill_GetConsumeMP(DDMagic) < myself.sm.mp && Skill_GetConsumeHP(DDMagic) < myself.sm.hp && Skill_InReuseDelay(DDMagic) == @FALSE)
+                    {
+                        AddUseSkillDesire(attacker, DDMagic, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, damage, i6)
+    {
+        if (GetLifeTime() > 7 && (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id)) && myself.p_state != PSTATE_ATTACK)
+        {
+            i6 = Rand(100);
+            if (DistFromMe(attacker) > 100 && i6 < 10)
+            {
+                if (Skill_GetConsumeMP(DDMagic) < myself.sm.mp && Skill_GetConsumeHP(DDMagic) < myself.sm.hp && Skill_InReuseDelay(DDMagic) == @FALSE)
+                {
+                    AddUseSkillDesire(attacker, DDMagic, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+        }
+
+        super;
+    }
+}

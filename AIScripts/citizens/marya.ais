@@ -1,0 +1,364 @@
+class marya : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @sylvains_letter) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Get information about Stone of Purification");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @maryas_letter1) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Get information about Lucas");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @lukas_letter) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Get information about Lucas");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @maryas_letter2) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about Lucas");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @cretas_letter1) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Lucas");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @lucillas_handbag) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Talk about Creta");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @cretas_painting1) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Show Picture of Creta");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @cretas_painting2) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Show Picture of Creta");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @cretas_painting3) >= 1) && OwnItemCount(talker, @brown_scroll_scrap) < 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Tell what Lucas said");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @cretas_painting3) >= 1) && OwnItemCount(talker, @brown_scroll_scrap) >= 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Tell what Lucas said");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @crystal_of_purity1) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Talk about Crystal of Purification");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @symbol_of_sylvain) >= 1 || OwnItemCount(talker, @miriens_sigil2) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 11;
+                AddChoice(11, "Talk about Crystal of Purification");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil3) == 1 && OwnItemCount(talker, @valkons_request) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 12;
+                AddChoice(12, "Talk about Crystal of Purification");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil3) == 1 && OwnItemCount(talker, @valkons_request) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 13;
+                AddChoice(13, "Talk about Crystal of Purification");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && (GetMemoState(talker, @little_wings) == 2 || GetMemoState(talker, @little_wings) == 11) && (OwnItemCount(talker, @q_list_of_stuff_for_fs) == 1 && (OwnItemCount(talker, @coal) < 10 || OwnItemCount(talker, @charcoal) < 10 || OwnItemCount(talker, @gemstone_d) == 0 || OwnItemCount(talker, @silver_nugget) < 3 || OwnItemCount(talker, @q_inpicios_back_skin) < 10) || OwnItemCount(talker, @q_list_of_stuff_for_fsd) == 1 && (OwnItemCount(talker, @coal) < 10 || OwnItemCount(talker, @charcoal) < 10 || OwnItemCount(talker, @gemstone_c) == 0 || OwnItemCount(talker, @stone_of_purity) == 0 || OwnItemCount(talker, @silver_nugget) < 5 || OwnItemCount(talker, @q_inpicios_back_skin) < 20)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 14;
+                AddChoice(14, "Ask to make Elven stone");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && (GetMemoState(talker, @little_wings) == 2 || GetMemoState(talker, @little_wings) == 11) && OwnItemCount(talker, @q_list_of_stuff_for_fs) == 1 && OwnItemCount(talker, @coal) >= 10 && OwnItemCount(talker, @charcoal) >= 10 && OwnItemCount(talker, @gemstone_d) >= 1 && OwnItemCount(talker, @silver_nugget) >= 3 && OwnItemCount(talker, @q_inpicios_back_skin) >= 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 15;
+                AddChoice(15, "Ask to make Elven stone");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && (GetMemoState(talker, @little_wings) == 2 || GetMemoState(talker, @little_wings) == 11) && OwnItemCount(talker, @q_list_of_stuff_for_fsd) == 1 && OwnItemCount(talker, @coal) >= 10 && OwnItemCount(talker, @charcoal) >= 10 && OwnItemCount(talker, @gemstone_c) >= 1 && OwnItemCount(talker, @stone_of_purity) >= 1 && OwnItemCount(talker, @silver_nugget) >= 5 && OwnItemCount(talker, @q_inpicios_back_skin) >= 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 16;
+                AddChoice(16, "Ask to make Elven stone");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && OwnItemCount(talker, @q_fairy_stone) == 1 || OwnItemCount(talker, @q_fairy_stone_delux) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 17;
+                AddChoice(17, "Talk about Elven stones");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @sylvains_letter) >= 1))
+                {
+                    ShowPage(talker, "marya_q0214_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @maryas_letter1) >= 1))
+                {
+                    ShowPage(talker, "marya_q0214_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @lukas_letter) >= 1))
+                {
+                    ShowPage(talker, "marya_q0214_04.htm");
+                    DeleteItem1(talker, @lukas_letter, 1);
+                    GiveItem1(talker, @maryas_letter2, 1);
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @maryas_letter2) >= 1))
+                {
+                    ShowPage(talker, "marya_q0214_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @cretas_letter1) >= 1))
+                {
+                    ShowPage(talker, "marya_q0214_06.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @lucillas_handbag) >= 1))
+                {
+                    ShowPage(talker, "marya_q0214_09.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @cretas_painting1) >= 1))
+                {
+                    ShowPage(talker, "marya_q0214_10.htm");
+                    DeleteItem1(talker, @cretas_painting1, 1);
+                    GiveItem1(talker, @cretas_painting2, 1);
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @cretas_painting2) >= 1))
+                {
+                    ShowPage(talker, "marya_q0214_11.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @cretas_painting3) >= 1) && OwnItemCount(talker, @brown_scroll_scrap) < 5)
+                {
+                    ShowPage(talker, "marya_q0214_12.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @cretas_painting3) >= 1) && OwnItemCount(talker, @brown_scroll_scrap) >= 5)
+                {
+                    ShowPage(talker, "marya_q0214_13.htm");
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @crystal_of_purity1) >= 1))
+                {
+                    ShowPage(talker, "marya_q0214_15.htm");
+                }
+
+                break;
+            case 11:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @symbol_of_sylvain) >= 1 || OwnItemCount(talker, @miriens_sigil2) >= 1))
+                {
+                    ShowPage(talker, "marya_q0214_16.htm");
+                }
+
+                break;
+            case 12:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil3) == 1 && OwnItemCount(talker, @valkons_request) == 0)
+                {
+                    ShowPage(talker, "marya_q0214_17.htm");
+                }
+
+                break;
+            case 13:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil3) == 1 && OwnItemCount(talker, @valkons_request) == 1)
+                {
+                    ShowPage(talker, "marya_q0214_18.htm");
+                    DeleteItem1(talker, @valkons_request, 1);
+                    GiveItem1(talker, @crystal_of_purity2, 1);
+                }
+
+                break;
+            case 14:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && (GetMemoState(talker, @little_wings) == 2 || GetMemoState(talker, @little_wings) == 11) && (OwnItemCount(talker, @q_list_of_stuff_for_fs) == 1 && (OwnItemCount(talker, @coal) < 10 || OwnItemCount(talker, @charcoal) < 10 || OwnItemCount(talker, @gemstone_d) == 0 || OwnItemCount(talker, @silver_nugget) < 3 || OwnItemCount(talker, @q_inpicios_back_skin) < 10) || OwnItemCount(talker, @q_list_of_stuff_for_fsd) == 1 && (OwnItemCount(talker, @coal) < 10 || OwnItemCount(talker, @charcoal) < 10 || OwnItemCount(talker, @gemstone_c) == 0 || OwnItemCount(talker, @stone_of_purity) == 0 || OwnItemCount(talker, @silver_nugget) < 5 || OwnItemCount(talker, @q_inpicios_back_skin) < 20)))
+                {
+                    ShowPage(talker, "marya_q0420_01.htm");
+                }
+
+                break;
+            case 15:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && (GetMemoState(talker, @little_wings) == 2 || GetMemoState(talker, @little_wings) == 11) && OwnItemCount(talker, @q_list_of_stuff_for_fs) == 1 && OwnItemCount(talker, @coal) >= 10 && OwnItemCount(talker, @charcoal) >= 10 && OwnItemCount(talker, @gemstone_d) >= 1 && OwnItemCount(talker, @silver_nugget) >= 3 && OwnItemCount(talker, @q_inpicios_back_skin) >= 10)
+                {
+                    ShowPage(talker, "marya_q0420_02.htm");
+                }
+
+                break;
+            case 16:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && (GetMemoState(talker, @little_wings) == 2 || GetMemoState(talker, @little_wings) == 11) && OwnItemCount(talker, @q_list_of_stuff_for_fsd) == 1 && OwnItemCount(talker, @coal) >= 10 && OwnItemCount(talker, @charcoal) >= 10 && OwnItemCount(talker, @gemstone_c) >= 1 && OwnItemCount(talker, @stone_of_purity) >= 1 && OwnItemCount(talker, @silver_nugget) >= 5 && OwnItemCount(talker, @q_inpicios_back_skin) >= 20)
+                {
+                    ShowPage(talker, "marya_q0420_04.htm");
+                }
+
+                break;
+            case 17:
+                if (_from_choice == 0 || (HaveMemo(talker, @little_wings) == 1 && OwnItemCount(talker, @q_fairy_stone) == 1 || OwnItemCount(talker, @q_fairy_stone_delux) == 1))
+                {
+                    ShowPage(talker, "marya_q0420_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_scholar)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @sylvains_letter) >= 1)
+                {
+                    ShowPage(talker, "marya_q0214_02.htm");
+                    DeleteItem1(talker, @sylvains_letter, 1);
+                    GiveItem1(talker, @maryas_letter1, 1);
+                }
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "marya_q0214_07.htm");
+            }
+
+            if (reply == 3)
+            {
+                if (OwnItemCount(talker, @cretas_letter1) >= 1)
+                {
+                    ShowPage(talker, "marya_q0214_08.htm");
+                    DeleteItem1(talker, @cretas_letter1, 1);
+                    GiveItem1(talker, @lucillas_handbag, 1);
+                }
+            }
+
+            if (reply == 4)
+            {
+                if (OwnItemCount(talker, @cretas_painting3) >= 1)
+                {
+                    ShowPage(talker, "marya_q0214_14.htm");
+                    DeleteItem1(talker, @brown_scroll_scrap, OwnItemCount(talker, @brown_scroll_scrap));
+                    DeleteItem1(talker, @cretas_painting3, 1);
+                    GiveItem1(talker, @crystal_of_purity1, 1);
+                }
+            }
+        }
+
+        if (ask == @little_wings)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    DeleteItem1(talker, @q_list_of_stuff_for_fs, OwnItemCount(talker, @q_list_of_stuff_for_fs));
+                    DeleteItem1(talker, @coal, 10);
+                    DeleteItem1(talker, @charcoal, 10);
+                    DeleteItem1(talker, @gemstone_d, 1);
+                    DeleteItem1(talker, @silver_nugget, 3);
+                    DeleteItem1(talker, @q_inpicios_back_skin, OwnItemCount(talker, @q_inpicios_back_skin));
+                    GiveItem1(talker, @q_fairy_stone, 1);
+                    ShowPage(talker, "marya_q0420_03.htm");
+                }
+            }
+
+            if (reply == 2)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    DeleteItem1(talker, @q_list_of_stuff_for_fsd, OwnItemCount(talker, @q_list_of_stuff_for_fsd));
+                    DeleteItem1(talker, @coal, 10);
+                    DeleteItem1(talker, @charcoal, 10);
+                    DeleteItem1(talker, @gemstone_c, 1);
+                    DeleteItem1(talker, @stone_of_purity, 1);
+                    DeleteItem1(talker, @silver_nugget, 5);
+                    DeleteItem1(talker, @q_inpicios_back_skin, OwnItemCount(talker, @q_inpicios_back_skin));
+                    GiveItem1(talker, @q_fairy_stone_delux, 1);
+                    ShowPage(talker, "marya_q0420_05.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

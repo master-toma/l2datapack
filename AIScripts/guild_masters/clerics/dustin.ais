@@ -1,0 +1,153 @@
+class dustin : cleric_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 10 && OwnItemCount(talker, @tear_of_loyalty))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that Isael Silvershadow sent you");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 11 && (OwnItemCount(talker, @atebalts_skull) == 0 || OwnItemCount(talker, @atebalts_ribs) == 0 || OwnItemCount(talker, @atebalts_shin) == 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask what thing of Sir Athebaldt the other person brought");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 11 && (OwnItemCount(talker, @atebalts_skull) && OwnItemCount(talker, @atebalts_ribs) && OwnItemCount(talker, @atebalts_shin)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Say that you came back to get the remains");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 13 && OwnItemCount(talker, @letter_of_windawood))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give Letter from Sir Windawood");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 12)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Say that you came back to get the remains");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 14)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Say that you came back to get the remains");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 10 && OwnItemCount(talker, @tear_of_loyalty))
+                {
+                    ShowPage(talker, "dustin_q0212_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 11 && (OwnItemCount(talker, @atebalts_skull) == 0 || OwnItemCount(talker, @atebalts_ribs) == 0 || OwnItemCount(talker, @atebalts_shin) == 0))
+                {
+                    ShowPage(talker, "dustin_q0212_06.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 11 && (OwnItemCount(talker, @atebalts_skull) && OwnItemCount(talker, @atebalts_ribs) && OwnItemCount(talker, @atebalts_shin)))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "dustin_q0212_07.htm");
+                        DeleteItem1(talker, @atebalts_skull, 1);
+                        DeleteItem1(talker, @atebalts_ribs, 1);
+                        DeleteItem1(talker, @atebalts_shin, 1);
+                        GiveItem1(talker, @saints_ashes_urn, 1);
+                        SetMemoState(talker, @trial_of_duty, 12);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 13 && OwnItemCount(talker, @letter_of_windawood))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "dustin_q0212_08.htm");
+                        DeleteItem1(talker, @letter_of_windawood, 1);
+                        GiveItem1(talker, @letter_of_dustin, 1);
+                        SetMemoState(talker, @trial_of_duty, 14);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 12)
+                {
+                    ShowPage(talker, "dustin_q0212_09.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 14)
+                {
+                    ShowPage(talker, "dustin_q0212_10.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_challenger)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "dustin_q0212_02.htm");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "dustin_q0212_03.htm");
+            }
+            else if (reply == 3)
+            {
+                ShowPage(talker, "dustin_q0212_04.htm");
+            }
+            else if (reply == 4 && OwnItemCount(talker, @tear_of_loyalty) > 0)
+            {
+                ShowPage(talker, "dustin_q0212_05.htm");
+                DeleteItem1(talker, @tear_of_loyalty, 1);
+                SetMemoState(talker, @trial_of_duty, 11);
+            }
+        }
+
+        super;
+    }
+}

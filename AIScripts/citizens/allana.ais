@@ -1,0 +1,134 @@
+class allana : citizen
+{
+parameter:
+    string Privates = "";
+    
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_oracle) == 1 && OwnItemCount(talker, @crystal_medallion))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about the prophecy");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the holy woman");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 4)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask where the orphanage is");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_oracle) == 1 && OwnItemCount(talker, @crystal_medallion))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @money_of_swindler) == 0 && OwnItemCount(talker, @dairy_of_allana) == 0 && OwnItemCount(talker, @lizard_captain_order) == 0 && OwnItemCount(talker, @half_of_dairy) == 0)
+                        {
+                            if (GetMemoState(talker, @path_to_oracle) == 2)
+                            {
+                                ShowPage(talker, "allana_q0409_05.htm");
+                            }
+                            else
+                            {
+                                ShowPage(talker, "allana_q0409_01.htm");
+                            }
+                        }
+                        else if (OwnItemCount(talker, @money_of_swindler) == 0 && OwnItemCount(talker, @dairy_of_allana) == 0 && OwnItemCount(talker, @lizard_captain_order) == 1 && OwnItemCount(talker, @half_of_dairy) == 0)
+                        {
+                            SetMemoState(talker, @path_to_oracle, 2);
+                            ShowPage(talker, "allana_q0409_02.htm");
+                            GiveItem1(talker, @half_of_dairy, 1);
+                        }
+                        else if (OwnItemCount(talker, @money_of_swindler) == 0 && OwnItemCount(talker, @dairy_of_allana) == 0 && OwnItemCount(talker, @lizard_captain_order) == 1 && OwnItemCount(talker, @half_of_dairy) == 1)
+                        {
+                            if (GetMemoState(talker, @path_to_oracle) == 3 && OwnItemCount(talker, @tamatos_necklace) == 0)
+                            {
+                                SetMemoState(talker, @path_to_oracle, 2);
+                                ShowPage(talker, "allana_q0409_06.htm");
+                            }
+                            else
+                            {
+                                ShowPage(talker, "allana_q0409_03.htm");
+                            }
+                        }
+                        else if (OwnItemCount(talker, @money_of_swindler) == 1 && OwnItemCount(talker, @dairy_of_allana) == 0 && OwnItemCount(talker, @lizard_captain_order) == 1 && OwnItemCount(talker, @half_of_dairy) == 1)
+                        {
+                            ShowPage(talker, "allana_q0409_04.htm");
+                            DeleteItem1(talker, @half_of_dairy, 1);
+                            GiveItem1(talker, @dairy_of_allana, 1);
+                        }
+                        else if (OwnItemCount(talker, @money_of_swindler) == 1 && OwnItemCount(talker, @lizard_captain_order) == 1 && OwnItemCount(talker, @half_of_dairy) == 0 && OwnItemCount(talker, @dairy_of_allana))
+                        {
+                            ShowPage(talker, "allana_q0409_05.htm");
+                        }
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 3)
+                {
+                    ShowPage(talker, "allana_q0226_01.htm");
+                    SetMemoState(talker, @test_of_healer, 4);
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 4)
+                {
+                    ShowPage(talker, "allana_q0226_02.htm");
+                    SetMemoState(talker, @test_of_healer, 4);
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_oracle)
+        {
+            if (reply == 1)
+            {
+                if (GetMemoState(talker, @path_to_oracle) == 1)
+                {
+                    SetMemoState(talker, @path_to_oracle, 2);
+                    CreateOnePrivate(@q409_lizardman_warrior, "q409_lizardman_warrior", 0, 1);
+                    CreateOnePrivate(@q409_lizardman_scout, "q409_lizardman_scout", 0, 1);
+                    CreateOnePrivate(@q409_lizardman, "q409_lizardman", 0, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

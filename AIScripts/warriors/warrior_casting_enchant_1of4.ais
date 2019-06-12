@@ -1,0 +1,51 @@
+class warrior_casting_enchant_1of4 : warrior
+{
+parameter:
+    int SelfBuff1 = @s_self_might1;
+    int SelfBuff2 = @s_self_might1;
+    int SelfBuff3 = @s_self_might1;
+    int SelfBuff4 = @s_self_might1;
+
+handler:
+    EventHandler CREATED(i0)
+    {
+        i0 = Rand(4);
+        if (i0 == 0)
+        {
+            myself.i_ai0 = SelfBuff1;
+        }
+        else if (i0 == 1)
+        {
+            myself.i_ai0 = SelfBuff2;
+        }
+        else if (i0 == 2)
+        {
+            myself.i_ai0 = SelfBuff3;
+        }
+        else
+        {
+            myself.i_ai0 = SelfBuff4;
+        }
+
+        myself.i_ai1 = 0;
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage, i6)
+    {
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            if (myself.i_ai1 == 0 && Rand(100) < 33 && FloatToInt(myself.sm.hp / myself.sm.max_hp * 100) > 50)
+            {
+                if (Skill_GetConsumeMP(myself.i_ai0) < myself.sm.mp && Skill_GetConsumeHP(myself.i_ai0) < myself.sm.hp && Skill_InReuseDelay(myself.i_ai0) == @FALSE)
+                {
+                    AddUseSkillDesire(myself.sm, myself.i_ai0, @ST_HEAL, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+
+            myself.i_ai1 = 1;
+        }
+
+        super;
+    }
+}

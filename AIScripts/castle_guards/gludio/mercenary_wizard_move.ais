@@ -1,0 +1,3 @@
+class mercenary_wizard_move : ai_gludio_wizard
+{
+}

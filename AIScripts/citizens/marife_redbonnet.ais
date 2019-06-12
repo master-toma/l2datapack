@@ -1,0 +1,173 @@
+class marife_redbonnet : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, i0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @red_bonnets_revenge) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Listen to story of red hat");
+            }
+
+            if (HaveMemo(talker, @red_bonnets_revenge))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show wolf pelt");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @contribution_of_marife) == 0 && OwnItemCount(talker, @lockirins_notice2) == 0 && OwnItemCount(talker, @marifes_request) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask for donation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @marifes_request) >= 1 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @contribution_of_marife) == 0 && OwnItemCount(talker, @lockirins_notice2) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give leather");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @contribution_of_marife) >= 1 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @lockirins_notice2) == 0 && OwnItemCount(talker, @marifes_request) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Say that you are thankful for the other person giving the donation");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @red_bonnets_revenge) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level < 4)
+                        {
+                            ShowPage(talker, "marife_redbonnet_q0291_01.htm");
+                        }
+                        else
+                        {
+                            FHTML_SetFileName(fhtml0, "marife_redbonnet_q0291_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @red_bonnets_revenge);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @red_bonnets_revenge))
+                {
+                    if (OwnItemCount(talker, @black_wolf_pelt) < 40)
+                    {
+                        ShowPage(talker, "marife_redbonnet_q0291_04.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "marife_redbonnet_q0291_05.htm");
+                        RemoveMemo(talker, @red_bonnets_revenge);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        DeleteItem1(talker, @black_wolf_pelt, OwnItemCount(talker, @black_wolf_pelt));
+                        i0 = Rand(100);
+                        if (i0 <= 2)
+                        {
+                            GiveItem1(talker, @grandmas_pearl, 1);
+                        }
+                        else if (i0 <= 20)
+                        {
+                            GiveItem1(talker, @grandmas_mirror, 1);
+                        }
+                        else if (i0 <= 45)
+                        {
+                            GiveItem1(talker, @grandmas_necklace, 1);
+                        }
+                        else
+                        {
+                            GiveItem1(talker, @grandmas_hairpin, 1);
+                        }
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @contribution_of_marife) == 0 && OwnItemCount(talker, @lockirins_notice2) == 0 && OwnItemCount(talker, @marifes_request) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "marife_redbonnet_q0221_01.htm");
+                        GiveItem1(talker, @marifes_request, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @marifes_request) >= 1 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @contribution_of_marife) == 0 && OwnItemCount(talker, @lockirins_notice2) == 0)
+                {
+                    if (OwnItemCount(talker, @animal_skin) < 100)
+                    {
+                        ShowPage(talker, "marife_redbonnet_q0221_02.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "marife_redbonnet_q0221_03.htm");
+                        DeleteItem1(talker, @animal_skin, 100);
+                        DeleteItem1(talker, @marifes_request, 1);
+                        GiveItem1(talker, @contribution_of_marife, 1);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @contribution_of_marife) >= 1 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @lockirins_notice2) == 0 && OwnItemCount(talker, @marifes_request) == 0)
+                {
+                    ShowPage(talker, "marife_redbonnet_q0221_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @red_bonnets_revenge)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @red_bonnets_revenge);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "marife_redbonnet_q0291_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

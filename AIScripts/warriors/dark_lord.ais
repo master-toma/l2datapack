@@ -1,0 +1,3 @@
+class dark_lord : party_leader_aggressive
+{
+}

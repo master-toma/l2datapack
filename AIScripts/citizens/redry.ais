@@ -1,0 +1,125 @@
+class redry : npc_elder
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @release_darkelf_elder1) == 0 && GetOneTimeQuestFlag(talker, @release_darkelf_elder1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear the request of the tetrarch");
+            }
+
+            if (HaveMemo(talker, @release_darkelf_elder1) == 0 && GetOneTimeQuestFlag(talker, @release_darkelf_elder1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear the request of the tetrarch");
+            }
+
+            if (HaveMemo(talker, @release_darkelf_elder1) == 1 && GetOneTimeQuestFlag(talker, @release_darkelf_elder1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about the seal");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @release_darkelf_elder1) == 0 && GetOneTimeQuestFlag(talker, @release_darkelf_elder1) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_dark_elf)
+                        {
+                            ShowPage(talker, "redry_q0003_00.htm");
+                        }
+                        else if (talker.level >= 16)
+                        {
+                            FHTML_SetFileName(fhtml0, "redry_q0003_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @release_darkelf_elder1);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "redry_q0003_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @release_darkelf_elder1) == 0 && GetOneTimeQuestFlag(talker, @release_darkelf_elder1) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @release_darkelf_elder1) == 1 && GetOneTimeQuestFlag(talker, @release_darkelf_elder1) == 0)
+                {
+                    if (OwnItemCount(talker, @onyx_beast_eye) >= 1 && OwnItemCount(talker, @taint_stone) >= 1 && OwnItemCount(talker, @succubus_blood) >= 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @adena, 4900);
+                            IncrementParam(talker, @PARAM_EXP, 5000);
+                            DeleteItem1(talker, @onyx_beast_eye, OwnItemCount(talker, @onyx_beast_eye));
+                            DeleteItem1(talker, @taint_stone, OwnItemCount(talker, @taint_stone));
+                            DeleteItem1(talker, @succubus_blood, OwnItemCount(talker, @succubus_blood));
+                            RemoveMemo(talker, @release_darkelf_elder1);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            SetOneTimeQuestFlag(talker, @release_darkelf_elder1, 1);
+                            ShowPage(talker, "redry_q0003_06.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "redry_q0003_04.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @release_darkelf_elder1)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "redry_q0003_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

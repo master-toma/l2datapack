@@ -1,0 +1,3 @@
+class barder : warehouse_keeper_for_chaotic
+{
+}

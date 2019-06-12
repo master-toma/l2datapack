@@ -1,0 +1,20 @@
+class summon_physicalattack : default_npc
+{
+handler:
+    EventHandler CREATED()
+    {
+        AddPetDefaultDesire_Follow(20.0);
+    }
+
+    EventHandler NO_DESIRE()
+    {
+        AddPetDefaultDesire_Follow(20.0);
+    }
+
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == @letters_of_love1)
+        {
+        }
+    }
+}

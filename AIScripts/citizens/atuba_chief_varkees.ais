@@ -1,0 +1,239 @@
+class atuba_chief_varkees : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, i0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @long_live_lord_of_flame) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Receive gift from Varkees");
+            }
+
+            if (HaveMemo(talker, @invaders_of_holyland) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Help get rid of imps");
+            }
+
+            if (HaveMemo(talker, @invaders_of_holyland))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show Soul Stone");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) == 1 && OwnItemCount(talker, @huge_orc_fang) == 0 && OwnItemCount(talker, @varkees_charm) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that you are currently challenging the Examination of Lord");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @huge_orc_fang) == 0 && OwnItemCount(talker, @manakias_amulet) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @varkees_charm) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about Manakia");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @huge_orc_fang) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @varkees_charm) >= 1 && OwnItemCount(talker, @manakias_amulet) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Give Amulet of Manakia");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @varkees_charm) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @huge_orc_fang) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Show Totem of Atuba");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @long_live_lord_of_flame) == 1)
+                {
+                    if (OwnItemCount(talker, @honey_khandar) < 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "atuba_chief_varkees_q0004_01.htm");
+                            GiveItem1(talker, @honey_khandar, 1);
+                            SoundEffect(talker, "ItemSound.quest_itemget");
+                        }
+                    }
+                    else if (OwnItemCount(talker, @honey_khandar) >= 1)
+                    {
+                        ShowPage(talker, "atuba_chief_varkees_q0004_02.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @invaders_of_holyland) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_orc)
+                        {
+                            ShowPage(talker, "atuba_chief_varkees_q0273_00.htm");
+                        }
+                        else if (talker.level < 6)
+                        {
+                            ShowPage(talker, "atuba_chief_varkees_q0273_01.htm");
+                        }
+                        else
+                        {
+                            FHTML_SetFileName(fhtml0, "atuba_chief_varkees_q0273_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @invaders_of_holyland);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @invaders_of_holyland))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @black_soulstone) + OwnItemCount(talker, @red_soulstone) == 0)
+                        {
+                            ShowPage(talker, "atuba_chief_varkees_q0273_04.htm");
+                        }
+                        else if (OwnItemCount(talker, @red_soulstone) == 0)
+                        {
+                            ShowPage(talker, "atuba_chief_varkees_q0273_05.htm");
+                            GiveItem1(talker, @adena, i0 * 5);
+                            DeleteItem1(talker, @black_soulstone, OwnItemCount(talker, @black_soulstone));
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "atuba_chief_varkees_q0273_06.htm");
+                            i0 = OwnItemCount(talker, @black_soulstone);
+                            if (i0)
+                            {
+                                GiveItem1(talker, @adena, OwnItemCount(talker, @black_soulstone) * 5);
+                                DeleteItem1(talker, @black_soulstone, OwnItemCount(talker, @black_soulstone));
+                            }
+
+                            GiveItem1(talker, @adena, OwnItemCount(talker, @red_soulstone) * 50);
+                            DeleteItem1(talker, @red_soulstone, OwnItemCount(talker, @red_soulstone));
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) == 1 && OwnItemCount(talker, @huge_orc_fang) == 0 && OwnItemCount(talker, @varkees_charm) == 0)
+                {
+                    ShowPage(talker, "atuba_chief_varkees_q0232_01.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @huge_orc_fang) == 0 && OwnItemCount(talker, @manakias_amulet) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @varkees_charm) >= 1)
+                {
+                    ShowPage(talker, "atuba_chief_varkees_q0232_03.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @huge_orc_fang) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @varkees_charm) >= 1 && OwnItemCount(talker, @manakias_amulet) >= 1)
+                {
+                    ShowPage(talker, "atuba_chief_varkees_q0232_04.htm");
+                    DeleteItem1(talker, @varkees_charm, OwnItemCount(talker, @varkees_charm));
+                    DeleteItem1(talker, @manakias_amulet, 1);
+                    GiveItem1(talker, @huge_orc_fang, 1);
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @varkees_charm) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @huge_orc_fang) >= 1)
+                {
+                    ShowPage(talker, "atuba_chief_varkees_q0232_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @invaders_of_holyland)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @invaders_of_holyland);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "atuba_chief_varkees_q0273_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @invaders_of_holyland)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "atuba_chief_varkees_q0273_07.htm");
+                RemoveMemo(talker, @invaders_of_holyland);
+                SoundEffect(talker, "ItemSound.quest_finish");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "atuba_chief_varkees_q0273_08.htm");
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+        }
+
+        if (ask == @test_of_lord)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "atuba_chief_varkees_q0232_02.htm");
+                    GiveItem1(talker, @varkees_charm, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

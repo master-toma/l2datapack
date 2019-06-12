@@ -1,0 +1,133 @@
+class hannavalt : master_lv3_hef
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_duty) == 0 && GetOneTimeQuestFlag(talker, @trial_of_duty) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Trial of Cleverness");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 0 && GetOneTimeQuestFlag(talker, @trial_of_duty) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Trial of Cleverness");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && OwnItemCount(talker, @letter_of_dustin) && GetMemoState(talker, @trial_of_duty) == 14)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give Letter from Dustin");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about Trial of Cleverness");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 0 && GetOneTimeQuestFlag(talker, @trial_of_duty) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (IsInCategory(@knight_group, talker.occupation) && talker.level >= 35)
+                        {
+                            FHTML_SetFileName(fhtml0, "hannavalt_q0212_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @trial_of_duty);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else if (IsInCategory(@knight_group, talker.occupation))
+                        {
+                            ShowPage(talker, "hannavalt_q0212_01.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "hannavalt_q0212_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 0 && GetOneTimeQuestFlag(talker, @trial_of_duty) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && OwnItemCount(talker, @letter_of_dustin) && GetMemoState(talker, @trial_of_duty) == 14)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        IncrementParam(talker, @PARAM_EXP, 21500);
+                        IncrementParam(talker, @PARAM_SP, 2600);
+                        ShowPage(talker, "hannavalt_q0212_05.htm");
+                        GiveItem1(talker, @mark_of_duty, 1);
+                        DeleteItem1(talker, @letter_of_dustin, 1);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @trial_of_duty, 1);
+                        RemoveMemo(talker, @trial_of_duty);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 1)
+                {
+                    ShowPage(talker, "hannavalt_q0212_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @trial_of_duty)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "hannavalt_q0212_04.htm");
+                SetMemoState(talker, @trial_of_duty, 1);
+                talker.flag = 0;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

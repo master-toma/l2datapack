@@ -1,0 +1,194 @@
+class gallin : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, quest_id, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @spirit_of_mirror) == 0 && GetOneTimeQuestFlag(talker, @spirit_of_mirror) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about Orc movements");
+            }
+
+            if (HaveMemo(talker, @spirit_of_mirror) == 0 && GetOneTimeQuestFlag(talker, @spirit_of_mirror) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about Orc movements");
+            }
+
+            if (HaveMemo(talker, @spirit_of_mirror) && OwnItemCount(talker, @gallins_oak_wand) >= 1 && (OwnItemCount(talker, @wand_spiritbound1) == 1 && OwnItemCount(talker, @wand_spiritbound2) == 1 && OwnItemCount(talker, @wand_spiritbound3) == 1) == @FALSE)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Hear about the Spirit of Mirrors");
+            }
+
+            if (HaveMemo(talker, @spirit_of_mirror) && OwnItemCount(talker, @wand_spiritbound1) == 1 && OwnItemCount(talker, @wand_spiritbound2) == 1 && OwnItemCount(talker, @wand_spiritbound3) == 1 && GetOneTimeQuestFlag(talker, @spirit_of_mirror) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Spirit gives the sealed stick");
+            }
+
+            if (HaveMemo(talker, @hmage_tutorial))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Show your diploma");
+            }
+
+            if (HaveMemo(talker, @path_to_cleric) == 1 && OwnItemCount(talker, @letter_of_order2) == 1 && OwnItemCount(talker, @lemoniells_covenant) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Inquire about the signed oath");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @spirit_of_mirror) == 0 && GetOneTimeQuestFlag(talker, @spirit_of_mirror) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_human)
+                        {
+                            ShowPage(talker, "gallin_q0104_00.htm");
+                        }
+                        else if (talker.level >= 10)
+                        {
+                            FHTML_SetFileName(fhtml0, "gallin_q0104_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @spirit_of_mirror);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "gallin_q0104_06.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @spirit_of_mirror) == 0 && GetOneTimeQuestFlag(talker, @spirit_of_mirror) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @spirit_of_mirror) && OwnItemCount(talker, @gallins_oak_wand) >= 1 && (OwnItemCount(talker, @wand_spiritbound1) == 1 && OwnItemCount(talker, @wand_spiritbound2) == 1 && OwnItemCount(talker, @wand_spiritbound3) == 1) == @FALSE)
+                {
+                    ShowPage(talker, "gallin_q0104_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @spirit_of_mirror) && OwnItemCount(talker, @wand_spiritbound1) == 1 && OwnItemCount(talker, @wand_spiritbound2) == 1 && OwnItemCount(talker, @wand_spiritbound3) == 1 && GetOneTimeQuestFlag(talker, @spirit_of_mirror) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @wand_spiritbound1, 1);
+                        DeleteItem1(talker, @wand_spiritbound2, 1);
+                        DeleteItem1(talker, @wand_spiritbound3, 1);
+                        GiveItem1(talker, @wand_of_adept, 1);
+                        ShowPage(talker, "gallin_q0104_05.htm");
+                        RemoveMemo(talker, @spirit_of_mirror);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @spirit_of_mirror, 1);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @hmage_tutorial))
+                {
+                    if (OwnItemCount(talker, @recommendation_02) && GetOneTimeQuestFlag(talker, @hmage_tutorial) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            DeleteRadar(talker, -91035, 248049, -3559);
+                            ShowPage(talker, "gallin_q0202_01.htm");
+                            IncrementParam(talker, @PARAM_SP, 50);
+                            DeleteItem1(talker, @recommendation_02, 1);
+                            RemoveMemo(talker, @hmage_tutorial);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            ShowQuestionMark(talker, 7);
+                            ShowRadar(talker, -84081, 243277, -3723);
+                            SetOneTimeQuestFlag(talker, @hmage_tutorial, 1);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "gallin001.htm");
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_cleric) == 1 && OwnItemCount(talker, @letter_of_order2) == 1 && OwnItemCount(talker, @lemoniells_covenant) == 0)
+                {
+                    if (OwnItemCount(talker, @book_of_lemoniell) == 1 && OwnItemCount(talker, @certificate_of_gallint) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "gallin_q0405_01.htm");
+                            DeleteItem1(talker, @book_of_lemoniell, 1);
+                            GiveItem1(talker, @certificate_of_gallint, 1);
+                        }
+                    }
+                    else if (OwnItemCount(talker, @book_of_lemoniell) == 0 && OwnItemCount(talker, @certificate_of_gallint) == 1)
+                    {
+                        ShowPage(talker, "gallin_q0405_02.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @spirit_of_mirror)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                GiveItem1(talker, @gallins_oak_wand, 1);
+                GiveItem1(talker, @gallins_oak_wand, 1);
+                GiveItem1(talker, @gallins_oak_wand, 1);
+                ShowPage(talker, "gallin_q0104_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

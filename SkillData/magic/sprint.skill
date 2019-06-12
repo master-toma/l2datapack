@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_sprint]	/* [스프린트] */	skill_id = 219	level = 1	operate_type = T	effect = {}	mp_consume1 = 10	reuse_delay = 0	target_type = none	next_action = none	skill_end

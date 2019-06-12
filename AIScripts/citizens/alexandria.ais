@@ -1,0 +1,91 @@
+class alexandria : merchant_for_cgrade
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_diagram) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Engage in conversation with Alexandria");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @alexandrias_book) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about jewels");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_instructions) == 1 && OwnItemCount(talker, @brimstone1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Say that you are currently looking for jewels");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_diagram) == 1)
+                {
+                    ShowPage(talker, "alexandria_q0229_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @alexandrias_book) == 1)
+                {
+                    ShowPage(talker, "alexandria_q0229_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_instructions) == 1 && OwnItemCount(talker, @brimstone1) == 1)
+                {
+                    ShowPage(talker, "alexandria_q0229_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_witchcraft)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "alexandria_q0229_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (OwnItemCount(talker, @orims_diagram) >= 1)
+                {
+                    ShowPage(talker, "alexandria_q0229_03.htm");
+                    DeleteItem1(talker, @orims_diagram, 1);
+                    GiveItem1(talker, @alexandrias_book, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

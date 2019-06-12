@@ -1,0 +1,128 @@
+class brother_metheus : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @kairas_letter1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Letter from Kairas");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @metheus_funeral_jar) && OwnItemCount(talker, @kasandras_remains) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about younger sister");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @metheus_funeral_jar) == 0 && OwnItemCount(talker, @kasandras_remains))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give Remains of Cassandra");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @herbalism_textbook) || OwnItemCount(talker, @ixias_list)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask what poison you should get");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @belladonna))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give belladonna");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @alders_skull1) || OwnItemCount(talker, @alders_skull2) || OwnItemCount(talker, @alders_receipt) || OwnItemCount(talker, @revelations_manuscript) || OwnItemCount(talker, @kairas_instructions) || OwnItemCount(talker, @kairas_recommend)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask if the funeral ceremony went well");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @kairas_letter1))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "brother_metheus_q0219_01.htm");
+                        GiveItem1(talker, @metheus_funeral_jar, 1);
+                        DeleteItem1(talker, @kairas_letter1, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @metheus_funeral_jar) && OwnItemCount(talker, @kasandras_remains) == 0)
+                {
+                    ShowPage(talker, "brother_metheus_q0219_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @metheus_funeral_jar) == 0 && OwnItemCount(talker, @kasandras_remains))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "brother_metheus_q0219_03.htm");
+                        GiveItem1(talker, @herbalism_textbook, 1);
+                        DeleteItem1(talker, @kasandras_remains, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @herbalism_textbook) || OwnItemCount(talker, @ixias_list)))
+                {
+                    ShowPage(talker, "brother_metheus_q0219_04.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @belladonna))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "brother_metheus_q0219_05.htm");
+                        GiveItem1(talker, @alders_skull1, 1);
+                        DeleteItem1(talker, @belladonna, 1);
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @alders_skull1) || OwnItemCount(talker, @alders_skull2) || OwnItemCount(talker, @alders_receipt) || OwnItemCount(talker, @revelations_manuscript) || OwnItemCount(talker, @kairas_instructions) || OwnItemCount(talker, @kairas_recommend)))
+                {
+                    ShowPage(talker, "brother_metheus_q0219_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

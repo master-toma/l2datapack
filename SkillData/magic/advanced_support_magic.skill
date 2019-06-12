@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_advanced_support_magic]	/* [어드밴스드 서포트 매직] */	skill_id = 161	level = 1	operate_type = P	effect = {}	skill_end

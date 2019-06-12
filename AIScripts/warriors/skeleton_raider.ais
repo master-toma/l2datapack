@@ -1,0 +1,23 @@
+class skeleton_raider : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_duty) && GetMemoState(c1, @trial_of_duty) == 2)
+        {
+            if (Rand(100) < (c1.flag - 40) * 10)
+            {
+                CreateOnePrivateEx(@spirit_of_sir_herod, "spirit_of_sir_herod", 0, 0, FloatToInt(myself.sm.x), FloatToInt(myself.sm.y), FloatToInt(myself.sm.z), 0, 0, 0);
+                SoundEffect(c1, "Itemsound.quest_before_battle");
+                c1.flag = 0;
+            }
+            else
+            {
+                c1.flag = c1.flag + 1;
+            }
+        }
+
+        super;
+    }
+}

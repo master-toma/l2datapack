@@ -1,0 +1,101 @@
+class box_of_titan : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @clay_dough) >= 1 && OwnItemCount(talker, @pattern_of_keyhole) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Investigate about box");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @key_of_titan) >= 1 && OwnItemCount(talker, @maphr_tablet_fragment) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Use the key");
+            }
+
+            if (OwnItemCount(talker, @key_of_titan) == 0 && OwnItemCount(talker, @clay_dough) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Use the key");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @clay_dough) >= 1 && OwnItemCount(talker, @pattern_of_keyhole) == 0)
+                {
+                    ShowPage(talker, "box_of_titan_q0221_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @key_of_titan) >= 1 && OwnItemCount(talker, @maphr_tablet_fragment) == 0)
+                {
+                    ShowPage(talker, "box_of_titan_q0221_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || OwnItemCount(talker, @key_of_titan) == 0 && OwnItemCount(talker, @clay_dough) == 0)
+                {
+                    ShowPage(talker, "box_of_titan_q0221_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_prosperity)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @clay_dough) >= 1)
+                {
+                    ShowPage(talker, "box_of_titan_q0221_02.htm");
+                    DeleteItem1(talker, @clay_dough, 1);
+                    GiveItem1(talker, @pattern_of_keyhole, 1);
+                }
+            }
+
+            if (reply == 2)
+            {
+                if (OwnItemCount(talker, @key_of_titan) >= 1)
+                {
+                    ShowPage(talker, "box_of_titan_q0221_04.htm");
+                    DeleteItem1(talker, @nikolas_list, OwnItemCount(talker, @nikolas_list));
+                    DeleteItem1(talker, @rp_titan_key, OwnItemCount(talker, @rp_titan_key));
+                    DeleteItem1(talker, @stakato_shell, OwnItemCount(talker, @stakato_shell));
+                    DeleteItem1(talker, @inpicio_sac, OwnItemCount(talker, @inpicio_sac));
+                    DeleteItem1(talker, @spider_thorn, OwnItemCount(talker, @spider_thorn));
+                    DeleteItem1(talker, @key_of_titan, 1);
+                    GiveItem1(talker, @maphr_tablet_fragment, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

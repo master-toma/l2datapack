@@ -1,0 +1,37 @@
+class calpico : party_leader
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_assassin) == 1 && OwnItemCount(myself.c_quest0, @shilens_tears) == 0 && myself.i_quest0 == 1 && GetMemoState(myself.c_quest0, @path_to_assassin) == 1)
+        {
+            GiveItem1(myself.c_quest0, @shilens_tears, 1);
+            SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

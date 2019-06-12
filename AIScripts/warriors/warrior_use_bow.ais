@@ -1,0 +1,32 @@
+class warrior_use_bow : warrior
+{
+handler:
+    EventHandler CREATED()
+    {
+        myself.i_ai2 = 0;
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        if (myself.i_ai2 == 0 && DistFromMe(attacker) < 100)
+        {
+            AddTimerEx(100002, 2000);
+            myself.i_ai2 = 1;
+            myself.c_ai1 = attacker;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 100002)
+        {
+            AddFleeDesire(myself.c_ai1, 10000);
+            myself.i_ai2 = 0;
+        }
+
+        super;
+    }
+}

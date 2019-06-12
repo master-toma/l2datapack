@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_npc_critical_chance]	/* [나 크리티컬 잘 써] */	skill_id = 4086	level = 1	operate_type = P	effect = {{p_critical_rate;50;per}}	skill_end

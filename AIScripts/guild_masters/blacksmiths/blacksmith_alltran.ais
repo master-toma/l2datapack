@@ -1,0 +1,282 @@
+class blacksmith_alltran : blacksmith
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @sword_of_solidarity_quest) == 1 && OwnItemCount(talker, @roiens_letter) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the broken sword");
+            }
+
+            if (HaveMemo(talker, @sword_of_solidarity_quest) == 1 && OwnItemCount(talker, @roiens_letter) == 0 && OwnItemCount(talker, @howtogo_ruins) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the broken sword");
+            }
+
+            if (HaveMemo(talker, @sword_of_solidarity_quest) == 1 && OwnItemCount(talker, @alltrans_note) && OwnItemCount(talker, @howtogo_ruins) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give the broken blade");
+            }
+
+            if (HaveMemo(talker, @sword_of_solidarity_quest) == 1 && OwnItemCount(talker, @broken_sword_handle) > 0 && GetOneTimeQuestFlag(talker, @sword_of_solidarity_quest) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about the Sword of Solidarity");
+            }
+
+            if (HaveMemo(talker, @shards_of_golem) != 0 && OwnItemCount(talker, @harrys_receipt1) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Show the receipt");
+            }
+
+            if (HaveMemo(talker, @shards_of_golem) != 0 && OwnItemCount(talker, @harrys_receipt2) != 0 && OwnItemCount(talker, @golem_shard) < 5 && OwnItemCount(talker, @tool_box) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask again about the stone golem");
+            }
+
+            if (HaveMemo(talker, @shards_of_golem) != 0 && OwnItemCount(talker, @harrys_receipt2) != 0 && OwnItemCount(talker, @golem_shard) >= 5 && OwnItemCount(talker, @tool_box) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Show the broken pieces of golem");
+            }
+
+            if (HaveMemo(talker, @shards_of_golem) != 0 && OwnItemCount(talker, @harrys_receipt2) != 0 && OwnItemCount(talker, @tool_box) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Show the toolbox");
+            }
+
+            if (HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @valkons_recommend) == 1 && OwnItemCount(talker, @mandragora_berry) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Talk with Allman");
+            }
+
+            if (HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @valkons_recommend) == 1 && OwnItemCount(talker, @mandragora_berry) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Give mandragora berry");
+            }
+
+            if (HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Talk about ring");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @sword_of_solidarity_quest) == 1 && OwnItemCount(talker, @roiens_letter) > 0)
+                {
+                    ShowPage(talker, "blacksmith_alltran_q0101_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @sword_of_solidarity_quest) == 1 && OwnItemCount(talker, @roiens_letter) == 0 && OwnItemCount(talker, @howtogo_ruins) > 0)
+                {
+                    if (OwnItemCount(talker, @broken_blade_top) && OwnItemCount(talker, @broken_blade_bottom) == 0)
+                    {
+                        ShowPage(talker, "blacksmith_alltran_q0101_08.htm");
+                    }
+
+                    if (OwnItemCount(talker, @broken_blade_top) == 0 && OwnItemCount(talker, @broken_blade_bottom))
+                    {
+                        ShowPage(talker, "blacksmith_alltran_q0101_08.htm");
+                    }
+
+                    if (OwnItemCount(talker, @broken_blade_top) == 0 && OwnItemCount(talker, @broken_blade_bottom) == 0)
+                    {
+                        ShowPage(talker, "blacksmith_alltran_q0101_03.htm");
+                    }
+
+                    if (OwnItemCount(talker, @broken_blade_top) && OwnItemCount(talker, @broken_blade_bottom))
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "blacksmith_alltran_q0101_04.htm");
+                            DeleteItem1(talker, @howtogo_ruins, OwnItemCount(talker, @howtogo_ruins));
+                            DeleteItem1(talker, @broken_blade_top, OwnItemCount(talker, @broken_blade_top));
+                            DeleteItem1(talker, @broken_blade_bottom, OwnItemCount(talker, @broken_blade_bottom));
+                            GiveItem1(talker, @alltrans_note, 1);
+                        }
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @sword_of_solidarity_quest) == 1 && OwnItemCount(talker, @alltrans_note) && OwnItemCount(talker, @howtogo_ruins) == 0)
+                {
+                    ShowPage(talker, "blacksmith_alltran_q0101_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @sword_of_solidarity_quest) == 1 && OwnItemCount(talker, @broken_sword_handle) > 0 && GetOneTimeQuestFlag(talker, @sword_of_solidarity_quest) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @broken_sword_handle, OwnItemCount(talker, @broken_sword_handle));
+                        GiveItem1(talker, @sword_of_solidarity, 1);
+                        RemoveMemo(talker, @sword_of_solidarity_quest);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        ShowPage(talker, "blacksmith_alltran_q0101_06.htm");
+                        SetOneTimeQuestFlag(talker, @sword_of_solidarity_quest, 1);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @shards_of_golem) != 0 && OwnItemCount(talker, @harrys_receipt1) != 0)
+                {
+                    ShowPage(talker, "blacksmith_alltran_q0301_01.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @shards_of_golem) != 0 && OwnItemCount(talker, @harrys_receipt2) != 0 && OwnItemCount(talker, @golem_shard) < 5 && OwnItemCount(talker, @tool_box) == 0)
+                {
+                    ShowPage(talker, "blacksmith_alltran_q0301_03.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @shards_of_golem) != 0 && OwnItemCount(talker, @harrys_receipt2) != 0 && OwnItemCount(talker, @golem_shard) >= 5 && OwnItemCount(talker, @tool_box) == 0)
+                {
+                    DeleteItem1(talker, @golem_shard, OwnItemCount(talker, @golem_shard));
+                    if (OwnItemCount(talker, @tool_box) == 0)
+                    {
+                        GiveItem1(talker, @tool_box, 1);
+                    }
+
+                    ShowPage(talker, "blacksmith_alltran_q0301_04.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @shards_of_golem) != 0 && OwnItemCount(talker, @harrys_receipt2) != 0 && OwnItemCount(talker, @tool_box) != 0)
+                {
+                    ShowPage(talker, "blacksmith_alltran_q0301_05.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @valkons_recommend) == 1 && OwnItemCount(talker, @mandragora_berry) == 0)
+                {
+                    ShowPage(talker, "blacksmith_alltran_q0216_01.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @valkons_recommend) == 1 && OwnItemCount(talker, @mandragora_berry) == 1)
+                {
+                    ShowPage(talker, "blacksmith_alltran_q0216_02.htm");
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) == 1)
+                {
+                    if (OwnItemCount(talker, @journeyman_ring) < 7)
+                    {
+                        ShowPage(talker, "blacksmith_alltran_q0216_04.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "blacksmith_alltran_q0216_05.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @sword_of_solidarity_quest)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "blacksmith_alltran_q0101_02.htm");
+                    DeleteItem1(talker, @roiens_letter, OwnItemCount(talker, @roiens_letter));
+                    GiveItem1(talker, @howtogo_ruins, 1);
+                }
+            }
+        }
+
+        if (ask == @shards_of_golem)
+        {
+            if (reply == 2 && OwnItemCount(talker, @harrys_receipt1) > 0)
+            {
+                DeleteItem1(talker, @harrys_receipt1, OwnItemCount(talker, @harrys_receipt1));
+                if (OwnItemCount(talker, @harrys_receipt2) == 0)
+                {
+                    GiveItem1(talker, @harrys_receipt2, 1);
+                }
+
+                ShowPage(talker, "blacksmith_alltran_q0301_02.htm");
+            }
+        }
+
+        if (ask == @trial_of_guildsman)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @valkons_recommend) >= 1 && OwnItemCount(talker, @mandragora_berry) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "blacksmith_alltran_q0216_03.htm");
+                        DeleteItem1(talker, @valkons_recommend, 1);
+                        GiveItem1(talker, @alltrans_instructions, 1);
+                        DeleteItem1(talker, @mandragora_berry, 1);
+                        GiveItem1(talker, @rp_journeyman_ring, 1);
+                        GiveItem1(talker, @alltrans_recommend1, 1);
+                        GiveItem1(talker, @alltrans_recommend2, 1);
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

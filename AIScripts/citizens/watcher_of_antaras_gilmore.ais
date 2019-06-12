@@ -1,0 +1,90 @@
+class watcher_of_antaras_gilmore : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) < 60000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about conquering Antharas");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 60000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about conquering Antharas");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 70000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Abyss Jewel");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) < 60000)
+                {
+                    ShowPage(talker, "watcher_of_antaras_gilmore_q0337_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 60000)
+                {
+                    ShowPage(talker, "watcher_of_antaras_gilmore_q0337_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 70000)
+                {
+                    if (OwnItemCount(talker, @q_frag_of_abyss_jewel3) == 1)
+                    {
+                        ShowPage(talker, "watcher_of_antaras_gilmore_q0337_05.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "watcher_of_antaras_gilmore_q0337_04.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @audience_with_earth_dragon)
+        {
+            if (reply == 1)
+            {
+                SetMemoState(talker, @audience_with_earth_dragon, 70000);
+                SetJournal(talker, @audience_with_earth_dragon, 4);
+                ShowPage(talker, "watcher_of_antaras_gilmore_q0337_03.htm");
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,41 @@
+class turek_orc_shaman : warrior_passive_casting_ddmagic
+{
+handler:
+    EventHandler MY_DYING(c1, i0, i1)
+    {
+        c1 = GetLastAttacker();
+        if (1)
+        {
+            c1.quest_last_reward_time = GetCurrentTick();
+            c1 = GetLastAttacker();
+            if (HaveMemo(c1, @reclaim_the_land) == 1)
+            {
+                GiveItem1(c1, @turek_medallion, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+                i0 = Rand(100);
+                if (i0 < 12)
+                {
+                    i1 = Rand(100);
+                    if (i1 < 25)
+                    {
+                        GiveItem1(c1, @clay_urn_fragment, 1);
+                    }
+                    else if (i1 < 50)
+                    {
+                        GiveItem1(c1, @brass_trinket_piece, 1);
+                    }
+                    else if (i1 < 75)
+                    {
+                        GiveItem1(c1, @bronze_mirror_piece, 1);
+                    }
+                    else
+                    {
+                        GiveItem1(c1, @jade_necklace_bead, 1);
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

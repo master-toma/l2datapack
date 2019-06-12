@@ -1,0 +1,146 @@
+class daring : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @letters_of_love1) == 0 && GetOneTimeQuestFlag(talker, @letters_of_love1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Listen to Darin's love story");
+            }
+
+            if (HaveMemo(talker, @letters_of_love1) == 0 && GetOneTimeQuestFlag(talker, @letters_of_love1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Listen to Darin's love story");
+            }
+
+            if (HaveMemo(talker, @letters_of_love1) && OwnItemCount(talker, @rapunzels_kerchief) && GetOneTimeQuestFlag(talker, @letters_of_love1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Receive Roxxy's handkerchief");
+            }
+
+            if (HaveMemo(talker, @letters_of_love1) && OwnItemCount(talker, @rapunzels_kerchief) == 0 && GetOneTimeQuestFlag(talker, @letters_of_love1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about the letter again");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @letters_of_love1) == 0 && GetOneTimeQuestFlag(talker, @letters_of_love1) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level > 1)
+                        {
+                            FHTML_SetFileName(fhtml0, "daring_q0001_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @letters_of_love1);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "daring_q0001_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @letters_of_love1) == 0 && GetOneTimeQuestFlag(talker, @letters_of_love1) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @letters_of_love1) && OwnItemCount(talker, @rapunzels_kerchief) && GetOneTimeQuestFlag(talker, @letters_of_love1) == 0)
+                {
+                    ShowPage(talker, "daring_q0001_08.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @darings_receipt, 1);
+                        DeleteItem1(talker, @rapunzels_kerchief, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @letters_of_love1) && OwnItemCount(talker, @rapunzels_kerchief) == 0 && GetOneTimeQuestFlag(talker, @letters_of_love1) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @darings_receipt) > 0)
+                        {
+                            ShowPage(talker, "daring_q0001_09.htm");
+                        }
+                        else if (OwnItemCount(talker, @bauls_potion) > 0)
+                        {
+                            ShowPage(talker, "daring_q0001_10.htm");
+                            DeleteItem1(talker, @bauls_potion, 1);
+                            RemoveMemo(talker, @letters_of_love1);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            GiveItem1(talker, @adena, 450);
+                            SetOneTimeQuestFlag(talker, @letters_of_love1, 1);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "daring_q0001_07.htm");
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @letters_of_love1)
+        {
+            ShowPage(talker, "daring_q0001_06.htm");
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @darings_letter) == 0)
+                {
+                    GiveItem1(talker, @darings_letter, 1);
+                }
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,3 @@
+class warrior_pa_casting_heal : warrior_casting_heal
+{
+}

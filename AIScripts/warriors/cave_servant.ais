@@ -1,0 +1,3 @@
+class cave_servant : warrior_passive
+{
+}

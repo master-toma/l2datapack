@@ -1,0 +1,231 @@
+class ancestor_martankus : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you want to know about Paagrio");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask what you should look for and bring back");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 4 && OwnItemCount(talker, @essense_of_flame))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show Purification of Flame");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @bear_fang_necklace) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Engage in conversation with Spirit of Ancestor");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @martankus_charm) == 1 && OwnItemCount(talker, @ragna_chief_notice) == 0 && OwnItemCount(talker, @ragna_orc_head) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Show fury about Laguna Orc");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @martankus_charm) >= 1 && OwnItemCount(talker, @ragna_chief_notice) >= 1 && OwnItemCount(talker, @ragna_orc_head) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Give Neck of Laguna Orc");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @immortal_flame) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Say you are thankful to Spirit of Ancestor");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @warspirit_totem) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Give the remains that you’ve collected");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 2)
+                {
+                    ShowPage(talker, "ancestor_martankus_q0215_01.htm");
+                    SetMemoState(talker, @trial_of_pilgrim, 3);
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 3)
+                {
+                    ShowPage(talker, "ancestor_martankus_q0215_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 4 && OwnItemCount(talker, @essense_of_flame))
+                {
+                    ShowPage(talker, "ancestor_martankus_q0215_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @bear_fang_necklace) == 1)
+                {
+                    ShowPage(talker, "ancestor_martankus_q0232_01.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @martankus_charm) == 1 && OwnItemCount(talker, @ragna_chief_notice) == 0 && OwnItemCount(talker, @ragna_orc_head) == 0)
+                {
+                    ShowPage(talker, "ancestor_martankus_q0232_05.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @martankus_charm) >= 1 && OwnItemCount(talker, @ragna_chief_notice) >= 1 && OwnItemCount(talker, @ragna_orc_head) >= 1)
+                {
+                    ShowPage(talker, "ancestor_martankus_q0232_06.htm");
+                    DeleteItem1(talker, @martankus_charm, OwnItemCount(talker, @martankus_charm));
+                    DeleteItem1(talker, @ragna_orc_head, OwnItemCount(talker, @ragna_orc_head));
+                    DeleteItem1(talker, @ragna_chief_notice, 1);
+                    GiveItem1(talker, @immortal_flame, 1);
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @immortal_flame) == 1)
+                {
+                    ShowPage(talker, "ancestor_martankus_q0232_08.htm");
+                    if (Maker_GetNpcCount() == 1)
+                    {
+                        CreateOnePrivateEx(@first_orc, "first_orc", 0, 0, 21036, -107690, -3038, 0, 0, 0);
+                    }
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @warspirit_totem) == 1)
+                {
+                    ShowPage(talker, "ancestor_martankus_q0233_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_pilgrim)
+        {
+            if (reply == 1 && OwnItemCount(talker, @essense_of_flame) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "ancestor_martankus_q0215_04.htm");
+                    GiveItem1(talker, @spirit_of_flame, 1);
+                    DeleteItem1(talker, @essense_of_flame, 1);
+                    SetMemoState(talker, @trial_of_pilgrim, 5);
+                }
+            }
+        }
+
+        if (ask == @test_of_lord)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "ancestor_martankus_q0232_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "ancestor_martankus_q0232_03.htm");
+            }
+
+            if (reply == 3)
+            {
+                if (OwnItemCount(talker, @bear_fang_necklace) >= 1)
+                {
+                    ShowPage(talker, "ancestor_martankus_q0232_04.htm");
+                    DeleteItem1(talker, @bear_fang_necklace, 1);
+                    GiveItem1(talker, @martankus_charm, 1);
+                }
+            }
+
+            if (reply == 4)
+            {
+                ShowPage(talker, "ancestor_martankus_q0232_07.htm");
+                if (Maker_GetNpcCount() == 1)
+                {
+                    CreateOnePrivateEx(@first_orc, "first_orc", 0, 0, 21036, -107690, -3038, 0, 0, 0);
+                }
+            }
+        }
+
+        if (ask == @test_of_warspirit)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "ancestor_martankus_q0233_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (OwnItemCount(talker, @tonars_remains2) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @warspirit_totem, OwnItemCount(talker, @warspirit_totem));
+                        DeleteItem1(talker, @brakis_remains2, OwnItemCount(talker, @brakis_remains2));
+                        DeleteItem1(talker, @hermodts_remains2, OwnItemCount(talker, @hermodts_remains2));
+                        DeleteItem1(talker, @kirunas_remains2, OwnItemCount(talker, @kirunas_remains2));
+                        DeleteItem1(talker, @tamlin_orc_head, OwnItemCount(talker, @tamlin_orc_head));
+                        IncrementParam(talker, @PARAM_EXP, 23000);
+                        IncrementParam(talker, @PARAM_SP, 2900);
+                        DeleteItem1(talker, @tonars_remains2, 1);
+                        GiveItem1(talker, @mark_of_warspirit, 1);
+                        ShowPage(talker, "ancestor_martankus_q0233_03.htm");
+                        RemoveMemo(talker, @test_of_warspirit);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @test_of_warspirit, 1);
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

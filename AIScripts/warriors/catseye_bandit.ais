@@ -1,0 +1,113 @@
+class catseye_bandit : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        Say(MakeFString(40307, "", "", "", "", ""));
+        if (HaveMemo(myself.c_quest2, @path_to_rogue) && OwnItemCount(myself.c_quest2, @wanted_bill) > 0 && myself.i_quest2 == 1)
+        {
+            select (Rand(4))
+            {
+            case 0:
+                if (OwnItemCount(myself.c_quest2, @stolen_jewelry) == 0)
+                {
+                    GiveItem1(myself.c_quest2, @stolen_jewelry, 1);
+                    if (OwnItemCount(myself.c_quest2, @stolen_jewelry) + OwnItemCount(myself.c_quest2, @stolen_tomes) + OwnItemCount(myself.c_quest2, @stolen_ring) + OwnItemCount(myself.c_quest2, @stolen_necklace) == 0 == 4)
+                    {
+                        SoundEffect(myself.c_quest2, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(myself.c_quest2, "ItemSound.quest_itemget");
+                    }
+                }
+
+                break;
+            case 1:
+                if (OwnItemCount(myself.c_quest2, @stolen_tomes) == 0)
+                {
+                    GiveItem1(myself.c_quest2, @stolen_tomes, 1);
+                    if (OwnItemCount(myself.c_quest2, @stolen_jewelry) + OwnItemCount(myself.c_quest2, @stolen_tomes) + OwnItemCount(myself.c_quest2, @stolen_ring) + OwnItemCount(myself.c_quest2, @stolen_necklace) == 0 == 4)
+                    {
+                        SoundEffect(myself.c_quest2, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(myself.c_quest2, "ItemSound.quest_itemget");
+                    }
+                }
+
+                break;
+            case 2:
+                if (OwnItemCount(myself.c_quest2, @stolen_ring) == 0)
+                {
+                    GiveItem1(myself.c_quest2, @stolen_ring, 1);
+                    if (OwnItemCount(myself.c_quest2, @stolen_jewelry) + OwnItemCount(myself.c_quest2, @stolen_tomes) + OwnItemCount(myself.c_quest2, @stolen_ring) + OwnItemCount(myself.c_quest2, @stolen_necklace) == 0 == 4)
+                    {
+                        SoundEffect(myself.c_quest2, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(myself.c_quest2, "ItemSound.quest_itemget");
+                    }
+                }
+
+                break;
+            case 3:
+                if (OwnItemCount(myself.c_quest2, @stolen_necklace) == 0)
+                {
+                    GiveItem1(myself.c_quest2, @stolen_necklace, 1);
+                    if (OwnItemCount(myself.c_quest2, @stolen_jewelry) + OwnItemCount(myself.c_quest2, @stolen_tomes) + OwnItemCount(myself.c_quest2, @stolen_ring) + OwnItemCount(myself.c_quest2, @stolen_necklace) == 0 == 4)
+                    {
+                        SoundEffect(myself.c_quest2, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(myself.c_quest2, "ItemSound.quest_itemget");
+                    }
+                }
+
+                break;
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage, weapon_class_id)
+    {
+        select (myself.i_quest2)
+        {
+        case 0:
+            myself.c_quest2 = attacker;
+            if (myself.c_quest2.equiped_weapon_class_id != @netis_bow && myself.c_quest2.equiped_weapon_class_id != @netis_dagger)
+            {
+                myself.i_quest2 = 2;
+            }
+            else
+            {
+                Say(MakeFString(40306, "", "", "", "", ""));
+                myself.i_quest2 = 1;
+            }
+
+            break;
+        case 1:
+            if (myself.c_quest2.equiped_weapon_class_id != @netis_bow && myself.c_quest2.equiped_weapon_class_id != @netis_dagger)
+            {
+                myself.i_quest2 = 2;
+            }
+
+            if (myself.c_quest2 != attacker)
+            {
+                myself.i_quest2 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

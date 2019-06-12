@@ -1,0 +1,3 @@
+class party_leader_pa_casting_splash : party_leader_casting_splash
+{
+}

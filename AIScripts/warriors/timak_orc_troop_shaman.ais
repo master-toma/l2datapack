@@ -1,0 +1,3 @@
+class timak_orc_troop_shaman : party_private_casting_curse
+{
+}

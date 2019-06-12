@@ -1,0 +1,19 @@
+class skeleton_archer : warrior_aggressive_use_bow
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_reformer) == 1 && GetMemoState(c1, @trial_of_reformer) == 16 && OwnItemCount(c1, @bone_fragment8) == 0)
+        {
+            GiveItem1(c1, @bone_fragment8, 1);
+            SoundEffect(c1, "ItemSound.quest_itemget");
+            if (OwnItemCount(c1, @bone_fragment4) >= 1 && OwnItemCount(c1, @bone_fragment5) >= 1 && OwnItemCount(c1, @bone_fragment6) >= 1 && OwnItemCount(c1, @bone_fragment7) >= 1)
+            {
+                SetMemoState(c1, @trial_of_reformer, 17);
+            }
+        }
+
+        super;
+    }
+}

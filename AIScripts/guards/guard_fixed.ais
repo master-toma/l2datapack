@@ -1,0 +1,16 @@
+class guard_fixed : guard_stand
+{
+handler:
+    EventHandler ATTACKED(attacker, damage)
+    {
+        AddAttackDesire(attacker, @AMT_STAND, 2000);
+    }
+
+    EventHandler SEE_CREATURE(creature)
+    {
+        if (creature.karma > 0)
+        {
+            AddAttackDesire(creature, @AMT_STAND, 1500);
+        }
+    }
+}

@@ -1,0 +1,15 @@
+class kasha_bear_totem : warrior_aggressive_immediate
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @hestui_totem) && OwnItemCount(c1, @kasha_crystal) < 1)
+        {
+            GiveItem1(c1, @kasha_crystal, 1);
+            SoundEffect(c1, "ItemSound.quest_middle");
+        }
+
+        super;
+    }
+}

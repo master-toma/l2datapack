@@ -1,0 +1,7 @@
+class ai_boss02_b02_dicor : warrior_aggressive_casting_curse
+{
+handler:
+    EventHandler DESIRE_MANIPULATION(speller, desire)
+    {
+    }
+}

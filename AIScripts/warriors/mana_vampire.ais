@@ -1,0 +1,3 @@
+class mana_vampire : warrior_passive_casting_ddmagic
+{
+}

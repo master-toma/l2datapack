@@ -1,0 +1,41 @@
+class drevanul_prince_zeruel : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_witchcraft) == 1 && OwnItemCount(c1, @orims_instructions) == 1 && OwnItemCount(c1, @brimstone2) == 1 && OwnItemCount(c1, @sword_of_binding) == 1 && OwnItemCount(c1, @soultrap_crystal) == 1)
+        {
+            if (c1.equiped_weapon_class_id == @sword_of_binding)
+            {
+                Say(MakeFString(22936, "", "", "", "", ""));
+                GiveItem1(c1, @zeruel_bind_crystal, 1);
+                GiveItem1(c1, @purgatory_key, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+                DeleteItem1(c1, @brimstone2, OwnItemCount(c1, @brimstone2));
+                DeleteItem1(c1, @soultrap_crystal, OwnItemCount(c1, @soultrap_crystal));
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        if (HaveMemo(attacker, @test_of_witchcraft) == 1 && OwnItemCount(attacker, @brimstone1) == 1)
+        {
+            Say(MakeFString(22934, "", "", "", "", ""));
+            Despawn();
+        }
+        else if (HaveMemo(attacker, @test_of_witchcraft) == 1 && OwnItemCount(attacker, @orims_instructions) == 1 && OwnItemCount(attacker, @brimstone2) == 1 && OwnItemCount(attacker, @sword_of_binding) == 1 && OwnItemCount(attacker, @soultrap_crystal) == 1)
+        {
+            if (myself.i_quest0 == 0 && attacker.equiped_weapon_class_id == @sword_of_binding)
+            {
+                Say(MakeFString(22935, "", "", "", "", ""));
+                myself.i_quest0 = 1;
+            }
+        }
+
+        super;
+    }
+}

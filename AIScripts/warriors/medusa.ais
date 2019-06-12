@@ -1,0 +1,112 @@
+class medusa : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @arrow_for_vengeance))
+        {
+            i0 = Rand(10);
+            if (i0 < 5)
+            {
+                GiveItem1(c1, @medusa_venom, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_champion) && OwnItemCount(c1, @white_rose_insignia) && OwnItemCount(c1, @medusa_venom1) < 30)
+        {
+            if (Rand(2) == 1)
+            {
+                if (OwnItemCount(c1, @medusa_venom1) == 29)
+                {
+                    GiveItem1(c1, @medusa_venom1, 1);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @medusa_venom1, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_fate) && OwnItemCount(c1, @ixias_list) && OwnItemCount(c1, @medusa_ichor) < 10)
+        {
+            if (Rand(2) == 1)
+            {
+                if (OwnItemCount(c1, @medusa_ichor) == 9)
+                {
+                    GiveItem1(c1, @medusa_ichor, 1);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @medusa_ichor, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_warspirit) && OwnItemCount(c1, @manakias_totem) == 1)
+        {
+            i0 = Rand(100);
+            if (i0 > 50)
+            {
+                if (OwnItemCount(c1, @hermodts_rib_bone) == 0)
+                {
+                    GiveItem1(c1, @hermodts_rib_bone, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else if (OwnItemCount(c1, @hermodts_spine) == 0)
+                {
+                    GiveItem1(c1, @hermodts_spine, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else if (OwnItemCount(c1, @hermodts_arm_bone) == 0)
+                {
+                    GiveItem1(c1, @hermodts_arm_bone, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else if (OwnItemCount(c1, @hermodts_thigh_bone) == 0)
+                {
+                    GiveItem1(c1, @hermodts_thigh_bone, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_seeker) && OwnItemCount(c1, @viktors_request) == 1 && OwnItemCount(c1, @medusas_scales) < 10)
+        {
+            if (Rand(100) < 30)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @medusas_scales, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_scholar) && OwnItemCount(c1, @treafs_ring) == 1 && OwnItemCount(c1, @poitans_notes) == 1 && OwnItemCount(c1, @kasians_list) == 1 && OwnItemCount(c1, @medusas_blood) < 12)
+        {
+            GiveItem1(c1, @medusas_blood, 1);
+            if (OwnItemCount(c1, @medusas_blood) >= 12)
+            {
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+            else
+            {
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

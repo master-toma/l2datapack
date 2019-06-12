@@ -1,0 +1,210 @@
+class blacksmith_pinter : blacksmith
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_artisan) == 1 && OwnItemCount(talker, @pass_1st) && OwnItemCount(talker, @klutos_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Kluto's letter");
+            }
+
+            if (HaveMemo(talker, @path_to_artisan) == 1 && OwnItemCount(talker, @pass_1st) && OwnItemCount(talker, @footprint) && OwnItemCount(talker, @secret_box1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the stolen secret box");
+            }
+
+            if (HaveMemo(talker, @path_to_artisan) == 1 && OwnItemCount(talker, @pass_1st) && OwnItemCount(talker, @footprint) && OwnItemCount(talker, @secret_box1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give back stolen secret box");
+            }
+
+            if (HaveMemo(talker, @path_to_artisan) == 1 && OwnItemCount(talker, @pass_1st) && OwnItemCount(talker, @pass_2nd) && OwnItemCount(talker, @secret_box2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about changing occupation to Dwarf Artisan");
+            }
+
+            if (HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) >= 1 && OwnItemCount(talker, @alltrans_recommend2) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Trial of Guild Member");
+            }
+
+            if (HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) >= 1 && OwnItemCount(talker, @pinters_instructions) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Give beads that were collected");
+            }
+
+            if (HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) == 1 && OwnItemCount(talker, @pinters_instructions) == 0 && (OwnItemCount(talker, @journeyman_deco_beads) >= 1 || OwnItemCount(talker, @journeyman_ring) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Talk about beads that were collected");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_artisan) == 1 && OwnItemCount(talker, @pass_1st) && OwnItemCount(talker, @klutos_letter))
+                {
+                    ShowPage(talker, "blacksmith_pinter_q0418_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_artisan) == 1 && OwnItemCount(talker, @pass_1st) && OwnItemCount(talker, @footprint) && OwnItemCount(talker, @secret_box1) == 0)
+                {
+                    ShowPage(talker, "blacksmith_pinter_q0418_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_artisan) == 1 && OwnItemCount(talker, @pass_1st) && OwnItemCount(talker, @footprint) && OwnItemCount(talker, @secret_box1))
+                {
+                    ShowPage(talker, "blacksmith_pinter_q0418_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_artisan) == 1 && OwnItemCount(talker, @pass_1st) && OwnItemCount(talker, @pass_2nd) && OwnItemCount(talker, @secret_box2))
+                {
+                    ShowPage(talker, "blacksmith_pinter_q0418_07.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) >= 1 && OwnItemCount(talker, @alltrans_recommend2) >= 1)
+                {
+                    if (talker.level < 36)
+                    {
+                        ShowPage(talker, "blacksmith_pinter_q0216_01.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "blacksmith_pinter_q0216_02.htm");
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) >= 1 && OwnItemCount(talker, @pinters_instructions) >= 1)
+                {
+                    if (OwnItemCount(talker, @amber_bead) < 70)
+                    {
+                        ShowPage(talker, "blacksmith_pinter_q0216_06.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "blacksmith_pinter_q0216_07.htm");
+                        DeleteItem1(talker, @pinters_instructions, OwnItemCount(talker, @pinters_instructions));
+                        DeleteItem1(talker, @amber_bead, OwnItemCount(talker, @amber_bead));
+                        DeleteItem1(talker, @rp_amber_bead, OwnItemCount(talker, @rp_amber_bead));
+                        DeleteItem1(talker, @amber_lump, OwnItemCount(talker, @amber_lump));
+                        GiveItem1(talker, @journeyman_deco_beads, 7);
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) == 1 && OwnItemCount(talker, @pinters_instructions) == 0 && (OwnItemCount(talker, @journeyman_deco_beads) >= 1 || OwnItemCount(talker, @journeyman_ring) >= 1))
+                {
+                    ShowPage(talker, "blacksmith_pinter_q0216_08.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_artisan && reply == 1)
+        {
+            ShowPage(talker, "blacksmith_pinter_q0418_02.htm");
+        }
+
+        if (ask == @path_to_artisan && reply == 2 && OwnItemCount(talker, @klutos_letter) > 0)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "blacksmith_pinter_q0418_03.htm");
+                DeleteItem1(talker, @klutos_letter, 1);
+                GiveItem1(talker, @footprint, 1);
+            }
+        }
+
+        if (ask == @path_to_artisan && reply == 3 && OwnItemCount(talker, @footprint) > 0 && OwnItemCount(talker, @secret_box1) > 0)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "blacksmith_pinter_q0418_06.htm");
+                DeleteItem1(talker, @secret_box1, 1);
+                DeleteItem1(talker, @footprint, 1);
+                GiveItem1(talker, @secret_box2, 1);
+                GiveItem1(talker, @pass_2nd, 1);
+            }
+        }
+
+        if (ask == @trial_of_guildsman)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "blacksmith_pinter_q0216_03.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (talker.occupation == @scavenger)
+                {
+                    if (OwnItemCount(talker, @alltrans_recommend2) >= 1)
+                    {
+                        ShowPage(talker, "blacksmith_pinter_q0216_04.htm");
+                        DeleteItem1(talker, @alltrans_recommend2, 1);
+                        GiveItem1(talker, @pinters_instructions, 1);
+                    }
+                }
+                else if (OwnItemCount(talker, @alltrans_recommend2) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "blacksmith_pinter_q0216_05.htm");
+                        DeleteItem1(talker, @alltrans_recommend2, 1);
+                        GiveItem1(talker, @rp_amber_bead, 1);
+                        GiveItem1(talker, @pinters_instructions, 1);
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

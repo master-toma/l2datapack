@@ -1,0 +1,3 @@
+class talakin : party_leader_aggressive
+{
+}

@@ -1,0 +1,119 @@
+class statue_of_offering : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_of_blood) == 1 && GetMemoState(Pledge_GetLeader(talker), @pledge_of_blood) == 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about the test");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_of_blood) != 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about the test");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_of_blood) == 1 && GetMemoState(Pledge_GetLeader(talker), @pledge_of_blood) == 2)
+                {
+                    if (talker.is_pledge_master == @FALSE)
+                    {
+                        if (talker.level >= 40)
+                        {
+                            ShowPage(talker, "statue_of_offering_q0501_01.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "statue_of_offering_q0501_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "statue_of_offering_q0501_01a.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_of_blood) != 1)
+                {
+                    ShowPage(talker, "statue_of_offering_q0501_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 2501010)
+        {
+            if (myself.c_quest0.alive == 0)
+            {
+                if (GetCurrentTick() - myself.c_quest0.quest_last_reward_time > 1 && myself.c_quest0.flag != 2501)
+                {
+                    myself.c_quest0.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(myself.c_quest0, @q_symbol_of_loyalty, 1);
+                    myself.c_quest0.flag = 2501;
+                }
+            }
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @pledge_of_blood)
+        {
+            if (reply == 1)
+            {
+                if (Rand(10) > 5)
+                {
+                    ShowPage(talker, "statue_of_offering_q0501_04.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1 && talker.flag != 2501)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @q_symbol_of_loyalty, 1);
+                        talker.flag = 2501;
+                    }
+                }
+                else
+                {
+                    myself.c_quest0 = talker;
+                    AddUseSkillDesire(talker, @s_quest_die_you, @ST_ATTACK, @AMT_STAND, 100000);
+                    ShowPage(talker, "statue_of_offering_q0501_03.htm");
+                    AddTimerEx(2501010, 4 * 1000);
+                }
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "statue_of_offering_q0501_05.htm");
+            }
+        }
+
+        super;
+    }
+}

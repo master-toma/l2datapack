@@ -1,0 +1,147 @@
+class preacher_sla : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && OwnItemCount(talker, @letter_of_introduction) == 1 && GetMemoState(talker, @trial_of_reformer) == 4)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show letter of introduction");
+            }
+
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && OwnItemCount(talker, @slas_letter) == 1 && GetMemoState(talker, @trial_of_reformer) == 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask the location of the disciple");
+            }
+
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give money from Ol Mahum");
+            }
+
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 18 && OwnItemCount(talker, @kataris_letter) >= 1 && OwnItemCount(talker, @kakans_letter) >= 1 && OwnItemCount(talker, @nyakuris_letter) >= 1 && OwnItemCount(talker, @ramuss_letter) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show letters");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && OwnItemCount(talker, @letter_of_introduction) == 1 && GetMemoState(talker, @trial_of_reformer) == 4)
+                {
+                    ShowPage(talker, "preacher_sla_q0227_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && OwnItemCount(talker, @slas_letter) == 1 && GetMemoState(talker, @trial_of_reformer) == 5)
+                {
+                    ShowPage(talker, "preacher_sla_q0227_05.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 10)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @olmahums_money) == 1)
+                        {
+                            ShowPage(talker, "preacher_sla_q0227_06.htm");
+                            SetMemoState(talker, @trial_of_reformer, 11);
+                            DeleteItem1(talker, @olmahums_money, OwnItemCount(talker, @olmahums_money));
+                            GiveItem1(talker, @greetings, 3);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "preacher_sla_q0227_06a.htm");
+                            SetMemoState(talker, @trial_of_reformer, 11);
+                            GiveItem1(talker, @greetings, 3);
+                        }
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 18 && OwnItemCount(talker, @kataris_letter) >= 1 && OwnItemCount(talker, @kakans_letter) >= 1 && OwnItemCount(talker, @nyakuris_letter) >= 1 && OwnItemCount(talker, @ramuss_letter) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @mark_of_reformer, 1);
+                        IncrementParam(talker, @PARAM_EXP, 28000);
+                        IncrementParam(talker, @PARAM_SP, 3600);
+                        ShowPage(talker, "preacher_sla_q0227_07.htm");
+                        RemoveMemo(talker, @trial_of_reformer);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @trial_of_reformer, 1);
+                        DeleteItem1(talker, @kataris_letter, OwnItemCount(talker, @kataris_letter));
+                        DeleteItem1(talker, @kakans_letter, OwnItemCount(talker, @kakans_letter));
+                        DeleteItem1(talker, @nyakuris_letter, OwnItemCount(talker, @nyakuris_letter));
+                        DeleteItem1(talker, @ramuss_letter, OwnItemCount(talker, @ramuss_letter));
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_reformer)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "preacher_sla_q0227_03.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "preacher_sla_q0227_02.htm");
+            }
+
+            if (reply == 3)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "preacher_sla_q0227_04.htm");
+                    GiveItem1(talker, @slas_letter, 1);
+                    DeleteItem1(talker, @letter_of_introduction, OwnItemCount(talker, @letter_of_introduction));
+                    SetMemoState(talker, @trial_of_reformer, 5);
+                }
+            }
+
+            if (reply == 4)
+            {
+                ShowPage(talker, "preacher_sla_q0227_02.htm");
+            }
+        }
+
+        super;
+    }
+}

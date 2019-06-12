@@ -1,0 +1,168 @@
+class sir_eric_rodemai : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 7000 && talker.is_pledge_master == @FALSE)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you came because you were sent by Sir Athebaldt");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 7000 && talker.is_pledge_master == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Say that you came because you were sent by Sir Athebaldt");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 8000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Sorceress Clio");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 8100 && talker.is_pledge_master == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Report that you met Sorceress Clio before coming");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 8100 && talker.is_pledge_master == @FALSE)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Report that you met Sorceress Clio before coming");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) < 8511 && GetMemoState(talker, @pledge_seeks_ambition) >= 8500)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Talk about the riddle of Sorceress Clio");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 8700)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Report that you found Royal Seal of Legal Judgment");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) >= 9000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask about Sir Athebaldt");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 7000 && talker.is_pledge_master == @FALSE)
+                {
+                    ShowPage(talker, "sir_eric_rodemai_q0503_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 7000 && talker.is_pledge_master == 1)
+                {
+                    ShowPage(talker, "sir_eric_rodemai_q0503_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 8000)
+                {
+                    ShowPage(talker, "sir_eric_rodemai_q0503_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 8100 && talker.is_pledge_master == 1)
+                {
+                    SetMemoState(talker, @pledge_seeks_ambition, 8500);
+                    ShowPage(talker, "sir_eric_rodemai_q0503_06.htm");
+                    SetJournal(talker, @pledge_seeks_ambition, 10);
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 8100 && talker.is_pledge_master == @FALSE)
+                {
+                    ShowPage(talker, "sir_eric_rodemai_q0503_07.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) < 8511 && GetMemoState(talker, @pledge_seeks_ambition) >= 8500)
+                {
+                    ShowPage(talker, "sir_eric_rodemai_q0503_08.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 8700)
+                {
+                    ShowPage(talker, "sir_eric_rodemai_q0503_09.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) >= 9000)
+                {
+                    ShowPage(talker, "sir_eric_rodemai_q0503_11.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @pledge_seeks_ambition)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "sir_eric_rodemai_q0503_03.htm");
+            }
+
+            if (reply == 2)
+            {
+                DeleteItem1(talker, @q_gustafs_letter3, OwnItemCount(talker, @q_gustafs_letter3));
+                SetMemoState(talker, @pledge_seeks_ambition, 8000);
+                ShowPage(talker, "sir_eric_rodemai_q0503_04.htm");
+                SetJournal(talker, @pledge_seeks_ambition, 8);
+            }
+
+            if (reply == 3)
+            {
+                SetMemoState(talker, @pledge_seeks_ambition, 9000);
+                ShowPage(talker, "sir_eric_rodemai_q0503_10.htm");
+                SetJournal(talker, @pledge_seeks_ambition, 11);
+            }
+        }
+
+        super;
+    }
+}

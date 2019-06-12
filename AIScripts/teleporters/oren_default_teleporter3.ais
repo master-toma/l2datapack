@@ -1,0 +1,3 @@
+class oren_default_teleporter3 : siege_instant_teleporter
+{
+}

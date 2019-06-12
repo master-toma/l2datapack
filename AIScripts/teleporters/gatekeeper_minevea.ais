@@ -1,0 +1,9 @@
+class gatekeeper_minevea : teleporter
+{
+property:
+    TelPosList Position = {
+        {1010007; 83475; 147966; -3404; 5300; 3};    // 1010007 - "The Town of Giran"
+        {1010013; 82971; 53207; -1470; 7300; 4};    // 1010013 - "Oren Castle Town"
+        {1010020; 117110; 76883; -2670; 4100; 0}    // 1010020 - "Hunter Village"
+    };
+}

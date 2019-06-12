@@ -1,0 +1,3 @@
+class gludio_default_teleporter1 : siege_instant_teleporter
+{
+}

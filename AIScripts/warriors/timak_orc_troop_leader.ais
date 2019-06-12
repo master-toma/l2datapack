@@ -1,0 +1,3 @@
+class timak_orc_troop_leader : party_leader_ag_physicalspecial
+{
+}

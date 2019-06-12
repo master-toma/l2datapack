@@ -1,0 +1,14 @@
+class warrior_passive_casting_sleep_magic : warrior_casting_sleep_magic
+{
+handler:
+    EventHandler SEE_CREATURE(creature, i6)
+    {
+        if (myself.p_state == PSTATE_MOVE_AROUND && i6 < 2)
+        {
+            if (Skill_GetConsumeMP(SleepMagic) < myself.sm.mp && Skill_GetConsumeHP(SleepMagic) < myself.sm.hp && Skill_InReuseDelay(SleepMagic) == @FALSE)
+            {
+                AddUseSkillDesire(creature, SleepMagic, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+        }
+    }
+}

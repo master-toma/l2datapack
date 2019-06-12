@@ -1,0 +1,168 @@
+class warrior_run_away_to_clan : warrior
+{
+parameter:
+    int flee_x = 0;
+    int flee_y = 0;
+    int flee_z = 0;
+    
+handler:
+    EventHandler CREATED()
+    {
+        myself.i_ai0 = 0;
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage, i6, i5)
+    {
+        i6 = Rand(100);
+        if (myself.sm.hp < myself.sm.max_hp / 2.0 && myself.sm.hp > myself.sm.max_hp / 3.0 && attacker.hp > attacker.max_hp / 4.0 && i6 < 10 && myself.i_ai0 == 0)
+        {
+            i5 = Rand(100);
+            if (i5 < 7)
+            {
+                Say(MakeFString(1000007, "", "", "", "", ""));
+            }
+            else if (i5 < 14)
+            {
+                Say(MakeFString(1000008, "", "", "", "", ""));
+            }
+            else if (i5 < 21)
+            {
+                Say(MakeFString(1000009, "", "", "", "", ""));
+            }
+            else if (i5 < 28)
+            {
+                Say(MakeFString(1000010, "", "", "", "", ""));
+            }
+            else if (i5 < 35)
+            {
+                Say(MakeFString(1000011, "", "", "", "", ""));
+            }
+            else if (i5 < 42)
+            {
+                Say(MakeFString(1000012, "", "", "", "", ""));
+            }
+            else if (i5 < 49)
+            {
+                Say(MakeFString(1000013, "", "", "", "", ""));
+            }
+            else if (i5 < 56)
+            {
+                Say(MakeFString(1000014, "", "", "", "", ""));
+            }
+            else if (i5 < 63)
+            {
+                Say(MakeFString(1000015, "", "", "", "", ""));
+            }
+            else if (i5 < 70)
+            {
+                Say(MakeFString(1000016, "", "", "", "", ""));
+            }
+            else if (i5 < 77)
+            {
+                Say(MakeFString(1000017, "", "", "", "", ""));
+            }
+            else if (i5 < 79)
+            {
+                Say(MakeFString(1000018, "", "", "", "", ""));
+            }
+            else if (i5 < 81)
+            {
+                Say(MakeFString(1000019, "", "", "", "", ""));
+            }
+            else if (i5 < 83)
+            {
+                Say(MakeFString(1000020, "", "", "", "", ""));
+            }
+            else if (i5 < 85)
+            {
+                Say(MakeFString(1000021, "", "", "", "", ""));
+            }
+            else if (i5 < 87)
+            {
+                Say(MakeFString(1000022, "", "", "", "", ""));
+            }
+            else if (i5 < 89)
+            {
+                Say(MakeFString(1000023, "", "", "", "", ""));
+            }
+            else if (i5 < 91)
+            {
+                Say(MakeFString(1000024, "", "", "", "", ""));
+            }
+            else if (i5 < 93)
+            {
+                Say(MakeFString(1000025, "", "", "", "", ""));
+            }
+            else if (i5 < 95)
+            {
+                Say(MakeFString(1000026, "", "", "", "", ""));
+            }
+            else
+            {
+                Say(MakeFString(1000027, "", "", "", "", ""));
+            }
+
+            AddMoveToDesire(flee_x, flee_y, flee_z, 1000000);
+            myself.i_ai0 = 1;
+            myself.c_ai0 = attacker;
+        }
+
+        if (myself.i_ai0 == 2)
+        {
+            AddMoveAroundDesire(100, -1000);
+            myself.i_ai0 = 3;
+        }
+
+        super;
+    }
+
+    EventHandler SEE_CREATURE(creature)
+    {
+        if (myself.c_ai0 == creature)
+        {
+            AddAttackDesire(creature, @AMT_MOVE_TO_TARGET, 2000);
+        }
+    }
+
+    EventHandler MOVE_TO_FINISHED(x, y, z)
+    {
+        if (myself.i_ai0 == 1)
+        {
+            if (x == flee_x && y == flee_y && z == flee_z)
+            {
+                AddTimerEx(2001, 15000);
+                AddMoveToDesire(flee_x, flee_y, flee_z, -1000000);
+                AddMoveAroundDesire(100, 1000);
+                myself.i_ai0 = 2;
+            }
+            else
+            {
+                AddMoveToDesire(flee_x, flee_y, flee_z, 1000000);
+            }
+        }
+
+        if (myself.i_ai0 == 3)
+        {
+            if (x == myself.start_x && y == myself.start_y && z == myself.start_z)
+            {
+                AddMoveAroundDesire(100, 1000);
+            }
+        }
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 2001)
+        {
+            if (myself.sm.hp > myself.sm.max_hp / 100.0 * 70.0 && myself.i_ai0 == 2)
+            {
+                AddMoveAroundDesire(100, -1000);
+                AddMoveToDesire(myself.start_x, myself.start_y, myself.start_z, 50);
+                myself.i_ai0 = 3;
+            }
+        }
+
+        super;
+    }
+}

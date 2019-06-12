@@ -1,0 +1,37 @@
+class ai_gludio_wizard_stand : default_npc
+{
+parameter:
+    float Attack_DecayRatio = 6.6;
+    float UseSkill_DecayRatio = 66000.0;
+    float Attack_BoostValue = 500.0;
+    float UseSkill_BoostValue = 100000.0;
+    int DDMagic = @s_mega_storm_strike1;
+    
+handler:
+    EventHandler NO_DESIRE()
+    {
+        AddDoNothingDesire(40, 20);
+    }
+
+    EventHandler SEE_CREATURE(creature)
+    {
+        if (Castle_GetPledgeState(creature) != 2)
+        {
+            if (Skill_GetConsumeMP(DDMagic) < myself.sm.mp && Skill_GetConsumeHP(DDMagic) < myself.sm.hp && Skill_InReuseDelay(DDMagic) == @FALSE)
+            {
+                AddUseSkillDesire(creature, DDMagic, @ST_ATTACK, @AMT_STAND, 1000000);
+            }
+        }
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, damage)
+    {
+        if ((attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id)) && Rand(100) < 10 && Castle_GetPledgeState(attacker) != 2)
+        {
+            if (Skill_GetConsumeMP(DDMagic) < myself.sm.mp && Skill_GetConsumeHP(DDMagic) < myself.sm.hp && Skill_InReuseDelay(DDMagic) == @FALSE)
+            {
+                AddUseSkillDesire(attacker, DDMagic, @ST_ATTACK, @AMT_STAND, 1000000);
+            }
+        }
+    }
+}

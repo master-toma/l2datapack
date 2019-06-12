@@ -1,0 +1,104 @@
+class moneylender_alshupes : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @dream_of_moneylender1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about rare beasts");
+            }
+
+            if (HaveMemo(talker, @dream_of_moneylender1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the rare beasts");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @dream_of_moneylender1) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 15)
+                        {
+                            FHTML_SetFileName(fhtml0, "moneylender_alshupes_q0261_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @dream_of_moneylender1);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "moneylender_alshupes_q0261_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @dream_of_moneylender1) == 1)
+                {
+                    if (OwnItemCount(talker, @giant_spider_leg) >= 8)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @adena, 1000);
+                            IncrementParam(talker, @PARAM_EXP, 600);
+                            DeleteItem1(talker, @giant_spider_leg, OwnItemCount(talker, @giant_spider_leg));
+                            ShowPage(talker, "moneylender_alshupes_q0261_05.htm");
+                            RemoveMemo(talker, @dream_of_moneylender1);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "moneylender_alshupes_q0261_04.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @dream_of_moneylender1)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "moneylender_alshupes_q0261_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,171 @@
+class arujien : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @what_women_want1) == 0 && GetOneTimeQuestFlag(talker, @what_women_want1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear Arujien's love proposal");
+            }
+
+            if (HaveMemo(talker, @what_women_want1) == 0 && GetOneTimeQuestFlag(talker, @what_women_want1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear Arujien's love proposal");
+            }
+
+            if (HaveMemo(talker, @what_women_want1) == 1 && GetOneTimeQuestFlag(talker, @what_women_want1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "What are the whereabouts of Arujien's love?");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @what_women_want1) == 0 && GetOneTimeQuestFlag(talker, @what_women_want1) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_elf && talker.race != @race_human)
+                        {
+                            ShowPage(talker, "arujien_q0002_00.htm");
+                        }
+                        else if (talker.level > 1)
+                        {
+                            FHTML_SetFileName(fhtml0, "arujien_q0002_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @what_women_want1);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "arujien_q0002_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @what_women_want1) == 0 && GetOneTimeQuestFlag(talker, @what_women_want1) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @what_women_want1) == 1 && GetOneTimeQuestFlag(talker, @what_women_want1) == 0)
+                {
+                    if (OwnItemCount(talker, @arujiens_letter1))
+                    {
+                        ShowPage(talker, "arujien_q0002_05.htm");
+                    }
+                    else if (OwnItemCount(talker, @arujiens_letter3))
+                    {
+                        ShowPage(talker, "arujien_q0002_07.htm");
+                    }
+                    else if (OwnItemCount(talker, @arujiens_letter2))
+                    {
+                        ShowPage(talker, "arujien_q0002_06.htm");
+                    }
+                    else if (OwnItemCount(talker, @poetry_book))
+                    {
+                        ShowPage(talker, "arujien_q0002_11.htm");
+                    }
+                    else if (OwnItemCount(talker, @greenis_letter))
+                    {
+                        ShowPage(talker, "arujien_q0002_10.htm");
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @beginners_potion, 5);
+                            DeleteItem1(talker, @greenis_letter, 1);
+                            RemoveMemo(talker, @what_women_want1);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            SetOneTimeQuestFlag(talker, @what_women_want1, 1);
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @what_women_want1)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @what_women_want1);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @arujiens_letter1) == 0 && OwnItemCount(talker, @arujiens_letter2) == 0 && OwnItemCount(talker, @arujiens_letter3) == 0)
+                {
+                    GiveItem1(talker, @arujiens_letter1, 1);
+                }
+
+                ShowPage(talker, "arujien_q0002_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @what_women_want1)
+        {
+            if (reply == 1 && OwnItemCount(talker, @arujiens_letter3) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    DeleteItem1(talker, @arujiens_letter3, 1);
+                    GiveItem1(talker, @poetry_book, 1);
+                    ShowPage(talker, "arujien_q0002_08.htm");
+                }
+            }
+            else if (reply == 2 && GetOneTimeQuestFlag(talker, @what_women_want1) == 0 && OwnItemCount(talker, @arujiens_letter3) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "arujien_q0002_09.htm");
+                    DeleteItem1(talker, @arujiens_letter3, 1);
+                    GiveItem1(talker, @adena, 450);
+                    RemoveMemo(talker, @what_women_want1);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                    SetOneTimeQuestFlag(talker, @what_women_want1, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

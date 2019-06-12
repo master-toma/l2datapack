@@ -1,0 +1,43 @@
+class silenos : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_guildsman) == 1 && OwnItemCount(c1, @alltrans_instructions) == 1 && OwnItemCount(c1, @normans_list) == 1)
+        {
+            if (OwnItemCount(c1, @braided_yarn) <= 68)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @braided_yarn, 2);
+                    if (OwnItemCount(c1, @braided_yarn) >= 70)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @wish_potion) && OwnItemCount(c1, @q_potion_recipe_1) && OwnItemCount(c1, @q_potion_recipe_2) && OwnItemCount(c1, @q_silenos_horn) == 0)
+        {
+            if (Rand(10) == 0)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @q_silenos_horn, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

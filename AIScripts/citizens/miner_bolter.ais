@@ -1,0 +1,164 @@
+class miner_bolter : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @miners_favor) == 0 && GetOneTimeQuestFlag(talker, @miners_favor) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about Bolter's request");
+            }
+
+            if (HaveMemo(talker, @miners_favor) == 0 && GetOneTimeQuestFlag(talker, @miners_favor) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about Bolter's request");
+            }
+
+            if (HaveMemo(talker, @miners_favor) == 1 && OwnItemCount(talker, @bolters_list) && OwnItemCount(talker, @mining_boots) + OwnItemCount(talker, @miners_pick) + OwnItemCount(talker, @boomboom_powder) + OwnItemCount(talker, @redstone_beer) < 4)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about requested items");
+            }
+
+            if (HaveMemo(talker, @miners_favor) == 1 && OwnItemCount(talker, @bolters_list) && OwnItemCount(talker, @mining_boots) + OwnItemCount(talker, @miners_pick) + OwnItemCount(talker, @boomboom_powder) + OwnItemCount(talker, @redstone_beer) >= 4 && GetOneTimeQuestFlag(talker, @miners_favor) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give requested items");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution4) == 0 && OwnItemCount(talker, @receipt_of_bolter) == 0 && OwnItemCount(talker, @lockirins_notice4) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask for donation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_bolter) >= 1 && OwnItemCount(talker, @receipt_of_contribution4) == 0 && OwnItemCount(talker, @lockirins_notice4) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Say that you are thankful for the other person giving the donation");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @miners_favor) == 0 && GetOneTimeQuestFlag(talker, @miners_favor) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 2)
+                        {
+                            FHTML_SetFileName(fhtml0, "miner_bolter_q0005_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @miners_favor);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "miner_bolter_q0005_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @miners_favor) == 0 && GetOneTimeQuestFlag(talker, @miners_favor) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @miners_favor) == 1 && OwnItemCount(talker, @bolters_list) && OwnItemCount(talker, @mining_boots) + OwnItemCount(talker, @miners_pick) + OwnItemCount(talker, @boomboom_powder) + OwnItemCount(talker, @redstone_beer) < 4)
+                {
+                    ShowPage(talker, "miner_bolter_q0005_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @miners_favor) == 1 && OwnItemCount(talker, @bolters_list) && OwnItemCount(talker, @mining_boots) + OwnItemCount(talker, @miners_pick) + OwnItemCount(talker, @boomboom_powder) + OwnItemCount(talker, @redstone_beer) >= 4 && GetOneTimeQuestFlag(talker, @miners_favor) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "miner_bolter_q0005_06.htm");
+                        DeleteItem1(talker, @mining_boots, OwnItemCount(talker, @mining_boots));
+                        DeleteItem1(talker, @miners_pick, OwnItemCount(talker, @miners_pick));
+                        DeleteItem1(talker, @boomboom_powder, OwnItemCount(talker, @boomboom_powder));
+                        DeleteItem1(talker, @redstone_beer, OwnItemCount(talker, @redstone_beer));
+                        DeleteItem1(talker, @bolters_list, OwnItemCount(talker, @bolters_list));
+                        GiveItem1(talker, @adena, 450);
+                        RemoveMemo(talker, @miners_favor);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @miners_favor, 1);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution4) == 0 && OwnItemCount(talker, @receipt_of_bolter) == 0 && OwnItemCount(talker, @lockirins_notice4) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "miner_bolter_q0221_01.htm");
+                        GiveItem1(talker, @receipt_of_bolter, 1);
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_bolter) >= 1 && OwnItemCount(talker, @receipt_of_contribution4) == 0 && OwnItemCount(talker, @lockirins_notice4) == 0)
+                {
+                    ShowPage(talker, "miner_bolter_q0221_02.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @miners_favor)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "miner_bolter_q0005_03.htm");
+                SetMemo(talker, @miners_favor);
+                GiveItem1(talker, @bolters_list, 1);
+                GiveItem1(talker, @bolters_smelly_socks, 1);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

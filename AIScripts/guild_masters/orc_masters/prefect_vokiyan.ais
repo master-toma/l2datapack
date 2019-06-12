@@ -1,0 +1,244 @@
+class prefect_vokiyan : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 5 && OwnItemCount(talker, @letter_of_hamil2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you came because Hamil sent you");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 6)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask who you should investigate");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 7 && OwnItemCount(talker, @talisman_of_snake))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show Amulet of Snake");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 8)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Bid farewell");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_glory) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about Test of Glory");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_glory) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about Test of Glory");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @vokiyans_order1) && (OwnItemCount(talker, @manashen_shard) < 10 || OwnItemCount(talker, @manashen_shard) < 10 || OwnItemCount(talker, @tyrant_talon) < 10 || OwnItemCount(talker, @guardian_basilisk_fang) < 10))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask what evil beings you should get rid of");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @vokiyans_order1) && OwnItemCount(talker, @manashen_shard) >= 10 && OwnItemCount(talker, @tyrant_talon) >= 10 && OwnItemCount(talker, @guardian_basilisk_fang) >= 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Give Certificate of Evil Beings that Were Gotten Rid Of");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @vokiyans_order2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Ask what you should do now");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) == 0 && (OwnItemCount(talker, @vokiyans_order2) || OwnItemCount(talker, @scepter_box)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Say that you’ll raise the glory of the Orc Kingdom");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 5 && OwnItemCount(talker, @letter_of_hamil2))
+                {
+                    ShowPage(talker, "prefect_vokiyan_q0224_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 6)
+                {
+                    ShowPage(talker, "prefect_vokiyan_q0224_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 7 && OwnItemCount(talker, @talisman_of_snake))
+                {
+                    ShowPage(talker, "prefect_vokiyan_q0224_04.htm");
+                    DeleteItem1(talker, @talisman_of_snake, 1);
+                    SetMemoState(talker, @test_of_sagittarius, 8);
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 8)
+                {
+                    ShowPage(talker, "prefect_vokiyan_q0224_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_glory) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race == @race_orc && talker.level >= 37 && IsInCategory(@orc_2nd_group, talker.occupation))
+                        {
+                            ShowPage(talker, "prefect_vokiyan_q0220_03.htm");
+                        }
+                        else if (talker.race == @race_orc && talker.level >= 37)
+                        {
+                            ShowPage(talker, "prefect_vokiyan_q0220_01a.htm");
+                        }
+                        else if (talker.race == @race_orc)
+                        {
+                            ShowPage(talker, "prefect_vokiyan_q0220_02.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "prefect_vokiyan_q0220_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_glory) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @vokiyans_order1) && (OwnItemCount(talker, @manashen_shard) < 10 || OwnItemCount(talker, @manashen_shard) < 10 || OwnItemCount(talker, @tyrant_talon) < 10 || OwnItemCount(talker, @guardian_basilisk_fang) < 10))
+                {
+                    ShowPage(talker, "prefect_vokiyan_q0220_06.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @vokiyans_order1) && OwnItemCount(talker, @manashen_shard) >= 10 && OwnItemCount(talker, @tyrant_talon) >= 10 && OwnItemCount(talker, @guardian_basilisk_fang) >= 10)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "prefect_vokiyan_q0220_08.htm");
+                        GiveItem1(talker, @vokiyans_order2, 1);
+                        GiveItem1(talker, @necklace_of_authority, 1);
+                        DeleteItem1(talker, @vokiyans_order1, 1);
+                        DeleteItem1(talker, @manashen_shard, OwnItemCount(talker, @manashen_shard));
+                        DeleteItem1(talker, @tyrant_talon, OwnItemCount(talker, @tyrant_talon));
+                        DeleteItem1(talker, @guardian_basilisk_fang, OwnItemCount(talker, @guardian_basilisk_fang));
+                    }
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @vokiyans_order2))
+                {
+                    ShowPage(talker, "prefect_vokiyan_q0220_09.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) == 0 && (OwnItemCount(talker, @vokiyans_order2) || OwnItemCount(talker, @scepter_box)))
+                {
+                    ShowPage(talker, "prefect_vokiyan_q0220_10.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @testimony_of_glory)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "prefect_vokiyan_q0220_05.htm");
+                GiveItem1(talker, @vokiyans_order1, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @test_of_sagittarius)
+        {
+            if (reply == 1 && OwnItemCount(talker, @letter_of_hamil2) > 0)
+            {
+                ShowPage(talker, "prefect_vokiyan_q0224_02.htm");
+                DeleteItem1(talker, @letter_of_hamil2, 1);
+                SetMemoState(talker, @test_of_sagittarius, 6);
+            }
+        }
+
+        if (ask == @testimony_of_glory)
+        {
+            if (reply == 1)
+            {
+                FHTML_SetFileName(fhtml0, "prefect_vokiyan_q0220_04.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @testimony_of_glory);
+                ShowFHTML(talker, fhtml0);
+            }
+        }
+
+        super;
+    }
+}

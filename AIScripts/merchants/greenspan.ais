@@ -1,0 +1,19 @@
+class greenspan : mseller
+{
+property:
+    BuySellList SellList0 = {
+        {"mticket_gludio_sword_fix"; 15};
+        {"mticket_gludio_pole_fix"; 15};
+        {"mticket_gludio_bow_fix"; 15};
+        {"mticket_gludio_cleric_fix"; 15};
+        {"mticket_gludio_wizard_fix"; 15};
+        {"mticket_gludio_sword_move"; 15};
+        {"mticket_gludio_pole_move"; 15};
+        {"mticket_gludio_bow_move"; 15};
+        {"mticket_gludio_cleric_move"; 15};
+        {"mticket_gludio_wizard_move"; 15};
+        {"mticket_gludio_teleporter1"; 15};
+        {"mticket_gludio_teleporter2"; 15};
+        {"mticket_gludio_teleporter3"; 15}
+    };
+}

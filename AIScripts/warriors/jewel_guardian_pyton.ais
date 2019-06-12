@@ -1,0 +1,19 @@
+class jewel_guardian_pyton : warrior_aggressive_immediate
+{
+handler:
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 233704)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(233704, 1000 * 3 * 60);
+        super;
+    }
+}

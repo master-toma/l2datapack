@@ -1,0 +1,6 @@
+skill_begin	skill_name = [s_blunt_fist_mastery1]	/* [블런트/피스트 마스터리] */	skill_id = 207	level = 1	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_blunt_fist_mastery2]	/* [블런트/피스트 마스터리] */	skill_id = 207	level = 2	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_blunt_fist_mastery3]	/* [블런트/피스트 마스터리] */	skill_id = 207	level = 3	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_blunt_fist_mastery4]	/* [블런트/피스트 마스터리] */	skill_id = 207	level = 4	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_blunt_fist_mastery5]	/* [블런트/피스트 마스터리] */	skill_id = 207	level = 5	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_blunt_fist_mastery6]	/* [블런트/피스트 마스터리] */	skill_id = 207	level = 6	operate_type = P	effect = {}	skill_end

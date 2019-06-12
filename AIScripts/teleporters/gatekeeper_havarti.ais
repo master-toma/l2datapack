@@ -1,0 +1,40 @@
+class gatekeeper_havarti : instant_teleporter
+{
+handler:
+    EventHandler TELEPORT_REQUESTED(talker, i6)
+    {
+        i6 = Rand(100);
+        if (i6 > 90)
+        {
+            InstantTeleport(talker, 17616, 115436, -6582);
+        }
+        else if (i6 > 80)
+        {
+            InstantTeleport(talker, 17824, 115426, -6582);
+        }
+        else if (i6 > 70)
+        {
+            InstantTeleport(talker, 17720, 115312, -6582);
+        }
+        else if (i6 > 60)
+        {
+            InstantTeleport(talker, 17720, 115536, -6582);
+        }
+        else if (i6 > 50)
+        {
+            InstantTeleport(talker, 17678, 115431, -6582);
+        }
+        else if (i6 > 40)
+        {
+            InstantTeleport(talker, 17767, 115427, -6582);
+        }
+        else if (i6 > 20)
+        {
+            InstantTeleport(talker, 17718, 115374, -6582);
+        }
+        else
+        {
+            InstantTeleport(talker, 17720, 115472, -6582);
+        }
+    }
+}

@@ -1,0 +1,60 @@
+class revenant_of_tantos_chief : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_glory) && OwnItemCount(c1, @tanapis_order1) && OwnItemCount(c1, @scepter_of_tantos) == 0)
+        {
+            GiveItem1(c1, @scepter_of_tantos, 1);
+            SoundEffect(c1, "Itemsound.quest_middle");
+            Say(MakeFString(22056, "", "", "", "", ""));
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.c_quest0 = attacker;
+            if (HaveMemo(myself.c_quest0, @testimony_of_glory) && OwnItemCount(myself.c_quest0, @scepter_of_tantos) == 0)
+            {
+                Say(MakeFString(22055, "", "", "", "", ""));
+                myself.i_quest0 = 1;
+            }
+
+            break;
+        case 1:
+            if (HaveMemo(myself.c_quest0, @testimony_of_glory) && OwnItemCount(myself.c_quest0, @scepter_of_tantos) == 0 && myself.sm.hp < myself.sm.max_hp / 3.0)
+            {
+                Say(MakeFString(22057, "", "", "", "", ""));
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 22005)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(22005, 1000 * 200);
+        super;
+    }
+}

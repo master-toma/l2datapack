@@ -1,0 +1,63 @@
+class rapunzel : teleporter
+{
+property:
+    TelPosList Position = {
+        {1010004; -80749; 149834; -3043; 18000; 0}    // 1010004 - "The Village of Gludin"
+    };
+    
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @letters_of_love1) && GetOneTimeQuestFlag(talker, @letters_of_love1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Darin");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @letters_of_love1) && GetOneTimeQuestFlag(talker, @letters_of_love1) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @rapunzels_kerchief) == 0 && OwnItemCount(talker, @darings_letter))
+                        {
+                            GiveItem1(talker, @rapunzels_kerchief, 1);
+                            DeleteItem1(talker, @darings_letter, 1);
+                            ShowPage(talker, "rapunzel_q0001_01.htm");
+                            SetMemoState(talker, @letters_of_love1, 2);
+                        }
+                        else if (OwnItemCount(talker, @bauls_potion) || OwnItemCount(talker, @darings_receipt))
+                        {
+                            ShowPage(talker, "rapunzel_q0001_03.htm");
+                        }
+                        else if (OwnItemCount(talker, @rapunzels_kerchief))
+                        {
+                            ShowPage(talker, "rapunzel_q0001_02.htm");
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

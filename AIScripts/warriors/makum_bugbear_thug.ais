@@ -1,0 +1,40 @@
+class makum_bugbear_thug : warrior_aggressive_immediate
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_glory) && OwnItemCount(c1, @necklace_of_authority) && OwnItemCount(c1, @chiantas_order1) && OwnItemCount(c1, @glove_of_burai) && OwnItemCount(c1, @makum_bugbear_head) < 2)
+        {
+            if (OwnItemCount(c1, @makum_bugbear_head) == 1)
+            {
+                GiveItem1(c1, @makum_bugbear_head, 1);
+                DeleteItem1(c1, @glove_of_burai, 1);
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @makum_bugbear_head, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 22004)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(22004, 1000 * 200);
+        super;
+    }
+}

@@ -1,0 +1,104 @@
+class watcher_of_antaras_theodric : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) < 60000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about conquering Antharas");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 60000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about conquering Antharas");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 70000 && OwnItemCount(talker, @q_frag_of_abyss_jewel3) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Abyss Jewel");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 70000 && OwnItemCount(talker, @q_frag_of_abyss_jewel3) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show Broken Piece of Abyss Jewel");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) < 60000)
+                {
+                    ShowPage(talker, "watcher_of_antaras_theodric_q0337_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 60000)
+                {
+                    ShowPage(talker, "watcher_of_antaras_theodric_q0337_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 70000 && OwnItemCount(talker, @q_frag_of_abyss_jewel3) == 0)
+                {
+                    ShowPage(talker, "watcher_of_antaras_theodric_q0337_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 70000 && OwnItemCount(talker, @q_frag_of_abyss_jewel3) == 1)
+                {
+                    ShowPage(talker, "watcher_of_antaras_theodric_q0337_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @audience_with_earth_dragon)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(talker, @q_portal_stone_1, 1);
+                    DeleteItem1(talker, @q_frag_of_abyss_jewel3, OwnItemCount(talker, @q_frag_of_abyss_jewel3));
+                    DeleteItem1(talker, @q_herald_of_slayer, OwnItemCount(talker, @q_herald_of_slayer));
+                    RemoveMemo(talker, @audience_with_earth_dragon);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                    ShowPage(talker, "watcher_of_antaras_theodric_q0337_05.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

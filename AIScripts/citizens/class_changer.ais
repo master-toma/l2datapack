@@ -1,0 +1,16 @@
+class class_changer : default_npc
+{
+handler:
+    EventHandler TALKED(talker)
+    {
+        ShowPage(talker, "classchanger.htm");
+    }
+
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -512)
+        {
+            ClassChange(talker, reply);
+        }
+    }
+}

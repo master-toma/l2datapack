@@ -1,0 +1,159 @@
+class sentry_jenine : guard_fixed
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, quest_id, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @deliver_supplies) == 0 && GetOneTimeQuestFlag(talker, @deliver_supplies) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about supplies");
+            }
+
+            if (HaveMemo(talker, @deliver_supplies) == 0 && GetOneTimeQuestFlag(talker, @deliver_supplies) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about supplies");
+            }
+
+            if (HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @jennies_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Discuss supplies");
+            }
+
+            if (HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @sentry_blade1) == 1 && OwnItemCount(talker, @sentry_blade2) == 1 && OwnItemCount(talker, @sentry_blade3) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Discuss supplies");
+            }
+
+            if (HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @sentry_blade1) == 0 && (OwnItemCount(talker, @sentry_blade2) == 1 || OwnItemCount(talker, @sentry_blade3) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Discuss supplies");
+            }
+
+            if (HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @old_bronze_sword) == 2 && GetOneTimeQuestFlag(talker, @deliver_supplies) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Discuss supplies");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @deliver_supplies) == 0 && GetOneTimeQuestFlag(talker, @deliver_supplies) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_dark_elf)
+                        {
+                            ShowPage(talker, "sentry_jenine_q0325_00.htm");
+                        }
+                        else if (talker.level >= 3)
+                        {
+                            FHTML_SetFileName(fhtml0, "sentry_jenine_q0325_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @deliver_supplies);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "sentry_jenine_q0325_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @deliver_supplies) == 0 && GetOneTimeQuestFlag(talker, @deliver_supplies) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @jennies_letter))
+                {
+                    ShowPage(talker, "sentry_jenine_q0325_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @sentry_blade1) == 1 && OwnItemCount(talker, @sentry_blade2) == 1 && OwnItemCount(talker, @sentry_blade3) == 1)
+                {
+                    ShowPage(talker, "sentry_jenine_q0325_05.htm");
+                    DeleteItem1(talker, @sentry_blade1, 1);
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @sentry_blade1) == 0 && (OwnItemCount(talker, @sentry_blade2) == 1 || OwnItemCount(talker, @sentry_blade3) == 1))
+                {
+                    ShowPage(talker, "sentry_jenine_q0325_07.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @old_bronze_sword) == 2 && GetOneTimeQuestFlag(talker, @deliver_supplies) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "sentry_jenine_q0325_06.htm");
+                        DeleteItem1(talker, @old_bronze_sword, 2);
+                        RemoveMemo(talker, @deliver_supplies);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @deliver_supplies, 1);
+                        GiveItem1(talker, @adena, 450);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @deliver_supplies)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @deliver_supplies);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "sentry_jenine_q0325_03.htm");
+                GiveItem1(talker, @jennies_letter, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,220 @@
+class maestro_nikola : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 15 && OwnItemCount(talker, @letter_to_nichola))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you were sent by First Elder Lockirin");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 16 && OwnItemCount(talker, @heart_of_porta) < 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask what you should get and bring");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 16 && OwnItemCount(talker, @heart_of_porta) == 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give Heart Stone of Porta");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 17)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask to whom you should return");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) == 1 && OwnItemCount(talker, @clay_dough) == 0 && OwnItemCount(talker, @pattern_of_keyhole) == 0 && OwnItemCount(talker, @nikolas_list) == 0 && OwnItemCount(talker, @maphr_tablet_fragment) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Say that you were sent by the guild");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @clay_dough) >= 1 && OwnItemCount(talker, @pattern_of_keyhole) == 0 && OwnItemCount(talker, @nikolas_list) == 0 && OwnItemCount(talker, @maphr_tablet_fragment) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Give the copy that was made of the keyhole");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @pattern_of_keyhole) >= 1 && OwnItemCount(talker, @clay_dough) == 0 && OwnItemCount(talker, @nikolas_list) == 0 && OwnItemCount(talker, @maphr_tablet_fragment) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Give the copy that was made of the keyhole");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @nikolas_list) >= 1 && OwnItemCount(talker, @clay_dough) == 0 && OwnItemCount(talker, @pattern_of_keyhole) == 0 && OwnItemCount(talker, @maphr_tablet_fragment) == 0 && OwnItemCount(talker, @key_of_titan) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Say that you are thankful for the other person telling you how to make a key");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @nikolas_list) >= 1 && OwnItemCount(talker, @key_of_titan) >= 1 && OwnItemCount(talker, @clay_dough) == 0 && OwnItemCount(talker, @pattern_of_keyhole) == 0 && OwnItemCount(talker, @maphr_tablet_fragment) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Say that you are thankful for the other person telling you how to make a key");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @maphr_tablet_fragment) >= 1 && OwnItemCount(talker, @clay_dough) == 0 && OwnItemCount(talker, @pattern_of_keyhole) == 0 && OwnItemCount(talker, @nikolas_list) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Show Stone Slab of Marf");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 15 && OwnItemCount(talker, @letter_to_nichola))
+                {
+                    ShowPage(talker, "maestro_nikola_q0217_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 16 && OwnItemCount(talker, @heart_of_porta) < 10)
+                {
+                    ShowPage(talker, "maestro_nikola_q0217_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 16 && OwnItemCount(talker, @heart_of_porta) == 10)
+                {
+                    ShowPage(talker, "maestro_nikola_q0217_04.htm");
+                    DeleteItem1(talker, @heart_of_porta, OwnItemCount(talker, @heart_of_porta));
+                    DeleteItem1(talker, @order_of_nichola, OwnItemCount(talker, @order_of_nichola));
+                    SetMemoState(talker, @testimoney_of_trust, 17);
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 17)
+                {
+                    ShowPage(talker, "maestro_nikola_q0217_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) == 1 && OwnItemCount(talker, @clay_dough) == 0 && OwnItemCount(talker, @pattern_of_keyhole) == 0 && OwnItemCount(talker, @nikolas_list) == 0 && OwnItemCount(talker, @maphr_tablet_fragment) == 0)
+                {
+                    ShowPage(talker, "maestro_nikola_q0221_01.htm");
+                    DeleteItem1(talker, @parmans_letter, OwnItemCount(talker, @parmans_letter));
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @clay_dough) >= 1 && OwnItemCount(talker, @pattern_of_keyhole) == 0 && OwnItemCount(talker, @nikolas_list) == 0 && OwnItemCount(talker, @maphr_tablet_fragment) == 0)
+                {
+                    ShowPage(talker, "maestro_nikola_q0221_05.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @pattern_of_keyhole) >= 1 && OwnItemCount(talker, @clay_dough) == 0 && OwnItemCount(talker, @nikolas_list) == 0 && OwnItemCount(talker, @maphr_tablet_fragment) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "maestro_nikola_q0221_06.htm");
+                        DeleteItem1(talker, @pattern_of_keyhole, 1);
+                        GiveItem1(talker, @nikolas_list, 1);
+                        GiveItem1(talker, @rp_titan_key, 1);
+                    }
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @nikolas_list) >= 1 && OwnItemCount(talker, @clay_dough) == 0 && OwnItemCount(talker, @pattern_of_keyhole) == 0 && OwnItemCount(talker, @maphr_tablet_fragment) == 0 && OwnItemCount(talker, @key_of_titan) == 0)
+                {
+                    ShowPage(talker, "maestro_nikola_q0221_07.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @nikolas_list) >= 1 && OwnItemCount(talker, @key_of_titan) >= 1 && OwnItemCount(talker, @clay_dough) == 0 && OwnItemCount(talker, @pattern_of_keyhole) == 0 && OwnItemCount(talker, @maphr_tablet_fragment) == 0)
+                {
+                    ShowPage(talker, "maestro_nikola_q0221_08.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @maphr_tablet_fragment) >= 1 && OwnItemCount(talker, @clay_dough) == 0 && OwnItemCount(talker, @pattern_of_keyhole) == 0 && OwnItemCount(talker, @nikolas_list) == 0)
+                {
+                    ShowPage(talker, "maestro_nikola_q0221_09.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimoney_of_trust)
+        {
+            if (reply == 1 && OwnItemCount(talker, @letter_to_nichola) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "maestro_nikola_q0217_02.htm");
+                    GiveItem1(talker, @order_of_nichola, 1);
+                    DeleteItem1(talker, @letter_to_nichola, 1);
+                    SetMemoState(talker, @testimoney_of_trust, 16);
+                }
+            }
+        }
+
+        if (ask == @testimony_of_prosperity)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "maestro_nikola_q0221_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "maestro_nikola_q0221_03.htm");
+            }
+
+            if (reply == 3)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "maestro_nikola_q0221_04.htm");
+                    GiveItem1(talker, @clay_dough, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

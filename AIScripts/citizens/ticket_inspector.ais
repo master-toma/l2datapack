@@ -1,0 +1,3 @@
+class ticket_inspector : citizen
+{
+}

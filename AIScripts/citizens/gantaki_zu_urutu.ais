@@ -1,0 +1,203 @@
+class gantaki_zu_urutu : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_orc_monk) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to Paagrio Monk");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) == 1 && OwnItemCount(talker, @scroll_fiery_spirit) == 0 && OwnItemCount(talker, @pomegranate) == 1 && OwnItemCount(talker, @gantakis_letter) == 0 && OwnItemCount(talker, @rosheeks_letter) == 0 && OwnItemCount(talker, @leather_pouch1) + OwnItemCount(talker, @leather_pouch2) + OwnItemCount(talker, @leather_pouch3) + OwnItemCount(talker, @leather_pouch1full) + OwnItemCount(talker, @leather_pouch2full) + OwnItemCount(talker, @leather_pouch3full) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Khavatari Rosheek");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) == 1 && OwnItemCount(talker, @scroll_fiery_spirit) == 0 && OwnItemCount(talker, @pomegranate) == 0 && OwnItemCount(talker, @gantakis_letter) == 0 && OwnItemCount(talker, @rosheeks_letter) == 0 && OwnItemCount(talker, @leather_pouch1) + OwnItemCount(talker, @leather_pouch2) + OwnItemCount(talker, @leather_pouch3) + OwnItemCount(talker, @leather_pouch1full) + OwnItemCount(talker, @leather_pouch2full) + OwnItemCount(talker, @leather_pouch3full) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about the fiery spirit scroll");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) == 1 && OwnItemCount(talker, @scroll_fiery_spirit) == 1 && OwnItemCount(talker, @pomegranate) == 0 && OwnItemCount(talker, @gantakis_letter) == 0 && OwnItemCount(talker, @rosheeks_letter) == 1 && OwnItemCount(talker, @leather_pouch1) + OwnItemCount(talker, @leather_pouch2) + OwnItemCount(talker, @leather_pouch3) + OwnItemCount(talker, @leather_pouch1full) + OwnItemCount(talker, @leather_pouch2full) + OwnItemCount(talker, @leather_pouch3full) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give fiery spirit scroll");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) == 1 && OwnItemCount(talker, @scroll_fiery_spirit) == 1 && OwnItemCount(talker, @pomegranate) == 0 && OwnItemCount(talker, @gantakis_letter) == 1 && OwnItemCount(talker, @rosheeks_letter) == 0 && OwnItemCount(talker, @leather_pouch1) + OwnItemCount(talker, @leather_pouch2) + OwnItemCount(talker, @leather_pouch3) + OwnItemCount(talker, @leather_pouch1full) + OwnItemCount(talker, @leather_pouch2full) + OwnItemCount(talker, @leather_pouch3full) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about the second scroll");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) == 1 && OwnItemCount(talker, @scroll_fiery_spirit) == 1 && OwnItemCount(talker, @pomegranate) == 0 && OwnItemCount(talker, @gantakis_letter) == 0 && OwnItemCount(talker, @rosheeks_letter) == 0 && OwnItemCount(talker, @leather_pouch1) + OwnItemCount(talker, @leather_pouch2) + OwnItemCount(talker, @leather_pouch3) + OwnItemCount(talker, @leather_pouch1full) + OwnItemCount(talker, @leather_pouch2full) + OwnItemCount(talker, @leather_pouch3full) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about the second scroll");
+            }
+
+            if (HaveMemo(talker, @long_live_lord_of_flame) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Receive gift from Urutu");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        ShowPage(talker, "gantaki_zu_urutu_q0415_01.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) == 1 && OwnItemCount(talker, @scroll_fiery_spirit) == 0 && OwnItemCount(talker, @pomegranate) == 1 && OwnItemCount(talker, @gantakis_letter) == 0 && OwnItemCount(talker, @rosheeks_letter) == 0 && OwnItemCount(talker, @leather_pouch1) + OwnItemCount(talker, @leather_pouch2) + OwnItemCount(talker, @leather_pouch3) + OwnItemCount(talker, @leather_pouch1full) + OwnItemCount(talker, @leather_pouch2full) + OwnItemCount(talker, @leather_pouch3full) == 0)
+                {
+                    ShowPage(talker, "gantaki_zu_urutu_q0415_07.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) == 1 && OwnItemCount(talker, @scroll_fiery_spirit) == 0 && OwnItemCount(talker, @pomegranate) == 0 && OwnItemCount(talker, @gantakis_letter) == 0 && OwnItemCount(talker, @rosheeks_letter) == 0 && OwnItemCount(talker, @leather_pouch1) + OwnItemCount(talker, @leather_pouch2) + OwnItemCount(talker, @leather_pouch3) + OwnItemCount(talker, @leather_pouch1full) + OwnItemCount(talker, @leather_pouch2full) + OwnItemCount(talker, @leather_pouch3full) == 1)
+                {
+                    ShowPage(talker, "gantaki_zu_urutu_q0415_08.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) == 1 && OwnItemCount(talker, @scroll_fiery_spirit) == 1 && OwnItemCount(talker, @pomegranate) == 0 && OwnItemCount(talker, @gantakis_letter) == 0 && OwnItemCount(talker, @rosheeks_letter) == 1 && OwnItemCount(talker, @leather_pouch1) + OwnItemCount(talker, @leather_pouch2) + OwnItemCount(talker, @leather_pouch3) + OwnItemCount(talker, @leather_pouch1full) + OwnItemCount(talker, @leather_pouch2full) + OwnItemCount(talker, @leather_pouch3full) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "gantaki_zu_urutu_q0415_09.htm");
+                        DeleteItem1(talker, @rosheeks_letter, 1);
+                        GiveItem1(talker, @gantakis_letter, 1);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) == 1 && OwnItemCount(talker, @scroll_fiery_spirit) == 1 && OwnItemCount(talker, @pomegranate) == 0 && OwnItemCount(talker, @gantakis_letter) == 1 && OwnItemCount(talker, @rosheeks_letter) == 0 && OwnItemCount(talker, @leather_pouch1) + OwnItemCount(talker, @leather_pouch2) + OwnItemCount(talker, @leather_pouch3) + OwnItemCount(talker, @leather_pouch1full) + OwnItemCount(talker, @leather_pouch2full) + OwnItemCount(talker, @leather_pouch3full) == 0)
+                {
+                    ShowPage(talker, "gantaki_zu_urutu_q0415_10.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) == 1 && OwnItemCount(talker, @scroll_fiery_spirit) == 1 && OwnItemCount(talker, @pomegranate) == 0 && OwnItemCount(talker, @gantakis_letter) == 0 && OwnItemCount(talker, @rosheeks_letter) == 0 && OwnItemCount(talker, @leather_pouch1) + OwnItemCount(talker, @leather_pouch2) + OwnItemCount(talker, @leather_pouch3) + OwnItemCount(talker, @leather_pouch1full) + OwnItemCount(talker, @leather_pouch2full) + OwnItemCount(talker, @leather_pouch3full) == 0)
+                {
+                    ShowPage(talker, "gantaki_zu_urutu_q0415_11.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @long_live_lord_of_flame) == 1)
+                {
+                    if (OwnItemCount(talker, @deep_sea_orb) < 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "gantaki_zu_urutu_q0004_01.htm");
+                            GiveItem1(talker, @deep_sea_orb, 1);
+                            SoundEffect(talker, "ItemSound.quest_itemget");
+                        }
+                    }
+                    else if (OwnItemCount(talker, @deep_sea_orb) >= 1)
+                    {
+                        ShowPage(talker, "gantaki_zu_urutu_q0004_02.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_orc_monk)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "gantaki_zu_urutu_q0415_06.htm");
+                GiveItem1(talker, @pomegranate, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, quest_id, reply, talker)
+    {
+        if (ask == @path_to_orc_monk && reply == 1)
+        {
+            if (talker.occupation != @orc_fighter)
+            {
+                if (talker.occupation == @orc_monk)
+                {
+                    ShowPage(talker, "gantaki_zu_urutu_q0415_02a.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "gantaki_zu_urutu_q0415_02.htm");
+                }
+            }
+            else if (talker.level < 19)
+            {
+                ShowPage(talker, "gantaki_zu_urutu_q0415_03.htm");
+            }
+            else if (OwnItemCount(talker, @khavatari_totem) != 0)
+            {
+                ShowPage(talker, "gantaki_zu_urutu_q0415_04.htm");
+            }
+            else
+            {
+                FHTML_SetFileName(fhtml0, "gantaki_zu_urutu_q0415_05.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @path_to_orc_monk);
+                ShowFHTML(talker, fhtml0);
+            }
+        }
+
+        super;
+    }
+}

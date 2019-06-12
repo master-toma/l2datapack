@@ -1,0 +1,5 @@
+class ai_boss03_riba : warrior_passive_casting_hold_magic
+{
+parameter:
+    int HoldMagic = @s_npc_hold4;
+}

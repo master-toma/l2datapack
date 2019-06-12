@@ -1,0 +1,83 @@
+class corpse_of_lutz : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (GetMemoState(talker, @pledge_seeks_ambition) < 3000 && GetMemoState(talker, @pledge_seeks_ambition) >= 2000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Find Egg of Wyrm or Drake");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || GetMemoState(talker, @pledge_seeks_ambition) < 3000 && GetMemoState(talker, @pledge_seeks_ambition) >= 2000)
+                {
+                    ShowPage(talker, "corpse_of_lutz_q0503_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 250311)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @pledge_seeks_ambition)
+        {
+            if (reply == 1)
+            {
+                if (GetMemoState(talker, @pledge_seeks_ambition) == 2000 || GetMemoState(talker, @pledge_seeks_ambition) == 2101 || GetMemoState(talker, @pledge_seeks_ambition) == 2001 || GetMemoState(talker, @pledge_seeks_ambition) == 2100)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @q_blitz_wyrm_egg, 3);
+                        GiveItem1(talker, @q_mist_drake_egg, 4);
+                        SetMemoState(talker, @pledge_seeks_ambition, GetMemoState(talker, @pledge_seeks_ambition) + 10);
+                        ShowPage(talker, "corpse_of_lutz_q0503_02.htm");
+                        CreateOnePrivate(@blitz_wyrm, "blitz_wyrm", 0, 1);
+                        CreateOnePrivate(@blitz_wyrm, "blitz_wyrm", 0, 1);
+                        AddTimerEx(250311, 1000 * 10);
+                    }
+                }
+                else if (GetMemoState(talker, @pledge_seeks_ambition) == 2000 || GetMemoState(talker, @pledge_seeks_ambition) == 2111 || GetMemoState(talker, @pledge_seeks_ambition) == 2011 || GetMemoState(talker, @pledge_seeks_ambition) == 2110)
+                {
+                    ShowPage(talker, "corpse_of_lutz_q0503_03.htm");
+                    CreateOnePrivate(@blitz_wyrm, "blitz_wyrm", 0, 1);
+                    CreateOnePrivate(@blitz_wyrm, "blitz_wyrm", 0, 1);
+                    AddTimerEx(250311, 1000 * 10);
+                }
+            }
+        }
+
+        super;
+    }
+}

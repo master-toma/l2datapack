@@ -1,0 +1,3 @@
+class guard_luis : guard_stand
+{
+}

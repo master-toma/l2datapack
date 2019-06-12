@@ -1,0 +1,3 @@
+class crocodile : warrior_aggressive
+{
+}

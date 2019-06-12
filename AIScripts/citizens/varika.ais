@@ -1,0 +1,189 @@
+class varika : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_darkwizard) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to Dark Wizard");
+            }
+
+            if (HaveMemo(talker, @path_to_darkwizard) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about changing occupation to Dark Wizard");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_darkwizard) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (OwnItemCount(talker, @jewel_of_darkness) == 0)
+                        {
+                            FHTML_SetFileName(fhtml0, "varika_q0412_01.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @path_to_darkwizard);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "varika_q0412_04.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_darkwizard) == 1)
+                {
+                    if (OwnItemCount(talker, @seeds_of_despair) && OwnItemCount(talker, @seeds_of_horror) && OwnItemCount(talker, @seeds_of_lunacy) && OwnItemCount(talker, @seeds_of_anger))
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "varika_q0412_16.htm");
+                            DeleteItem1(talker, @seeds_of_horror, 1);
+                            DeleteItem1(talker, @seeds_of_anger, 1);
+                            DeleteItem1(talker, @seeds_of_lunacy, 1);
+                            DeleteItem1(talker, @seeds_of_despair, 1);
+                            GiveItem1(talker, @jewel_of_darkness, 1);
+                            RemoveMemo(talker, @path_to_darkwizard);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                    }
+                    else if (OwnItemCount(talker, @seeds_of_despair) == 1 && OwnItemCount(talker, @familys_ashes) == 0 && OwnItemCount(talker, @lucky_key) == 0 && OwnItemCount(talker, @candle) == 0 && OwnItemCount(talker, @hub_scent) == 0 && OwnItemCount(talker, @knee_bone) == 0 && OwnItemCount(talker, @heart_of_lunacy) == 0)
+                    {
+                        ShowPage(talker, "varika_q0412_17.htm");
+                    }
+                    else if (OwnItemCount(talker, @seeds_of_despair) == 1 && GetMemoState(talker, @path_to_darkwizard) == 1 && OwnItemCount(talker, @seeds_of_anger) == 0)
+                    {
+                        ShowPage(talker, "varika_q0412_08.htm");
+                    }
+                    else if (OwnItemCount(talker, @seeds_of_despair) == 1 && GetMemoState(talker, @path_to_darkwizard) == 2 && OwnItemCount(talker, @seeds_of_horror) == 0)
+                    {
+                        ShowPage(talker, "varika_q0412_19.htm");
+                    }
+                    else if (OwnItemCount(talker, @seeds_of_despair) == 1 && GetMemoState(talker, @path_to_darkwizard) == 3 && OwnItemCount(talker, @seeds_of_lunacy) == 0)
+                    {
+                        ShowPage(talker, "varika_q0412_13.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_darkwizard)
+        {
+            if (HaveMemo(talker, @path_to_darkwizard) == 0)
+            {
+                if (talker.level >= 19 && talker.occupation == @dark_mage && OwnItemCount(talker, @jewel_of_darkness) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        SetMemo(talker, @path_to_darkwizard);
+                        SoundEffect(talker, "ItemSound.quest_accept");
+                        GiveItem1(talker, @seeds_of_despair, 1);
+                        ShowPage(talker, "varika_q0412_05.htm");
+                    }
+                }
+                else if (talker.occupation != @dark_mage)
+                {
+                    if (talker.occupation == @dark_wizard)
+                    {
+                        ShowPage(talker, "varika_q0412_02a.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "varika_q0412_03.htm");
+                    }
+                }
+                else if (talker.level < 19 && talker.occupation == @dark_mage)
+                {
+                    ShowPage(talker, "varika_q0412_02.htm");
+                }
+                else if (talker.level >= 19 && talker.occupation == @dark_mage && OwnItemCount(talker, @jewel_of_darkness) == 1)
+                {
+                    ShowPage(talker, "varika_q0412_04.htm");
+                }
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_darkwizard)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @seeds_of_anger))
+                {
+                    ShowPage(talker, "varika_q0412_06.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "varika_q0412_07.htm");
+                    SetMemoState(talker, @path_to_darkwizard, 1);
+                }
+            }
+            else if (reply == 2)
+            {
+                if (OwnItemCount(talker, @seeds_of_horror))
+                {
+                    ShowPage(talker, "varika_q0412_09.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "varika_q0412_10.htm");
+                    SetMemoState(talker, @path_to_darkwizard, 2);
+                }
+            }
+            else if (reply == 3)
+            {
+                if (OwnItemCount(talker, @seeds_of_lunacy))
+                {
+                    ShowPage(talker, "varika_q0412_12.htm");
+                }
+                else if (OwnItemCount(talker, @seeds_of_lunacy) == 0 && OwnItemCount(talker, @seeds_of_despair))
+                {
+                    ShowPage(talker, "varika_q0412_13.htm");
+                    SetMemoState(talker, @path_to_darkwizard, 3);
+                }
+            }
+        }
+
+        super;
+    }
+}

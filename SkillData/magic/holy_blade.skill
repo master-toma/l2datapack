@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_holy_blade1]	/* [홀리 블레이드] */	skill_id = 196	level = 1	operate_type = P	effect = {{p_attack_attribute;attr_holy}}	skill_end

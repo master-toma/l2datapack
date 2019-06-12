@@ -1,0 +1,16 @@
+class delu_chief_kalkis : party_leader
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_searcher) == 1 && OwnItemCount(c1, @leirynns_order2) == 1 && OwnItemCount(c1, @chief_kalkis_fang) == 0 && OwnItemCount(c1, @strange_map) == 0)
+        {
+            GiveItem1(c1, @chief_kalkis_fang, 1);
+            GiveItem1(c1, @strange_map, 1);
+            SoundEffect(c1, "ItemSound.quest_middle");
+        }
+
+        super;
+    }
+}

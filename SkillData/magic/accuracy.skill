@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_accuracy]	/* [어큐러시] */	skill_id = 256	level = 1	operate_type = T	effect = {{c_mp_by_level;-0.2;5};{p_hit;{all};10;diff}}	mp_consume1 = 0	reuse_delay = 0	target_type = self	next_action = none	skill_end

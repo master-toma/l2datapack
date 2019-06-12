@@ -1,0 +1,195 @@
+class high_summoner_galatea : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_summoner) == 0 && GetOneTimeQuestFlag(talker, @test_of_summoner) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Examination of Summoner");
+            }
+
+            if (HaveMemo(talker, @test_of_summoner) == 0 && GetOneTimeQuestFlag(talker, @test_of_summoner) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Examination of Summoner");
+            }
+
+            if (HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @galateas_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask what you should prepare");
+            }
+
+            if (HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @galateas_letter) == 0 && OwnItemCount(talker, @almors_arcana) + OwnItemCount(talker, @basillia_arcana) + OwnItemCount(talker, @camoniell_arcana) + OwnItemCount(talker, @celestiel_arcana) + OwnItemCount(talker, @belthus_arcana) + OwnItemCount(talker, @brynthea_arcana) < 6 && OwnItemCount(talker, @beginners_arcana) < 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask how to have a duel with a summoned creature");
+            }
+
+            if (HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @galateas_letter) == 0 && OwnItemCount(talker, @almors_arcana) + OwnItemCount(talker, @basillia_arcana) + OwnItemCount(talker, @camoniell_arcana) + OwnItemCount(talker, @celestiel_arcana) + OwnItemCount(talker, @belthus_arcana) + OwnItemCount(talker, @brynthea_arcana) < 6 && OwnItemCount(talker, @beginners_arcana) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask how many summoned creatures you have to defeat");
+            }
+
+            if (HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @galateas_letter) == 0 && OwnItemCount(talker, @almors_arcana) + OwnItemCount(talker, @basillia_arcana) + OwnItemCount(talker, @camoniell_arcana) + OwnItemCount(talker, @celestiel_arcana) + OwnItemCount(talker, @belthus_arcana) + OwnItemCount(talker, @brynthea_arcana) >= 6)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Show six Arukana cards");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_summoner) == 0 && GetOneTimeQuestFlag(talker, @test_of_summoner) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if ((talker.occupation == @wizard || talker.occupation == @elven_wizard || talker.occupation == @dark_wizard) && talker.level >= 39)
+                        {
+                            ShowPage(talker, "high_summoner_galatea_q0230_03.htm");
+                        }
+                        else if (talker.occupation == @wizard || talker.occupation == @elven_wizard || talker.occupation == @dark_wizard)
+                        {
+                            ShowPage(talker, "high_summoner_galatea_q0230_02.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "high_summoner_galatea_q0230_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_summoner) == 0 && GetOneTimeQuestFlag(talker, @test_of_summoner) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @galateas_letter))
+                {
+                    ShowPage(talker, "high_summoner_galatea_q0230_09.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @galateas_letter) == 0 && OwnItemCount(talker, @almors_arcana) + OwnItemCount(talker, @basillia_arcana) + OwnItemCount(talker, @camoniell_arcana) + OwnItemCount(talker, @celestiel_arcana) + OwnItemCount(talker, @belthus_arcana) + OwnItemCount(talker, @brynthea_arcana) < 6 && OwnItemCount(talker, @beginners_arcana) < 1)
+                {
+                    ShowPage(talker, "high_summoner_galatea_q0230_10.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @galateas_letter) == 0 && OwnItemCount(talker, @almors_arcana) + OwnItemCount(talker, @basillia_arcana) + OwnItemCount(talker, @camoniell_arcana) + OwnItemCount(talker, @celestiel_arcana) + OwnItemCount(talker, @belthus_arcana) + OwnItemCount(talker, @brynthea_arcana) < 6 && OwnItemCount(talker, @beginners_arcana) >= 1)
+                {
+                    ShowPage(talker, "high_summoner_galatea_q0230_11.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_summoner) == 1 && OwnItemCount(talker, @galateas_letter) == 0 && OwnItemCount(talker, @almors_arcana) + OwnItemCount(talker, @basillia_arcana) + OwnItemCount(talker, @camoniell_arcana) + OwnItemCount(talker, @celestiel_arcana) + OwnItemCount(talker, @belthus_arcana) + OwnItemCount(talker, @brynthea_arcana) >= 6)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        IncrementParam(talker, @PARAM_EXP, 41000);
+                        IncrementParam(talker, @PARAM_SP, 5000);
+                        ShowPage(talker, "high_summoner_galatea_q0230_12.htm");
+                        RemoveMemo(talker, @test_of_summoner);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @test_of_summoner, 1);
+                        GiveItem1(talker, @mark_of_summoner, 1);
+                        DeleteItem1(talker, @lars_list1, OwnItemCount(talker, @lars_list1));
+                        DeleteItem1(talker, @lars_list2, OwnItemCount(talker, @lars_list2));
+                        DeleteItem1(talker, @lars_list3, OwnItemCount(talker, @lars_list3));
+                        DeleteItem1(talker, @lars_list4, OwnItemCount(talker, @lars_list4));
+                        DeleteItem1(talker, @lars_list5, OwnItemCount(talker, @lars_list5));
+                        DeleteItem1(talker, @almors_arcana, OwnItemCount(talker, @almors_arcana));
+                        DeleteItem1(talker, @basillia_arcana, OwnItemCount(talker, @basillia_arcana));
+                        DeleteItem1(talker, @camoniell_arcana, OwnItemCount(talker, @camoniell_arcana));
+                        DeleteItem1(talker, @celestiel_arcana, OwnItemCount(talker, @celestiel_arcana));
+                        DeleteItem1(talker, @belthus_arcana, OwnItemCount(talker, @belthus_arcana));
+                        DeleteItem1(talker, @brynthea_arcana, OwnItemCount(talker, @brynthea_arcana));
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @test_of_summoner)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "high_summoner_galatea_q0230_08.htm");
+                GiveItem1(talker, @galateas_letter, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @test_of_summoner)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "high_summoner_galatea_q0230_04.htm");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "high_summoner_galatea_q0230_05.htm");
+            }
+            else if (reply == 3)
+            {
+                ShowPage(talker, "high_summoner_galatea_q0230_06.htm");
+            }
+            else if (reply == 4)
+            {
+                FHTML_SetFileName(fhtml0, "high_summoner_galatea_q0230_07.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @test_of_summoner);
+                ShowFHTML(talker, fhtml0);
+            }
+        }
+
+        super;
+    }
+}

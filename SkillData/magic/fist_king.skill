@@ -1,0 +1,2 @@
+skill_begin	skill_name = [s_fist_king1]	/* [피스트 킹] */	skill_id = 218	level = 1	operate_type = T	effect = {}	mp_consume1 = 10	reuse_delay = 0	target_type = none	next_action = none	skill_end
+skill_begin	skill_name = [s_fist_king2]	/* [피스트 킹] */	skill_id = 218	level = 2	operate_type = T	effect = {}	mp_consume1 = 10	reuse_delay = 0	target_type = none	next_action = none	skill_end

@@ -1,0 +1,89 @@
+class guard_leikan : guard_stand
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_assassin) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the thief");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_assassin) == 1)
+                {
+                    if (OwnItemCount(talker, @arkenias_letter) == 1 && OwnItemCount(talker, @leikans_note) == 0 && OwnItemCount(talker, @shilens_tears) == 0 && OwnItemCount(talker, @arkenia_recommend) == 0 && OwnItemCount(talker, @iron_heart) == 0 && OwnItemCount(talker, @shilens_call) == 0 && OwnItemCount(talker, @onyx_beasts_molar) == 0)
+                    {
+                        ShowPage(talker, "guard_leikan_q0411_01.htm");
+                    }
+                    else if (OwnItemCount(talker, @arkenias_letter) == 0 && OwnItemCount(talker, @leikans_note) == 1 && OwnItemCount(talker, @shilens_tears) == 0 && OwnItemCount(talker, @arkenia_recommend) == 0 && OwnItemCount(talker, @iron_heart) == 0 && OwnItemCount(talker, @shilens_call) == 0 && OwnItemCount(talker, @onyx_beasts_molar) == 0)
+                    {
+                        ShowPage(talker, "guard_leikan_q0411_05.htm");
+                    }
+                    else if (OwnItemCount(talker, @arkenias_letter) == 0 && OwnItemCount(talker, @leikans_note) == 1 && OwnItemCount(talker, @shilens_tears) == 0 && OwnItemCount(talker, @arkenia_recommend) == 0 && OwnItemCount(talker, @iron_heart) == 0 && OwnItemCount(talker, @shilens_call) == 0 && OwnItemCount(talker, @onyx_beasts_molar) < 10)
+                    {
+                        ShowPage(talker, "guard_leikan_q0411_06.htm");
+                    }
+                    else if (OwnItemCount(talker, @arkenias_letter) == 0 && OwnItemCount(talker, @leikans_note) == 1 && OwnItemCount(talker, @shilens_tears) == 0 && OwnItemCount(talker, @arkenia_recommend) == 0 && OwnItemCount(talker, @iron_heart) == 0 && OwnItemCount(talker, @shilens_call) == 0 && OwnItemCount(talker, @onyx_beasts_molar) >= 10)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            SetMemoState(talker, @path_to_assassin, 1);
+                            ShowPage(talker, "guard_leikan_q0411_07.htm");
+                            DeleteItem1(talker, @onyx_beasts_molar, 10);
+                            DeleteItem1(talker, @leikans_note, 1);
+                        }
+                    }
+                    else if (OwnItemCount(talker, @shilens_tears) == 1)
+                    {
+                        ShowPage(talker, "guard_leikan_q0411_08.htm");
+                    }
+                    else if (GetMemoState(talker, @path_to_assassin) == 1 && OwnItemCount(talker, @arkenias_letter) == 0 && OwnItemCount(talker, @leikans_note) == 0 && OwnItemCount(talker, @shilens_tears) == 0 && OwnItemCount(talker, @arkenia_recommend) == 0 && OwnItemCount(talker, @iron_heart) == 0 && OwnItemCount(talker, @shilens_call) == 0 && OwnItemCount(talker, @onyx_beasts_molar) == 0)
+                    {
+                        ShowPage(talker, "guard_leikan_q0411_09.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_assassin)
+        {
+            if (reply == 1 && OwnItemCount(talker, @arkenias_letter) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "guard_leikan_q0411_03.htm");
+                    GiveItem1(talker, @leikans_note, 1);
+                    DeleteItem1(talker, @arkenias_letter, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

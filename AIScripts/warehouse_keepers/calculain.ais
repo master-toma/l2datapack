@@ -1,0 +1,103 @@
+class calculain : warehouse_keeper
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, fhtml1, quest_id, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @dwarven_kinship) == 0 && GetOneTimeQuestFlag(talker, @dwarven_kinship) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the same race");
+            }
+
+            if (HaveMemo(talker, @dwarven_kinship) == 0 && GetOneTimeQuestFlag(talker, @dwarven_kinship) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the same race");
+            }
+
+            if (HaveMemo(talker, @dwarven_kinship) == 1 && OwnItemCount(talker, @calculains_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about delivering a letter");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @dwarven_kinship) == 0 && GetOneTimeQuestFlag(talker, @dwarven_kinship) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 15)
+                        {
+                            FHTML_SetFileName(fhtml1, "calculain_q0323_03.htm");
+                            FHTML_SetInt(fhtml1, "quest_id", @dwarven_kinship);
+                            ShowFHTML(talker, fhtml1);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "calculain_q0323_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @dwarven_kinship) == 0 && GetOneTimeQuestFlag(talker, @dwarven_kinship) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @dwarven_kinship) == 1 && OwnItemCount(talker, @calculains_letter) == 1)
+                {
+                    ShowPage(talker, "calculain_q0323_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @dwarven_kinship)
+        {
+            ShowPage(talker, "calculain_q0323_04.htm");
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(talker, @calculains_letter, 1);
+                SetMemo(talker, @dwarven_kinship);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

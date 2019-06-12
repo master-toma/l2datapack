@@ -1,0 +1,120 @@
+class father_gupu : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 4 && OwnItemCount(talker, @picture_of_windy) == 0 && OwnItemCount(talker, @windys_pebbles) == 0 && OwnItemCount(talker, @golden_statue) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the young girl that performs miracles");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && OwnItemCount(talker, @picture_of_windy))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Windy’s personality");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && OwnItemCount(talker, @windys_pebbles))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Say that you persuaded Windy to come back");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask who inquired about the girl that was kidnapped");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 4 && OwnItemCount(talker, @picture_of_windy) == 0 && OwnItemCount(talker, @windys_pebbles) == 0 && OwnItemCount(talker, @golden_statue) == 0)
+                {
+                    ShowPage(talker, "father_gupu_q0226_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && OwnItemCount(talker, @picture_of_windy))
+                {
+                    ShowPage(talker, "father_gupu_q0226_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && OwnItemCount(talker, @windys_pebbles))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "father_gupu_q0226_06.htm");
+                        GiveItem1(talker, @golden_statue, 1);
+                        DeleteItem1(talker, @windys_pebbles, 1);
+                        SetMemoState(talker, @test_of_healer, 5);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 5)
+                {
+                    ShowPage(talker, "father_gupu_q0226_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_healer)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @adena) >= 100000)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "father_gupu_q0226_02.htm");
+                        DeleteItem1(talker, @adena, 100000);
+                        GiveItem1(talker, @picture_of_windy, 1);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "father_gupu_q0226_05.htm");
+                }
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "father_gupu_q0226_03.htm");
+                SetMemoState(talker, @test_of_healer, 5);
+            }
+        }
+
+        super;
+    }
+}

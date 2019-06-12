@@ -1,0 +1,3 @@
+class b02_death_blader : ai_boss02_b02_death_blader
+{
+}

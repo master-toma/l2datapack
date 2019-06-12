@@ -1,0 +1,308 @@
+class tuto_keltir : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @hfighter_tutorial) && OwnItemCount(myself.c_quest0, @fox_fang1) < 4 && myself.i_quest0 == 1)
+        {
+            if (GetMemoState(myself.c_quest0, @hfighter_tutorial) <= 0)
+            {
+                DeleteRadar(myself.c_quest0, -73403, 255947, -3126);
+                ShowQuestionMark(myself.c_quest0, @release_darkelf_elder1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_tutorial");
+                SetMemoState(myself.c_quest0, @hfighter_tutorial, 1);
+            }
+            else if (GetMemoState(myself.c_quest0, @hfighter_tutorial) == 1)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang1, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+                SetMemoState(myself.c_quest0, @hfighter_tutorial, 2);
+                ShowQuestionMark(myself.c_quest0, @long_live_lord_of_flame);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_tutorial");
+            }
+            else if (GetMemoState(myself.c_quest0, @hfighter_tutorial) == 2 && OwnItemCount(myself.c_quest0, @fox_fang1) == 3)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang1, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+                ShowQuestionMark(myself.c_quest0, @miners_favor);
+                SetMemoState(myself.c_quest0, @hfighter_tutorial, 3);
+            }
+            else if (GetMemoState(myself.c_quest0, @hfighter_tutorial) == 2 && OwnItemCount(myself.c_quest0, @fox_fang1) < 3)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang1, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @hmage_tutorial) && OwnItemCount(myself.c_quest0, @fox_fang2) < 4 && myself.i_quest0 == 1)
+        {
+            if (GetMemoState(myself.c_quest0, @hmage_tutorial) <= 0)
+            {
+                ShowQuestionMark(myself.c_quest0, @release_darkelf_elder1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_tutorial");
+                SetMemoState(myself.c_quest0, @hmage_tutorial, 1);
+                DeleteRadar(myself.c_quest0, -86756, 251859, -3633);
+            }
+            else if (GetMemoState(myself.c_quest0, @hmage_tutorial) == 1)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang2, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+                SetMemoState(myself.c_quest0, @hmage_tutorial, 2);
+                ShowQuestionMark(myself.c_quest0, @long_live_lord_of_flame);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_tutorial");
+            }
+            else if (GetMemoState(myself.c_quest0, @hmage_tutorial) == 2 && OwnItemCount(myself.c_quest0, @fox_fang2) == 3)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang2, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+                ShowQuestionMark(myself.c_quest0, @miners_favor);
+                SetMemoState(myself.c_quest0, @hmage_tutorial, 3);
+            }
+            else if (GetMemoState(myself.c_quest0, @hmage_tutorial) == 2 && OwnItemCount(myself.c_quest0, @fox_fang2) < 3)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang2, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @elf_tutorial) && OwnItemCount(myself.c_quest0, @fox_fang3) < 4 && myself.i_quest0 == 1)
+        {
+            if (GetMemoState(myself.c_quest0, @elf_tutorial) <= 0)
+            {
+                ShowQuestionMark(myself.c_quest0, @release_darkelf_elder1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_tutorial");
+                SetMemoState(myself.c_quest0, @elf_tutorial, 1);
+                DeleteRadar(myself.c_quest0, 48968, 43641, -3505);
+            }
+            else if (GetMemoState(myself.c_quest0, @elf_tutorial) == 1)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang3, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+                SetMemoState(myself.c_quest0, @elf_tutorial, 2);
+                ShowQuestionMark(myself.c_quest0, @long_live_lord_of_flame);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_tutorial");
+            }
+            else if (GetMemoState(myself.c_quest0, @elf_tutorial) == 2 && OwnItemCount(myself.c_quest0, @fox_fang3) == 3)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang3, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+                ShowQuestionMark(myself.c_quest0, @miners_favor);
+                SetMemoState(myself.c_quest0, @elf_tutorial, 3);
+            }
+            else if (GetMemoState(myself.c_quest0, @elf_tutorial) == 2 && OwnItemCount(myself.c_quest0, @fox_fang3) < 3)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang3, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @delf_tutorial) && OwnItemCount(myself.c_quest0, @fox_fang4) < 4 && myself.i_quest0 == 1)
+        {
+            if (GetMemoState(myself.c_quest0, @delf_tutorial) <= 0)
+            {
+                ShowQuestionMark(myself.c_quest0, @release_darkelf_elder1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_tutorial");
+                SetMemoState(myself.c_quest0, @delf_tutorial, 1);
+                DeleteRadar(myself.c_quest0, 29370, 14327, -3719);
+            }
+            else if (GetMemoState(myself.c_quest0, @delf_tutorial) == 1)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang4, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+                SetMemoState(myself.c_quest0, @delf_tutorial, 2);
+                ShowQuestionMark(myself.c_quest0, @long_live_lord_of_flame);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_tutorial");
+            }
+            else if (GetMemoState(myself.c_quest0, @delf_tutorial) == 2 && OwnItemCount(myself.c_quest0, @fox_fang4) == 3)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang4, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+                ShowQuestionMark(myself.c_quest0, @miners_favor);
+                SetMemoState(myself.c_quest0, @delf_tutorial, 3);
+            }
+            else if (GetMemoState(myself.c_quest0, @delf_tutorial) == 2 && OwnItemCount(myself.c_quest0, @fox_fang4) < 3)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang4, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @orc_tutorial) && OwnItemCount(myself.c_quest0, @fox_fang5) < 4 && myself.i_quest0 == 1)
+        {
+            if (GetMemoState(myself.c_quest0, @orc_tutorial) <= 0)
+            {
+                ShowQuestionMark(myself.c_quest0, @release_darkelf_elder1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_tutorial");
+                SetMemoState(myself.c_quest0, @orc_tutorial, 1);
+                DeleteRadar(myself.c_quest0, -49171, -115402, -162);
+                DeleteRadar(myself.c_quest0, -49392, -111545, -239);
+            }
+            else if (GetMemoState(myself.c_quest0, @orc_tutorial) == 1)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang5, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+                SetMemoState(myself.c_quest0, @orc_tutorial, 2);
+                ShowQuestionMark(myself.c_quest0, @long_live_lord_of_flame);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_tutorial");
+            }
+            else if (GetMemoState(myself.c_quest0, @orc_tutorial) == 2 && OwnItemCount(myself.c_quest0, @fox_fang5) == 3)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang5, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+                ShowQuestionMark(myself.c_quest0, @miners_favor);
+                SetMemoState(myself.c_quest0, @orc_tutorial, 3);
+            }
+            else if (GetMemoState(myself.c_quest0, @orc_tutorial) == 2 && OwnItemCount(myself.c_quest0, @fox_fang5) < 3)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang5, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @dwarf_tutorial) && OwnItemCount(myself.c_quest0, @fox_fang6) < 4 && myself.i_quest0 == 1)
+        {
+            if (GetMemoState(myself.c_quest0, @dwarf_tutorial) <= 0)
+            {
+                ShowQuestionMark(myself.c_quest0, @release_darkelf_elder1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_tutorial");
+                SetMemoState(myself.c_quest0, @dwarf_tutorial, 1);
+                DeleteRadar(myself.c_quest0, 108874, -173787, -553);
+            }
+            else if (GetMemoState(myself.c_quest0, @dwarf_tutorial) == 1)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang6, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+                SetMemoState(myself.c_quest0, @dwarf_tutorial, 2);
+                ShowQuestionMark(myself.c_quest0, @long_live_lord_of_flame);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_tutorial");
+            }
+            else if (GetMemoState(myself.c_quest0, @dwarf_tutorial) == 2 && OwnItemCount(myself.c_quest0, @fox_fang6) == 3)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang6, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+                ShowQuestionMark(myself.c_quest0, @miners_favor);
+                SetMemoState(myself.c_quest0, @dwarf_tutorial, 3);
+            }
+            else if (GetMemoState(myself.c_quest0, @dwarf_tutorial) == 2 && OwnItemCount(myself.c_quest0, @fox_fang6) < 3)
+            {
+                GiveItem1(myself.c_quest0, @fox_fang6, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

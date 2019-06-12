@@ -1,0 +1,4 @@
+skill_begin	skill_name = [s_melee_evasion1]	/* [멜리 이베이전] */	skill_id = 138	level = 1	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_melee_evasion2]	/* [멜리 이베이전] */	skill_id = 138	level = 2	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_melee_evasion3]	/* [멜리 이베이전] */	skill_id = 138	level = 3	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_melee_evasion4]	/* [멜리 이베이전] */	skill_id = 138	level = 4	operate_type = P	effect = {}	skill_end

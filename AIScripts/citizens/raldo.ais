@@ -1,0 +1,124 @@
+class raldo : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && OwnItemCount(talker, @watchers_eye2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask who that person is to interfere in the getting rid of a monster");
+            }
+
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 7)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask who that person is to interfere in the getting rid of a monster");
+            }
+
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 9)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give Eye of Beholder");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && OwnItemCount(talker, @watchers_eye2))
+                {
+                    ShowPage(talker, "raldo_q0211_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 7)
+                {
+                    ShowPage(talker, "raldo_q0211_06a.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 9)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        IncrementParam(talker, @PARAM_EXP, 26000);
+                        IncrementParam(talker, @PARAM_SP, 3100);
+                        ShowPage(talker, "raldo_q0211_07.htm");
+                        GiveItem1(talker, @mark_of_challenger, 1);
+                        DeleteItem1(talker, @broken_key, OwnItemCount(talker, @broken_key));
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @trial_of_challenger, 1);
+                        RemoveMemo(talker, @trial_of_challenger);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 21101)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(21101, 1000 * 100);
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_challenger)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "raldo_q0211_02.htm");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "raldo_q0211_03.htm");
+            }
+            else if (reply == 3 && OwnItemCount(talker, @watchers_eye2) > 0)
+            {
+                ShowPage(talker, "raldo_q0211_04.htm");
+                SetMemoState(talker, @trial_of_challenger, 7);
+                DeleteItem1(talker, @watchers_eye2, 1);
+            }
+            else if (reply == 4 && OwnItemCount(talker, @watchers_eye2) > 0)
+            {
+                ShowPage(talker, "raldo_q0211_06.htm");
+                SetMemoState(talker, @trial_of_challenger, 7);
+                DeleteItem1(talker, @watchers_eye2, 1);
+            }
+        }
+
+        super;
+    }
+}

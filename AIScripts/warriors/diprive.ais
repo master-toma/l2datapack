@@ -1,0 +1,29 @@
+class diprive : warrior_aggressive_casting_ddmagic
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_2u_4) && OwnItemCount(c1, @q_diprive_eye) < 20)
+        {
+            if (Rand(2) == 0)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @q_diprive_eye, 1);
+                    if (OwnItemCount(c1, @q_diprive_eye) >= 20)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

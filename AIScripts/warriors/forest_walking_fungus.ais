@@ -1,0 +1,29 @@
+class forest_walking_fungus : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (OwnItemCount(c1, @fungus_sac) < 10 && HaveMemo(c1, @bring_me_mushrooms1))
+        {
+            if (Rand(10) < 3)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @fungus_sac, 1);
+                    if (OwnItemCount(c1, @fungus_sac) == 10)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

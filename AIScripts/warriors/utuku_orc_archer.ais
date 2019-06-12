@@ -1,0 +1,24 @@
+class utuku_orc_archer : warrior_passive_use_bow
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @hidden_vein))
+        {
+            i0 = Rand(100);
+            if (i0 > 50)
+            {
+                GiveItem1(c1, @oriharukon_ore_1, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+            else if (i0 < 5)
+            {
+                GiveItem1(c1, @torn_map_fragment, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

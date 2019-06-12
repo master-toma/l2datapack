@@ -1,0 +1,11 @@
+class auction_dealer : default_npc
+{
+parameter:
+    string fnHi = "auction_dealer001.htm";
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        ShowPage(talker, fnHi);
+    }
+}

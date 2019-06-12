@@ -1,0 +1,383 @@
+class grey : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @song_of_hunters) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Hunter License");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_test_instructions_1) && (OwnItemCount(talker, @q_g_basil_scale) >= 40) + (OwnItemCount(talker, @q_karut_weed) >= 20) + (OwnItemCount(talker, @q_hakas_head) + OwnItemCount(talker, @q_jakas_head) + OwnItemCount(talker, @q_markas_head) >= 3) + (OwnItemCount(talker, @q_windsus_aleph_skin) >= 1) + (OwnItemCount(talker, @q_indigo_runestone) >= 20) + (OwnItemCount(talker, @q_sporesea_seed) >= 30) < 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about test for Hunter License 1");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_test_instructions_1) && (OwnItemCount(talker, @q_g_basil_scale) >= 40) + (OwnItemCount(talker, @q_karut_weed) >= 20) + (OwnItemCount(talker, @q_hakas_head) + OwnItemCount(talker, @q_jakas_head) + OwnItemCount(talker, @q_markas_head) >= 3) + (OwnItemCount(talker, @q_windsus_aleph_skin) >= 1) + (OwnItemCount(talker, @q_indigo_runestone) >= 20) + (OwnItemCount(talker, @q_sporesea_seed) >= 30) >= 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about test for Hunter License 1");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && talker.level < 45 && OwnItemCount(talker, @q_hunter_license_1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about Hunters Guild");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && talker.level >= 45 && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_test_instructions_2) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about Hunters Guild");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_test_instructions_2) && (OwnItemCount(talker, @q_timak_orc_totem) >= 20) + (OwnItemCount(talker, @q_trisalim_silk) >= 20) + (OwnItemCount(talker, @q_ambrosius_fruit) >= 30) + (OwnItemCount(talker, @q_balefire_crystal) >= 20) + (OwnItemCount(talker, @q_imperial_arrowhead) >= 20) + (OwnItemCount(talker, @q_athus_head) + OwnItemCount(talker, @q_lankas_head) + OwnItemCount(talker, @q_triskas_head) + OwnItemCount(talker, @q_moturas_head) + OwnItemCount(talker, @q_kalaths_head) >= 5) < 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Talk about test for Hunter License 2");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_test_instructions_2) && (OwnItemCount(talker, @q_timak_orc_totem) >= 20) + (OwnItemCount(talker, @q_trisalim_silk) >= 20) + (OwnItemCount(talker, @q_ambrosius_fruit) >= 30) + (OwnItemCount(talker, @q_balefire_crystal) >= 20) + (OwnItemCount(talker, @q_imperial_arrowhead) >= 20) + (OwnItemCount(talker, @q_athus_head) + OwnItemCount(talker, @q_lankas_head) + OwnItemCount(talker, @q_triskas_head) + OwnItemCount(talker, @q_moturas_head) + OwnItemCount(talker, @q_kalaths_head) >= 5) >= 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Talk about test for Hunter License 2");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask about Hunters Guild");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 35)
+                        {
+                            FHTML_SetFileName(fhtml0, "grey_q0335_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @song_of_hunters);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "grey_q0335_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_test_instructions_1) && (OwnItemCount(talker, @q_g_basil_scale) >= 40) + (OwnItemCount(talker, @q_karut_weed) >= 20) + (OwnItemCount(talker, @q_hakas_head) + OwnItemCount(talker, @q_jakas_head) + OwnItemCount(talker, @q_markas_head) >= 3) + (OwnItemCount(talker, @q_windsus_aleph_skin) >= 1) + (OwnItemCount(talker, @q_indigo_runestone) >= 20) + (OwnItemCount(talker, @q_sporesea_seed) >= 30) < 3)
+                {
+                    ShowPage(talker, "grey_q0335_05.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_test_instructions_1) && (OwnItemCount(talker, @q_g_basil_scale) >= 40) + (OwnItemCount(talker, @q_karut_weed) >= 20) + (OwnItemCount(talker, @q_hakas_head) + OwnItemCount(talker, @q_jakas_head) + OwnItemCount(talker, @q_markas_head) >= 3) + (OwnItemCount(talker, @q_windsus_aleph_skin) >= 1) + (OwnItemCount(talker, @q_indigo_runestone) >= 20) + (OwnItemCount(talker, @q_sporesea_seed) >= 30) >= 3)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "grey_q0335_06.htm");
+                        SetJournal(talker, @song_of_hunters, 2);
+                        GiveItem1(talker, @q_hunter_license_1, 1);
+                        DeleteItem1(talker, @q_g_basil_scale, OwnItemCount(talker, @q_g_basil_scale));
+                        DeleteItem1(talker, @q_karut_weed, OwnItemCount(talker, @q_karut_weed));
+                        DeleteItem1(talker, @q_hakas_head, OwnItemCount(talker, @q_hakas_head));
+                        DeleteItem1(talker, @q_jakas_head, OwnItemCount(talker, @q_jakas_head));
+                        DeleteItem1(talker, @q_markas_head, OwnItemCount(talker, @q_markas_head));
+                        DeleteItem1(talker, @q_windsus_aleph_skin, OwnItemCount(talker, @q_windsus_aleph_skin));
+                        DeleteItem1(talker, @q_indigo_runestone, OwnItemCount(talker, @q_indigo_runestone));
+                        DeleteItem1(talker, @q_sporesea_seed, OwnItemCount(talker, @q_sporesea_seed));
+                        DeleteItem1(talker, @q_test_instructions_1, OwnItemCount(talker, @q_test_instructions_1));
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && talker.level < 45 && OwnItemCount(talker, @q_hunter_license_1))
+                {
+                    ShowPage(talker, "grey_q0335_07.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && talker.level >= 45 && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_test_instructions_2) == 0)
+                {
+                    ShowPage(talker, "grey_q0335_08.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_test_instructions_2) && (OwnItemCount(talker, @q_timak_orc_totem) >= 20) + (OwnItemCount(talker, @q_trisalim_silk) >= 20) + (OwnItemCount(talker, @q_ambrosius_fruit) >= 30) + (OwnItemCount(talker, @q_balefire_crystal) >= 20) + (OwnItemCount(talker, @q_imperial_arrowhead) >= 20) + (OwnItemCount(talker, @q_athus_head) + OwnItemCount(talker, @q_lankas_head) + OwnItemCount(talker, @q_triskas_head) + OwnItemCount(talker, @q_moturas_head) + OwnItemCount(talker, @q_kalaths_head) >= 5) < 3)
+                {
+                    ShowPage(talker, "grey_q0335_11.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_test_instructions_2) && (OwnItemCount(talker, @q_timak_orc_totem) >= 20) + (OwnItemCount(talker, @q_trisalim_silk) >= 20) + (OwnItemCount(talker, @q_ambrosius_fruit) >= 30) + (OwnItemCount(talker, @q_balefire_crystal) >= 20) + (OwnItemCount(talker, @q_imperial_arrowhead) >= 20) + (OwnItemCount(talker, @q_athus_head) + OwnItemCount(talker, @q_lankas_head) + OwnItemCount(talker, @q_triskas_head) + OwnItemCount(talker, @q_moturas_head) + OwnItemCount(talker, @q_kalaths_head) >= 5) >= 3)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "grey_q0335_12.htm");
+                        SetJournal(talker, @song_of_hunters, 3);
+                        GiveItem1(talker, @q_hunter_license_2, 1);
+                        DeleteItem1(talker, @q_trisalim_silk, OwnItemCount(talker, @q_trisalim_silk));
+                        DeleteItem1(talker, @q_timak_orc_totem, OwnItemCount(talker, @q_timak_orc_totem));
+                        DeleteItem1(talker, @q_ambrosius_fruit, OwnItemCount(talker, @q_ambrosius_fruit));
+                        DeleteItem1(talker, @q_balefire_crystal, OwnItemCount(talker, @q_balefire_crystal));
+                        DeleteItem1(talker, @q_imperial_arrowhead, OwnItemCount(talker, @q_imperial_arrowhead));
+                        DeleteItem1(talker, @q_athus_head, OwnItemCount(talker, @q_athus_head));
+                        DeleteItem1(talker, @q_lankas_head, OwnItemCount(talker, @q_lankas_head));
+                        DeleteItem1(talker, @q_triskas_head, OwnItemCount(talker, @q_triskas_head));
+                        DeleteItem1(talker, @q_moturas_head, OwnItemCount(talker, @q_moturas_head));
+                        DeleteItem1(talker, @q_kalaths_head, OwnItemCount(talker, @q_kalaths_head));
+                        DeleteItem1(talker, @q_test_instructions_2, OwnItemCount(talker, @q_test_instructions_2));
+                        DeleteItem1(talker, @q_hunter_license_1, OwnItemCount(talker, @q_hunter_license_1));
+                    }
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2))
+                {
+                    ShowPage(talker, "grey_q0335_14.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @song_of_hunters)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @q_test_instructions_1) == 0)
+                {
+                    GiveItem1(talker, @q_test_instructions_1, 1);
+                }
+
+                ShowPage(talker, "grey_q0335_03.htm");
+                SetMemoState(talker, @song_of_hunters, 0);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, i0, reply, talker)
+    {
+        if (ask == @song_of_hunters)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @q_request_1c_1) + OwnItemCount(talker, @q_request_1c_2) + OwnItemCount(talker, @q_request_1c_3) + OwnItemCount(talker, @q_request_1c_4) + OwnItemCount(talker, @q_request_1c_5) + OwnItemCount(talker, @q_request_1c_6) + OwnItemCount(talker, @q_request_1c_7) + OwnItemCount(talker, @q_request_1c_8) + OwnItemCount(talker, @q_request_1c_9) + OwnItemCount(talker, @q_request_1c_10) + OwnItemCount(talker, @q_request_1c_11) + OwnItemCount(talker, @q_request_1c_12) + OwnItemCount(talker, @q_request_1u_1) + OwnItemCount(talker, @q_request_1u_2) + OwnItemCount(talker, @q_request_1u_3) + OwnItemCount(talker, @q_request_1u_4) + OwnItemCount(talker, @q_request_1u_5) + OwnItemCount(talker, @q_request_1u_6) + OwnItemCount(talker, @q_request_1r_1) + OwnItemCount(talker, @q_request_1r_2) + OwnItemCount(talker, @q_request_1r_3) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "grey_q0335_09.htm");
+                        GiveItem1(talker, @q_test_instructions_2, 1);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "grey_q0335_09a.htm");
+                }
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "grey_q0335_15.htm");
+            }
+            else if (reply == 3)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    RemoveMemo(talker, @song_of_hunters);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                    DeleteItem1(talker, @q_hunter_license_1, OwnItemCount(talker, @q_hunter_license_1));
+                    DeleteItem1(talker, @q_hunter_license_2, OwnItemCount(talker, @q_hunter_license_2));
+                    DeleteItem1(talker, @q_laurel_leaf_pin, OwnItemCount(talker, @q_laurel_leaf_pin));
+                    DeleteItem1(talker, @q_test_instructions_1, OwnItemCount(talker, @q_test_instructions_1));
+                    DeleteItem1(talker, @q_test_instructions_2, OwnItemCount(talker, @q_test_instructions_2));
+                    DeleteItem1(talker, @q_cybellins_request, OwnItemCount(talker, @q_cybellins_request));
+                    DeleteItem1(talker, @q_blood_crystal_1, OwnItemCount(talker, @q_blood_crystal_1));
+                    DeleteItem1(talker, @q_blood_crystal_2, OwnItemCount(talker, @q_blood_crystal_2));
+                    DeleteItem1(talker, @q_blood_crystal_3, OwnItemCount(talker, @q_blood_crystal_3));
+                    DeleteItem1(talker, @q_blood_crystal_4, OwnItemCount(talker, @q_blood_crystal_4));
+                    DeleteItem1(talker, @q_blood_crystal_5, OwnItemCount(talker, @q_blood_crystal_5));
+                    DeleteItem1(talker, @q_blood_crystal_6, OwnItemCount(talker, @q_blood_crystal_6));
+                    DeleteItem1(talker, @q_blood_crystal_7, OwnItemCount(talker, @q_blood_crystal_7));
+                    DeleteItem1(talker, @q_blood_crystal_8, OwnItemCount(talker, @q_blood_crystal_8));
+                    DeleteItem1(talker, @q_blood_crystal_9, OwnItemCount(talker, @q_blood_crystal_9));
+                    DeleteItem1(talker, @q_blood_crystal_10, OwnItemCount(talker, @q_blood_crystal_10));
+                    DeleteItem1(talker, @q_blood_crystal_x, OwnItemCount(talker, @q_blood_crystal_x));
+                    DeleteItem1(talker, @q_cybellins_dagger, OwnItemCount(talker, @q_cybellins_dagger));
+                    DeleteItem1(talker, @q_g_basil_scale, OwnItemCount(talker, @q_g_basil_scale));
+                    DeleteItem1(talker, @q_karut_weed, OwnItemCount(talker, @q_karut_weed));
+                    DeleteItem1(talker, @q_hakas_head, OwnItemCount(talker, @q_hakas_head));
+                    DeleteItem1(talker, @q_jakas_head, OwnItemCount(talker, @q_jakas_head));
+                    DeleteItem1(talker, @q_markas_head, OwnItemCount(talker, @q_markas_head));
+                    DeleteItem1(talker, @q_windsus_aleph_skin, OwnItemCount(talker, @q_windsus_aleph_skin));
+                    DeleteItem1(talker, @q_indigo_runestone, OwnItemCount(talker, @q_indigo_runestone));
+                    DeleteItem1(talker, @q_sporesea_seed, OwnItemCount(talker, @q_sporesea_seed));
+                    DeleteItem1(talker, @q_timak_orc_totem, OwnItemCount(talker, @q_timak_orc_totem));
+                    DeleteItem1(talker, @q_trisalim_silk, OwnItemCount(talker, @q_trisalim_silk));
+                    DeleteItem1(talker, @q_ambrosius_fruit, OwnItemCount(talker, @q_ambrosius_fruit));
+                    DeleteItem1(talker, @q_balefire_crystal, OwnItemCount(talker, @q_balefire_crystal));
+                    DeleteItem1(talker, @q_imperial_arrowhead, OwnItemCount(talker, @q_imperial_arrowhead));
+                    DeleteItem1(talker, @q_athus_head, OwnItemCount(talker, @q_athus_head));
+                    DeleteItem1(talker, @q_lankas_head, OwnItemCount(talker, @q_lankas_head));
+                    DeleteItem1(talker, @q_triskas_head, OwnItemCount(talker, @q_triskas_head));
+                    DeleteItem1(talker, @q_moturas_head, OwnItemCount(talker, @q_moturas_head));
+                    DeleteItem1(talker, @q_kalaths_head, OwnItemCount(talker, @q_kalaths_head));
+                    DeleteItem1(talker, @q_request_1c_1, OwnItemCount(talker, @q_request_1c_1));
+                    DeleteItem1(talker, @q_request_1c_2, OwnItemCount(talker, @q_request_1c_2));
+                    DeleteItem1(talker, @q_request_1c_3, OwnItemCount(talker, @q_request_1c_3));
+                    DeleteItem1(talker, @q_request_1c_4, OwnItemCount(talker, @q_request_1c_4));
+                    DeleteItem1(talker, @q_request_1c_5, OwnItemCount(talker, @q_request_1c_5));
+                    DeleteItem1(talker, @q_request_1c_6, OwnItemCount(talker, @q_request_1c_6));
+                    DeleteItem1(talker, @q_request_1c_7, OwnItemCount(talker, @q_request_1c_7));
+                    DeleteItem1(talker, @q_request_1c_8, OwnItemCount(talker, @q_request_1c_8));
+                    DeleteItem1(talker, @q_request_1c_9, OwnItemCount(talker, @q_request_1c_9));
+                    DeleteItem1(talker, @q_request_1c_10, OwnItemCount(talker, @q_request_1c_10));
+                    DeleteItem1(talker, @q_request_1c_11, OwnItemCount(talker, @q_request_1c_11));
+                    DeleteItem1(talker, @q_request_1c_12, OwnItemCount(talker, @q_request_1c_12));
+                    DeleteItem1(talker, @q_request_1u_1, OwnItemCount(talker, @q_request_1u_1));
+                    DeleteItem1(talker, @q_request_1u_2, OwnItemCount(talker, @q_request_1u_2));
+                    DeleteItem1(talker, @q_request_1u_3, OwnItemCount(talker, @q_request_1u_3));
+                    DeleteItem1(talker, @q_request_1u_4, OwnItemCount(talker, @q_request_1u_4));
+                    DeleteItem1(talker, @q_request_1u_5, OwnItemCount(talker, @q_request_1u_5));
+                    DeleteItem1(talker, @q_request_1u_6, OwnItemCount(talker, @q_request_1u_6));
+                    DeleteItem1(talker, @q_request_1r_1, OwnItemCount(talker, @q_request_1r_1));
+                    DeleteItem1(talker, @q_request_1r_2, OwnItemCount(talker, @q_request_1r_2));
+                    DeleteItem1(talker, @q_request_1r_3, OwnItemCount(talker, @q_request_1r_3));
+                    DeleteItem1(talker, @q_request_2c_1, OwnItemCount(talker, @q_request_2c_1));
+                    DeleteItem1(talker, @q_request_2c_2, OwnItemCount(talker, @q_request_2c_2));
+                    DeleteItem1(talker, @q_request_2c_3, OwnItemCount(talker, @q_request_2c_3));
+                    DeleteItem1(talker, @q_request_2c_4, OwnItemCount(talker, @q_request_2c_4));
+                    DeleteItem1(talker, @q_request_2c_5, OwnItemCount(talker, @q_request_2c_5));
+                    DeleteItem1(talker, @q_request_2c_6, OwnItemCount(talker, @q_request_2c_6));
+                    DeleteItem1(talker, @q_request_2c_7, OwnItemCount(talker, @q_request_2c_7));
+                    DeleteItem1(talker, @q_request_2c_8, OwnItemCount(talker, @q_request_2c_8));
+                    DeleteItem1(talker, @q_request_2c_9, OwnItemCount(talker, @q_request_2c_9));
+                    DeleteItem1(talker, @q_request_2c_10, OwnItemCount(talker, @q_request_2c_10));
+                    DeleteItem1(talker, @q_request_2c_11, OwnItemCount(talker, @q_request_2c_11));
+                    DeleteItem1(talker, @q_request_2c_12, OwnItemCount(talker, @q_request_2c_12));
+                    DeleteItem1(talker, @q_request_2u_1, OwnItemCount(talker, @q_request_2u_1));
+                    DeleteItem1(talker, @q_request_2u_2, OwnItemCount(talker, @q_request_2u_2));
+                    DeleteItem1(talker, @q_request_2u_3, OwnItemCount(talker, @q_request_2u_3));
+                    DeleteItem1(talker, @q_request_2u_4, OwnItemCount(talker, @q_request_2u_4));
+                    DeleteItem1(talker, @q_request_2u_5, OwnItemCount(talker, @q_request_2u_5));
+                    DeleteItem1(talker, @q_request_2u_6, OwnItemCount(talker, @q_request_2u_6));
+                    DeleteItem1(talker, @q_request_2r_1, OwnItemCount(talker, @q_request_2r_1));
+                    DeleteItem1(talker, @q_request_2r_2, OwnItemCount(talker, @q_request_2r_2));
+                    DeleteItem1(talker, @q_request_2r_3, OwnItemCount(talker, @q_request_2r_3));
+                    DeleteItem1(talker, @q_charm_of_kadesh, OwnItemCount(talker, @q_charm_of_kadesh));
+                    DeleteItem1(talker, @q_timak_jade_necklace, OwnItemCount(talker, @q_timak_jade_necklace));
+                    DeleteItem1(talker, @q_en_golem_shard, OwnItemCount(talker, @q_en_golem_shard));
+                    DeleteItem1(talker, @q_g_monstereye_meat, OwnItemCount(talker, @q_g_monstereye_meat));
+                    DeleteItem1(talker, @q_dire_wyrm_egg, OwnItemCount(talker, @q_dire_wyrm_egg));
+                    DeleteItem1(talker, @q_grd_basilisk_talon, OwnItemCount(talker, @q_grd_basilisk_talon));
+                    DeleteItem1(talker, @q_revenants_chains, OwnItemCount(talker, @q_revenants_chains));
+                    DeleteItem1(talker, @q_windsus_tusk, OwnItemCount(talker, @q_windsus_tusk));
+                    DeleteItem1(talker, @q_grandis_skull, OwnItemCount(talker, @q_grandis_skull));
+                    DeleteItem1(talker, @q_taik_obsidian_amulet, OwnItemCount(talker, @q_taik_obsidian_amulet));
+                    DeleteItem1(talker, @q_karul_bugbear_head, OwnItemCount(talker, @q_karul_bugbear_head));
+                    DeleteItem1(talker, @q_tamlin_ivory_charm, OwnItemCount(talker, @q_tamlin_ivory_charm));
+                    DeleteItem1(talker, @q_fang_of_narak, OwnItemCount(talker, @q_fang_of_narak));
+                    DeleteItem1(talker, @q_en_gargoyle_horn, OwnItemCount(talker, @q_en_gargoyle_horn));
+                    DeleteItem1(talker, @q_coiled_serpent_totem, OwnItemCount(talker, @q_coiled_serpent_totem));
+                    DeleteItem1(talker, @q_totem_of_kadesh, OwnItemCount(talker, @q_totem_of_kadesh));
+                    DeleteItem1(talker, @q_kaikis_head, OwnItemCount(talker, @q_kaikis_head));
+                    DeleteItem1(talker, @q_kronbe_venom_sac, OwnItemCount(talker, @q_kronbe_venom_sac));
+                    DeleteItem1(talker, @q_evas_charm, OwnItemCount(talker, @q_evas_charm));
+                    DeleteItem1(talker, @q_titans_tablet, OwnItemCount(talker, @q_titans_tablet));
+                    DeleteItem1(talker, @q_book_of_shunaiman, OwnItemCount(talker, @q_book_of_shunaiman));
+                    DeleteItem1(talker, @q_rot_tree_spores, OwnItemCount(talker, @q_rot_tree_spores));
+                    DeleteItem1(talker, @q_trisalim_venom_sac, OwnItemCount(talker, @q_trisalim_venom_sac));
+                    DeleteItem1(talker, @q_taik_orc_totem, OwnItemCount(talker, @q_taik_orc_totem));
+                    DeleteItem1(talker, @q_harit_barbed_necklace, OwnItemCount(talker, @q_harit_barbed_necklace));
+                    DeleteItem1(talker, @q_coin_of_old_empire, OwnItemCount(talker, @q_coin_of_old_empire));
+                    DeleteItem1(talker, @q_skin_of_farcran, OwnItemCount(talker, @q_skin_of_farcran));
+                    DeleteItem1(talker, @q_tempest_shard, OwnItemCount(talker, @q_tempest_shard));
+                    DeleteItem1(talker, @q_tsunami_shard, OwnItemCount(talker, @q_tsunami_shard));
+                    DeleteItem1(talker, @q_pan_ruem_mane, OwnItemCount(talker, @q_pan_ruem_mane));
+                    DeleteItem1(talker, @q_hamadryad_shard, OwnItemCount(talker, @q_hamadryad_shard));
+                    DeleteItem1(talker, @q_vanor_silenos_mane, OwnItemCount(talker, @q_vanor_silenos_mane));
+                    DeleteItem1(talker, @q_talk_bugbear_totem, OwnItemCount(talker, @q_talk_bugbear_totem));
+                    DeleteItem1(talker, @q_okuns_head, OwnItemCount(talker, @q_okuns_head));
+                    DeleteItem1(talker, @q_kakrans_head, OwnItemCount(talker, @q_kakrans_head));
+                    DeleteItem1(talker, @q_narcissus_soulstone, OwnItemCount(talker, @q_narcissus_soulstone));
+                    DeleteItem1(talker, @q_diprive_eye, OwnItemCount(talker, @q_diprive_eye));
+                    DeleteItem1(talker, @q_unicorns_horn, OwnItemCount(talker, @q_unicorns_horn));
+                    DeleteItem1(talker, @q_kerunos_gold_mane, OwnItemCount(talker, @q_kerunos_gold_mane));
+                    DeleteItem1(talker, @q_skull_of_executed, OwnItemCount(talker, @q_skull_of_executed));
+                    DeleteItem1(talker, @q_bust_of_travis, OwnItemCount(talker, @q_bust_of_travis));
+                    DeleteItem1(talker, @q_sword_of_cadmus, OwnItemCount(talker, @q_sword_of_cadmus));
+                    if (OwnItemCount(talker, @q_laurel_leaf_pin) < 20)
+                    {
+                        ShowPage(talker, "grey_q0335_16.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "grey_q0335_17.htm");
+                        i0 = Rand(10);
+                        GiveItem1(talker, @adena, 20000);
+                    }
+                }
+            }
+            else if (reply == 4)
+            {
+                ShowPage(talker, "grey_q0335_18.htm");
+            }
+        }
+
+        super;
+    }
+}

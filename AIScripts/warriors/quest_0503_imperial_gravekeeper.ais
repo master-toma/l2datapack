@@ -1,0 +1,116 @@
+class quest_0503_imperial_gravekeeper : default_npc
+{
+handler:
+    EventHandler NO_DESIRE()
+    {
+        AddMoveAroundDesire(5, 5);
+    }
+
+    EventHandler CREATED()
+    {
+        myself.i_ai0 = 1;
+        myself.i_ai1 = 50;
+        myself.i_ai2 = 80;
+        myself.sm.weight_point = 10;
+    }
+
+    EventHandler ATTACKED(attacker, damage, skill_name_id)
+    {
+        if (FloatToInt(myself.sm.hp / myself.sm.max_hp * 100) <= myself.i_ai1)
+        {
+            if (myself.i_ai0 == 1 || myself.i_ai0 == 3)
+            {
+                myself.i_ai0 == 2;
+                InstantTeleportInMyTerritory(179520, 6464, -2706, 200);
+            }
+            else
+            {
+                myself.i_ai0 == 3;
+                InstantTeleportInMyTerritory(171104, 6496, -2706, 200);
+            }
+
+            if (Skill_GetConsumeMP(@s_quest_dark_heal) < myself.sm.mp && Skill_GetConsumeHP(@s_quest_dark_heal) < myself.sm.hp && Skill_InReuseDelay(@s_quest_dark_heal) == @FALSE)
+            {
+                AddUseSkillDesire(myself.sm, @s_quest_dark_heal, @ST_HEAL, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+
+            if (myself.i_ai1 == 50)
+            {
+                myself.i_ai1 = 30;
+            }
+            else if (myself.i_ai1 == 30)
+            {
+                myself.i_ai1 = -1;
+            }
+        }
+
+        if (FloatToInt(myself.sm.hp / myself.sm.max_hp * 100) <= myself.i_ai2)
+        {
+            if (myself.i_ai2 == 80)
+            {
+                myself.i_ai2 = 40;
+            }
+            else if (myself.i_ai2 == 40)
+            {
+                myself.i_ai2 = 20;
+            }
+            else
+            {
+                myself.i_ai2 = -1;
+            }
+
+            CreateOnePrivate(@imperial_slave, "imperial_slave", 0, 1);
+            CreateOnePrivate(@imperial_slave, "imperial_slave", 0, 1);
+            CreateOnePrivate(@imperial_slave, "imperial_slave", 0, 1);
+            CreateOnePrivate(@imperial_slave, "imperial_slave", 0, 1);
+        }
+
+        if (FloatToInt(myself.sm.hp / myself.sm.max_hp * 100) > 50)
+        {
+            myself.i_ai1 = 50;
+        }
+        else if (FloatToInt(myself.sm.hp / myself.sm.max_hp * 100) > 30)
+        {
+            myself.i_ai1 = 30;
+        }
+
+        if (FloatToInt(myself.sm.hp / myself.sm.max_hp * 100) > 80)
+        {
+            myself.i_ai2 = 80;
+        }
+        else if (FloatToInt(myself.sm.hp / myself.sm.max_hp * 100) > 40)
+        {
+            myself.i_ai2 = 40;
+        }
+        else if (FloatToInt(myself.sm.hp / myself.sm.max_hp * 100) > 20)
+        {
+            myself.i_ai2 = 20;
+        }
+
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, damage / myself.sm.max_hp / 0.05 * 100);
+        }
+    }
+
+    EventHandler PARTY_ATTACKED(attacker, private, damage)
+    {
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, damage / myself.sm.max_hp / 0.05 * 50);
+        }
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, damage)
+    {
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, damage / myself.sm.max_hp / 0.05 * 50);
+        }
+    }
+
+    EventHandler OUT_OF_TERRITORY()
+    {
+        RemoveAllAttackDesire();
+    }
+}

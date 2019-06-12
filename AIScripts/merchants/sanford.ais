@@ -1,0 +1,19 @@
+class sanford : mseller
+{
+property:
+    BuySellList SellList0 = {
+        {"mticket_dion_sword_fix"; 15};
+        {"mticket_dion_pole_fix"; 15};
+        {"mticket_dion_bow_fix"; 15};
+        {"mticket_dion_cleric_fix"; 15};
+        {"mticket_dion_wizard_fix"; 15};
+        {"mticket_dion_sword_move"; 15};
+        {"mticket_dion_pole_move"; 15};
+        {"mticket_dion_bow_move"; 15};
+        {"mticket_dion_cleric_move"; 15};
+        {"mticket_dion_wizard_move"; 15};
+        {"mticket_dion_teleporter1"; 15};
+        {"mticket_dion_teleporter2"; 15};
+        {"mticket_dion_teleporter3"; 15}
+    };
+}

@@ -1,0 +1,111 @@
+class wyrm_shamhai : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 6 && OwnItemCount(talker, @q_juice_of_monkshood) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Use Juice of Bagot");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 7 && OwnItemCount(talker, @q_egg_of_wyrm_shamhai) < 20 && OwnItemCount(talker, @q_scale_of_wyrm_shamhai) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about eggs");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && OwnItemCount(talker, @q_egg_of_wyrm_shamhai) >= 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show eggs that you found and brought");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 8 && OwnItemCount(talker, @q_egg_of_wyrm_shamhai) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about eggs");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 6 && OwnItemCount(talker, @q_juice_of_monkshood) == 1)
+                {
+                    ShowPage(talker, "wyrm_shamhai_q0420_02.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 7 && OwnItemCount(talker, @q_egg_of_wyrm_shamhai) < 20 && OwnItemCount(talker, @q_scale_of_wyrm_shamhai) == 1)
+                {
+                    ShowPage(talker, "wyrm_shamhai_q0420_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && OwnItemCount(talker, @q_egg_of_wyrm_shamhai) >= 20)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @q_egg_of_wyrm_shamhai, OwnItemCount(talker, @q_egg_of_wyrm_shamhai) - 1);
+                        DeleteItem1(talker, @q_scale_of_wyrm_shamhai, OwnItemCount(talker, @q_scale_of_wyrm_shamhai));
+                        SetMemoState(talker, @little_wings, 8);
+                        ShowPage(talker, "wyrm_shamhai_q0420_05.htm");
+                        SetJournal(talker, @little_wings, 7);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 8 && OwnItemCount(talker, @q_egg_of_wyrm_shamhai) == 1)
+                {
+                    ShowPage(talker, "wyrm_shamhai_q0420_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @little_wings)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(talker, @q_scale_of_wyrm_shamhai, 1);
+                    DeleteItem1(talker, @q_juice_of_monkshood, OwnItemCount(talker, @q_juice_of_monkshood));
+                    SetMemoState(talker, @little_wings, 7);
+                    ShowPage(talker, "wyrm_shamhai_q0420_03.htm");
+                    SetJournal(talker, @little_wings, 6);
+                }
+            }
+        }
+
+        super;
+    }
+}

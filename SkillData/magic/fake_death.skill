@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_fake_death1]	/* [페이크 데스] */	skill_id = 60	level = 1	operate_type = T	effect = {{c_fake_death;-10;5};{p_avoid_agro}}	mp_consume1 = 200	reuse_delay = 0	target_type = self	next_action = fake_death	skill_end

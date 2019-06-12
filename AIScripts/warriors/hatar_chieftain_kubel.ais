@@ -1,0 +1,25 @@
+class hatar_chieftain_kubel : warrior_aggressive_immediate
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_2r_2) && OwnItemCount(c1, @q_bust_of_travis) < 1)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @q_bust_of_travis, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+                if (Rand(2) == 0)
+                {
+                    CreateOnePrivate(@black_legion_stormtrooper, "black_legion_stormtrooper", 0, 1);
+                    CreateOnePrivate(@black_legion_stormtrooper, "black_legion_stormtrooper", 0, 1);
+                    Say(MakeFString(33511, "", "", "", "", ""));
+                }
+            }
+        }
+
+        super;
+    }
+}

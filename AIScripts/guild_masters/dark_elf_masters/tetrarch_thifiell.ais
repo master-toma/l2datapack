@@ -1,0 +1,292 @@
+class tetrarch_thifiell : dark_elf_lv1_master
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @forgotten_truth) == 0 && GetOneTimeQuestFlag(talker, @forgotten_truth) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear a story long forgotten");
+            }
+
+            if (HaveMemo(talker, @forgotten_truth) == 0 && GetOneTimeQuestFlag(talker, @forgotten_truth) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear a story long forgotten");
+            }
+
+            if (HaveMemo(talker, @forgotten_truth))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about a translated version");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 4 && OwnItemCount(talker, @letter_to_darkelf))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that you want to get Confidence of Dark Elf");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 6 && OwnItemCount(talker, @order_of_clayton) && OwnItemCount(talker, @stakato_ichor) + OwnItemCount(talker, @honey_dew) + OwnItemCount(talker, @basilisk_plasma) == 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give ingredients to remove the seal");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 7)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Bid farewell");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Say that you want to get Confidence of Dark Elf");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @kairas_recommend))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Give Letter of Recommendation from Kaira");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @palus_charm) && OwnItemCount(talker, @thifiels_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Ask who you should meet in order to go through the ceremony");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @palus_charm) && OwnItemCount(talker, @arkenias_note))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Ask about Writings of Abyss");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @palus_charm) && OwnItemCount(talker, @arkenias_letter1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Give Note from Arkenia");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @forgotten_truth) == 0 && GetOneTimeQuestFlag(talker, @forgotten_truth) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_dark_elf)
+                        {
+                            ShowPage(talker, "tetrarch_thifiell_q0106_00.htm");
+                        }
+                        else if (talker.level >= 10)
+                        {
+                            ShowPage(talker, "tetrarch_thifiell_q0106_03.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "tetrarch_thifiell_q0106_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @forgotten_truth) == 0 && GetOneTimeQuestFlag(talker, @forgotten_truth) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @forgotten_truth))
+                {
+                    if ((OwnItemCount(talker, @onyx_talisman1) || OwnItemCount(talker, @onyx_talisman2)) && OwnItemCount(talker, @kartas_translation) == 0)
+                    {
+                        ShowPage(talker, "tetrarch_thifiell_q0106_06.htm");
+                    }
+                    else if (OwnItemCount(talker, @kartas_translation) && GetOneTimeQuestFlag(talker, @forgotten_truth) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tetrarch_thifiell_q0106_07.htm");
+                            DeleteItem1(talker, @kartas_translation, 1);
+                            GiveItem1(talker, @eldritch_dagger, 1);
+                            RemoveMemo(talker, @forgotten_truth);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            SetOneTimeQuestFlag(talker, @forgotten_truth, 1);
+                        }
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 4 && OwnItemCount(talker, @letter_to_darkelf))
+                {
+                    ShowPage(talker, "tetrarch_thifiell_q0217_01.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 6 && OwnItemCount(talker, @order_of_clayton) && OwnItemCount(talker, @stakato_ichor) + OwnItemCount(talker, @honey_dew) + OwnItemCount(talker, @basilisk_plasma) == 3)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "tetrarch_thifiell_q0217_03.htm");
+                        GiveItem1(talker, @scroll_of_darkelf_trust, 1);
+                        DeleteItem1(talker, @order_of_clayton, OwnItemCount(talker, @order_of_clayton));
+                        DeleteItem1(talker, @basilisk_plasma, OwnItemCount(talker, @basilisk_plasma));
+                        DeleteItem1(talker, @stakato_ichor, OwnItemCount(talker, @stakato_ichor));
+                        DeleteItem1(talker, @honey_dew, OwnItemCount(talker, @honey_dew));
+                        SetMemoState(talker, @testimoney_of_trust, 7);
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 7)
+                {
+                    ShowPage(talker, "tetrarch_thifiell_q0217_04.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 5)
+                {
+                    ShowPage(talker, "tetrarch_thifiell_q0217_05.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @kairas_recommend))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "tetrarch_thifiell_q0219_01.htm");
+                        GiveItem1(talker, @thifiels_letter, 1);
+                        GiveItem1(talker, @palus_charm, 1);
+                        DeleteItem1(talker, @kairas_recommend, 1);
+                    }
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @palus_charm) && OwnItemCount(talker, @thifiels_letter))
+                {
+                    ShowPage(talker, "tetrarch_thifiell_q0219_02.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @palus_charm) && OwnItemCount(talker, @arkenias_note))
+                {
+                    ShowPage(talker, "tetrarch_thifiell_q0219_03.htm");
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @palus_charm) && OwnItemCount(talker, @arkenias_letter1))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        IncrementParam(talker, @PARAM_EXP, 35000);
+                        IncrementParam(talker, @PARAM_SP, 4400);
+                        ShowPage(talker, "tetrarch_thifiell_q0219_04.htm");
+                        GiveItem1(talker, @mark_of_fate, 1);
+                        DeleteItem1(talker, @arkenias_letter1, 1);
+                        DeleteItem1(talker, @palus_charm, 1);
+                        RemoveMemo(talker, @testimony_of_fate);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @testimony_of_fate, 1);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @forgotten_truth)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "tetrarch_thifiell_q0106_05.htm");
+                GiveItem1(talker, @onyx_talisman1, 1);
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @forgotten_truth)
+        {
+            if (reply == 1)
+            {
+                FHTML_SetFileName(fhtml0, "tetrarch_thifiell_q0106_04.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @forgotten_truth);
+                ShowFHTML(talker, fhtml0);
+            }
+        }
+
+        if (ask == @testimoney_of_trust)
+        {
+            if (reply == 1 && OwnItemCount(talker, @letter_to_darkelf) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tetrarch_thifiell_q0217_02.htm");
+                    GiveItem1(talker, @letter_of_thifiell, 1);
+                    DeleteItem1(talker, @letter_to_darkelf, 1);
+                    SetMemoState(talker, @testimoney_of_trust, 5);
+                }
+            }
+        }
+
+        super;
+    }
+}

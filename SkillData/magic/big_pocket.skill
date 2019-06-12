@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_big_pocket]	/* [빅 포켓] */	skill_id = 140	level = 1	operate_type = P	effect = {}	skill_end

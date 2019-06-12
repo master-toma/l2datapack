@@ -1,0 +1,18 @@
+class kaboo_orc_ft_sub_ldr : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @hunt_for_orcs1))
+        {
+            if (Rand(10) > 4)
+            {
+                GiveItem1(c1, @orc_necklace1, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

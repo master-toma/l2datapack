@@ -1,0 +1,111 @@
+class minx : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @collect_arrowheads) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about hobbies");
+            }
+
+            if (HaveMemo(talker, @collect_arrowheads) != 0 && OwnItemCount(talker, @orcish_arrowhead) < 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the Orc Archer");
+            }
+
+            if (HaveMemo(talker, @collect_arrowheads) != 0 && OwnItemCount(talker, @orcish_arrowhead) >= 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show the arrowhead of Orc");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @collect_arrowheads) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 10)
+                        {
+                            FHTML_SetFileName(fhtml0, "minx_q0303_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @collect_arrowheads);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "minx_q0303_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @collect_arrowheads) != 0 && OwnItemCount(talker, @orcish_arrowhead) < 10)
+                {
+                    ShowPage(talker, "minx_q0303_05.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @collect_arrowheads) != 0 && OwnItemCount(talker, @orcish_arrowhead) >= 10)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @orcish_arrowhead, OwnItemCount(talker, @orcish_arrowhead));
+                        RemoveMemo(talker, @collect_arrowheads);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        GiveItem1(talker, @adena, 1000);
+                        IncrementParam(talker, @PARAM_EXP, 1200);
+                        ShowPage(talker, "minx_q0303_06.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @collect_arrowheads)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "minx_q0303_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,206 @@
+class parina : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_wizard) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to a Wizard");
+            }
+
+            if (HaveMemo(talker, @path_to_wizard) != 0 && (OwnItemCount(talker, @flame_earing) == 0 || OwnItemCount(talker, @wind_bangel) == 0 || OwnItemCount(talker, @water_necklace) == 0 || OwnItemCount(talker, @earth_ring) == 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the flame salamander");
+            }
+
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @flame_earing) != 0 && OwnItemCount(talker, @wind_bangel) != 0 && OwnItemCount(talker, @water_necklace) != 0 && OwnItemCount(talker, @earth_ring) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show the proof of branch");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @rukals_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about the singing sound");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @parinas_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about Singing Flower");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @lilac_charm) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about Singing Flower");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask about Singing Flower");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        FHTML_SetFileName(fhtml0, "parina_q0404_04.htm");
+                        FHTML_SetInt(fhtml0, "quest_id", @path_to_wizard);
+                        ShowFHTML(talker, fhtml0);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && (OwnItemCount(talker, @flame_earing) == 0 || OwnItemCount(talker, @wind_bangel) == 0 || OwnItemCount(talker, @water_necklace) == 0 || OwnItemCount(talker, @earth_ring) == 0))
+                {
+                    ShowPage(talker, "parina_q0404_05.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @flame_earing) != 0 && OwnItemCount(talker, @wind_bangel) != 0 && OwnItemCount(talker, @water_necklace) != 0 && OwnItemCount(talker, @earth_ring) != 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @flame_earing, OwnItemCount(talker, @flame_earing));
+                        DeleteItem1(talker, @wind_bangel, OwnItemCount(talker, @wind_bangel));
+                        DeleteItem1(talker, @water_necklace, OwnItemCount(talker, @water_necklace));
+                        DeleteItem1(talker, @earth_ring, OwnItemCount(talker, @earth_ring));
+                        RemoveMemo(talker, @path_to_wizard);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        if (OwnItemCount(talker, @bead_of_season) == 0)
+                        {
+                            GiveItem1(talker, @bead_of_season, 1);
+                        }
+
+                        ShowPage(talker, "parina_q0404_06.htm");
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @rukals_letter) == 1)
+                {
+                    ShowPage(talker, "parina_q0228_01.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @parinas_letter) == 1)
+                {
+                    ShowPage(talker, "parina_q0228_03.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @lilac_charm) == 1)
+                {
+                    ShowPage(talker, "parina_q0228_04.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1)
+                {
+                    ShowPage(talker, "parina_q0228_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_wizard)
+        {
+            if (talker.occupation == @mage)
+            {
+                if (talker.level >= 19)
+                {
+                    if (OwnItemCount(talker, @bead_of_season))
+                    {
+                        ShowPage(talker, "parina_q0404_03.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "parina_q0404_08.htm");
+                        SetMemo(talker, quest_id);
+                        SoundEffect(talker, "ItemSound.quest_accept");
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "parina_q0404_02.htm");
+                }
+            }
+            else if (talker.occupation == @wizard)
+            {
+                ShowPage(talker, "parina_q0404_02a.htm");
+            }
+            else
+            {
+                ShowPage(talker, "parina_q0404_01.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_magus)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @rukals_letter) >= 1)
+                {
+                    ShowPage(talker, "parina_q0228_02.htm");
+                    DeleteItem1(talker, @rukals_letter, 1);
+                    GiveItem1(talker, @parinas_letter, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

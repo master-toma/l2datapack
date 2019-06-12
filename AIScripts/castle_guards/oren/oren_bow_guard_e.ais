@@ -1,0 +1,3 @@
+class oren_bow_guard_e : ai_gludio_bow_guard
+{
+}

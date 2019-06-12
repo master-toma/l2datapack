@@ -1,0 +1,50 @@
+class honey_bear : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_scavenger) == 1 && OwnItemCount(myself.c_quest0, @bear_pic) == 1 && OwnItemCount(myself.c_quest0, @honey_jar) < 5 && myself.i_quest0 == 2)
+        {
+            if (OwnItemCount(myself.c_quest0, @honey_jar) == 4)
+            {
+                GiveItem1(myself.c_quest0, @honey_jar, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(myself.c_quest0, @honey_jar, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage, skill_name_id)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            if (skill_name_id / 256 == @s_spoil1 / 256)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 1:
+            if (skill_name_id / 256 == @s_spoil1 / 256)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

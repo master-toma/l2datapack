@@ -1,0 +1,3 @@
+class turek_war_hound : warrior_passive_run_away_to_clan
+{
+}

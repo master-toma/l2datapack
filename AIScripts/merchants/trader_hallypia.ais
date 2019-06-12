@@ -1,0 +1,30 @@
+class trader_hallypia : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"necklace_of_wisdom"; 30};
+        {"blue_diamond_necklace"; 30};
+        {"necklace_of_devotion"; 30};
+        {"cat'seye_earing"; 30};
+        {"coral_earing"; 30};
+        {"red_cresent_earing"; 30};
+        {"ring_of_wisdom"; 30};
+        {"blue_coral_ring"; 30};
+        {"ring_of_devotion"; 30};
+        {"world_map"; 30};
+        {"key_of_thief"; 30};
+        {"spirit_ore"; 30};
+        {"soul_ore"; 30};
+        {"wooden_arrow"; 30};
+        {"bone_arrow"; 30};
+        {"quick_step_potion"; 30};
+        {"swift_attack_potion"; 30};
+        {"healing_potion"; 30};
+        {"advanced_antidote"; 30};
+        {"emergency_dressing"; 30};
+        {"scroll_of_escape"; 30};
+        {"scroll_of_resurrection"; 30};
+        {"scroll_of_escape_to_agit"; 30};
+        {"gemstone_d"; 30}
+    };
+}

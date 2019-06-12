@@ -1,0 +1,16 @@
+class singing_flower_nightmare : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_magus) && OwnItemCount(c1, @lilac_charm) == 1 && OwnItemCount(c1, @golden_seed2) == 0)
+        {
+            GiveItem1(c1, @golden_seed2, 1);
+            Say(MakeFString(22820, "", "", "", "", ""));
+            SoundEffect(c1, "ItemSound.quest_middle");
+        }
+
+        super;
+    }
+}

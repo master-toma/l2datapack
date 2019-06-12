@@ -1,0 +1,3 @@
+class scavenger_spider : warrior_aggressive
+{
+}

@@ -1,0 +1,50 @@
+class mass_teleporter : delayed_teleporter
+{
+parameter:
+    string fnBrokenCtrlTower = "thi.htm";
+    int pos_x1 = 1;
+    int pos_y1 = 1;
+    int pos_z1 = 1;
+    
+handler:
+    EventHandler CREATED()
+    {
+        myself.i_ai0 = 0;
+    }
+
+    EventHandler TALKED(talker)
+    {
+        if (Castle_IsUnderSiege() && Castle_GetLifeControlLevel() == 0)
+        {
+            ShowPage(talker, fnBrokenCtrlTower);
+        }
+        else
+        {
+            ShowPage(talker, fnHi);
+        }
+    }
+
+    EventHandler TELEPORT_REQUESTED(talker)
+    {
+        if (Castle_IsUnderSiege() && Castle_GetLifeControlLevel() == 0)
+        {
+            AddTimerEx(1001, 480000);
+        }
+        else
+        {
+            AddTimerEx(1001, 30000);
+        }
+
+        myself.i_ai0 = 1;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 1001)
+        {
+            SetTimerPeriodByTick(0);
+            InstantTeleportInMyTerritory(pos_x1, pos_y1, pos_z1, 200);
+            myself.i_ai0 = 0;
+        }
+    }
+}

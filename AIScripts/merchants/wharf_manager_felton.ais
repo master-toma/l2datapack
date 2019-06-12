@@ -1,0 +1,8 @@
+class wharf_manager_felton : wharf_keeper
+{
+property:
+    BuySellList SellList0 = {
+        {"boat_ticket_talk_kiran"; 20};
+        {"boat_ticket_kiran_talk"; 20}
+    };
+}

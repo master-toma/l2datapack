@@ -1,0 +1,6 @@
+skill_begin	skill_name = [s_meditation1]	/* [바이탈 포스] */	skill_id = 148	level = 1	operate_type = P	effect = {{p_hp_regen_by_move_mode;sit;1.9;diff};{p_mp_regen_by_move_mode;sit;0.8;diff}}	skill_end
+skill_begin	skill_name = [s_meditation2]	/* [바이탈 포스] */	skill_id = 148	level = 2	operate_type = P	effect = {{p_hp_regen_by_move_mode;sit;2.6;diff};{p_mp_regen_by_move_mode;sit;1;diff}}	skill_end
+skill_begin	skill_name = [s_meditation3]	/* [바이탈 포스] */	skill_id = 148	level = 3	operate_type = P	effect = {{p_hp_regen_by_move_mode;sit;3;diff};{p_mp_regen_by_move_mode;sit;1.2;diff}}	skill_end
+skill_begin	skill_name = [s_meditation4]	/* [바이탈 포스] */	skill_id = 148	level = 4	operate_type = P	effect = {{p_hp_regen_by_move_mode;sit;3.5;diff};{p_mp_regen_by_move_mode;sit;1.4;diff}}	skill_end
+skill_begin	skill_name = [s_meditation5]	/* [바이탈 포스] */	skill_id = 148	level = 5	operate_type = P	effect = {{p_hp_regen_by_move_mode;sit;4.1;diff};{p_mp_regen_by_move_mode;sit;1.6;diff}}	skill_end
+skill_begin	skill_name = [s_meditation6]	/* [바이탈 포스] */	skill_id = 148	level = 6	operate_type = P	effect = {{p_hp_regen_by_move_mode;sit;4.6;diff};{p_mp_regen_by_move_mode;sit;1.7;diff}}	skill_end

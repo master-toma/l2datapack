@@ -1,0 +1,33 @@
+class warrior_casting_sleep_magic : warrior
+{
+parameter:
+    int SleepMagic = @s_npc_sleep1;
+    
+handler:
+    EventHandler CREATED()
+    {
+        myself.i_ai0 = 0;
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage, i6)
+    {
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            i6 = Rand(100);
+            if (myself.i_ai0 == 0)
+            {
+                myself.i_ai0 = 1;
+            }
+            else if (myself.i_ai0 == 1 && myself.top_desire_target != attacker && i6 < 30 && myself.sm.hp > myself.sm.max_hp / 10.0)
+            {
+                if (Skill_GetConsumeMP(SleepMagic) < myself.sm.mp && Skill_GetConsumeHP(SleepMagic) < myself.sm.hp && Skill_InReuseDelay(SleepMagic) == @FALSE)
+                {
+                    AddUseSkillDesire(attacker, SleepMagic, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+        }
+
+        super;
+    }
+}

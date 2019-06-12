@@ -1,0 +1,155 @@
+class karta : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(i0, quest_id, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @delf_tutorial) == 0 && GetOneTimeQuestFlag(talker, @delf_tutorial) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Listen");
+            }
+
+            if (HaveMemo(talker, @delf_tutorial) && OwnItemCount(talker, @blood_of_jundin) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Listen");
+            }
+
+            if (HaveMemo(talker, @delf_tutorial) && OwnItemCount(talker, @blood_of_jundin))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Listen");
+            }
+
+            if (HaveMemo(talker, @forgotten_truth))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about a translated version");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @delf_tutorial) == 0 && GetOneTimeQuestFlag(talker, @delf_tutorial) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (GetOneTimeQuestFlag(talker, @delf_tutorial) == 0 && HaveMemo(talker, @delf_tutorial) == 0 && talker.level < 10 && talker.race == @race_dark_elf)
+                        {
+                            DeleteRadar(talker, 28612, 10618, -4240);
+                            DeleteRadar(talker, 29648, 10736, -4240);
+                            DeleteRadar(talker, 28640, 11336, -4240);
+                            DeleteRadar(talker, 29672, 11286, -4240);
+                            ShowPage(talker, "karta_q0204_01.htm");
+                            SetMemo(talker, @delf_tutorial);
+                            SoundEffect(talker, "ItemSound.quest_accept");
+                            ShowQuestionMark(talker, 6);
+                            SoundEffect(talker, "ItemSound.quest_tutorial");
+                            ShowRadar(talker, 29370, 14327, -3719);
+                        }
+                        else if (talker.race != @race_dark_elf)
+                        {
+                            ShowPage(talker, "karta_q0204_06.htm");
+                        }
+                        else if (talker.level >= 10)
+                        {
+                            ShowPage(talker, "karta_q0204_05.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @delf_tutorial) && OwnItemCount(talker, @blood_of_jundin) == 0)
+                {
+                    if (OwnItemCount(talker, @fox_fang4) == 4)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            DeleteItem1(talker, @fox_fang4, OwnItemCount(talker, @fox_fang4));
+                            GiveItem1(talker, @blood_of_jundin, 1);
+                            GiveItem1(talker, @world_map, 1);
+                            ShowPage(talker, "karta_q0204_02.htm");
+                            DeleteRadar(talker, 28612, 10618, -4240);
+                            DeleteRadar(talker, 29648, 10736, -4240);
+                            DeleteRadar(talker, 28640, 11336, -4240);
+                            DeleteRadar(talker, 29672, 11286, -4240);
+                            ShowRadar(talker, 29560, 11030, -4224);
+                            i0 = GetMemoState(talker, 255) & 0x7fffff00;
+                            SetMemoState(talker, 255, i0 | 0x4);
+                        }
+                    }
+                    else if (OwnItemCount(talker, @fox_fang4) < 4)
+                    {
+                        ShowPage(talker, "karta_q0204_03.htm");
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @delf_tutorial) && OwnItemCount(talker, @blood_of_jundin))
+                {
+                    ShowPage(talker, "karta_q0204_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @forgotten_truth))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @onyx_talisman1))
+                        {
+                            ShowPage(talker, "karta_q0106_01.htm");
+                            DeleteItem1(talker, @onyx_talisman1, 1);
+                            GiveItem1(talker, @onyx_talisman2, 1);
+                        }
+                        else if (OwnItemCount(talker, @onyx_talisman2) && (OwnItemCount(talker, @ancient_scroll) == 0 || OwnItemCount(talker, @ancient_clay_tablet) == 0))
+                        {
+                            ShowPage(talker, "karta_q0106_02.htm");
+                        }
+                        else if (OwnItemCount(talker, @ancient_scroll) && OwnItemCount(talker, @ancient_clay_tablet))
+                        {
+                            ShowPage(talker, "karta_q0106_03.htm");
+                            DeleteItem1(talker, @onyx_talisman2, OwnItemCount(talker, @onyx_talisman2));
+                            DeleteItem1(talker, @ancient_scroll, 1);
+                            DeleteItem1(talker, @ancient_clay_tablet, 1);
+                            GiveItem1(talker, @kartas_translation, 1);
+                        }
+                        else if (OwnItemCount(talker, @kartas_translation))
+                        {
+                            ShowPage(talker, "karta_q0106_04.htm");
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

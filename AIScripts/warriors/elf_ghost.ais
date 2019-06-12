@@ -1,0 +1,3 @@
+class elf_ghost : warrior_aggressive_casting_ddmagic
+{
+}

@@ -1,0 +1,40 @@
+class warden_endrigo : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && (OwnItemCount(talker, @lars_memo1) >= 1 || OwnItemCount(talker, @aklantos_gem3) >= 1) && OwnItemCount(talker, @alexandrias_book) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Ismel");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && (OwnItemCount(talker, @lars_memo1) >= 1 || OwnItemCount(talker, @aklantos_gem3) >= 1) && OwnItemCount(talker, @alexandrias_book) == 1)
+                {
+                    ShowPage(talker, "warden_endrigo_q0229_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

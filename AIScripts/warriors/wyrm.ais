@@ -1,0 +1,79 @@
+class wyrm : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @arrow_for_vengeance))
+        {
+            i0 = Rand(10);
+            if (i0 < 5)
+            {
+                GiveItem1(c1, @wyrms_tooth, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_summoner) && OwnItemCount(c1, @galateas_letter) == 0 && OwnItemCount(c1, @lars_list5) && OwnItemCount(c1, @fangs_of_wyrm) < 30)
+        {
+            if (Rand(2) == 1)
+            {
+                if (OwnItemCount(c1, @fangs_of_wyrm) == 29)
+                {
+                    GiveItem1(c1, @fangs_of_wyrm, 1);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @fangs_of_wyrm, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_life) && OwnItemCount(c1, @moonflower_charm) == 1 && OwnItemCount(c1, @pushkins_list) == 1 && OwnItemCount(c1, @wyrms_talon1) < 20)
+        {
+            if (Rand(100) < 50)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @wyrms_talon1, 1);
+                    if (OwnItemCount(c1, @wyrms_talon1) >= 20)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_magus) && OwnItemCount(c1, @score_of_elements) == 1 && OwnItemCount(c1, @sylph_charm) == 1 && OwnItemCount(c1, @wyrms_wingbone) < 10)
+        {
+            if (Rand(100) < 50)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @wyrms_wingbone, 1);
+                    if (OwnItemCount(c1, @wyrms_wingbone) >= 10)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

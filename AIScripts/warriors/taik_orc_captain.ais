@@ -1,0 +1,34 @@
+class taik_orc_captain : warrior_aggressive_physicalspecial
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (1)
+        {
+            c1.quest_last_reward_time = GetCurrentTick();
+            if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_2c_3) && OwnItemCount(c1, @q_taik_orc_totem) < 50)
+            {
+                GiveItem1(c1, @q_taik_orc_totem, 1);
+                if (OwnItemCount(c1, @q_taik_orc_totem) >= 50)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+
+            if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_2u_2) && OwnItemCount(c1, @q_kakrans_head) < 1)
+            {
+                if (Rand(10) == 0)
+                {
+                    CreateOnePrivate(@taik_overlord_kakran, "taik_overlord_kakran", 0, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

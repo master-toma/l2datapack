@@ -1,0 +1,80 @@
+class warrior_casting_hold_magic : warrior
+{
+parameter:
+    int HoldMagic = @s_npc_hold1;
+    
+handler:
+    EventHandler CREATED()
+    {
+        myself.i_ai0 = 0;
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage, i6, c0)
+    {
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            AddTimerEx(2001, 12000);
+            i6 = Rand(100);
+            if (DistFromMe(attacker) > 300 && myself.i_ai0 == 0)
+            {
+                if (i6 < 50)
+                {
+                    if (Skill_GetConsumeMP(HoldMagic) < myself.sm.mp && Skill_GetConsumeHP(HoldMagic) < myself.sm.hp && Skill_InReuseDelay(HoldMagic) == @FALSE)
+                    {
+                        AddUseSkillDesire(attacker, HoldMagic, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+
+                    myself.i_ai0 = 1;
+                }
+            }
+            else if (DistFromMe(attacker) > 100 && myself.i_ai0 == 0)
+            {
+                if (myself.top_desire_target == attacker && i6 < 50 || i6 < 10)
+                {
+                    if (Skill_GetConsumeMP(HoldMagic) < myself.sm.mp && Skill_GetConsumeHP(HoldMagic) < myself.sm.hp && Skill_InReuseDelay(HoldMagic) == @FALSE)
+                    {
+                        AddUseSkillDesire(attacker, HoldMagic, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+
+                    myself.i_ai0 = 1;
+                }
+            }
+
+            if (attacker.attack_type == @AT_BOW && myself.i_ai0 == 0)
+            {
+                if (Rand(100) < 50)
+                {
+                    if (Skill_GetConsumeMP(HoldMagic) < myself.sm.mp && Skill_GetConsumeHP(HoldMagic) < myself.sm.hp && Skill_InReuseDelay(HoldMagic) == @FALSE)
+                    {
+                        AddUseSkillDesire(attacker, HoldMagic, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+
+                    myself.i_ai0 = 1;
+                }
+            }
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id, i6, c0)
+    {
+        if (timer_id == 2001)
+        {
+            c0 = GetLastAttacker();
+            i6 = Rand(100);
+            if (i6 < 80 && myself.i_ai0 == 0)
+            {
+                if (Skill_GetConsumeMP(HoldMagic) < myself.sm.mp && Skill_GetConsumeHP(HoldMagic) < myself.sm.hp && Skill_InReuseDelay(HoldMagic) == @FALSE)
+                {
+                    AddUseSkillDesire(c0, HoldMagic, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+
+                myself.i_ai0 = 1;
+            }
+        }
+
+        super;
+    }
+}

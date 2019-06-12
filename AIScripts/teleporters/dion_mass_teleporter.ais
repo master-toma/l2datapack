@@ -1,0 +1,3 @@
+class dion_mass_teleporter : mass_teleporter
+{
+}

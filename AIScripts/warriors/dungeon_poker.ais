@@ -1,0 +1,3 @@
+class dungeon_poker : warrior_aggressive
+{
+}

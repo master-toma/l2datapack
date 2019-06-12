@@ -1,0 +1,2 @@
+skill_begin	skill_name = [s_quick_step1]	/* [퀵 스텝] */	skill_id = 169	level = 1	operate_type = P	effect = {{p_speed;{all};7;diff}}	skill_end
+skill_begin	skill_name = [s_quick_step2]	/* [퀵 스텝] */	skill_id = 169	level = 2	operate_type = P	effect = {{p_speed;{all};11;diff}}	skill_end

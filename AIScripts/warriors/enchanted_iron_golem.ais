@@ -1,0 +1,26 @@
+class enchanted_iron_golem : warrior_passive_casting_splash
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_magus) && OwnItemCount(c1, @score_of_elements) == 1 && OwnItemCount(c1, @serpent_charm) == 1 && OwnItemCount(c1, @en_irongolem_scrap) < 10)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @en_irongolem_scrap, 1);
+                if (OwnItemCount(c1, @en_irongolem_scrap) >= 10)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

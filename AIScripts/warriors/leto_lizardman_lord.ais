@@ -1,0 +1,35 @@
+class leto_lizardman_lord : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_healer) && GetMemoState(c1, @test_of_healer) == 8 && OwnItemCount(c1, @secret_letter1) && OwnItemCount(c1, @secret_letter4) == 0)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @secret_letter4, 1);
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 22606)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(22606, 1000 * 200);
+        super;
+    }
+}

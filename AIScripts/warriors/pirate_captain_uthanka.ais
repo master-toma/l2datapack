@@ -1,0 +1,3 @@
+class pirate_captain_uthanka : party_leader_aggressive
+{
+}

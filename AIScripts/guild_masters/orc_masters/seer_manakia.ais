@@ -1,0 +1,316 @@
+class seer_manakia : mage_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && OwnItemCount(talker, @letter_to_manakia))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that Lord Kakai sent you");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 11)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask what you should bring");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 12 && OwnItemCount(talker, @parasite_of_lota) == 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show Soul of Previous Life of Rota");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 13)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask to whom the soul of previous life is taken");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about the dynamics of the Lower Orcs");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && (OwnItemCount(talker, @chiantas_order2) || OwnItemCount(talker, @chiantas_order3) || OwnItemCount(talker, @scepter_box)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Tejakar Oroka!");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @varkees_charm) >= 1 && OwnItemCount(talker, @huge_orc_fang) == 0 && OwnItemCount(talker, @manakias_amulet) == 0 && OwnItemCount(talker, @manakias_orders) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Say that you came on the instructions of Varkees");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @varkees_charm) >= 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @manakias_orders) >= 1 && OwnItemCount(talker, @huge_orc_fang) == 0 && OwnItemCount(talker, @manakias_amulet) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Give fang");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @huge_orc_fang) == 0 && OwnItemCount(talker, @manakias_orders) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @varkees_charm) >= 1 && OwnItemCount(talker, @manakias_amulet) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Thank for having received the Amulet of Manakia");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @huge_orc_fang) >= 1 && OwnItemCount(talker, @varkees_charm) == 0 && OwnItemCount(talker, @manakias_amulet) == 0 && OwnItemCount(talker, @manakias_orders) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Thank for having received the Amulet of Manakia");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @manakias_totem) == 0 && OwnItemCount(talker, @hermodts_remains2) == 0 && OwnItemCount(talker, @vendetta_totem) == 0 && OwnItemCount(talker, @hermodts_remains1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Talk about Remains of Hermot");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @manakias_totem) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 11;
+                AddChoice(11, "Give Bone Piece of Hermot");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @manakias_totem) == 0 && (OwnItemCount(talker, @hermodts_remains1) >= 1 || OwnItemCount(talker, @hermodts_remains2) >= 1 || OwnItemCount(talker, @vendetta_totem) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 12;
+                AddChoice(12, "Talk about Remains of Hermot");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && OwnItemCount(talker, @letter_to_manakia))
+                {
+                    ShowPage(talker, "seer_manakia_q0217_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 11)
+                {
+                    ShowPage(talker, "seer_manakia_q0217_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 12 && OwnItemCount(talker, @parasite_of_lota) == 10)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "seer_manakia_q0217_04.htm");
+                        GiveItem1(talker, @letter_of_manakia, 1);
+                        DeleteItem1(talker, @parasite_of_lota, OwnItemCount(talker, @parasite_of_lota));
+                        SetMemoState(talker, @testimoney_of_trust, 13);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 13)
+                {
+                    ShowPage(talker, "seer_manakia_q0217_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1))
+                {
+                    ShowPage(talker, "seer_manakia_q0220_01.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && (OwnItemCount(talker, @chiantas_order2) || OwnItemCount(talker, @chiantas_order3) || OwnItemCount(talker, @scepter_box)))
+                {
+                    ShowPage(talker, "seer_manakia_q0220_08.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @varkees_charm) >= 1 && OwnItemCount(talker, @huge_orc_fang) == 0 && OwnItemCount(talker, @manakias_amulet) == 0 && OwnItemCount(talker, @manakias_orders) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "seer_manakia_q0232_01.htm");
+                        GiveItem1(talker, @manakias_orders, 1);
+                    }
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @varkees_charm) >= 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @manakias_orders) >= 1 && OwnItemCount(talker, @huge_orc_fang) == 0 && OwnItemCount(talker, @manakias_amulet) == 0)
+                {
+                    if (OwnItemCount(talker, @breka_orc_fang) < 20)
+                    {
+                        ShowPage(talker, "seer_manakia_q0232_02.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "seer_manakia_q0232_03.htm");
+                        DeleteItem1(talker, @manakias_orders, 1);
+                        GiveItem1(talker, @manakias_amulet, 1);
+                        DeleteItem1(talker, @breka_orc_fang, OwnItemCount(talker, @breka_orc_fang));
+                    }
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @huge_orc_fang) == 0 && OwnItemCount(talker, @manakias_orders) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @varkees_charm) >= 1 && OwnItemCount(talker, @manakias_amulet) >= 1)
+                {
+                    ShowPage(talker, "seer_manakia_q0232_04.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @huge_orc_fang) >= 1 && OwnItemCount(talker, @varkees_charm) == 0 && OwnItemCount(talker, @manakias_amulet) == 0 && OwnItemCount(talker, @manakias_orders) == 0)
+                {
+                    ShowPage(talker, "seer_manakia_q0232_05.htm");
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @manakias_totem) == 0 && OwnItemCount(talker, @hermodts_remains2) == 0 && OwnItemCount(talker, @vendetta_totem) == 0 && OwnItemCount(talker, @hermodts_remains1) == 0)
+                {
+                    ShowPage(talker, "seer_manakia_q0233_01.htm");
+                }
+
+                break;
+            case 11:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @manakias_totem) == 1)
+                {
+                    if (OwnItemCount(talker, @hermodts_skull) >= 1 && OwnItemCount(talker, @hermodts_rib_bone) >= 1 && OwnItemCount(talker, @hermodts_spine) >= 1 && OwnItemCount(talker, @hermodts_arm_bone) >= 1 && OwnItemCount(talker, @hermodts_thigh_bone) >= 1)
+                    {
+                        ShowPage(talker, "seer_manakia_q0233_04.htm");
+                        DeleteItem1(talker, @manakias_totem, OwnItemCount(talker, @manakias_totem));
+                        DeleteItem1(talker, @hermodts_skull, OwnItemCount(talker, @hermodts_skull));
+                        DeleteItem1(talker, @hermodts_rib_bone, OwnItemCount(talker, @hermodts_rib_bone));
+                        DeleteItem1(talker, @hermodts_spine, OwnItemCount(talker, @hermodts_spine));
+                        DeleteItem1(talker, @hermodts_arm_bone, OwnItemCount(talker, @hermodts_arm_bone));
+                        DeleteItem1(talker, @hermodts_thigh_bone, 1);
+                        GiveItem1(talker, @hermodts_remains1, 1);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "seer_manakia_q0233_03.htm");
+                    }
+                }
+
+                break;
+            case 12:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @manakias_totem) == 0 && (OwnItemCount(talker, @hermodts_remains1) >= 1 || OwnItemCount(talker, @hermodts_remains2) >= 1 || OwnItemCount(talker, @vendetta_totem) >= 1))
+                {
+                    ShowPage(talker, "seer_manakia_q0233_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimoney_of_trust)
+        {
+            if (reply == 1 && OwnItemCount(talker, @letter_to_manakia) > 0)
+            {
+                ShowPage(talker, "seer_manakia_q0217_02.htm");
+                DeleteItem1(talker, @letter_to_manakia, 1);
+                SetMemoState(talker, @testimoney_of_trust, 11);
+            }
+        }
+
+        if (ask == @testimony_of_glory)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @scepter_of_breka) == 0 && OwnItemCount(talker, @manakias_letter1))
+                {
+                    ShowPage(talker, "seer_manakia_q0220_04.htm");
+                }
+                else if (OwnItemCount(talker, @scepter_of_breka))
+                {
+                    ShowPage(talker, "seer_manakia_q0220_02.htm");
+                }
+                else if (OwnItemCount(talker, @scepter_of_breka) == 0 && OwnItemCount(talker, @manakias_letter1) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "seer_manakia_q0220_03.htm");
+                        GiveItem1(talker, @manakias_letter1, 1);
+                    }
+                }
+            }
+            else if (reply == 2)
+            {
+                if (OwnItemCount(talker, @scepter_of_enku))
+                {
+                    ShowPage(talker, "seer_manakia_q0220_05.htm");
+                }
+                else if (OwnItemCount(talker, @scepter_of_enku) == 0 && OwnItemCount(talker, @manakias_letter2) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "seer_manakia_q0220_06.htm");
+                        GiveItem1(talker, @manakias_letter2, 1);
+                    }
+                }
+                else if (OwnItemCount(talker, @scepter_of_enku) == 0 && OwnItemCount(talker, @manakias_letter2))
+                {
+                    ShowPage(talker, "seer_manakia_q0220_07.htm");
+                }
+            }
+        }
+
+        if (ask == @test_of_warspirit)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "seer_manakia_q0233_02.htm");
+                    GiveItem1(talker, @manakias_totem, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

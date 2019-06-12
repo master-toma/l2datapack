@@ -1,0 +1,15 @@
+class gatekeeper_penne : instant_teleporter
+{
+handler:
+    EventHandler TELEPORT_REQUESTED(talker)
+    {
+        if (Rand(100) < 50)
+        {
+            InstantTeleport(talker, 17776, 108288, -9057);
+        }
+        else
+        {
+            InstantTeleport(talker, 17664, 108288, -9057);
+        }
+    }
+}

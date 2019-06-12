@@ -1,0 +1,151 @@
+class mouen : chief_guard
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @ascalons_letter3))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Letter from Ascalon");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @mouens_order1) && OwnItemCount(talker, @road_ratman_head) < 100)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask what monster you should get rid of");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @mouens_order1) && OwnItemCount(talker, @road_ratman_head) >= 100)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Say that you got rid of the lord scavengers before coming");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @mouens_order2) && OwnItemCount(talker, @leto_lizardman_fang1) < 100)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask who you should fight");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @mouens_order2) && OwnItemCount(talker, @leto_lizardman_fang1) >= 100)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give Leto Lizardman Fang");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @mouens_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Bid farewell");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @ascalons_letter3))
+                {
+                    ShowPage(talker, "mouen_q0223_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @mouens_order1) && OwnItemCount(talker, @road_ratman_head) < 100)
+                {
+                    ShowPage(talker, "mouen_q0223_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @mouens_order1) && OwnItemCount(talker, @road_ratman_head) >= 100)
+                {
+                    ShowPage(talker, "mouen_q0223_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @mouens_order2) && OwnItemCount(talker, @leto_lizardman_fang1) < 100)
+                {
+                    ShowPage(talker, "mouen_q0223_07.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @mouens_order2) && OwnItemCount(talker, @leto_lizardman_fang1) >= 100)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "mouen_q0223_08.htm");
+                        GiveItem1(talker, @mouens_letter, 1);
+                        DeleteItem1(talker, @mouens_order2, 1);
+                        DeleteItem1(talker, @leto_lizardman_fang1, OwnItemCount(talker, @leto_lizardman_fang1));
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @mouens_letter))
+                {
+                    ShowPage(talker, "mouen_q0223_09.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_champion)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "mouen_q0223_02.htm");
+            }
+            else if (reply == 2 && OwnItemCount(talker, @ascalons_letter3) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "mouen_q0223_03.htm");
+                    GiveItem1(talker, @mouens_order1, 1);
+                    DeleteItem1(talker, @ascalons_letter3, 1);
+                }
+            }
+            else if (reply == 3 && OwnItemCount(talker, @mouens_order1) && OwnItemCount(talker, @road_ratman_head) >= 100)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "mouen_q0223_06.htm");
+                    GiveItem1(talker, @mouens_order2, 1);
+                    DeleteItem1(talker, @mouens_order1, 1);
+                    DeleteItem1(talker, @road_ratman_head, OwnItemCount(talker, @road_ratman_head));
+                }
+            }
+        }
+
+        super;
+    }
+}

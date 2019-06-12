@@ -1,0 +1,38 @@
+class party_private_physicalspecial : party_private
+{
+parameter:
+    int PhysicalSpecial = @s_npc_strike1;
+    
+handler:
+    EventHandler ATTACKED(attacker, damage)
+    {
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            if (Rand(100) < 10 && myself.top_desire_target == attacker)
+            {
+                if (Skill_GetConsumeMP(PhysicalSpecial) < myself.sm.mp && Skill_GetConsumeHP(PhysicalSpecial) < myself.sm.hp && Skill_InReuseDelay(PhysicalSpecial) == @FALSE)
+                {
+                    AddUseSkillDesire(attacker, PhysicalSpecial, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+        }
+
+        super;
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, damage)
+    {
+        if (GetLifeTime() > 7 && (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id)) && myself.p_state != PSTATE_ATTACK)
+        {
+            if (Rand(100) < 10)
+            {
+                if (Skill_GetConsumeMP(PhysicalSpecial) < myself.sm.mp && Skill_GetConsumeHP(PhysicalSpecial) < myself.sm.hp && Skill_InReuseDelay(PhysicalSpecial) == @FALSE)
+                {
+                    AddUseSkillDesire(attacker, PhysicalSpecial, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_see_invisibility]	/* [시 인비저빌리티] */	skill_id = 224	level = 1	operate_type = T	effect = {}	mp_consume1 = 10	reuse_delay = 0	target_type = none	next_action = none	skill_end

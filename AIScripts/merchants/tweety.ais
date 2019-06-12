@@ -1,0 +1,121 @@
+class tweety : merchant_for_chaotic
+{
+property:
+    BuySellList SellList0 = {
+        {"necklace_of_magic"; 50};
+        {"necklace_of_knowledge"; 50};
+        {"necklace_of_anguish"; 50};
+        {"necklace_of_wisdom"; 50};
+        {"apprentice's_earing"; 50};
+        {"mage_earing"; 50};
+        {"earing_of_strength"; 50};
+        {"earing_of_wisdom"; 50};
+        {"cat'seye_earing"; 50};
+        {"magic_ring"; 50};
+        {"ring_of_knowledge"; 50};
+        {"ring_of_anguish"; 50};
+        {"ring_of_wisdom"; 50};
+        {"wooden_arrow"; 50};
+        {"bone_arrow"; 50};
+        {"antidote"; 50};
+        {"bandage"; 50};
+        {"quick_step_potion"; 50};
+        {"swift_attack_potion"; 50};
+        {"healing_potion"; 50};
+        {"advanced_antidote"; 50}
+    };
+    
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @wine_catalog) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show wine catalog");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @tweetys_contract) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Give spore");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && (OwnItemCount(talker, @rexs_diary) == 1 || OwnItemCount(talker, @old_order) == 1 || OwnItemCount(talker, @combined_map) == 1 || OwnItemCount(talker, @alankells_recommend) == 1 || OwnItemCount(talker, @malrukian_wine) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give spore");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @wine_catalog) == 1)
+                {
+                    ShowPage(talker, "tweety_q0225_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @tweetys_contract) == 1)
+                {
+                    if (OwnItemCount(talker, @red_spore_dust) < 10)
+                    {
+                        ShowPage(talker, "tweety_q0225_02.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tweety_q0225_03.htm");
+                        DeleteItem1(talker, @tweetys_contract, 1);
+                        GiveItem1(talker, @malrukian_wine, 1);
+                        DeleteItem1(talker, @red_spore_dust, OwnItemCount(talker, @red_spore_dust));
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && (OwnItemCount(talker, @rexs_diary) == 1 || OwnItemCount(talker, @old_order) == 1 || OwnItemCount(talker, @combined_map) == 1 || OwnItemCount(talker, @alankells_recommend) == 1 || OwnItemCount(talker, @malrukian_wine) == 1))
+                {
+                    ShowPage(talker, "tweety_q0225_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_searcher)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @wine_catalog) >= 1)
+                {
+                    ShowPage(talker, "tweety_q0225_01a.htm");
+                    DeleteItem1(talker, @wine_catalog, 1);
+                    GiveItem1(talker, @tweetys_contract, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

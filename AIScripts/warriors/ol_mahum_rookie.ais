@@ -1,0 +1,44 @@
+class ol_mahum_rookie : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_elven_knight) != 0 && OwnItemCount(myself.c_quest0, @kluto_memo) != 0 && OwnItemCount(myself.c_quest0, @emerald_piece) < 20 && myself.i_quest0 == 1 && Rand(100) < 50)
+        {
+            GiveItem1(myself.c_quest0, @emerald_piece, 1);
+            if (OwnItemCount(myself.c_quest0, @emerald_piece) == 20)
+            {
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+            else
+            {
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

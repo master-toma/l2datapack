@@ -1,0 +1,59 @@
+class ashen_wolf : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @wild_hunt) == 1)
+        {
+            if (Rand(10) < 4 && OwnItemCount(c1, @dark_bezoar) < 13)
+            {
+                GiveItem1(c1, @dark_bezoar, 1);
+                if (OwnItemCount(c1, @dark_bezoar) == 13)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (OwnItemCount(c1, @wolf_claw1) < 50 && HaveMemo(c1, @keen_claws))
+        {
+            i0 = Rand(5);
+            if (i0 < 4)
+            {
+                if (OwnItemCount(c1, @wolf_claw1) == 49)
+                {
+                    GiveItem1(c1, @wolf_claw1, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @wolf_claw1, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+            else if (OwnItemCount(c1, @wolf_claw1) == 49)
+            {
+                GiveItem1(c1, @wolf_claw1, 1);
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+            else if (OwnItemCount(c1, @wolf_claw1) == 48)
+            {
+                GiveItem1(c1, @wolf_claw1, 2);
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @wolf_claw1, 2);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

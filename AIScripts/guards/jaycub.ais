@@ -1,0 +1,130 @@
+class jaycub : guard_fixed
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @jaycubs_insectbook) == 0 && OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about honey");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @jaycubs_insectbook) == 1 && OwnItemCount(talker, @nectar) < 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about honey");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @jaycubs_insectbook) == 1 && OwnItemCount(talker, @nectar) >= 20 && OwnItemCount(talker, @royal_jelly) < 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about honey");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @jaycubs_insectbook) == 1 && OwnItemCount(talker, @nectar) >= 20 && OwnItemCount(talker, @royal_jelly) >= 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about honey");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @jaycubs_insectbook) == 0 && OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about honey");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @jaycubs_insectbook) == 0 && OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "jaycub_q0330_01.htm");
+                        GiveItem1(talker, @jaycubs_insectbook, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @jaycubs_insectbook) == 1 && OwnItemCount(talker, @nectar) < 20)
+                {
+                    ShowPage(talker, "jaycub_q0330_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @jaycubs_insectbook) == 1 && OwnItemCount(talker, @nectar) >= 20 && OwnItemCount(talker, @royal_jelly) < 10)
+                {
+                    ShowPage(talker, "jaycub_q0330_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @jaycubs_insectbook) == 1 && OwnItemCount(talker, @nectar) >= 20 && OwnItemCount(talker, @royal_jelly) >= 10)
+                {
+                    ShowPage(talker, "jaycub_q0330_06.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @jaycubs_insectbook, 1);
+                        DeleteItem1(talker, @nectar, OwnItemCount(talker, @nectar));
+                        DeleteItem1(talker, @royal_jelly, OwnItemCount(talker, @royal_jelly));
+                        GiveItem1(talker, @golden_honey, 1);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @jaycubs_insectbook) == 0 && OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) == 1)
+                {
+                    ShowPage(talker, "jaycub_q0330_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @adept_of_taste)
+        {
+            if (reply == 1 && OwnItemCount(talker, @jaycubs_insectbook) && OwnItemCount(talker, @nectar) >= 20 && OwnItemCount(talker, @royal_jelly) < 10)
+            {
+                ShowPage(talker, "jaycub_q0330_05.htm");
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    DeleteItem1(talker, @jaycubs_insectbook, 1);
+                    DeleteItem1(talker, @nectar, OwnItemCount(talker, @nectar));
+                    DeleteItem1(talker, @royal_jelly, OwnItemCount(talker, @royal_jelly));
+                    GiveItem1(talker, @honey, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

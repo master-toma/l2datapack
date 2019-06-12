@@ -1,0 +1,378 @@
+class sir_gustaf_athebaldt : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, pledge0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you want to increase the power of your clan");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 1000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask where you should lead your clan to");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 2000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Martin’s business");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 3000 && talker.is_pledge_master == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Report that you helped Martin and completed the task");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 3000 && talker.is_pledge_master == @FALSE)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Report that you helped Martin and completed the task");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 4000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask where you should lead your clan to");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 5000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask about Balthazar’s business");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 6000 && talker.is_pledge_master == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Report that you helped Balthazar and completed the task");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 6000 && talker.is_pledge_master == @FALSE)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Report that you helped Balthazar and completed the task");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 7000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Ask where you should lead your clan to");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) >= 8000 && GetMemoState(talker, @pledge_seeks_ambition) < 8700)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Ask about the task of Sir Rodemai");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && (GetMemoState(talker, @pledge_seeks_ambition) >= 8700 && GetMemoState(talker, @pledge_seeks_ambition) < 10000) && talker.is_pledge_master == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 11;
+                AddChoice(11, "Report that you helped Sir Rodemai and completed the task");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 9000 && talker.is_pledge_master == @FALSE)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 12;
+                AddChoice(12, "Report that you helped Sir Rodemai and completed the task");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 10000 && talker.is_pledge_master == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 13;
+                AddChoice(13, "Talk about the Royal Seal of Legal Judgment");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 10000 && talker.is_pledge_master == @FALSE)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 14;
+                AddChoice(14, "Talk about the Royal Seal of Legal Judgment");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.is_pledge_master == 1)
+                        {
+                            pledge0 = GetPledge(talker);
+                            if (pledge0.skill_level < 4)
+                            {
+                                ShowPage(talker, "sir_gustaf_athebaldt_q0503_01.htm");
+                            }
+                            else if (pledge0.skill_level >= 5)
+                            {
+                                ShowPage(talker, "sir_gustaf_athebaldt_q0503_02.htm");
+                            }
+                            else if (pledge0.skill_level == 4 && OwnItemCount(talker, @q_proof_of_aspiration) == 1)
+                            {
+                                ShowPage(talker, "sir_gustaf_athebaldt_q0503_03.htm");
+                            }
+                            else if (pledge0.skill_level == 4 && OwnItemCount(talker, @q_proof_of_aspiration) == 0)
+                            {
+                                ShowPage(talker, "sir_gustaf_athebaldt_q0503_04.htm");
+                            }
+                        }
+                        else
+                        {
+                            ShowPage(talker, "sir_gustaf_athebaldt_q0503_04t.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 1000)
+                {
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_09.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 2000)
+                {
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_10.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 3000 && talker.is_pledge_master == 1)
+                {
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_11.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 3000 && talker.is_pledge_master == @FALSE)
+                {
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_11t.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 4000)
+                {
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_13.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 5000)
+                {
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_14.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 6000 && talker.is_pledge_master == 1)
+                {
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_15.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 6000 && talker.is_pledge_master == @FALSE)
+                {
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_15t.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 7000)
+                {
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_17.htm");
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) >= 8000 && GetMemoState(talker, @pledge_seeks_ambition) < 8700)
+                {
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_18.htm");
+                }
+
+                break;
+            case 11:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && (GetMemoState(talker, @pledge_seeks_ambition) >= 8700 && GetMemoState(talker, @pledge_seeks_ambition) < 10000) && talker.is_pledge_master == 1)
+                {
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_19.htm");
+                }
+
+                break;
+            case 12:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 9000 && talker.is_pledge_master == @FALSE)
+                {
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_19t.htm");
+                }
+
+                break;
+            case 13:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 10000 && talker.is_pledge_master == 1)
+                {
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_24.htm");
+                }
+
+                break;
+            case 14:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 10000 && talker.is_pledge_master == @FALSE)
+                {
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_24t.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @pledge_seeks_ambition)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(talker, @q_gustafs_letter1, 1);
+                SetMemo(talker, quest_id);
+                SetJournal(talker, @pledge_seeks_ambition, 1);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "sir_gustaf_athebaldt_q0503_08.htm");
+                SetMemoState(talker, @pledge_seeks_ambition, 1000);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @pledge_seeks_ambition)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "sir_gustaf_athebaldt_q0503_05.htm");
+            }
+
+            if (reply == 2)
+            {
+                FHTML_SetFileName(fhtml0, "sir_gustaf_athebaldt_q0503_06.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @pledge_seeks_ambition);
+                ShowFHTML(talker, fhtml0);
+            }
+
+            if (reply == 3)
+            {
+                FHTML_SetFileName(fhtml0, "sir_gustaf_athebaldt_q0503_07.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @pledge_seeks_ambition);
+                ShowFHTML(talker, fhtml0);
+            }
+
+            if (reply == 4)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(talker, @q_gustafs_letter2, 1);
+                    SetMemoState(talker, @pledge_seeks_ambition, 4000);
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_12.htm");
+                    SetJournal(talker, @pledge_seeks_ambition, 4);
+                }
+            }
+
+            if (reply == 5)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(talker, @q_gustafs_letter3, 1);
+                    SetMemoState(talker, @pledge_seeks_ambition, 7000);
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_16.htm");
+                    SetJournal(talker, @pledge_seeks_ambition, 7);
+                }
+            }
+
+            if (reply == 6)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(talker, @q_proof_of_aspiration, 1);
+                    DeleteItem1(talker, @q_scepter_of_judgemnt, OwnItemCount(talker, @q_scepter_of_judgemnt));
+                    IncrementParam(talker, @PARAM_SP, 250000);
+                    RemoveMemo(talker, @pledge_seeks_ambition);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_20.htm");
+                }
+            }
+
+            if (reply == 7)
+            {
+                ShowPage(talker, "sir_gustaf_athebaldt_q0503_21.htm");
+            }
+
+            if (reply == 8)
+            {
+                SetMemoState(talker, @pledge_seeks_ambition, 10000);
+                ShowPage(talker, "sir_gustaf_athebaldt_q0503_22.htm");
+                SetJournal(talker, @pledge_seeks_ambition, 12);
+            }
+
+            if (reply == 9)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(talker, @q_proof_of_aspiration, 1);
+                    IncrementParam(talker, @PARAM_SP, 250000);
+                    DeleteItem1(talker, @q_scepter_of_judgemnt, OwnItemCount(talker, @q_scepter_of_judgemnt));
+                    RemoveMemo(talker, @pledge_seeks_ambition);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                    ShowPage(talker, "sir_gustaf_athebaldt_q0503_23.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

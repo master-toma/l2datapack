@@ -1,0 +1,47 @@
+class ai_boss04_heart_of_warding : default_npc
+{
+handler:
+    EventHandler TALKED(talker)
+    {
+        ShowPage(talker, "heart_of_warding001.htm");
+    }
+
+    EventHandler TELEPORT_REQUESTED(talker, i0, c0, i1, i2)
+    {
+        i0 = GetGlobalMap(1);
+        if (i0 != -1)
+        {
+            c0 = GetCreatureFromIndex(i0);
+            if (c0.alive)
+            {
+                if (c0.db_value == 0 || c0.db_value == 1)
+                {
+                    if (OwnItemCount(talker, @q_portal_stone_1) > 0)
+                    {
+                        DeleteItem1(talker, @q_portal_stone_1, 1);
+                        SendScriptEvent(c0, 0, 0);
+                        i1 = 179700 + Rand(700);
+                        i2 = 113800 + Rand(2100);
+                        InstantTeleport(talker, i1, i2, -7709);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "heart_of_warding004.htm");
+                    }
+                }
+                else if (c0.db_value == 2 || c0.db_value == 3)
+                {
+                    ShowPage(talker, "heart_of_warding003.htm");
+                }
+            }
+            else
+            {
+                ShowPage(talker, "heart_of_warding002.htm");
+            }
+        }
+        else
+        {
+            ShowPage(talker, "heart_of_warding002.htm");
+        }
+    }
+}

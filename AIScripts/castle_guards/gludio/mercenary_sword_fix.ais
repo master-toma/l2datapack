@@ -1,0 +1,3 @@
+class mercenary_sword_fix : ai_gludio_sword_guard_stand
+{
+}

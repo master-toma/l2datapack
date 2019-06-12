@@ -1,0 +1,3 @@
+class kobold_looter_bepook : party_leader_aggressive
+{
+}

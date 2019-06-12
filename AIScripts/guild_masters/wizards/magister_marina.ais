@@ -1,0 +1,109 @@
+class magister_marina : wizard_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @silens_runestone) == 1 && OwnItemCount(talker, @analysis_request) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Letter from Victor");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @marinas_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show Letter from Victor");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @experiment_tools) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give experimental tools");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @analysis_result) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about analysis results");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @silens_runestone) == 1 && OwnItemCount(talker, @analysis_request) == 1)
+                {
+                    ShowPage(talker, "magister_marina_q0213_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @marinas_letter) == 1)
+                {
+                    ShowPage(talker, "magister_marina_q0213_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @experiment_tools) == 1)
+                {
+                    ShowPage(talker, "magister_marina_q0213_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @analysis_result) == 1)
+                {
+                    ShowPage(talker, "magister_marina_q0213_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+        {
+            talker.quest_last_reward_time = GetCurrentTick();
+            if (ask == @trial_of_seeker)
+            {
+                if (reply == 1)
+                {
+                    ShowPage(talker, "magister_marina_q0213_02.htm");
+                    DeleteItem1(talker, @silens_runestone, OwnItemCount(talker, @silens_runestone));
+                    DeleteItem1(talker, @analysis_request, OwnItemCount(talker, @analysis_request));
+                    GiveItem1(talker, @marinas_letter, 1);
+                }
+
+                if (reply == 2)
+                {
+                    ShowPage(talker, "magister_marina_q0213_05.htm");
+                    DeleteItem1(talker, @experiment_tools, OwnItemCount(talker, @experiment_tools));
+                    GiveItem1(talker, @analysis_result, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

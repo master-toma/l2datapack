@@ -1,0 +1,130 @@
+class guard_bright : guard_stand
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) == 1 && OwnItemCount(talker, @recipe_of_emilly) == 0 && OwnItemCount(talker, @brights_list) == 0 && OwnItemCount(talker, @mandragora_bouquet) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about great mother");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @recipe_of_emilly) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @brights_list) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Give ingredients");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @mandragora_bouquet) >= 1 && OwnItemCount(talker, @recipe_of_emilly) == 0 && OwnItemCount(talker, @brights_list) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give ingredients");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @recipe_of_emilly) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about Emily");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Emily");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) == 1 && OwnItemCount(talker, @recipe_of_emilly) == 0 && OwnItemCount(talker, @brights_list) == 0 && OwnItemCount(talker, @mandragora_bouquet) == 0)
+                {
+                    ShowPage(talker, "guard_bright_q0221_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @recipe_of_emilly) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @brights_list) >= 1)
+                {
+                    if (OwnItemCount(talker, @mandragora_petal) < 20 || OwnItemCount(talker, @crimson_moss) < 10)
+                    {
+                        ShowPage(talker, "guard_bright_q0221_04.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "guard_bright_q0221_05.htm");
+                        DeleteItem1(talker, @mandragora_petal, OwnItemCount(talker, @mandragora_petal));
+                        DeleteItem1(talker, @crimson_moss, OwnItemCount(talker, @crimson_moss));
+                        DeleteItem1(talker, @brights_list, 1);
+                        GiveItem1(talker, @mandragora_bouquet, 1);
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @mandragora_bouquet) >= 1 && OwnItemCount(talker, @recipe_of_emilly) == 0 && OwnItemCount(talker, @brights_list) == 0)
+                {
+                    ShowPage(talker, "guard_bright_q0221_06.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @recipe_of_emilly) >= 1)
+                {
+                    ShowPage(talker, "guard_bright_q0221_07.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) == 1)
+                {
+                    ShowPage(talker, "guard_bright_q0221_08.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_prosperity)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "guard_bright_q0221_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "guard_bright_q0221_03.htm");
+                    GiveItem1(talker, @brights_list, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,40 @@
+class jailer_dubabah : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @paint_of_kamuru))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask if there's anyone that’s trespassed into the cave");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @paint_of_kamuru))
+                {
+                    ShowPage(talker, "jailer_dubabah_q0231_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

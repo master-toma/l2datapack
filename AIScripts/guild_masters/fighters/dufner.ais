@@ -1,0 +1,146 @@
+class dufner : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_seeker) == 0 && GetOneTimeQuestFlag(talker, @trial_of_seeker) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about Trial of Searcher");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 0 && GetOneTimeQuestFlag(talker, @trial_of_seeker) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about Trial of Searcher");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about Eye of Hawk");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 0 && GetOneTimeQuestFlag(talker, @trial_of_seeker) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if ((talker.occupation == @rogue || talker.occupation == @elven_scout || talker.occupation == @assassin) == @FALSE)
+                        {
+                            ShowPage(talker, "dufner_q0213_00.htm");
+                        }
+                        else if ((talker.occupation == @rogue || talker.occupation == @elven_scout || talker.occupation == @assassin) && talker.level < 35)
+                        {
+                            ShowPage(talker, "dufner_q0213_02.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "dufner_q0213_03.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 0 && GetOneTimeQuestFlag(talker, @trial_of_seeker) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1)
+                {
+                    if (OwnItemCount(talker, @dufners_letter) == 1 && OwnItemCount(talker, @terys_report) == 0)
+                    {
+                        ShowPage(talker, "dufner_q0213_06.htm");
+                    }
+                    else if (OwnItemCount(talker, @dufners_letter) == 0 && OwnItemCount(talker, @terys_report) == 0)
+                    {
+                        ShowPage(talker, "dufner_q0213_07.htm");
+                    }
+                    else if (OwnItemCount(talker, @dufners_letter) == 0 && OwnItemCount(talker, @terys_report) == 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            IncrementParam(talker, @PARAM_EXP, 27000);
+                            IncrementParam(talker, @PARAM_SP, 3100);
+                            ShowPage(talker, "dufner_q0213_08.htm");
+                            RemoveMemo(talker, @trial_of_seeker);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            SetOneTimeQuestFlag(talker, @trial_of_seeker, 1);
+                            DeleteItem1(talker, @terys_report, OwnItemCount(talker, @terys_report));
+                            GiveItem1(talker, @mark_of_seeker, 1);
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @trial_of_seeker)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @dufners_letter) == 0)
+                {
+                    GiveItem1(talker, @dufners_letter, 1);
+                }
+
+                ShowPage(talker, "dufner_q0213_05.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @trial_of_seeker)
+        {
+            if (reply == 1)
+            {
+                FHTML_SetFileName(fhtml0, "dufner_q0213_04.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @trial_of_seeker);
+                ShowFHTML(talker, fhtml0);
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_fist_fury1]	/* [피스트 퓨리] */	skill_id = 222	level = 1	operate_type = T	effect = {{c_hp;-13;2};{p_attack_speed;{all};25;per}}	mp_consume1 = 0	reuse_delay = 0	target_type = none	next_action = none	skill_end

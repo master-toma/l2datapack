@@ -1,0 +1,33 @@
+class ai_agit01_partisan_socerer1 : default_npc
+{
+parameter:
+    float Attack_DecayRatio = 6.6;
+    float UseSkill_DecayRatio = 66000.0;
+    float Attack_BoostValue = 500.0;
+    float UseSkill_BoostValue = 100000.0;
+    
+handler:
+    EventHandler NO_DESIRE()
+    {
+        AddDoNothingDesire(40, 20);
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, victim, damage)
+    {
+        if ((attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id)) && Rand(100) < 10)
+        {
+            if (Skill_GetConsumeMP(@s_partisan_flame) < myself.sm.mp && Skill_GetConsumeHP(@s_partisan_flame) < myself.sm.hp && Skill_InReuseDelay(@s_partisan_flame) == @FALSE)
+            {
+                AddUseSkillDesire(attacker, @s_partisan_flame, @ST_ATTACK, @AMT_STAND, 1000000);
+            }
+        }
+    }
+
+    EventHandler SEE_CREATURE(creature)
+    {
+        if (Skill_GetConsumeMP(@s_partisan_flame) < myself.sm.mp && Skill_GetConsumeHP(@s_partisan_flame) < myself.sm.hp && Skill_InReuseDelay(@s_partisan_flame) == @FALSE)
+        {
+            AddUseSkillDesire(creature, @s_partisan_flame, @ST_ATTACK, @AMT_STAND, 1000000);
+        }
+    }
+}

@@ -1,0 +1,60 @@
+class strong_wooden_chest : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @rusted_key1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Open solid wooden box");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @rusted_key1) == 1)
+                {
+                    ShowPage(talker, "strong_wooden_chest_q0225_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_searcher)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "strong_wooden_chest_q0225_01a.htm");
+                    GiveItem1(talker, @gold_bar, 20);
+                    DeleteItem1(talker, @rusted_key1, OwnItemCount(talker, @rusted_key1));
+                    Despawn();
+                }
+            }
+        }
+
+        super;
+    }
+}

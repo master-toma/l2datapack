@@ -1,0 +1,27 @@
+class dark_elf_lv1_master : guild_master_lv1
+{
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -2 && reply == 1)
+        {
+            if (talker.race == @race_dark_elf)
+            {
+                if (IsInCategory(@fighter_group, talker.occupation))
+                {
+                    ShowPage(talker, fnClassList1);
+                }
+                else if (IsInCategory(@mage_group, talker.occupation))
+                {
+                    ShowPage(talker, fnClassList2);
+                }
+            }
+            else
+            {
+                ShowPage(talker, fnClassMismatch);
+            }
+        }
+
+        super;
+    }
+}

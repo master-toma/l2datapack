@@ -1,0 +1,33 @@
+class ai_gludio_bow_guard : ai_gludio_hold
+{
+handler:
+    EventHandler ATTACKED(attacker, damage)
+    {
+        if (Castle_GetPledgeState(attacker) != 2)
+        {
+            if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+            {
+                AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, damage / myself.sm.max_hp / 0.05 * 100);
+            }
+        }
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, damage)
+    {
+        if (Castle_GetPledgeState(attacker) != 2)
+        {
+            if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+            {
+                AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, damage / myself.sm.max_hp / 0.05 * 50);
+            }
+        }
+    }
+
+    EventHandler SPELLED(speller, skill_name_id)
+    {
+        if (skill_name_id == @s_seal_of_ruler)
+        {
+            AddAttackDesire(speller, @AMT_MOVE_TO_TARGET, 50000);
+        }
+    }
+}

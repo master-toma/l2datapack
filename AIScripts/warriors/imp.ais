@@ -1,0 +1,18 @@
+class imp : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @chains_of_slavery))
+        {
+            if (Rand(10) < 5)
+            {
+                GiveItem1(c1, @imp_shackles, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

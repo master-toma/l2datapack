@@ -1,0 +1,110 @@
+class warehouse_chief_moke : lv2_warehouse_chief
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && (GetMemoState(talker, @audience_with_earth_dragon) == 40000 || GetMemoState(talker, @audience_with_earth_dragon) == 40001) && (OwnItemCount(talker, @q_frag_of_abyss_jewel1) == 0 || OwnItemCount(talker, @q_mara_fang) == 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about aura");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && (GetMemoState(talker, @audience_with_earth_dragon) == 40000 || GetMemoState(talker, @audience_with_earth_dragon) == 40001) && (OwnItemCount(talker, @q_frag_of_abyss_jewel1) == 1 && OwnItemCount(talker, @q_mara_fang) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show Frament of Abyss Jewel and Mara Fang");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 40010)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about aura");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) >= 50000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Hear about conquering Antharas");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && (GetMemoState(talker, @audience_with_earth_dragon) == 40000 || GetMemoState(talker, @audience_with_earth_dragon) == 40001) && (OwnItemCount(talker, @q_frag_of_abyss_jewel1) == 0 || OwnItemCount(talker, @q_mara_fang) == 0))
+                {
+                    ShowPage(talker, "warehouse_chief_moke_q0337_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && (GetMemoState(talker, @audience_with_earth_dragon) == 40000 || GetMemoState(talker, @audience_with_earth_dragon) == 40001) && (OwnItemCount(talker, @q_frag_of_abyss_jewel1) == 1 && OwnItemCount(talker, @q_mara_fang) == 1))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @q_mark_of_watchers, 1);
+                        DeleteItem1(talker, @q_frag_of_abyss_jewel1, OwnItemCount(talker, @q_frag_of_abyss_jewel1));
+                        DeleteItem1(talker, @q_mara_fang, OwnItemCount(talker, @q_mara_fang));
+                        ShowPage(talker, "warehouse_chief_moke_q0337_03.htm");
+                        if (GetMemoState(talker, @audience_with_earth_dragon) == 40001)
+                        {
+                            SetMemoState(talker, @audience_with_earth_dragon, 50000);
+                        }
+                        else
+                        {
+                            SetMemoState(talker, @audience_with_earth_dragon, 40010);
+                        }
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 40010)
+                {
+                    ShowPage(talker, "warehouse_chief_moke_q0337_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) >= 50000)
+                {
+                    ShowPage(talker, "warehouse_chief_moke_q0337_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @audience_with_earth_dragon)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "warehouse_chief_moke_q0337_02.htm");
+            }
+        }
+
+        super;
+    }
+}

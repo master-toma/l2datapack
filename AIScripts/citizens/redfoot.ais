@@ -1,0 +1,329 @@
+class redfoot : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the recent situation of the Black Lion Mercenaries");
+            }
+
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show box that you found while carrying out a task of the Black Lion Mercenaries");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) == 0)
+                {
+                    ShowPage(talker, "redfoot_q0333_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) >= 1)
+                {
+                    ShowPage(talker, "redfoot_q0333_02.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, i0, i1, reply, talker)
+    {
+        if (ask == @hunt_of_blacklion)
+        {
+            i0 = Rand(100);
+            i1 = Rand(100);
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @adena) < 650 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) >= 1)
+                {
+                    ShowPage(talker, "redfoot_q0333_03.htm");
+                }
+                else if (OwnItemCount(talker, @adena) >= 650 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (i0 < 40)
+                        {
+                            if (i1 < 33)
+                            {
+                                GiveItem1(talker, @q_loot_1, 1);
+                                ShowPage(talker, "redfoot_q0333_04a.htm");
+                            }
+                            else if (i1 < 66)
+                            {
+                                GiveItem1(talker, @q_loot_2, 1);
+                                ShowPage(talker, "redfoot_q0333_04b.htm");
+                            }
+                            else
+                            {
+                                GiveItem1(talker, @q_loot_3, 1);
+                                ShowPage(talker, "redfoot_q0333_04c.htm");
+                            }
+                        }
+                        else if (i0 < 60)
+                        {
+                            if (i1 < 33)
+                            {
+                                GiveItem1(talker, @q_loot_4, 1);
+                                ShowPage(talker, "redfoot_q0333_04d.htm");
+                            }
+                            else if (i1 < 66)
+                            {
+                                GiveItem1(talker, @q_loot_5, 1);
+                                ShowPage(talker, "redfoot_q0333_04e.htm");
+                            }
+                            else
+                            {
+                                GiveItem1(talker, @q_loot_6, 1);
+                                ShowPage(talker, "redfoot_q0333_04f.htm");
+                            }
+                        }
+                        else if (i0 < 70)
+                        {
+                            if (i1 < 33)
+                            {
+                                GiveItem1(talker, @q_loot_7, 1);
+                                ShowPage(talker, "redfoot_q0333_04g.htm");
+                            }
+                            else if (i1 < 66)
+                            {
+                                GiveItem1(talker, @q_loot_8, 1);
+                                ShowPage(talker, "redfoot_q0333_04h.htm");
+                            }
+                            else
+                            {
+                                GiveItem1(talker, @q_loot_9, 1);
+                                ShowPage(talker, "redfoot_q0333_04i.htm");
+                            }
+                        }
+                        else if (i0 < 75)
+                        {
+                            if (i1 < 33)
+                            {
+                                GiveItem1(talker, @q_loot_10, 1);
+                                ShowPage(talker, "redfoot_q0333_04j.htm");
+                            }
+                            else if (i1 < 66)
+                            {
+                                GiveItem1(talker, @q_loot_11, 1);
+                                ShowPage(talker, "redfoot_q0333_04k.htm");
+                            }
+                            else
+                            {
+                                GiveItem1(talker, @q_loot_12, 1);
+                                ShowPage(talker, "redfoot_q0333_04l.htm");
+                            }
+                        }
+                        else if (i0 < 76)
+                        {
+                            GiveItem1(talker, @q_loot_13, 1);
+                            ShowPage(talker, "redfoot_q0333_04m.htm");
+                        }
+                        else if (Rand(100) < 50)
+                        {
+                            if (i1 < 25)
+                            {
+                                GiveItem1(talker, @q_loot_14, 1);
+                            }
+                            else if (i1 < 50)
+                            {
+                                GiveItem1(talker, @q_loot_15, 1);
+                            }
+                            else if (i1 < 75)
+                            {
+                                GiveItem1(talker, @q_loot_16, 1);
+                            }
+                            else
+                            {
+                                GiveItem1(talker, @q_loot_17, 1);
+                            }
+
+                            ShowPage(talker, "redfoot_q0333_04n.htm");
+                        }
+                        else
+                        {
+                            if (i1 < 25)
+                            {
+                                GiveItem1(talker, @q_loot_19, 1);
+                            }
+                            else if (i1 < 50)
+                            {
+                                GiveItem1(talker, @q_loot_20, 1);
+                            }
+                            else if (i1 < 75)
+                            {
+                                GiveItem1(talker, @q_loot_21, 1);
+                            }
+                            else
+                            {
+                                GiveItem1(talker, @q_loot_22, 1);
+                            }
+
+                            ShowPage(talker, "redfoot_q0333_04o.htm");
+                        }
+
+                        DeleteItem1(talker, @adena, 650);
+                        if (OwnItemCount(talker, @q_cargo_box1) >= 1)
+                        {
+                            DeleteItem1(talker, @q_cargo_box1, 1);
+                        }
+                        else if (OwnItemCount(talker, @q_cargo_box2) >= 1)
+                        {
+                            DeleteItem1(talker, @q_cargo_box2, 1);
+                        }
+                        else if (OwnItemCount(talker, @q_cargo_box3) >= 1)
+                        {
+                            DeleteItem1(talker, @q_cargo_box3, 1);
+                        }
+                        else if (OwnItemCount(talker, @q_cargo_box4) >= 1)
+                        {
+                            DeleteItem1(talker, @q_cargo_box4, 1);
+                        }
+                    }
+                }
+                else if (OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) < 1)
+                {
+                    ShowPage(talker, "redfoot_q0333_05.htm");
+                }
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "redfoot_q0333_06.htm");
+            }
+
+            if (reply == 3)
+            {
+                if (OwnItemCount(talker, @adena) < 200 + GetMemoState(talker, @hunt_of_blacklion) * 200)
+                {
+                    ShowPage(talker, "redfoot_q0333_07.htm");
+                }
+                else if (GetMemoState(talker, @hunt_of_blacklion) * 100 > 200)
+                {
+                    ShowPage(talker, "redfoot_q0333_08.htm");
+                }
+                else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    if (i0 < 5)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08a.htm");
+                    }
+                    else if (i0 < 10)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08b.htm");
+                    }
+                    else if (i0 < 15)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08c.htm");
+                    }
+                    else if (i0 < 20)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08d.htm");
+                    }
+                    else if (i0 < 25)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08e.htm");
+                    }
+                    else if (i0 < 30)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08f.htm");
+                    }
+                    else if (i0 < 35)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08g.htm");
+                    }
+                    else if (i0 < 40)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08h.htm");
+                    }
+                    else if (i0 < 45)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08i.htm");
+                    }
+                    else if (i0 < 50)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08j.htm");
+                    }
+                    else if (i0 < 55)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08k.htm");
+                    }
+                    else if (i0 < 60)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08l.htm");
+                    }
+                    else if (i0 < 65)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08m.htm");
+                    }
+                    else if (i0 < 70)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08n.htm");
+                    }
+                    else if (i0 < 75)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08o.htm");
+                    }
+                    else if (i0 < 80)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08p.htm");
+                    }
+                    else if (i0 < 85)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08q.htm");
+                    }
+                    else if (i0 < 90)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08r.htm");
+                    }
+                    else if (i0 < 95)
+                    {
+                        ShowPage(talker, "redfoot_q0333_08s.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "redfoot_q0333_08t.htm");
+                    }
+
+                    DeleteItem1(talker, @adena, 200 + GetMemoState(talker, @hunt_of_blacklion) * 200);
+                    SetMemoState(talker, @hunt_of_blacklion, GetMemoState(talker, @hunt_of_blacklion) + 1);
+                }
+            }
+
+            if (reply == 4)
+            {
+                ShowPage(talker, "redfoot_q0333_09.htm");
+            }
+        }
+
+        super;
+    }
+}

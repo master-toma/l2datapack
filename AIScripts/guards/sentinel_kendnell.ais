@@ -1,0 +1,220 @@
+class sentinel_kendnell : guard_fixed
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, i0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @skirmish_with_orcs) == 0 && GetOneTimeQuestFlag(talker, @skirmish_with_orcs) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about Orc movements");
+            }
+
+            if (HaveMemo(talker, @skirmish_with_orcs) == 0 && GetOneTimeQuestFlag(talker, @skirmish_with_orcs) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about Orc movements");
+            }
+
+            if (HaveMemo(talker, @skirmish_with_orcs))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about Orcs");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @skirmish_with_orcs) == 0 && GetOneTimeQuestFlag(talker, @skirmish_with_orcs) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 10 && talker.race == @race_elf)
+                        {
+                            FHTML_SetFileName(fhtml0, "sentinel_kendnell_q0105_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @skirmish_with_orcs);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else if (talker.race != @race_elf)
+                        {
+                            ShowPage(talker, "sentinel_kendnell_q0105_00.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "sentinel_kendnell_q0105_10.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @skirmish_with_orcs) == 0 && GetOneTimeQuestFlag(talker, @skirmish_with_orcs) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @skirmish_with_orcs))
+                {
+                    if (OwnItemCount(talker, @kaboo_chief_torc1))
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "sentinel_kendnell_q0105_06.htm");
+                            if (OwnItemCount(talker, @kendnells_order1))
+                            {
+                                DeleteItem1(talker, @kendnells_order1, 1);
+                            }
+
+                            if (OwnItemCount(talker, @kendnells_order2))
+                            {
+                                DeleteItem1(talker, @kendnells_order2, 1);
+                            }
+
+                            if (OwnItemCount(talker, @kendnells_order3))
+                            {
+                                DeleteItem1(talker, @kendnells_order3, 1);
+                            }
+
+                            if (OwnItemCount(talker, @kendnells_order4))
+                            {
+                                DeleteItem1(talker, @kendnells_order4, 1);
+                            }
+
+                            DeleteItem1(talker, @kaboo_chief_torc1, 1);
+                            i0 = Rand(100);
+                            if (i0 < 25)
+                            {
+                                GiveItem1(talker, @kendnells_order5, 1);
+                            }
+                            else if (i0 < 50)
+                            {
+                                GiveItem1(talker, @kendnells_order6, 1);
+                            }
+                            else if (i0 < 75)
+                            {
+                                GiveItem1(talker, @kendnells_order7, 1);
+                            }
+                            else
+                            {
+                                GiveItem1(talker, @kendnells_order8, 1);
+                            }
+                        }
+                    }
+                    else if (OwnItemCount(talker, @kendnells_order1) || OwnItemCount(talker, @kendnells_order2) || OwnItemCount(talker, @kendnells_order3) || OwnItemCount(talker, @kendnells_order4))
+                    {
+                        ShowPage(talker, "sentinel_kendnell_q0105_05.htm");
+                    }
+                    else if (OwnItemCount(talker, @kaboo_chief_torc2))
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "sentinel_kendnell_q0105_08.htm");
+                            if (OwnItemCount(talker, @kendnells_order5))
+                            {
+                                DeleteItem1(talker, @kendnells_order5, 1);
+                            }
+
+                            if (OwnItemCount(talker, @kendnells_order6))
+                            {
+                                DeleteItem1(talker, @kendnells_order6, 1);
+                            }
+
+                            if (OwnItemCount(talker, @kendnells_order7))
+                            {
+                                DeleteItem1(talker, @kendnells_order7, 1);
+                            }
+
+                            if (OwnItemCount(talker, @kendnells_order8))
+                            {
+                                DeleteItem1(talker, @kendnells_order8, 1);
+                            }
+
+                            DeleteItem1(talker, @kaboo_chief_torc2, 1);
+                            if (IsInCategory(@fighter_group, talker.occupation) && GetOneTimeQuestFlag(talker, @skirmish_with_orcs) == 0)
+                            {
+                                GiveItem1(talker, @red_sunset_sword, 1);
+                            }
+                            else if (GetOneTimeQuestFlag(talker, @skirmish_with_orcs) == 0)
+                            {
+                                GiveItem1(talker, @red_sunset_staff, 1);
+                            }
+
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            SetOneTimeQuestFlag(talker, @skirmish_with_orcs, 1);
+                            RemoveMemo(talker, @skirmish_with_orcs);
+                        }
+                    }
+                    else if (OwnItemCount(talker, @kendnells_order5) || OwnItemCount(talker, @kendnells_order6) || OwnItemCount(talker, @kendnells_order7) || OwnItemCount(talker, @kendnells_order8))
+                    {
+                        ShowPage(talker, "sentinel_kendnell_q0105_07.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(i0, quest_id, talker)
+    {
+        if (quest_id == @skirmish_with_orcs)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "sentinel_kendnell_q0105_03.htm");
+                if (OwnItemCount(talker, @kendnells_order1) + OwnItemCount(talker, @kendnells_order2) + OwnItemCount(talker, @kendnells_order3) + OwnItemCount(talker, @kendnells_order4) == 0)
+                {
+                    i0 = Rand(100);
+                    if (i0 < 25)
+                    {
+                        GiveItem1(talker, @kendnells_order1, 1);
+                    }
+                    else if (i0 < 50)
+                    {
+                        GiveItem1(talker, @kendnells_order2, 1);
+                    }
+                    else if (i0 < 75)
+                    {
+                        GiveItem1(talker, @kendnells_order3, 1);
+                    }
+                    else
+                    {
+                        GiveItem1(talker, @kendnells_order4, 1);
+                    }
+                }
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

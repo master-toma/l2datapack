@@ -1,0 +1,51 @@
+class plague_zombie : warrior_passive_casting_ddmagic
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @protect_headsprings) && OwnItemCount(myself.c_quest0, @hyacinth_charm2) && myself.i_quest0 == 1 && Rand(100) < 40 && OwnItemCount(myself.c_quest0, @plague_dust) < 5)
+        {
+            if (OwnItemCount(myself.c_quest0, @plague_dust) == 4)
+            {
+                GiveItem1(myself.c_quest0, @plague_dust, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(myself.c_quest0, @plague_dust, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        if (HaveMemo(myself.c_quest0, @protect_headsprings) && OwnItemCount(myself.c_quest0, @hyacinth_charm1) && myself.i_quest0 == 1 && Rand(100) < 40 && OwnItemCount(myself.c_quest0, @plague_dust) == 0)
+        {
+            GiveItem1(myself.c_quest0, @plague_dust, 1);
+            SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,139 @@
+class carrier_torocco : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @reeps_contract) && OwnItemCount(talker, @elven_wine) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Reep's contract");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @reeps_contract) == 0 && OwnItemCount(talker, @elven_wine))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the star diamond");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @gem_box1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show gem box");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @gem_box1) == 0 && OwnItemCount(talker, @reeps_contract) == 0 && OwnItemCount(talker, @elven_wine) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about the star diamond");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution3) == 0 && OwnItemCount(talker, @procuration_of_torocco) == 0 && OwnItemCount(talker, @lockirins_notice3) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask for donation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @procuration_of_torocco) >= 1 && OwnItemCount(talker, @receipt_of_contribution3) == 0 && OwnItemCount(talker, @lockirins_notice3) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Say that you are thankful for the other person giving the donation");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @reeps_contract) && OwnItemCount(talker, @elven_wine) == 0)
+                {
+                    ShowPage(talker, "carrier_torocco_q0108_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @reeps_contract) == 0 && OwnItemCount(talker, @elven_wine))
+                {
+                    ShowPage(talker, "carrier_torocco_q0108_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @gem_box1) == 1)
+                {
+                    ShowPage(talker, "carrier_torocco_q0108_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @gem_box1) == 0 && OwnItemCount(talker, @reeps_contract) == 0 && OwnItemCount(talker, @elven_wine) == 0)
+                {
+                    ShowPage(talker, "carrier_torocco_q0108_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution3) == 0 && OwnItemCount(talker, @procuration_of_torocco) == 0 && OwnItemCount(talker, @lockirins_notice3) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+                {
+                    ShowPage(talker, "carrier_torocco_q0221_01.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @procuration_of_torocco) >= 1 && OwnItemCount(talker, @receipt_of_contribution3) == 0 && OwnItemCount(talker, @lockirins_notice3) == 0)
+                {
+                    ShowPage(talker, "carrier_torocco_q0221_03.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @diamond_gambit && reply == 1 && OwnItemCount(talker, @reeps_contract) > 0)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "carrier_torocco_q0108_02.htm");
+                DeleteItem1(talker, @reeps_contract, 1);
+                GiveItem1(talker, @elven_wine, 1);
+            }
+        }
+
+        if (ask == @testimony_of_prosperity)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "carrier_torocco_q0221_02.htm");
+                    GiveItem1(talker, @procuration_of_torocco, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

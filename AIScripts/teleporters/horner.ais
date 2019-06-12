@@ -1,0 +1,20 @@
+class horner : custodian
+{
+property:
+    TelPosList Position1 = {
+        {1010024; -82445; 150788; -3129; 0; 0};    // 1010024 - "Village Square"
+        {1010025; -83331; 148563; -3148; 0; 0};    // 1010025 - "North Gate Entrance"
+        {1010026; -78405; 152723; -3181; 0; 0};    // 1010026 - "East Gate Entrance"
+        {1010028; -77460; 155995; -3194; 0; 0}    // 1010028 - "South Gate Entrance"
+    };
+    TelPosList Position2 = {
+        {1010024; -82445; 150788; -3129; 0; 0};    // 1010024 - "Village Square"
+        {1010025; -83331; 148563; -3148; 0; 0};    // 1010025 - "North Gate Entrance"
+        {1010026; -78405; 152723; -3181; 0; 0};    // 1010026 - "East Gate Entrance"
+        {1010028; -77460; 155995; -3194; 0; 0};    // 1010028 - "South Gate Entrance"
+        {1010029; -79273; 115987; -2379; 500; 0};    // 1010029 - "Entrance to Turek Orc Camp"
+        {1010030; -52931; 191053; -3546; 500; 0};    // 1010030 - "Entrance to Forgotten Sanctuary"
+        {1010031; -22824; 163489; -3942; 500; 0};    // 1010031 - "Entrance to the Wasteland"
+        {1010032; -51858; 134589; -3017; 500; 0}    // 1010032 - "Entrance to Abandoned Camp"
+    };
+}

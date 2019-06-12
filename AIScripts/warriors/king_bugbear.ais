@@ -1,0 +1,29 @@
+class king_bugbear : warrior_aggressive
+{
+handler:
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 22602)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(c0, i0)
+    {
+        i0 = myself.sm.param1;
+        if (i0 > 0)
+        {
+            c0 = GetCreatureFromIndex(i0);
+            if (c0)
+            {
+                AddAttackDesire(c0, @AMT_MOVE_TO_TARGET, 2000);
+            }
+        }
+
+        AddTimerEx(22602, 1000 * 200);
+        super;
+    }
+}

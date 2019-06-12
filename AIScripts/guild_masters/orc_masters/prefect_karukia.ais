@@ -1,0 +1,213 @@
+class prefect_karukia : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, i0, i1, i2, i3, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_orc_raider) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to Orc Marauder");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_raider) == 1 && OwnItemCount(talker, @goblin_dwelling_map) == 1 && OwnItemCount(talker, @kuruka_ratman_tooth) < 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about kuruka ratmen");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_raider) == 1 && OwnItemCount(talker, @goblin_dwelling_map) == 1 && OwnItemCount(talker, @kuruka_ratman_tooth) >= 10 && OwnItemCount(talker, @betrayer_sue_report) + OwnItemCount(talker, @betrayer_chewba_report) + OwnItemCount(talker, @betrayer_wanuk_report) + OwnItemCount(talker, @betrayer_heitafu_report) + OwnItemCount(talker, @betrayer_picubo_report) + OwnItemCount(talker, @betrayer_bumbum_report) + OwnItemCount(talker, @betrayer_minsku_report) + OwnItemCount(talker, @betrayer_chuchu_report) + OwnItemCount(talker, @betrayer_umbar_report) + OwnItemCount(talker, @betrayer_zakan_report) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give kuruka ratman's tooth");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_raider) == 1 && OwnItemCount(talker, @betrayer_sue_report) + OwnItemCount(talker, @betrayer_chewba_report) + OwnItemCount(talker, @betrayer_wanuk_report) + OwnItemCount(talker, @betrayer_heitafu_report) + OwnItemCount(talker, @betrayer_picubo_report) + OwnItemCount(talker, @betrayer_bumbum_report) + OwnItemCount(talker, @betrayer_minsku_report) + OwnItemCount(talker, @betrayer_chuchu_report) + OwnItemCount(talker, @betrayer_umbar_report) + OwnItemCount(talker, @betrayer_zakan_report) > 0 || OwnItemCount(talker, @head_of_betrayer) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about the orc betrayers");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_raider) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        FHTML_SetFileName(fhtml0, "prefect_karukia_q0414_01.htm");
+                        FHTML_SetInt(fhtml0, "quest_id", @path_to_orc_raider);
+                        ShowFHTML(talker, fhtml0);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_raider) == 1 && OwnItemCount(talker, @goblin_dwelling_map) == 1 && OwnItemCount(talker, @kuruka_ratman_tooth) < 10)
+                {
+                    ShowPage(talker, "prefect_karukia_q0414_06.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_raider) == 1 && OwnItemCount(talker, @goblin_dwelling_map) == 1 && OwnItemCount(talker, @kuruka_ratman_tooth) >= 10 && OwnItemCount(talker, @betrayer_sue_report) + OwnItemCount(talker, @betrayer_chewba_report) + OwnItemCount(talker, @betrayer_wanuk_report) + OwnItemCount(talker, @betrayer_heitafu_report) + OwnItemCount(talker, @betrayer_picubo_report) + OwnItemCount(talker, @betrayer_bumbum_report) + OwnItemCount(talker, @betrayer_minsku_report) + OwnItemCount(talker, @betrayer_chuchu_report) + OwnItemCount(talker, @betrayer_umbar_report) + OwnItemCount(talker, @betrayer_zakan_report) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "prefect_karukia_q0414_07.htm");
+                        DeleteItem1(talker, @kuruka_ratman_tooth, OwnItemCount(talker, @kuruka_ratman_tooth));
+                        DeleteItem1(talker, @goblin_dwelling_map, 1);
+                        i0 = Rand(10);
+                        i1 = Rand(10);
+                        i3 = i0;
+                        while (i0 == i1)
+                        {
+                            i1 = Rand(10);
+                        }
+
+                        select (i3)
+                        {
+                        case 0:
+                            GiveItem1(talker, @betrayer_sue_report, 1);
+                            break;
+                        case 1:
+                            GiveItem1(talker, @betrayer_wanuk_report, 1);
+                            break;
+                        case 2:
+                            GiveItem1(talker, @betrayer_chewba_report, 1);
+                            break;
+                        case 3:
+                            GiveItem1(talker, @betrayer_heitafu_report, 1);
+                            break;
+                        case 4:
+                            GiveItem1(talker, @betrayer_picubo_report, 1);
+                            break;
+                        case 5:
+                            GiveItem1(talker, @betrayer_bumbum_report, 1);
+                            break;
+                        case 6:
+                            GiveItem1(talker, @betrayer_minsku_report, 1);
+                            break;
+                        case 7:
+                            GiveItem1(talker, @betrayer_chuchu_report, 1);
+                            break;
+                        case 8:
+                            GiveItem1(talker, @betrayer_umbar_report, 1);
+                            break;
+                        case 9:
+                            GiveItem1(talker, @betrayer_zakan_report, 1);
+                            break;
+                        }
+
+                        select (i1)
+                        {
+                        case 0:
+                            GiveItem1(talker, @betrayer_sue_report, 1);
+                            break;
+                        case 1:
+                            GiveItem1(talker, @betrayer_wanuk_report, 1);
+                            break;
+                        case 2:
+                            GiveItem1(talker, @betrayer_chewba_report, 1);
+                            break;
+                        case 3:
+                            GiveItem1(talker, @betrayer_heitafu_report, 1);
+                            break;
+                        case 4:
+                            GiveItem1(talker, @betrayer_picubo_report, 1);
+                            break;
+                        case 5:
+                            GiveItem1(talker, @betrayer_bumbum_report, 1);
+                            break;
+                        case 6:
+                            GiveItem1(talker, @betrayer_minsku_report, 1);
+                            break;
+                        case 7:
+                            GiveItem1(talker, @betrayer_chuchu_report, 1);
+                            break;
+                        case 8:
+                            GiveItem1(talker, @betrayer_umbar_report, 1);
+                            break;
+                        case 9:
+                            GiveItem1(talker, @betrayer_zakan_report, 1);
+                            break;
+                        }
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || (HaveMemo(talker, @path_to_orc_raider) == 1 && OwnItemCount(talker, @betrayer_sue_report) + OwnItemCount(talker, @betrayer_chewba_report) + OwnItemCount(talker, @betrayer_wanuk_report) + OwnItemCount(talker, @betrayer_heitafu_report) + OwnItemCount(talker, @betrayer_picubo_report) + OwnItemCount(talker, @betrayer_bumbum_report) + OwnItemCount(talker, @betrayer_minsku_report) + OwnItemCount(talker, @betrayer_chuchu_report) + OwnItemCount(talker, @betrayer_umbar_report) + OwnItemCount(talker, @betrayer_zakan_report) > 0 || OwnItemCount(talker, @head_of_betrayer) > 0))
+                {
+                    ShowPage(talker, "prefect_karukia_q0414_08.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_orc_raider)
+        {
+            if (talker.level >= 19 && talker.occupation == @orc_fighter && OwnItemCount(talker, @mark_of_raider) == 0 && OwnItemCount(talker, @goblin_dwelling_map) == 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    SetMemo(talker, quest_id);
+                    SoundEffect(talker, "ItemSound.quest_accept");
+                    GiveItem1(talker, @goblin_dwelling_map, 1);
+                    ShowPage(talker, "prefect_karukia_q0414_05.htm");
+                }
+            }
+            else if (talker.occupation != @orc_fighter)
+            {
+                if (talker.occupation == @orc_raider)
+                {
+                    ShowPage(talker, "prefect_karukia_q0414_02a.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "prefect_karukia_q0414_03.htm");
+                }
+            }
+            else if (talker.level < 19 && talker.occupation == @orc_fighter)
+            {
+                ShowPage(talker, "prefect_karukia_q0414_02.htm");
+            }
+            else if (talker.level >= 19 && talker.occupation == @orc_fighter && OwnItemCount(talker, @mark_of_raider) == 1)
+            {
+                ShowPage(talker, "prefect_karukia_q0414_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

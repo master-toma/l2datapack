@@ -1,0 +1,61 @@
+class enchanted_monstereye : warrior_aggressive_casting_hold_magic
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_lord) == 1 && OwnItemCount(c1, @ordeal_necklace) == 1 && OwnItemCount(c1, @chianta_charm) == 1 && OwnItemCount(c1, @monstereye_woodcarving) == 0)
+        {
+            if (OwnItemCount(c1, @cornea_of_en_monstereye) < 20)
+            {
+                GiveItem1(c1, @cornea_of_en_monstereye, 1);
+                if (OwnItemCount(c1, @cornea_of_en_monstereye) >= 20)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_magus) && OwnItemCount(c1, @score_of_elements) == 1 && OwnItemCount(c1, @serpent_charm) == 1 && OwnItemCount(c1, @en_monstereye_shell) < 10)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @en_monstereye_shell, 1);
+                if (OwnItemCount(c1, @en_monstereye_shell) >= 10)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_duelist) && OwnItemCount(c1, @tempered_eye_meat) < 10 && GetMemoState(c1, @test_of_duelist) == 1)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @tempered_eye_meat, 1);
+                if (OwnItemCount(c1, @tempered_eye_meat) >= 10)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

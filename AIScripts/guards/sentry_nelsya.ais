@@ -1,0 +1,123 @@
+class sentry_nelsya : guard_stand
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @wild_hunt) == 0 && GetOneTimeQuestFlag(talker, @wild_hunt) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about the hunting festival of Shilen");
+            }
+
+            if (HaveMemo(talker, @wild_hunt) == 0 && GetOneTimeQuestFlag(talker, @wild_hunt) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about the hunting festival of Shilen");
+            }
+
+            if (HaveMemo(talker, @wild_hunt) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about the hunting festival");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @wild_hunt) == 0 && GetOneTimeQuestFlag(talker, @wild_hunt) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_dark_elf)
+                        {
+                            ShowPage(talker, "sentry_nelsya_q0321_00.htm");
+                        }
+                        else if (talker.level >= 3)
+                        {
+                            FHTML_SetFileName(fhtml0, "sentry_nelsya_q0321_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @wild_hunt);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "sentry_nelsya_q0321_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @wild_hunt) == 0 && GetOneTimeQuestFlag(talker, @wild_hunt) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @wild_hunt) == 1)
+                {
+                    if (OwnItemCount(talker, @dark_bezoar) < 13)
+                    {
+                        ShowPage(talker, "sentry_nelsya_q0321_04.htm");
+                    }
+                    else if (OwnItemCount(talker, @dark_bezoar) >= 13 && GetOneTimeQuestFlag(talker, @wild_hunt) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "sentry_nelsya_q0321_05.htm");
+                            DeleteItem1(talker, @dark_bezoar, OwnItemCount(talker, @dark_bezoar));
+                            GiveItem1(talker, @lesser_healing_potion, 1);
+                            IncrementParam(talker, @PARAM_EXP, 1900);
+                            RemoveMemo(talker, @wild_hunt);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            SetOneTimeQuestFlag(talker, @wild_hunt, 1);
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @wild_hunt)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "sentry_nelsya_q0321_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

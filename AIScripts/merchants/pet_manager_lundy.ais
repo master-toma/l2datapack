@@ -1,0 +1,30 @@
+class pet_manager_lundy : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"iron_canine"; 20};
+        {"shining_canine"; 20};
+        {"ghost_canine"; 20};
+        {"mithril_canine"; 20};
+        {"sylvan_canine"; 20};
+        {"orikarukon_canine"; 20};
+        {"fang_of_saltydog"; 20};
+        {"wolve's_leather_mail"; 20};
+        {"wolves_hide_armor"; 20};
+        {"wolves_hard_leather_mail"; 20};
+        {"wolves_wooden_armor"; 20};
+        {"wolves_ring_mail"; 20};
+        {"wolves_bone_armor"; 20};
+        {"wolves_scale_mail"; 20};
+        {"food_for_wolves"; 20};
+        {"viperbite"; 20};
+        {"shadow_fang"; 20};
+        {"alya_fang"; 20};
+        {"torturer"; 20};
+        {"hatchlings_scale_mail"; 20};
+        {"hatchlings_brigandine"; 20};
+        {"hatchlings_bronze_coat"; 20};
+        {"hatchlings_steel_coat"; 20};
+        {"food_for_hatchling"; 20}
+    };
+}

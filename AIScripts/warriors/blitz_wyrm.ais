@@ -1,0 +1,38 @@
+class blitz_wyrm : warrior_aggressive_immediate
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @pledge_seeks_ambition) == 1 && GetMemoState(c1, @pledge_seeks_ambition) < 3000 && GetMemoState(c1, @pledge_seeks_ambition) >= 2000 && OwnItemCount(c1, @q_blitz_wyrm_egg) < 10)
+        {
+            GiveItem1(c1, @q_blitz_wyrm_egg, 1);
+            if (OwnItemCount(c1, @q_blitz_wyrm_egg) >= 10)
+            {
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+            else
+            {
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 250304)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(250304, 1000 * 60 * 3);
+        super;
+    }
+}

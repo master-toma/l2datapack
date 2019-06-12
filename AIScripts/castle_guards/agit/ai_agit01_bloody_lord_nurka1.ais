@@ -1,0 +1,62 @@
+class ai_agit01_bloody_lord_nurka1 : default_npc
+{
+parameter:
+    float Attack_DecayRatio = 6.6;
+    float UseSkill_DecayRatio = 66000.0;
+    float Attack_BoostValue = 500.0;
+    float UseSkill_BoostValue = 100000.0;
+    
+handler:
+    EventHandler NO_DESIRE()
+    {
+        AddDoNothingDesire(40, 20);
+    }
+
+    EventHandler CREATED()
+    {
+        InstantTeleportInMyTerritory(51952, 111060, -1970, 200);
+    }
+
+    EventHandler ATTACKED(attacker, damage, skill_name_id)
+    {
+        if ((attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id)) && Rand(100) < 10)
+        {
+            if (Skill_GetConsumeMP(@s_nurka_fire) < myself.sm.mp && Skill_GetConsumeHP(@s_nurka_fire) < myself.sm.hp && Skill_InReuseDelay(@s_nurka_fire) == @FALSE)
+            {
+                AddUseSkillDesire(attacker, @s_nurka_fire, @ST_ATTACK, @AMT_STAND, 1000000);
+            }
+        }
+
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            AddAttackDesire(attacker, @AMT_STAND, damage / myself.sm.max_hp / 0.05 * 10000);
+        }
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, damage)
+    {
+        if ((attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id)) && Rand(100) < 2)
+        {
+            if (Skill_GetConsumeMP(@s_nurka_fire) < myself.sm.mp && Skill_GetConsumeHP(@s_nurka_fire) < myself.sm.hp && Skill_InReuseDelay(@s_nurka_fire) == @FALSE)
+            {
+                AddUseSkillDesire(attacker, @s_nurka_fire, @ST_ATTACK, @AMT_STAND, 1000000);
+            }
+        }
+
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            AddAttackDesire(attacker, @AMT_STAND, damage / myself.sm.max_hp / 0.05 * 5000);
+        }
+    }
+
+    EventHandler SEE_SPELL(speller, skill_name_id)
+    {
+        if (Skill_GetEffectPoint(skill_name_id) > 0 && Rand(100) < 15)
+        {
+            if (Skill_GetConsumeMP(@s_nurka_fire) < myself.sm.mp && Skill_GetConsumeHP(@s_nurka_fire) < myself.sm.hp && Skill_InReuseDelay(@s_nurka_fire) == @FALSE)
+            {
+                AddUseSkillDesire(speller, @s_nurka_fire, @ST_ATTACK, @AMT_STAND, 1000000);
+            }
+        }
+    }
+}

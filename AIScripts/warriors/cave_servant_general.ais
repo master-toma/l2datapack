@@ -1,0 +1,3 @@
+class cave_servant_general : party_private
+{
+}

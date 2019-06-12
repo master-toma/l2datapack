@@ -1,0 +1,42 @@
+class pet_use_one_skill : default_npc
+{
+parameter:
+    int DDMagic = @s_power_strike11;
+    
+handler:
+    EventHandler CREATED()
+    {
+        AddPetDefaultDesire_Follow(20.0);
+    }
+
+    EventHandler NO_DESIRE()
+    {
+        AddPetDefaultDesire_Follow(20.0);
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, i0, c0)
+    {
+        i0 = myself.master.target_index;
+        if (i0 <= 0)
+        {
+            return;
+        }
+
+        c0 = GetCreatureFromIndex(i0);
+        if (c0)
+        {
+            i0 = myself.sm.level / 10;
+            if (i0 != 0)
+            {
+                i0 = i0 - 1;
+            }
+
+            i0 = i0 + DDMagic;
+            if (Skill_GetConsumeMP(i0) < myself.sm.mp && Skill_GetConsumeHP(i0) < myself.sm.hp && Skill_InReuseDelay(i0) == @FALSE)
+            {
+                AddUseSkillDesireEx(myself.master.target_id, i0, @ST_ATTACK, reply, ask, 1000000);
+                AddAttackDesireEx(myself.master.target_id, reply, ask, 50000);
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+skill_begin	skill_name = [s_boost_hp1]	/* [부스트 HP] */	skill_id = 211	level = 1	operate_type = P	effect = {{p_max_hp;60;diff}}	skill_end
+skill_begin	skill_name = [s_boost_hp2]	/* [부스트 HP] */	skill_id = 211	level = 2	operate_type = P	effect = {{p_max_hp;100;diff}}	skill_end
+skill_begin	skill_name = [s_boost_hp3]	/* [부스트 HP] */	skill_id = 211	level = 3	operate_type = P	effect = {{p_max_hp;150;diff}}	skill_end
+skill_begin	skill_name = [s_boost_hp4]	/* [부스트 HP] */	skill_id = 211	level = 4	operate_type = P	effect = {{p_max_hp;200;diff}}	skill_end
+skill_begin	skill_name = [s_boost_hp5]	/* [부스트 HP] */	skill_id = 211	level = 5	operate_type = P	effect = {{p_max_hp;250;diff}}	skill_end
+skill_begin	skill_name = [s_boost_hp6]	/* [부스트 HP] */	skill_id = 211	level = 6	operate_type = P	effect = {{p_max_hp;300;diff}}	skill_end

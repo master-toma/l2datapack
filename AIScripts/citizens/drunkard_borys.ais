@@ -1,0 +1,100 @@
+class drunkard_borys : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Letter from Alex");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @wine_catalog) == 1 && OwnItemCount(talker, @malrukian_wine) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Give wine");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @wine_catalog) == 0 && OwnItemCount(talker, @malrukian_wine) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give wine");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @old_order) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about Rex");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && (OwnItemCount(talker, @rexs_diary) == 1 || OwnItemCount(talker, @combined_map) == 1 || OwnItemCount(talker, @alankells_recommend) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Rex");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_letter) == 1)
+                {
+                    ShowPage(talker, "drunkard_borys_q0225_01.htm");
+                    DeleteItem1(talker, @alankells_letter, 1);
+                    GiveItem1(talker, @wine_catalog, 1);
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @wine_catalog) == 1 && OwnItemCount(talker, @malrukian_wine) == 0)
+                {
+                    ShowPage(talker, "drunkard_borys_q0225_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @wine_catalog) == 0 && OwnItemCount(talker, @malrukian_wine) == 1)
+                {
+                    ShowPage(talker, "drunkard_borys_q0225_03.htm");
+                    GiveItem1(talker, @old_order, 1);
+                    DeleteItem1(talker, @malrukian_wine, OwnItemCount(talker, @malrukian_wine));
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @old_order) == 1)
+                {
+                    ShowPage(talker, "drunkard_borys_q0225_04.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && (OwnItemCount(talker, @rexs_diary) == 1 || OwnItemCount(talker, @combined_map) == 1 || OwnItemCount(talker, @alankells_recommend) == 1))
+                {
+                    ShowPage(talker, "drunkard_borys_q0225_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

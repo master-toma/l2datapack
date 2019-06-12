@@ -1,0 +1,257 @@
+class guild_master : default_npc
+{
+parameter:
+    string fnHi = "gmhi.htm";
+    string fnClassMismatch = "gmhi.htm";
+    string fnClassList1 = "gmhi.htm";
+    string fnClassList2 = "gmhi.htm";
+    string fnClassList3 = "gmhi.htm";
+    string fnClassList4 = "gmhi.htm";
+    string fnClassList5 = "gmhi.htm";
+    string fnYouAreSecondClass = "gmhi.htm";
+    string fnYouAreThirdClass = "gmhi.htm";
+    string fnLowLevelNoProof11 = "gmhi.htm";
+    string fnLowLevelNoProof12 = "gmhi.htm";
+    string fnLowLevelNoProof13 = "gmhi.htm";
+    string fnLowLevelNoProof21 = "gmhi.htm";
+    string fnLowLevelNoProof22 = "gmhi.htm";
+    string fnLowLevelNoProof23 = "gmhi.htm";
+    string fnLowLevelNoProof31 = "gmhi.htm";
+    string fnLowLevelNoProof32 = "gmhi.htm";
+    string fnLowLevelNoProof33 = "gmhi.htm";
+    string fnLowLevelNoProof41 = "gmhi.htm";
+    string fnLowLevelNoProof42 = "gmhi.htm";
+    string fnLowLevelNoProof43 = "gmhi.htm";
+    string fnLowLevelNoProof51 = "gmhi.htm";
+    string fnLowLevelNoProof52 = "gmhi.htm";
+    string fnLowLevelNoProof53 = "gmhi.htm";
+    string fnLowLevel11 = "gmhi.htm";
+    string fnLowLevel12 = "gmhi.htm";
+    string fnLowLevel13 = "gmhi.htm";
+    string fnLowLevel21 = "gmhi.htm";
+    string fnLowLevel22 = "gmhi.htm";
+    string fnLowLevel23 = "gmhi.htm";
+    string fnLowLevel31 = "gmhi.htm";
+    string fnLowLevel32 = "gmhi.htm";
+    string fnLowLevel33 = "gmhi.htm";
+    string fnLowLevel41 = "gmhi.htm";
+    string fnLowLevel42 = "gmhi.htm";
+    string fnLowLevel43 = "gmhi.htm";
+    string fnLowLevel51 = "gmhi.htm";
+    string fnLowLevel52 = "gmhi.htm";
+    string fnLowLevel53 = "gmhi.htm";
+    string fnNoProof11 = "gmhi.htm";
+    string fnNoProof12 = "gmhi.htm";
+    string fnNoProof13 = "gmhi.htm";
+    string fnNoProof21 = "gmhi.htm";
+    string fnNoProof22 = "gmhi.htm";
+    string fnNoProof23 = "gmhi.htm";
+    string fnNoProof31 = "gmhi.htm";
+    string fnNoProof32 = "gmhi.htm";
+    string fnNoProof33 = "gmhi.htm";
+    string fnNoProof41 = "gmhi.htm";
+    string fnNoProof42 = "gmhi.htm";
+    string fnNoProof43 = "gmhi.htm";
+    string fnNoProof51 = "gmhi.htm";
+    string fnNoProof52 = "gmhi.htm";
+    string fnNoProof53 = "gmhi.htm";
+    string fnAfterClassChange11 = "gmhi.htm";
+    string fnAfterClassChange12 = "gmhi.htm";
+    string fnAfterClassChange13 = "gmhi.htm";
+    string fnAfterClassChange21 = "gmhi.htm";
+    string fnAfterClassChange22 = "gmhi.htm";
+    string fnAfterClassChange23 = "gmhi.htm";
+    string fnAfterClassChange31 = "gmhi.htm";
+    string fnAfterClassChange32 = "gmhi.htm";
+    string fnAfterClassChange33 = "gmhi.htm";
+    string fnAfterClassChange41 = "gmhi.htm";
+    string fnAfterClassChange42 = "gmhi.htm";
+    string fnAfterClassChange43 = "gmhi.htm";
+    string fnAfterClassChange51 = "gmhi.htm";
+    string fnAfterClassChange52 = "gmhi.htm";
+    string fnAfterClassChange53 = "gmhi.htm";
+    string fnYouAreFirstClass = "gmhi.htm";
+
+handler:
+    EventHandler TALKED(talker)
+    {
+        ShowPage(talker, fnHi);
+    }
+
+    EventHandler CREATE_PLEDGE(talker, reply)
+    {
+        if (reply == 1)
+        {
+            ShowPage(talker, "pl006.htm");
+        }
+    }
+
+    EventHandler CREATE_ALLIANCE(talker, reply)
+    {
+        if (reply == 1)
+        {
+            ShowPage(talker, "al006.htm");
+        }
+    }
+
+    EventHandler DISMISS_PLEDGE(talker, reply)
+    {
+        if (reply == 1)
+        {
+            ShowPage(talker, "pl009.htm");
+        }
+    }
+
+    EventHandler REVIVE_PLEDGE(talker, reply)
+    {
+        if (reply == 1)
+        {
+            ShowPage(talker, "pl012.htm");
+        }
+    }
+
+    EventHandler LEVEL_UP_PLEDGE(talker, reply)
+    {
+        if (reply == 0)
+        {
+            if (talker.sp >= 30000 && OwnItemCount(talker, @adena) >= 650000)
+            {
+                if (DeleteItem1(talker, @adena, 650000))
+                {
+                    IncrementParam(talker, @PARAM_SP, -30000);
+                    PledgeLevelUp(talker, 1);
+                }
+            }
+            else
+            {
+                ShowPage(talker, "pl016.htm");
+            }
+        }
+        else if (reply == 1)
+        {
+            if (talker.sp >= 150000 && OwnItemCount(talker, @adena) >= 2500000)
+            {
+                if (DeleteItem1(talker, @adena, 2500000))
+                {
+                    IncrementParam(talker, @PARAM_SP, -150000);
+                    PledgeLevelUp(talker, 2);
+                }
+            }
+            else
+            {
+                ShowPage(talker, "pl016.htm");
+            }
+        }
+        else if (reply == 2)
+        {
+            if (talker.sp >= 500000 && OwnItemCount(talker, @proof_of_blood) >= 1)
+            {
+                if (DeleteItem1(talker, @proof_of_blood, 1))
+                {
+                    IncrementParam(talker, @PARAM_SP, -500000);
+                    PledgeLevelUp(talker, 3);
+                }
+            }
+            else
+            {
+                ShowPage(talker, "pl016.htm");
+            }
+        }
+        else if (reply == 3)
+        {
+            if (talker.sp >= 1400000 && OwnItemCount(talker, @q_proof_of_alliance) >= 1)
+            {
+                if (DeleteItem1(talker, @q_proof_of_alliance, 1))
+                {
+                    IncrementParam(talker, @PARAM_SP, -1400000);
+                    PledgeLevelUp(talker, 4);
+                }
+            }
+            else
+            {
+                ShowPage(talker, "pl016.htm");
+            }
+        }
+        else if (reply == 4)
+        {
+            if (talker.sp >= 3500000 && OwnItemCount(talker, @q_proof_of_aspiration) >= 1)
+            {
+                if (DeleteItem1(talker, @q_proof_of_aspiration, 1))
+                {
+                    IncrementParam(talker, @PARAM_SP, -3500000);
+                    PledgeLevelUp(talker, 5);
+                }
+            }
+            else
+            {
+                ShowPage(talker, "pl016.htm");
+            }
+        }
+    }
+
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -3)
+        {
+            if (reply == 0)
+            {
+                if (talker.level < 10)
+                {
+                    ShowPage(talker, "pl002.htm");
+                }
+                else if (talker.is_pledge_master == @TRUE)
+                {
+                    ShowPage(talker, "pl003.htm");
+                }
+                else if (talker.pledge_id != 0)
+                {
+                    ShowPage(talker, "pl004.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "pl005.htm");
+                }
+            }
+            else if (reply == 2)
+            {
+                if (talker.is_pledge_master == @TRUE)
+                {
+                    ShowPage(talker, "pl007.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "pl008.htm");
+                }
+            }
+            else if (reply == 3)
+            {
+                if (talker.is_pledge_master == @TRUE)
+                {
+                    ShowPage(talker, "pl010.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "pl011.htm");
+                }
+            }
+            else if (reply == 1)
+            {
+                if (talker.is_pledge_master == @TRUE)
+                {
+                    ShowPage(talker, "pl013.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "pl014.htm");
+                }
+            }
+        }
+        else if (ask == -4)
+        {
+            if (reply == 0)
+            {
+                ShowPage(talker, "al005.htm");
+            }
+        }
+    }
+}

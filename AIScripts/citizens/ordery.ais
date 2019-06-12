@@ -1,0 +1,16 @@
+class ordery : default_npc
+{
+parameter:
+    string fnHi = "partisan_ordery_brakel001.htm";
+    
+handler:
+    EventHandler TALKED(talker, fhtml0)
+    {
+        if (Castle_GetSiegeTime() != "")
+        {
+            FHTML_SetFileName(fhtml0, fnHi);
+            FHTML_SetStr(fhtml0, "next_siege", Castle_GetSiegeTime());
+            ShowFHTML(talker, fhtml0);
+        }
+    }
+}

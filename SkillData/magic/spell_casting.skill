@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_spell_casting]	/* [스펠 크래프트] */	skill_id = 163	level = 1	operate_type = P	effect = {{p_magic_speed;{armor_none;armor_light;armor_heavy};-50;per}}	skill_end

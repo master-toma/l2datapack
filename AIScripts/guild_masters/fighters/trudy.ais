@@ -1,0 +1,59 @@
+class trudy : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @dark_mass) == 1 && OwnItemCount(talker, @undres_letter) == 1 && OwnItemCount(talker, @garmiels_scripture) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Undrias's letter");
+            }
+
+            if (HaveMemo(talker, @dark_mass) == 1 && OwnItemCount(talker, @garmiels_scripture) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Garmiel's scripture");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @dark_mass) == 1 && OwnItemCount(talker, @undres_letter) == 1 && OwnItemCount(talker, @garmiels_scripture) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @garmiels_scripture, 1);
+                        ShowPage(talker, "trudy_q0322_01.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @dark_mass) == 1 && OwnItemCount(talker, @garmiels_scripture) == 1)
+                {
+                    ShowPage(talker, "trudy_q0322_02.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

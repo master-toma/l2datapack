@@ -1,0 +1,95 @@
+class magister_gauen : wizard_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 9 && OwnItemCount(talker, @letter_of_hamil3))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Serpent Demon Kadesh");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about ingredients for Bow of Crescent Moon");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 12)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about ingredients for Bow of Crescent Moon");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 11 && OwnItemCount(talker, @stakato_chitin) && OwnItemCount(talker, @mithril_clip) && OwnItemCount(talker, @st_bowstring) && OwnItemCount(talker, @manashens_horn))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give ingredients of Bow of Crescent Moon");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 9 && OwnItemCount(talker, @letter_of_hamil3))
+                {
+                    ShowPage(talker, "magister_gauen_q0224_01.htm");
+                    DeleteItem1(talker, @letter_of_hamil3, 1);
+                    SetMemoState(talker, @test_of_sagittarius, 10);
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 10)
+                {
+                    ShowPage(talker, "magister_gauen_q0224_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 12)
+                {
+                    ShowPage(talker, "magister_gauen_q0224_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 11 && OwnItemCount(talker, @stakato_chitin) && OwnItemCount(talker, @mithril_clip) && OwnItemCount(talker, @st_bowstring) && OwnItemCount(talker, @manashens_horn))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "magister_gauen_q0224_02.htm");
+                        DeleteItem1(talker, @mithril_clip, 1);
+                        DeleteItem1(talker, @stakato_chitin, 1);
+                        DeleteItem1(talker, @st_bowstring, 1);
+                        DeleteItem1(talker, @manashens_horn, 1);
+                        GiveItem1(talker, @crescent_moon_bow, 1);
+                        GiveItem1(talker, @wooden_arrow, 10);
+                        SetMemoState(talker, @test_of_sagittarius, 12);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,19 @@
+class arvid : mseller
+{
+property:
+    BuySellList SellList0 = {
+        {"mticket_giran_sword_fix"; 15};
+        {"mticket_giran_pole_fix"; 15};
+        {"mticket_giran_bow_fix"; 15};
+        {"mticket_giran_cleric_fix"; 15};
+        {"mticket_giran_wizard_fix"; 15};
+        {"mticket_giran_sword_move"; 15};
+        {"mticket_giran_pole_move"; 15};
+        {"mticket_giran_bow_move"; 15};
+        {"mticket_giran_cleric_move"; 15};
+        {"mticket_giran_wizard_move"; 15};
+        {"mticket_giran_teleporter1"; 15};
+        {"mticket_giran_teleporter2"; 15};
+        {"mticket_giran_teleporter3"; 15}
+    };
+}

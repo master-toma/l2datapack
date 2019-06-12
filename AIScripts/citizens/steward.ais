@@ -1,0 +1,227 @@
+class steward : default_npc
+{
+parameter:
+    string fnHi = "ol_mahum_steward_tamutak001.htm";
+    string fnNotMyLord = "ol_mahum_steward_tamutak002.htm";
+    string fnSetGate = "ol_mahum_steward_tamutak003.htm";
+    string fnBanish = "ol_mahum_steward_tamutak004.htm";
+    string fnOptionList = "ol_mahum_steward_tamutak005.htm";
+    string fnAfterOpenGate = "ol_mahum_steward_tamutak006.htm";
+    string fnAfterCloseGate = "ol_mahum_steward_tamutak007.htm";
+    string fnAfterBanish = "ol_mahum_steward_tamutak008.htm";
+    string fnAlreadyHaveOption = "ol_mahum_steward_tamutak009.htm";
+    string fnNotEnoughAdena = "ol_mahum_steward_tamutak010.htm";
+    string fnNeedLowGrade = "ol_mahum_steward_tamutak011.htm";
+    string fnAfterOptionAdd = "ol_mahum_steward_tamutak012.htm";
+    string fnAddHPRegen1 = "ol_mahum_steward_tamutak013.htm";
+    string fnAddHPRegen2 = "ol_mahum_steward_tamutak014.htm";
+    string fnAddMPRegen1 = "ol_mahum_steward_tamutak015.htm";
+    string fnAddMPRegen2 = "ol_mahum_steward_tamutak016.htm";
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        if (IsMyLord(talker))
+        {
+            ShowPage(talker, fnHi);
+        }
+        else
+        {
+            ShowPage(talker, fnNotMyLord);
+        }
+    }
+
+    EventHandler MENU_SELECTED(talker, ask, reply, fhtml0)
+    {
+        if (ask == -201)
+        {
+            select (reply)
+            {
+            case 1:
+                ShowPage(talker, fnSetGate);
+                break;
+            case 2:
+                ShowPage(talker, fnBanish);
+                break;
+            case 3:
+                FHTML_SetFileName(fhtml0, fnOptionList);
+                if (Castle_GetHPRegen() > 0)
+                {
+                    FHTML_SetStr(fhtml0, "is_activate1", MakeFString(3, "", "", "", "", ""));
+                }
+                else
+                {
+                    FHTML_SetStr(fhtml0, "is_activate1", MakeFString(4, "", "", "", "", ""));
+                }
+
+                if (Castle_GetHPRegen() > 1)
+                {
+                    FHTML_SetStr(fhtml0, "is_activate2", MakeFString(3, "", "", "", "", ""));
+                }
+                else
+                {
+                    FHTML_SetStr(fhtml0, "is_activate2", MakeFString(4, "", "", "", "", ""));
+                }
+
+                if (Castle_GetMPRegen() > 0)
+                {
+                    FHTML_SetStr(fhtml0, "is_activate3", MakeFString(3, "", "", "", "", ""));
+                }
+                else
+                {
+                    FHTML_SetStr(fhtml0, "is_activate3", MakeFString(4, "", "", "", "", ""));
+                }
+
+                if (Castle_GetMPRegen() > 1)
+                {
+                    FHTML_SetStr(fhtml0, "is_activate4", MakeFString(3, "", "", "", "", ""));
+                }
+                else
+                {
+                    FHTML_SetStr(fhtml0, "is_activate4", MakeFString(4, "", "", "", "", ""));
+                }
+
+                ShowFHTML(talker, fhtml0);
+                break;
+            }
+        }
+        else if (ask == -202)
+        {
+            select (reply)
+            {
+            case 1:
+                Castle_GateOpenClose(0);
+                ShowPage(talker, fnAfterOpenGate);
+                break;
+            case 2:
+                Castle_GateOpenClose(1);
+                ShowPage(talker, fnAfterCloseGate);
+                break;
+            }
+        }
+        else if (ask == -203)
+        {
+            if (reply == 1)
+            {
+                Castle_BanishOthers();
+                ShowPage(talker, fnAfterBanish);
+            }
+        }
+        else if (ask == -204)
+        {
+            select (reply)
+            {
+            case 1:
+                if (Castle_GetHPRegen() > 0)
+                {
+                    ShowPage(talker, fnAlreadyHaveOption);
+                }
+                else
+                {
+                    ShowPage(talker, fnAddHPRegen1);
+                }
+
+                break;
+            case 2:
+                if (Castle_GetHPRegen() > 1)
+                {
+                    ShowPage(talker, fnAlreadyHaveOption);
+                }
+                else if (Castle_GetHPRegen())
+                {
+                    ShowPage(talker, fnAddHPRegen2);
+                }
+                else
+                {
+                    ShowPage(talker, fnNeedLowGrade);
+                }
+
+                break;
+            case 3:
+                if (Castle_GetMPRegen() > 0)
+                {
+                    ShowPage(talker, fnAlreadyHaveOption);
+                }
+                else
+                {
+                    ShowPage(talker, fnAddMPRegen1);
+                }
+
+                break;
+            case 4:
+                if (Castle_GetMPRegen() > 1)
+                {
+                    ShowPage(talker, fnAlreadyHaveOption);
+                }
+                else if (Castle_GetMPRegen())
+                {
+                    ShowPage(talker, fnAddMPRegen2);
+                }
+                else
+                {
+                    ShowPage(talker, fnNeedLowGrade);
+                }
+
+                break;
+            }
+        }
+        else if (ask == -205)
+        {
+            select (reply)
+            {
+            case 1:
+                if (OwnItemCount(talker, @adena) >= 100000)
+                {
+                    DeleteItem1(talker, @adena, 100000);
+                    Castle_SetHPRegen(1);
+                    ShowPage(talker, fnAfterOptionAdd);
+                }
+                else
+                {
+                    ShowPage(talker, fnNotEnoughAdena);
+                }
+
+                break;
+            case 2:
+                if (OwnItemCount(talker, @adena) >= 200000)
+                {
+                    DeleteItem1(talker, @adena, 200000);
+                    Castle_SetHPRegen(2);
+                    ShowPage(talker, fnAfterOptionAdd);
+                }
+                else
+                {
+                    ShowPage(talker, fnNotEnoughAdena);
+                }
+
+                break;
+            case 3:
+                if (OwnItemCount(talker, @adena) >= 300000)
+                {
+                    DeleteItem1(talker, @adena, 300000);
+                    Castle_SetMPRegen(1);
+                    ShowPage(talker, fnAfterOptionAdd);
+                }
+                else
+                {
+                    ShowPage(talker, fnNotEnoughAdena);
+                }
+
+                break;
+            case 4:
+                if (OwnItemCount(talker, @adena) >= 600000)
+                {
+                    DeleteItem1(talker, @adena, 600000);
+                    Castle_SetMPRegen(2);
+                    ShowPage(talker, fnAfterOptionAdd);
+                }
+                else
+                {
+                    ShowPage(talker, fnNotEnoughAdena);
+                }
+
+                break;
+            }
+        }
+    }
+}

@@ -1,0 +1,251 @@
+class elder_arin : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @dreams_of_flight) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about airship");
+            }
+
+            if (HaveMemo(talker, @dreams_of_flight) == 1 && OwnItemCount(talker, @floating_stone) < 50)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about floating stone");
+            }
+
+            if (HaveMemo(talker, @dreams_of_flight) == 1 && OwnItemCount(talker, @floating_stone) >= 50)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Receive compensation from Arin");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @recommendation_of_arin) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that you want to receive a letter of recommendation");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 3 && OwnItemCount(talker, @paint_of_teleport_device) && OwnItemCount(talker, @teleport_device) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Say that the teleport device was not returned to you");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 3 && OwnItemCount(talker, @teleport_device) >= 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Give teleport device");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @recommendation_of_arin))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask whom to go to see once you've collected 3 letters of recommendation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @lockirins_notice5) >= 1 && OwnItemCount(talker, @receipt_of_contribution5) == 0 && OwnItemCount(talker, @contribution_of_toma) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Say that you came to collect the donation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution5) == 0 && OwnItemCount(talker, @contribution_of_toma) == 0 && OwnItemCount(talker, @lockirins_notice5) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Give donation that was collected");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @contribution_of_toma) >= 1 && OwnItemCount(talker, @receipt_of_contribution5) == 0 && OwnItemCount(talker, @lockirins_notice5) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Give donation that was collected");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_contribution5) >= 1 && OwnItemCount(talker, @contribution_of_toma) == 0 && OwnItemCount(talker, @lockirins_notice5) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Say that you are collecting the donation receipt");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @dreams_of_flight) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 11)
+                        {
+                            FHTML_SetFileName(fhtml0, "elder_arin_q0295_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @dreams_of_flight);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "elder_arin_q0295_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @dreams_of_flight) == 1 && OwnItemCount(talker, @floating_stone) < 50)
+                {
+                    ShowPage(talker, "elder_arin_q0295_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @dreams_of_flight) == 1 && OwnItemCount(talker, @floating_stone) >= 50)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @ring_of_firefly) < 1)
+                        {
+                            ShowPage(talker, "elder_arin_q0295_05.htm");
+                            GiveItem1(talker, @ring_of_firefly, 1);
+                            IncrementParam(talker, @PARAM_SP, 60);
+                            DeleteItem1(talker, @floating_stone, OwnItemCount(talker, @floating_stone));
+                            RemoveMemo(talker, @dreams_of_flight);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                        else if (OwnItemCount(talker, @ring_of_firefly) >= 1)
+                        {
+                            ShowPage(talker, "elder_arin_q0295_06.htm");
+                            GiveItem1(talker, @adena, 2400);
+                            IncrementParam(talker, @PARAM_SP, 60);
+                            DeleteItem1(talker, @floating_stone, OwnItemCount(talker, @floating_stone));
+                            RemoveMemo(talker, @dreams_of_flight);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @recommendation_of_arin) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "elder_arin_q0231_01.htm");
+                        GiveItem1(talker, @paint_of_teleport_device, 1);
+                        SetMemoState(talker, @test_of_maestro, 3);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 3 && OwnItemCount(talker, @paint_of_teleport_device) && OwnItemCount(talker, @teleport_device) == 0)
+                {
+                    ShowPage(talker, "elder_arin_q0231_02.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 3 && OwnItemCount(talker, @teleport_device) >= 5)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "elder_arin_q0231_03.htm");
+                        GiveItem1(talker, @recommendation_of_arin, 1);
+                        DeleteItem1(talker, @teleport_device, OwnItemCount(talker, @teleport_device));
+                        SetMemoState(talker, @test_of_maestro, 1);
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @recommendation_of_arin))
+                {
+                    ShowPage(talker, "elder_arin_q0231_04.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @lockirins_notice5) >= 1 && OwnItemCount(talker, @receipt_of_contribution5) == 0 && OwnItemCount(talker, @contribution_of_toma) == 0)
+                {
+                    ShowPage(talker, "elder_arin_q0221_01.htm");
+                    DeleteItem1(talker, @lockirins_notice5, OwnItemCount(talker, @lockirins_notice5));
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution5) == 0 && OwnItemCount(talker, @contribution_of_toma) == 0 && OwnItemCount(talker, @lockirins_notice5) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+                {
+                    ShowPage(talker, "elder_arin_q0221_02.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @contribution_of_toma) >= 1 && OwnItemCount(talker, @receipt_of_contribution5) == 0 && OwnItemCount(talker, @lockirins_notice5) == 0)
+                {
+                    ShowPage(talker, "elder_arin_q0221_03.htm");
+                    DeleteItem1(talker, @contribution_of_toma, 1);
+                    GiveItem1(talker, @receipt_of_contribution5, 1);
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_contribution5) >= 1 && OwnItemCount(talker, @contribution_of_toma) == 0 && OwnItemCount(talker, @lockirins_notice5) == 0)
+                {
+                    ShowPage(talker, "elder_arin_q0221_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @dreams_of_flight)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @dreams_of_flight);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "elder_arin_q0295_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

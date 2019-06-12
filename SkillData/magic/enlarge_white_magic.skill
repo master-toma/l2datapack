@@ -1,0 +1,2 @@
+skill_begin	skill_name = [s_enlarge_white_magic1]	/* [인라지 화이트 매직] */	skill_id = 155	level = 1	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_enlarge_white_magic2]	/* [인라지 화이트 매직] */	skill_id = 155	level = 2	operate_type = P	effect = {}	skill_end

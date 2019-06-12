@@ -1,0 +1,3 @@
+class snipe : party_leader_aggressive
+{
+}

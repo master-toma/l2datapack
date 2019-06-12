@@ -1,0 +1,147 @@
+class enku_chief_kepra : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_enku) == 0 && OwnItemCount(talker, @manakias_letter2) == 0 && OwnItemCount(talker, @glove_of_kepra) == 0 && OwnItemCount(talker, @enku_overlord_head) < 4)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Speak arrogantly to the Head of the Lower Orc Tribe");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @manakias_letter2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show Letter from Manakia");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @glove_of_kepra) && OwnItemCount(talker, @enku_overlord_head) < 4)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Threaten and tell the other person to show the royal seals");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @enku_overlord_head) >= 4)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask the other person to give the royal seals before you have to see more blood");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_enku))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Tell to follow well what us Higher Orcs say");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && (OwnItemCount(talker, @chiantas_order2) || OwnItemCount(talker, @chiantas_order3) || OwnItemCount(talker, @scepter_box)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask if the other person is doing well");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_enku) == 0 && OwnItemCount(talker, @manakias_letter2) == 0 && OwnItemCount(talker, @glove_of_kepra) == 0 && OwnItemCount(talker, @enku_overlord_head) < 4)
+                {
+                    ShowPage(talker, "enku_chief_kepra_q0220_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @manakias_letter2))
+                {
+                    ShowPage(talker, "enku_chief_kepra_q0220_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @glove_of_kepra) && OwnItemCount(talker, @enku_overlord_head) < 4)
+                {
+                    ShowPage(talker, "enku_chief_kepra_q0220_05.htm");
+                    if (Maker_GetNpcCount() < 5)
+                    {
+                        CreateOnePrivate(@enku_orc_overlord, "enku_orc_overlord", 0, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @enku_overlord_head) >= 4)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "enku_chief_kepra_q0220_06.htm");
+                        GiveItem1(talker, @scepter_of_enku, 1);
+                        DeleteItem1(talker, @enku_overlord_head, OwnItemCount(talker, @enku_overlord_head));
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_enku))
+                {
+                    ShowPage(talker, "enku_chief_kepra_q0220_07.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && (OwnItemCount(talker, @chiantas_order2) || OwnItemCount(talker, @chiantas_order3) || OwnItemCount(talker, @scepter_box)))
+                {
+                    ShowPage(talker, "enku_chief_kepra_q0220_08.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_glory)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "enku_chief_kepra_q0220_03.htm");
+            }
+            else if (reply == 2 && OwnItemCount(talker, @manakias_letter2) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "enku_chief_kepra_q0220_04.htm");
+                    CreateOnePrivate(@enku_orc_overlord, "enku_orc_overlord", 0, 1);
+                    CreateOnePrivate(@enku_orc_overlord, "enku_orc_overlord", 0, 1);
+                    CreateOnePrivate(@enku_orc_overlord, "enku_orc_overlord", 0, 1);
+                    CreateOnePrivate(@enku_orc_overlord, "enku_orc_overlord", 0, 1);
+                    GiveItem1(talker, @glove_of_kepra, 1);
+                    DeleteItem1(talker, @manakias_letter2, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,18 @@
+class kaboo_chief_uoph : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @skirmish_with_orcs) == 1)
+        {
+            if (OwnItemCount(c1, @kendnells_order1) && OwnItemCount(c1, @kaboo_chief_torc1) == 0)
+            {
+                GiveItem1(c1, @kaboo_chief_torc1, 1);
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+        }
+
+        super;
+    }
+}

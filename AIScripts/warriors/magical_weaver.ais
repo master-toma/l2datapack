@@ -1,0 +1,36 @@
+class magical_weaver : warrior_passive_casting_ddmagic
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @dreams_of_flight) && OwnItemCount(c1, @floating_stone) < 50)
+        {
+            if (Rand(100) > 25)
+            {
+                if (OwnItemCount(c1, @floating_stone) == 49)
+                {
+                    GiveItem1(c1, @floating_stone, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @floating_stone, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+            else if (OwnItemCount(c1, @floating_stone) >= 48)
+            {
+                GiveItem1(c1, @floating_stone, 50 - OwnItemCount(c1, @floating_stone));
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @floating_stone, 2);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

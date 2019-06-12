@@ -1,0 +1,125 @@
+class sentinel_stardyen : guard_fixed
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @legacy_of_poet) == 0 && GetOneTimeQuestFlag(talker, @legacy_of_poet) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about Rumiel");
+            }
+
+            if (HaveMemo(talker, @legacy_of_poet) == 0 && GetOneTimeQuestFlag(talker, @legacy_of_poet) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about Rumiel");
+            }
+
+            if (HaveMemo(talker, @legacy_of_poet))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about five pieces of poetry");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @legacy_of_poet) == 0 && GetOneTimeQuestFlag(talker, @legacy_of_poet) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_elf && talker.race != @race_orc && talker.race != @race_dwarf && talker.race != @race_human)
+                        {
+                            ShowPage(talker, "sentinel_stardyen_q0315_00.htm");
+                        }
+                        else if (talker.level >= 11)
+                        {
+                            FHTML_SetFileName(fhtml0, "sentinel_stardyen_q0315_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @legacy_of_poet);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "sentinel_stardyen_q0315_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @legacy_of_poet) == 0 && GetOneTimeQuestFlag(talker, @legacy_of_poet) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @legacy_of_poet))
+                {
+                    if (OwnItemCount(talker, @rumiels_poem_1) == 1 && OwnItemCount(talker, @rumiels_poem_3) == 1 && OwnItemCount(talker, @rumiels_poem_4) == 1 && OwnItemCount(talker, @rumiels_poem_5) == 1 && GetOneTimeQuestFlag(talker, @legacy_of_poet) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "sentinel_stardyen_q0315_09.htm");
+                            GiveItem1(talker, @leather_shirt, 1);
+                            DeleteItem1(talker, @rumiels_poem_1, 1);
+                            DeleteItem1(talker, @rumiels_poem_3, 1);
+                            DeleteItem1(talker, @rumiels_poem_4, 1);
+                            DeleteItem1(talker, @rumiels_poem_5, 1);
+                            RemoveMemo(talker, @legacy_of_poet);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            SetOneTimeQuestFlag(talker, @legacy_of_poet, 1);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "sentinel_stardyen_q0315_08.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @legacy_of_poet)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @legacy_of_poet);
+                ShowPage(talker, "sentinel_stardyen_q0315_07.htm");
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

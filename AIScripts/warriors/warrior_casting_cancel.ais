@@ -1,0 +1,55 @@
+class warrior_casting_cancel : warrior
+{
+parameter:
+    int CancelMagic = @s_npc_cancel;
+    int CheckMagic = 0;
+    
+handler:
+    EventHandler CREATED()
+    {
+        myself.i_ai0 = 0;
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage, i6)
+    {
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            if (Rand(100) < 10 && myself.i_ai0 == 0 && myself.sm.hp > myself.sm.max_hp * 0.4)
+            {
+                if (GetAbnormalLevel(attacker, Skill_GetAbnormalType(CheckMagic)) <= 0 && myself.top_desire_target == attacker)
+                {
+                    if (Skill_GetConsumeMP(CancelMagic) < myself.sm.mp && Skill_GetConsumeHP(CancelMagic) < myself.sm.hp && Skill_InReuseDelay(CancelMagic) == @FALSE)
+                    {
+                        AddUseSkillDesire(attacker, CancelMagic, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+
+                    myself.i_ai0 = 1;
+                }
+            }
+        }
+
+        super;
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, damage, i6)
+    {
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            if (Rand(100) < 5 && myself.i_ai0 == 0 && myself.sm.hp > myself.sm.max_hp * 0.4)
+            {
+                if (GetAbnormalLevel(attacker, Skill_GetAbnormalType(CheckMagic)) <= 0)
+                {
+                    if (Skill_GetConsumeMP(CancelMagic) < myself.sm.mp && Skill_GetConsumeHP(CancelMagic) < myself.sm.hp && Skill_InReuseDelay(CancelMagic) == @FALSE)
+                    {
+                        AddUseSkillDesire(attacker, CancelMagic, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+
+                    myself.i_ai0 = 1;
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,374 @@
+class first_elder_lockirin : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 14 && OwnItemCount(talker, @letter_to_dwarf))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you want to get Confidence of Dwarf");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 15)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask who you should help before coming back");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 17)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about the research work of Cruma Tower");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 18)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Bid farewell");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 0 && GetOneTimeQuestFlag(talker, @test_of_maestro) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about Test of Maestro");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 0 && GetOneTimeQuestFlag(talker, @test_of_maestro) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about Test of Maestro");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) >= 1 && (OwnItemCount(talker, @recommendation_of_balanki) == 0 || OwnItemCount(talker, @recommendation_of_filaur) == 0 || OwnItemCount(talker, @recommendation_of_arin) == 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask from whom the letter of recommendation is received");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && (OwnItemCount(talker, @recommendation_of_balanki) >= 1 && OwnItemCount(talker, @recommendation_of_filaur) >= 1 && OwnItemCount(talker, @recommendation_of_arin) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Give three letters of recommendation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @old_account_book) == 0 && OwnItemCount(talker, @collection_license) == 0 && OwnItemCount(talker, @ring_of_testimony1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Say that you want to become a high-level guild member");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Give receipt");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @old_account_book) >= 1 && OwnItemCount(talker, @collection_license) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Say that you are in the middle of taking the first test");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 11;
+                AddChoice(11, "Say that you are in the middle of taking the second test");
+            }
+
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_loot_19) + OwnItemCount(talker, @q_loot_20) + OwnItemCount(talker, @q_loot_21) + OwnItemCount(talker, @q_loot_22) < 1 && OwnItemCount(talker, @q_loot_23) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 12;
+                AddChoice(12, "Greet as a member of the Black Lion Mercenaries");
+            }
+
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_loot_19) + OwnItemCount(talker, @q_loot_20) + OwnItemCount(talker, @q_loot_21) + OwnItemCount(talker, @q_loot_22) >= 1 && OwnItemCount(talker, @q_loot_23) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 13;
+                AddChoice(13, "Show relic that you found while carrying out a task of the Black Lion Mercenaries");
+            }
+
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_loot_23) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 14;
+                AddChoice(14, "Show relic that you found while carrying out a task of the Black Lion Mercenaries");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 14 && OwnItemCount(talker, @letter_to_dwarf))
+                {
+                    ShowPage(talker, "first_elder_lockirin_q0217_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 15)
+                {
+                    ShowPage(talker, "first_elder_lockirin_q0217_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 17)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "first_elder_lockirin_q0217_04.htm");
+                        GiveItem1(talker, @scroll_of_dwarf_trust, 1);
+                        SetMemoState(talker, @testimoney_of_trust, 18);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 18)
+                {
+                    ShowPage(talker, "first_elder_lockirin_q0217_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 0 && GetOneTimeQuestFlag(talker, @test_of_maestro) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.occupation == @artisan && talker.level >= 39)
+                        {
+                            FHTML_SetFileName(fhtml0, "first_elder_lockirin_q0231_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @test_of_maestro);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else if (talker.occupation == @artisan)
+                        {
+                            ShowPage(talker, "first_elder_lockirin_q0231_01.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "first_elder_lockirin_q0231_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 0 && GetOneTimeQuestFlag(talker, @test_of_maestro) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) >= 1 && (OwnItemCount(talker, @recommendation_of_balanki) == 0 || OwnItemCount(talker, @recommendation_of_filaur) == 0 || OwnItemCount(talker, @recommendation_of_arin) == 0))
+                {
+                    ShowPage(talker, "first_elder_lockirin_q0231_05.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && (OwnItemCount(talker, @recommendation_of_balanki) >= 1 && OwnItemCount(talker, @recommendation_of_filaur) >= 1 && OwnItemCount(talker, @recommendation_of_arin) >= 1))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        IncrementParam(talker, @PARAM_EXP, 46000);
+                        IncrementParam(talker, @PARAM_SP, 5900);
+                        ShowPage(talker, "first_elder_lockirin_q0231_06.htm");
+                        GiveItem1(talker, @mark_of_maestro, 1);
+                        DeleteItem1(talker, @recommendation_of_balanki, OwnItemCount(talker, @recommendation_of_balanki));
+                        DeleteItem1(talker, @recommendation_of_filaur, OwnItemCount(talker, @recommendation_of_filaur));
+                        DeleteItem1(talker, @recommendation_of_arin, OwnItemCount(talker, @recommendation_of_arin));
+                        RemoveMemo(talker, @test_of_maestro);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @test_of_maestro, 1);
+                    }
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @old_account_book) == 0 && OwnItemCount(talker, @collection_license) == 0 && OwnItemCount(talker, @ring_of_testimony1) == 1)
+                {
+                    ShowPage(talker, "first_elder_lockirin_q0221_01.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+                {
+                    if (OwnItemCount(talker, @receipt_of_contribution1) >= 1 && OwnItemCount(talker, @receipt_of_contribution2) >= 1 && OwnItemCount(talker, @receipt_of_contribution3) >= 1 && OwnItemCount(talker, @receipt_of_contribution4) >= 1 && OwnItemCount(talker, @receipt_of_contribution5) >= 1)
+                    {
+                        ShowPage(talker, "first_elder_lockirin_q0221_05.htm");
+                        DeleteItem1(talker, @collection_license, 1);
+                        GiveItem1(talker, @old_account_book, 1);
+                        DeleteItem1(talker, @receipt_of_contribution1, OwnItemCount(talker, @receipt_of_contribution1));
+                        DeleteItem1(talker, @receipt_of_contribution2, OwnItemCount(talker, @receipt_of_contribution2));
+                        DeleteItem1(talker, @receipt_of_contribution3, OwnItemCount(talker, @receipt_of_contribution3));
+                        DeleteItem1(talker, @receipt_of_contribution4, OwnItemCount(talker, @receipt_of_contribution4));
+                        DeleteItem1(talker, @receipt_of_contribution5, OwnItemCount(talker, @receipt_of_contribution5));
+                    }
+                    else
+                    {
+                        ShowPage(talker, "first_elder_lockirin_q0221_04.htm");
+                    }
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @old_account_book) >= 1 && OwnItemCount(talker, @collection_license) == 0)
+                {
+                    ShowPage(talker, "first_elder_lockirin_q0221_06.htm");
+                }
+
+                break;
+            case 11:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) == 1)
+                {
+                    ShowPage(talker, "first_elder_lockirin_q0221_07.htm");
+                }
+
+                break;
+            case 12:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_loot_19) + OwnItemCount(talker, @q_loot_20) + OwnItemCount(talker, @q_loot_21) + OwnItemCount(talker, @q_loot_22) < 1 && OwnItemCount(talker, @q_loot_23) == 0)
+                {
+                    ShowPage(talker, "first_elder_lockirin_q0333_01.htm");
+                }
+
+                break;
+            case 13:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_loot_19) + OwnItemCount(talker, @q_loot_20) + OwnItemCount(talker, @q_loot_21) + OwnItemCount(talker, @q_loot_22) >= 1 && OwnItemCount(talker, @q_loot_23) == 0)
+                {
+                    ShowPage(talker, "first_elder_lockirin_q0333_02.htm");
+                }
+
+                break;
+            case 14:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_loot_23) >= 1)
+                {
+                    ShowPage(talker, "first_elder_lockirin_q0333_03.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @test_of_maestro)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "first_elder_lockirin_q0231_04.htm");
+                SetMemoState(talker, @test_of_maestro, 1);
+                talker.flag = 0;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimoney_of_trust)
+        {
+            if (reply == 1 && OwnItemCount(talker, @letter_to_dwarf) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "first_elder_lockirin_q0217_02.htm");
+                    GiveItem1(talker, @letter_to_nichola, 1);
+                    DeleteItem1(talker, @letter_to_dwarf, 1);
+                    SetMemoState(talker, @testimoney_of_trust, 15);
+                }
+            }
+        }
+
+        if (ask == @testimony_of_prosperity)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "first_elder_lockirin_q0221_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "first_elder_lockirin_q0221_03.htm");
+                    GiveItem1(talker, @collection_license, 1);
+                    GiveItem1(talker, @lockirins_notice1, 1);
+                    GiveItem1(talker, @lockirins_notice2, 1);
+                    GiveItem1(talker, @lockirins_notice3, 1);
+                    GiveItem1(talker, @lockirins_notice4, 1);
+                    GiveItem1(talker, @lockirins_notice5, 1);
+                }
+            }
+        }
+
+        if (ask == @hunt_of_blacklion)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @q_loot_23) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @adena, 30000);
+                        DeleteItem1(talker, @q_loot_23, 1);
+                        ShowPage(talker, "first_elder_lockirin_q0333_04.htm");
+                    }
+                }
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "first_elder_lockirin_q0333_05.htm");
+            }
+        }
+
+        super;
+    }
+}

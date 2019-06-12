@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_blunt_expert]	/* [블런트 익스퍼트] */	skill_id = 204	level = 1	operate_type = P	effect = {}	skill_end

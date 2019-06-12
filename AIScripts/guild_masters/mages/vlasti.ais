@@ -1,0 +1,141 @@
+class vlasti : mage_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @nightmare_children) == 0 && GetOneTimeQuestFlag(talker, @nightmare_children) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about Dark Horror");
+            }
+
+            if (HaveMemo(talker, @nightmare_children) == 0 && GetOneTimeQuestFlag(talker, @nightmare_children) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about Dark Horror");
+            }
+
+            if (HaveMemo(talker, @nightmare_children))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about Dark Horror");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @nightmare_children) == 0 && GetOneTimeQuestFlag(talker, @nightmare_children) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_dark_elf)
+                        {
+                            ShowPage(talker, "vlasti_q0326_00.htm");
+                        }
+                        else if (talker.level >= 15)
+                        {
+                            FHTML_SetFileName(fhtml0, "vlasti_q0326_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @nightmare_children);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "vlasti_q0326_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @nightmare_children) == 0 && GetOneTimeQuestFlag(talker, @nightmare_children) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @nightmare_children))
+                {
+                    if (OwnItemCount(talker, @cracked_skull) >= 1 && OwnItemCount(talker, @perfect_skull) == 0)
+                    {
+                        ShowPage(talker, "vlasti_q0326_06.htm");
+                    }
+                    else if (OwnItemCount(talker, @perfect_skull) >= 1)
+                    {
+                        ShowPage(talker, "vlasti_q0326_07.htm");
+                    }
+                    else if (OwnItemCount(talker, @cracked_skull) == 0 && OwnItemCount(talker, @perfect_skull) == 0)
+                    {
+                        ShowPage(talker, "vlasti_q0326_05.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @nightmare_children)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "vlasti_q0326_04.htm");
+                SetMemo(talker, @nightmare_children);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @nightmare_children)
+        {
+            if (reply == 1 && GetOneTimeQuestFlag(talker, @nightmare_children) == 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "vlasti_q0326_08.htm");
+                    GiveItem1(talker, @bone_gaiters, 1);
+                    GiveItem1(talker, @adena, 30 * OwnItemCount(talker, @cracked_skull));
+                    DeleteItem1(talker, @cracked_skull, OwnItemCount(talker, @cracked_skull));
+                    DeleteItem1(talker, @perfect_skull, OwnItemCount(talker, @perfect_skull));
+                    RemoveMemo(talker, @nightmare_children);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                    SetOneTimeQuestFlag(talker, @nightmare_children, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

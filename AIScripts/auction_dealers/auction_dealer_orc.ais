@@ -1,0 +1,3 @@
+class auction_dealer_orc : auction_dealer
+{
+}

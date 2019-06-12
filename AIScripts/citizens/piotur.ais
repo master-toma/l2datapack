@@ -1,0 +1,176 @@
+class piotur : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, i0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @reclaim_the_land) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about farmer's reasons");
+            }
+
+            if (HaveMemo(talker, @reclaim_the_land))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Receive compensation from Peter");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) == 1 && OwnItemCount(talker, @blessed_seed) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Certificate of Fertile Land");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) == 1 && OwnItemCount(talker, @blessed_seed) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that you are thankful for the other person giving the Certificate of Fertile Land");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Say that you are thankful for the other person giving the Certificate of Fertile Land");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @reclaim_the_land) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level < 25)
+                        {
+                            ShowPage(talker, "piotur_q0327_01.htm");
+                        }
+                        else
+                        {
+                            FHTML_SetFileName(fhtml0, "piotur_q0327_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @reclaim_the_land);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @reclaim_the_land))
+                {
+                    if (OwnItemCount(talker, @turek_dogtag) + OwnItemCount(talker, @turek_medallion) < 1)
+                    {
+                        ShowPage(talker, "piotur_q0327_04.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "piotur_q0327_05.htm");
+                        i0 = OwnItemCount(talker, @turek_dogtag);
+                        GiveItem1(talker, @adena, i0 * 20);
+                        DeleteItem1(talker, @turek_dogtag, i0);
+                        i0 = OwnItemCount(talker, @turek_medallion);
+                        GiveItem1(talker, @adena, i0 * 25);
+                        DeleteItem1(talker, @turek_medallion, i0);
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) == 1 && OwnItemCount(talker, @blessed_seed) == 0)
+                {
+                    ShowPage(talker, "piotur_q0221_01.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) == 1 && OwnItemCount(talker, @blessed_seed) == 1)
+                {
+                    ShowPage(talker, "piotur_q0221_03.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) == 1)
+                {
+                    ShowPage(talker, "piotur_q0221_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @reclaim_the_land)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "piotur_q0327_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @reclaim_the_land)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "piotur_q0327_06.htm");
+                RemoveMemo(talker, @reclaim_the_land);
+                SoundEffect(talker, "ItemSound.quest_finish");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "piotur_q0327_07.htm");
+            }
+        }
+
+        if (ask == @testimony_of_prosperity)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "piotur_q0221_02.htm");
+                    GiveItem1(talker, @blessed_seed, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

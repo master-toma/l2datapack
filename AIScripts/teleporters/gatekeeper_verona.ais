@@ -1,0 +1,15 @@
+class gatekeeper_verona : teleporter_multi_list
+{
+property:
+    TelPosList Position1 = {
+        {1010013; 82971; 53207; -1470; 4400; 4};    // 1010013 - "Oren Castle Town"
+        {1010020; 117156; 76878; -2670; 8200; 0};    // 1010020 - "Hunter Village"
+        {1010023; 146768; 25856; -2000; 12000; 5}    // 1010023 - "Aden Castle Town"
+    };
+    TelPosList Position2 = {
+        {1010016; 84852; 15863; -4270; 0; 0};    // 1010016 - "1st Floor Underground Shopping Area"
+        {1010017; 85289; 16225; -2780; 0; 0};    // 1010017 - "2nd Floor Human Wizard Guild"
+        {1010018; 85289; 16225; -2270; 0; 0};    // 1010018 - "3rd Floor Elven Wizard Guild"
+        {1010019; 85289; 16225; -1750; 0; 0}    // 1010019 - "4th Floor Dark Wizard Guild"
+    };
+}

@@ -1,0 +1,3 @@
+class warehouse_keeper_balcon : warehouse_keeper
+{
+}

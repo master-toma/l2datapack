@@ -1,0 +1,113 @@
+class neti : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_rogue) == 1 && OwnItemCount(talker, @beziques_letter) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show the letter of Bezique");
+            }
+
+            if (HaveMemo(talker, @path_to_rogue) == 1 && OwnItemCount(talker, @horseshoe_of_light) == 0 && OwnItemCount(talker, @beziques_letter) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about Spartoi's bones");
+            }
+
+            if (HaveMemo(talker, @path_to_rogue) == 1 && OwnItemCount(talker, @horseshoe_of_light) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about changing occupation to a Rogue");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_rogue) == 1 && OwnItemCount(talker, @beziques_letter) > 0)
+                {
+                    ShowPage(talker, "neti_q0403_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_rogue) == 1 && OwnItemCount(talker, @horseshoe_of_light) == 0 && OwnItemCount(talker, @beziques_letter) == 0)
+                {
+                    if (OwnItemCount(talker, @spatois_bones) < 10)
+                    {
+                        ShowPage(talker, "neti_q0403_06.htm");
+                    }
+                    else if (OwnItemCount(talker, @wanted_bill))
+                    {
+                        ShowPage(talker, "neti_q0403_08.htm");
+                    }
+                    else if (OwnItemCount(talker, @spatois_bones) >= 10)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "neti_q0403_07.htm");
+                            DeleteItem1(talker, @spatois_bones, OwnItemCount(talker, @spatois_bones));
+                            GiveItem1(talker, @horseshoe_of_light, 1);
+                        }
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_rogue) == 1 && OwnItemCount(talker, @horseshoe_of_light) > 0)
+                {
+                    ShowPage(talker, "neti_q0403_08.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @path_to_rogue)
+        {
+            if (reply == 1 && OwnItemCount(talker, @beziques_letter) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    DeleteItem1(talker, @beziques_letter, 1);
+                    if (OwnItemCount(talker, @netis_bow) == 0)
+                    {
+                        GiveItem1(talker, @netis_bow, 1);
+                    }
+
+                    if (OwnItemCount(talker, @netis_dagger) == 0)
+                    {
+                        GiveItem1(talker, @netis_dagger, 1);
+                    }
+
+                    ShowPage(talker, "neti_q0403_05.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

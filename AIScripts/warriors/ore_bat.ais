@@ -1,0 +1,3 @@
+class ore_bat : warrior_aggressive
+{
+}

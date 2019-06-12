@@ -1,0 +1,15 @@
+class evil_eye_lord : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_maestro) && GetMemoState(c1, @test_of_maestro) == 2 && OwnItemCount(c1, @necklace_of_kamuru) == 0 && OwnItemCount(c1, @paint_of_kamuru))
+        {
+            GiveItem1(c1, @necklace_of_kamuru, 1);
+            SoundEffect(c1, "Itemsound.quest_middle");
+        }
+
+        super;
+    }
+}

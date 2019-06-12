@@ -1,0 +1,142 @@
+class triskel : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_assassin) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to an Assassin");
+            }
+
+            if (HaveMemo(talker, @path_to_assassin) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about changing occupation to Assassin");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_assassin) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (OwnItemCount(talker, @iron_heart) == 0)
+                        {
+                            FHTML_SetFileName(fhtml0, "triskel_q0411_01.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @path_to_assassin);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "triskel_q0411_04.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_assassin) == 1)
+                {
+                    if (OwnItemCount(talker, @arkenias_letter) == 0 && OwnItemCount(talker, @leikans_note) == 0 && OwnItemCount(talker, @shilens_tears) == 0 && OwnItemCount(talker, @arkenia_recommend) == 1 && OwnItemCount(talker, @iron_heart) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "triskel_q0411_06.htm");
+                            DeleteItem1(talker, @arkenia_recommend, 1);
+                            GiveItem1(talker, @iron_heart, 1);
+                            RemoveMemo(talker, @path_to_assassin);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                    }
+                    else if (OwnItemCount(talker, @arkenias_letter) == 1 && OwnItemCount(talker, @leikans_note) == 0 && OwnItemCount(talker, @shilens_tears) == 0 && OwnItemCount(talker, @arkenia_recommend) == 0 && OwnItemCount(talker, @iron_heart) == 0 && OwnItemCount(talker, @shilens_call) == 0)
+                    {
+                        ShowPage(talker, "triskel_q0411_07.htm");
+                    }
+                    else if (OwnItemCount(talker, @arkenias_letter) == 0 && OwnItemCount(talker, @leikans_note) == 1 && OwnItemCount(talker, @shilens_tears) == 0 && OwnItemCount(talker, @arkenia_recommend) == 0 && OwnItemCount(talker, @iron_heart) == 0 && OwnItemCount(talker, @shilens_call) == 0)
+                    {
+                        ShowPage(talker, "triskel_q0411_08.htm");
+                    }
+                    else if (OwnItemCount(talker, @arkenias_letter) == 0 && OwnItemCount(talker, @leikans_note) == 0 && OwnItemCount(talker, @shilens_tears) == 0 && OwnItemCount(talker, @arkenia_recommend) == 0 && OwnItemCount(talker, @iron_heart) == 0 && OwnItemCount(talker, @shilens_call) == 0)
+                    {
+                        ShowPage(talker, "triskel_q0411_09.htm");
+                    }
+                    else if (OwnItemCount(talker, @arkenias_letter) == 0 && OwnItemCount(talker, @leikans_note) == 0 && OwnItemCount(talker, @shilens_tears) == 1 && OwnItemCount(talker, @arkenia_recommend) == 0 && OwnItemCount(talker, @iron_heart) == 0 && OwnItemCount(talker, @shilens_call) == 0)
+                    {
+                        ShowPage(talker, "triskel_q0411_10.htm");
+                    }
+                    else if (OwnItemCount(talker, @arkenias_letter) == 0 && OwnItemCount(talker, @leikans_note) == 0 && OwnItemCount(talker, @shilens_tears) == 0 && OwnItemCount(talker, @arkenia_recommend) == 0 && OwnItemCount(talker, @iron_heart) == 0 && OwnItemCount(talker, @shilens_call) == 1)
+                    {
+                        ShowPage(talker, "triskel_q0411_11.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_assassin)
+        {
+            if (talker.level >= 19 && talker.occupation == @dark_fighter && OwnItemCount(talker, @iron_heart) == 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    SetMemo(talker, @path_to_assassin);
+                    SoundEffect(talker, "ItemSound.quest_accept");
+                    GiveItem1(talker, @shilens_call, 1);
+                    ShowPage(talker, "triskel_q0411_05.htm");
+                }
+            }
+            else if (talker.occupation != @dark_fighter)
+            {
+                if (talker.occupation == @assassin)
+                {
+                    ShowPage(talker, "triskel_q0411_02a.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "triskel_q0411_02.htm");
+                }
+            }
+            else if (talker.level < 19 && talker.occupation == @dark_fighter)
+            {
+                ShowPage(talker, "triskel_q0411_03.htm");
+            }
+            else if (talker.level >= 19 && talker.occupation == @dark_fighter && OwnItemCount(talker, @iron_heart) == 1)
+            {
+                ShowPage(talker, "triskel_q0411_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

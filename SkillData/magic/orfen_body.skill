@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_orfen_body]	/* [오르펜의 몸] */	skill_id = 4062	level = 1	operate_type = P	effect = {{p_defence_attribute;attr_fire;100};{p_defence_attribute;attr_bow;-80}}	skill_end

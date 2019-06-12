@@ -1,0 +1,3 @@
+class varikan_brigand_ldr : party_leader_aggressive
+{
+}

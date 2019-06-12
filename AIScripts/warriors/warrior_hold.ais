@@ -1,0 +1,23 @@
+class warrior_hold : warrior
+{
+parameter:
+    float DoNothing_DecayRatio = 1.0;
+    
+handler:
+    EventHandler NO_DESIRE()
+    {
+        AddMoveToDesire(myself.start_x, myself.start_y, myself.start_z, 30);
+    }
+
+    EventHandler MOVE_TO_FINISHED(x, y, z)
+    {
+        if (x == myself.start_x && y == myself.start_y && z == myself.start_z)
+        {
+            AddDoNothingDesire(40, 30);
+        }
+        else
+        {
+            AddMoveToDesire(myself.start_x, myself.start_y, myself.start_z, 30);
+        }
+    }
+}

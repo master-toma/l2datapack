@@ -1,0 +1,3 @@
+class priest_of_kuroboros : party_leader_aggressive
+{
+}

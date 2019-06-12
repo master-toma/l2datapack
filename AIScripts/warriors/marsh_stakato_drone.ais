@@ -1,0 +1,176 @@
+class marsh_stakato_drone : warrior_aggressive_casting_enchant_self
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimoney_of_trust) && GetMemoState(c1, @testimoney_of_trust) == 6 && OwnItemCount(c1, @stakatos_fluids) < 10 && OwnItemCount(c1, @order_of_clayton) && OwnItemCount(c1, @stakato_ichor) == 0)
+        {
+            if (OwnItemCount(c1, @stakatos_fluids) == 9)
+            {
+                GiveItem1(c1, @stakato_ichor, 1);
+                DeleteItem1(c1, @stakatos_fluids, OwnItemCount(c1, @stakatos_fluids));
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @stakatos_fluids, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_sagittarius) && GetMemoState(c1, @test_of_sagittarius) == 10 && OwnItemCount(c1, @stakato_chitin) == 0)
+        {
+            if (Rand(10) == 1)
+            {
+                if (OwnItemCount(c1, @mithril_clip) && OwnItemCount(c1, @st_bowstring) && OwnItemCount(c1, @manashens_horn))
+                {
+                    GiveItem1(c1, @stakato_chitin, 1);
+                    SetMemoState(c1, @test_of_sagittarius, 11);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @stakato_chitin, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_fate) && OwnItemCount(c1, @ixias_list) && OwnItemCount(c1, @nightshade_root) < 10)
+        {
+            if (Rand(10) < 6)
+            {
+                if (OwnItemCount(c1, @nightshade_root) == 9)
+                {
+                    GiveItem1(c1, @nightshade_root, 1);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @nightshade_root, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_glory) && OwnItemCount(c1, @necklace_of_authority) && OwnItemCount(c1, @chiantas_order1) && OwnItemCount(c1, @scepter_of_vuku) == 0 && OwnItemCount(c1, @drikos_contract) && OwnItemCount(c1, @stakato_drone_husk1) < 30)
+        {
+            if (Rand(20) < 15)
+            {
+                if (OwnItemCount(c1, @stakato_drone_husk1) == 29)
+                {
+                    GiveItem1(c1, @stakato_drone_husk1, 1);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @stakato_drone_husk1, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_prosperity) && OwnItemCount(c1, @ring_of_testimony2) == 1 && OwnItemCount(c1, @nikolas_list) == 1 && OwnItemCount(c1, @clay_dough) == 0 && OwnItemCount(c1, @pattern_of_keyhole) == 0)
+        {
+            if (OwnItemCount(c1, @stakato_shell) < 20 && Rand(100) < 60)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @stakato_shell, 1);
+                    if (OwnItemCount(c1, @stakato_shell) >= 20)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_magus) && OwnItemCount(c1, @score_of_elements) == 1 && OwnItemCount(c1, @undine_charm) == 1 && OwnItemCount(c1, @dazzling_drop) < 20)
+        {
+            if (Rand(100) < 50)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @dazzling_drop, 1);
+                    if (OwnItemCount(c1, @dazzling_drop) >= 20)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_seeker) && OwnItemCount(c1, @list_of_host) == 1 && OwnItemCount(c1, @abyss_runestone1) == 0)
+        {
+            if (Rand(100) < 25)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @abyss_runestone1, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_duelist) && OwnItemCount(c1, @drones_chitin) < 10 && GetMemoState(c1, @test_of_duelist) == 1)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @drones_chitin, 1);
+                if (OwnItemCount(c1, @drones_chitin) >= 10)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @hunt_of_blacklion) == 1 && OwnItemCount(c1, @q_sophias_order4) >= 1)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                if (Rand(2) == 0)
+                {
+                    GiveItem1(c1, @q_stakato_talon, 1);
+                }
+
+                if (Rand(100) < 14)
+                {
+                    GiveItem1(c1, @q_cargo_box4, 1);
+                }
+            }
+        }
+
+        if (Rand(100) < 2 && HaveMemo(c1, @hunt_of_blacklion))
+        {
+            CreateOnePrivate(@marsh_stakato_marquess, "marsh_stakato_marquess", 0, 1);
+        }
+
+        super;
+    }
+}

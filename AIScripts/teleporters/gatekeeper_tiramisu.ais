@@ -1,0 +1,15 @@
+class gatekeeper_tiramisu : instant_teleporter
+{
+handler:
+    EventHandler TELEPORT_REQUESTED(talker)
+    {
+        if (Rand(100) < 50)
+        {
+            InstantTeleport(talker, -112899, 234942, -3693);
+        }
+        else
+        {
+            InstantTeleport(talker, -112817, 235183, -3690);
+        }
+    }
+}

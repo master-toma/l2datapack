@@ -1,0 +1,2 @@
+skill_begin	skill_name = [s_holy_armor1]	/* [홀리 아머] */	skill_id = 197	level = 1	operate_type = P	effect = {{p_defence_attribute;attr_unholy;-7}}	skill_end
+skill_begin	skill_name = [s_holy_armor2]	/* [홀리 아머] */	skill_id = 197	level = 2	operate_type = P	effect = {{p_defence_attribute;attr_unholy;-10}}	skill_end

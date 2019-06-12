@@ -1,0 +1,24 @@
+class grave_guard : warrior_aggressive_casting_ddmagic
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @pledge_seeks_ambition) == 1 && GetMemoState(c1, @pledge_seeks_ambition) < 8511 && GetMemoState(c1, @pledge_seeks_ambition) >= 8500)
+        {
+            SetMemoState(c1, @pledge_seeks_ambition, GetMemoState(c1, @pledge_seeks_ambition) + 1);
+            if (GetMemoState(c1, @pledge_seeks_ambition) >= 8505 && Rand(100) < 50)
+            {
+                SetMemoState(c1, @pledge_seeks_ambition, 8500);
+                CreateOnePrivate(@grave_keymaster, "grave_keymaster", 0, 1);
+            }
+            else if (GetMemoState(c1, @pledge_seeks_ambition) >= 8510)
+            {
+                SetMemoState(c1, @pledge_seeks_ambition, 8500);
+                CreateOnePrivate(@grave_keymaster, "grave_keymaster", 0, 1);
+            }
+        }
+
+        super;
+    }
+}

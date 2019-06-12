@@ -1,0 +1,90 @@
+class master_baenedes : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @millennium_love) != 0 && OwnItemCount(talker, @ryliths_letter) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Theon");
+            }
+
+            if (HaveMemo(talker, @millennium_love) != 0 && OwnItemCount(talker, @theons_diary) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask again about Theon");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @millennium_love) != 0 && OwnItemCount(talker, @ryliths_letter) != 0)
+                {
+                    ShowPage(talker, "master_baenedes_q0307_02.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @millennium_love) != 0 && OwnItemCount(talker, @theons_diary) != 0)
+                {
+                    ShowPage(talker, "master_baenedes_q0307_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @millennium_love)
+        {
+            if (reply == 1 && OwnItemCount(talker, @ryliths_letter) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    DeleteItem1(talker, @ryliths_letter, OwnItemCount(talker, @ryliths_letter));
+                    if (OwnItemCount(talker, @theons_diary) == 0)
+                    {
+                        GiveItem1(talker, @theons_diary, 1);
+                    }
+
+                    ShowPage(talker, "master_baenedes_q0307_03.htm");
+                }
+            }
+            else if (reply == 2 && GetOneTimeQuestFlag(talker, @millennium_love) == 0 && OwnItemCount(talker, @ryliths_letter) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    DeleteItem1(talker, @ryliths_letter, OwnItemCount(talker, @ryliths_letter));
+                    RemoveMemo(talker, @millennium_love);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                    SetOneTimeQuestFlag(talker, @millennium_love, 1);
+                    GiveItem1(talker, @adena, 3000);
+                    ShowPage(talker, "master_baenedes_q0307_04.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

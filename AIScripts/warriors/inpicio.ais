@@ -1,0 +1,68 @@
+class inpicio : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_prosperity) && OwnItemCount(c1, @ring_of_testimony2) == 1 && OwnItemCount(c1, @nikolas_list) == 1 && OwnItemCount(c1, @clay_dough) == 0 && OwnItemCount(c1, @pattern_of_keyhole) == 0)
+        {
+            if (OwnItemCount(c1, @inpicio_sac) < 10 && Rand(100) < 50)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @inpicio_sac, 1);
+                    if (OwnItemCount(c1, @inpicio_sac) >= 10)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_magus) && OwnItemCount(c1, @score_of_elements) == 1 && OwnItemCount(c1, @undine_charm) == 1 && OwnItemCount(c1, @dazzling_drop) < 20)
+        {
+            if (Rand(100) < 30)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @dazzling_drop, 1);
+                    if (OwnItemCount(c1, @dazzling_drop) >= 20)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @little_wings) == 1 && (OwnItemCount(c1, @q_list_of_stuff_for_fs) == 1 && OwnItemCount(c1, @q_inpicios_back_skin) < 10 || OwnItemCount(c1, @q_list_of_stuff_for_fsd) == 1 && OwnItemCount(c1, @q_inpicios_back_skin) < 20))
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                if (Rand(100) < 30)
+                {
+                    if (1)
+                    {
+                        c1.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(c1, @q_inpicios_back_skin, 1);
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

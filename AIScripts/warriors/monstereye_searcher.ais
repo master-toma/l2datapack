@@ -1,0 +1,44 @@
+class monstereye_searcher : warrior_passive_casting_hold_magic
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @adept_of_taste) == 1 && OwnItemCount(c1, @ingredient_list) == 1 && OwnItemCount(c1, @red_mandragora_sap) + OwnItemCount(c1, @white_mandragora_sap) + OwnItemCount(c1, @honey) + OwnItemCount(c1, @golden_honey) + OwnItemCount(c1, @dionian_potato) + OwnItemCount(c1, @green_moss_bundle) + OwnItemCount(c1, @brown_moss_bundle) + OwnItemCount(c1, @monster_eye_meat) < 5 && OwnItemCount(c1, @rolants_creaturebook) == 1 && OwnItemCount(c1, @monster_eye_body) < 30)
+        {
+            i0 = Rand(100);
+            if (i0 < 75)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @monster_eye_body, 1);
+                    if (OwnItemCount(c1, @monster_eye_body) == 30)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+            else if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                if (OwnItemCount(c1, @monster_eye_body) == 29)
+                {
+                    GiveItem1(c1, @monster_eye_body, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @monster_eye_body, 2);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,8 @@
+class guard_move_around : guard
+{
+handler:
+    EventHandler NO_DESIRE()
+    {
+        AddMoveAroundDesire(5, 5);
+    }
+}

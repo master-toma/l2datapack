@@ -1,0 +1,84 @@
+class mandragora_b : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @adept_of_taste) == 1 && OwnItemCount(c1, @ingredient_list) == 1 && OwnItemCount(c1, @red_mandragora_sap) + OwnItemCount(c1, @white_mandragora_sap) + OwnItemCount(c1, @honey) + OwnItemCount(c1, @golden_honey) + OwnItemCount(c1, @dionian_potato) + OwnItemCount(c1, @green_moss_bundle) + OwnItemCount(c1, @brown_moss_bundle) + OwnItemCount(c1, @monster_eye_meat) < 5 && OwnItemCount(c1, @sonias_botanybook) == 1 && OwnItemCount(c1, @red_mandragora_sap) == 0 && OwnItemCount(c1, @white_mandragora_sap) == 0)
+        {
+            i0 = Rand(100);
+            if (i0 < 90)
+            {
+                if (OwnItemCount(c1, @red_mandragora_root) < 40)
+                {
+                    if (1)
+                    {
+                        c1.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(c1, @red_mandragora_root, 1);
+                        if (OwnItemCount(c1, @red_mandragora_root) == 40)
+                        {
+                            SoundEffect(c1, "ItemSound.quest_middle");
+                        }
+                        else
+                        {
+                            SoundEffect(c1, "ItemSound.quest_itemget");
+                        }
+                    }
+                }
+            }
+            else if (OwnItemCount(c1, @white_mandragora_root) < 40)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @white_mandragora_root, 1);
+                    if (OwnItemCount(c1, @white_mandragora_root) == 40)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_prosperity) && OwnItemCount(c1, @ring_of_testimony1) == 1 && OwnItemCount(c1, @brights_list) == 1 && OwnItemCount(c1, @recipe_of_emilly) == 0)
+        {
+            if (OwnItemCount(c1, @mandragora_petal) < 20 && Rand(100) < 100)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @mandragora_petal, 1);
+                    if (OwnItemCount(c1, @mandragora_petal) >= 20)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_guildsman) == 1 && OwnItemCount(c1, @valkons_recommend) == 1 && OwnItemCount(c1, @mandragora_berry) == 0)
+        {
+            if (Rand(100) <= 50)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @mandragora_berry, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,75 @@
+class lizardman_of_wasteland : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @broken_bronze_mirror) != 0 && OwnItemCount(talker, @wind_feather) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the noise");
+            }
+
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @broken_bronze_mirror) != 0 && OwnItemCount(talker, @wind_feather) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Display the Wind Feather");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @broken_bronze_mirror) != 0 && OwnItemCount(talker, @wind_feather) == 0)
+                {
+                    ShowPage(talker, "lizardman_of_wasteland_q0404_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @broken_bronze_mirror) != 0 && OwnItemCount(talker, @wind_feather) != 0)
+                {
+                    ShowPage(talker, "lizardman_of_wasteland_q0404_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_wizard)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @wind_feather) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "lizardman_of_wasteland_q0404_03.htm");
+                        GiveItem1(talker, @wind_feather, 1);
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,6 @@
+skill_begin	skill_name = [s_fast_hp_recovery1]	/* [패스트 HP 리커버리] */	skill_id = 212	level = 1	operate_type = P	effect = {{p_hp_regen;{all};1;diff}}	skill_end
+skill_begin	skill_name = [s_fast_hp_recovery2]	/* [패스트 HP 리커버리] */	skill_id = 212	level = 2	operate_type = P	effect = {{p_hp_regen;{all};1.4;diff}}	skill_end
+skill_begin	skill_name = [s_fast_hp_recovery3]	/* [패스트 HP 리커버리] */	skill_id = 212	level = 3	operate_type = P	effect = {{p_hp_regen;{all};1.7;diff}}	skill_end
+skill_begin	skill_name = [s_fast_hp_recovery4]	/* [패스트 HP 리커버리] */	skill_id = 212	level = 4	operate_type = P	effect = {{p_hp_regen;{all};2;diff}}	skill_end
+skill_begin	skill_name = [s_fast_hp_recovery5]	/* [패스트 HP 리커버리] */	skill_id = 212	level = 5	operate_type = P	effect = {{p_hp_regen;{all};2.3;diff}}	skill_end
+skill_begin	skill_name = [s_fast_hp_recovery6]	/* [패스트 HP 리커버리] */	skill_id = 212	level = 6	operate_type = P	effect = {{p_hp_regen;{all};2.6;diff}}	skill_end

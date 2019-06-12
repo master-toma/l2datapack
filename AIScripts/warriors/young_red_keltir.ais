@@ -1,0 +1,25 @@
+class young_red_keltir : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (OwnItemCount(c1, @predators_fang) < 100 && HaveMemo(c1, @plea_of_pixies))
+        {
+            if (Rand(10) < 8)
+            {
+                GiveItem1(c1, @predators_fang, 1);
+                if (OwnItemCount(c1, @predators_fang) == 100)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

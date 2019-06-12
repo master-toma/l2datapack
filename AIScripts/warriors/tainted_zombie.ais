@@ -1,0 +1,15 @@
+class tainted_zombie : warrior_passive_casting_ddmagic
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @release_darkelf_elder1) == 1 && OwnItemCount(c1, @taint_stone) == 0)
+        {
+            GiveItem1(c1, @taint_stone, 1);
+            SoundEffect(c1, "ItemSound.quest_middle");
+        }
+
+        super;
+    }
+}

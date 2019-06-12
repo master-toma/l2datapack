@@ -1,0 +1,3 @@
+skill_begin	skill_name = [s_mana_shot1]	/* [마나 샷] */	skill_id = 220	level = 1	operate_type = T	effect = {}	mp_consume1 = 10	reuse_delay = 0	target_type = none	next_action = none	skill_end
+skill_begin	skill_name = [s_mana_shot2]	/* [마나 샷] */	skill_id = 220	level = 2	operate_type = T	effect = {}	mp_consume1 = 10	reuse_delay = 0	target_type = none	next_action = none	skill_end
+skill_begin	skill_name = [s_mana_shot3]	/* [마나 샷] */	skill_id = 220	level = 3	operate_type = T	effect = {}	mp_consume1 = 10	reuse_delay = 0	target_type = none	next_action = none	skill_end

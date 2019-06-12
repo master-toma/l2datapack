@@ -1,0 +1,94 @@
+class rollant : wizard_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @rolants_creaturebook) == 0 && OwnItemCount(talker, @monster_eye_meat) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about the meat of monster eye");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @rolants_creaturebook) == 1 && OwnItemCount(talker, @monster_eye_body) < 30)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about the meat of monster eye");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @rolants_creaturebook) == 1 && OwnItemCount(talker, @monster_eye_body) >= 30)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about the meat of monster eye");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @rolants_creaturebook) == 0 && OwnItemCount(talker, @monster_eye_meat) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about the meat of monster eye");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @rolants_creaturebook) == 0 && OwnItemCount(talker, @monster_eye_meat) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "rollant_q0330_01.htm");
+                        GiveItem1(talker, @rolants_creaturebook, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @rolants_creaturebook) == 1 && OwnItemCount(talker, @monster_eye_body) < 30)
+                {
+                    ShowPage(talker, "rollant_q0330_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @rolants_creaturebook) == 1 && OwnItemCount(talker, @monster_eye_body) >= 30)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "rollant_q0330_03.htm");
+                        DeleteItem1(talker, @rolants_creaturebook, 1);
+                        DeleteItem1(talker, @monster_eye_body, OwnItemCount(talker, @monster_eye_body));
+                        GiveItem1(talker, @monster_eye_meat, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @rolants_creaturebook) == 0 && OwnItemCount(talker, @monster_eye_meat) == 1)
+                {
+                    ShowPage(talker, "rollant_q0330_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

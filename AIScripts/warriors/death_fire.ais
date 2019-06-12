@@ -1,0 +1,3 @@
+class death_fire : party_leader_aggressive
+{
+}

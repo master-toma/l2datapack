@@ -1,0 +1,59 @@
+class master_lv3_hec : guild_master_lv3
+{
+parameter:
+    int lv2_class1 = @cleric;
+    int lv2_class2 = @oracle;
+    int lv3_class11 = @bishop;
+    int lv3_class12 = @prophet;
+    int lv3_class21 = @elder;
+    int proof11x = @mark_of_pilgrim;
+    int proof11y = @mark_of_trust;
+    int proof11z = @mark_of_healer;
+    int proof12x = @mark_of_pilgrim;
+    int proof12y = @mark_of_trust;
+    int proof12z = @mark_of_reformer;
+    int proof21x = @mark_of_pilgrim;
+    int proof21y = @mark_of_life;
+    int proof21z = @mark_of_healer;
+    
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -2 && reply == 1)
+        {
+            if (IsInCategory(@cleric_group, talker.occupation) && (talker.race == @race_human || talker.race == @race_elf))
+            {
+                if (talker.occupation == lv2_class1 || talker.occupation == lv3_class11 || talker.occupation == lv3_class12 || talker.occupation == lv3_class13)
+                {
+                    ShowPage(talker, fnClassList1);
+                }
+                else if (talker.occupation == lv2_class2 || talker.occupation == lv3_class21 || talker.occupation == lv3_class22 || talker.occupation == lv3_class23)
+                {
+                    ShowPage(talker, fnClassList2);
+                }
+                else if (talker.occupation == lv2_class3 || talker.occupation == lv3_class31 || talker.occupation == lv3_class32 || talker.occupation == lv3_class33)
+                {
+                    ShowPage(talker, fnClassList3);
+                }
+                else if (talker.occupation == lv2_class4 || talker.occupation == lv3_class41 || talker.occupation == lv3_class42 || talker.occupation == lv3_class43)
+                {
+                    ShowPage(talker, fnClassList4);
+                }
+                else if (talker.occupation == lv2_class5 || talker.occupation == lv3_class51 || talker.occupation == lv3_class52 || talker.occupation == lv3_class53)
+                {
+                    ShowPage(talker, fnClassList5);
+                }
+                else
+                {
+                    ShowPage(talker, fnYouAreFirstClass);
+                }
+            }
+            else
+            {
+                ShowPage(talker, fnClassMismatch);
+            }
+        }
+
+        super;
+    }
+}

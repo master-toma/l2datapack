@@ -1,0 +1,300 @@
+class terry : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @dufners_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Letter from Dufner");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @terys_order1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Report about neer crawler");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @terys_order2) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Report on survey about all kinds of monsters");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @terys_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about Victor");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @viktors_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Victor");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @hawkeyes_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Talk about Victor");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && (OwnItemCount(talker, @viktors_request) == 1 || OwnItemCount(talker, @analysis_request) == 1 || OwnItemCount(talker, @marinas_letter) == 1 || OwnItemCount(talker, @experiment_tools) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Talk about Victor");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @analysis_result) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Report about magic stone");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @terys_order3) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Show Report from Terry");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @list_of_host) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Report about magic stone");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @terys_report) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Report about magic stone");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @dufners_letter) == 1)
+                {
+                    ShowPage(talker, "terry_q0213_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @terys_order1) == 1)
+                {
+                    if (OwnItemCount(talker, @mysterious_runestone) == 0)
+                    {
+                        ShowPage(talker, "terry_q0213_04.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "terry_q0213_05.htm");
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @terys_order2) == 1)
+                {
+                    if (OwnItemCount(talker, @terys_order2) == 1)
+                    {
+                        if (OwnItemCount(talker, @ol_mahum_runestone) + OwnItemCount(talker, @turek_runestone) + OwnItemCount(talker, @ant_runestone) + OwnItemCount(talker, @turak_bugbear_runestone) < 4)
+                        {
+                            ShowPage(talker, "terry_q0213_08.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "terry_q0213_09.htm");
+                        }
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @terys_letter) == 1)
+                {
+                    ShowPage(talker, "terry_q0213_11.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @viktors_letter) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "terry_q0213_12.htm");
+                        DeleteItem1(talker, @viktors_letter, OwnItemCount(talker, @viktors_letter));
+                        GiveItem1(talker, @hawkeyes_letter, 1);
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @hawkeyes_letter) == 1)
+                {
+                    ShowPage(talker, "terry_q0213_13.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && (OwnItemCount(talker, @viktors_request) == 1 || OwnItemCount(talker, @analysis_request) == 1 || OwnItemCount(talker, @marinas_letter) == 1 || OwnItemCount(talker, @experiment_tools) == 1))
+                {
+                    ShowPage(talker, "terry_q0213_14.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @analysis_result) == 1)
+                {
+                    ShowPage(talker, "terry_q0213_15.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @terys_order3) == 1)
+                {
+                    if (talker.level < 36)
+                    {
+                        ShowPage(talker, "terry_q0213_20.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "terry_q0213_21.htm");
+                        DeleteItem1(talker, @terys_order3, 1);
+                        GiveItem1(talker, @list_of_host, 1);
+                    }
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @list_of_host) == 1)
+                {
+                    if (OwnItemCount(talker, @abyss_runestone1) + OwnItemCount(talker, @abyss_runestone2) + OwnItemCount(talker, @abyss_runestone3) + OwnItemCount(talker, @abyss_runestone4) < 4)
+                    {
+                        ShowPage(talker, "terry_q0213_22.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "terry_q0213_23.htm");
+                        GiveItem1(talker, @terys_report, 1);
+                        DeleteItem1(talker, @list_of_host, OwnItemCount(talker, @list_of_host));
+                        DeleteItem1(talker, @abyss_runestone1, OwnItemCount(talker, @abyss_runestone1));
+                        DeleteItem1(talker, @abyss_runestone2, OwnItemCount(talker, @abyss_runestone2));
+                        DeleteItem1(talker, @abyss_runestone3, OwnItemCount(talker, @abyss_runestone3));
+                        DeleteItem1(talker, @abyss_runestone4, OwnItemCount(talker, @abyss_runestone4));
+                    }
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @terys_report) == 1)
+                {
+                    ShowPage(talker, "terry_q0213_24.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_seeker)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "terry_q0213_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (OwnItemCount(talker, @dufners_letter) >= 1)
+                {
+                    ShowPage(talker, "terry_q0213_03.htm");
+                    DeleteItem1(talker, @dufners_letter, 1);
+                    GiveItem1(talker, @terys_order1, 1);
+                }
+            }
+
+            if (reply == 3)
+            {
+                if (OwnItemCount(talker, @terys_order1) >= 1)
+                {
+                    ShowPage(talker, "terry_q0213_06.htm");
+                    DeleteItem1(talker, @mysterious_runestone, OwnItemCount(talker, @mysterious_runestone));
+                    DeleteItem1(talker, @terys_order1, 1);
+                    GiveItem1(talker, @terys_order2, 1);
+                }
+            }
+
+            if (reply == 4)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "terry_q0213_10.htm");
+                    DeleteItem1(talker, @ol_mahum_runestone, OwnItemCount(talker, @ol_mahum_runestone));
+                    DeleteItem1(talker, @turek_runestone, OwnItemCount(talker, @turek_runestone));
+                    DeleteItem1(talker, @ant_runestone, OwnItemCount(talker, @ant_runestone));
+                    DeleteItem1(talker, @turak_bugbear_runestone, OwnItemCount(talker, @turak_bugbear_runestone));
+                    DeleteItem1(talker, @terys_order2, OwnItemCount(talker, @terys_order2));
+                    GiveItem1(talker, @terys_letter, 1);
+                    GiveItem1(talker, @terys_box, 1);
+                }
+            }
+
+            if (reply == 5)
+            {
+                ShowPage(talker, "terry_q0213_16.htm");
+            }
+
+            if (reply == 6)
+            {
+                if (talker.level < 36)
+                {
+                    if (OwnItemCount(talker, @analysis_result) >= 1)
+                    {
+                        ShowPage(talker, "terry_q0213_17.htm");
+                        DeleteItem1(talker, @analysis_result, 1);
+                        GiveItem1(talker, @terys_order3, 1);
+                    }
+                }
+                else if (OwnItemCount(talker, @analysis_result) >= 1)
+                {
+                    ShowPage(talker, "terry_q0213_18.htm");
+                    DeleteItem1(talker, @analysis_result, 1);
+                    GiveItem1(talker, @list_of_host, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

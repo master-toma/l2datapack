@@ -1,0 +1,14 @@
+class imperial_gravekeeper : quest_0503_imperial_gravekeeper
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @pledge_seeks_ambition) == 1 && GetMemoState(c1, @pledge_seeks_ambition) < 8511 && GetMemoState(c1, @pledge_seeks_ambition) >= 8500)
+        {
+            CreateOnePrivate(@imperial_coffer, "imperial_coffer", 0, 1);
+        }
+
+        super;
+    }
+}

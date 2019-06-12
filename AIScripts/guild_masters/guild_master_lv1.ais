@@ -1,0 +1,3 @@
+class guild_master_lv1 : guild_master
+{
+}

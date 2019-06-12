@@ -1,0 +1,119 @@
+class prefect_brukurse : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @against_wolf_men) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about werewolves");
+            }
+
+            if (HaveMemo(talker, @against_wolf_men))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show head of werewolf");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @against_wolf_men) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_orc)
+                        {
+                            ShowPage(talker, "prefect_brukurse_q0274_00.htm");
+                        }
+                        else if (talker.level < 9)
+                        {
+                            ShowPage(talker, "prefect_brukurse_q0274_01.htm");
+                        }
+                        else if (OwnItemCount(talker, @necklace_of_valor) || OwnItemCount(talker, @necklace_of_courage))
+                        {
+                            FHTML_SetFileName(fhtml0, "prefect_brukurse_q0274_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @against_wolf_men);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "prefect_brukurse_q0274_07.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @against_wolf_men))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @maraku_werewolf_head) < 40)
+                        {
+                            ShowPage(talker, "prefect_brukurse_q0274_04.htm");
+                        }
+                        else if (OwnItemCount(talker, @maraku_wolfmen_totem) < 1)
+                        {
+                            ShowPage(talker, "prefect_brukurse_q0274_05.htm");
+                            RemoveMemo(talker, @against_wolf_men);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            GiveItem1(talker, @adena, OwnItemCount(talker, @maraku_werewolf_head) * 30);
+                            DeleteItem1(talker, @maraku_werewolf_head, OwnItemCount(talker, @maraku_werewolf_head));
+                        }
+                        else
+                        {
+                            ShowPage(talker, "prefect_brukurse_q0274_06.htm");
+                            RemoveMemo(talker, @against_wolf_men);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            GiveItem1(talker, @adena, OwnItemCount(talker, @maraku_werewolf_head) * 30);
+                            DeleteItem1(talker, @maraku_werewolf_head, OwnItemCount(talker, @maraku_werewolf_head));
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @against_wolf_men)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @against_wolf_men);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "prefect_brukurse_q0274_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

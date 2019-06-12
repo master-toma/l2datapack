@@ -1,0 +1,3 @@
+class susceptor : ai_special_susceptor
+{
+}

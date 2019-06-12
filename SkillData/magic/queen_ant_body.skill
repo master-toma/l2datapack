@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_queen_ant_body]	/* [여왕개미의 몸] */	skill_id = 4021	level = 1	operate_type = P	effect = {{p_defence_attribute;attr_fire;50};{p_defence_attribute;attr_bow;-80}}	skill_end

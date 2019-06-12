@@ -1,0 +1,197 @@
+class elder_balanki : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @crush_brigands) == 1 && OwnItemCount(talker, @suspicious_contract) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask Balanki about mopping up brigands");
+            }
+
+            if (HaveMemo(talker, @crush_brigands) == 1 && OwnItemCount(talker, @suspicious_contract) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Receive reward for goblin's contract from Balanki");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @recommendation_of_balanki) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Tell that you want to receive a letter of recommendation");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 2 && OwnItemCount(talker, @letter_of_solder_detachment) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that you have not been able to get Letter of Mercenary Deployment yet");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 2 && OwnItemCount(talker, @letter_of_solder_detachment))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give Letter of Mercenary Deployment");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @recommendation_of_balanki))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask whom to go to see once you've collected 3 letters of recommendation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @lockirins_notice2) >= 1 && OwnItemCount(talker, @lockirins_notice2) == 1 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @contribution_of_mion) + OwnItemCount(talker, @contribution_of_marife) < 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Say that you came to collect the donation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @lockirins_notice2) == 0 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @contribution_of_mion) + OwnItemCount(talker, @contribution_of_marife) < 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Give donation that was collected");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @lockirins_notice2) == 0 && (OwnItemCount(talker, @contribution_of_mion) && OwnItemCount(talker, @contribution_of_marife)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Give donation that was collected");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @lockirins_notice2) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_contribution2) >= 1 && (OwnItemCount(talker, @contribution_of_mion) == 0 || OwnItemCount(talker, @contribution_of_marife) == 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Say that you are collecting the donation receipt");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @crush_brigands) == 1 && OwnItemCount(talker, @suspicious_contract) == 0)
+                {
+                    ShowPage(talker, "balanki_q0292_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @crush_brigands) == 1 && OwnItemCount(talker, @suspicious_contract) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "balanki_q0292_02.htm");
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @suspicious_contract) * 120);
+                        DeleteItem1(talker, @suspicious_contract, OwnItemCount(talker, @suspicious_contract));
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @recommendation_of_balanki) == 0)
+                {
+                    ShowPage(talker, "elder_balanki_q0231_01.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 2 && OwnItemCount(talker, @letter_of_solder_detachment) == 0)
+                {
+                    ShowPage(talker, "elder_balanki_q0231_03.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 2 && OwnItemCount(talker, @letter_of_solder_detachment))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "elder_balanki_q0231_04.htm");
+                        GiveItem1(talker, @recommendation_of_balanki, 1);
+                        DeleteItem1(talker, @letter_of_solder_detachment, 1);
+                        SetMemoState(talker, @test_of_maestro, 1);
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @recommendation_of_balanki))
+                {
+                    ShowPage(talker, "elder_balanki_q0231_05.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @lockirins_notice2) >= 1 && OwnItemCount(talker, @lockirins_notice2) == 1 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @contribution_of_mion) + OwnItemCount(talker, @contribution_of_marife) < 2)
+                {
+                    ShowPage(talker, "elder_balanki_q0221_01.htm");
+                    DeleteItem1(talker, @lockirins_notice2, OwnItemCount(talker, @lockirins_notice2));
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @lockirins_notice2) == 0 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @contribution_of_mion) + OwnItemCount(talker, @contribution_of_marife) < 2)
+                {
+                    ShowPage(talker, "elder_balanki_q0221_02.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_contribution2) == 0 && OwnItemCount(talker, @lockirins_notice2) == 0 && (OwnItemCount(talker, @contribution_of_mion) && OwnItemCount(talker, @contribution_of_marife)))
+                {
+                    ShowPage(talker, "elder_balanki_q0221_03.htm");
+                    DeleteItem1(talker, @contribution_of_marife, OwnItemCount(talker, @contribution_of_marife));
+                    DeleteItem1(talker, @contribution_of_mion, 1);
+                    GiveItem1(talker, @receipt_of_contribution2, 1);
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @lockirins_notice2) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_contribution2) >= 1 && (OwnItemCount(talker, @contribution_of_mion) == 0 || OwnItemCount(talker, @contribution_of_marife) == 0))
+                {
+                    ShowPage(talker, "elder_balanki_q0221_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_maestro)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "elder_balanki_q0231_02.htm");
+                SetMemoState(talker, @test_of_maestro, 2);
+            }
+        }
+
+        super;
+    }
+}

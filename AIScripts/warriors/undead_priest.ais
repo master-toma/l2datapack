@@ -1,0 +1,44 @@
+class undead_priest : warrior_passive_casting_ddmagic
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (OwnItemCount(myself.c_quest0, @einhasad_church_mark1) && OwnItemCount(myself.c_quest0, @einhasad_crucifix) < 12 && myself.i_quest0 == 1 && Rand(10) < 5)
+        {
+            GiveItem1(myself.c_quest0, @einhasad_crucifix, 1);
+            if (OwnItemCount(myself.c_quest0, @einhasad_crucifix) == 12)
+            {
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+            else
+            {
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,69 @@
+class trader_cullinas : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"sb_breeze1"; 20};
+        {"sb_cure_poison1"; 20};
+        {"sb_curse_poison1"; 20};
+        {"sb_curse_weakness"; 20};
+        {"sb_flame_strike1"; 20};
+        {"sb_group_heal1"; 20};
+        {"sb_shield1"; 20};
+        {"sb_wind_walk1"; 20};
+        {"sb_drain_energy1"; 20};
+        {"sb_elemental_heal1"; 20};
+        {"sb_aqua_swirl1"; 20};
+        {"sb_arcane_acumen1"; 20};
+        {"sb_aura_burn1"; 20};
+        {"sb_blaze1"; 20};
+        {"sb_charm11"; 20};
+        {"sb_concentration1"; 20};
+        {"sb_disrupt_undead1"; 20};
+        {"sb_inspire_life_force1"; 20};
+        {"sb_poison_recovery1"; 20};
+        {"sb_poison1"; 20};
+        {"sb_resurrection1"; 20};
+        {"sb_servitor_heal1"; 20};
+        {"sb_summon_blackcat1"; 20};
+        {"sb_twister1"; 20};
+        {"sb_water_breathing"; 20};
+        {"sb_summon_shadow1"; 20};
+        {"sb_summon_unicorn_boxer1"; 20};
+        {"sb_summon_silhouette1"; 20};
+        {"sb_confusion1"; 20};
+        {"sb_cure_bleeding1"; 20};
+        {"sb_agility1"; 20};
+        {"sb_body_to_mind1"; 20};
+        {"sb_dryad_root1"; 20};
+        {"sb_empower1"; 20};
+        {"sb_focus1"; 20};
+        {"sb_holy_weapon1"; 20};
+        {"sb_mental_shield1"; 20};
+        {"sb_poison_cloud1"; 20};
+        {"sb_servitor_mana_charge1"; 20};
+        {"sb_surrender_to_earth1"; 20};
+        {"sb_surrender_to_fire1"; 20};
+        {"sb_surrender_to_poison1"; 20};
+        {"sb_summon_cuti_cat1"; 20};
+        {"sb_summon_unicorn_mirage1"; 20};
+        {"sb_summon_mechanic_golem1"; 20};
+        {"sb_touch_of_god1"; 20};
+        {"sb_corpse_life_drain1"; 20};
+        {"sb_fire_resist1"; 20};
+        {"sb_recharge1"; 20};
+        {"sb_sleep1"; 20};
+        {"sb_external_fear1"; 20};
+        {"sb_mass_frenzy1"; 20};
+        {"sb_blaze_quake1"; 20};
+        {"sb_burning_spirit1"; 20};
+        {"sb_devotioin_of_soul1"; 20};
+        {"sb_entice_madness1"; 20};
+        {"sb_pain_edge1"; 20};
+        {"sb_aura_sway1"; 20};
+        {"sb_bind_will1"; 20};
+        {"sb_eternal_flame1"; 20};
+        {"sb_engrave_seal_of_timid1"; 20};
+        {"sb_power_of_paagrio1"; 20};
+        {"sb_pure_inspiration1"; 20}
+    };
+}

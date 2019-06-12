@@ -1,0 +1,113 @@
+class master_ixia : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @herbalism_textbook))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask to make a belladonna");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @ixias_list) && (OwnItemCount(talker, @medusa_ichor) < 10 || OwnItemCount(talker, @m_spider_fluids) < 10 || OwnItemCount(talker, @dead_seeker_dung) < 10 || OwnItemCount(talker, @tyrants_blood) < 10 || OwnItemCount(talker, @nightshade_root) < 10))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about belladona ingredients");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @ixias_list) && OwnItemCount(talker, @medusa_ichor) >= 10 && OwnItemCount(talker, @m_spider_fluids) >= 10 && OwnItemCount(talker, @dead_seeker_dung) >= 10 && OwnItemCount(talker, @tyrants_blood) >= 10 && OwnItemCount(talker, @nightshade_root) >= 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give belladonna ingredients");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @belladonna))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about the effects of belladona");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @alders_skull1) || OwnItemCount(talker, @alders_skull2) || OwnItemCount(talker, @alders_receipt) || OwnItemCount(talker, @revelations_manuscript) || OwnItemCount(talker, @kairas_instructions) || OwnItemCount(talker, @kairas_recommend)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Bid farewell");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @herbalism_textbook))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "master_ixia_q0219_01.htm");
+                        GiveItem1(talker, @ixias_list, 1);
+                        DeleteItem1(talker, @herbalism_textbook, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @ixias_list) && (OwnItemCount(talker, @medusa_ichor) < 10 || OwnItemCount(talker, @m_spider_fluids) < 10 || OwnItemCount(talker, @dead_seeker_dung) < 10 || OwnItemCount(talker, @tyrants_blood) < 10 || OwnItemCount(talker, @nightshade_root) < 10))
+                {
+                    ShowPage(talker, "master_ixia_q0219_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @ixias_list) && OwnItemCount(talker, @medusa_ichor) >= 10 && OwnItemCount(talker, @m_spider_fluids) >= 10 && OwnItemCount(talker, @dead_seeker_dung) >= 10 && OwnItemCount(talker, @tyrants_blood) >= 10 && OwnItemCount(talker, @nightshade_root) >= 10)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "master_ixia_q0219_03.htm");
+                        GiveItem1(talker, @belladonna, 1);
+                        DeleteItem1(talker, @ixias_list, 1);
+                        DeleteItem1(talker, @medusa_ichor, OwnItemCount(talker, @medusa_ichor));
+                        DeleteItem1(talker, @tyrants_blood, OwnItemCount(talker, @tyrants_blood));
+                        DeleteItem1(talker, @m_spider_fluids, OwnItemCount(talker, @m_spider_fluids));
+                        DeleteItem1(talker, @dead_seeker_dung, OwnItemCount(talker, @dead_seeker_dung));
+                        DeleteItem1(talker, @nightshade_root, OwnItemCount(talker, @nightshade_root));
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @belladonna))
+                {
+                    ShowPage(talker, "master_ixia_q0219_04.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @alders_skull1) || OwnItemCount(talker, @alders_skull2) || OwnItemCount(talker, @alders_receipt) || OwnItemCount(talker, @revelations_manuscript) || OwnItemCount(talker, @kairas_instructions) || OwnItemCount(talker, @kairas_recommend)))
+                {
+                    ShowPage(talker, "master_ixia_q0219_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

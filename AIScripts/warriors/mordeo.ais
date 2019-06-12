@@ -1,0 +1,22 @@
+class mordeo : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_warspirit) && OwnItemCount(c1, @orims_contract) == 1 && OwnItemCount(c1, @mordeos_talon) < 10)
+        {
+            GiveItem1(c1, @mordeos_talon, 1);
+            if (OwnItemCount(c1, @mordeos_talon) >= 10)
+            {
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+            else
+            {
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

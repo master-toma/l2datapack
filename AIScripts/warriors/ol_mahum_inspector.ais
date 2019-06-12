@@ -1,0 +1,62 @@
+class ol_mahum_inspector : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_reformer) == 1 && GetMemoState(c1, @trial_of_reformer) == 6)
+        {
+            SetMemoState(c1, @trial_of_reformer, 7);
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker)
+    {
+        AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, 2000);
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(c0, i0, timer_id)
+    {
+        if (timer_id == 7778)
+        {
+            if (myself.i_quest0 < 60)
+            {
+                myself.i_quest0 = myself.i_quest0 + 1;
+                AddTimerEx(7778, 1000 * 5);
+            }
+            else
+            {
+                Despawn();
+            }
+        }
+        else if (timer_id == 7779)
+        {
+            i0 = myself.sm.param1;
+            if (i0 > 0)
+            {
+                c0 = Maker_FindNpcByKey(i0);
+                if (c0)
+                {
+                    AddAttackDesire(c0, @AMT_MOVE_TO_TARGET, 2000);
+                }
+                else
+                {
+                    AddTimerEx(7779, 500);
+                }
+            }
+        }
+
+        super;
+    }
+
+    EventHandler CREATED()
+    {
+        AddTimerEx(7778, 1000 * 5);
+        AddTimerEx(7779, 500);
+        myself.i_quest0 = 0;
+        super;
+    }
+}

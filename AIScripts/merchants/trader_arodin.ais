@@ -1,0 +1,61 @@
+class trader_arodin : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"broad_sword"; 20};
+        {"heavy_chisel"; 20};
+        {"knife"; 20};
+        {"doomed_dagger"; 20};
+        {"bow"; 20};
+        {"mace"; 20};
+        {"sickle"; 20};
+        {"brandish"; 20};
+        {"gladius"; 20};
+        {"orcish_sword"; 20};
+        {"handmade_sword"; 20};
+        {"dwarven_mace"; 20};
+        {"dirk"; 20};
+        {"hunting_bow"; 20};
+        {"long_sword"; 20};
+        {"throw_knife"; 20};
+        {"bow_of_forest"; 20};
+        {"short_spear"; 20};
+        {"falchion"; 20};
+        {"sword_breaker"; 20};
+        {"composition_bow"; 20};
+        {"buzdygan"; 20};
+        {"iron_hammer"; 20};
+        {"long_spear"; 20};
+        {"saber"; 20};
+        {"handiwork_dagger"; 20};
+        {"assassin_knife"; 20};
+        {"strengthening_bow"; 20};
+        {"hand_axe"; 20};
+        {"heavy_mace"; 20};
+        {"work_hammer"; 20};
+        {"trident"; 20};
+        {"iron_glove"; 20};
+        {"fox's_nail"; 20};
+        {"cestus"; 20};
+        {"viper's_canine"; 20};
+        {"bagh-nakh"; 20};
+        {"wooden_arrow"; 20};
+        {"bone_arrow"; 20}
+    };
+    BuySellList SellList1 = {
+        {"willow_staff"; 20};
+        {"apprentice's_spellbook"; 20};
+        {"cedar_staff"; 20};
+        {"apprentice's_staff"; 20};
+        {"relic_of_saints"; 20};
+        {"mage_staff"; 20};
+        {"crucifix_of_blessing"; 20};
+        {"voodoo_doll"; 20};
+        {"bone_staff"; 20};
+        {"scroll_of_wisdom"; 20};
+        {"branch_of_life"; 20};
+        {"proof_of_revenge"; 20};
+        {"wooden_arrow"; 20};
+        {"bone_arrow"; 20}
+    };
+}

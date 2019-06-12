@@ -1,0 +1,21 @@
+class bloody_queen : ai_special_bloody_queen
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if ((GetMemoState(c1, @audience_with_earth_dragon) == 21011 || GetMemoState(c1, @audience_with_earth_dragon) == 21010 || GetMemoState(c1, @audience_with_earth_dragon) == 21001 || GetMemoState(c1, @audience_with_earth_dragon) == 21000 || GetMemoState(c1, @audience_with_earth_dragon) == 20011 || GetMemoState(c1, @audience_with_earth_dragon) == 20010 || GetMemoState(c1, @audience_with_earth_dragon) == 20001 || GetMemoState(c1, @audience_with_earth_dragon) == 20000) && OwnItemCount(c1, @q_remains_of_sacrificed) == 0 && HaveMemo(c1, @audience_with_earth_dragon) == 1)
+        {
+            CreateOnePrivate(@sacrifice_of_sacrificed, "sacrifice_of_sacrificed", 0, 1);
+            CreateOnePrivate(@sacrifice_of_sacrificed, "sacrifice_of_sacrificed", 0, 1);
+            CreateOnePrivate(@sacrifice_of_sacrificed, "sacrifice_of_sacrificed", 0, 1);
+            CreateOnePrivate(@sacrifice_of_sacrificed, "sacrifice_of_sacrificed", 0, 1);
+            CreateOnePrivate(@sacrifice_of_sacrificed, "sacrifice_of_sacrificed", 0, 1);
+            CreateOnePrivate(@sacrifice_of_sacrificed, "sacrifice_of_sacrificed", 0, 1);
+            CreateOnePrivate(@sacrifice_of_sacrificed, "sacrifice_of_sacrificed", 0, 1);
+            CreateOnePrivate(@sacrifice_of_sacrificed, "sacrifice_of_sacrificed", 0, 1);
+        }
+
+        super;
+    }
+}

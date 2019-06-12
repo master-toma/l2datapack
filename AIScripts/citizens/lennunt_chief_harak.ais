@@ -1,0 +1,101 @@
+class lennunt_chief_harak : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_lennunt) == 0 && OwnItemCount(talker, @kasmans_letter3) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Speak arrogantly to the Head of the Lower Orc Tribe");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_lennunt) == 0 && OwnItemCount(talker, @kasmans_letter3))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show Letter from Manakia");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_lennunt))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Tell to follow well what us Higher Orcs say");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && (OwnItemCount(talker, @chiantas_order2) || OwnItemCount(talker, @chiantas_order3) || OwnItemCount(talker, @scepter_box)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask if the other person is doing well");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_lennunt) == 0 && OwnItemCount(talker, @kasmans_letter3) == 0)
+                {
+                    ShowPage(talker, "lennunt_chief_harak_q0220_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_lennunt) == 0 && OwnItemCount(talker, @kasmans_letter3))
+                {
+                    ShowPage(talker, "lennunt_chief_harak_q0220_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_lennunt))
+                {
+                    ShowPage(talker, "lennunt_chief_harak_q0220_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && (OwnItemCount(talker, @chiantas_order2) || OwnItemCount(talker, @chiantas_order3) || OwnItemCount(talker, @scepter_box)))
+                {
+                    ShowPage(talker, "lennunt_chief_harak_q0220_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_glory)
+        {
+            if (reply == 1 && OwnItemCount(talker, @kasmans_letter3) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "lennunt_chief_harak_q0220_03.htm");
+                    GiveItem1(talker, @scepter_of_lennunt, 1);
+                    DeleteItem1(talker, @kasmans_letter3, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

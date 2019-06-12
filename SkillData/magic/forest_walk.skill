@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_forest_walk]	/* [포레스트 워크] */	skill_id = 170	level = 1	operate_type = P	effect = {}	skill_end

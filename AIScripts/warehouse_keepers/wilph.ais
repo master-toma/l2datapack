@@ -1,0 +1,217 @@
+class wilph : warehouse_keeper
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @recover_smuggled) == 0 && GetOneTimeQuestFlag(talker, @recover_smuggled) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask whether there is a good task to do");
+            }
+
+            if (HaveMemo(talker, @recover_smuggled) == 0 && GetOneTimeQuestFlag(talker, @recover_smuggled) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask whether there is a good task to do");
+            }
+
+            if (HaveMemo(talker, @recover_smuggled) != 0 && OwnItemCount(talker, @adamantite_ore) < 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about smuggled goods");
+            }
+
+            if (HaveMemo(talker, @recover_smuggled) != 0 && OwnItemCount(talker, @adamantite_ore) >= 20 && GetOneTimeQuestFlag(talker, @recover_smuggled) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about smuggled goods");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) == 1 && OwnItemCount(talker, @rylith_elven_wafer) == 0 && OwnItemCount(talker, @crystal_brooch) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about Certificate of Health");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @rylith_elven_wafer) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @crystal_brooch) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Say that you are thankful for the other person giving jewels");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @rylith_elven_wafer) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Say that you got an Elven wafer");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask about Stone Slab of Marf");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @recover_smuggled) == 0 && GetOneTimeQuestFlag(talker, @recover_smuggled) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 5)
+                        {
+                            ShowPage(talker, "wilph_q0308_03.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "wilph_q0308_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @recover_smuggled) == 0 && GetOneTimeQuestFlag(talker, @recover_smuggled) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @recover_smuggled) != 0 && OwnItemCount(talker, @adamantite_ore) < 20)
+                {
+                    ShowPage(talker, "wilph_q0308_06.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @recover_smuggled) != 0 && OwnItemCount(talker, @adamantite_ore) >= 20 && GetOneTimeQuestFlag(talker, @recover_smuggled) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @adamantite_ore, OwnItemCount(talker, @adamantite_ore));
+                        RemoveMemo(talker, @recover_smuggled);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @recover_smuggled, 1);
+                        GiveItem1(talker, @adena, 1500);
+                        ShowPage(talker, "wilph_q0308_07.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) == 1 && OwnItemCount(talker, @rylith_elven_wafer) == 0 && OwnItemCount(talker, @crystal_brooch) == 0)
+                {
+                    ShowPage(talker, "wilph_q0221_01.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @rylith_elven_wafer) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @crystal_brooch) >= 1)
+                {
+                    ShowPage(talker, "wilph_q0221_05.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @rylith_elven_wafer) >= 1)
+                {
+                    ShowPage(talker, "wilph_q0221_06.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) == 1)
+                {
+                    ShowPage(talker, "wilph_q0221_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @recover_smuggled)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "wilph_q0308_05.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, quest_id, reply, talker)
+    {
+        if (ask == @recover_smuggled)
+        {
+            if (reply == 1)
+            {
+                FHTML_SetFileName(fhtml0, "wilph_q0308_04.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @recover_smuggled);
+                ShowFHTML(talker, fhtml0);
+            }
+        }
+
+        if (ask == @testimony_of_prosperity)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "wilph_q0221_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "wilph_q0221_03.htm");
+            }
+
+            if (reply == 3)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "wilph_q0221_04.htm");
+                    GiveItem1(talker, @crystal_brooch, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

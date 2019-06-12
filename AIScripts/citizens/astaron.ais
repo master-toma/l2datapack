@@ -1,0 +1,110 @@
+class astaron : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml1, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @sweetest_venom) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Dreviant wine");
+            }
+
+            if (HaveMemo(talker, @sweetest_venom) == 1 && OwnItemCount(talker, @venom_sac) < 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about wine");
+            }
+
+            if (HaveMemo(talker, @sweetest_venom) == 1 && OwnItemCount(talker, @venom_sac) >= 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Deliver the pouch of poison");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @sweetest_venom) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 18)
+                        {
+                            FHTML_SetFileName(fhtml1, "astaron_q0324_03.htm");
+                            FHTML_SetInt(fhtml1, "quest_id", @sweetest_venom);
+                            ShowFHTML(talker, fhtml1);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "astaron_q0324_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @sweetest_venom) == 1 && OwnItemCount(talker, @venom_sac) < 10)
+                {
+                    ShowPage(talker, "astaron_q0324_05.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @sweetest_venom) == 1 && OwnItemCount(talker, @venom_sac) >= 10)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @venom_sac, OwnItemCount(talker, @venom_sac));
+                        GiveItem1(talker, @adena, 3500);
+                        RemoveMemo(talker, @sweetest_venom);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        ShowPage(talker, "astaron_q0324_06.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @sweetest_venom)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "astaron_q0324_04.htm");
+                SetMemo(talker, @sweetest_venom);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

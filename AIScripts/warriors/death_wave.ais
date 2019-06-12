@@ -1,0 +1,3 @@
+class death_wave : warrior_passive_casting_enchant_self
+{
+}

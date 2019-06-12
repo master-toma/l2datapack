@@ -1,0 +1,22 @@
+class amber_basilisk : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @wish_potion) && OwnItemCount(c1, @q_potion_recipe_1) && OwnItemCount(c1, @q_potion_recipe_2) && OwnItemCount(c1, @q_amber_scale) == 0)
+        {
+            if (Rand(10) == 0)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @q_amber_scale, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

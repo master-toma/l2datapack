@@ -1,0 +1,3 @@
+class dion_default_teleporter2 : siege_instant_teleporter
+{
+}

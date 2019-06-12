@@ -1,0 +1,3 @@
+skill_begin	skill_name = [s_crystallize1]	/* [크리스탈라이즈] */	skill_id = 248	level = 1	operate_type = P	effect = {{p_crystallize;d}}	skill_end
+skill_begin	skill_name = [s_crystallize2]	/* [크리스탈라이즈] */	skill_id = 248	level = 2	operate_type = P	effect = {{p_crystallize;c}}	skill_end
+skill_begin	skill_name = [s_crystallize3]	/* [크리스탈라이즈] */	skill_id = 248	level = 3	operate_type = P	effect = {{p_crystallize;b}}	skill_end

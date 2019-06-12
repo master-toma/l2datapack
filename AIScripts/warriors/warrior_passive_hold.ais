@@ -1,0 +1,3 @@
+class warrior_passive_hold : warrior_hold
+{
+}

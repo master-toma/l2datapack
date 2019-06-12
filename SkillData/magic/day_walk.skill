@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_day_walk]	/* [데이 워크] */	skill_id = 136	level = 1	operate_type = P	effect = {}	skill_end

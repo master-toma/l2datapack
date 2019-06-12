@@ -1,0 +1,158 @@
+class sentry_krpion : guard_stand
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @sentry_blade3) == 1 && OwnItemCount(talker, @sentry_blade1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Deliver the Sentry Blade");
+            }
+
+            if (HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @sentry_blade3) == 0 && OwnItemCount(talker, @old_bronze_sword) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Speak of the Sentry Blade");
+            }
+
+            if (HaveMemo(talker, @chains_of_slavery) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Speak of the imps");
+            }
+
+            if (HaveMemo(talker, @chains_of_slavery) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Speak of the imps");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @sentry_blade3) == 1 && OwnItemCount(talker, @sentry_blade1) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "sentry_krpion_q0325_01.htm");
+                        DeleteItem1(talker, @sentry_blade3, 1);
+                        GiveItem1(talker, @old_bronze_sword, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @sentry_blade3) == 0 && OwnItemCount(talker, @old_bronze_sword) >= 1)
+                {
+                    ShowPage(talker, "sentry_krpion_q0325_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @chains_of_slavery) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 5 && talker.race == @race_dark_elf)
+                        {
+                            FHTML_SetFileName(fhtml0, "sentry_krpion_q0265_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @chains_of_slavery);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else if (talker.race != @race_dark_elf)
+                        {
+                            ShowPage(talker, "sentry_krpion_q0265_00.htm");
+                        }
+                        else if (talker.level < 5)
+                        {
+                            ShowPage(talker, "sentry_krpion_q0265_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @chains_of_slavery) == 1)
+                {
+                    if (OwnItemCount(talker, @imp_shackles) > 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @adena, 13 * OwnItemCount(talker, @imp_shackles));
+                            DeleteItem1(talker, @imp_shackles, OwnItemCount(talker, @imp_shackles));
+                            ShowPage(talker, "sentry_krpion_q0265_05.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "sentry_krpion_q0265_04.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @chains_of_slavery)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "sentry_krpion_q0265_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @chains_of_slavery)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "sentry_krpion_q0265_06.htm");
+                RemoveMemo(talker, @chains_of_slavery);
+                SoundEffect(talker, "ItemSound.quest_finish");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "sentry_krpion_q0265_07.htm");
+            }
+        }
+
+        super;
+    }
+}

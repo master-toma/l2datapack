@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_npc_damage_shield_p]	/* [나 건드리면 너도 다쳐] */	skill_id = 4095	level = 1	operate_type = P	effect = {{p_damage_shield;20}}	skill_end

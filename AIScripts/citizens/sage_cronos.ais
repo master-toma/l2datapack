@@ -1,0 +1,321 @@
+class sage_cronos : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil3) == 1 && OwnItemCount(talker, @cronos_sigil) == 0 && OwnItemCount(talker, @symbol_of_cronos) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Get information about Stone of Purification");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil3) >= 1 && OwnItemCount(talker, @cronos_sigil) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Give Scriptures of Knowledge");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil3) == 1 && OwnItemCount(talker, @symbol_of_cronos) == 1 && OwnItemCount(talker, @cronos_sigil) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give Scriptures of Knowledge");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about hatchlings");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && (GetMemoState(talker, @little_wings) == 2 || GetMemoState(talker, @little_wings) == 11) && OwnItemCount(talker, @q_fairy_stone) == 0 && OwnItemCount(talker, @q_fairy_stone_delux) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Elven stones");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 2 && (OwnItemCount(talker, @q_fairy_stone) == 1 || OwnItemCount(talker, @q_fairy_stone_delux) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Talk about Elven stones");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 11 && (OwnItemCount(talker, @q_fairy_stone) == 1 || OwnItemCount(talker, @q_fairy_stone_delux) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Talk about Elven stones");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Talk about Valley of Fairies");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Talk about Elven stones");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 4 && (OwnItemCount(talker, @q_fairy_stone) == 1 || OwnItemCount(talker, @q_fairy_stone_delux) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Talk about Elven stones");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil3) == 1 && OwnItemCount(talker, @cronos_sigil) == 0 && OwnItemCount(talker, @symbol_of_cronos) == 0)
+                {
+                    ShowPage(talker, "sage_cronos_q0214_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil3) >= 1 && OwnItemCount(talker, @cronos_sigil) >= 1))
+                {
+                    if (OwnItemCount(talker, @scripture_chapter_1) >= 1 && OwnItemCount(talker, @scripture_chapter_2) >= 1 && OwnItemCount(talker, @scripture_chapter_3) >= 1 && OwnItemCount(talker, @scripture_chapter_4) >= 1)
+                    {
+                        ShowPage(talker, "sage_cronos_q0214_12.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "sage_cronos_q0214_11.htm");
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil3) == 1 && OwnItemCount(talker, @symbol_of_cronos) == 1 && OwnItemCount(talker, @cronos_sigil) == 0)
+                {
+                    ShowPage(talker, "sage_cronos_q0214_15.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 1)
+                {
+                    ShowPage(talker, "sage_cronos_q0420_01.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && (GetMemoState(talker, @little_wings) == 2 || GetMemoState(talker, @little_wings) == 11) && OwnItemCount(talker, @q_fairy_stone) == 0 && OwnItemCount(talker, @q_fairy_stone_delux) == 0)
+                {
+                    ShowPage(talker, "sage_cronos_q0420_07.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 2 && (OwnItemCount(talker, @q_fairy_stone) == 1 || OwnItemCount(talker, @q_fairy_stone_delux) == 1))
+                {
+                    SetMemoState(talker, @little_wings, 3);
+                    ShowPage(talker, "sage_cronos_q0420_08.htm");
+                    SetJournal(talker, @little_wings, 3);
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 11 && (OwnItemCount(talker, @q_fairy_stone) == 1 || OwnItemCount(talker, @q_fairy_stone_delux) == 1))
+                {
+                    ShowPage(talker, "sage_cronos_q0420_14.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 3)
+                {
+                    ShowPage(talker, "sage_cronos_q0420_09.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 10)
+                {
+                    ShowPage(talker, "sage_cronos_q0420_10.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 4 && (OwnItemCount(talker, @q_fairy_stone) == 1 || OwnItemCount(talker, @q_fairy_stone_delux) == 1))
+                {
+                    ShowPage(talker, "sage_cronos_q0420_11.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_scholar)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "sage_cronos_q0214_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "sage_cronos_q0214_03.htm");
+            }
+
+            if (reply == 3)
+            {
+                ShowPage(talker, "sage_cronos_q0214_04.htm");
+            }
+
+            if (reply == 4)
+            {
+                ShowPage(talker, "sage_cronos_q0214_05.htm");
+            }
+
+            if (reply == 5)
+            {
+                ShowPage(talker, "sage_cronos_q0214_06.htm");
+            }
+
+            if (reply == 6)
+            {
+                ShowPage(talker, "sage_cronos_q0214_07.htm");
+            }
+
+            if (reply == 7)
+            {
+                ShowPage(talker, "sage_cronos_q0214_08.htm");
+            }
+
+            if (reply == 8)
+            {
+                ShowPage(talker, "sage_cronos_q0214_09.htm");
+            }
+
+            if (reply == 9)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "sage_cronos_q0214_10.htm");
+                    GiveItem1(talker, @cronos_sigil, 1);
+                    GiveItem1(talker, @cronos_letter, 1);
+                }
+            }
+
+            if (reply == 10)
+            {
+                ShowPage(talker, "sage_cronos_q0214_13.htm");
+            }
+
+            if (reply == 11)
+            {
+                if (OwnItemCount(talker, @dieters_diary) >= 1)
+                {
+                    ShowPage(talker, "sage_cronos_q0214_14.htm");
+                    DeleteItem1(talker, @scripture_chapter_1, OwnItemCount(talker, @scripture_chapter_1));
+                    DeleteItem1(talker, @scripture_chapter_2, OwnItemCount(talker, @scripture_chapter_2));
+                    DeleteItem1(talker, @scripture_chapter_3, OwnItemCount(talker, @scripture_chapter_3));
+                    DeleteItem1(talker, @scripture_chapter_4, OwnItemCount(talker, @scripture_chapter_4));
+                    DeleteItem1(talker, @cronos_sigil, OwnItemCount(talker, @cronos_sigil));
+                    DeleteItem1(talker, @treafs_ring, OwnItemCount(talker, @treafs_ring));
+                    DeleteItem1(talker, @dieters_diary, 1);
+                    GiveItem1(talker, @symbol_of_cronos, 1);
+                }
+            }
+        }
+
+        if (ask == @little_wings)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "sage_cronos_q0420_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "sage_cronos_q0420_03.htm");
+            }
+
+            if (reply == 3)
+            {
+                ShowPage(talker, "sage_cronos_q0420_04.htm");
+            }
+
+            if (reply == 4)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(talker, @q_list_of_stuff_for_fs, 1);
+                    SetMemoState(talker, @little_wings, 2);
+                    ShowPage(talker, "sage_cronos_q0420_05.htm");
+                    SetJournal(talker, @little_wings, 2);
+                }
+            }
+
+            if (reply == 5)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(talker, @q_list_of_stuff_for_fsd, 1);
+                    SetMemoState(talker, @little_wings, 2);
+                    ShowPage(talker, "sage_cronos_q0420_06.htm");
+                    SetJournal(talker, @little_wings, 2);
+                }
+            }
+
+            if (reply == 6)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(talker, @q_list_of_stuff_for_fs, 1);
+                    SetMemoState(talker, @little_wings, 11);
+                    ShowPage(talker, "sage_cronos_q0420_12.htm");
+                    SetJournal(talker, @little_wings, 2);
+                }
+            }
+
+            if (reply == 7)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(talker, @q_list_of_stuff_for_fsd, 1);
+                    SetMemoState(talker, @little_wings, 11);
+                    ShowPage(talker, "sage_cronos_q0420_13.htm");
+                    SetJournal(talker, @little_wings, 2);
+                }
+            }
+        }
+
+        super;
+    }
+}

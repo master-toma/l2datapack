@@ -1,0 +1,63 @@
+class jud : warehouse_keeper
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @nerupas_favor) != 0 && OwnItemCount(talker, @cels_ticket) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Creamees's voucher");
+            }
+
+            if (HaveMemo(talker, @nerupas_favor) != 0 && OwnItemCount(talker, @nightshade_leaf) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Nerupa");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @nerupas_favor) != 0 && OwnItemCount(talker, @cels_ticket) != 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @cels_ticket, OwnItemCount(talker, @cels_ticket));
+                        if (OwnItemCount(talker, @nightshade_leaf) == 0)
+                        {
+                            GiveItem1(talker, @nightshade_leaf, 1);
+                            ShowPage(talker, "jud_q0311_01.htm");
+                        }
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @nerupas_favor) != 0 && OwnItemCount(talker, @nightshade_leaf) != 0)
+                {
+                    ShowPage(talker, "jud_q0311_02.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,3 @@
+class discard_guardian : party_leader_ag_casting_ddmagic
+{
+}

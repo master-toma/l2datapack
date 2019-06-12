@@ -1,0 +1,3 @@
+skill_begin	skill_name = [s_weapon_mastery1]	/* [웨폰 마스터리] */	skill_id = 141	level = 1	operate_type = P	effect = {{p_physical_attack;{all};2;diff}}	skill_end
+skill_begin	skill_name = [s_weapon_mastery2]	/* [웨폰 마스터리] */	skill_id = 141	level = 2	operate_type = P	effect = {{p_physical_attack;{all};3;diff}}	skill_end
+skill_begin	skill_name = [s_weapon_mastery3]	/* [웨폰 마스터리] */	skill_id = 141	level = 3	operate_type = P	effect = {{p_physical_attack;{all};4;diff}}	skill_end

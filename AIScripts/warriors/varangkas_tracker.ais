@@ -1,0 +1,24 @@
+class varangkas_tracker : warrior_aggressive_immediate
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @black_winged_spies) && OwnItemCount(c1, @darkwing_bat_fang) < 66 && OwnItemCount(c1, @varangkas_parasite) > 0)
+        {
+            if (OwnItemCount(c1, @darkwing_bat_fang) < 65)
+            {
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+            else
+            {
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+
+            GiveItem1(c1, @darkwing_bat_fang, 5);
+            DeleteItem1(c1, @varangkas_parasite, OwnItemCount(c1, @varangkas_parasite));
+        }
+
+        super;
+    }
+}

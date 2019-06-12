@@ -1,0 +1,143 @@
+class rizraell : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @catch_the_wind) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about Lirein");
+            }
+
+            if (HaveMemo(talker, @catch_the_wind) != 0 && OwnItemCount(talker, @wind_shard) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the wind shard");
+            }
+
+            if (HaveMemo(talker, @catch_the_wind) != 0 && OwnItemCount(talker, @wind_shard) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show the wind shard");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @catch_the_wind) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 18)
+                        {
+                            FHTML_SetFileName(fhtml0, "rizraell_q0317_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @catch_the_wind);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "rizraell_q0317_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @catch_the_wind) != 0 && OwnItemCount(talker, @wind_shard) == 0)
+                {
+                    ShowPage(talker, "rizraell_q0317_05.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @catch_the_wind) != 0 && OwnItemCount(talker, @wind_shard) != 0)
+                {
+                    ShowPage(talker, "rizraell_q0317_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @catch_the_wind)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "rizraell_q0317_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, i0, reply, talker)
+    {
+        if (ask == @catch_the_wind)
+        {
+            if (reply == 2)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    if (OwnItemCount(talker, @wind_shard))
+                    {
+                        GiveItem1(talker, @adena, 30 * OwnItemCount(talker, @wind_shard));
+                    }
+
+                    i0 = OwnItemCount(talker, @wind_shard);
+                    DeleteItem1(talker, @wind_shard, OwnItemCount(talker, @wind_shard));
+                    RemoveMemo(talker, @catch_the_wind);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                    ShowPage(talker, "rizraell_q0317_08.htm");
+                }
+            }
+            else if (reply == 3)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    if (OwnItemCount(talker, @wind_shard))
+                    {
+                        GiveItem1(talker, @adena, 30 * OwnItemCount(talker, @wind_shard));
+                    }
+
+                    i0 = OwnItemCount(talker, @wind_shard);
+                    DeleteItem1(talker, @wind_shard, OwnItemCount(talker, @wind_shard));
+                    ShowPage(talker, "rizraell_q0317_09.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,22 @@
+class warrior_aggressive_physicalspecial : warrior_physicalspecial
+{
+handler:
+    EventHandler SEE_CREATURE(creature)
+    {
+        if (GetLifeTime() > 7 && InMyTerritory(myself.sm) && myself.p_state != PSTATE_ATTACK)
+        {
+            if (Rand(100) < 10)
+            {
+                if (Skill_GetConsumeMP(PhysicalSpecial) < myself.sm.mp && Skill_GetConsumeHP(PhysicalSpecial) < myself.sm.hp && Skill_InReuseDelay(PhysicalSpecial) == @FALSE)
+                {
+                    AddUseSkillDesire(creature, PhysicalSpecial, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+        }
+
+        if (GetLifeTime() > 7 && InMyTerritory(myself.sm))
+        {
+            AddAttackDesire(creature, @AMT_MOVE_TO_TARGET, 200);
+        }
+    }
+}

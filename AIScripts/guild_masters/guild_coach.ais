@@ -1,0 +1,22 @@
+class guild_coach : default_npc
+{
+parameter:
+    string fnHi = "ghi.htm";
+    string fnClassMismatch = "gcm.htm";
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        ShowPage(talker, fnHi);
+    }
+
+    EventHandler LEARN_SKILL_REQUESTED(talker)
+    {
+        ShowSkillList(talker, "");
+    }
+
+    EventHandler ONE_SKILL_SELECTED(talker, skill_name_id, need_quest)
+    {
+        ShowGrowSkillMessage(talker, skill_name_id, "");
+    }
+}

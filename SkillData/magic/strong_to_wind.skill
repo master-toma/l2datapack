@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_strong_to_wind]	/* [바람에 강함] */	skill_id = 4011	level = 1	operate_type = P	effect = {{p_defence_attribute;attr_wind;-50}}	skill_end

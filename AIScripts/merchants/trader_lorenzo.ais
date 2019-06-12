@@ -1,0 +1,23 @@
+class trader_lorenzo : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"wooden_arrow"; 20};
+        {"bone_arrow"; 20};
+        {"fine_steel_arrow"; 20};
+        {"world_map"; 20};
+        {"key_of_thief"; 20};
+        {"spirit_ore"; 20};
+        {"soul_ore"; 20};
+        {"antidote"; 20};
+        {"bandage"; 20};
+        {"quick_step_potion"; 20};
+        {"swift_attack_potion"; 20};
+        {"healing_potion"; 20};
+        {"advanced_antidote"; 20};
+        {"scroll_of_escape"; 20};
+        {"scroll_of_resurrection"; 20};
+        {"scroll_of_escape_to_agit"; 20};
+        {"gemstone_d"; 20}
+    };
+}

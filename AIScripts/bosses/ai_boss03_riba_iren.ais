@@ -1,0 +1,46 @@
+class ai_boss03_riba_iren : default_npc
+{
+parameter:
+    float Attack_DecayRatio = 6.6;
+    float UseSkill_DecayRatio = 66000.0;
+    float Attack_BoostValue = 500.0;
+    float UseSkill_BoostValue = 100000.0;
+    
+handler:
+    EventHandler ATTACKED(attacker, damage, i6)
+    {
+        i6 = Rand(100);
+        if (myself.sm.max_hp / 2 > myself.sm.hp && i6 < 10)
+        {
+            if (Skill_GetConsumeMP(@s_npc_heal4) < myself.sm.mp && Skill_GetConsumeHP(@s_npc_heal4) < myself.sm.hp && Skill_InReuseDelay(@s_npc_heal4) == @FALSE)
+            {
+                AddUseSkillDesire(myself.sm, @s_npc_heal4, @ST_HEAL, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+        }
+        else if (myself.sm.max_hp / 4 > myself.sm.hp && i6 < 20)
+        {
+            if (Skill_GetConsumeMP(@s_npc_heal4) < myself.sm.mp && Skill_GetConsumeHP(@s_npc_heal4) < myself.sm.hp && Skill_InReuseDelay(@s_npc_heal4) == @FALSE)
+            {
+                AddUseSkillDesire(myself.sm, @s_npc_heal4, @ST_HEAL, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+        }
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, victim, damage)
+    {
+        if (victim.class_id == @orfen && Rand(100) < 30)
+        {
+            if (Skill_GetConsumeMP(@s_npc_heal4) < myself.sm.mp && Skill_GetConsumeHP(@s_npc_heal4) < myself.sm.hp && Skill_InReuseDelay(@s_npc_heal4) == @FALSE)
+            {
+                AddUseSkillDesire(victim, @s_npc_heal4, @ST_HEAL, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+        }
+        else if (Rand(100) < 5)
+        {
+            if (Skill_GetConsumeMP(@s_npc_heal4) < myself.sm.mp && Skill_GetConsumeHP(@s_npc_heal4) < myself.sm.hp && Skill_InReuseDelay(@s_npc_heal4) == @FALSE)
+            {
+                AddUseSkillDesire(victim, @s_npc_heal4, @ST_HEAL, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+        }
+    }
+}

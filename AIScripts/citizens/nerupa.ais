@@ -1,0 +1,168 @@
+class nerupa : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @nerupas_favor) == 0 && GetOneTimeQuestFlag(talker, @nerupas_favor) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear the story of Nerupa");
+            }
+
+            if (HaveMemo(talker, @nerupas_favor) == 0 && GetOneTimeQuestFlag(talker, @nerupas_favor) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear the story of Nerupa");
+            }
+
+            if (HaveMemo(talker, @nerupas_favor) != 0 && (OwnItemCount(talker, @silvery_spidersilk) != 0 || OwnItemCount(talker, @unos_receipt) != 0 || OwnItemCount(talker, @cels_ticket) != 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Inquire about Unoren again");
+            }
+
+            if (HaveMemo(talker, @nerupas_favor) != 0 && OwnItemCount(talker, @nightshade_leaf) != 0 && GetOneTimeQuestFlag(talker, @nerupas_favor) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Discuss Theon");
+            }
+
+            if (HaveMemo(talker, @elf_tutorial))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Show your diploma");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @nerupas_favor) == 0 && GetOneTimeQuestFlag(talker, @nerupas_favor) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_elf)
+                        {
+                            ShowPage(talker, "nerupa_q0311_00.htm");
+                        }
+                        else if (talker.level >= 3)
+                        {
+                            FHTML_SetFileName(fhtml0, "nerupa_q0311_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @nerupas_favor);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "nerupa_q0311_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @nerupas_favor) == 0 && GetOneTimeQuestFlag(talker, @nerupas_favor) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @nerupas_favor) != 0 && (OwnItemCount(talker, @silvery_spidersilk) != 0 || OwnItemCount(talker, @unos_receipt) != 0 || OwnItemCount(talker, @cels_ticket) != 0))
+                {
+                    ShowPage(talker, "nerupa_q0311_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @nerupas_favor) != 0 && OwnItemCount(talker, @nightshade_leaf) != 0 && GetOneTimeQuestFlag(talker, @nerupas_favor) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @nightshade_leaf, OwnItemCount(talker, @nightshade_leaf));
+                        RemoveMemo(talker, @nerupas_favor);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @nerupas_favor, 1);
+                        GiveItem1(talker, @lesser_healing_potion, 1);
+                        IncrementParam(talker, @PARAM_EXP, 1000);
+                        ShowPage(talker, "nerupa_q0311_06.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @elf_tutorial))
+                {
+                    if (OwnItemCount(talker, @leaf_of_mothertree) && GetOneTimeQuestFlag(talker, @elf_tutorial) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            DeleteRadar(talker, 46255, 41432, -3513);
+                            ShowPage(talker, "nerupa_q0203_01.htm");
+                            IncrementParam(talker, @PARAM_SP, 50);
+                            DeleteItem1(talker, @leaf_of_mothertree, 1);
+                            RemoveMemo(talker, @elf_tutorial);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            ShowQuestionMark(talker, 7);
+                            ShowRadar(talker, 45492, 48359, -3060);
+                            SetOneTimeQuestFlag(talker, @elf_tutorial, 1);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "nerupa001.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @nerupas_favor)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @silvery_spidersilk) == 0)
+                {
+                    GiveItem1(talker, @silvery_spidersilk, 1);
+                }
+
+                ShowPage(talker, "nerupa_q0311_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

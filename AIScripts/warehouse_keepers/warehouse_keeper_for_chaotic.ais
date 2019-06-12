@@ -1,0 +1,8 @@
+class warehouse_keeper_for_chaotic : warehouse_keeper
+{
+handler:
+    EventHandler TALKED(talker)
+    {
+        ShowPage(talker, fnHi);
+    }
+}

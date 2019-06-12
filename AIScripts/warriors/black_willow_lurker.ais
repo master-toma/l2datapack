@@ -1,0 +1,15 @@
+class black_willow_lurker : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_fate) && OwnItemCount(c1, @palus_charm) && OwnItemCount(c1, @arkenias_note) && OwnItemCount(c1, @timiriran_sap) == 0 && OwnItemCount(c1, @timiriran_seed) && OwnItemCount(c1, @black_willow_leaf) == 0)
+        {
+            GiveItem1(c1, @black_willow_leaf, 1);
+            SoundEffect(c1, "Itemsound.quest_middle");
+        }
+
+        super;
+    }
+}

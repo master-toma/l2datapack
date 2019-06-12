@@ -1,0 +1,3 @@
+class orc_champion : warrior_aggressive_casting_enchant_self
+{
+}

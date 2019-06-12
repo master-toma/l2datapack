@@ -1,0 +1,33 @@
+class goblin_lord : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @crush_brigands))
+        {
+            i0 = Rand(10);
+            if (i0 > 5)
+            {
+                GiveItem1(c1, @goblin_lord_pendant, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+            else if (i0 > 4)
+            {
+                if (OwnItemCount(c1, @suspicious_contract) < 1 && OwnItemCount(c1, @suspicious_memo) < 3)
+                {
+                    GiveItem1(c1, @suspicious_memo, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+                else if (OwnItemCount(c1, @suspicious_contract) < 1 && OwnItemCount(c1, @suspicious_memo) == 3)
+                {
+                    GiveItem1(c1, @suspicious_contract, 1);
+                    DeleteItem1(c1, @suspicious_memo, OwnItemCount(c1, @suspicious_memo));
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+            }
+        }
+
+        super;
+    }
+}

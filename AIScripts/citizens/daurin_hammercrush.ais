@@ -1,0 +1,110 @@
+class daurin_hammercrush : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 6 && OwnItemCount(talker, @order_of_sorius))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask where the holy woman is");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 6 && OwnItemCount(talker, @secret_letter1) == 0 && OwnItemCount(talker, @order_of_sorius) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask what the written order says");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 6 && OwnItemCount(talker, @secret_letter1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask what the written order says");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) >= 8)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask what the written order says");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 6 && OwnItemCount(talker, @order_of_sorius))
+                {
+                    ShowPage(talker, "daurin_hammercrush_q0226_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 6 && OwnItemCount(talker, @secret_letter1) == 0 && OwnItemCount(talker, @order_of_sorius) == 0)
+                {
+                    ShowPage(talker, "daurin_hammercrush_q0226_02a.htm");
+                    if (Maker_GetNpcCount() < 4)
+                    {
+                        CreateOnePrivate(@leto_lizardman_agent, "leto_lizardman_agent", 0, 1);
+                        CreateOnePrivate(@leto_lizardman_leader, "leto_lizardman_leader", 0, 1);
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 6 && OwnItemCount(talker, @secret_letter1))
+                {
+                    ShowPage(talker, "daurin_hammercrush_q0226_03.htm");
+                    SetMemoState(talker, @test_of_healer, 8);
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) >= 8)
+                {
+                    ShowPage(talker, "daurin_hammercrush_q0226_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_healer)
+        {
+            if (reply == 1 && OwnItemCount(talker, @order_of_sorius) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "daurin_hammercrush_q0226_02.htm");
+                    DeleteItem1(talker, @order_of_sorius, 1);
+                    CreateOnePrivate(@leto_lizardman_agent, "leto_lizardman_agent", 0, 1);
+                    CreateOnePrivate(@leto_lizardman_agent, "leto_lizardman_agent", 0, 1);
+                    CreateOnePrivate(@leto_lizardman_leader, "leto_lizardman_leader", 0, 1);
+                    SoundEffect(talker, "Itemsound.quest_before_battle");
+                }
+            }
+        }
+
+        super;
+    }
+}

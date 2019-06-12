@@ -1,0 +1,4 @@
+skill_begin	skill_name = [s_enlarge_inventory1]	/* [인라지 인벤토리] */	skill_id = 182	level = 1	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_enlarge_inventory2]	/* [인라지 인벤토리] */	skill_id = 182	level = 2	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_enlarge_inventory3]	/* [인라지 인벤토리] */	skill_id = 182	level = 3	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_enlarge_inventory4]	/* [인라지 인벤토리] */	skill_id = 182	level = 4	operate_type = P	effect = {}	skill_end

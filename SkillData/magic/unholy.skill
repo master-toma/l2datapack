@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_unholy]	/* [불사] */	skill_id = 4007	level = 1	operate_type = P	effect = {{p_defence_attribute;attr_holy;20};{p_attack_attribute;attr_unholy}}	skill_end

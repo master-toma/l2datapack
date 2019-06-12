@@ -1,0 +1,141 @@
+class master_sidra : mage_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_shillien_oracle) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to a Shillien Oracle");
+            }
+
+            if (HaveMemo(talker, @path_to_shillien_oracle) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about changing occupation to a Shillien Oracle");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_shillien_oracle) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        ShowPage(talker, "master_sidra_q0413_01.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_shillien_oracle) == 1)
+                {
+                    if (OwnItemCount(talker, @sidras_letter1) == 1)
+                    {
+                        ShowPage(talker, "master_sidra_q0413_07.htm");
+                    }
+                    else if (OwnItemCount(talker, @blank_sheet1) > 0 || OwnItemCount(talker, @bloody_rune1) > 0)
+                    {
+                        ShowPage(talker, "master_sidra_q0413_08.htm");
+                    }
+                    else if (OwnItemCount(talker, @andariel_book) == 0 && OwnItemCount(talker, @prayer_of_adon) + OwnItemCount(talker, @garmiel_book) + OwnItemCount(talker, @penitents_mark) + OwnItemCount(talker, @ashen_bones) > 0)
+                    {
+                        ShowPage(talker, "master_sidra_q0413_09.htm");
+                    }
+                    else if (OwnItemCount(talker, @andariel_book) == 1 && OwnItemCount(talker, @garmiel_book) == 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "master_sidra_q0413_10.htm");
+                            DeleteItem1(talker, @andariel_book, 1);
+                            DeleteItem1(talker, @garmiel_book, 1);
+                            GiveItem1(talker, @orb_of_abyss, 1);
+                            RemoveMemo(talker, @path_to_shillien_oracle);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_shillien_oracle)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "master_sidra_q0413_06.htm");
+                SetMemo(talker, @path_to_shillien_oracle);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                GiveItem1(talker, @sidras_letter1, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @path_to_shillien_oracle)
+        {
+            if (reply == 1)
+            {
+                if (talker.level >= 19 && talker.occupation == @dark_mage && OwnItemCount(talker, @orb_of_abyss) == 0)
+                {
+                    FHTML_SetFileName(fhtml0, "master_sidra_q0413_05.htm");
+                    FHTML_SetInt(fhtml0, "quest_id", @path_to_shillien_oracle);
+                    ShowFHTML(talker, fhtml0);
+                }
+                else if (talker.occupation != @dark_mage)
+                {
+                    if (talker.occupation == @shillien_oracle)
+                    {
+                        ShowPage(talker, "master_sidra_q0413_02a.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "master_sidra_q0413_03.htm");
+                    }
+                }
+                else if (talker.level < 19 && talker.occupation == @dark_mage)
+                {
+                    ShowPage(talker, "master_sidra_q0413_02.htm");
+                }
+                else if (talker.level >= 19 && talker.occupation == @dark_mage && OwnItemCount(talker, @orb_of_abyss) == 1)
+                {
+                    ShowPage(talker, "master_sidra_q0413_04.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

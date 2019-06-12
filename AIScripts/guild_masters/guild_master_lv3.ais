@@ -1,0 +1,500 @@
+class guild_master_lv3 : guild_master
+{
+parameter:
+    int lv2_class1 = -1;
+    int lv2_class2 = -1;
+    int lv2_class3 = -1;
+    int lv2_class4 = -1;
+    int lv2_class5 = -1;
+    int lv3_class11 = -1;
+    int lv3_class12 = -1;
+    int lv3_class13 = -1;
+    int lv3_class21 = -1;
+    int lv3_class22 = -1;
+    int lv3_class23 = -1;
+    int lv3_class31 = -1;
+    int lv3_class32 = -1;
+    int lv3_class33 = -1;
+    int lv3_class41 = -1;
+    int lv3_class42 = -1;
+    int lv3_class43 = -1;
+    int lv3_class51 = -1;
+    int lv3_class52 = -1;
+    int lv3_class53 = -1;
+    int proof11x = 0;
+    int proof11y = 0;
+    int proof11z = 0;
+    int proof12x = 0;
+    int proof12y = 0;
+    int proof12z = 0;
+    int proof13x = 0;
+    int proof13y = 0;
+    int proof13z = 0;
+    int proof21x = 0;
+    int proof21y = 0;
+    int proof21z = 0;
+    int proof22x = 0;
+    int proof22y = 0;
+    int proof22z = 0;
+    int proof23x = 0;
+    int proof23y = 0;
+    int proof23z = 0;
+    int proof31x = 0;
+    int proof31y = 0;
+    int proof31z = 0;
+    int proof32x = 0;
+    int proof32y = 0;
+    int proof32z = 0;
+    int proof33x = 0;
+    int proof33y = 0;
+    int proof33z = 0;
+    int proof41x = 0;
+    int proof41y = 0;
+    int proof41z = 0;
+    int proof42x = 0;
+    int proof42y = 0;
+    int proof42z = 0;
+    int proof43x = 0;
+    int proof43y = 0;
+    int proof43z = 0;
+    int proof51x = 0;
+    int proof51y = 0;
+    int proof51z = 0;
+    int proof52x = 0;
+    int proof52y = 0;
+    int proof52z = 0;
+    int proof53x = 0;
+    int proof53y = 0;
+    int proof53z = 0;
+    
+handler:
+    EventHandler CLASS_CHANGE_REQUESTED(talker, occupation_name_id)
+    {
+        if (IsInCategory(@third_class_group, talker.occupation))
+        {
+            ShowPage(talker, fnYouAreThirdClass);
+        }
+        else
+        {
+            if (lv3_class11 != -1 && occupation_name_id == lv3_class11 && talker.occupation == lv2_class1)
+            {
+                if (talker.level < 40)
+                {
+                    if (OwnItemCount(talker, proof11x) == 0 || OwnItemCount(talker, proof11y) == 0 || OwnItemCount(talker, proof11z) == 0)
+                    {
+                        ShowPage(talker, fnLowLevelNoProof11);
+                    }
+                    else
+                    {
+                        ShowPage(talker, fnLowLevel11);
+                    }
+                }
+                else if (OwnItemCount(talker, proof11x) == 0 || OwnItemCount(talker, proof11y) == 0 || OwnItemCount(talker, proof11z) == 0)
+                {
+                    ShowPage(talker, fnNoProof11);
+                }
+                else
+                {
+                    DeleteItem1(talker, proof11x, OwnItemCount(talker, proof11x));
+                    DeleteItem1(talker, proof11y, OwnItemCount(talker, proof11y));
+                    DeleteItem1(talker, proof11z, OwnItemCount(talker, proof11z));
+                    ClassChange(talker, lv3_class11);
+                    SoundEffect(talker, "ItemSound.quest_fanfare_2");
+                    ShowPage(talker, fnAfterClassChange11);
+                }
+            }
+
+            if (lv3_class12 != -1 && occupation_name_id == lv3_class12 && talker.occupation == lv2_class1)
+            {
+                if (talker.level < 40)
+                {
+                    if (OwnItemCount(talker, proof12x) == 0 || OwnItemCount(talker, proof12y) == 0 || OwnItemCount(talker, proof12z) == 0)
+                    {
+                        ShowPage(talker, fnLowLevelNoProof12);
+                    }
+                    else
+                    {
+                        ShowPage(talker, fnLowLevel12);
+                    }
+                }
+                else if (OwnItemCount(talker, proof12x) == 0 || OwnItemCount(talker, proof12y) == 0 || OwnItemCount(talker, proof12z) == 0)
+                {
+                    ShowPage(talker, fnNoProof12);
+                }
+                else
+                {
+                    DeleteItem1(talker, proof12x, OwnItemCount(talker, proof12x));
+                    DeleteItem1(talker, proof12y, OwnItemCount(talker, proof12y));
+                    DeleteItem1(talker, proof12z, OwnItemCount(talker, proof12z));
+                    ClassChange(talker, lv3_class12);
+                    SoundEffect(talker, "ItemSound.quest_fanfare_2");
+                    ShowPage(talker, fnAfterClassChange12);
+                }
+            }
+
+            if (lv3_class13 != -1 && occupation_name_id == lv3_class13 && talker.occupation == lv2_class1)
+            {
+                if (talker.level < 40)
+                {
+                    if (OwnItemCount(talker, proof13x) == 0 || OwnItemCount(talker, proof13y) == 0 || OwnItemCount(talker, proof13z) == 0)
+                    {
+                        ShowPage(talker, fnLowLevelNoProof13);
+                    }
+                    else
+                    {
+                        ShowPage(talker, fnLowLevel13);
+                    }
+                }
+                else if (OwnItemCount(talker, proof13x) == 0 || OwnItemCount(talker, proof13y) == 0 || OwnItemCount(talker, proof13z) == 0)
+                {
+                    ShowPage(talker, fnNoProof13);
+                }
+                else
+                {
+                    DeleteItem1(talker, proof13x, OwnItemCount(talker, proof13x));
+                    DeleteItem1(talker, proof13y, OwnItemCount(talker, proof13y));
+                    DeleteItem1(talker, proof13z, OwnItemCount(talker, proof13z));
+                    ClassChange(talker, lv3_class13);
+                    SoundEffect(talker, "ItemSound.quest_fanfare_2");
+                    ShowPage(talker, fnAfterClassChange13);
+                }
+            }
+
+            if (lv3_class21 != -1 && occupation_name_id == lv3_class21 && talker.occupation == lv2_class2)
+            {
+                if (talker.level < 40)
+                {
+                    if (OwnItemCount(talker, proof21x) == 0 || OwnItemCount(talker, proof21y) == 0 || OwnItemCount(talker, proof21z) == 0)
+                    {
+                        ShowPage(talker, fnLowLevelNoProof21);
+                    }
+                    else
+                    {
+                        ShowPage(talker, fnLowLevel21);
+                    }
+                }
+                else if (OwnItemCount(talker, proof21x) == 0 || OwnItemCount(talker, proof21y) == 0 || OwnItemCount(talker, proof21z) == 0)
+                {
+                    ShowPage(talker, fnNoProof21);
+                }
+                else
+                {
+                    DeleteItem1(talker, proof21x, OwnItemCount(talker, proof21x));
+                    DeleteItem1(talker, proof21y, OwnItemCount(talker, proof21y));
+                    DeleteItem1(talker, proof21z, OwnItemCount(talker, proof21z));
+                    ClassChange(talker, lv3_class21);
+                    SoundEffect(talker, "ItemSound.quest_fanfare_2");
+                    ShowPage(talker, fnAfterClassChange21);
+                }
+            }
+
+            if (lv3_class22 != -1 && occupation_name_id == lv3_class22 && talker.occupation == lv2_class2)
+            {
+                if (talker.level < 40)
+                {
+                    if (OwnItemCount(talker, proof22x) == 0 || OwnItemCount(talker, proof22y) == 0 || OwnItemCount(talker, proof22z) == 0)
+                    {
+                        ShowPage(talker, fnLowLevelNoProof22);
+                    }
+                    else
+                    {
+                        ShowPage(talker, fnLowLevel22);
+                    }
+                }
+                else if (OwnItemCount(talker, proof22x) == 0 || OwnItemCount(talker, proof22y) == 0 || OwnItemCount(talker, proof22z) == 0)
+                {
+                    ShowPage(talker, fnNoProof22);
+                }
+                else
+                {
+                    DeleteItem1(talker, proof22x, OwnItemCount(talker, proof22x));
+                    DeleteItem1(talker, proof22y, OwnItemCount(talker, proof22y));
+                    DeleteItem1(talker, proof22z, OwnItemCount(talker, proof22z));
+                    ClassChange(talker, lv3_class22);
+                    SoundEffect(talker, "ItemSound.quest_fanfare_2");
+                    ShowPage(talker, fnAfterClassChange22);
+                }
+            }
+
+            if (lv3_class23 != -1 && occupation_name_id == lv3_class23 && talker.occupation == lv2_class2)
+            {
+                if (talker.level < 40)
+                {
+                    if (OwnItemCount(talker, proof23x) == 0 || OwnItemCount(talker, proof23y) == 0 || OwnItemCount(talker, proof23z) == 0)
+                    {
+                        ShowPage(talker, fnLowLevelNoProof23);
+                    }
+                    else
+                    {
+                        ShowPage(talker, fnLowLevel23);
+                    }
+                }
+                else if (OwnItemCount(talker, proof23x) == 0 || OwnItemCount(talker, proof23y) == 0 || OwnItemCount(talker, proof23z) == 0)
+                {
+                    ShowPage(talker, fnNoProof23);
+                }
+                else
+                {
+                    DeleteItem1(talker, proof23x, OwnItemCount(talker, proof23x));
+                    DeleteItem1(talker, proof23y, OwnItemCount(talker, proof23y));
+                    DeleteItem1(talker, proof23z, OwnItemCount(talker, proof23z));
+                    ClassChange(talker, lv3_class23);
+                    SoundEffect(talker, "ItemSound.quest_fanfare_2");
+                    ShowPage(talker, fnAfterClassChange23);
+                }
+            }
+
+            if (lv3_class31 != -1 && occupation_name_id == lv3_class31 && talker.occupation == lv2_class3)
+            {
+                if (talker.level < 40)
+                {
+                    if (OwnItemCount(talker, proof31x) == 0 || OwnItemCount(talker, proof31y) == 0 || OwnItemCount(talker, proof31z) == 0)
+                    {
+                        ShowPage(talker, fnLowLevelNoProof31);
+                    }
+                    else
+                    {
+                        ShowPage(talker, fnLowLevel31);
+                    }
+                }
+                else if (OwnItemCount(talker, proof31x) == 0 || OwnItemCount(talker, proof31y) == 0 || OwnItemCount(talker, proof31z) == 0)
+                {
+                    ShowPage(talker, fnNoProof31);
+                }
+                else
+                {
+                    DeleteItem1(talker, proof31x, OwnItemCount(talker, proof31x));
+                    DeleteItem1(talker, proof31y, OwnItemCount(talker, proof31y));
+                    DeleteItem1(talker, proof31z, OwnItemCount(talker, proof31z));
+                    ClassChange(talker, lv3_class31);
+                    SoundEffect(talker, "ItemSound.quest_fanfare_2");
+                    ShowPage(talker, fnAfterClassChange31);
+                }
+            }
+
+            if (lv3_class32 != -1 && occupation_name_id == lv3_class32 && talker.occupation == lv2_class3)
+            {
+                if (talker.level < 40)
+                {
+                    if (OwnItemCount(talker, proof32x) == 0 || OwnItemCount(talker, proof32y) == 0 || OwnItemCount(talker, proof32z) == 0)
+                    {
+                        ShowPage(talker, fnLowLevelNoProof32);
+                    }
+                    else
+                    {
+                        ShowPage(talker, fnLowLevel32);
+                    }
+                }
+                else if (OwnItemCount(talker, proof32x) == 0 || OwnItemCount(talker, proof32y) == 0 || OwnItemCount(talker, proof32z) == 0)
+                {
+                    ShowPage(talker, fnNoProof32);
+                }
+                else
+                {
+                    DeleteItem1(talker, proof32x, OwnItemCount(talker, proof32x));
+                    DeleteItem1(talker, proof32y, OwnItemCount(talker, proof32y));
+                    DeleteItem1(talker, proof32z, OwnItemCount(talker, proof32z));
+                    ClassChange(talker, lv3_class32);
+                    SoundEffect(talker, "ItemSound.quest_fanfare_2");
+                    ShowPage(talker, fnAfterClassChange32);
+                }
+            }
+
+            if (lv3_class33 != -1 && occupation_name_id == lv3_class33 && talker.occupation == lv2_class3)
+            {
+                if (talker.level < 40)
+                {
+                    if (OwnItemCount(talker, proof33x) == 0 || OwnItemCount(talker, proof33y) == 0 || OwnItemCount(talker, proof33z) == 0)
+                    {
+                        ShowPage(talker, fnLowLevelNoProof33);
+                    }
+                    else
+                    {
+                        ShowPage(talker, fnLowLevel33);
+                    }
+                }
+                else if (OwnItemCount(talker, proof33x) == 0 || OwnItemCount(talker, proof33y) == 0 || OwnItemCount(talker, proof33z) == 0)
+                {
+                    ShowPage(talker, fnNoProof33);
+                }
+                else
+                {
+                    DeleteItem1(talker, proof33x, OwnItemCount(talker, proof33x));
+                    DeleteItem1(talker, proof33y, OwnItemCount(talker, proof33y));
+                    DeleteItem1(talker, proof33z, OwnItemCount(talker, proof33z));
+                    ClassChange(talker, lv3_class33);
+                    SoundEffect(talker, "ItemSound.quest_fanfare_2");
+                    ShowPage(talker, fnAfterClassChange33);
+                }
+            }
+
+            if (lv3_class41 != -1 && occupation_name_id == lv3_class41 && talker.occupation == lv2_class4)
+            {
+                if (talker.level < 40)
+                {
+                    if (OwnItemCount(talker, proof41x) == 0 || OwnItemCount(talker, proof41y) == 0 || OwnItemCount(talker, proof41z) == 0)
+                    {
+                        ShowPage(talker, fnLowLevelNoProof41);
+                    }
+                    else
+                    {
+                        ShowPage(talker, fnLowLevel41);
+                    }
+                }
+                else if (OwnItemCount(talker, proof41x) == 0 || OwnItemCount(talker, proof41y) == 0 || OwnItemCount(talker, proof41z) == 0)
+                {
+                    ShowPage(talker, fnNoProof41);
+                }
+                else
+                {
+                    DeleteItem1(talker, proof41x, OwnItemCount(talker, proof41x));
+                    DeleteItem1(talker, proof41y, OwnItemCount(talker, proof41y));
+                    DeleteItem1(talker, proof41z, OwnItemCount(talker, proof41z));
+                    ClassChange(talker, lv3_class41);
+                    SoundEffect(talker, "ItemSound.quest_fanfare_2");
+                    ShowPage(talker, fnAfterClassChange41);
+                }
+            }
+
+            if (lv3_class42 != -1 && occupation_name_id == lv3_class42 && talker.occupation == lv2_class4)
+            {
+                if (talker.level < 40)
+                {
+                    if (OwnItemCount(talker, proof42x) == 0 || OwnItemCount(talker, proof42y) == 0 || OwnItemCount(talker, proof42z) == 0)
+                    {
+                        ShowPage(talker, fnLowLevelNoProof42);
+                    }
+                    else
+                    {
+                        ShowPage(talker, fnLowLevel42);
+                    }
+                }
+                else if (OwnItemCount(talker, proof42x) == 0 || OwnItemCount(talker, proof42y) == 0 || OwnItemCount(talker, proof42z) == 0)
+                {
+                    ShowPage(talker, fnNoProof42);
+                }
+                else
+                {
+                    DeleteItem1(talker, proof42x, OwnItemCount(talker, proof42x));
+                    DeleteItem1(talker, proof42y, OwnItemCount(talker, proof42y));
+                    DeleteItem1(talker, proof42z, OwnItemCount(talker, proof42z));
+                    ClassChange(talker, lv3_class42);
+                    SoundEffect(talker, "ItemSound.quest_fanfare_2");
+                    ShowPage(talker, fnAfterClassChange42);
+                }
+            }
+
+            if (lv3_class43 != -1 && occupation_name_id == lv3_class43 && talker.occupation == lv2_class4)
+            {
+                if (talker.level < 40)
+                {
+                    if (OwnItemCount(talker, proof43x) == 0 || OwnItemCount(talker, proof43y) == 0 || OwnItemCount(talker, proof43z) == 0)
+                    {
+                        ShowPage(talker, fnLowLevelNoProof43);
+                    }
+                    else
+                    {
+                        ShowPage(talker, fnLowLevel43);
+                    }
+                }
+                else if (OwnItemCount(talker, proof43x) == 0 || OwnItemCount(talker, proof43y) == 0 || OwnItemCount(talker, proof43z) == 0)
+                {
+                    ShowPage(talker, fnNoProof43);
+                }
+                else
+                {
+                    DeleteItem1(talker, proof43x, OwnItemCount(talker, proof43x));
+                    DeleteItem1(talker, proof43y, OwnItemCount(talker, proof43y));
+                    DeleteItem1(talker, proof43z, OwnItemCount(talker, proof43z));
+                    ClassChange(talker, lv3_class43);
+                    SoundEffect(talker, "ItemSound.quest_fanfare_2");
+                    ShowPage(talker, fnAfterClassChange43);
+                }
+            }
+
+            if (lv3_class51 != -1 && occupation_name_id == lv3_class51 && talker.occupation == lv2_class5)
+            {
+                if (talker.level < 40)
+                {
+                    if (OwnItemCount(talker, proof51x) == 0 || OwnItemCount(talker, proof51y) == 0 || OwnItemCount(talker, proof51z) == 0)
+                    {
+                        ShowPage(talker, fnLowLevelNoProof51);
+                    }
+                    else
+                    {
+                        ShowPage(talker, fnLowLevel51);
+                    }
+                }
+                else if (OwnItemCount(talker, proof51x) == 0 || OwnItemCount(talker, proof51y) == 0 || OwnItemCount(talker, proof51z) == 0)
+                {
+                    ShowPage(talker, fnNoProof51);
+                }
+                else
+                {
+                    DeleteItem1(talker, proof51x, OwnItemCount(talker, proof51x));
+                    DeleteItem1(talker, proof51y, OwnItemCount(talker, proof51y));
+                    DeleteItem1(talker, proof51z, OwnItemCount(talker, proof51z));
+                    ClassChange(talker, lv3_class51);
+                    SoundEffect(talker, "ItemSound.quest_fanfare_2");
+                    ShowPage(talker, fnAfterClassChange51);
+                }
+            }
+
+            if (lv3_class52 != -1 && occupation_name_id == lv3_class52 && talker.occupation == lv2_class5)
+            {
+                if (talker.level < 40)
+                {
+                    if (OwnItemCount(talker, proof52x) == 0 || OwnItemCount(talker, proof52y) == 0 || OwnItemCount(talker, proof52z) == 0)
+                    {
+                        ShowPage(talker, fnLowLevelNoProof52);
+                    }
+                    else
+                    {
+                        ShowPage(talker, fnLowLevel52);
+                    }
+                }
+                else if (OwnItemCount(talker, proof52x) == 0 || OwnItemCount(talker, proof52y) == 0 || OwnItemCount(talker, proof52z) == 0)
+                {
+                    ShowPage(talker, fnNoProof52);
+                }
+                else
+                {
+                    DeleteItem1(talker, proof52x, OwnItemCount(talker, proof52x));
+                    DeleteItem1(talker, proof52y, OwnItemCount(talker, proof52y));
+                    DeleteItem1(talker, proof52z, OwnItemCount(talker, proof52z));
+                    ClassChange(talker, lv3_class52);
+                    SoundEffect(talker, "ItemSound.quest_fanfare_2");
+                    ShowPage(talker, fnAfterClassChange52);
+                }
+            }
+
+            if (lv3_class53 != -1 && occupation_name_id == lv3_class53 && talker.occupation == lv2_class5)
+            {
+                if (talker.level < 40)
+                {
+                    if (OwnItemCount(talker, proof53x) == 0 || OwnItemCount(talker, proof53y) == 0 || OwnItemCount(talker, proof53z) == 0)
+                    {
+                        ShowPage(talker, fnLowLevelNoProof53);
+                    }
+                    else
+                    {
+                        ShowPage(talker, fnLowLevel53);
+                    }
+                }
+                else if (OwnItemCount(talker, proof53x) == 0 || OwnItemCount(talker, proof53y) == 0 || OwnItemCount(talker, proof53z) == 0)
+                {
+                    ShowPage(talker, fnNoProof53);
+                }
+                else
+                {
+                    DeleteItem1(talker, proof53x, OwnItemCount(talker, proof53x));
+                    DeleteItem1(talker, proof53y, OwnItemCount(talker, proof53y));
+                    DeleteItem1(talker, proof53z, OwnItemCount(talker, proof53z));
+                    ClassChange(talker, lv3_class53);
+                    SoundEffect(talker, "ItemSound.quest_fanfare_2");
+                    ShowPage(talker, fnAfterClassChange53);
+                }
+            }
+        }
+    }
+}

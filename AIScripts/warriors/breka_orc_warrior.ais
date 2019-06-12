@@ -1,0 +1,87 @@
+class breka_orc_warrior : warrior_aggressive_physicalspecial
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_summoner) && OwnItemCount(c1, @galateas_letter) == 0 && OwnItemCount(c1, @lars_list3) && OwnItemCount(c1, @brekaorc_totem) < 30)
+        {
+            if (Rand(20) < 5)
+            {
+                if (OwnItemCount(c1, @brekaorc_totem) == 29)
+                {
+                    GiveItem1(c1, @brekaorc_totem, 1);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @brekaorc_totem, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_guildsman) == 1 && OwnItemCount(c1, @alltrans_instructions) == 1 && OwnItemCount(c1, @normans_instructions) == 1 && OwnItemCount(c1, @dunings_instructions) == 1)
+        {
+            if (Rand(100) <= 50 && OwnItemCount(c1, @dunings_key) < 30)
+            {
+                if (OwnItemCount(c1, @dunings_key) == 29)
+                {
+                    if (1)
+                    {
+                        c1.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(c1, @dunings_key, 1);
+                        DeleteItem1(c1, @dunings_instructions, 1);
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                }
+                else if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @dunings_key, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (1)
+        {
+            c1.quest_last_reward_time = GetCurrentTick();
+            if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_test_instructions_1) && OwnItemCount(c1, @q_hakas_head) + OwnItemCount(c1, @q_jakas_head) + OwnItemCount(c1, @q_markas_head) < 3)
+            {
+                if (Rand(10) == 0)
+                {
+                    if (OwnItemCount(c1, @q_hakas_head) == 0)
+                    {
+                        CreateOnePrivate(@breka_overlord_haka, "breka_overlord_haka", 0, 1);
+                    }
+                    else if (OwnItemCount(c1, @q_jakas_head) == 0)
+                    {
+                        CreateOnePrivate(@breka_overlord_jaka, "breka_overlord_jaka", 0, 1);
+                    }
+                    else if (OwnItemCount(c1, @q_markas_head) == 0)
+                    {
+                        CreateOnePrivate(@breka_overlord_marka, "breka_overlord_marka", 0, 1);
+                    }
+                }
+            }
+
+            if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_1u_3) && OwnItemCount(c1, @q_coiled_serpent_totem) < 50)
+            {
+                GiveItem1(c1, @q_coiled_serpent_totem, 1);
+                if (OwnItemCount(c1, @q_coiled_serpent_totem) >= 50)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

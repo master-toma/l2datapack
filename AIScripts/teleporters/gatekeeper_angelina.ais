@@ -1,0 +1,8 @@
+class gatekeeper_angelina : teleporter
+{
+property:
+    TelPosList Position = {
+        {1010007; 83475; 147966; -3404; 6300; 3};    // 1010007 - "The Town of Giran"
+        {1010006; 15472; 142880; -2699; 6500; 2}    // 1010006 - "The Town of Dion"
+    };
+}

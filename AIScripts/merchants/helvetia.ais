@@ -1,0 +1,41 @@
+class helvetia : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"necklace_of_wisdom"; 10};
+        {"blue_diamond_necklace"; 10};
+        {"necklace_of_devotion"; 10};
+        {"enchanted_necklace"; 10};
+        {"near_forest_necklace"; 10};
+        {"elven_necklace"; 10};
+        {"cat'seye_earing"; 10};
+        {"coral_earing"; 10};
+        {"red_cresent_earing"; 10};
+        {"enchanted_earing"; 10};
+        {"tiger'seye_earing"; 10};
+        {"elven_earing"; 10};
+        {"ring_of_wisdom"; 10};
+        {"blue_coral_ring"; 10};
+        {"ring_of_devotion"; 10};
+        {"enchanted_ring"; 10};
+        {"black_pearl_ring"; 10};
+        {"elven_ring"; 10};
+        {"world_map"; 10};
+        {"key_of_thief"; 10};
+        {"spirit_ore"; 10};
+        {"soul_ore"; 10};
+        {"bone_arrow"; 10};
+        {"fine_steel_arrow"; 10};
+        {"quick_step_potion"; 10};
+        {"swift_attack_potion"; 10};
+        {"healing_potion"; 10};
+        {"advanced_antidote"; 10};
+        {"emergency_dressing"; 10};
+        {"scroll_of_resurrection"; 10};
+        {"scroll_of_escape_to_agit"; 10};
+        {"scroll_of_escape_to_castle"; 10};
+        {"gemstone_d"; 10};
+        {"gemstone_c"; 10};
+        {"gemstone_b"; 10}
+    };
+}

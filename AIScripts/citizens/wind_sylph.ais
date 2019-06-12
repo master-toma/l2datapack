@@ -1,0 +1,174 @@
+class wind_sylph : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @flame_earing) != 0 && OwnItemCount(talker, @broken_bronze_mirror) == 0 && OwnItemCount(talker, @wind_bangel) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the proof of wind");
+            }
+
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @broken_bronze_mirror) != 0 && OwnItemCount(talker, @wind_feather) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the lizardmen of the Wasteland");
+            }
+
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @broken_bronze_mirror) != 0 && OwnItemCount(talker, @wind_feather) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Display the Wind Feather");
+            }
+
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @wind_bangel) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about Undine of Water");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_wind) == 0 && OwnItemCount(talker, @sylph_charm) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Musical Note of Wind");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @sylph_charm) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Give all ingredients");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_wind) == 1 && OwnItemCount(talker, @sylph_charm) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Talk about Musical Note of Wind");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @flame_earing) != 0 && OwnItemCount(talker, @broken_bronze_mirror) == 0 && OwnItemCount(talker, @wind_bangel) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @broken_bronze_mirror) == 0)
+                        {
+                            GiveItem1(talker, @broken_bronze_mirror, 1);
+                        }
+
+                        ShowPage(talker, "wind_sylph_q0404_01.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @broken_bronze_mirror) != 0 && OwnItemCount(talker, @wind_feather) == 0)
+                {
+                    ShowPage(talker, "wind_sylph_q0404_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @broken_bronze_mirror) != 0 && OwnItemCount(talker, @wind_feather) != 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @wind_feather, OwnItemCount(talker, @wind_feather));
+                        DeleteItem1(talker, @broken_bronze_mirror, OwnItemCount(talker, @broken_bronze_mirror));
+                        if (OwnItemCount(talker, @wind_bangel) == 0)
+                        {
+                            GiveItem1(talker, @wind_bangel, 1);
+                        }
+
+                        ShowPage(talker, "wind_sylph_q0404_03.htm");
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @wind_bangel) != 0)
+                {
+                    ShowPage(talker, "wind_sylph_q0404_04.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_wind) == 0 && OwnItemCount(talker, @sylph_charm) == 0)
+                {
+                    ShowPage(talker, "wind_sylph_q0228_01.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @sylph_charm) == 1)
+                {
+                    if (OwnItemCount(talker, @harpys_feather) + OwnItemCount(talker, @wyrms_wingbone) + OwnItemCount(talker, @windsus_mane) < 40)
+                    {
+                        ShowPage(talker, "wind_sylph_q0228_03.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "wind_sylph_q0228_04.htm");
+                        DeleteItem1(talker, @harpys_feather, OwnItemCount(talker, @harpys_feather));
+                        DeleteItem1(talker, @wyrms_wingbone, OwnItemCount(talker, @wyrms_wingbone));
+                        DeleteItem1(talker, @windsus_mane, OwnItemCount(talker, @windsus_mane));
+                        DeleteItem1(talker, @sylph_charm, 1);
+                        GiveItem1(talker, @tone_of_wind, 1);
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_wind) == 1 && OwnItemCount(talker, @sylph_charm) == 0)
+                {
+                    ShowPage(talker, "wind_sylph_q0228_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_magus)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "wind_sylph_q0228_02.htm");
+                    GiveItem1(talker, @sylph_charm, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,119 @@
+class collector_pipi : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_scavenger) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to Dwarven Raider");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @pipis_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Master Toma");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @pipis_letter) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about changing occupation to Dwarven Raider");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        FHTML_SetFileName(fhtml0, "collector_pipi_q0417_01.htm");
+                        FHTML_SetInt(fhtml0, "quest_id", @path_to_scavenger);
+                        ShowFHTML(talker, fhtml0);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @pipis_letter) == 1)
+                {
+                    ShowPage(talker, "collector_pipi_q0417_06.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @pipis_letter) == 0)
+                {
+                    ShowPage(talker, "collector_pipi_q0417_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_scavenger)
+        {
+            if (talker.level >= 19 && talker.occupation == @dwarven_fighter && OwnItemCount(talker, @ring_of_raven) == 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    talker.flag = 0;
+                    SetMemo(talker, quest_id);
+                    SoundEffect(talker, "ItemSound.quest_accept");
+                    GiveItem1(talker, @pipis_letter, 1);
+                    ShowPage(talker, "collector_pipi_q0417_05.htm");
+                }
+            }
+            else if (talker.occupation != @dwarven_fighter)
+            {
+                if (talker.occupation == @scavenger)
+                {
+                    ShowPage(talker, "collector_pipi_q0417_02a.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "collector_pipi_q0417_08.htm");
+                }
+            }
+            else if (talker.level < 19 && talker.occupation == @dwarven_fighter)
+            {
+                ShowPage(talker, "collector_pipi_q0417_02.htm");
+            }
+            else if (talker.level >= 19 && talker.occupation == @dwarven_fighter && OwnItemCount(talker, @ring_of_raven) == 1)
+            {
+                ShowPage(talker, "collector_pipi_q0417_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

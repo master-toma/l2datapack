@@ -1,0 +1,41 @@
+class varool_foulclaw : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @destroy_plaguebringers) == 1 && OwnItemCount(myself.c_quest0, @varool_foulclaws_fang) == 0)
+        {
+            if (Rand(10) > 7)
+            {
+                GiveItem1(myself.c_quest0, @varool_foulclaws_fang, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            Say(MakeFString(31603, "", "", "", "", ""));
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,4 @@
+skill_begin	skill_name = [s_focus_mind1]	/* [포커스 마인드] */	skill_id = 191	level = 1	operate_type = P	effect = {{p_mp_regen;{all};1;diff}}	skill_end
+skill_begin	skill_name = [s_focus_mind2]	/* [포커스 마인드] */	skill_id = 191	level = 2	operate_type = P	effect = {{p_mp_regen;{all};1.4;diff}}	skill_end
+skill_begin	skill_name = [s_focus_mind3]	/* [포커스 마인드] */	skill_id = 191	level = 3	operate_type = P	effect = {{p_mp_regen;{all};1.8;diff}}	skill_end
+skill_begin	skill_name = [s_focus_mind4]	/* [포커스 마인드] */	skill_id = 191	level = 4	operate_type = P	effect = {{p_mp_regen;{all};2.2;diff}}	skill_end

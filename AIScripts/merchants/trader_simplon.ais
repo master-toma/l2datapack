@@ -1,0 +1,251 @@
+class trader_simplon : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"long_sword"; 20};
+        {"throw_knife"; 20};
+        {"bow_of_forest"; 20};
+        {"short_spear"; 20};
+        {"falchion"; 20};
+        {"sword_breaker"; 20};
+        {"composition_bow"; 20};
+        {"buzdygan"; 20};
+        {"iron_hammer"; 20};
+        {"long_spear"; 20};
+        {"saber"; 20};
+        {"handiwork_dagger"; 20};
+        {"assassin_knife"; 20};
+        {"strengthening_bow"; 20};
+        {"hand_axe"; 20};
+        {"heavy_mace"; 20};
+        {"work_hammer"; 20};
+        {"trident"; 20};
+        {"bastard_sword"; 20};
+        {"poniard_dagger"; 20};
+        {"long_bow"; 20};
+        {"dark_elven_bow"; 20};
+        {"pike"; 20};
+        {"dwarven_trident"; 20};
+        {"cestus"; 20};
+        {"viper's_canine"; 20};
+        {"bagh-nakh"; 20};
+        {"single-edged_jamadhr"; 20};
+        {"tights_pants"; 20};
+        {"tights_shirt"; 20};
+        {"bone_breastplate"; 20};
+        {"bone_gaiters"; 20};
+        {"piece_bone_breastplate"; 20};
+        {"bronze_breastplate"; 20};
+        {"hard_leather_gaiters"; 20};
+        {"piece_bone_gaiters"; 20};
+        {"hard_leather_shirt"; 20};
+        {"bronze_gaiters"; 20};
+        {"puma_skin_gaiters"; 20};
+        {"ring_breastplate"; 20};
+        {"puma_skin_shirt"; 20};
+        {"lion_skin_gaiters"; 20};
+        {"lion_skin_shirt"; 20};
+        {"mithril_breastplate"; 20};
+        {"mithril_banded_gaiters"; 20};
+        {"round_shield"; 20};
+        {"bone_shield"; 20};
+        {"bronze_shield"; 20};
+        {"aspis"; 20};
+        {"leather_gloves"; 20};
+        {"bracer"; 20};
+        {"excellence_leather_gloves"; 20};
+        {"leather_gauntlet"; 20};
+        {"low_boots"; 20};
+        {"boots"; 20};
+        {"leather_boots"; 20};
+        {"blue_buckskin_boots"; 20};
+        {"leather_helmet"; 20};
+        {"hard_leather_helmet"; 20};
+        {"bone_helmet"; 20};
+        {"bronze_helmet"; 20};
+        {"wooden_arrow"; 20};
+        {"bone_arrow"; 20}
+    };
+    BuySellList SellList1 = {
+        {"apprentice's_staff"; 20};
+        {"relic_of_saints"; 20};
+        {"mage_staff"; 20};
+        {"crucifix_of_blessing"; 20};
+        {"voodoo_doll"; 20};
+        {"bone_staff"; 20};
+        {"scroll_of_wisdom"; 20};
+        {"branch_of_life"; 20};
+        {"proof_of_revenge"; 20};
+        {"mace_of_prayer"; 20};
+        {"doom_hammer"; 20};
+        {"mystic_staff"; 20};
+        {"staff_of_mana"; 20};
+        {"divine_tome"; 20};
+        {"sword_of_magic"; 20};
+        {"sword_of_mystic"; 20};
+        {"sword_of_occult"; 20};
+        {"dagger_of_mana"; 20};
+        {"mystic_knife"; 20};
+        {"conjure_knife"; 20};
+        {"hose_of_devotion"; 20};
+        {"tunic_of_devotion"; 20};
+        {"hose_of_magicpower"; 20};
+        {"tunic_of_magicpower"; 20};
+        {"cursed_hose"; 20};
+        {"cursed_tunic"; 20};
+        {"dark_hose"; 20};
+        {"white_tunic"; 20};
+        {"mage's_hose"; 20};
+        {"mage's_tunic"; 20};
+        {"hose_of_knowledge"; 20};
+        {"tunic_of_knowledge"; 20};
+        {"round_shield"; 20};
+        {"bone_shield"; 20};
+        {"bronze_shield"; 20};
+        {"aspis"; 20};
+        {"leather_gloves"; 20};
+        {"bracer"; 20};
+        {"excellence_leather_gloves"; 20};
+        {"leather_gauntlet"; 20};
+        {"low_boots"; 20};
+        {"boots"; 20};
+        {"leather_boots"; 20};
+        {"blue_buckskin_boots"; 20};
+        {"leather_helmet"; 20};
+        {"hard_leather_helmet"; 20};
+        {"bone_helmet"; 20};
+        {"bronze_helmet"; 20};
+        {"wooden_arrow"; 20};
+        {"bone_arrow"; 20}
+    };
+    
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_cleric) == 1 && OwnItemCount(talker, @letter_of_order1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Inquire about the prohibited book");
+            }
+
+            if (HaveMemo(talker, @path_to_warrior) == 1 && OwnItemCount(talker, @eins_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show the letter of Aymus");
+            }
+
+            if (HaveMemo(talker, @path_to_warrior) == 1 && OwnItemCount(talker, @warrior_guild_mark))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about changing occupation to a Warrior");
+            }
+
+            if (HaveMemo(talker, @path_to_warrior) == 1 && OwnItemCount(talker, @simplons_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about the Sword of Pain");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_cleric) == 1 && OwnItemCount(talker, @letter_of_order1) == 1)
+                {
+                    if (OwnItemCount(talker, @book_of_simlon) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "trader_simplon_q0405_01.htm");
+                            GiveItem1(talker, @book_of_simlon, 3);
+                        }
+                    }
+                    else if (OwnItemCount(talker, @book_of_simlon) > 0)
+                    {
+                        ShowPage(talker, "trader_simplon_q0405_02.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_warrior) == 1 && OwnItemCount(talker, @eins_letter))
+                {
+                    ShowPage(talker, "trader_simplon_q0401_01.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_warrior) == 1 && OwnItemCount(talker, @warrior_guild_mark))
+                {
+                    if (OwnItemCount(talker, @rusted_bronze_sword1) < 1)
+                    {
+                        ShowPage(talker, "trader_simplon_q0401_03.htm");
+                    }
+                    else if (OwnItemCount(talker, @rusted_bronze_sword1) < 10)
+                    {
+                        ShowPage(talker, "trader_simplon_q0401_04.htm");
+                    }
+                    else if (OwnItemCount(talker, @rusted_bronze_sword1) >= 10)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            DeleteItem1(talker, @warrior_guild_mark, 1);
+                            DeleteItem1(talker, @rusted_bronze_sword1, OwnItemCount(talker, @rusted_bronze_sword1));
+                            GiveItem1(talker, @rusted_bronze_sword2, 1);
+                            GiveItem1(talker, @simplons_letter, 1);
+                            ShowPage(talker, "trader_simplon_q0401_05.htm");
+                        }
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_warrior) == 1 && OwnItemCount(talker, @simplons_letter))
+                {
+                    ShowPage(talker, "trader_simplon_q0401_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_warrior)
+        {
+            if (reply == 1 && OwnItemCount(talker, @eins_letter) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "trader_simplon_q0401_02.htm");
+                    DeleteItem1(talker, @eins_letter, 1);
+                    GiveItem1(talker, @warrior_guild_mark, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,3 @@
+class crasher : warrior_passive_casting_ddmagic
+{
+}

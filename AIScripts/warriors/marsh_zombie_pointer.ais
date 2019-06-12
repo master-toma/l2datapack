@@ -1,0 +1,58 @@
+class marsh_zombie_pointer : warrior_passive_casting_ddmagic
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (OwnItemCount(c1, @preserve_oil) == 1)
+        {
+            if (Rand(10) < 3)
+            {
+                GiveItem1(c1, @zombie_head, 1);
+                SoundEffect(c1, "ItemSound.quest_middle");
+                DeleteItem1(c1, @preserve_oil, 1);
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @scent_of_death) == 1 && myself.i_quest0 == 1 && OwnItemCount(myself.c_quest0, @zombie_skin) < 5)
+        {
+            if (Rand(10) > 7)
+            {
+                GiveItem1(myself.c_quest0, @zombie_skin, 1);
+                if (OwnItemCount(myself.c_quest0, @zombie_skin) == 5)
+                {
+                    SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.c_quest0 = attacker;
+            myself.i_quest0 = 1;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

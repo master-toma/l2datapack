@@ -1,0 +1,3 @@
+class archon_susceptor : party_leader_aggressive
+{
+}

@@ -1,0 +1,136 @@
+class militiaman_leirynn : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_warrant) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the task");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @leirynns_order1) == 1 && OwnItemCount(talker, @delu_totem) < 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the task");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @leirynns_order1) == 1 && OwnItemCount(talker, @delu_totem) >= 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about the task");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @leirynns_order2) == 1 && OwnItemCount(talker, @chief_kalkis_fang) < 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about the task");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @leirynns_order2) == 1 && OwnItemCount(talker, @chief_kalkis_fang) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about the task");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @leirynns_report) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about the task");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && (OwnItemCount(talker, @alankells_recommend) == 1 || OwnItemCount(talker, @alankells_order) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask about the task");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_warrant) == 1)
+                {
+                    ShowPage(talker, "militiaman_leirynn_q0225_01.htm");
+                    DeleteItem1(talker, @alankells_warrant, 1);
+                    GiveItem1(talker, @leirynns_order1, 1);
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @leirynns_order1) == 1 && OwnItemCount(talker, @delu_totem) < 10)
+                {
+                    ShowPage(talker, "militiaman_leirynn_q0225_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @leirynns_order1) == 1 && OwnItemCount(talker, @delu_totem) >= 10)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "militiaman_leirynn_q0225_03.htm");
+                        DeleteItem1(talker, @delu_totem, OwnItemCount(talker, @delu_totem));
+                        DeleteItem1(talker, @leirynns_order1, OwnItemCount(talker, @leirynns_order1));
+                        GiveItem1(talker, @leirynns_order2, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @leirynns_order2) == 1 && OwnItemCount(talker, @chief_kalkis_fang) < 1)
+                {
+                    ShowPage(talker, "militiaman_leirynn_q0225_04.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @leirynns_order2) == 1 && OwnItemCount(talker, @chief_kalkis_fang) >= 1)
+                {
+                    ShowPage(talker, "militiaman_leirynn_q0225_05.htm");
+                    DeleteItem1(talker, @chief_kalkis_fang, 1);
+                    GiveItem1(talker, @leirynns_report, 1);
+                    DeleteItem1(talker, @leirynns_order2, OwnItemCount(talker, @leirynns_order2));
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @leirynns_report) == 1)
+                {
+                    ShowPage(talker, "militiaman_leirynn_q0225_06.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && (OwnItemCount(talker, @alankells_recommend) == 1 || OwnItemCount(talker, @alankells_order) == 1))
+                {
+                    ShowPage(talker, "militiaman_leirynn_q0225_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

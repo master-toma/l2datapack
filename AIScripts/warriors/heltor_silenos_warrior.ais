@@ -1,0 +1,3 @@
+class heltor_silenos_warrior : warrior_aggressive
+{
+}

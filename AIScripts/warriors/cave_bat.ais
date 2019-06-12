@@ -1,0 +1,3 @@
+class cave_bat : warrior_passive
+{
+}

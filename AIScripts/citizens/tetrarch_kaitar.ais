@@ -1,0 +1,122 @@
+class tetrarch_kaitar : npc_elder
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @bones_tell_future) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about the Goddess Shilen");
+            }
+
+            if (HaveMemo(talker, @bones_tell_future) == 0 && GetOneTimeQuestFlag(talker, @bones_tell_future) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about the Goddess Shilen");
+            }
+
+            if (HaveMemo(talker, @bones_tell_future))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about collecting bones");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @bones_tell_future) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_dark_elf)
+                        {
+                            ShowPage(talker, "tetrarch_kaitar_q0320_00.htm");
+                        }
+                        else if (talker.level >= 10)
+                        {
+                            FHTML_SetFileName(fhtml0, "tetrarch_kaitar_q0320_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @bones_tell_future);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "tetrarch_kaitar_q0320_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @bones_tell_future) == 0 && GetOneTimeQuestFlag(talker, @bones_tell_future) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @bones_tell_future))
+                {
+                    if (OwnItemCount(talker, @bone_fragment) >= 0 && OwnItemCount(talker, @bone_fragment) < 10)
+                    {
+                        ShowPage(talker, "tetrarch_kaitar_q0320_05.htm");
+                    }
+                    else if (OwnItemCount(talker, @bone_fragment) >= 10)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tetrarch_kaitar_q0320_06.htm");
+                            GiveItem1(talker, @adena, 100);
+                            IncrementParam(talker, @PARAM_EXP, 3000);
+                            DeleteItem1(talker, @bone_fragment, OwnItemCount(talker, @bone_fragment));
+                            RemoveMemo(talker, @bones_tell_future);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @bones_tell_future)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "tetrarch_kaitar_q0320_04.htm");
+                SetMemo(talker, @bones_tell_future);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

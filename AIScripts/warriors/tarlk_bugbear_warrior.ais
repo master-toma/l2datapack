@@ -1,0 +1,56 @@
+class tarlk_bugbear_warrior : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (1)
+        {
+            c1.quest_last_reward_time = GetCurrentTick();
+            if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_test_instructions_2) && OwnItemCount(c1, @q_athus_head) + OwnItemCount(c1, @q_lankas_head) + OwnItemCount(c1, @q_triskas_head) + OwnItemCount(c1, @q_moturas_head) + OwnItemCount(c1, @q_kalaths_head) < 5)
+            {
+                if (Rand(10) == 0)
+                {
+                    if (OwnItemCount(c1, @q_athus_head) == 0)
+                    {
+                        CreateOnePrivate(@talk_raider_athu, "talk_raider_athu", 0, 1);
+                    }
+                    else if (OwnItemCount(c1, @q_lankas_head) == 0)
+                    {
+                        CreateOnePrivate(@talk_raider_lanka, "talk_raider_lanka", 0, 1);
+                    }
+                    else if (OwnItemCount(c1, @q_triskas_head) == 0)
+                    {
+                        CreateOnePrivate(@talk_raider_triska, "talk_raider_triska", 0, 1);
+                    }
+                    else if (OwnItemCount(c1, @q_moturas_head) == 0)
+                    {
+                        CreateOnePrivate(@talk_raider_motura, "talk_raider_motura", 0, 1);
+                    }
+                    else if (OwnItemCount(c1, @q_kalaths_head) == 0)
+                    {
+                        CreateOnePrivate(@talk_raider_kalath, "talk_raider_kalath", 0, 1);
+                    }
+                }
+            }
+
+            if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_2c_12) && OwnItemCount(c1, @q_talk_bugbear_totem) < 30)
+            {
+                if (Rand(2) == 0)
+                {
+                    GiveItem1(c1, @q_talk_bugbear_totem, 1);
+                    if (OwnItemCount(c1, @q_talk_bugbear_totem) >= 30)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_midddle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

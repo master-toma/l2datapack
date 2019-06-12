@@ -1,0 +1,119 @@
+class jurek : master_lv3_hew
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil2) == 1 && OwnItemCount(talker, @gmagisters_sigil) == 0 && OwnItemCount(talker, @symbol_of_jurek) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Certificate of Marion");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil2) == 1 && OwnItemCount(talker, @jureks_list) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Give ingredients that were collected");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil2) >= 1 && OwnItemCount(talker, @symbol_of_jurek) >= 1) && OwnItemCount(talker, @gmagisters_sigil) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about the remaining steps");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 || OwnItemCount(talker, @miriens_sigil3) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about the remaining steps");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil2) == 1 && OwnItemCount(talker, @gmagisters_sigil) == 0 && OwnItemCount(talker, @symbol_of_jurek) == 0)
+                {
+                    ShowPage(talker, "jurek_q0214_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil2) == 1 && OwnItemCount(talker, @jureks_list) == 1)
+                {
+                    if (OwnItemCount(talker, @beamers_skin) + OwnItemCount(talker, @shamans_necklace) + OwnItemCount(talker, @shackles_scalp) < 12)
+                    {
+                        ShowPage(talker, "jurek_q0214_04.htm");
+                    }
+                    else if (OwnItemCount(talker, @gmagisters_sigil) >= 1)
+                    {
+                        ShowPage(talker, "jurek_q0214_05.htm");
+                        DeleteItem1(talker, @jureks_list, OwnItemCount(talker, @jureks_list));
+                        DeleteItem1(talker, @beamers_skin, OwnItemCount(talker, @beamers_skin));
+                        DeleteItem1(talker, @shamans_necklace, OwnItemCount(talker, @shamans_necklace));
+                        DeleteItem1(talker, @shackles_scalp, OwnItemCount(talker, @shackles_scalp));
+                        DeleteItem1(talker, @gmagisters_sigil, 1);
+                        GiveItem1(talker, @symbol_of_jurek, 1);
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil2) >= 1 && OwnItemCount(talker, @symbol_of_jurek) >= 1) && OwnItemCount(talker, @gmagisters_sigil) == 0)
+                {
+                    ShowPage(talker, "jurek_q0214_06.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil1) >= 1 || OwnItemCount(talker, @miriens_sigil3) >= 1))
+                {
+                    ShowPage(talker, "jurek_q0214_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_scholar)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "jurek_q0214_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "jurek_q0214_03.htm");
+                    GiveItem1(talker, @jureks_list, 1);
+                    GiveItem1(talker, @gmagisters_sigil, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

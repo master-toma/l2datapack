@@ -1,0 +1,94 @@
+class kalinta : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_palus_knight) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about changing occupation to a Palace Knight");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_palus_knight) == 1)
+                {
+                    if (OwnItemCount(talker, @virgils_letter))
+                    {
+                        ShowPage(talker, "kalinta_q0410_01.htm");
+                    }
+                    else if (OwnItemCount(talker, @morte_talisman) && OwnItemCount(talker, @trimden_silk) == 0 && OwnItemCount(talker, @predator_carapace) == 0)
+                    {
+                        ShowPage(talker, "kalinta_q0410_03.htm");
+                    }
+                    else if (OwnItemCount(talker, @morte_talisman) && OwnItemCount(talker, @trimden_silk) == 0 && OwnItemCount(talker, @predator_carapace) > 0)
+                    {
+                        ShowPage(talker, "kalinta_q0410_04.htm");
+                    }
+                    else if (OwnItemCount(talker, @morte_talisman) && OwnItemCount(talker, @trimden_silk) >= 5 && OwnItemCount(talker, @predator_carapace) > 0)
+                    {
+                        ShowPage(talker, "kalinta_q0410_05.htm");
+                    }
+                    else if (OwnItemCount(talker, @morte_talisman) && OwnItemCount(talker, @trimden_silk) > 0 && OwnItemCount(talker, @predator_carapace) >= 0)
+                    {
+                        ShowPage(talker, "kalinta_q0410_04.htm");
+                    }
+                    else if (OwnItemCount(talker, @coffin_eternal_rest))
+                    {
+                        ShowPage(talker, "kalinta_q0410_06.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @path_to_palus_knight)
+        {
+            if (reply == 1 && OwnItemCount(talker, @virgils_letter) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "kalinta_q0410_02.htm");
+                    DeleteItem1(talker, @virgils_letter, 1);
+                    GiveItem1(talker, @morte_talisman, 1);
+                }
+            }
+            else if (reply == 2 && OwnItemCount(talker, @morte_talisman) > 0 && OwnItemCount(talker, @trimden_silk) > 0 && OwnItemCount(talker, @predator_carapace) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "kalinta_q0410_06.htm");
+                    DeleteItem1(talker, @morte_talisman, 1);
+                    DeleteItem1(talker, @trimden_silk, OwnItemCount(talker, @trimden_silk));
+                    DeleteItem1(talker, @predator_carapace, OwnItemCount(talker, @predator_carapace));
+                    GiveItem1(talker, @coffin_eternal_rest, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,11 @@
+class clavier : teleporter
+{
+property:
+    TelPosList Position = {
+        {1010006; 15671; 142994; -2704; 8100; 2};    // 1010006 - "The Town of Dion"
+        {1010013; 83011; 53207; -1470; 11000; 4};    // 1010013 - "Oren Castle Town"
+        {1010020; 117088; 76931; -2670; 9400; 0};    // 1010020 - "Hunter Village"
+        {1010021; 47935; 186810; -3420; 6300; 0};    // 1010021 - "South Harbour (Entrance to Giran)"
+        {1010022; 105918; 109759; -3170; 5300; 3}    // 1010022 - "Hardin’s Private Academy"
+    };
+}

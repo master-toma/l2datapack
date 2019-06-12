@@ -1,0 +1,264 @@
+class trader_viktor : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"hard_leather_pants"; 30};
+        {"wooden_breastplate"; 30};
+        {"tights_pants"; 30};
+        {"tights_shirt"; 30};
+        {"bone_breastplate"; 30};
+        {"bone_gaiters"; 30};
+        {"piece_bone_breastplate"; 30};
+        {"bronze_breastplate"; 30};
+        {"hard_leather_gaiters"; 30};
+        {"piece_bone_gaiters"; 30};
+        {"hard_leather_shirt"; 30};
+        {"bronze_gaiters"; 30};
+        {"puma_skin_gaiters"; 30};
+        {"ring_breastplate"; 30};
+        {"buckler"; 30};
+        {"round_shield"; 30};
+        {"bone_shield"; 30};
+        {"bronze_shield"; 30};
+        {"gloves"; 30};
+        {"leather_gloves"; 30};
+        {"bracer"; 30};
+        {"excellence_leather_gloves"; 30};
+        {"leather_shoes"; 30};
+        {"low_boots"; 30};
+        {"boots"; 30};
+        {"leather_boots"; 30};
+        {"wooden_helmet"; 30};
+        {"leather_helmet"; 30};
+        {"hard_leather_helmet"; 30};
+        {"bone_helmet"; 30}
+    };
+    BuySellList SellList1 = {
+        {"leather_hose"; 30};
+        {"leather_tunic"; 30};
+        {"hose_of_devotion"; 30};
+        {"tunic_of_devotion"; 30};
+        {"hose_of_magicpower"; 30};
+        {"tunic_of_magicpower"; 30};
+        {"cursed_hose"; 30};
+        {"cursed_tunic"; 30};
+        {"buckler"; 30};
+        {"round_shield"; 30};
+        {"bone_shield"; 30};
+        {"bronze_shield"; 30};
+        {"gloves"; 30};
+        {"leather_gloves"; 30};
+        {"bracer"; 30};
+        {"excellence_leather_gloves"; 30};
+        {"leather_shoes"; 30};
+        {"low_boots"; 30};
+        {"boots"; 30};
+        {"leather_boots"; 30};
+        {"wooden_helmet"; 30};
+        {"leather_helmet"; 30};
+        {"hard_leather_helmet"; 30};
+        {"bone_helmet"; 30};
+        {"wooden_arrow"; 30};
+        {"bone_arrow"; 30}
+    };
+    
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @terys_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Letter from Terry");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @hawkeyes_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show Letter of Eye of Hawk");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @viktors_request) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give Scale of Medusa");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @silens_runestone) == 1 && OwnItemCount(talker, @analysis_request) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Listen to what Victor says");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && (OwnItemCount(talker, @marinas_letter) == 1 && OwnItemCount(talker, @experiment_tools) == 1 && OwnItemCount(talker, @analysis_result) == 1 && OwnItemCount(talker, @terys_report) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Listen to what Victor says");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @viktors_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Listen to what Victor says");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @terys_letter) == 1)
+                {
+                    ShowPage(talker, "trader_viktor_q0213_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @hawkeyes_letter) == 1)
+                {
+                    ShowPage(talker, "trader_viktor_q0213_12.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @viktors_request) == 1)
+                {
+                    if (OwnItemCount(talker, @medusas_scales) < 10)
+                    {
+                        ShowPage(talker, "trader_viktor_q0213_13.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "trader_viktor_q0213_14.htm");
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @silens_runestone) == 1 && OwnItemCount(talker, @analysis_request) == 1)
+                {
+                    ShowPage(talker, "trader_viktor_q0213_16.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && (OwnItemCount(talker, @marinas_letter) == 1 && OwnItemCount(talker, @experiment_tools) == 1 && OwnItemCount(talker, @analysis_result) == 1 && OwnItemCount(talker, @terys_report) == 1))
+                {
+                    ShowPage(talker, "trader_viktor_q0213_17.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @viktors_letter) == 1)
+                {
+                    ShowPage(talker, "trader_viktor_q0213_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_seeker)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "trader_viktor_q0213_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "trader_viktor_q0213_03.htm");
+            }
+
+            if (reply == 3)
+            {
+                ShowPage(talker, "trader_viktor_q0213_04.htm");
+            }
+
+            if (reply == 4)
+            {
+                if (OwnItemCount(talker, @terys_letter) >= 1)
+                {
+                    ShowPage(talker, "trader_viktor_q0213_05.htm");
+                    DeleteItem1(talker, @terys_letter, 1);
+                    GiveItem1(talker, @viktors_letter, 1);
+                }
+            }
+
+            if (reply == 5)
+            {
+                ShowPage(talker, "trader_viktor_q0213_06.htm");
+            }
+
+            if (reply == 6)
+            {
+                ShowPage(talker, "trader_viktor_q0213_07.htm");
+            }
+
+            if (reply == 7)
+            {
+                ShowPage(talker, "trader_viktor_q0213_08.htm");
+            }
+
+            if (reply == 8)
+            {
+                ShowPage(talker, "trader_viktor_q0213_09.htm");
+            }
+
+            if (reply == 9)
+            {
+                ShowPage(talker, "trader_viktor_q0213_10.htm");
+            }
+
+            if (reply == 10)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "trader_viktor_q0213_11.htm");
+                    GiveItem1(talker, @viktors_request, 1);
+                    DeleteItem1(talker, @terys_letter, OwnItemCount(talker, @terys_letter));
+                    DeleteItem1(talker, @terys_box, OwnItemCount(talker, @terys_box));
+                    DeleteItem1(talker, @hawkeyes_letter, OwnItemCount(talker, @hawkeyes_letter));
+                    DeleteItem1(talker, @viktors_letter, OwnItemCount(talker, @viktors_letter));
+                }
+            }
+
+            if (reply == 11)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "trader_viktor_q0213_15.htm");
+                    DeleteItem1(talker, @viktors_request, OwnItemCount(talker, @viktors_request));
+                    DeleteItem1(talker, @medusas_scales, OwnItemCount(talker, @medusas_scales));
+                    GiveItem1(talker, @silens_runestone, 1);
+                    GiveItem1(talker, @analysis_request, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,136 @@
+class vivi : cleric_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_cleric) == 1 && OwnItemCount(talker, @letter_of_order1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Inquire about the prohibited book");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @racoys_totem) == 1 && OwnItemCount(talker, @viviantes_letter) == 0 && OwnItemCount(talker, @insect_diagram_book) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about Remains of Kirunas");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @insect_diagram_book) == 0 && OwnItemCount(talker, @racoys_totem) >= 1 && OwnItemCount(talker, @viviantes_letter) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Tomb of Kirunas");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @viviantes_letter) == 0 && OwnItemCount(talker, @racoys_totem) >= 1 && OwnItemCount(talker, @insect_diagram_book) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about Tomb of Kirunas");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @racoys_totem) == 0 && (OwnItemCount(talker, @kirunas_remains1) >= 1 || OwnItemCount(talker, @kirunas_remains2) >= 1 || OwnItemCount(talker, @vendetta_totem) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Say that you found Remains of Kirunas");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_cleric) == 1 && OwnItemCount(talker, @letter_of_order1) == 1)
+                {
+                    if (OwnItemCount(talker, @book_of_vivi) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "vivi_q0405_01.htm");
+                            GiveItem1(talker, @book_of_vivi, 1);
+                        }
+                    }
+                    else if (OwnItemCount(talker, @book_of_vivi) == 1)
+                    {
+                        ShowPage(talker, "vivi_q0405_02.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @racoys_totem) == 1 && OwnItemCount(talker, @viviantes_letter) == 0 && OwnItemCount(talker, @insect_diagram_book) == 0)
+                {
+                    ShowPage(talker, "vivi_q0233_01.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @insect_diagram_book) == 0 && OwnItemCount(talker, @racoys_totem) >= 1 && OwnItemCount(talker, @viviantes_letter) >= 1)
+                {
+                    ShowPage(talker, "vivi_q0233_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @viviantes_letter) == 0 && OwnItemCount(talker, @racoys_totem) >= 1 && OwnItemCount(talker, @insect_diagram_book) >= 1)
+                {
+                    ShowPage(talker, "vivi_q0233_06.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @racoys_totem) == 0 && (OwnItemCount(talker, @kirunas_remains1) >= 1 || OwnItemCount(talker, @kirunas_remains2) >= 1 || OwnItemCount(talker, @vendetta_totem) >= 1))
+                {
+                    ShowPage(talker, "vivi_q0233_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_warspirit)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "vivi_q0233_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "vivi_q0233_03.htm");
+            }
+
+            if (reply == 3)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "vivi_q0233_04.htm");
+                    GiveItem1(talker, @viviantes_letter, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,3 @@
+class warrior_pa_casting_enchant_1of4 : warrior_casting_enchant_1of4
+{
+}

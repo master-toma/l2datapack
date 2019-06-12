@@ -1,0 +1,43 @@
+class skeletal_mercenary : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_witchcraft) == 1 && OwnItemCount(c1, @leopolds_journal1) == 1 && (OwnItemCount(c1, @aklantos_gem4) == 0 || OwnItemCount(c1, @aklantos_gem5) == 0 || OwnItemCount(c1, @aklantos_gem6) == 0))
+        {
+            if (OwnItemCount(c1, @aklantos_gem4) == 0)
+            {
+                GiveItem1(c1, @aklantos_gem4, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+            else if (OwnItemCount(c1, @aklantos_gem5) == 0)
+            {
+                GiveItem1(c1, @aklantos_gem5, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+            else if (OwnItemCount(c1, @aklantos_gem6) == 0)
+            {
+                GiveItem1(c1, @aklantos_gem6, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+                DeleteItem1(c1, @leopolds_journal1, OwnItemCount(c1, @leopolds_journal1));
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        if (HaveMemo(attacker, @test_of_witchcraft) == 1 && OwnItemCount(attacker, @leopolds_journal1) == 1 && (OwnItemCount(attacker, @aklantos_gem4) == 0 || OwnItemCount(attacker, @aklantos_gem5) == 0 || OwnItemCount(attacker, @aklantos_gem6) == 0))
+        {
+            if (myself.i_quest0 == 0)
+            {
+                myself.i_quest0 = 1;
+                Say(MakeFString(22933, "", "", "", "", ""));
+            }
+        }
+
+        super;
+    }
+}

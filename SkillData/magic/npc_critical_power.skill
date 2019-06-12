@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_npc_critical_power]	/* [내 크리티컬이 무섭지] */	skill_id = 4085	level = 1	operate_type = P	effect = {{p_critical_damage;25;per}}	skill_end

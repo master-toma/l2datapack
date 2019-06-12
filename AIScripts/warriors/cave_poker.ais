@@ -1,0 +1,3 @@
+class cave_poker : warrior_aggressive
+{
+}

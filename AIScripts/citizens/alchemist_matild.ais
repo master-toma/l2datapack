@@ -1,0 +1,525 @@
+class alchemist_matild : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @wish_potion) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about alchemy and potions");
+            }
+
+            if (HaveMemo(talker, @wish_potion) && OwnItemCount(talker, @q_secret_book_of_potion) == 0 && OwnItemCount(talker, @q_alchemy_text) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about finding the secret scroll");
+            }
+
+            if (HaveMemo(talker, @wish_potion) && OwnItemCount(talker, @q_secret_book_of_potion) == 1 && OwnItemCount(talker, @q_alchemy_text) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Say that you found and brought the secret scroll");
+            }
+
+            if (HaveMemo(talker, @wish_potion) && OwnItemCount(talker, @q_potion_recipe_1) == 1 && OwnItemCount(talker, @q_potion_recipe_2) == 1 && (OwnItemCount(talker, @q_amber_scale) == 0 || OwnItemCount(talker, @q_wind_soulstone) && OwnItemCount(talker, @q_glass_eye) == 0 || OwnItemCount(talker, @q_horror_ectoplasm) == 0 || OwnItemCount(talker, @q_silenos_horn) == 0 || OwnItemCount(talker, @q_ant_soldier_aphid) == 0 || OwnItemCount(talker, @q_tyrants_chitin) == 0 || OwnItemCount(talker, @q_bugbear_blood) == 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that you want to make the Potion of Desire");
+            }
+
+            if (HaveMemo(talker, @wish_potion) && OwnItemCount(talker, @q_potion_recipe_1) == 1 && OwnItemCount(talker, @q_potion_recipe_2) == 1 && (OwnItemCount(talker, @q_amber_scale) && OwnItemCount(talker, @q_wind_soulstone) && OwnItemCount(talker, @q_glass_eye) && OwnItemCount(talker, @q_horror_ectoplasm) && OwnItemCount(talker, @q_silenos_horn) && OwnItemCount(talker, @q_ant_soldier_aphid) && OwnItemCount(talker, @q_tyrants_chitin) && OwnItemCount(talker, @q_bugbear_blood)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Say that you want to make the Potion of Desire");
+            }
+
+            if (HaveMemo(talker, @wish_potion) && OwnItemCount(talker, @q_matilds_orb) == 1 && OwnItemCount(talker, @q_potion_recipe_1) == 0 && OwnItemCount(talker, @q_potion_recipe_2) == 0 && (OwnItemCount(talker, @q_amber_scale) == 0 || OwnItemCount(talker, @q_wind_soulstone) && OwnItemCount(talker, @q_glass_eye) == 0 || OwnItemCount(talker, @q_horror_ectoplasm) == 0 || OwnItemCount(talker, @q_silenos_horn) == 0 || OwnItemCount(talker, @q_ant_soldier_aphid) == 0 || OwnItemCount(talker, @q_tyrants_chitin) == 0 || OwnItemCount(talker, @q_bugbear_blood) == 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Talk about Potion of Desire");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @wish_potion) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level < 30)
+                        {
+                            ShowPage(talker, "alchemist_matild_q0334_01.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "alchemist_matild_q0334_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @wish_potion) && OwnItemCount(talker, @q_secret_book_of_potion) == 0 && OwnItemCount(talker, @q_alchemy_text) == 1)
+                {
+                    ShowPage(talker, "alchemist_matild_q0334_05.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @wish_potion) && OwnItemCount(talker, @q_secret_book_of_potion) == 1 && OwnItemCount(talker, @q_alchemy_text) == 1)
+                {
+                    ShowPage(talker, "alchemist_matild_q0334_06.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @wish_potion) && OwnItemCount(talker, @q_potion_recipe_1) == 1 && OwnItemCount(talker, @q_potion_recipe_2) == 1 && (OwnItemCount(talker, @q_amber_scale) == 0 || OwnItemCount(talker, @q_wind_soulstone) && OwnItemCount(talker, @q_glass_eye) == 0 || OwnItemCount(talker, @q_horror_ectoplasm) == 0 || OwnItemCount(talker, @q_silenos_horn) == 0 || OwnItemCount(talker, @q_ant_soldier_aphid) == 0 || OwnItemCount(talker, @q_tyrants_chitin) == 0 || OwnItemCount(talker, @q_bugbear_blood) == 0))
+                {
+                    ShowPage(talker, "alchemist_matild_q0334_08.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @wish_potion) && OwnItemCount(talker, @q_potion_recipe_1) == 1 && OwnItemCount(talker, @q_potion_recipe_2) == 1 && (OwnItemCount(talker, @q_amber_scale) && OwnItemCount(talker, @q_wind_soulstone) && OwnItemCount(talker, @q_glass_eye) && OwnItemCount(talker, @q_horror_ectoplasm) && OwnItemCount(talker, @q_silenos_horn) && OwnItemCount(talker, @q_ant_soldier_aphid) && OwnItemCount(talker, @q_tyrants_chitin) && OwnItemCount(talker, @q_bugbear_blood)))
+                {
+                    ShowPage(talker, "alchemist_matild_q0334_09.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @wish_potion) && OwnItemCount(talker, @q_matilds_orb) == 1 && OwnItemCount(talker, @q_potion_recipe_1) == 0 && OwnItemCount(talker, @q_potion_recipe_2) == 0 && (OwnItemCount(talker, @q_amber_scale) == 0 || OwnItemCount(talker, @q_wind_soulstone) && OwnItemCount(talker, @q_glass_eye) == 0 || OwnItemCount(talker, @q_horror_ectoplasm) == 0 || OwnItemCount(talker, @q_silenos_horn) == 0 || OwnItemCount(talker, @q_ant_soldier_aphid) == 0 || OwnItemCount(talker, @q_tyrants_chitin) == 0 || OwnItemCount(talker, @q_bugbear_blood) == 0))
+                {
+                    ShowPage(talker, "alchemist_matild_q0334_12.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @wish_potion)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @q_alchemy_text) == 0)
+                {
+                    GiveItem1(talker, @q_alchemy_text, 1);
+                }
+
+                ShowPage(talker, "alchemist_matild_q0334_04.htm");
+                SetMemoState(talker, @wish_potion, 1);
+                SetJournal(talker, @wish_potion, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(i0, i1, talker, timer_id)
+    {
+        if (timer_id == 2336008)
+        {
+            Say(MakeFString(33415, "", "", "", "", ""));
+            AddTimerEx(2336009, 4 * 1000);
+        }
+        else if (timer_id == 2336009)
+        {
+            Say(MakeFString(33416, "", "", "", "", ""));
+            AddTimerEx(2336010, 4 * 1000);
+        }
+        else if (timer_id == 2336010)
+        {
+            Say(MakeFString(33417, "", "", "", "", ""));
+            if (myself.i_quest0 == 1)
+            {
+                i0 = Rand(2);
+            }
+            else if (myself.i_quest0 == 3 || myself.i_quest0 == 4 || myself.i_quest0 == 2)
+            {
+                i0 = Rand(3);
+            }
+
+            select (i0)
+            {
+            case 0:
+                if (myself.i_quest0 == 1)
+                {
+                    CreateOnePrivate(@fairy_rupina, "fairy_rupina", 0, 1);
+                    myself.i_quest2 = 0;
+                }
+                else if (myself.i_quest0 == 2)
+                {
+                    CreateOnePrivate(@grima, "grima", 0, 1);
+                    CreateOnePrivate(@grima, "grima", 0, 1);
+                    CreateOnePrivate(@grima, "grima", 0, 1);
+                    myself.i_quest2 = 0;
+                }
+                else if (myself.i_quest0 == 3)
+                {
+                    if (GetCurrentTick() - myself.c_quest2.quest_last_reward_time > 1)
+                    {
+                        myself.c_quest2.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(myself.c_quest2, @q_certificate_of_royalty, 1);
+                        myself.i_quest2 = 0;
+                    }
+                }
+                else if (myself.i_quest0 == 4)
+                {
+                    if (GetCurrentTick() - myself.c_quest2.quest_last_reward_time > 1)
+                    {
+                        myself.c_quest2.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(myself.c_quest2, @sb_ice_bolt1, 1);
+                        myself.i_quest2 = 0;
+                    }
+                }
+
+                break;
+            case 1:
+                if (myself.i_quest0 == 1)
+                {
+                    CreateOnePrivate(@succubus_of_seduction, "succubus_of_seduction", 0, 1);
+                    CreateOnePrivate(@succubus_of_seduction, "succubus_of_seduction", 0, 1);
+                    CreateOnePrivate(@succubus_of_seduction, "succubus_of_seduction", 0, 1);
+                    myself.i_quest2 = 0;
+                }
+                else if (myself.i_quest0 == 2)
+                {
+                    if (Rand(100) == 0)
+                    {
+                        i1 = Rand(10);
+                        if (GetCurrentTick() - myself.c_quest2.quest_last_reward_time > 1)
+                        {
+                            myself.c_quest2.quest_last_reward_time = GetCurrentTick();
+                            if (i1 == 0)
+                            {
+                                GiveItem1(myself.c_quest2, @adena, 10000000);
+                            }
+                            else if (i1 == 1)
+                            {
+                                GiveItem1(myself.c_quest2, @adena, 9000000);
+                            }
+                            else if (i1 == 2)
+                            {
+                                GiveItem1(myself.c_quest2, @adena, 8000000);
+                            }
+                            else if (i1 == 3)
+                            {
+                                GiveItem1(myself.c_quest2, @adena, 7000000);
+                            }
+                            else if (i1 == 4)
+                            {
+                                GiveItem1(myself.c_quest2, @adena, 6000000);
+                            }
+                            else if (i1 == 5)
+                            {
+                                GiveItem1(myself.c_quest2, @adena, 5000000);
+                            }
+                            else if (i1 == 6)
+                            {
+                                GiveItem1(myself.c_quest2, @adena, 4000000);
+                            }
+                            else if (i1 == 7)
+                            {
+                                GiveItem1(myself.c_quest2, @adena, 3000000);
+                            }
+                            else if (i1 == 8)
+                            {
+                                GiveItem1(myself.c_quest2, @adena, 2000000);
+                            }
+                            else if (i1 == 9)
+                            {
+                                GiveItem1(myself.c_quest2, @adena, 1000000);
+                            }
+
+                            SoundEffect(myself.c_quest2, "ItemSound.quest_jackpot");
+                            myself.i_quest2 = 0;
+                        }
+                    }
+                    else
+                    {
+                        CreateOnePrivate(@grima, "grima", 0, 1);
+                        CreateOnePrivate(@grima, "grima", 0, 1);
+                        CreateOnePrivate(@grima, "grima", 0, 1);
+                        myself.i_quest2 = 0;
+                    }
+                }
+                else if (myself.i_quest0 == 3)
+                {
+                    CreateOnePrivate(@darklord_alexandrosanches, "darklord_alexandrosanches", 0, 1);
+                    myself.i_quest2 = 0;
+                }
+                else if (myself.i_quest0 == 4)
+                {
+                    CreateOnePrivate(@wisdom_chest, "wisdom_chest", 0, 1);
+                    myself.i_quest2 = 0;
+                }
+
+                break;
+            case 2:
+                if (myself.i_quest0 == 2)
+                {
+                    if (GetCurrentTick() - myself.c_quest2.quest_last_reward_time > 1)
+                    {
+                        myself.c_quest2.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(myself.c_quest2, @adena, 10000);
+                        myself.i_quest2 = 0;
+                    }
+                }
+                else if (myself.i_quest0 == 3)
+                {
+                    if (GetCurrentTick() - myself.c_quest2.quest_last_reward_time > 1)
+                    {
+                        myself.c_quest2.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(myself.c_quest2, @q_ancient_crown, 1);
+                        myself.i_quest2 = 0;
+                    }
+                }
+                else if (myself.i_quest0 == 4)
+                {
+                    if (GetCurrentTick() - myself.c_quest2.quest_last_reward_time > 1)
+                    {
+                        myself.c_quest2.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(myself.c_quest2, @sb_battle_heal1, 1);
+                        myself.i_quest2 = 0;
+                    }
+                }
+
+                break;
+            }
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, i0, reply, talker)
+    {
+        if (ask == @wish_potion)
+        {
+            if (reply == 1)
+            {
+                FHTML_SetFileName(fhtml0, "alchemist_matild_q0334_03.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @wish_potion);
+                ShowFHTML(talker, fhtml0);
+            }
+            else if (reply == 2)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "alchemist_matild_q0334_07.htm");
+                    DeleteItem1(talker, @q_secret_book_of_potion, OwnItemCount(talker, @q_secret_book_of_potion));
+                    DeleteItem1(talker, @q_alchemy_text, OwnItemCount(talker, @q_alchemy_text));
+                    GiveItem1(talker, @q_potion_recipe_1, 1);
+                    GiveItem1(talker, @q_potion_recipe_2, 1);
+                    SetMemoState(talker, @wish_potion, 2);
+                    SetJournal(talker, @wish_potion, 2);
+                }
+            }
+            else if (reply == 3)
+            {
+                ShowPage(talker, "alchemist_matild_q0334_10.htm");
+            }
+            else if (reply == 4 && OwnItemCount(talker, @q_amber_scale) && OwnItemCount(talker, @q_glass_eye) && OwnItemCount(talker, @q_horror_ectoplasm) && OwnItemCount(talker, @q_silenos_horn) && OwnItemCount(talker, @q_ant_soldier_aphid) && OwnItemCount(talker, @q_tyrants_chitin) && OwnItemCount(talker, @q_bugbear_blood) && OwnItemCount(talker, @q_wind_soulstone) && OwnItemCount(talker, @q_potion_recipe_1) && OwnItemCount(talker, @q_potion_recipe_2))
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "alchemist_matild_q0334_11.htm");
+                    GiveItem1(talker, @q_wish_potion, 1);
+                    if (OwnItemCount(talker, @q_matilds_orb) == 0)
+                    {
+                        GiveItem1(talker, @q_matilds_orb, 1);
+                    }
+
+                    DeleteItem1(talker, @q_amber_scale, 1);
+                    DeleteItem1(talker, @q_glass_eye, 1);
+                    DeleteItem1(talker, @q_horror_ectoplasm, 1);
+                    DeleteItem1(talker, @q_silenos_horn, 1);
+                    DeleteItem1(talker, @q_ant_soldier_aphid, 1);
+                    DeleteItem1(talker, @q_tyrants_chitin, 1);
+                    DeleteItem1(talker, @q_bugbear_blood, 1);
+                    DeleteItem1(talker, @q_wind_soulstone, 1);
+                    DeleteItem1(talker, @q_potion_recipe_1, OwnItemCount(talker, @q_potion_recipe_1));
+                    DeleteItem1(talker, @q_potion_recipe_2, OwnItemCount(talker, @q_potion_recipe_2));
+                    SetMemoState(talker, @wish_potion, 2);
+                    SoundEffect(talker, "ItemSound.quest_itemget");
+                }
+            }
+            else if (reply == 5)
+            {
+                if (OwnItemCount(talker, @q_wish_potion) > 0)
+                {
+                    ShowPage(talker, "alchemist_matild_q0334_13.htm");
+                    if (myself.i_quest2 != 33401)
+                    {
+                        myself.i_quest0 = 0;
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "alchemist_matild_q0334_14.htm");
+                }
+            }
+            else if (reply == 6)
+            {
+                if (OwnItemCount(talker, @q_wish_potion) > 0)
+                {
+                    ShowPage(talker, "alchemist_matild_q0334_15a.htm");
+                }
+                else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "alchemist_matild_q0334_15.htm");
+                    GiveItem1(talker, @q_potion_recipe_1, 1);
+                    GiveItem1(talker, @q_potion_recipe_2, 1);
+                }
+            }
+            else if (reply == 7)
+            {
+                if (myself.i_quest2 != 33401)
+                {
+                    if (OwnItemCount(talker, @q_wish_potion) > 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "alchemist_matild_q0334_16.htm");
+                            DeleteItem1(talker, @q_wish_potion, 1);
+                            myself.i_quest0 = 1;
+                            myself.c_quest2 = talker;
+                            talker.flag = 1;
+                            myself.i_quest2 = 33401;
+                            AddTimerEx(2336008, 3 * 1000);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "alchemist_matild_q0334_14.htm");
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "alchemist_matild_q0334_20.htm");
+                }
+            }
+            else if (reply == 8)
+            {
+                if (myself.i_quest2 != 33401)
+                {
+                    if (OwnItemCount(talker, @q_wish_potion) > 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "alchemist_matild_q0334_17.htm");
+                            DeleteItem1(talker, @q_wish_potion, 1);
+                            myself.i_quest0 = 2;
+                            myself.c_quest2 = talker;
+                            talker.flag = 2;
+                            myself.i_quest2 = 33401;
+                            AddTimerEx(2336008, 3 * 1000);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "alchemist_matild_q0334_14.htm");
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "alchemist_matild_q0334_20.htm");
+                }
+            }
+            else if (reply == 9)
+            {
+                if (myself.i_quest2 != 33401)
+                {
+                    if (OwnItemCount(talker, @q_wish_potion) > 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "alchemist_matild_q0334_18.htm");
+                            DeleteItem1(talker, @q_wish_potion, 1);
+                            myself.i_quest0 = 3;
+                            myself.c_quest2 = talker;
+                            talker.flag = 3;
+                            myself.i_quest2 = 33401;
+                            AddTimerEx(2336008, 3 * 1000);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "alchemist_matild_q0334_14.htm");
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "alchemist_matild_q0334_20.htm");
+                }
+            }
+            else if (reply == 10)
+            {
+                if (myself.i_quest2 != 33401)
+                {
+                    if (OwnItemCount(talker, @q_wish_potion) > 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "alchemist_matild_q0334_19.htm");
+                            DeleteItem1(talker, @q_wish_potion, 1);
+                            myself.i_quest0 = 4;
+                            myself.c_quest2 = talker;
+                            talker.flag = 4;
+                            myself.i_quest2 = 33401;
+                            AddTimerEx(2336008, 3 * 1000);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "alchemist_matild_q0334_14.htm");
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "alchemist_matild_q0334_20.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

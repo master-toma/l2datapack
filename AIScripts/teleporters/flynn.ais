@@ -1,0 +1,20 @@
+class flynn : custodian
+{
+property:
+    TelPosList Position1 = {
+        {1010024; 19025; 145245; -3107; 0; 0};    // 1010024 - "Village Square"
+        {1010026; 21511; 145866; -3153; 0; 0};    // 1010026 - "East Gate Entrance"
+        {1010025; 18891; 142365; -3051; 0; 0};    // 1010025 - "North Gate Entrance"
+        {1010028; 17394; 147593; -3129; 0; 0}    // 1010028 - "South Gate Entrance"
+    };
+    TelPosList Position2 = {
+        {1010024; 19025; 145245; -3107; 0; 0};    // 1010024 - "Village Square"
+        {1010026; 21511; 145866; -3153; 0; 0};    // 1010026 - "East Gate Entrance"
+        {1010025; 18891; 142365; -3051; 0; 0};    // 1010025 - "North Gate Entrance"
+        {1010028; 17394; 147593; -3129; 0; 0};    // 1010028 - "South Gate Entrance"
+        {1010033; 5941; 125455; -3400; 500; 0};    // 1010033 - "Entrance to Cruma Marshlands"
+        {1010034; 37566; 148224; -3699; 500; 0};    // 1010034 - "Entrance to Execution Ground"
+        {"The Partisan Hideaway"; 46467; 126885; -3720; 500; 0};
+        {1010036; 17430; 170103; -3506; 500; 0}    // 1010036 - "Entrance to Floran Village"
+    };
+}

@@ -1,0 +1,42 @@
+class unicorn_elder : warrior_passive_casting_ddmagic
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @little_wings) == 1 && OwnItemCount(c1, @q_fairy_stone_delux) == 1)
+        {
+            if (Rand(100) < 30)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    DeleteItem1(c1, @q_fairy_stone_delux, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                    SetMemoState(c1, @little_wings, 10);
+                    Say(MakeFString(42048, "", "", "", "", ""));
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_2u_5) && OwnItemCount(c1, @q_unicorns_horn) < 20)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @q_unicorns_horn, 1);
+                if (OwnItemCount(c1, @q_unicorns_horn) >= 20)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

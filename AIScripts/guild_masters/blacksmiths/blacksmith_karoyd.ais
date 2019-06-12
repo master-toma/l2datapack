@@ -1,0 +1,130 @@
+class blacksmith_karoyd : blacksmith
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @spirit_of_craftsman) == 0 && GetOneTimeQuestFlag(talker, @spirit_of_craftsman) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about his worries");
+            }
+
+            if (HaveMemo(talker, @spirit_of_craftsman) == 0 && GetOneTimeQuestFlag(talker, @spirit_of_craftsman) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about his worries");
+            }
+
+            if (HaveMemo(talker, @spirit_of_craftsman) == 1 && (OwnItemCount(talker, @karoyds_letter) >= 1 || OwnItemCount(talker, @cecktinons_voucher1) >= 1 || OwnItemCount(talker, @cecktinons_voucher2) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about delivering a letter");
+            }
+
+            if (HaveMemo(talker, @spirit_of_craftsman) == 1 && OwnItemCount(talker, @steelbenders_head) == 1 && GetOneTimeQuestFlag(talker, @spirit_of_craftsman) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give the head of Steel Bender");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @spirit_of_craftsman) == 0 && GetOneTimeQuestFlag(talker, @spirit_of_craftsman) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_dark_elf)
+                        {
+                            ShowPage(talker, "blacksmith_karoyd_q0103_00.htm");
+                        }
+                        else if (talker.level >= 11)
+                        {
+                            FHTML_SetFileName(fhtml0, "blacksmith_karoyd_q0103_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @spirit_of_craftsman);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "blacksmith_karoyd_q0103_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @spirit_of_craftsman) == 0 && GetOneTimeQuestFlag(talker, @spirit_of_craftsman) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @spirit_of_craftsman) == 1 && (OwnItemCount(talker, @karoyds_letter) >= 1 || OwnItemCount(talker, @cecktinons_voucher1) >= 1 || OwnItemCount(talker, @cecktinons_voucher2) >= 1))
+                {
+                    ShowPage(talker, "blacksmith_karoyd_q0103_06.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @spirit_of_craftsman) == 1 && OwnItemCount(talker, @steelbenders_head) == 1 && GetOneTimeQuestFlag(talker, @spirit_of_craftsman) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "blacksmith_karoyd_q0103_07.htm");
+                        DeleteItem1(talker, @steelbenders_head, 1);
+                        GiveItem1(talker, @bloodsaber, 1);
+                        RemoveMemo(talker, @spirit_of_craftsman);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @spirit_of_craftsman, 1);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @spirit_of_craftsman)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "blacksmith_karoyd_q0103_05.htm");
+                GiveItem1(talker, @karoyds_letter, 1);
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

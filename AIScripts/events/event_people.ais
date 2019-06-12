@@ -1,0 +1,391 @@
+class event_people : default_npc
+{
+parameter:
+    string ShopName = "";
+    string fnHi = "mhi.htm";
+    string fnUnableItemSell = "muib.htm";
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        ShowPage(talker, fnHi);
+    }
+
+    EventHandler MENU_SELECTED(talker, ask, reply, i0, i1, i2, i3)
+    {
+        if (ask == -1)
+        {
+            i0 = Rand(100);
+            if (reply == 0)
+            {
+                if (OwnItemCount(talker, @alphabet_e) >= 2 && OwnItemCount(talker, @alphabet_l) >= 1 && OwnItemCount(talker, @alphabet_i) >= 1 && OwnItemCount(talker, @alphabet_n) >= 1 && OwnItemCount(talker, @alphabet_a) >= 1 && OwnItemCount(talker, @alphabet_g) >= 1 && OwnItemCount(talker, @alphabet_ii))
+                {
+                    DeleteItem1(talker, @alphabet_e, 2);
+                    DeleteItem1(talker, @alphabet_l, 1);
+                    DeleteItem1(talker, @alphabet_i, 1);
+                    DeleteItem1(talker, @alphabet_n, 1);
+                    DeleteItem1(talker, @alphabet_a, 1);
+                    DeleteItem1(talker, @alphabet_g, 1);
+                    DeleteItem1(talker, @alphabet_ii, 1);
+                    if (i0 < 600)
+                    {
+                        i1 = Rand(100);
+                        if (i1 < 10)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_guidance, 1);
+                        }
+                        else if (i1 < 20)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_death_whisper, 1);
+                        }
+                        else if (i1 < 30)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_focus, 1);
+                        }
+                        else if (i1 < 40)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_greater_acumen, 1);
+                        }
+                        else if (i1 < 50)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_shield, 1);
+                        }
+                        else if (i1 < 60)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_agility, 1);
+                        }
+                        else if (i1 < 70)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_empower, 1);
+                        }
+                        else if (i1 < 80)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_might, 1);
+                        }
+                        else if (i1 < 90)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_haste, 1);
+                        }
+                        else if (i1 < 100)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_wind_walk, 1);
+                        }
+
+                        i2 = Rand(100);
+                        if (i2 < 10)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_guidance, 1);
+                        }
+                        else if (i2 < 20)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_death_whisper, 1);
+                        }
+                        else if (i2 < 30)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_focus, 1);
+                        }
+                        else if (i2 < 40)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_greater_acumen, 1);
+                        }
+                        else if (i2 < 50)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_shield, 1);
+                        }
+                        else if (i2 < 60)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_agility, 1);
+                        }
+                        else if (i2 < 70)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_empower, 1);
+                        }
+                        else if (i2 < 80)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_might, 1);
+                        }
+                        else if (i2 < 90)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_haste, 1);
+                        }
+                        else if (i2 < 100)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_wind_walk, 1);
+                        }
+
+                        i3 = Rand(100);
+                        if (i3 < 10)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_guidance, 1);
+                        }
+                        else if (i3 < 20)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_death_whisper, 1);
+                        }
+                        else if (i3 < 30)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_focus, 1);
+                        }
+                        else if (i3 < 40)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_greater_acumen, 1);
+                        }
+                        else if (i3 < 50)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_shield, 1);
+                        }
+                        else if (i3 < 60)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_agility, 1);
+                        }
+                        else if (i3 < 70)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_empower, 1);
+                        }
+                        else if (i3 < 80)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_might, 1);
+                        }
+                        else if (i3 < 90)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_haste, 1);
+                        }
+                        else if (i3 < 100)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_wind_walk, 1);
+                        }
+                    }
+                    else if (i0 < 900)
+                    {
+                        GiveItem1(talker, @l2day_scroll_of_escape, 3);
+                    }
+                    else if (i0 < 999)
+                    {
+                        GiveItem1(talker, @l2day_scroll_of_resurrection, 3);
+                    }
+                    else if (i0 < 1000)
+                    {
+                        if (Rand(70) < 10)
+                        {
+                            GiveItem1(talker, @samurai_longsword, 1);
+                        }
+                        else if (Rand(70) < 20)
+                        {
+                            GiveItem1(talker, @yaksa_mace, 1);
+                        }
+                        else if (Rand(70) < 30)
+                        {
+                            GiveItem1(talker, @"demon's_staff", 1);
+                        }
+                        else if (Rand(70) < 40)
+                        {
+                            GiveItem1(talker, @crystal_dagger, 1);
+                        }
+                        else if (Rand(70) < 50)
+                        {
+                            GiveItem1(talker, @great_pata, 1);
+                        }
+                        else if (Rand(70) < 60)
+                        {
+                            GiveItem1(talker, @eminence_bow, 1);
+                        }
+                        else if (Rand(70) < 70)
+                        {
+                            GiveItem1(talker, @orcish_poleaxe, 1);
+                        }
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, fnUnableItemSell);
+                }
+            }
+            else if (reply == 1)
+            {
+                if (OwnItemCount(talker, @alphabet_n) >= 1 && OwnItemCount(talker, @alphabet_c) >= 1 && OwnItemCount(talker, @alphabet_s) >= 1 && OwnItemCount(talker, @alphabet_o) >= 1 && OwnItemCount(talker, @alphabet_f) >= 1 && OwnItemCount(talker, @alphabet_t) >= 1)
+                {
+                    DeleteItem1(talker, @alphabet_n, 1);
+                    DeleteItem1(talker, @alphabet_c, 1);
+                    DeleteItem1(talker, @alphabet_s, 1);
+                    DeleteItem1(talker, @alphabet_o, 1);
+                    DeleteItem1(talker, @alphabet_f, 1);
+                    DeleteItem1(talker, @alphabet_t, 1);
+                    if (i0 < 600)
+                    {
+                        i1 = Rand(90);
+                        if (i1 < 10)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_guidance, 1);
+                        }
+                        else if (i1 < 20)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_death_whisper, 1);
+                        }
+                        else if (i1 < 30)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_focus, 1);
+                        }
+                        else if (i1 < 40)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_greater_acumen, 1);
+                        }
+                        else if (i1 < 50)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_shield, 1);
+                        }
+                        else if (i1 < 60)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_agility, 1);
+                        }
+                        else if (i1 < 70)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_empower, 1);
+                        }
+                        else if (i1 < 80)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_might, 1);
+                        }
+                        else if (i1 < 90)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_haste, 1);
+                        }
+
+                        i2 = Rand(90);
+                        if (i2 < 10)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_guidance, 1);
+                        }
+                        else if (i2 < 20)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_death_whisper, 1);
+                        }
+                        else if (i2 < 30)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_focus, 1);
+                        }
+                        else if (i2 < 40)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_greater_acumen, 1);
+                        }
+                        else if (i2 < 50)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_shield, 1);
+                        }
+                        else if (i2 < 60)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_agility, 1);
+                        }
+                        else if (i2 < 70)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_empower, 1);
+                        }
+                        else if (i2 < 80)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_might, 1);
+                        }
+                        else if (i2 < 90)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_haste, 1);
+                        }
+                    }
+                    else if (i0 < 900)
+                    {
+                        GiveItem1(talker, @l2day_scroll_of_escape, 2);
+                    }
+                    else if (i0 < 970)
+                    {
+                        GiveItem1(talker, @l2day_scroll_of_resurrection, 2);
+                    }
+                    else if (i0 < 1000)
+                    {
+                        if (Rand(30) < 10)
+                        {
+                            GiveItem1(talker, @full_plate_armor, 1);
+                        }
+                        else if (Rand(30) < 20)
+                        {
+                            GiveItem1(talker, @drake_leather_mail, 1);
+                        }
+                        else if (Rand(30) < 30)
+                        {
+                            GiveItem1(talker, @divine_tunic, 1);
+                            GiveItem1(talker, @divine_hose, 1);
+                        }
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, fnUnableItemSell);
+                }
+            }
+            else if (reply == 2)
+            {
+                if (OwnItemCount(talker, @alphabet_c) >= 2 && OwnItemCount(talker, @alphabet_h) >= 1 && OwnItemCount(talker, @alphabet_r) >= 1 && OwnItemCount(talker, @alphabet_o) >= 1 && OwnItemCount(talker, @alphabet_n) >= 1 && OwnItemCount(talker, @alphabet_i) >= 1 && OwnItemCount(talker, @alphabet_l) >= 1 && OwnItemCount(talker, @alphabet_e) >= 1)
+                {
+                    DeleteItem1(talker, @alphabet_c, 2);
+                    DeleteItem1(talker, @alphabet_h, 1);
+                    DeleteItem1(talker, @alphabet_r, 1);
+                    DeleteItem1(talker, @alphabet_o, 1);
+                    DeleteItem1(talker, @alphabet_n, 1);
+                    DeleteItem1(talker, @alphabet_i, 1);
+                    DeleteItem1(talker, @alphabet_l, 1);
+                    DeleteItem1(talker, @alphabet_e, 1);
+                    if (i0 < 600)
+                    {
+                        i1 = Rand(80);
+                        if (i1 < 10)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_guidance, 1);
+                        }
+                        else if (i1 < 20)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_death_whisper, 1);
+                        }
+                        else if (i1 < 30)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_focus, 1);
+                        }
+                        else if (i1 < 40)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_greater_acumen, 1);
+                        }
+                        else if (i1 < 50)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_shield, 1);
+                        }
+                        else if (i1 < 60)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_agility, 1);
+                        }
+                        else if (i1 < 70)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_empower, 1);
+                        }
+                        else if (i1 < 80)
+                        {
+                            GiveItem1(talker, @l2day_scroll_of_might, 1);
+                        }
+                    }
+                    else if (i0 < 900)
+                    {
+                        GiveItem1(talker, @l2day_scroll_of_escape, 1);
+                    }
+                    else if (i0 < 940)
+                    {
+                        GiveItem1(talker, @l2day_scroll_of_resurrection, 1);
+                    }
+                    else if (i0 < 1000)
+                    {
+                        GiveItem1(talker, @"nassen's_earing", 2);
+                        GiveItem1(talker, @ring_of_binding, 2);
+                        GiveItem1(talker, @necklace_of_binding, 1);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, fnUnableItemSell);
+                }
+            }
+        }
+    }
+}

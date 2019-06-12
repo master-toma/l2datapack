@@ -1,0 +1,95 @@
+class roa : wizard_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @alders_skull2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about Investigation of Alders");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @alders_receipt))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about payment slip");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @revelations_manuscript) || OwnItemCount(talker, @kairas_instructions) || OwnItemCount(talker, @kairas_recommend)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about Book of Revelation");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @alders_skull2))
+                {
+                    ShowPage(talker, "roa_q0219_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @alders_receipt))
+                {
+                    ShowPage(talker, "roa_q0219_05.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @revelations_manuscript) || OwnItemCount(talker, @kairas_instructions) || OwnItemCount(talker, @kairas_recommend)))
+                {
+                    ShowPage(talker, "roa_q0219_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_fate)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "roa_q0219_02.htm");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "roa_q0219_03.htm");
+            }
+            else if (reply == 3 && OwnItemCount(talker, @alders_skull2) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "roa_q0219_04.htm");
+                    GiveItem1(talker, @alders_receipt, 1);
+                    DeleteItem1(talker, @alders_skull2, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

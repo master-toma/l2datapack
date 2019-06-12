@@ -1,0 +1,24 @@
+class warrior_ag_casting_enchant_1of4 : warrior_casting_enchant_1of4
+{
+handler:
+    EventHandler SEE_CREATURE(creature)
+    {
+        if (GetLifeTime() > 7 && InMyTerritory(myself.sm))
+        {
+            if (myself.i_ai1 == 0 && Rand(100) < 33 && FloatToInt(myself.sm.hp / myself.sm.max_hp * 100) > 50)
+            {
+                if (Skill_GetConsumeMP(myself.i_ai0) < myself.sm.mp && Skill_GetConsumeHP(myself.i_ai0) < myself.sm.hp && Skill_InReuseDelay(myself.i_ai0) == @FALSE)
+                {
+                    AddUseSkillDesire(myself.sm, myself.i_ai0, @ST_HEAL, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+
+            myself.i_ai1 = 1;
+        }
+
+        if (GetLifeTime() > 7 && InMyTerritory(myself.sm))
+        {
+            AddAttackDesire(creature, @AMT_MOVE_TO_TARGET, 200);
+        }
+    }
+}

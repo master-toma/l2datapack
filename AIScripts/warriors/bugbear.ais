@@ -1,0 +1,3 @@
+class bugbear : warrior_aggressive
+{
+}

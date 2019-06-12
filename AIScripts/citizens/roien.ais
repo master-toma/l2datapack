@@ -1,0 +1,200 @@
+class roien : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @sword_of_solidarity_quest) == 0 && GetOneTimeQuestFlag(talker, @sword_of_solidarity_quest) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about the origin of Talking Island");
+            }
+
+            if (HaveMemo(talker, @sword_of_solidarity_quest) == 0 && GetOneTimeQuestFlag(talker, @sword_of_solidarity_quest) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about the origin of Talking Island");
+            }
+
+            if (HaveMemo(talker, @sword_of_solidarity_quest) == 1 && OwnItemCount(talker, @roiens_letter) == 1 && GetOneTimeQuestFlag(talker, @sword_of_solidarity_quest) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "About Grand Master Roien's letter");
+            }
+
+            if (HaveMemo(talker, @sword_of_solidarity_quest) == 1 && GetOneTimeQuestFlag(talker, @sword_of_solidarity_quest) == 0 && OwnItemCount(talker, @roiens_letter) == 0 && OwnItemCount(talker, @alltrans_note) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "About Grand Master Roien's letter");
+            }
+
+            if (HaveMemo(talker, @sword_of_solidarity_quest) == 1 && GetOneTimeQuestFlag(talker, @sword_of_solidarity_quest) == 0 && OwnItemCount(talker, @roiens_letter) == 0 && OwnItemCount(talker, @alltrans_note))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "About Grand Master Roien's letter");
+            }
+
+            if (HaveMemo(talker, @hfighter_tutorial))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Listen");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @sword_of_solidarity_quest) == 0 && GetOneTimeQuestFlag(talker, @sword_of_solidarity_quest) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_human)
+                        {
+                            ShowPage(talker, "roien_q0101_00.htm");
+                        }
+                        else if (talker.level >= 9)
+                        {
+                            FHTML_SetFileName(fhtml0, "roien_q0101_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @sword_of_solidarity_quest);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "roien_q0101_08.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @sword_of_solidarity_quest) == 0 && GetOneTimeQuestFlag(talker, @sword_of_solidarity_quest) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @sword_of_solidarity_quest) == 1 && OwnItemCount(talker, @roiens_letter) == 1 && GetOneTimeQuestFlag(talker, @sword_of_solidarity_quest) == 0)
+                {
+                    ShowPage(talker, "roien_q0101_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @sword_of_solidarity_quest) == 1 && GetOneTimeQuestFlag(talker, @sword_of_solidarity_quest) == 0 && OwnItemCount(talker, @roiens_letter) == 0 && OwnItemCount(talker, @alltrans_note) == 0)
+                {
+                    if (OwnItemCount(talker, @broken_blade_top) && OwnItemCount(talker, @broken_blade_bottom))
+                    {
+                        ShowPage(talker, "roien_q0101_12.htm");
+                    }
+
+                    if (OwnItemCount(talker, @broken_blade_top) && OwnItemCount(talker, @broken_blade_bottom) == 0)
+                    {
+                        ShowPage(talker, "roien_q0101_11.htm");
+                    }
+
+                    if (OwnItemCount(talker, @broken_blade_top) == 0 && OwnItemCount(talker, @broken_blade_bottom))
+                    {
+                        ShowPage(talker, "roien_q0101_11.htm");
+                    }
+
+                    if (OwnItemCount(talker, @broken_sword_handle) > 0)
+                    {
+                        ShowPage(talker, "roien_q0101_07.htm");
+                    }
+
+                    if (OwnItemCount(talker, @howtogo_ruins) == 1 && GetOneTimeQuestFlag(talker, @sword_of_solidarity_quest) == 0)
+                    {
+                        ShowPage(talker, "roien_q0101_10.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @sword_of_solidarity_quest) == 1 && GetOneTimeQuestFlag(talker, @sword_of_solidarity_quest) == 0 && OwnItemCount(talker, @roiens_letter) == 0 && OwnItemCount(talker, @alltrans_note))
+                {
+                    if (OwnItemCount(talker, @alltrans_note))
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "roien_q0101_06.htm");
+                            DeleteItem1(talker, @alltrans_note, OwnItemCount(talker, @alltrans_note));
+                            GiveItem1(talker, @broken_sword_handle, 1);
+                        }
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @hfighter_tutorial))
+                {
+                    if (OwnItemCount(talker, @recommendation_01) && GetOneTimeQuestFlag(talker, @hfighter_tutorial) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            DeleteRadar(talker, -71073, 258711, -3099);
+                            ShowPage(talker, "roien_q0201_01.htm");
+                            IncrementParam(talker, @PARAM_SP, 50);
+                            DeleteItem1(talker, @recommendation_01, 1);
+                            RemoveMemo(talker, @hfighter_tutorial);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            SetOneTimeQuestFlag(talker, @hfighter_tutorial, 1);
+                            ShowQuestionMark(talker, 7);
+                            ShowRadar(talker, -84081, 243277, -3723);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "roien001.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @sword_of_solidarity_quest)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "roien_q0101_04.htm");
+                SoundEffect(talker, "ItemSound.quest_accept");
+                GiveItem1(talker, @roiens_letter, 1);
+                SetMemo(talker, quest_id);
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

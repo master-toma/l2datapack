@@ -1,0 +1,49 @@
+class bloody_axe_elite : warrior_aggressive_immediate
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_champion) && OwnItemCount(c1, @iron_rose_ring) && OwnItemCount(c1, @bloody_axe_head) < 100)
+        {
+            if (OwnItemCount(c1, @bloody_axe_head) == 99)
+            {
+                GiveItem1(c1, @bloody_axe_head, 1);
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @bloody_axe_head, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.c_quest0 = attacker;
+            if (HaveMemo(myself.c_quest0, @test_of_champion) && OwnItemCount(myself.c_quest0, @iron_rose_ring) && OwnItemCount(myself.c_quest0, @bloody_axe_head) < 100)
+            {
+                if (Rand(2) == 1)
+                {
+                    CreateOnePrivate(@bloody_axe_elite, "bloody_axe_elite", 0, 1);
+                }
+            }
+
+            myself.i_quest0 = 1;
+            break;
+        case 1:
+            myself.i_quest0 = 2;
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_water_feature]	/* [물강함불약함] */	skill_id = 4014	level = 1	operate_type = P	effect = {{p_defence_attribute;attr_water;-50};{p_defence_attribute;attr_fire;15}}	skill_end

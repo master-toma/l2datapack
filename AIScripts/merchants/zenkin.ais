@@ -1,0 +1,52 @@
+class zenkin : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"brandish"; 15};
+        {"gladius"; 15};
+        {"orcish_sword"; 15};
+        {"handmade_sword"; 15};
+        {"dwarven_mace"; 15};
+        {"dirk"; 15};
+        {"hunting_bow"; 15};
+        {"long_sword"; 15};
+        {"throw_knife"; 15};
+        {"bow_of_forest"; 15};
+        {"short_spear"; 15};
+        {"falchion"; 15};
+        {"sword_breaker"; 15};
+        {"composition_bow"; 15};
+        {"buzdygan"; 15};
+        {"iron_hammer"; 15};
+        {"long_spear"; 15};
+        {"saber"; 15};
+        {"handiwork_dagger"; 15};
+        {"assassin_knife"; 15};
+        {"strengthening_bow"; 15};
+        {"hand_axe"; 15};
+        {"heavy_mace"; 15};
+        {"work_hammer"; 15};
+        {"trident"; 15};
+        {"cestus"; 15};
+        {"viper's_canine"; 15};
+        {"bagh-nakh"; 15};
+        {"wooden_arrow"; 15};
+        {"bone_arrow"; 15}
+    };
+    BuySellList SellList1 = {
+        {"cedar_staff"; 15};
+        {"apprentice's_staff"; 15};
+        {"relic_of_saints"; 15};
+        {"mage_staff"; 15};
+        {"crucifix_of_blessing"; 15};
+        {"voodoo_doll"; 15};
+        {"bone_staff"; 15};
+        {"scroll_of_wisdom"; 15};
+        {"branch_of_life"; 15};
+        {"proof_of_revenge"; 15};
+        {"mace_of_prayer"; 15};
+        {"doom_hammer"; 15};
+        {"wooden_arrow"; 15};
+        {"bone_arrow"; 15}
+    };
+}

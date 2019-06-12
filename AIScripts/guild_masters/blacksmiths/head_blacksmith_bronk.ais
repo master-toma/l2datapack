@@ -1,0 +1,83 @@
+class head_blacksmith_bronk : lv1_head_blacksmith
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @bronks_ingot) == 1 && talker.flag < 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Give Bronk's ingot");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @bronks_ingot) == 1 && talker.flag >= 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Give Bronk's ingot");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @bronks_pay) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about item's price");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @bronks_ingot) == 1 && talker.flag < 20)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "head_blacksmith_bronk_q0417_01.htm");
+                        DeleteItem1(talker, @bronks_ingot, 1);
+                        GiveItem1(talker, @bronks_pay, 1);
+                        talker.flag = talker.flag + 10;
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @bronks_ingot) == 1 && talker.flag >= 20)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        SetMemoState(talker, @path_to_scavenger, 1);
+                        ShowPage(talker, "head_blacksmith_bronk_q0417_02.htm");
+                        DeleteItem1(talker, @bronks_ingot, 1);
+                        GiveItem1(talker, @bronks_pay, 1);
+                        talker.flag = talker.flag + 10;
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @bronks_pay) == 1)
+                {
+                    ShowPage(talker, "head_blacksmith_bronk_q0417_03.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

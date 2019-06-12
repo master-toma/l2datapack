@@ -1,0 +1,32 @@
+class party_leader : warrior
+{
+parameter:
+    string Privates = "orc:party_private:1:20sec";
+    
+handler:
+    EventHandler CREATED()
+    {
+        myself.sm.weight_point = 10;
+        CreatePrivates(Privates);
+        super;
+    }
+
+    EventHandler PARTY_ATTACKED(attacker, private, damage)
+    {
+        if (private != myself.sm)
+        {
+            if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+            {
+                AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, damage / myself.sm.max_hp / 0.05 * damage * private.weight_point * 10);
+            }
+        }
+    }
+
+    EventHandler PARTY_DIED(private)
+    {
+        if (private != myself.sm)
+        {
+            CreateOnePrivate(private.class_id, private.ai, private.weight_point, private.respawn_time);
+        }
+    }
+}

@@ -1,0 +1,18 @@
+class ai_boss01_guard_ant : warrior_aggressive
+{
+handler:
+    EventHandler CLAN_ATTACKED(attacker, victim, damage)
+    {
+        if (victim.class_id == @queen_ant)
+        {
+            if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+            {
+                AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, damage / myself.sm.max_hp / 0.05 * 5000);
+            }
+        }
+        else if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, damage / myself.sm.max_hp / 0.05 * 50);
+        }
+    }
+}

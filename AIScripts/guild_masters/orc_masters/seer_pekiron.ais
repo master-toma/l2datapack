@@ -1,0 +1,100 @@
+class seer_pekiron : mage_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @pekirons_totem) == 0 && OwnItemCount(talker, @tonars_remains1) == 0 && OwnItemCount(talker, @tonars_remains2) == 0 && OwnItemCount(talker, @vendetta_totem) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about Remains of Tonars");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @pekirons_totem) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Give Bone Piece of Tonars");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @pekirons_totem) == 0 && (OwnItemCount(talker, @tonars_remains1) >= 1 || OwnItemCount(talker, @tonars_remains2) >= 1 || OwnItemCount(talker, @vendetta_totem) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about Remains of Tonars");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @pekirons_totem) == 0 && OwnItemCount(talker, @tonars_remains1) == 0 && OwnItemCount(talker, @tonars_remains2) == 0 && OwnItemCount(talker, @vendetta_totem) == 0)
+                {
+                    ShowPage(talker, "seer_pekiron_q0233_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @pekirons_totem) == 1)
+                {
+                    if (OwnItemCount(talker, @tonars_skull) >= 1 && OwnItemCount(talker, @tonars_rib_bone) >= 1 && OwnItemCount(talker, @tonars_spine) >= 1 && OwnItemCount(talker, @tonars_arm_bone) >= 1 && OwnItemCount(talker, @tonars_thigh_bone) >= 1)
+                    {
+                        ShowPage(talker, "seer_pekiron_q0233_04.htm");
+                        DeleteItem1(talker, @pekirons_totem, OwnItemCount(talker, @pekirons_totem));
+                        DeleteItem1(talker, @tonars_skull, OwnItemCount(talker, @tonars_skull));
+                        DeleteItem1(talker, @tonars_rib_bone, OwnItemCount(talker, @tonars_rib_bone));
+                        DeleteItem1(talker, @tonars_spine, OwnItemCount(talker, @tonars_spine));
+                        DeleteItem1(talker, @tonars_arm_bone, OwnItemCount(talker, @tonars_arm_bone));
+                        DeleteItem1(talker, @tonars_thigh_bone, 1);
+                        GiveItem1(talker, @tonars_remains1, 1);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "seer_pekiron_q0233_03.htm");
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @pekirons_totem) == 0 && (OwnItemCount(talker, @tonars_remains1) >= 1 || OwnItemCount(talker, @tonars_remains2) >= 1 || OwnItemCount(talker, @vendetta_totem) >= 1))
+                {
+                    ShowPage(talker, "seer_pekiron_q0233_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_warspirit)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "seer_pekiron_q0233_02.htm");
+                    GiveItem1(talker, @pekirons_totem, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

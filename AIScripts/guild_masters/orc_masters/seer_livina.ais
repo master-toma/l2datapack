@@ -1,0 +1,104 @@
+class seer_livina : mage_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @wrath_of_ancestors) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about relationship with goblin");
+            }
+
+            if (HaveMemo(talker, @wrath_of_ancestors))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show goblin's head");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @wrath_of_ancestors) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_orc)
+                        {
+                            ShowPage(talker, "seer_livina_q0272_00.htm");
+                        }
+                        else if (talker.level < 5)
+                        {
+                            ShowPage(talker, "seer_livina_q0272_01.htm");
+                        }
+                        else
+                        {
+                            FHTML_SetFileName(fhtml0, "seer_livina_q0272_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @wrath_of_ancestors);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @wrath_of_ancestors))
+                {
+                    if (OwnItemCount(talker, @grave_robbers_head) < 50)
+                    {
+                        ShowPage(talker, "seer_livina_q0272_04.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "seer_livina_q0272_05.htm");
+                        RemoveMemo(talker, @wrath_of_ancestors);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        GiveItem1(talker, @adena, 1500);
+                        DeleteItem1(talker, @grave_robbers_head, OwnItemCount(talker, @grave_robbers_head));
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @wrath_of_ancestors)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @wrath_of_ancestors);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "seer_livina_q0272_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

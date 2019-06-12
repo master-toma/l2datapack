@@ -1,0 +1,35 @@
+class porta : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimoney_of_trust) && GetMemoState(c1, @testimoney_of_trust) == 16 && OwnItemCount(c1, @heart_of_porta) < 10)
+        {
+            if (OwnItemCount(c1, @heart_of_porta) == 9)
+            {
+                GiveItem1(c1, @heart_of_porta, 1);
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @heart_of_porta, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_warspirit) && OwnItemCount(c1, @orims_contract) == 1 && OwnItemCount(c1, @portas_eye) < 10)
+        {
+            GiveItem1(c1, @portas_eye, 1);
+            if (OwnItemCount(c1, @portas_eye) >= 10)
+            {
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+
+            SoundEffect(c1, "ItemSound.quest_itemget");
+        }
+
+        super;
+    }
+}

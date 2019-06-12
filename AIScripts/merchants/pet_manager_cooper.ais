@@ -1,0 +1,134 @@
+class pet_manager_cooper : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"iron_canine"; 20};
+        {"shining_canine"; 20};
+        {"ghost_canine"; 20};
+        {"mithril_canine"; 20};
+        {"sylvan_canine"; 20};
+        {"orikarukon_canine"; 20};
+        {"fang_of_saltydog"; 20};
+        {"wolve's_leather_mail"; 20};
+        {"wolves_hide_armor"; 20};
+        {"wolves_hard_leather_mail"; 20};
+        {"wolves_wooden_armor"; 20};
+        {"wolves_ring_mail"; 20};
+        {"wolves_bone_armor"; 20};
+        {"wolves_scale_mail"; 20};
+        {"food_for_wolves"; 20};
+        {"viperbite"; 20};
+        {"shadow_fang"; 20};
+        {"alya_fang"; 20};
+        {"torturer"; 20};
+        {"hatchlings_scale_mail"; 20};
+        {"hatchlings_brigandine"; 20};
+        {"hatchlings_bronze_coat"; 20};
+        {"hatchlings_steel_coat"; 20};
+        {"food_for_hatchling"; 20}
+    };
+    
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @little_wings) == 0 && talker.level >= 35)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about hatchlings");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 0 && talker.level < 35)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about hatchlings");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about hatchlings");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 0 && talker.level >= 35)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        FHTML_SetFileName(fhtml0, "pet_manager_cooper_q0420_01.htm");
+                        FHTML_SetInt(fhtml0, "quest_id", @little_wings);
+                        ShowFHTML(talker, fhtml0);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 0 && talker.level < 35)
+                {
+                    ShowPage(talker, "pet_manager_cooper_q0420_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1)
+                {
+                    ShowPage(talker, "pet_manager_cooper_q0420_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @little_wings)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SetJournal(talker, @little_wings, 1);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "pet_manager_cooper_q0420_02.htm");
+                SetMemoState(talker, @little_wings, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @little_wings)
+        {
+        }
+
+        super;
+    }
+}

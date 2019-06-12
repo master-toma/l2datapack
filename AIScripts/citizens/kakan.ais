@@ -1,0 +1,88 @@
+class kakan : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 11 && OwnItemCount(talker, @greetings) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the present situation");
+            }
+
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 12)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Say that you feel bad for your deception");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 11 && OwnItemCount(talker, @greetings) > 0)
+                {
+                    ShowPage(talker, "kakan_q0227_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 12)
+                {
+                    if (OwnItemCount(talker, @greetings) >= 1)
+                    {
+                        ShowPage(talker, "kakan_q0227_04.htm");
+                        SetMemoState(talker, @trial_of_reformer, 13);
+                        DeleteItem1(talker, @greetings, 1);
+                        GiveItem1(talker, @kakans_letter, 1);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, i0, reply, talker)
+    {
+        if (ask == @trial_of_reformer)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "kakan_q0227_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "kakan_q0227_03.htm");
+                if (Maker_GetNpcCount() == 1)
+                {
+                    i0 = CreateOnePrivateEx(@ol_mahum_pilgrim, "ol_mahum_pilgrim", 0, 0, -9282, -89975, -2331, 0, 0, 0);
+                    CreateOnePrivateEx(@crimsha_werewolf, "crimsha_werewolf", 0, 0, -9382, -89852, -2333, i0, 0, 0);
+                }
+            }
+
+            if (reply == 3)
+            {
+                ShowPage(talker, "kakan_q0227_05.htm");
+            }
+        }
+
+        super;
+    }
+}

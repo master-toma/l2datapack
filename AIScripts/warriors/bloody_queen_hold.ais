@@ -1,0 +1,3 @@
+class bloody_queen_hold : ai_special_bloody_queen
+{
+}

@@ -1,0 +1,102 @@
+class guard_curtiz : guard_fixed
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @grim_collector) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Speak of the undead");
+            }
+
+            if (HaveMemo(talker, @grim_collector) == 1 && OwnItemCount(talker, @anatomy_diagram) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Speak of the undead");
+            }
+
+            if (HaveMemo(talker, @grim_collector) == 1 && OwnItemCount(talker, @anatomy_diagram) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Speak of the undead");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @grim_collector) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 15)
+                        {
+                            FHTML_SetFileName(fhtml0, "guard_curtiz_q0325_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @grim_collector);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "guard_curtiz_q0325_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @grim_collector) == 1 && OwnItemCount(talker, @anatomy_diagram) == 0)
+                {
+                    ShowPage(talker, "guard_curtiz_q0325_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @grim_collector) == 1 && OwnItemCount(talker, @anatomy_diagram) == 1)
+                {
+                    ShowPage(talker, "guard_curtiz_q0325_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @grim_collector)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @grim_collector);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "guard_curtiz_q0325_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

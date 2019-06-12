@@ -1,0 +1,24 @@
+class sandra : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"necklace_of_wisdom"; 10};
+        {"blue_diamond_necklace"; 10};
+        {"necklace_of_devotion"; 10};
+        {"enchanted_necklace"; 10};
+        {"near_forest_necklace"; 10};
+        {"elven_necklace"; 10};
+        {"cat'seye_earing"; 10};
+        {"coral_earing"; 10};
+        {"red_cresent_earing"; 10};
+        {"enchanted_earing"; 10};
+        {"tiger'seye_earing"; 10};
+        {"elven_earing"; 10};
+        {"ring_of_wisdom"; 10};
+        {"blue_coral_ring"; 10};
+        {"ring_of_devotion"; 10};
+        {"enchanted_ring"; 10};
+        {"black_pearl_ring"; 10};
+        {"elven_ring"; 10}
+    };
+}

@@ -1,0 +1,3 @@
+class headless_knight_hold : warrior_aggressive
+{
+}

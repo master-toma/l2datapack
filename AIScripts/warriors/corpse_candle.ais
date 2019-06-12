@@ -1,0 +1,3 @@
+class corpse_candle : warrior_passive_casting_splash
+{
+}

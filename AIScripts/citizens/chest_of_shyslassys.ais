@@ -1,0 +1,115 @@
+class chest_of_shyslassys : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_challenger) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Examine Box of Shyslassys");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1)
+                {
+                    ShowPage(talker, "chest_of_shyslassys_q0211_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 21121)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(21121, 1000 * 200);
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, i0, i1, reply, talker)
+    {
+        if (ask == @trial_of_challenger)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @broken_key) == 1)
+                {
+                    if (Rand(10) < 2)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "chest_of_shyslassys_q0211_03.htm");
+                            DeleteItem1(talker, @broken_key, 1);
+                            SoundEffect(talker, "ItemSound.quest_jackpot");
+                            i0 = Rand(100);
+                            if (i0 > 90)
+                            {
+                                GiveItem1(talker, @mithril_scale_gaiters_material, 1);
+                                GiveItem1(talker, @brigandine_gauntlet_pattern, 1);
+                                GiveItem1(talker, @manticor_skin_gaiters_pattern, 1);
+                                GiveItem1(talker, @gauntlet_of_repose_of_the_soul_pattern, 1);
+                                GiveItem1(talker, @iron_boots_design, 1);
+                            }
+                            else if (i0 > 70)
+                            {
+                                GiveItem1(talker, @tome_of_blood_page, 1);
+                                GiveItem1(talker, @elven_necklace_beads, 1);
+                            }
+                            else if (i0 > 40)
+                            {
+                                GiveItem1(talker, @white_tunic_pattern, 1);
+                            }
+                            else
+                            {
+                                GiveItem1(talker, @iron_boots_design, 1);
+                            }
+                        }
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "chest_of_shyslassys_q0211_02.htm");
+                        i1 = Rand(1000) + 1;
+                        GiveItem1(talker, @adena, i1);
+                        DeleteItem1(talker, @broken_key, 1);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "chest_of_shyslassys_q0211_04.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

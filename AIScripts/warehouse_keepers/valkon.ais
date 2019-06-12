@@ -1,0 +1,278 @@
+class valkon : warehouse_keeper
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_guildsman) == 0 && GetOneTimeQuestFlag(talker, @trial_of_guildsman) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Trial of Guild Member");
+            }
+
+            if (HaveMemo(talker, @trial_of_guildsman) == 0 && GetOneTimeQuestFlag(talker, @trial_of_guildsman) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Trial of Guild Member");
+            }
+
+            if (HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @valkons_recommend) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Allman");
+            }
+
+            if (HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give seven rings");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) == 1 && OwnItemCount(talker, @valkons_request) == 0 && OwnItemCount(talker, @crystal_of_purity2) == 0 && OwnItemCount(talker, @scripture_chapter_2) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask for Scriptures of Knowledge");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) == 1 && OwnItemCount(talker, @valkons_request) == 1 && OwnItemCount(talker, @crystal_of_purity2) == 0 && OwnItemCount(talker, @scripture_chapter_2) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Give Crystal of Purification");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) == 1 && OwnItemCount(talker, @valkons_request) == 0 && OwnItemCount(talker, @crystal_of_purity2) == 1 && OwnItemCount(talker, @scripture_chapter_2) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Give Crystal of Purification");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) == 1 && OwnItemCount(talker, @valkons_request) == 0 && OwnItemCount(talker, @crystal_of_purity2) == 0 && OwnItemCount(talker, @scripture_chapter_2) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Give Crystal of Purification");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 0 && GetOneTimeQuestFlag(talker, @trial_of_guildsman) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.occupation == @artisan || talker.occupation == @scavenger)
+                        {
+                            if (talker.level < 35)
+                            {
+                                ShowPage(talker, "valkon_q0216_02.htm");
+                            }
+                            else
+                            {
+                                ShowPage(talker, "valkon_q0216_03.htm");
+                            }
+                        }
+                        else
+                        {
+                            ShowPage(talker, "valkon_q0216_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 0 && GetOneTimeQuestFlag(talker, @trial_of_guildsman) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @valkons_recommend) == 1)
+                {
+                    ShowPage(talker, "valkon_q0216_07.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) == 1)
+                {
+                    if (OwnItemCount(talker, @journeyman_ring) < 7)
+                    {
+                        ShowPage(talker, "valkon_q0216_08.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "valkon_q0216_09.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) == 1 && OwnItemCount(talker, @valkons_request) == 0 && OwnItemCount(talker, @crystal_of_purity2) == 0 && OwnItemCount(talker, @scripture_chapter_2) == 0)
+                {
+                    ShowPage(talker, "valkon_q0214_01.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) == 1 && OwnItemCount(talker, @valkons_request) == 1 && OwnItemCount(talker, @crystal_of_purity2) == 0 && OwnItemCount(talker, @scripture_chapter_2) == 0)
+                {
+                    ShowPage(talker, "valkon_q0214_05.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) == 1 && OwnItemCount(talker, @valkons_request) == 0 && OwnItemCount(talker, @crystal_of_purity2) == 1 && OwnItemCount(talker, @scripture_chapter_2) == 0)
+                {
+                    ShowPage(talker, "valkon_q0214_06.htm");
+                    DeleteItem1(talker, @crystal_of_purity2, 1);
+                    GiveItem1(talker, @scripture_chapter_2, 1);
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) == 1 && OwnItemCount(talker, @valkons_request) == 0 && OwnItemCount(talker, @crystal_of_purity2) == 0 && OwnItemCount(talker, @scripture_chapter_2) == 1)
+                {
+                    ShowPage(talker, "valkon_q0214_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @trial_of_guildsman)
+        {
+            if (OwnItemCount(talker, @adena) >= 2000)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    SetMemo(talker, quest_id);
+                    SoundEffect(talker, "ItemSound.quest_accept");
+                    if (OwnItemCount(talker, @valkons_recommend) == 0)
+                    {
+                        GiveItem1(talker, @valkons_recommend, 1);
+                    }
+
+                    ShowPage(talker, "valkon_q0216_06.htm");
+                    DeleteItem1(talker, @adena, 2000);
+                }
+            }
+            else
+            {
+                ShowPage(talker, "valkon_q0216_05b.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @trial_of_guildsman)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "valkon_q0216_04.htm");
+            }
+
+            if (reply == 2)
+            {
+                FHTML_SetFileName(fhtml0, "valkon_q0216_05.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @trial_of_guildsman);
+                ShowFHTML(talker, fhtml0);
+            }
+
+            if (reply == 3)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "valkon_q0216_09a.htm");
+                    RemoveMemo(talker, @trial_of_guildsman);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                    SetOneTimeQuestFlag(talker, @trial_of_guildsman, 1);
+                    IncrementParam(talker, @PARAM_EXP, 32000);
+                    IncrementParam(talker, @PARAM_SP, 3900);
+                    DeleteItem1(talker, @journeyman_ring, OwnItemCount(talker, @journeyman_ring));
+                    DeleteItem1(talker, @alltrans_instructions, OwnItemCount(talker, @alltrans_instructions));
+                    DeleteItem1(talker, @rp_journeyman_ring, OwnItemCount(talker, @rp_journeyman_ring));
+                    GiveItem1(talker, @mark_of_guildsman, 1);
+                }
+            }
+
+            if (reply == 4)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    IncrementParam(talker, @PARAM_EXP, 32000);
+                    IncrementParam(talker, @PARAM_SP, 3900);
+                    ShowPage(talker, "valkon_q0216_09b.htm");
+                    RemoveMemo(talker, @trial_of_guildsman);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                    SetOneTimeQuestFlag(talker, @trial_of_guildsman, 1);
+                    DeleteItem1(talker, @journeyman_ring, OwnItemCount(talker, @journeyman_ring));
+                    DeleteItem1(talker, @alltrans_instructions, OwnItemCount(talker, @alltrans_instructions));
+                    DeleteItem1(talker, @rp_journeyman_ring, OwnItemCount(talker, @rp_journeyman_ring));
+                    GiveItem1(talker, @mark_of_guildsman, 1);
+                }
+            }
+        }
+
+        if (ask == @trial_of_scholar)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "valkon_q0214_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "valkon_q0214_03.htm");
+            }
+
+            if (reply == 3)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "valkon_q0214_04.htm");
+                    GiveItem1(talker, @valkons_request, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

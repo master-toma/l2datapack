@@ -1,0 +1,99 @@
+class sir_collin_windawood : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @find_sir_windawood) == 1 && OwnItemCount(talker, @official_letter) == 1 && GetOneTimeQuestFlag(talker, @find_sir_windawood) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Brought the letter from Abellos");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @mark_of_esquire) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 12 && OwnItemCount(talker, @saints_ashes_urn))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give Urn of Remains of Holy Man");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 13)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask who the other person will give the letter to");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @find_sir_windawood) == 1 && OwnItemCount(talker, @official_letter) == 1 && GetOneTimeQuestFlag(talker, @find_sir_windawood) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @official_letter, OwnItemCount(talker, @official_letter));
+                        GiveItem1(talker, @healing_potion, 1);
+                        GiveItem1(talker, @adena, 100);
+                        RemoveMemo(talker, @find_sir_windawood);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @find_sir_windawood, 1);
+                        ShowPage(talker, "sir_collin_windawood_q0305_01.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @mark_of_esquire) > 0)
+                {
+                    ShowPage(talker, "sir_collin_windawood_q0402_01.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 12 && OwnItemCount(talker, @saints_ashes_urn))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "sir_collin_windawood_q0212_01.htm");
+                        DeleteItem1(talker, @saints_ashes_urn, 1);
+                        GiveItem1(talker, @letter_of_windawood, 1);
+                        SetMemoState(talker, @trial_of_duty, 13);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 13)
+                {
+                    ShowPage(talker, "sir_collin_windawood_q0212_02.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

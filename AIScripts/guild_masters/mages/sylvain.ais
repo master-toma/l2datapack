@@ -1,0 +1,122 @@
+class sylvain : human_elf_mage_lv2_master
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) == 1 && OwnItemCount(talker, @highpriests_sigil) == 0 && OwnItemCount(talker, @symbol_of_sylvain) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about Trial of Inquirer");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @crystal_of_purity1) == 0 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @miriens_sigil1) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about Trial of Inquirer");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @crystal_of_purity1) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Hear about Trial of Inquirer");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @symbol_of_sylvain) >= 1 && OwnItemCount(talker, @highpriests_sigil) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Hear about Trial of Inquirer");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil2) >= 1 || OwnItemCount(talker, @miriens_sigil3) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Hear about Trial of Inquirer");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) == 1 && OwnItemCount(talker, @highpriests_sigil) == 0 && OwnItemCount(talker, @symbol_of_sylvain) == 0)
+                {
+                    ShowPage(talker, "sylvain_q0214_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @crystal_of_purity1) == 0 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @miriens_sigil1) >= 1)
+                {
+                    ShowPage(talker, "sylvain_q0214_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @highpriests_sigil) >= 1 && OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @crystal_of_purity1) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "sylvain_q0214_04.htm");
+                        GiveItem1(talker, @symbol_of_sylvain, 1);
+                        DeleteItem1(talker, @highpriests_sigil, OwnItemCount(talker, @highpriests_sigil));
+                        DeleteItem1(talker, @crystal_of_purity1, OwnItemCount(talker, @crystal_of_purity1));
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @miriens_sigil1) >= 1 && OwnItemCount(talker, @symbol_of_sylvain) >= 1 && OwnItemCount(talker, @highpriests_sigil) == 0)
+                {
+                    ShowPage(talker, "sylvain_q0214_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @miriens_sigil2) >= 1 || OwnItemCount(talker, @miriens_sigil3) >= 1))
+                {
+                    ShowPage(talker, "sylvain_q0214_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_scholar)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "sylvain_q0214_02.htm");
+                    GiveItem1(talker, @highpriests_sigil, 1);
+                    GiveItem1(talker, @sylvains_letter, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

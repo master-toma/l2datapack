@@ -1,0 +1,87 @@
+class blacksmith_poitan : blacksmith
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) == 1 && OwnItemCount(talker, @poitans_notes) == 0 && OwnItemCount(talker, @kasians_list) == 0 && OwnItemCount(talker, @scripture_chapter_4) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask for Scriptures of Knowledge");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) >= 1 && OwnItemCount(talker, @poitans_notes) >= 1 && OwnItemCount(talker, @kasians_list) == 0 && OwnItemCount(talker, @scripture_chapter_4) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask for Scriptures of Knowledge");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) >= 1 && OwnItemCount(talker, @poitans_notes) >= 1 && OwnItemCount(talker, @kasians_list) >= 1 && OwnItemCount(talker, @scripture_chapter_4) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Say that you met Kashian");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) >= 1 && OwnItemCount(talker, @scripture_chapter_4) >= 1 && OwnItemCount(talker, @poitans_notes) == 0 && OwnItemCount(talker, @kasians_list) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that you’ve gathered together all of the scriptures");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) == 1 && OwnItemCount(talker, @poitans_notes) == 0 && OwnItemCount(talker, @kasians_list) == 0 && OwnItemCount(talker, @scripture_chapter_4) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "blacksmith_poitan_q0214_01.htm");
+                        GiveItem1(talker, @poitans_notes, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) >= 1 && OwnItemCount(talker, @poitans_notes) >= 1 && OwnItemCount(talker, @kasians_list) == 0 && OwnItemCount(talker, @scripture_chapter_4) == 0)
+                {
+                    ShowPage(talker, "blacksmith_poitan_q0214_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) >= 1 && OwnItemCount(talker, @poitans_notes) >= 1 && OwnItemCount(talker, @kasians_list) >= 1 && OwnItemCount(talker, @scripture_chapter_4) == 0)
+                {
+                    ShowPage(talker, "blacksmith_poitan_q0214_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @treafs_ring) >= 1 && OwnItemCount(talker, @scripture_chapter_4) >= 1 && OwnItemCount(talker, @poitans_notes) == 0 && OwnItemCount(talker, @kasians_list) == 0)
+                {
+                    ShowPage(talker, "blacksmith_poitan_q0214_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,139 @@
+class mina : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"sb_adv_defence_power1"; 15};
+        {"sb_advanced_attack_power1"; 15};
+        {"sb_battle_heal1"; 15};
+        {"sb_heal1"; 15};
+        {"sb_ice_bolt1"; 15};
+        {"sb_might1"; 15};
+        {"sb_vampiric_touch1"; 15};
+        {"sb_breeze1"; 15};
+        {"sb_cure_poison1"; 15};
+        {"sb_curse_poison1"; 15};
+        {"sb_curse_weakness"; 15};
+        {"sb_flame_strike1"; 15};
+        {"sb_group_heal1"; 15};
+        {"sb_shield1"; 15};
+        {"sb_wind_walk1"; 15};
+        {"sb_drain_energy1"; 15};
+        {"sb_elemental_heal1"; 15};
+        {"sb_aqua_swirl1"; 15};
+        {"sb_arcane_acumen1"; 15};
+        {"sb_aura_burn1"; 15};
+        {"sb_blaze1"; 15};
+        {"sb_charm11"; 15};
+        {"sb_concentration1"; 15};
+        {"sb_disrupt_undead1"; 15};
+        {"sb_poison_recovery1"; 15};
+        {"sb_poison1"; 15};
+        {"sb_resurrection1"; 15};
+        {"sb_servitor_heal1"; 15};
+        {"sb_summon_blackcat1"; 15};
+        {"sb_twister1"; 15};
+        {"sb_water_breathing"; 15}
+    };
+    
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @scent_of_death) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about the nightshade flower");
+            }
+
+            if (HaveMemo(talker, @scent_of_death))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about Zombie skin");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @scent_of_death) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 11)
+                        {
+                            FHTML_SetFileName(fhtml0, "mina_q0319_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @scent_of_death);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "mina_q0319_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @scent_of_death))
+                {
+                    if (OwnItemCount(talker, @zombie_skin) < 5)
+                    {
+                        ShowPage(talker, "mina_q0319_05.htm");
+                    }
+                    else if (OwnItemCount(talker, @zombie_skin) >= 5)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "mina_q0319_06.htm");
+                            GiveItem1(talker, @adena, 2000);
+                            GiveItem1(talker, @healing_potion, 1);
+                            DeleteItem1(talker, @zombie_skin, OwnItemCount(talker, @zombie_skin));
+                            RemoveMemo(talker, @scent_of_death);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @scent_of_death)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "mina_q0319_04.htm");
+                SetMemo(talker, @scent_of_death);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

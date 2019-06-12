@@ -1,0 +1,179 @@
+class earth_snake : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @water_necklace) != 0 && OwnItemCount(talker, @rust_gold_coin) == 0 && OwnItemCount(talker, @earth_ring) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the proof of earth");
+            }
+
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @rust_gold_coin) != 0 && OwnItemCount(talker, @red_soil) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the red bear");
+            }
+
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @rust_gold_coin) != 0 && OwnItemCount(talker, @red_soil) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show the red soil");
+            }
+
+            if (HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @earth_ring) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show the earth ring");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_earth) == 0 && OwnItemCount(talker, @serpent_charm) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Musical Note of Earth");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @serpent_charm) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Give all ingredients");
+            }
+
+            if (HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_earth) == 1 && OwnItemCount(talker, @serpent_charm) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Talk about Musical Note of Earth");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @water_necklace) != 0 && OwnItemCount(talker, @rust_gold_coin) == 0 && OwnItemCount(talker, @earth_ring) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @rust_gold_coin) == 0)
+                        {
+                            GiveItem1(talker, @rust_gold_coin, 1);
+                        }
+
+                        ShowPage(talker, "earth_snake_q0404_01.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @rust_gold_coin) != 0 && OwnItemCount(talker, @red_soil) == 0)
+                {
+                    ShowPage(talker, "earth_snake_q0404_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @rust_gold_coin) != 0 && OwnItemCount(talker, @red_soil) != 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @red_soil, OwnItemCount(talker, @red_soil));
+                        DeleteItem1(talker, @rust_gold_coin, OwnItemCount(talker, @rust_gold_coin));
+                        if (OwnItemCount(talker, @earth_ring) == 0)
+                        {
+                            GiveItem1(talker, @earth_ring, 1);
+                        }
+
+                        ShowPage(talker, "earth_snake_q0404_03.htm");
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_wizard) != 0 && OwnItemCount(talker, @earth_ring) != 0)
+                {
+                    ShowPage(talker, "earth_snake_q0404_03.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_earth) == 0 && OwnItemCount(talker, @serpent_charm) == 0)
+                {
+                    ShowPage(talker, "earth_snake_q0228_01.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @serpent_charm) == 1)
+                {
+                    if (OwnItemCount(talker, @en_monstereye_shell) + OwnItemCount(talker, @en_stonegolem_powder) + OwnItemCount(talker, @en_irongolem_scrap) < 30)
+                    {
+                        ShowPage(talker, "earth_snake_q0228_04.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "earth_snake_q0228_05.htm");
+                        DeleteItem1(talker, @en_monstereye_shell, OwnItemCount(talker, @en_monstereye_shell));
+                        DeleteItem1(talker, @en_stonegolem_powder, OwnItemCount(talker, @en_stonegolem_powder));
+                        DeleteItem1(talker, @en_irongolem_scrap, OwnItemCount(talker, @en_irongolem_scrap));
+                        DeleteItem1(talker, @serpent_charm, 1);
+                        GiveItem1(talker, @tone_of_earth, 1);
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_magus) == 1 && OwnItemCount(talker, @score_of_elements) == 1 && OwnItemCount(talker, @tone_of_earth) == 1 && OwnItemCount(talker, @serpent_charm) == 0)
+                {
+                    ShowPage(talker, "earth_snake_q0228_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_magus)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "earth_snake_q0228_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "earth_snake_q0228_03.htm");
+                    GiveItem1(talker, @serpent_charm, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

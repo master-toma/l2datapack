@@ -1,0 +1,131 @@
+class gatekeeper_tamil : teleporter_need_item
+{
+property:
+    TelPosList Position = {
+        {1010004; -80684; 149770; -3043; 3000; 0}    // 1010004 - "The Village of Gludin"
+    };
+    
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -6)
+        {
+            if (OwnItemCount(talker, ItemNeeded) != 0)
+            {
+                DeleteItem1(talker, ItemNeeded, 1);
+                InstantTeleport(talker, -80684, 149770, -3043);
+            }
+            else
+            {
+                ShowPage(talker, fnNoItem);
+            }
+        }
+    }
+
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @gatekeepers_offering) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about teleport magic");
+            }
+
+            if (HaveMemo(talker, @gatekeepers_offering) == 1 && OwnItemCount(talker, @starstone1) < 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the starstone");
+            }
+
+            if (HaveMemo(talker, @gatekeepers_offering) == 1 && OwnItemCount(talker, @starstone1) >= 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give starstone");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @gatekeepers_offering) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        FHTML_SetFileName(fhtml0, "gatekeeper_tamil_q0277_02.htm");
+                        FHTML_SetInt(fhtml0, "quest_id", @gatekeepers_offering);
+                        ShowFHTML(talker, fhtml0);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @gatekeepers_offering) == 1 && OwnItemCount(talker, @starstone1) < 20)
+                {
+                    ShowPage(talker, "gatekeeper_tamil_q0277_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @gatekeepers_offering) == 1 && OwnItemCount(talker, @starstone1) >= 20)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "gatekeeper_tamil_q0277_05.htm");
+                        DeleteItem1(talker, @starstone1, OwnItemCount(talker, @starstone1));
+                        GiveItem1(talker, @gatekeeper_charm, 1);
+                        RemoveMemo(talker, @gatekeepers_offering);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @gatekeepers_offering)
+        {
+            if (talker.level >= 15)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "gatekeeper_tamil_q0277_03.htm");
+                    SetMemo(talker, @gatekeepers_offering);
+                    SoundEffect(talker, "ItemSound.quest_accept");
+                }
+            }
+            else
+            {
+                ShowPage(talker, "gatekeeper_tamil_q0277_01.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

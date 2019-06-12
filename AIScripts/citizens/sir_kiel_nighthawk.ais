@@ -1,0 +1,119 @@
+class sir_kiel_nighthawk : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 4)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that Sir Aaron Tanford sent you");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 5 && OwnItemCount(talker, @talianuss_report) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask what you should bring");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 5 && OwnItemCount(talker, @talianuss_report))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Say that you brought Report from Sir Talianus");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 6)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask whose ghost you should meet");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 7 && OwnItemCount(talker, @tear_of_confession))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give Tear of Repentance");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 8)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask who you should go find");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 4)
+                {
+                    ShowPage(talker, "sir_kiel_nighthawk_q0212_01.htm");
+                    SetMemoState(talker, @trial_of_duty, 5);
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 5 && OwnItemCount(talker, @talianuss_report) == 0)
+                {
+                    ShowPage(talker, "sir_kiel_nighthawk_q0212_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 5 && OwnItemCount(talker, @talianuss_report))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "sir_kiel_nighthawk_q0212_03.htm");
+                        SetMemoState(talker, @trial_of_duty, 6);
+                        GiveItem1(talker, @mirror_of_orpic, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 6)
+                {
+                    ShowPage(talker, "sir_kiel_nighthawk_q0212_04.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 7 && OwnItemCount(talker, @tear_of_confession))
+                {
+                    ShowPage(talker, "sir_kiel_nighthawk_q0212_05.htm");
+                    DeleteItem1(talker, @tear_of_confession, 1);
+                    SetMemoState(talker, @trial_of_duty, 8);
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 8)
+                {
+                    ShowPage(talker, "sir_kiel_nighthawk_q0212_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

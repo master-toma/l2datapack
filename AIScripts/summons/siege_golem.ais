@@ -1,0 +1,3 @@
+class siege_golem : summon_siege_golem
+{
+}

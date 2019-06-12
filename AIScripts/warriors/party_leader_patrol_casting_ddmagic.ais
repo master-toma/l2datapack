@@ -1,0 +1,41 @@
+class party_leader_patrol_casting_ddmagic : party_leader_casting_ddmagic
+{
+parameter:
+    WayPointsType WayPoints;
+    WayPointDelaysType WayPointDelays;
+    
+handler:
+    EventHandler NO_DESIRE()
+    {
+        AddDoNothingDesire(40, 5);
+    }
+
+    EventHandler CREATED()
+    {
+        AddMoveToWayPointDesire(WayPoints, WayPointDelays, 1, 10);
+        super;
+    }
+
+    EventHandler MOVE_TO_WAY_POINT_FINISHED(way_point_index, next_way_point_index)
+    {
+        myself.i_ai1 = next_way_point_index;
+        AddTimerEx(100001, GetWayPointDelay(WayPointDelays, way_point_index) * 1000);
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 100001)
+        {
+            if (myself.i_ai1 > 0)
+            {
+                AddMoveToWayPointDesire(WayPoints, WayPointDelays, myself.i_ai1, 10);
+            }
+            else
+            {
+                AddMoveToWayPointDesire(WayPoints, WayPointDelays, 1, 10);
+            }
+        }
+
+        super;
+    }
+}

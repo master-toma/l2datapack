@@ -1,0 +1,17 @@
+class spirit_of_mirrors2 : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1, weapon_class_id)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @spirit_of_mirror) == 1 && myself.sm.last_blow_weapon_class_id == @gallins_oak_wand && OwnItemCount(c1, @wand_spiritbound2) == 0 && OwnItemCount(c1, @gallins_oak_wand) > 0)
+        {
+            DeleteItem1(c1, @gallins_oak_wand, 1);
+            GiveItem1(c1, @wand_spiritbound2, 1);
+            SoundEffect(c1, "ItemSound.quest_middle");
+            SetMemoState(c1, @spirit_of_mirror, 2);
+        }
+
+        super;
+    }
+}

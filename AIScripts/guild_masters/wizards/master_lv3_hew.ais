@@ -1,0 +1,67 @@
+class master_lv3_hew : guild_master_lv3
+{
+parameter:
+    int lv2_class1 = @wizard;
+    int lv2_class2 = @elven_wizard;
+    int lv3_class11 = @sorcerer;
+    int lv3_class12 = @necromancer;
+    int lv3_class13 = @warlock;
+    int lv3_class21 = @spellsinger;
+    int lv3_class22 = @elemental_summoner;
+    int proof11x = @mark_of_scholar;
+    int proof11y = @mark_of_trust;
+    int proof11z = @mark_of_magus;
+    int proof12x = @mark_of_scholar;
+    int proof12y = @mark_of_trust;
+    int proof12z = @mark_of_witchcraft;
+    int proof13x = @mark_of_scholar;
+    int proof13y = @mark_of_trust;
+    int proof13z = @mark_of_summoner;
+    int proof21x = @mark_of_scholar;
+    int proof21y = @mark_of_life;
+    int proof21z = @mark_of_magus;
+    int proof22x = @mark_of_scholar;
+    int proof22y = @mark_of_life;
+    int proof22z = @mark_of_summoner;
+    
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -2 && reply == 1)
+        {
+            if (IsInCategory(@wizard_group, talker.occupation) && (talker.race == @race_human || talker.race == @race_elf))
+            {
+                if (talker.occupation == lv2_class1 || talker.occupation == lv3_class11 || talker.occupation == lv3_class12 || talker.occupation == lv3_class13)
+                {
+                    ShowPage(talker, fnClassList1);
+                }
+                else if (talker.occupation == lv2_class2 || talker.occupation == lv3_class21 || talker.occupation == lv3_class22 || talker.occupation == lv3_class23)
+                {
+                    ShowPage(talker, fnClassList2);
+                }
+                else if (talker.occupation == lv2_class3 || talker.occupation == lv3_class31 || talker.occupation == lv3_class32 || talker.occupation == lv3_class33)
+                {
+                    ShowPage(talker, fnClassList3);
+                }
+                else if (talker.occupation == lv2_class4 || talker.occupation == lv3_class41 || talker.occupation == lv3_class42 || talker.occupation == lv3_class43)
+                {
+                    ShowPage(talker, fnClassList4);
+                }
+                else if (talker.occupation == lv2_class5 || talker.occupation == lv3_class51 || talker.occupation == lv3_class52 || talker.occupation == lv3_class53)
+                {
+                    ShowPage(talker, fnClassList5);
+                }
+                else
+                {
+                    ShowPage(talker, fnYouAreFirstClass);
+                }
+            }
+            else
+            {
+                ShowPage(talker, fnClassMismatch);
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,2 @@
+skill_begin	skill_name = [s_robe_mastery1]	/* [로브 마스터리] */	skill_id = 145	level = 1	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_robe_mastery2]	/* [로브 마스터리] */	skill_id = 145	level = 2	operate_type = P	effect = {}	skill_end

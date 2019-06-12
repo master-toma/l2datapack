@@ -1,0 +1,21 @@
+class vanor_silenos_cheiftain : warrior_pa_casting_heal
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_2u_6) && OwnItemCount(c1, @q_kerunos_gold_mane) < 1)
+        {
+            if (Rand(10) == 0)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    CreateOnePrivate(@vanor_elder_kerunos, "vanor_elder_kerunos", 0, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

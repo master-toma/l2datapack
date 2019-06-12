@@ -1,0 +1,7 @@
+class ai_boss02_b02_perum : warrior_aggressive_casting_ddmagic
+{
+handler:
+    EventHandler DESIRE_MANIPULATION(speller, desire)
+    {
+    }
+}

@@ -1,0 +1,3 @@
+skill_begin	skill_name = [s_armor_mastery_mag11]	/* [아머 마스터리] */	skill_id = 244	level = 1	operate_type = P	effect = {{p_physical_defence;{all};6.7;diff}}	skill_end
+skill_begin	skill_name = [s_armor_mastery_mag21]	/* [아머 마스터리] */	skill_id = 244	level = 2	operate_type = P	effect = {{p_physical_defence;{all};8;diff}}	skill_end
+skill_begin	skill_name = [s_armor_mastery_mag22]	/* [아머 마스터리] */	skill_id = 244	level = 3	operate_type = P	effect = {{p_physical_defence;{all};9.2;diff}}	skill_end

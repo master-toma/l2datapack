@@ -1,0 +1,297 @@
+class urutu_chief_hatos : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @show_no_mercy) == 0 && GetOneTimeQuestFlag(talker, @show_no_mercy) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the betrayer Baranka");
+            }
+
+            if (HaveMemo(talker, @show_no_mercy) == 0 && GetOneTimeQuestFlag(talker, @show_no_mercy) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the betrayer Baranka");
+            }
+
+            if (HaveMemo(talker, @show_no_mercy) == 1 && (OwnItemCount(talker, @hatoss_order1) || OwnItemCount(talker, @hatoss_order2) || OwnItemCount(talker, @hatoss_order3)) && OwnItemCount(talker, @letter_to_elf1) + OwnItemCount(talker, @letter_to_human) + OwnItemCount(talker, @letter_to_darkelf1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show 1st secret letter");
+            }
+
+            if (HaveMemo(talker, @show_no_mercy) == 1 && (OwnItemCount(talker, @hatoss_order1) || OwnItemCount(talker, @hatoss_order2) || OwnItemCount(talker, @hatoss_order3)) && OwnItemCount(talker, @letter_to_elf1) + OwnItemCount(talker, @letter_to_human) + OwnItemCount(talker, @letter_to_darkelf1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show 2nd secret letter");
+            }
+
+            if (HaveMemo(talker, @show_no_mercy) == 1 && (OwnItemCount(talker, @hatoss_order1) || OwnItemCount(talker, @hatoss_order2) || OwnItemCount(talker, @hatoss_order3)) && OwnItemCount(talker, @letter_to_elf1) + OwnItemCount(talker, @letter_to_human) + OwnItemCount(talker, @letter_to_darkelf1) == 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Show 3rd secret letter");
+            }
+
+            if (HaveMemo(talker, @show_no_mercy) == 1 && (OwnItemCount(talker, @hatoss_order1) || OwnItemCount(talker, @hatoss_order2) || OwnItemCount(talker, @hatoss_order3)) && OwnItemCount(talker, @letter_to_elf1) + OwnItemCount(talker, @letter_to_human) + OwnItemCount(talker, @letter_to_darkelf1) == 3 && GetOneTimeQuestFlag(talker, @show_no_mercy) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about the betrayer Baranka");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) == 1 && OwnItemCount(talker, @sword_into_skull) == 0 && OwnItemCount(talker, @hatos_charm) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Say that you are currently challenging the Examination of Lord");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @sword_into_skull) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @hatos_charm) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Give sword blade and skull");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @hatos_charm) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @sword_into_skull) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Thank for having received the totem");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @show_no_mercy) == 0 && GetOneTimeQuestFlag(talker, @show_no_mercy) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_orc)
+                        {
+                            ShowPage(talker, "urutu_chief_hatos_q0107_00.htm");
+                        }
+                        else if (talker.level >= 12)
+                        {
+                            FHTML_SetFileName(fhtml0, "urutu_chief_hatos_q0107_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @show_no_mercy);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "urutu_chief_hatos_q0107_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @show_no_mercy) == 0 && GetOneTimeQuestFlag(talker, @show_no_mercy) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @show_no_mercy) == 1 && (OwnItemCount(talker, @hatoss_order1) || OwnItemCount(talker, @hatoss_order2) || OwnItemCount(talker, @hatoss_order3)) && OwnItemCount(talker, @letter_to_elf1) + OwnItemCount(talker, @letter_to_human) + OwnItemCount(talker, @letter_to_darkelf1) == 0)
+                {
+                    ShowPage(talker, "urutu_chief_hatos_q0107_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @show_no_mercy) == 1 && (OwnItemCount(talker, @hatoss_order1) || OwnItemCount(talker, @hatoss_order2) || OwnItemCount(talker, @hatoss_order3)) && OwnItemCount(talker, @letter_to_elf1) + OwnItemCount(talker, @letter_to_human) + OwnItemCount(talker, @letter_to_darkelf1) == 1)
+                {
+                    ShowPage(talker, "urutu_chief_hatos_q0107_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @show_no_mercy) == 1 && (OwnItemCount(talker, @hatoss_order1) || OwnItemCount(talker, @hatoss_order2) || OwnItemCount(talker, @hatoss_order3)) && OwnItemCount(talker, @letter_to_elf1) + OwnItemCount(talker, @letter_to_human) + OwnItemCount(talker, @letter_to_darkelf1) == 2)
+                {
+                    ShowPage(talker, "urutu_chief_hatos_q0107_08.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @show_no_mercy) == 1 && (OwnItemCount(talker, @hatoss_order1) || OwnItemCount(talker, @hatoss_order2) || OwnItemCount(talker, @hatoss_order3)) && OwnItemCount(talker, @letter_to_elf1) + OwnItemCount(talker, @letter_to_human) + OwnItemCount(talker, @letter_to_darkelf1) == 3 && GetOneTimeQuestFlag(talker, @show_no_mercy) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "urutu_chief_hatos_q0107_10.htm");
+                        DeleteItem1(talker, @letter_to_darkelf1, OwnItemCount(talker, @letter_to_darkelf1));
+                        DeleteItem1(talker, @letter_to_human, OwnItemCount(talker, @letter_to_human));
+                        DeleteItem1(talker, @letter_to_elf1, OwnItemCount(talker, @letter_to_elf1));
+                        DeleteItem1(talker, @hatoss_order3, OwnItemCount(talker, @hatoss_order3));
+                        GiveItem1(talker, @butcher, 1);
+                        RemoveMemo(talker, @show_no_mercy);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @show_no_mercy, 1);
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) == 1 && OwnItemCount(talker, @sword_into_skull) == 0 && OwnItemCount(talker, @hatos_charm) == 0)
+                {
+                    ShowPage(talker, "urutu_chief_hatos_q0232_01.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @sword_into_skull) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @hatos_charm) >= 1)
+                {
+                    if (OwnItemCount(talker, @urutu_blade) == 1 && OwnItemCount(talker, @timak_orc_skull) >= 10)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "urutu_chief_hatos_q0232_04.htm");
+                            DeleteItem1(talker, @hatos_charm, OwnItemCount(talker, @hatos_charm));
+                            DeleteItem1(talker, @urutu_blade, OwnItemCount(talker, @urutu_blade));
+                            DeleteItem1(talker, @timak_orc_skull, OwnItemCount(talker, @timak_orc_skull));
+                            GiveItem1(talker, @sword_into_skull, 1);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "urutu_chief_hatos_q0232_03.htm");
+                    }
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @hatos_charm) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @sword_into_skull) >= 1)
+                {
+                    ShowPage(talker, "urutu_chief_hatos_q0232_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @show_no_mercy)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "urutu_chief_hatos_q0107_03.htm");
+                SetMemo(talker, @show_no_mercy);
+                GiveItem1(talker, @hatoss_order1, 1);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @show_no_mercy && reply == 1 && (OwnItemCount(talker, @hatoss_order1) || OwnItemCount(talker, @hatoss_order2) || OwnItemCount(talker, @hatoss_order3)) && OwnItemCount(talker, @letter_to_elf1) + OwnItemCount(talker, @letter_to_human) + OwnItemCount(talker, @letter_to_darkelf1) == 1)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "urutu_chief_hatos_q0107_06.htm");
+                DeleteItem1(talker, @hatoss_order2, OwnItemCount(talker, @hatoss_order2));
+                DeleteItem1(talker, @letter_to_darkelf1, OwnItemCount(talker, @letter_to_darkelf1));
+                DeleteItem1(talker, @letter_to_human, OwnItemCount(talker, @letter_to_human));
+                DeleteItem1(talker, @letter_to_elf1, OwnItemCount(talker, @letter_to_elf1));
+                DeleteItem1(talker, @hatoss_order1, OwnItemCount(talker, @hatoss_order1));
+                DeleteItem1(talker, @hatoss_order3, OwnItemCount(talker, @hatoss_order3));
+                GiveItem1(talker, @adena, 100);
+                RemoveMemo(talker, @show_no_mercy);
+                SoundEffect(talker, "ItemSound.quest_giveup");
+            }
+        }
+        else if (ask == @show_no_mercy && reply == 2 && (OwnItemCount(talker, @hatoss_order1) || OwnItemCount(talker, @hatoss_order2) || OwnItemCount(talker, @hatoss_order3)) && OwnItemCount(talker, @letter_to_elf1) + OwnItemCount(talker, @letter_to_human) + OwnItemCount(talker, @letter_to_darkelf1) == 1)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "urutu_chief_hatos_q0107_07.htm");
+                DeleteItem1(talker, @hatoss_order1, 1);
+                if (OwnItemCount(talker, @hatoss_order2) == 0)
+                {
+                    GiveItem1(talker, @hatoss_order2, 1);
+                }
+            }
+        }
+        else if (ask == @show_no_mercy && reply == 3 && (OwnItemCount(talker, @hatoss_order1) || OwnItemCount(talker, @hatoss_order2) || OwnItemCount(talker, @hatoss_order3)) && OwnItemCount(talker, @letter_to_elf1) + OwnItemCount(talker, @letter_to_human) + OwnItemCount(talker, @letter_to_darkelf1) == 2)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "urutu_chief_hatos_q0107_06.htm");
+                DeleteItem1(talker, @hatoss_order2, OwnItemCount(talker, @hatoss_order2));
+                DeleteItem1(talker, @letter_to_darkelf1, OwnItemCount(talker, @letter_to_darkelf1));
+                DeleteItem1(talker, @letter_to_human, OwnItemCount(talker, @letter_to_human));
+                DeleteItem1(talker, @letter_to_elf1, OwnItemCount(talker, @letter_to_elf1));
+                DeleteItem1(talker, @hatoss_order1, OwnItemCount(talker, @hatoss_order1));
+                DeleteItem1(talker, @hatoss_order3, OwnItemCount(talker, @hatoss_order3));
+                GiveItem1(talker, @adena, 200);
+                RemoveMemo(talker, @show_no_mercy);
+                SoundEffect(talker, "ItemSound.quest_giveup");
+            }
+        }
+        else if (ask == @show_no_mercy && reply == 4 && (OwnItemCount(talker, @hatoss_order1) || OwnItemCount(talker, @hatoss_order2) || OwnItemCount(talker, @hatoss_order3)) && OwnItemCount(talker, @letter_to_elf1) + OwnItemCount(talker, @letter_to_human) + OwnItemCount(talker, @letter_to_darkelf1) == 2)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "urutu_chief_hatos_q0107_09.htm");
+                DeleteItem1(talker, @hatoss_order2, 1);
+                if (OwnItemCount(talker, @hatoss_order3) == 0)
+                {
+                    GiveItem1(talker, @hatoss_order3, 1);
+                }
+            }
+        }
+
+        if (ask == @test_of_lord)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "urutu_chief_hatos_q0232_02.htm");
+                    GiveItem1(talker, @hatos_charm, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

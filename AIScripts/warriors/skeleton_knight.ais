@@ -1,0 +1,3 @@
+class skeleton_knight : warrior_aggressive_casting_ddmagic
+{
+}

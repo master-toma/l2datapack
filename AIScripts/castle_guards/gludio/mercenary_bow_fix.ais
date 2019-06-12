@@ -1,0 +1,3 @@
+class mercenary_bow_fix : ai_gludio_bow_guard_stand
+{
+}

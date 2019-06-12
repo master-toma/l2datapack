@@ -1,0 +1,59 @@
+class guardian_vullkus : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @orc_tutorial))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask Vulkus about tutorial quest");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @orc_tutorial))
+                {
+                    if (OwnItemCount(talker, @voucher_of_flame) && GetOneTimeQuestFlag(talker, @orc_tutorial) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            DeleteRadar(talker, -58062, -113605, -670);
+                            ShowPage(talker, "guardian_vullkus_q0205_01.htm");
+                            IncrementParam(talker, @PARAM_SP, 50);
+                            DeleteItem1(talker, @voucher_of_flame, 1);
+                            RemoveMemo(talker, @orc_tutorial);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            ShowQuestionMark(talker, 7);
+                            ShowRadar(talker, -45042, -113598, -192);
+                            SetOneTimeQuestFlag(talker, @orc_tutorial, 1);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "guardian_vullkus001.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

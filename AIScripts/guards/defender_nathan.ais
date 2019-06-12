@@ -1,0 +1,66 @@
+class defender_nathan : guard_stand
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @silk_of_tarantula) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask favor of Nathan");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @silk_of_tarantula) == 1)
+                {
+                    ShowPage(talker, "defender_nathan_q0296_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @silk_of_tarantula)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @tarantula_spinnerette) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "defender_nathan_q0296_03.htm");
+                        GiveItem1(talker, @tarantula_spider_silk, 15 + Rand(9));
+                        DeleteItem1(talker, @tarantula_spinnerette, 1);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "defender_nathan_q0296_02.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

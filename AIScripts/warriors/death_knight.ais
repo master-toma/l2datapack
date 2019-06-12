@@ -1,0 +1,3 @@
+class death_knight : warrior_aggressive
+{
+}

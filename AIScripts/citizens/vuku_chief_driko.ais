@@ -1,0 +1,136 @@
+class vuku_chief_driko : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_vuku) == 0 && OwnItemCount(talker, @kasmans_letter1) == 0 && OwnItemCount(talker, @drikos_contract) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Speak arrogantly to the Head of the Lower Orc Tribe");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_vuku) == 0 && OwnItemCount(talker, @kasmans_letter1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show Letter from Manakia");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_vuku) == 0 && OwnItemCount(talker, @drikos_contract) && OwnItemCount(talker, @stakato_drone_husk1) < 30)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Threaten and tell the other person to show the royal seals");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_vuku) == 0 && OwnItemCount(talker, @drikos_contract) && OwnItemCount(talker, @stakato_drone_husk1) >= 30)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give Skin of Staccato");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_vuku))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Tell to participate in the reestablishment of the ancient kingdom");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && (OwnItemCount(talker, @chiantas_order2) || OwnItemCount(talker, @chiantas_order3) || OwnItemCount(talker, @scepter_box)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Tell to participate in the reestablishment of the ancient kingdom");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_vuku) == 0 && OwnItemCount(talker, @kasmans_letter1) == 0 && OwnItemCount(talker, @drikos_contract) == 0)
+                {
+                    ShowPage(talker, "vuku_chief_driko_q0220_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_vuku) == 0 && OwnItemCount(talker, @kasmans_letter1) == 1)
+                {
+                    ShowPage(talker, "vuku_chief_driko_q0220_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_vuku) == 0 && OwnItemCount(talker, @drikos_contract) && OwnItemCount(talker, @stakato_drone_husk1) < 30)
+                {
+                    ShowPage(talker, "vuku_chief_driko_q0220_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_vuku) == 0 && OwnItemCount(talker, @drikos_contract) && OwnItemCount(talker, @stakato_drone_husk1) >= 30)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "vuku_chief_driko_q0220_05.htm");
+                        GiveItem1(talker, @scepter_of_vuku, 1);
+                        DeleteItem1(talker, @stakato_drone_husk1, OwnItemCount(talker, @stakato_drone_husk1));
+                        DeleteItem1(talker, @drikos_contract, OwnItemCount(talker, @drikos_contract));
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_vuku))
+                {
+                    ShowPage(talker, "vuku_chief_driko_q0220_06.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && (OwnItemCount(talker, @chiantas_order2) || OwnItemCount(talker, @chiantas_order3) || OwnItemCount(talker, @scepter_box)))
+                {
+                    ShowPage(talker, "vuku_chief_driko_q0220_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_glory)
+        {
+            if (reply == 1 && OwnItemCount(talker, @kasmans_letter1) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "vuku_chief_driko_q0220_03.htm");
+                    GiveItem1(talker, @drikos_contract, 1);
+                    DeleteItem1(talker, @kasmans_letter1, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

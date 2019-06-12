@@ -1,0 +1,17 @@
+class aruraune : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_reformer) == 1 && OwnItemCount(c1, @huge_nail) == 0)
+        {
+            GiveItem1(c1, @huge_nail, 1);
+            SoundEffect(c1, "ItemSound.quest_itemget");
+            SetMemoState(c1, @trial_of_reformer, 3);
+            Say(MakeFString(22719, "", "", "", "", ""));
+        }
+
+        super;
+    }
+}

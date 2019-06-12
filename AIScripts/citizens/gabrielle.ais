@@ -1,0 +1,203 @@
+class gabrielle : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 0 && talker.level < 50)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Antharas");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 0 && talker.level >= 50)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Antharas");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) >= 20000 && GetMemoState(talker, @audience_with_earth_dragon) < 30000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about conquering Antharas");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 30000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show Certificate of Guardian");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) >= 40000 && GetMemoState(talker, @audience_with_earth_dragon) < 50000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about Abyss Jewel");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 50000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Show Certificate of Guardian");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 60000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask about conquering Antharas");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 70000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask about conquering Antharas");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 0 && talker.level < 50)
+                {
+                    ShowPage(talker, "gabrielle_q0337_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 0 && talker.level >= 50)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        ShowPage(talker, "gabrielle_q0337_02.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) >= 20000 && GetMemoState(talker, @audience_with_earth_dragon) < 30000)
+                {
+                    ShowPage(talker, "gabrielle_q0337_06.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 30000)
+                {
+                    ShowPage(talker, "gabrielle_q0337_08.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) >= 40000 && GetMemoState(talker, @audience_with_earth_dragon) < 50000)
+                {
+                    ShowPage(talker, "gabrielle_q0337_10.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 50000)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @q_herald_of_slayer, 1);
+                        DeleteItem1(talker, @q_feather_of_gabrielle, OwnItemCount(talker, @q_feather_of_gabrielle));
+                        DeleteItem1(talker, @q_mark_of_watchers, OwnItemCount(talker, @q_mark_of_watchers));
+                        SetMemoState(talker, @audience_with_earth_dragon, 60000);
+                        SetJournal(talker, @audience_with_earth_dragon, 3);
+                        ShowPage(talker, "gabrielle_q0337_11.htm");
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 60000)
+                {
+                    ShowPage(talker, "gabrielle_q0337_12.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 70000)
+                {
+                    ShowPage(talker, "gabrielle_q0337_13.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @audience_with_earth_dragon)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(talker, @q_feather_of_gabrielle, 1);
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "gabrielle_q0337_05.htm");
+                SetMemoState(talker, @audience_with_earth_dragon, 20000);
+                SetJournal(talker, @audience_with_earth_dragon, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @audience_with_earth_dragon)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "gabrielle_q0337_03.htm");
+            }
+
+            if (reply == 2)
+            {
+                FHTML_SetFileName(fhtml0, "gabrielle_q0337_04.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @audience_with_earth_dragon);
+                ShowFHTML(talker, fhtml0);
+            }
+
+            if (reply == 3)
+            {
+                DeleteItem1(talker, @q_mark_of_watchers, OwnItemCount(talker, @q_mark_of_watchers));
+                SetMemoState(talker, @audience_with_earth_dragon, 40000);
+                SetJournal(talker, @audience_with_earth_dragon, 2);
+                ShowPage(talker, "gabrielle_q0337_09.htm");
+            }
+        }
+
+        super;
+    }
+}

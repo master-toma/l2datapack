@@ -1,0 +1,211 @@
+class seer_somak : mage_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @sword_into_skull) == 0 && OwnItemCount(talker, @urutu_blade) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @hatos_charm) >= 1 && OwnItemCount(talker, @sumaris_letter) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Letter from Blacksmith Sumari");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @sword_into_skull) == 0 && OwnItemCount(talker, @sumaris_letter) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @hatos_charm) >= 1 && OwnItemCount(talker, @urutu_blade) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show Sword Blade of Urutu");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @sword_into_skull) >= 1 && OwnItemCount(talker, @hatos_charm) == 0 && OwnItemCount(talker, @urutu_blade) == 0 && OwnItemCount(talker, @sumaris_letter) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show Totem of Urutu");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 0 && GetOneTimeQuestFlag(talker, @test_of_warspirit) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about Spirit of Combat");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 0 && GetOneTimeQuestFlag(talker, @test_of_warspirit) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about Spirit of Combat");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @vendetta_totem) == 0 && OwnItemCount(talker, @warspirit_totem) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Give Remains of Brave Man");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @vendetta_totem) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask about Jurek");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @warspirit_totem) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask about Martankus");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @sword_into_skull) == 0 && OwnItemCount(talker, @urutu_blade) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @hatos_charm) >= 1 && OwnItemCount(talker, @sumaris_letter) >= 1)
+                {
+                    ShowPage(talker, "seer_somak_q0232_01.htm");
+                    DeleteItem1(talker, @sumaris_letter, 1);
+                    GiveItem1(talker, @urutu_blade, 1);
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @sword_into_skull) == 0 && OwnItemCount(talker, @sumaris_letter) == 0 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @hatos_charm) >= 1 && OwnItemCount(talker, @urutu_blade) >= 1)
+                {
+                    ShowPage(talker, "seer_somak_q0232_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @sword_into_skull) >= 1 && OwnItemCount(talker, @hatos_charm) == 0 && OwnItemCount(talker, @urutu_blade) == 0 && OwnItemCount(talker, @sumaris_letter) == 0)
+                {
+                    ShowPage(talker, "seer_somak_q0232_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 0 && GetOneTimeQuestFlag(talker, @test_of_warspirit) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_orc)
+                        {
+                            ShowPage(talker, "seer_somak_q0233_01.htm");
+                        }
+                        else if (talker.race == @race_orc && talker.occupation != @orc_shaman)
+                        {
+                            ShowPage(talker, "seer_somak_q0233_02.htm");
+                        }
+                        else if (talker.race == @race_orc && talker.occupation == @orc_shaman)
+                        {
+                            if (talker.level < 39)
+                            {
+                                ShowPage(talker, "seer_somak_q0233_03.htm");
+                            }
+                            else
+                            {
+                                FHTML_SetFileName(fhtml0, "seer_somak_q0233_04.htm");
+                                FHTML_SetInt(fhtml0, "quest_id", @test_of_warspirit);
+                                ShowFHTML(talker, fhtml0);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 0 && GetOneTimeQuestFlag(talker, @test_of_warspirit) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @vendetta_totem) == 0 && OwnItemCount(talker, @warspirit_totem) == 0)
+                {
+                    if (OwnItemCount(talker, @brakis_remains1) >= 1 && OwnItemCount(talker, @hermodts_remains1) >= 1 && OwnItemCount(talker, @kirunas_remains1) >= 1 && OwnItemCount(talker, @tonars_remains1) >= 1)
+                    {
+                        ShowPage(talker, "seer_somak_q0233_07.htm");
+                        DeleteItem1(talker, @brakis_remains1, OwnItemCount(talker, @brakis_remains1));
+                        DeleteItem1(talker, @hermodts_remains1, OwnItemCount(talker, @hermodts_remains1));
+                        DeleteItem1(talker, @kirunas_remains1, OwnItemCount(talker, @kirunas_remains1));
+                        DeleteItem1(talker, @tonars_remains1, 1);
+                        GiveItem1(talker, @vendetta_totem, 1);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "seer_somak_q0233_06.htm");
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @vendetta_totem) == 1)
+                {
+                    if (OwnItemCount(talker, @tamlin_orc_head) < 13)
+                    {
+                        ShowPage(talker, "seer_somak_q0233_08.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "seer_somak_q0233_09.htm");
+                        DeleteItem1(talker, @vendetta_totem, 1);
+                        GiveItem1(talker, @warspirit_totem, 1);
+                        GiveItem1(talker, @brakis_remains2, 1);
+                        GiveItem1(talker, @hermodts_remains2, 1);
+                        GiveItem1(talker, @kirunas_remains2, 1);
+                        GiveItem1(talker, @tonars_remains2, 1);
+                    }
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @warspirit_totem) == 1)
+                {
+                    ShowPage(talker, "seer_somak_q0233_10.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @test_of_warspirit)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "seer_somak_q0233_05.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

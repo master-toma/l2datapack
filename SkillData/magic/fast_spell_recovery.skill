@@ -1,0 +1,3 @@
+skill_begin	skill_name = [s_fast_spell_recovery1]	/* [퀵 리커버리] */	skill_id = 164	level = 1	operate_type = P	effect = {{p_reuse_delay;-20;per}}	skill_end
+skill_begin	skill_name = [s_fast_spell_recovery2]	/* [퀵 리커버리] */	skill_id = 164	level = 2	operate_type = P	effect = {{p_reuse_delay;-25;per}}	skill_end
+skill_begin	skill_name = [s_fast_spell_recovery3]	/* [퀵 리커버리] */	skill_id = 164	level = 3	operate_type = P	effect = {{p_reuse_delay;-30;per}}	skill_end

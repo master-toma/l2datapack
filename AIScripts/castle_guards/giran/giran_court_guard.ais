@@ -1,0 +1,3 @@
+class giran_court_guard : ai_gludio_court_guard
+{
+}

@@ -1,0 +1,3 @@
+class devastator : warrior_aggressive
+{
+}

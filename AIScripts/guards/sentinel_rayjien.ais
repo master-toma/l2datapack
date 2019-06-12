@@ -1,0 +1,148 @@
+class sentinel_rayjien : guard_stand
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @hunt_for_orcs1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about the Orc hunt");
+            }
+
+            if (HaveMemo(talker, @hunt_for_orcs1) == 1 && OwnItemCount(talker, @orc_amulet1) == 0 && OwnItemCount(talker, @orc_necklace1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the Orc hunt");
+            }
+
+            if (HaveMemo(talker, @hunt_for_orcs1) == 1 && (OwnItemCount(talker, @orc_amulet1) > 0 || OwnItemCount(talker, @orc_necklace1) > 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about the Orc hunt");
+            }
+
+            if (HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_list) == 1 && OwnItemCount(talker, @cobs_medicine4) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Delivery of Cobendell's medicine");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_for_orcs1) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 6 && talker.race == @race_elf)
+                        {
+                            FHTML_SetFileName(fhtml0, "sentinel_rayjien_q0260_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @hunt_for_orcs1);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else if (talker.race != @race_elf)
+                        {
+                            ShowPage(talker, "sentinel_rayjien_q0260_00.htm");
+                        }
+                        else if (talker.level < 6)
+                        {
+                            ShowPage(talker, "sentinel_rayjien_q0260_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_for_orcs1) == 1 && OwnItemCount(talker, @orc_amulet1) == 0 && OwnItemCount(talker, @orc_necklace1) == 0)
+                {
+                    ShowPage(talker, "sentinel_rayjien_q0260_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_for_orcs1) == 1 && (OwnItemCount(talker, @orc_amulet1) > 0 || OwnItemCount(talker, @orc_necklace1) > 0))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "sentinel_rayjien_q0260_05.htm");
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @orc_amulet1) * 8 + OwnItemCount(talker, @orc_necklace1) * 15);
+                        DeleteItem1(talker, @orc_amulet1, OwnItemCount(talker, @orc_amulet1));
+                        DeleteItem1(talker, @orc_necklace1, OwnItemCount(talker, @orc_necklace1));
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_list) == 1 && OwnItemCount(talker, @cobs_medicine4) == 1)
+                {
+                    SetMemoState(talker, @fungus_fever, OwnItemCount(talker, @cobs_medicine1) + OwnItemCount(talker, @cobs_medicine2) + OwnItemCount(talker, @cobs_medicine3) + OwnItemCount(talker, @cobs_medicine4) + OwnItemCount(talker, @cobs_medicine5));
+                    DeleteItem1(talker, @cobs_medicine4, 1);
+                    ShowPage(talker, "sentinel_rayjien_q0102_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @hunt_for_orcs1)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @hunt_for_orcs1);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "sentinel_rayjien_q0260_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @hunt_for_orcs1)
+        {
+            if (reply == 2)
+            {
+                ShowPage(talker, "sentinel_rayjien_q0260_06.htm");
+                RemoveMemo(talker, @hunt_for_orcs1);
+                SoundEffect(talker, "ItemSound.quest_finish");
+            }
+            else if (reply == 1)
+            {
+                ShowPage(talker, "sentinel_rayjien_q0260_07.htm");
+            }
+        }
+
+        super;
+    }
+}

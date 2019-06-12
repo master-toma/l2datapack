@@ -1,0 +1,16 @@
+class gorr : party_leader
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_challenger) && GetMemoState(c1, @trial_of_challenger) == 4 && OwnItemCount(c1, @watchers_eye1) == 0)
+        {
+            GiveItem1(c1, @watchers_eye1, 1);
+            SoundEffect(c1, "ItemSound.quest_middle");
+            SetMemoState(c1, @trial_of_challenger, 4);
+        }
+
+        super;
+    }
+}

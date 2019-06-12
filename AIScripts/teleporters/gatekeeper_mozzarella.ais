@@ -1,0 +1,15 @@
+class gatekeeper_mozzarella : instant_teleporter
+{
+handler:
+    EventHandler TELEPORT_REQUESTED(talker)
+    {
+        if (Rand(100) < 50)
+        {
+            InstantTeleport(talker, 17776, 113968, -11671);
+        }
+        else
+        {
+            InstantTeleport(talker, 17680, 113968, -11671);
+        }
+    }
+}

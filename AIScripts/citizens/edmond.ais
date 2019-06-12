@@ -1,0 +1,127 @@
+class edmond : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @ranchers_plea) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Grant rancher's request");
+            }
+
+            if (HaveMemo(talker, @ranchers_plea) == 1 && OwnItemCount(talker, @giant_spider_skin) < 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Grant rancher's request");
+            }
+
+            if (HaveMemo(talker, @ranchers_plea) == 1 && OwnItemCount(talker, @giant_spider_skin) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Receive compensation from rancher");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @ranchers_plea) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 15)
+                        {
+                            FHTML_SetFileName(fhtml0, "edmond_q0259_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @ranchers_plea);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "edmond_q0259_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @ranchers_plea) == 1 && OwnItemCount(talker, @giant_spider_skin) < 1)
+                {
+                    ShowPage(talker, "edmond_q0259_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @ranchers_plea) == 1 && OwnItemCount(talker, @giant_spider_skin) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "edmond_q0259_05.htm");
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @giant_spider_skin) * 25);
+                        DeleteItem1(talker, @giant_spider_skin, OwnItemCount(talker, @giant_spider_skin));
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @ranchers_plea)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @ranchers_plea);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "edmond_q0259_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @ranchers_plea)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "edmond_q0259_06.htm");
+                RemoveMemo(talker, @ranchers_plea);
+                SoundEffect(talker, "ItemSound.quest_finish");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "edmond_q0259_07.htm");
+            }
+        }
+
+        super;
+    }
+}

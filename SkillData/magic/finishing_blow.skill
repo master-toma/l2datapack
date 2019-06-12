@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_finishing_blow]	/* [피니싱 블로우] */	skill_id = 149	level = 1	operate_type = P	effect = {}	skill_end

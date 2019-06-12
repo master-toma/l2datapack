@@ -1,0 +1,54 @@
+class doorkeeper : default_npc
+{
+parameter:
+    string DoorName1 = "partisan001";
+    string DoorName2 = "partisan002";
+    string fnHi = "gludio_outter_doorman001.htm";
+    string fnNotMyLord = "gludio_outter_doorman002.htm";
+    string fnUnderSiege = "gludio_outter_doorman003.htm";
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        if (IsMyLord(talker) || Castle_GetPledgeId() == talker.pledge_id && talker.pledge_id != 0)
+        {
+            if (Castle_IsUnderSiege())
+            {
+                ShowPage(talker, fnUnderSiege);
+            }
+            else
+            {
+                ShowPage(talker, fnHi);
+            }
+        }
+        else
+        {
+            ShowPage(talker, fnNotMyLord);
+        }
+    }
+
+    EventHandler MENU_SELECTED(talker, ask, reply, fhtml0)
+    {
+        if (ask == -201)
+        {
+            if (Castle_IsUnderSiege())
+            {
+                ShowPage(talker, fnUnderSiege);
+            }
+            else
+            {
+                select (reply)
+                {
+                case 1:
+                    Castle_GateOpenClose2(DoorName1, 0);
+                    Castle_GateOpenClose2(DoorName2, 0);
+                    break;
+                case 2:
+                    Castle_GateOpenClose2(DoorName1, 1);
+                    Castle_GateOpenClose2(DoorName2, 1);
+                    break;
+                }
+            }
+        }
+    }
+}

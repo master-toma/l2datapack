@@ -1,0 +1,3 @@
+class gludio_court_guard_s : ai_gludio_court_guard_stand
+{
+}

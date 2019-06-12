@@ -1,0 +1,3 @@
+skill_begin	skill_name = [s_fast_recovery1]	/* [패스트 리커버리] */	skill_id = 189	level = 1	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_fast_recovery2]	/* [패스트 리커버리] */	skill_id = 189	level = 2	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_fast_recovery3]	/* [패스트 리커버리] */	skill_id = 189	level = 3	operate_type = P	effect = {}	skill_end

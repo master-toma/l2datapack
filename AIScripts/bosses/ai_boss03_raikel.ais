@@ -1,0 +1,5 @@
+class ai_boss03_raikel : warrior_passive_casting_enchant_clan
+{
+parameter:
+    int Buff = @s_clan_might3;
+}

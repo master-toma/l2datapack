@@ -1,0 +1,116 @@
+class mystery_darkelf : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 8 && OwnItemCount(talker, @secret_letter1) >= 1 && OwnItemCount(talker, @secret_letter2) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show the holy woman!");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 8 && OwnItemCount(talker, @secret_letter1) >= 1 && OwnItemCount(talker, @secret_letter2) >= 1 && OwnItemCount(talker, @secret_letter3) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show the holy woman!");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 8 && OwnItemCount(talker, @secret_letter1) >= 1 && OwnItemCount(talker, @secret_letter2) >= 1 && OwnItemCount(talker, @secret_letter3) >= 1 && OwnItemCount(talker, @secret_letter4) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show the holy woman!");
+            }
+
+            if (HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 8 && OwnItemCount(talker, @secret_letter2) + OwnItemCount(talker, @secret_letter3) + OwnItemCount(talker, @secret_letter4) + OwnItemCount(talker, @secret_letter1) == 4)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show the holy woman!");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 8 && OwnItemCount(talker, @secret_letter1) >= 1 && OwnItemCount(talker, @secret_letter2) == 0)
+                {
+                    ShowPage(talker, "mystery_darkelf_q0226_01.htm");
+                    if (Maker_GetNpcCount() < 36)
+                    {
+                        CreateOnePrivate(@leto_lizardman_assassin, "leto_lizardman_assassin", 0, 1);
+                        CreateOnePrivate(@leto_lizardman_assassin, "leto_lizardman_assassin", 0, 1);
+                        CreateOnePrivate(@leto_lizardman_assassin, "leto_lizardman_assassin", 0, 1);
+                        SoundEffect(talker, "Itemsound.quest_before_battle");
+                        AddTimerEx(22607, 1000 * 10);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 8 && OwnItemCount(talker, @secret_letter1) >= 1 && OwnItemCount(talker, @secret_letter2) >= 1 && OwnItemCount(talker, @secret_letter3) == 0)
+                {
+                    ShowPage(talker, "mystery_darkelf_q0226_02.htm");
+                    if (Maker_GetNpcCount() < 36)
+                    {
+                        CreateOnePrivate(@leto_lizardman_sniper, "leto_lizardman_sniper", 0, 1);
+                        CreateOnePrivate(@leto_lizardman_sniper, "leto_lizardman_sniper", 0, 1);
+                        CreateOnePrivate(@leto_lizardman_sniper, "leto_lizardman_sniper", 0, 1);
+                        SoundEffect(talker, "Itemsound.quest_before_battle");
+                        AddTimerEx(22607, 1000 * 10);
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 8 && OwnItemCount(talker, @secret_letter1) >= 1 && OwnItemCount(talker, @secret_letter2) >= 1 && OwnItemCount(talker, @secret_letter3) >= 1 && OwnItemCount(talker, @secret_letter4) == 0)
+                {
+                    ShowPage(talker, "mystery_darkelf_q0226_03.htm");
+                    if (Maker_GetNpcCount() < 36)
+                    {
+                        CreateOnePrivate(@leto_lizardman_wizard, "leto_lizardman_wizard", 0, 1);
+                        CreateOnePrivate(@leto_lizardman_wizard, "leto_lizardman_wizard", 0, 1);
+                        CreateOnePrivate(@leto_lizardman_lord, "leto_lizardman_lord", 0, 1);
+                        SoundEffect(talker, "Itemsound.quest_before_battle");
+                        AddTimerEx(22607, 1000 * 10);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1 && GetMemoState(talker, @test_of_healer) == 8 && OwnItemCount(talker, @secret_letter2) + OwnItemCount(talker, @secret_letter3) + OwnItemCount(talker, @secret_letter4) + OwnItemCount(talker, @secret_letter1) == 4)
+                {
+                    ShowPage(talker, "mystery_darkelf_q0226_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 22607)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+}

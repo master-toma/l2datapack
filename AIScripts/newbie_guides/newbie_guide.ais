@@ -1,0 +1,66 @@
+class newbie_guide : citizen
+{
+parameter:
+    string fnHi = "";
+    string fnHighLevel = "";
+    string fnRaceMisMatch = "";
+    string fnGuideF05 = "";
+    string fnGuideF10 = "";
+    string fnGuideF15 = "";
+    string fnGuideF20 = "";
+    string fnGuideM07 = "";
+    string fnGuideM14 = "";
+    string fnGuideM20 = "";
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        ShowPage(talker, fnHi);
+    }
+
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -7 && reply == 1)
+        {
+            if (talker.race != myself.sm.race)
+            {
+                ShowPage(talker, fnRaceMisMatch);
+            }
+            else if (talker.level > 20 || IsInCategory(@first_class_group, talker.occupation) == 0)
+            {
+                ShowPage(talker, fnHighLevel);
+            }
+            else if (IsInCategory(@fighter_group, talker.occupation))
+            {
+                if (talker.level <= 5)
+                {
+                    ShowPage(talker, fnGuideF05);
+                }
+                else if (talker.level <= 10)
+                {
+                    ShowPage(talker, fnGuideF10);
+                }
+                else if (talker.level <= 15)
+                {
+                    ShowPage(talker, fnGuideF15);
+                }
+                else
+                {
+                    ShowPage(talker, fnGuideF20);
+                }
+            }
+            else if (talker.level <= 7)
+            {
+                ShowPage(talker, fnGuideM07);
+            }
+            else if (talker.level <= 14)
+            {
+                ShowPage(talker, fnGuideM14);
+            }
+            else
+            {
+                ShowPage(talker, fnGuideM20);
+            }
+        }
+    }
+}

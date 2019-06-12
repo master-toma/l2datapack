@@ -1,0 +1,289 @@
+class witch_athrea : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(c2, fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about fate");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_of_blood) && GetMemoState(Pledge_GetLeader(talker), @pledge_of_blood) == 3 && OwnItemCount(Pledge_GetLeader(talker), @q_antidote_recipe_list) && OwnItemCount(Pledge_GetLeader(talker), @q_blood_of_eva) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Say that you came to get Blood of Eva");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_of_blood) && GetMemoState(Pledge_GetLeader(talker), @pledge_of_blood) == 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Test the loyalty of your clan members");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_of_blood) && GetMemoState(Pledge_GetLeader(talker), @pledge_of_blood) == 4)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Report the test results");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1)
+                {
+                    ShowPage(talker, "witch_athrea_q0503_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_of_blood) && GetMemoState(Pledge_GetLeader(talker), @pledge_of_blood) == 3 && OwnItemCount(Pledge_GetLeader(talker), @q_antidote_recipe_list) && OwnItemCount(Pledge_GetLeader(talker), @q_blood_of_eva) == 0)
+                {
+                    c2 = Pledge_GetLeader(talker);
+                    c2.flag = 0;
+                    ShowPage(talker, "witch_athrea_q0501_01.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_of_blood) && GetMemoState(Pledge_GetLeader(talker), @pledge_of_blood) == 5)
+                {
+                    ShowPage(talker, "witch_athrea_q0501_09.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_of_blood) && GetMemoState(Pledge_GetLeader(talker), @pledge_of_blood) == 4)
+                {
+                    c2 = Pledge_GetLeader(talker);
+                    if (c2.flag < 4)
+                    {
+                        ShowPage(talker, "witch_athrea_q0501_05.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "witch_athrea_q0501_08.htm");
+                        GiveItem1(talker, @q_blood_of_eva, 1);
+                        SetMemoState(Pledge_GetLeader(talker), @pledge_of_blood, 5);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 250302)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        if (myself.sm.param2 == 50301)
+        {
+            Say(MakeFString(50340, "", "", "", "", ""));
+            AddTimerEx(250302, 1000 * 5);
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, c1, c2, i0, i1, i2, i3, i4, reply, talker)
+    {
+        if (ask == @pledge_seeks_ambition)
+        {
+        }
+
+        if (ask == @pledge_of_blood)
+        {
+            c2 = Pledge_GetLeader(talker);
+            if (reply == 1)
+            {
+                ShowPage(talker, "witch_athrea_q0501_02.htm");
+            }
+            else if (reply == 2)
+            {
+                if (Maker_GetNpcCount() < 4)
+                {
+                    ShowPage(talker, "witch_athrea_q0501_03.htm");
+                    SetMemoState(c2, @pledge_of_blood, 4);
+                    c2.flag = 0;
+                    myself.sm.flag = 0;
+                    i1 = 0;
+                    while (i1 < 16)
+                    {
+                        if (i1 == 0)
+                        {
+                            i2 = 102273;
+                            i3 = 103433;
+                            i4 = -3512;
+                        }
+                        else if (i1 == 1)
+                        {
+                            i2 = 102190;
+                            i3 = 103379;
+                            i4 = -3524;
+                        }
+                        else if (i1 == 2)
+                        {
+                            i2 = 102107;
+                            i3 = 103325;
+                            i4 = -3533;
+                        }
+                        else if (i1 == 3)
+                        {
+                            i2 = 102024;
+                            i3 = 103271;
+                            i4 = -3500;
+                        }
+                        else if (i1 == 4)
+                        {
+                            i2 = 102327;
+                            i3 = 103350;
+                            i4 = -3511;
+                        }
+                        else if (i1 == 5)
+                        {
+                            i2 = 102244;
+                            i3 = 103296;
+                            i4 = -3518;
+                        }
+                        else if (i1 == 6)
+                        {
+                            i2 = 102161;
+                            i3 = 103242;
+                            i4 = -3529;
+                        }
+                        else if (i1 == 7)
+                        {
+                            i2 = 102078;
+                            i3 = 103188;
+                            i4 = -3500;
+                        }
+                        else if (i1 == 8)
+                        {
+                            i2 = 102381;
+                            i3 = 103267;
+                            i4 = -3538;
+                        }
+                        else if (i1 == 9)
+                        {
+                            i2 = 102298;
+                            i3 = 103213;
+                            i4 = -3532;
+                        }
+                        else if (i1 == 10)
+                        {
+                            i2 = 102215;
+                            i3 = 103159;
+                            i4 = -3520;
+                        }
+                        else if (i1 == 11)
+                        {
+                            i2 = 102132;
+                            i3 = 103105;
+                            i4 = -3513;
+                        }
+                        else if (i1 == 12)
+                        {
+                            i2 = 102435;
+                            i3 = 103184;
+                            i4 = -3515;
+                        }
+                        else if (i1 == 13)
+                        {
+                            i2 = 102352;
+                            i3 = 103130;
+                            i4 = -3522;
+                        }
+                        else if (i1 == 14)
+                        {
+                            i2 = 102269;
+                            i3 = 103076;
+                            i4 = -3533;
+                        }
+                        else if (i1 == 15)
+                        {
+                            i2 = 102186;
+                            i3 = 103022;
+                            i4 = -3541;
+                        }
+
+                        i0 = Rand(5);
+                        select (i0)
+                        {
+                        case 0:
+                            CreateOnePrivateEx(@box_of_athrea1, "box_of_athrea1", 0, 0, FloatToInt(i2), FloatToInt(i3), FloatToInt(i4), 0, 0, 0);
+                            break;
+                        case 1:
+                            CreateOnePrivateEx(@box_of_athrea2, "box_of_athrea2", 0, 0, FloatToInt(i2), FloatToInt(i3), FloatToInt(i4), 0, 0, 0);
+                            break;
+                        case 2:
+                            CreateOnePrivateEx(@box_of_athrea3, "box_of_athrea3", 0, 0, FloatToInt(i2), FloatToInt(i3), FloatToInt(i4), 0, 0, 0);
+                            break;
+                        case 3:
+                            CreateOnePrivateEx(@box_of_athrea4, "box_of_athrea4", 0, 0, FloatToInt(i2), FloatToInt(i3), FloatToInt(i4), 0, 0, 0);
+                            break;
+                        case 4:
+                            CreateOnePrivateEx(@box_of_athrea5, "box_of_athrea5", 0, 0, FloatToInt(i2), FloatToInt(i3), FloatToInt(i4), 0, 0, 0);
+                            break;
+                        }
+
+                        i1 = i1 + 1;
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "witch_athrea_q0501_03a.htm");
+                }
+            }
+            else if (reply == 3)
+            {
+                ShowPage(talker, "witch_athrea_q0501_04.htm");
+            }
+            else if (reply == 4)
+            {
+                if (OwnItemCount(talker, @adena) >= 10000)
+                {
+                    ShowPage(talker, "witch_athrea_q0501_07.htm");
+                    if (Maker_GetNpcCount() < 4)
+                    {
+                        DeleteItem1(talker, @adena, 10000);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "witch_athrea_q0501_06.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

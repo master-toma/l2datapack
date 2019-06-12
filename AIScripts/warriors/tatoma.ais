@@ -1,0 +1,30 @@
+class tatoma : warrior_aggressive_immediate
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_healer) && GetMemoState(c1, @test_of_healer) == 1)
+        {
+            SetMemoState(c1, @test_of_healer, 2);
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 22601)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(22601, 1000 * 200);
+        super;
+    }
+}

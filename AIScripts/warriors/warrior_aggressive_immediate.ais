@@ -1,0 +1,11 @@
+class warrior_aggressive_immediate : warrior
+{
+handler:
+    EventHandler SEE_CREATURE(creature)
+    {
+        if (GetLifeTime() > 0 && InMyTerritory(myself.sm))
+        {
+            AddAttackDesire(creature, @AMT_MOVE_TO_TARGET, 200);
+        }
+    }
+}

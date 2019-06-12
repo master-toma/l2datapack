@@ -1,0 +1,342 @@
+class custodian : default_npc
+{
+parameter:
+    string ShopName = "";
+    string fnHi = "black001.htm";
+    string fnNotMyLord = "black002.htm";
+    string fnGetOut = "black003.htm";
+    string fnBanish = "black004.htm";
+    string fnOptionList = "black005.htm";
+    string fnAfterBanish = "black008.htm";
+    string fnAlreadyHaveOption = "black009.htm";
+    string fnNotEnoughAdena = "black010.htm";
+    string fnNeedLowGrade = "black011.htm";
+    string fnAfterOptionAdd = "black012.htm";
+    string fnAddHPRegen1 = "black013.htm";
+    string fnAddHPRegen2 = "black014.htm";
+    string fnAddMPRegen1 = "black015.htm";
+    string fnAddMPRegen2 = "black016.htm";
+    string fnAddTeleporter1 = "black017.htm";
+    string fnAddTeleporter2 = "black020.htm";
+    string fnAgitTeleport = "black018.htm";
+    string fnMyPledge = "black019.htm";
+    string fnTeleportLevelZero = "black021.htm";
+    int cus_x1 = 0;
+    int cus_y1 = 0;
+    int cus_z1 = 0;
+    int cus_x2 = 0;
+    int cus_y2 = 0;
+    int cus_z2 = 0;
+    int cus_x3 = 0;
+    int cus_y3 = 0;
+    int cus_z3 = 0;
+    
+property:
+    TelPosList Position1 = {
+        {1010001; -84169; 244693; -3729; 100000; 0}    // 1010001 - "Talking Island Village"
+    };
+    TelPosList Position2 = {
+        {1010001; -84169; 244693; -3729; 100000; 0}    // 1010001 - "Talking Island Village"
+    };
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        if (IsMyLord(talker))
+        {
+            ShowPage(talker, fnHi);
+        }
+        else if (Castle_GetPledgeId() == talker.pledge_id && talker.pledge_id != 0)
+        {
+            if (Agit_GetTeleportLevel() > 0)
+            {
+                ShowPage(talker, fnAgitTeleport);
+            }
+            else
+            {
+                ShowPage(talker, fnMyPledge);
+            }
+        }
+        else
+        {
+            ShowPage(talker, fnNotMyLord);
+        }
+    }
+
+    EventHandler MENU_SELECTED(talker, ask, reply, fhtml0)
+    {
+        if (ask == -201)
+        {
+            select (reply)
+            {
+            case 1:
+                ShowPage(talker, fnGetOut);
+                break;
+            case 2:
+                ShowPage(talker, fnBanish);
+                break;
+            case 3:
+                FHTML_SetFileName(fhtml0, fnOptionList);
+                if (Castle_GetHPRegen() > 0)
+                {
+                    FHTML_SetStr(fhtml0, "is_activate1", MakeFString(3, "", "", "", "", ""));
+                }
+                else
+                {
+                    FHTML_SetStr(fhtml0, "is_activate1", MakeFString(4, "", "", "", "", ""));
+                }
+
+                if (Castle_GetHPRegen() > 1)
+                {
+                    FHTML_SetStr(fhtml0, "is_activate2", MakeFString(3, "", "", "", "", ""));
+                }
+                else
+                {
+                    FHTML_SetStr(fhtml0, "is_activate2", MakeFString(4, "", "", "", "", ""));
+                }
+
+                if (Castle_GetMPRegen() > 0)
+                {
+                    FHTML_SetStr(fhtml0, "is_activate3", MakeFString(3, "", "", "", "", ""));
+                }
+                else
+                {
+                    FHTML_SetStr(fhtml0, "is_activate3", MakeFString(4, "", "", "", "", ""));
+                }
+
+                if (Castle_GetMPRegen() > 1)
+                {
+                    FHTML_SetStr(fhtml0, "is_activate4", MakeFString(3, "", "", "", "", ""));
+                }
+                else
+                {
+                    FHTML_SetStr(fhtml0, "is_activate4", MakeFString(4, "", "", "", "", ""));
+                }
+
+                if (Agit_GetTeleportLevel() > 0)
+                {
+                    FHTML_SetStr(fhtml0, "is_activate5", MakeFString(3, "", "", "", "", ""));
+                }
+                else
+                {
+                    FHTML_SetStr(fhtml0, "is_activate5", MakeFString(4, "", "", "", "", ""));
+                }
+
+                if (Agit_GetTeleportLevel() > 1)
+                {
+                    FHTML_SetStr(fhtml0, "is_activate6", MakeFString(3, "", "", "", "", ""));
+                }
+                else
+                {
+                    FHTML_SetStr(fhtml0, "is_activate6", MakeFString(4, "", "", "", "", ""));
+                }
+
+                ShowFHTML(talker, fhtml0);
+                break;
+            }
+        }
+        else if (ask == -202 && reply == 1)
+        {
+            if (Rand(100) < 33)
+            {
+                InstantTeleport(talker, cus_x1, cus_y1, cus_z1);
+            }
+            else if (Rand(100) < 66)
+            {
+                InstantTeleport(talker, cus_x2, cus_y2, cus_z2);
+            }
+            else
+            {
+                InstantTeleport(talker, cus_x3, cus_y3, cus_z3);
+            }
+        }
+        else if (ask == -203)
+        {
+            if (reply == 1)
+            {
+                Castle_BanishOthers();
+                ShowPage(talker, fnAfterBanish);
+            }
+        }
+        else if (ask == -204)
+        {
+            select (reply)
+            {
+            case 1:
+                if (Castle_GetHPRegen() > 0)
+                {
+                    ShowPage(talker, fnAlreadyHaveOption);
+                }
+                else
+                {
+                    ShowPage(talker, fnAddHPRegen1);
+                }
+
+                break;
+            case 2:
+                if (Castle_GetHPRegen() > 1)
+                {
+                    ShowPage(talker, fnAlreadyHaveOption);
+                }
+                else if (Castle_GetHPRegen())
+                {
+                    ShowPage(talker, fnAddHPRegen2);
+                }
+                else
+                {
+                    ShowPage(talker, fnNeedLowGrade);
+                }
+
+                break;
+            case 3:
+                if (Castle_GetMPRegen() > 0)
+                {
+                    ShowPage(talker, fnAlreadyHaveOption);
+                }
+                else
+                {
+                    ShowPage(talker, fnAddMPRegen1);
+                }
+
+                break;
+            case 4:
+                if (Castle_GetMPRegen() > 1)
+                {
+                    ShowPage(talker, fnAlreadyHaveOption);
+                }
+                else if (Castle_GetMPRegen())
+                {
+                    ShowPage(talker, fnAddMPRegen2);
+                }
+                else
+                {
+                    ShowPage(talker, fnNeedLowGrade);
+                }
+
+                break;
+            case 5:
+                if (Agit_GetTeleportLevel() > 0)
+                {
+                    ShowPage(talker, fnAlreadyHaveOption);
+                }
+                else
+                {
+                    ShowPage(talker, fnAddTeleporter1);
+                }
+
+                break;
+            case 6:
+                if (Agit_GetTeleportLevel() > 1)
+                {
+                    ShowPage(talker, fnAlreadyHaveOption);
+                }
+                else
+                {
+                    ShowPage(talker, fnAddTeleporter2);
+                }
+
+                break;
+            }
+        }
+        else if (ask == -205)
+        {
+            select (reply)
+            {
+            case 1:
+                if (OwnItemCount(talker, @adena) >= 100000)
+                {
+                    DeleteItem1(talker, @adena, 100000);
+                    Castle_SetHPRegen(1);
+                    ShowPage(talker, fnAfterOptionAdd);
+                }
+                else
+                {
+                    ShowPage(talker, fnNotEnoughAdena);
+                }
+
+                break;
+            case 2:
+                if (OwnItemCount(talker, @adena) >= 200000)
+                {
+                    DeleteItem1(talker, @adena, 200000);
+                    Castle_SetHPRegen(2);
+                    ShowPage(talker, fnAfterOptionAdd);
+                }
+                else
+                {
+                    ShowPage(talker, fnNotEnoughAdena);
+                }
+
+                break;
+            case 3:
+                if (OwnItemCount(talker, @adena) >= 300000)
+                {
+                    DeleteItem1(talker, @adena, 300000);
+                    Castle_SetMPRegen(1);
+                    ShowPage(talker, fnAfterOptionAdd);
+                }
+                else
+                {
+                    ShowPage(talker, fnNotEnoughAdena);
+                }
+
+                break;
+            case 4:
+                if (OwnItemCount(talker, @adena) >= 600000)
+                {
+                    DeleteItem1(talker, @adena, 600000);
+                    Castle_SetMPRegen(2);
+                    ShowPage(talker, fnAfterOptionAdd);
+                }
+                else
+                {
+                    ShowPage(talker, fnNotEnoughAdena);
+                }
+
+                break;
+            case 5:
+                if (OwnItemCount(talker, @adena) >= 1000)
+                {
+                    DeleteItem1(talker, @adena, 1000);
+                    Agit_SetTeleportLevel(1);
+                    ShowPage(talker, fnAfterOptionAdd);
+                }
+                else
+                {
+                    ShowPage(talker, fnNotEnoughAdena);
+                }
+
+                break;
+            case 6:
+                if (OwnItemCount(talker, @adena) >= 10000)
+                {
+                    DeleteItem1(talker, @adena, 10000);
+                    Agit_SetTeleportLevel(2);
+                    ShowPage(talker, fnAfterOptionAdd);
+                }
+                else
+                {
+                    ShowPage(talker, fnNotEnoughAdena);
+                }
+
+                break;
+            }
+        }
+    }
+
+    EventHandler TELEPORT_REQUESTED(talker)
+    {
+        if (Agit_GetTeleportLevel() == 1)
+        {
+            Teleport(talker, Position1, ShopName, "", "", "");
+        }
+        else if (Agit_GetTeleportLevel() == 2)
+        {
+            Teleport(talker, Position2, ShopName, "", "", "");
+        }
+        else
+        {
+            ShowPage(talker, fnTeleportLevelZero);
+        }
+    }
+}

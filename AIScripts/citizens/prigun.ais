@@ -1,0 +1,66 @@
+class prigun : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @morettis_letter) && OwnItemCount(talker, @morettis_herb))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Deliver the words of Moretti");
+            }
+
+            if (HaveMemo(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @priguns_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Say you want to go back together");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @morettis_letter) && OwnItemCount(talker, @morettis_herb))
+                {
+                    if (OwnItemCount(talker, @rusted_key) < 1)
+                    {
+                        ShowPage(talker, "prigun_q0407_01.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "prigun_q0407_02.htm");
+                        DeleteItem1(talker, @rusted_key, 1);
+                        DeleteItem1(talker, @morettis_herb, 1);
+                        DeleteItem1(talker, @morettis_letter, 1);
+                        GiveItem1(talker, @priguns_letter, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @priguns_letter))
+                {
+                    ShowPage(talker, "prigun_q0407_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

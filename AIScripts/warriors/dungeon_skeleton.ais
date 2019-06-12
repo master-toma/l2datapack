@@ -1,0 +1,25 @@
+class dungeon_skeleton : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @curse_of_fortress) == 1)
+        {
+            if (Rand(4) == 1 && OwnItemCount(c1, @bone_fragment3) < 10)
+            {
+                GiveItem1(c1, @bone_fragment3, 1);
+                if (OwnItemCount(c1, @bone_fragment3) == 10)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

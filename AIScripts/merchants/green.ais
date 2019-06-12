@@ -1,0 +1,187 @@
+class green : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"sb_adv_defence_power1"; 15};
+        {"sb_advanced_attack_power1"; 15};
+        {"sb_battle_heal1"; 15};
+        {"sb_heal1"; 15};
+        {"sb_ice_bolt1"; 15};
+        {"sb_might1"; 15};
+        {"sb_vampiric_touch1"; 15};
+        {"sb_breeze1"; 15};
+        {"sb_cure_poison1"; 15};
+        {"sb_curse_poison1"; 15};
+        {"sb_curse_weakness"; 15};
+        {"sb_flame_strike1"; 15};
+        {"sb_group_heal1"; 15};
+        {"sb_shield1"; 15};
+        {"sb_wind_walk1"; 15};
+        {"sb_drain_energy1"; 15};
+        {"sb_elemental_heal1"; 15};
+        {"sb_aqua_swirl1"; 15};
+        {"sb_arcane_acumen1"; 15};
+        {"sb_aura_burn1"; 15};
+        {"sb_blaze1"; 15};
+        {"sb_charm11"; 15};
+        {"sb_concentration1"; 15};
+        {"sb_disrupt_undead1"; 15};
+        {"sb_poison_recovery1"; 15};
+        {"sb_poison1"; 15};
+        {"sb_resurrection1"; 15};
+        {"sb_servitor_heal1"; 15};
+        {"sb_summon_blackcat1"; 15};
+        {"sb_twister1"; 15};
+        {"sb_water_breathing"; 15}
+    };
+    
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @what_women_want1) == 1 && GetOneTimeQuestFlag(talker, @what_women_want1) == 0 && OwnItemCount(talker, @arujiens_letter1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "What are the whereabouts of Arujien's love?");
+            }
+
+            if (HaveMemo(talker, @collect_spores) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the Northern Sea");
+            }
+
+            if (HaveMemo(talker, @collect_spores) != 0 && OwnItemCount(talker, @fungus_sac1) < 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about the Forest Walking Fungus");
+            }
+
+            if (HaveMemo(talker, @collect_spores) != 0 && OwnItemCount(talker, @fungus_sac1) >= 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show the pouch of spores of fungus");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @what_women_want1) == 1 && GetOneTimeQuestFlag(talker, @what_women_want1) == 0 && OwnItemCount(talker, @arujiens_letter1) == 0)
+                {
+                    if (OwnItemCount(talker, @arujiens_letter2))
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "green_q0002_01.htm");
+                            DeleteItem1(talker, @arujiens_letter2, 1);
+                            GiveItem1(talker, @arujiens_letter3, 1);
+                        }
+                    }
+                    else if (OwnItemCount(talker, @arujiens_letter3) || OwnItemCount(talker, @poetry_book) || OwnItemCount(talker, @greenis_letter))
+                    {
+                        ShowPage(talker, "green_q0002_02.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @collect_spores) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 8)
+                        {
+                            FHTML_SetFileName(fhtml0, "green_q0313_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @collect_spores);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "green_q0313_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @collect_spores) != 0 && OwnItemCount(talker, @fungus_sac1) < 10)
+                {
+                    ShowPage(talker, "green_q0313_06.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @collect_spores) != 0 && OwnItemCount(talker, @fungus_sac1) >= 10)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @fungus_sac1, OwnItemCount(talker, @fungus_sac1));
+                        RemoveMemo(talker, @collect_spores);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        GiveItem1(talker, @adena, 2000);
+                        ShowPage(talker, "green_q0313_07.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @collect_spores)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "green_q0313_05.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, quest_id, reply, talker)
+    {
+        if (ask == @collect_spores)
+        {
+            if (reply == 1)
+            {
+                FHTML_SetFileName(fhtml0, "green_q0313_04.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @collect_spores);
+                ShowFHTML(talker, fhtml0);
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,91 @@
+class gerald_priest_of_earth : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 6 && OwnItemCount(talker, @tag_of_rumor))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask for information about Maphr");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && OwnItemCount(talker, @grey_badge) && OwnItemCount(talker, @book_of_gerald))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show Gray Badge");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 6 && OwnItemCount(talker, @tag_of_rumor))
+                {
+                    ShowPage(talker, "gerald_priest_of_earth_q0215_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && OwnItemCount(talker, @grey_badge) && OwnItemCount(talker, @book_of_gerald))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "gerald_priest_of_earth_q0215_04.htm");
+                        GiveItem1(talker, @adena, 100000);
+                        DeleteItem1(talker, @book_of_gerald, 1);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_pilgrim)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @adena) >= 100000)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "gerald_priest_of_earth_q0215_02.htm");
+                        GiveItem1(talker, @book_of_gerald, 1);
+                        DeleteItem1(talker, @adena, 100000);
+                        SetMemoState(talker, @trial_of_pilgrim, 7);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "gerald_priest_of_earth_q0215_03.htm");
+                }
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "gerald_priest_of_earth_q0215_03.htm");
+            }
+        }
+
+        super;
+    }
+}

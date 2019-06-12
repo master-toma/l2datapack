@@ -1,0 +1,3 @@
+skill_begin	skill_name = [s_fast_attack1]	/* [부스트 어택 스피드] */	skill_id = 168	level = 1	operate_type = P	effect = {{p_attack_speed;{all};5;per}}	skill_end
+skill_begin	skill_name = [s_fast_attack2]	/* [부스트 어택 스피드] */	skill_id = 168	level = 2	operate_type = P	effect = {{p_attack_speed;{all};7;per}}	skill_end
+skill_begin	skill_name = [s_fast_attack3]	/* [부스트 어택 스피드] */	skill_id = 168	level = 3	operate_type = P	effect = {{p_attack_speed;{all};10;per}}	skill_end

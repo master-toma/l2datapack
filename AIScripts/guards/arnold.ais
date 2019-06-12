@@ -1,0 +1,162 @@
+class arnold : guard_fixed
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @spirit_of_mirror))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the Spirit of Mirrors");
+            }
+
+            if (HaveMemo(talker, @wharf_oldtimers_favor) == 0 && GetOneTimeQuestFlag(talker, @wharf_oldtimers_favor) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Discuss the goods");
+            }
+
+            if (HaveMemo(talker, @wharf_oldtimers_favor) == 0 && GetOneTimeQuestFlag(talker, @wharf_oldtimers_favor) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Discuss the goods");
+            }
+
+            if (HaveMemo(talker, @wharf_oldtimers_favor) != 0 && (OwnItemCount(talker, @jacksons_receipt) != 0 && OwnItemCount(talker, @silvias_receipt) != 0 && OwnItemCount(talker, @rants_receipt) != 0) == @FALSE)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Discuss the goods");
+            }
+
+            if (HaveMemo(talker, @wharf_oldtimers_favor) != 0 && (OwnItemCount(talker, @jacksons_receipt) != 0 && OwnItemCount(talker, @silvias_receipt) != 0 && OwnItemCount(talker, @rants_receipt) != 0) != @FALSE && GetOneTimeQuestFlag(talker, @wharf_oldtimers_favor) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Show your receipt");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @spirit_of_mirror))
+                {
+                    ShowPage(talker, "arnold_q0104_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @wharf_oldtimers_favor) == 0 && GetOneTimeQuestFlag(talker, @wharf_oldtimers_favor) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 2)
+                        {
+                            FHTML_SetFileName(fhtml0, "arnold_q0302_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @wharf_oldtimers_favor);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "arnold_q0302_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @wharf_oldtimers_favor) == 0 && GetOneTimeQuestFlag(talker, @wharf_oldtimers_favor) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @wharf_oldtimers_favor) != 0 && (OwnItemCount(talker, @jacksons_receipt) != 0 && OwnItemCount(talker, @silvias_receipt) != 0 && OwnItemCount(talker, @rants_receipt) != 0) == @FALSE)
+                {
+                    ShowPage(talker, "arnold_q0302_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @wharf_oldtimers_favor) != 0 && (OwnItemCount(talker, @jacksons_receipt) != 0 && OwnItemCount(talker, @silvias_receipt) != 0 && OwnItemCount(talker, @rants_receipt) != 0) != @FALSE && GetOneTimeQuestFlag(talker, @wharf_oldtimers_favor) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @delivery_list, OwnItemCount(talker, @delivery_list));
+                        DeleteItem1(talker, @jacksons_receipt, OwnItemCount(talker, @jacksons_receipt));
+                        DeleteItem1(talker, @silvias_receipt, OwnItemCount(talker, @silvias_receipt));
+                        DeleteItem1(talker, @rants_receipt, OwnItemCount(talker, @rants_receipt));
+                        RemoveMemo(talker, @wharf_oldtimers_favor);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @wharf_oldtimers_favor, 1);
+                        GiveItem1(talker, @adena, 600);
+                        ShowPage(talker, "arnold_q0302_06.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @wharf_oldtimers_favor)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @delivery_list) == 0)
+                {
+                    GiveItem1(talker, @delivery_list, 1);
+                }
+
+                if (OwnItemCount(talker, @heavy_wood_box) == 0)
+                {
+                    GiveItem1(talker, @heavy_wood_box, 1);
+                }
+
+                if (OwnItemCount(talker, @cloth_bundle) == 0)
+                {
+                    GiveItem1(talker, @cloth_bundle, 1);
+                }
+
+                if (OwnItemCount(talker, @clay_pot) == 0)
+                {
+                    GiveItem1(talker, @clay_pot, 1);
+                }
+
+                ShowPage(talker, "arnold_q0302_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

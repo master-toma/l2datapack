@@ -1,0 +1,212 @@
+class sagittarius_hamil : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 1 && OwnItemCount(talker, @bernards_introduction))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you came because Bernard sent you");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 2 && OwnItemCount(talker, @letter_of_hamil1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask who you should go find");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 4 && OwnItemCount(talker, @hunters_rune1) == 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show the pebbles on which the rune is inscribed");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 5 && OwnItemCount(talker, @letter_of_hamil2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask who you should go find");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 8)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give Letter from Hamil");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 9 && OwnItemCount(talker, @letter_of_hamil3))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask a person that knows a lot about Serpent Demon Kadesh");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 12 && OwnItemCount(talker, @crescent_moon_bow))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Show Bow of Crescent Moon");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 13)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask how Kadesh can be killed");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 14 && OwnItemCount(talker, @talisman_of_kadesh))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Give Kadesh Charm");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 1 && OwnItemCount(talker, @bernards_introduction))
+                {
+                    ShowPage(talker, "sagittarius_hamil_q0224_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 2 && OwnItemCount(talker, @letter_of_hamil1))
+                {
+                    ShowPage(talker, "sagittarius_hamil_q0224_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 4 && OwnItemCount(talker, @hunters_rune1) == 10)
+                {
+                    ShowPage(talker, "sagittarius_hamil_q0224_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 5 && OwnItemCount(talker, @letter_of_hamil2))
+                {
+                    ShowPage(talker, "sagittarius_hamil_q0224_08.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 8)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "sagittarius_hamil_q0224_09.htm");
+                        GiveItem1(talker, @letter_of_hamil3, 1);
+                        DeleteItem1(talker, @hunters_rune2, OwnItemCount(talker, @hunters_rune2));
+                        SetMemoState(talker, @test_of_sagittarius, 9);
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 9 && OwnItemCount(talker, @letter_of_hamil3))
+                {
+                    ShowPage(talker, "sagittarius_hamil_q0224_10.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 12 && OwnItemCount(talker, @crescent_moon_bow))
+                {
+                    ShowPage(talker, "sagittarius_hamil_q0224_11.htm");
+                    SetMemoState(talker, @test_of_sagittarius, 13);
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 13)
+                {
+                    ShowPage(talker, "sagittarius_hamil_q0224_12.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 14 && OwnItemCount(talker, @talisman_of_kadesh))
+                {
+                    ShowPage(talker, "sagittarius_hamil_q0224_13.htm");
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @mark_of_sagittarius, 1);
+                        DeleteItem1(talker, @crescent_moon_bow, OwnItemCount(talker, @crescent_moon_bow));
+                        DeleteItem1(talker, @talisman_of_kadesh, 1);
+                        DeleteItem1(talker, @blood_of_lizardman, OwnItemCount(talker, @blood_of_lizardman));
+                        IncrementParam(talker, @PARAM_EXP, 28000);
+                        IncrementParam(talker, @PARAM_SP, 3600);
+                        RemoveMemo(talker, @test_of_sagittarius);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @test_of_sagittarius, 1);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_sagittarius)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "sagittarius_hamil_q0224_02.htm");
+            }
+            else if (reply == 2 && OwnItemCount(talker, @bernards_introduction) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "sagittarius_hamil_q0224_03.htm");
+                    GiveItem1(talker, @letter_of_hamil1, 1);
+                    DeleteItem1(talker, @bernards_introduction, 1);
+                    SetMemoState(talker, @test_of_sagittarius, 2);
+                }
+            }
+            else if (reply == 3)
+            {
+                ShowPage(talker, "sagittarius_hamil_q0224_06.htm");
+            }
+            else if (reply == 4 && OwnItemCount(talker, @hunters_rune1) >= 10)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "sagittarius_hamil_q0224_07.htm");
+                    GiveItem1(talker, @letter_of_hamil2, 1);
+                    DeleteItem1(talker, @hunters_rune1, 10);
+                    SetMemoState(talker, @test_of_sagittarius, 5);
+                }
+            }
+        }
+
+        super;
+    }
+}

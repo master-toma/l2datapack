@@ -1,0 +1,3 @@
+class queen_ant : ai_boss01_queen_ant
+{
+}

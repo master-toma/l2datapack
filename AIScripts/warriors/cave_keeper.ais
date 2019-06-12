@@ -1,0 +1,17 @@
+class cave_keeper : warrior_passive_physicalspecial
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (GetMemoState(c1, @audience_with_earth_dragon) == 70000 && OwnItemCount(c1, @q_frag_of_abyss_jewel3) == 0 && HaveMemo(c1, @audience_with_earth_dragon) == 1)
+        {
+            if (Rand(5) == 0)
+            {
+                CreateOnePrivate(@abyssal_jewel_3, "abyssal_jewel_3", 0, 1);
+            }
+        }
+
+        super;
+    }
+}

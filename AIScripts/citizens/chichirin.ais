@@ -1,0 +1,63 @@
+class chichirin : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @hidden_vein) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask Chichirin about map recovery");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @hidden_vein) == 1)
+                {
+                    ShowPage(talker, "chichirin_q0293_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @hidden_vein)
+        {
+            if (reply == 1 && OwnItemCount(talker, @torn_map_fragment) < 4)
+            {
+                ShowPage(talker, "chichirin_q0293_02.htm");
+            }
+            else if (reply == 1 && OwnItemCount(talker, @torn_map_fragment) >= 4)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "chichirin_q0293_03.htm");
+                    GiveItem1(talker, @hidden_vein_map, 1);
+                    DeleteItem1(talker, @torn_map_fragment, 4);
+                }
+            }
+        }
+
+        super;
+    }
+}

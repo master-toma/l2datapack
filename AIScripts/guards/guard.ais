@@ -1,0 +1,28 @@
+class guard : default_npc
+{
+parameter:
+    string fnHi = "chi.htm";
+    float Attack_DecayRatio = 6.6;
+    float UseSkill_DecayRatio = 66000.0;
+    float Attack_BoostValue = 500.0;
+    float UseSkill_BoostValue = 100000.0;
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        ShowPage(talker, fnHi);
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, 2000);
+    }
+
+    EventHandler SEE_CREATURE(creature)
+    {
+        if (creature.karma > 0)
+        {
+            AddAttackDesire(creature, @AMT_MOVE_TO_TARGET, 1500);
+        }
+    }
+}

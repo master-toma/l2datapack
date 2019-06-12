@@ -1,0 +1,2 @@
+skill_begin	skill_name = [s_heroism1]	/* [헤로이즘] */	skill_id = 135	level = 1	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_heroism2]	/* [헤로이즘] */	skill_id = 135	level = 2	operate_type = P	effect = {}	skill_end

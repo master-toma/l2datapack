@@ -1,0 +1,163 @@
+class warehouse_keeper_raut : warehouse_keeper
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @bead_parcel) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Give bead parcel");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @routs_tp_scroll) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Torai");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @succubus_undies) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show succubus undies");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @dieters_diary) >= 1 && OwnItemCount(talker, @rauts_letter_envelope) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show letter");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @dieters_diary) >= 1 && OwnItemCount(talker, @scripture_chapter_1) >= 1 && OwnItemCount(talker, @strong_liquor) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask the whereabouts of younger sibling");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @dieters_diary) >= 1 && OwnItemCount(talker, @scripture_chapter_1) >= 1 && OwnItemCount(talker, @treafs_ring) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Say that you found part of the scriptures");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @bead_parcel) == 1)
+                {
+                    ShowPage(talker, "raut_q0417_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @routs_tp_scroll) == 1)
+                {
+                    ShowPage(talker, "raut_q0417_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @succubus_undies) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "raut_q0417_05.htm");
+                        DeleteItem1(talker, @succubus_undies, 1);
+                        GiveItem1(talker, @ring_of_raven, 1);
+                        RemoveMemo(talker, @path_to_scavenger);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @dieters_diary) >= 1 && OwnItemCount(talker, @rauts_letter_envelope) >= 1))
+                {
+                    ShowPage(talker, "warehouse_keeper_raut_q0214_01.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @dieters_diary) >= 1 && OwnItemCount(talker, @scripture_chapter_1) >= 1 && OwnItemCount(talker, @strong_liquor) >= 1))
+                {
+                    ShowPage(talker, "warehouse_keeper_raut_q0214_04.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @dieters_diary) >= 1 && OwnItemCount(talker, @scripture_chapter_1) >= 1 && OwnItemCount(talker, @treafs_ring) >= 1))
+                {
+                    ShowPage(talker, "warehouse_keeper_raut_q0214_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_scavenger && reply == 1 && OwnItemCount(talker, @bead_parcel) > 0)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "raut_q0417_02.htm");
+                DeleteItem1(talker, @bead_parcel, 1);
+                GiveItem1(talker, @routs_tp_scroll, 1);
+            }
+        }
+
+        if (ask == @path_to_scavenger && reply == 2 && OwnItemCount(talker, @bead_parcel) > 0)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "raut_q0417_03.htm");
+                DeleteItem1(talker, @bead_parcel, 1);
+                GiveItem1(talker, @routs_tp_scroll, 1);
+            }
+        }
+
+        if (ask == @trial_of_scholar)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @rauts_letter_envelope) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "warehouse_keeper_raut_q0214_02.htm");
+                        DeleteItem1(talker, @rauts_letter_envelope, 1);
+                        GiveItem1(talker, @scripture_chapter_1, 1);
+                        GiveItem1(talker, @strong_liquor, 1);
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

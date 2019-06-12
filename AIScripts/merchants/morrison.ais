@@ -1,0 +1,19 @@
+class morrison : mseller
+{
+property:
+    BuySellList SellList0 = {
+        {"mticket_oren_sword_fix"; 15};
+        {"mticket_oren_pole_fix"; 15};
+        {"mticket_oren_bow_fix"; 15};
+        {"mticket_oren_cleric_fix"; 15};
+        {"mticket_oren_wizard_fix"; 15};
+        {"mticket_oren_sword_move"; 15};
+        {"mticket_oren_pole_move"; 15};
+        {"mticket_oren_bow_move"; 15};
+        {"mticket_oren_cleric_move"; 15};
+        {"mticket_oren_wizard_move"; 15};
+        {"mticket_oren_teleporter1"; 15};
+        {"mticket_oren_teleporter2"; 15};
+        {"mticket_oren_teleporter3"; 15}
+    };
+}

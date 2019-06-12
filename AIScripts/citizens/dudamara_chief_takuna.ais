@@ -1,0 +1,97 @@
+class dudamara_chief_takuna : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @handiwork_spider_brooch) == 0 && OwnItemCount(talker, @takuna_charm) == 0 && OwnItemCount(talker, @ordeal_necklace) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you are currently challenging the Examination of Lord");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @takuna_charm) >= 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @handiwork_spider_brooch) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Give Tentacles and Legs of Spider");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @handiwork_spider_brooch) >= 1 && OwnItemCount(talker, @takuna_charm) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Thank for having received the certificate");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @handiwork_spider_brooch) == 0 && OwnItemCount(talker, @takuna_charm) == 0 && OwnItemCount(talker, @ordeal_necklace) == 1)
+                {
+                    ShowPage(talker, "dudamara_chief_takuna_q0232_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @takuna_charm) >= 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @handiwork_spider_brooch) == 0)
+                {
+                    if (OwnItemCount(talker, @marsh_spider_feeler) >= 10 && OwnItemCount(talker, @marsh_spider_feet) >= 10)
+                    {
+                        ShowPage(talker, "dudamara_chief_takuna_q0232_04.htm");
+                        DeleteItem1(talker, @marsh_spider_feeler, OwnItemCount(talker, @marsh_spider_feeler));
+                        DeleteItem1(talker, @marsh_spider_feet, OwnItemCount(talker, @marsh_spider_feet));
+                        DeleteItem1(talker, @takuna_charm, 1);
+                        GiveItem1(talker, @handiwork_spider_brooch, 1);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "dudamara_chief_takuna_q0232_03.htm");
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @handiwork_spider_brooch) >= 1 && OwnItemCount(talker, @takuna_charm) == 0)
+                {
+                    ShowPage(talker, "dudamara_chief_takuna_q0232_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_lord)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "dudamara_chief_takuna_q0232_02.htm");
+                    GiveItem1(talker, @takuna_charm, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_plant_weakness]	/* [식물 약점] */	skill_id = 4059	level = 1	operate_type = P	effect = {{p_defence_attribute;attr_plant_weakness;15}}	skill_end

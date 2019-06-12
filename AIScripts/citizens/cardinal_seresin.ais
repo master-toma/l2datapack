@@ -1,0 +1,96 @@
+class cardinal_seresin : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 8 && OwnItemCount(talker, @letter_to_seresin))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you were sent by High Priest Hollint");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 9)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask who’s confidence you should get before coming");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 18)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask who’s confidence you should get before coming");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 8 && OwnItemCount(talker, @letter_to_seresin))
+                {
+                    ShowPage(talker, "cardinal_seresin_q0217_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 9)
+                {
+                    ShowPage(talker, "cardinal_seresin_q0217_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 18)
+                {
+                    ShowPage(talker, "cardinal_seresin_q0217_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimoney_of_trust)
+        {
+            if (reply == 1)
+            {
+                if (talker.level >= 38 && OwnItemCount(talker, @letter_to_seresin) > 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "cardinal_seresin_q0217_03.htm");
+                        GiveItem1(talker, @letter_to_orc, 1);
+                        GiveItem1(talker, @letter_to_dwarf, 1);
+                        DeleteItem1(talker, @letter_to_seresin, 1);
+                        SetMemoState(talker, @testimoney_of_trust, 9);
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "cardinal_seresin_q0217_02.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_night_rest]	/* [나이트 레스트] */	skill_id = 175	level = 1	operate_type = P	effect = {}	skill_end

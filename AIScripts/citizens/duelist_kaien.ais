@@ -1,0 +1,249 @@
+class duelist_kaien : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_duelist) == 0 && GetOneTimeQuestFlag(talker, @test_of_duelist) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Dualist");
+            }
+
+            if (HaveMemo(talker, @test_of_duelist) == 0 && GetOneTimeQuestFlag(talker, @test_of_duelist) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Dualist");
+            }
+
+            if (HaveMemo(talker, @test_of_duelist) == 1 && OwnItemCount(talker, @order_gludio) >= 1 && OwnItemCount(talker, @order_dion) >= 1 && OwnItemCount(talker, @order_giran) >= 1 && OwnItemCount(talker, @order_oren) >= 1 && OwnItemCount(talker, @order_aden) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give certificates");
+            }
+
+            if (HaveMemo(talker, @test_of_duelist) == 1 && OwnItemCount(talker, @final_order) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give certificates");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_duelist) == 0 && GetOneTimeQuestFlag(talker, @test_of_duelist) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.occupation == @warrior || talker.occupation == @orc_monk || talker.occupation == @elven_knight || talker.occupation == @palus_knight)
+                        {
+                            if (talker.level >= 39)
+                            {
+                                ShowPage(talker, "duelist_kaien_q0222_03.htm");
+                            }
+                            else
+                            {
+                                ShowPage(talker, "duelist_kaien_q0222_01.htm");
+                            }
+                        }
+                        else
+                        {
+                            ShowPage(talker, "duelist_kaien_q0222_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_duelist) == 0 && GetOneTimeQuestFlag(talker, @test_of_duelist) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_duelist) == 1 && OwnItemCount(talker, @order_gludio) >= 1 && OwnItemCount(talker, @order_dion) >= 1 && OwnItemCount(talker, @order_giran) >= 1 && OwnItemCount(talker, @order_oren) >= 1 && OwnItemCount(talker, @order_aden) >= 1)
+                {
+                    if (OwnItemCount(talker, @punchers_shard) == 10 && OwnItemCount(talker, @noble_ants_feeler) == 10 && OwnItemCount(talker, @drones_chitin) == 10 && OwnItemCount(talker, @deadseeker_fang) == 10 && OwnItemCount(talker, @overlord_necklace) == 10 && OwnItemCount(talker, @crimsonbinds_chain) == 10 && OwnItemCount(talker, @chiefs_amulet) == 10 && OwnItemCount(talker, @tempered_eye_meat) == 10 && OwnItemCount(talker, @tamrin_orcs_ring) == 10 && OwnItemCount(talker, @tamrin_orcs_arrow) == 10)
+                    {
+                        ShowPage(talker, "duelist_kaien_q0222_13.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "duelist_kaien_q0222_14.htm");
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_duelist) == 1 && OwnItemCount(talker, @final_order) == 1)
+                {
+                    if (OwnItemCount(talker, @excuros_skin) >= 3 && OwnItemCount(talker, @krators_shard) >= 3 && OwnItemCount(talker, @rakins_mace) >= 3 && OwnItemCount(talker, @grandis_skin) >= 3 && OwnItemCount(talker, @timak_orcs_belt) >= 3)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            DeleteItem1(talker, @excuros_skin, OwnItemCount(talker, @excuros_skin));
+                            DeleteItem1(talker, @krators_shard, OwnItemCount(talker, @krators_shard));
+                            DeleteItem1(talker, @grandis_skin, OwnItemCount(talker, @grandis_skin));
+                            DeleteItem1(talker, @timak_orcs_belt, OwnItemCount(talker, @timak_orcs_belt));
+                            DeleteItem1(talker, @rakins_mace, OwnItemCount(talker, @rakins_mace));
+                            IncrementParam(talker, @PARAM_EXP, 24000);
+                            IncrementParam(talker, @PARAM_SP, 3100);
+                            DeleteItem1(talker, @final_order, 1);
+                            GiveItem1(talker, @mark_of_duelist, 1);
+                            ShowPage(talker, "duelist_kaien_q0222_18.htm");
+                            RemoveMemo(talker, @test_of_duelist);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            SetOneTimeQuestFlag(talker, @test_of_duelist, 1);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "duelist_kaien_q0222_17.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @test_of_duelist)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @order_gludio) == 0)
+                {
+                    GiveItem1(talker, @order_gludio, 1);
+                }
+
+                ShowPage(talker, "duelist_kaien_q0222_07.htm");
+                GiveItem1(talker, @order_dion, 1);
+                GiveItem1(talker, @order_giran, 1);
+                GiveItem1(talker, @order_oren, 1);
+                GiveItem1(talker, @order_aden, 1);
+                SetMemoState(talker, @test_of_duelist, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @test_of_duelist)
+        {
+            if (reply == 1)
+            {
+                if (talker.race != @race_orc)
+                {
+                    ShowPage(talker, "duelist_kaien_q0222_05.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "duelist_kaien_q0222_04.htm");
+                }
+            }
+
+            if (reply == 2)
+            {
+                FHTML_SetFileName(fhtml0, "duelist_kaien_q0222_06.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @test_of_duelist);
+                ShowFHTML(talker, fhtml0);
+            }
+
+            if (reply == 3)
+            {
+                ShowPage(talker, "duelist_kaien_q0222_08.htm");
+            }
+
+            if (reply == 4)
+            {
+                ShowPage(talker, "duelist_kaien_q0222_09.htm");
+            }
+
+            if (reply == 5)
+            {
+                ShowPage(talker, "duelist_kaien_q0222_10.htm");
+            }
+
+            if (reply == 6)
+            {
+                ShowPage(talker, "duelist_kaien_q0222_11.htm");
+            }
+
+            if (reply == 7)
+            {
+                ShowPage(talker, "duelist_kaien_q0222_12.htm");
+            }
+
+            if (reply == 8)
+            {
+                ShowPage(talker, "duelist_kaien_q0222_07.htm");
+            }
+
+            if (reply == 9)
+            {
+                ShowPage(talker, "duelist_kaien_q0222_15.htm");
+            }
+
+            if (reply == 10)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "duelist_kaien_q0222_16.htm");
+                    DeleteItem1(talker, @punchers_shard, OwnItemCount(talker, @punchers_shard));
+                    DeleteItem1(talker, @noble_ants_feeler, OwnItemCount(talker, @noble_ants_feeler));
+                    DeleteItem1(talker, @deadseeker_fang, OwnItemCount(talker, @deadseeker_fang));
+                    DeleteItem1(talker, @drones_chitin, OwnItemCount(talker, @drones_chitin));
+                    DeleteItem1(talker, @overlord_necklace, OwnItemCount(talker, @overlord_necklace));
+                    DeleteItem1(talker, @crimsonbinds_chain, OwnItemCount(talker, @crimsonbinds_chain));
+                    DeleteItem1(talker, @chiefs_amulet, OwnItemCount(talker, @chiefs_amulet));
+                    DeleteItem1(talker, @tempered_eye_meat, OwnItemCount(talker, @tempered_eye_meat));
+                    DeleteItem1(talker, @tamrin_orcs_ring, OwnItemCount(talker, @tamrin_orcs_ring));
+                    DeleteItem1(talker, @tamrin_orcs_arrow, OwnItemCount(talker, @tamrin_orcs_arrow));
+                    DeleteItem1(talker, @order_gludio, OwnItemCount(talker, @order_gludio));
+                    DeleteItem1(talker, @order_dion, OwnItemCount(talker, @order_dion));
+                    DeleteItem1(talker, @order_giran, OwnItemCount(talker, @order_giran));
+                    DeleteItem1(talker, @order_oren, OwnItemCount(talker, @order_oren));
+                    DeleteItem1(talker, @order_aden, OwnItemCount(talker, @order_aden));
+                    SetMemoState(talker, @test_of_duelist, 2);
+                    GiveItem1(talker, @final_order, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

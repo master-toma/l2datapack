@@ -1,0 +1,115 @@
+class mother_temp_b : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(i0, quest_id, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @elf_tutorial) == 0 && GetOneTimeQuestFlag(talker, @elf_tutorial) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Listen");
+            }
+
+            if (HaveMemo(talker, @elf_tutorial) && OwnItemCount(talker, @leaf_of_mothertree) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Listen");
+            }
+
+            if (HaveMemo(talker, @elf_tutorial) && OwnItemCount(talker, @leaf_of_mothertree))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Listen");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @elf_tutorial) == 0 && GetOneTimeQuestFlag(talker, @elf_tutorial) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (GetOneTimeQuestFlag(talker, @elf_tutorial) == 0 && HaveMemo(talker, @elf_tutorial) == 0 && talker.level < 10 && talker.race == @race_elf)
+                        {
+                            DeleteRadar(talker, 46568, 41431, -3513);
+                            DeleteRadar(talker, 46739, 41720, -3513);
+                            DeleteRadar(talker, 45787, 41733, -3513);
+                            DeleteRadar(talker, 45946, 41413, -3513);
+                            ShowPage(talker, "mother_temp_b_q0203_01.htm");
+                            SetMemo(talker, @elf_tutorial);
+                            SoundEffect(talker, "ItemSound.quest_accept");
+                            ShowQuestionMark(talker, 6);
+                            ShowRadar(talker, 48968, 43641, -3505);
+                        }
+                        else if (talker.race != @race_elf)
+                        {
+                            ShowPage(talker, "mother_temp_b_q0203_06.htm");
+                        }
+                        else if (talker.level >= 10)
+                        {
+                            ShowPage(talker, "mother_temp_b_q0203_05.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @elf_tutorial) && OwnItemCount(talker, @leaf_of_mothertree) == 0)
+                {
+                    if (OwnItemCount(talker, @fox_fang3) == 4)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            DeleteItem1(talker, @fox_fang3, OwnItemCount(talker, @fox_fang3));
+                            GiveItem1(talker, @leaf_of_mothertree, 1);
+                            GiveItem1(talker, @world_map, 1);
+                            ShowPage(talker, "mother_temp_b_q0203_02.htm");
+                            DeleteRadar(talker, 46568, 41431, -3513);
+                            DeleteRadar(talker, 46739, 41720, -3513);
+                            DeleteRadar(talker, 45787, 41733, -3513);
+                            DeleteRadar(talker, 45946, 41413, -3513);
+                            ShowRadar(talker, 46255, 41432, -3513);
+                            i0 = GetMemoState(talker, 255) & 0x7fffff00;
+                            SetMemoState(talker, 255, i0 | 0x4);
+                        }
+                    }
+                    else if (OwnItemCount(talker, @fox_fang3) < 4)
+                    {
+                        ShowPage(talker, "mother_temp_b_q0203_03.htm");
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @elf_tutorial) && OwnItemCount(talker, @leaf_of_mothertree))
+                {
+                    ShowPage(talker, "mother_temp_b_q0203_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

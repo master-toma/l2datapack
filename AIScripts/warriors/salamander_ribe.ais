@@ -1,0 +1,18 @@
+class salamander_ribe : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @crystal_of_fireice) == 1)
+        {
+            if (Rand(100) < 40)
+            {
+                GiveItem1(c1, @flame_shard, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

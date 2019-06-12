@@ -1,0 +1,3 @@
+class chief_guard : guard_stand
+{
+}

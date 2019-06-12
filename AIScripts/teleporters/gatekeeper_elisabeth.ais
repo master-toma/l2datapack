@@ -1,0 +1,9 @@
+class gatekeeper_elisabeth : teleporter
+{
+property:
+    TelPosList Position = {
+        {1010014; 85391; 16228; -3640; 12000; 4};    // 1010014 - "Ivory Tower"
+        {1010013; 82971; 53207; -1470; 13000; 4};    // 1010013 - "Oren Castle Town"
+        {1010020; 117110; 76883; -2670; 11000; 0}    // 1010020 - "Hunter Village"
+    };
+}

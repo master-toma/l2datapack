@@ -1,0 +1,3 @@
+class h_cave_servant_warrior : warrior_passive
+{
+}

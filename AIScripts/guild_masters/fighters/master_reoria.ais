@@ -1,0 +1,141 @@
+class master_reoria : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_elven_scout) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to an Elven Ranger");
+            }
+
+            if (HaveMemo(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @reoria_letter2) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about changing occupation to an Elven Ranger");
+            }
+
+            if (HaveMemo(talker, @path_to_elven_scout) == 1 && GetMemoState(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @reoria_letter2) == 0 && OwnItemCount(talker, @honorary_guard) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about changing occupation to an Elven Ranger");
+            }
+
+            if (HaveMemo(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @honorary_guard) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about changing occupation to an Elven Ranger");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_scout) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        FHTML_SetFileName(fhtml0, "master_reoria_q0407_01.htm");
+                        FHTML_SetInt(fhtml0, "quest_id", @path_to_elven_scout);
+                        ShowFHTML(talker, fhtml0);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @reoria_letter2) > 0)
+                {
+                    ShowPage(talker, "master_reoria_q0407_06.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_scout) == 1 && GetMemoState(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @reoria_letter2) == 0 && OwnItemCount(talker, @honorary_guard) == 0)
+                {
+                    ShowPage(talker, "master_reoria_q0407_08.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elven_scout) == 1 && OwnItemCount(talker, @honorary_guard) > 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "master_reoria_q0407_07.htm");
+                        DeleteItem1(talker, @honorary_guard, 1);
+                        GiveItem1(talker, @reoria_recommendation, 1);
+                        RemoveMemo(talker, @path_to_elven_scout);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_elven_scout)
+        {
+            if (talker.occupation == @elven_fighter)
+            {
+                if (talker.level >= 19)
+                {
+                    if (OwnItemCount(talker, @reoria_recommendation) > 0)
+                    {
+                        ShowPage(talker, "master_reoria_q0407_04.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "master_reoria_q0407_05.htm");
+                        GiveItem1(talker, @reoria_letter2, 1);
+                        SetMemo(talker, quest_id);
+                        SetMemoState(talker, @path_to_elven_scout, 0);
+                        SoundEffect(talker, "ItemSound.quest_accept");
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "master_reoria_q0407_03.htm");
+                }
+            }
+            else if (talker.occupation == @elven_scout)
+            {
+                ShowPage(talker, "master_reoria_q0407_02a.htm");
+            }
+            else
+            {
+                ShowPage(talker, "master_reoria_q0407_02.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,2088 @@
+class ai_boss04_antaras : default_npc
+{
+parameter:
+    int GM_ID = 0;
+    
+handler:
+    EventHandler CREATED(reply, i0)
+    {
+        if (reply == 0)
+        {
+            SetDBValue(myself.sm, 0);
+            EarthQuakeByNPC(myself.sm, 20, 10, 1, 0, 0, 0);
+        }
+
+        myself.i_ai1 = GetTick();
+        myself.i_ai2 = 0;
+        myself.i_ai3 = 0;
+        myself.i_ai4 = 0;
+        if (GM_ID != 0)
+        {
+            i0 = GetGlobalMap(GM_ID);
+            if (i0 == -1)
+            {
+                RegisterGlobalMap(GM_ID, GetIndexFromCreature(myself.sm));
+            }
+        }
+
+        if (myself.sm.db_value == 1)
+        {
+            AddTimerEx(1001, 10 * 60 * 1000);
+        }
+        else if (myself.sm.db_value == 2)
+        {
+            InstantTeleport(myself.sm, 185452, 114835, -8221);
+            AddMoveToDesire(181911, 114835, -7678, 100000);
+            EffectMusic(myself.sm, 10000, "antaras");
+        }
+        else if (myself.sm.db_value == 3)
+        {
+            AddTimerEx(1002, 1 * 60 * 1000);
+            myself.i_ai1 = GetTick();
+            AddMoveAroundDesire(5, 5);
+        }
+    }
+
+    EventHandler SCRIPT_EVENT(script_event_arg1, script_event_arg2)
+    {
+        if (myself.sm.db_value == 0)
+        {
+            AddTimerEx(1001, 10 * 60 * 1000);
+            SetDBValue(myself.sm, 1);
+        }
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id, i1, i2, c2)
+    {
+        if (timer_id == 1001)
+        {
+            SetDBValue(myself.sm, 2);
+            InstantTeleport(myself.sm, 185452, 114835, -8221);
+            AddMoveToDesire(181911, 114835, -7678, 100000);
+            EffectMusic(myself.sm, 10000, "antaras");
+        }
+        else if (timer_id == 1201)
+        {
+            SpecialCamera(myself.sm, 700, 13, -19, 0, 10000, 20000);
+            AddTimerEx(1202, 3000);
+        }
+        else if (timer_id == 1202)
+        {
+            SpecialCamera(myself.sm, 700, 13, 0, 6000, 10000, 20000);
+            AddTimerEx(1203, 10000);
+        }
+        else if (timer_id == 1203)
+        {
+            SpecialCamera(myself.sm, 3700, 0, -3, 0, 10000, 10000);
+            AddEffectActionDesire(myself.sm, 1, 8000, 10000000);
+            AddEffectActionDesire(myself.sm, 2, 6000, 5000000);
+            AddTimerEx(1204, 200);
+        }
+        else if (timer_id == 1204)
+        {
+            SpecialCamera(myself.sm, 1100, 0, -3, 22000, 10000, 30000);
+            AddTimerEx(1205, 10800);
+        }
+        else if (timer_id == 1205)
+        {
+            SpecialCamera(myself.sm, 1100, 0, -3, 300, 10000, 7000);
+            SetDBValue(myself.sm, 3);
+            AddTimerEx(1002, 1 * 60 * 1000);
+            myself.i_ai1 = GetTick();
+            AddUseSkillDesire(myself.sm, @s_antaras_regen1, @ST_HEAL, @AMT_MOVE_TO_TARGET, 4000000);
+            if (DistFromMe(myself.c_ai2) > 9000 || myself.c_ai2.alive == 0)
+            {
+                myself.i_ai2 = 0;
+            }
+
+            if (DistFromMe(myself.c_ai3) > 9000 || myself.c_ai3.alive == 0)
+            {
+                myself.i_ai3 = 0;
+            }
+
+            if (DistFromMe(myself.c_ai4) > 9000 || myself.c_ai4.alive == 0)
+            {
+                myself.i_ai4 = 0;
+            }
+
+            if (myself.i_ai2 > myself.i_ai3)
+            {
+                i1 = 2;
+                i2 = myself.i_ai2;
+                c2 = myself.c_ai2;
+            }
+            else
+            {
+                i1 = 3;
+                i2 = myself.i_ai3;
+                c2 = myself.c_ai3;
+            }
+
+            if (myself.i_ai4 > i2)
+            {
+                i1 = 4;
+                i2 = myself.i_ai4;
+                c2 = myself.c_ai4;
+            }
+
+            if (i2 > 0)
+            {
+                if (Rand(100) < 70)
+                {
+                    select (i1)
+                    {
+                    case 2:
+                        myself.i_ai2 = 500;
+                        break;
+                    case 3:
+                        myself.i_ai3 = 500;
+                        break;
+                    case 4:
+                        myself.i_ai4 = 500;
+                        break;
+                    }
+                }
+
+                if (myself.sm.hp < myself.sm.max_hp * 1.0 / 4.0)
+                {
+                    if (Rand(100) < 30)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_mouth, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 40 && (DistFromMe(c2) < 850 && GetDirection(c2) < 180 + 30 && GetDirection(c2) > 180 - 30 || DistFromMe(c2) < 425 && GetDirection(c2) < 180 + 90 && GetDirection(c2) > 180 - 90))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_debuff, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10 && DistFromMe(c2) < 1100)
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_jump, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 6)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 50)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                }
+                else if (myself.sm.hp < myself.sm.max_hp * 2.0 / 4.0)
+                {
+                    if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 40 && (DistFromMe(c2) < 850 && GetDirection(c2) < 180 + 30 && GetDirection(c2) > 180 - 30 || DistFromMe(c2) < 425 && GetDirection(c2) < 180 + 90 && GetDirection(c2) > 180 - 90))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_debuff, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10 && DistFromMe(c2) < 1100)
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_jump, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 6)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 50)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                }
+                else if (myself.sm.hp < myself.sm.max_hp * 3.0 / 4.0)
+                {
+                    if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10 && DistFromMe(c2) < 1100)
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_jump, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 6)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 50)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                }
+                else if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                {
+                    AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 10)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 6)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 50)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else
+                {
+                    AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+
+            AddMoveAroundDesire(5, 5);
+        }
+        else if (timer_id == 1002)
+        {
+            if (GetTick() - myself.i_ai1 > 15 * 60 * 1000)
+            {
+                SetDBValue(myself.sm, 0);
+                InstantTeleportInMyTerritory(80464, 152294, -3534, 100);
+                InstantTeleport(myself.sm, 185708, 114298, -8221);
+                RemoveAllAttackDesire();
+            }
+            else
+            {
+                AddTimerEx(1002, 1 * 60 * 1000);
+            }
+
+            if (myself.sm.hp < myself.sm.max_hp * 1.0 / 4.0)
+            {
+                if (GetAbnormalLevel(myself.sm, Skill_GetAbnormalType(@s_antaras_regen4)) < 14)
+                {
+                    AddUseSkillDesire(myself.sm, @s_antaras_regen4, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 4000000);
+                }
+            }
+            else if (myself.sm.hp < myself.sm.max_hp * 2.0 / 4.0)
+            {
+                if (GetAbnormalLevel(myself.sm, Skill_GetAbnormalType(@s_antaras_regen3)) < 13)
+                {
+                    AddUseSkillDesire(myself.sm, @s_antaras_regen3, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 4000000);
+                }
+            }
+            else if (myself.sm.hp < myself.sm.max_hp * 3.0 / 4.0)
+            {
+                if (GetAbnormalLevel(myself.sm, Skill_GetAbnormalType(@s_antaras_regen2)) < 12)
+                {
+                    AddUseSkillDesire(myself.sm, @s_antaras_regen2, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 4000000);
+                }
+            }
+            else if (GetAbnormalLevel(myself.sm, Skill_GetAbnormalType(@s_antaras_regen1)) < 11)
+            {
+                AddUseSkillDesire(myself.sm, @s_antaras_regen1, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 4000000);
+            }
+
+            if (myself.i_ai2 > 10)
+            {
+                myself.i_ai2 = myself.i_ai2 - (Rand(9) + 1);
+            }
+
+            if (myself.i_ai3 > 10)
+            {
+                myself.i_ai3 = myself.i_ai3 - (Rand(9) + 1);
+            }
+
+            if (myself.i_ai4 > 10)
+            {
+                myself.i_ai4 = myself.i_ai4 - (Rand(9) + 1);
+            }
+
+            if (myself.sm.db_value == 3 && myself.p_state == PSTATE_MOVE_AROUND)
+            {
+                if (DistFromMe(myself.c_ai2) > 9000 || myself.c_ai2.alive == 0)
+                {
+                    myself.i_ai2 = 0;
+                }
+
+                if (DistFromMe(myself.c_ai3) > 9000 || myself.c_ai3.alive == 0)
+                {
+                    myself.i_ai3 = 0;
+                }
+
+                if (DistFromMe(myself.c_ai4) > 9000 || myself.c_ai4.alive == 0)
+                {
+                    myself.i_ai4 = 0;
+                }
+
+                if (myself.i_ai2 > myself.i_ai3)
+                {
+                    i1 = 2;
+                    i2 = myself.i_ai2;
+                    c2 = myself.c_ai2;
+                }
+                else
+                {
+                    i1 = 3;
+                    i2 = myself.i_ai3;
+                    c2 = myself.c_ai3;
+                }
+
+                if (myself.i_ai4 > i2)
+                {
+                    i1 = 4;
+                    i2 = myself.i_ai4;
+                    c2 = myself.c_ai4;
+                }
+
+                if (i2 > 0)
+                {
+                    if (Rand(100) < 70)
+                    {
+                        select (i1)
+                        {
+                        case 2:
+                            myself.i_ai2 = 500;
+                            break;
+                        case 3:
+                            myself.i_ai3 = 500;
+                            break;
+                        case 4:
+                            myself.i_ai4 = 500;
+                            break;
+                        }
+                    }
+
+                    if (myself.sm.hp < myself.sm.max_hp * 1.0 / 4.0)
+                    {
+                        if (Rand(100) < 30)
+                        {
+                            AddUseSkillDesire(c2, @s_antaras_mouth, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                        {
+                            AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else if (Rand(100) < 40 && (DistFromMe(c2) < 850 && GetDirection(c2) < 180 + 30 && GetDirection(c2) > 180 - 30 || DistFromMe(c2) < 425 && GetDirection(c2) < 180 + 90 && GetDirection(c2) > 180 - 90))
+                        {
+                            AddUseSkillDesire(myself.sm, @s_antaras_debuff, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else if (Rand(100) < 10 && DistFromMe(c2) < 1100)
+                        {
+                            AddUseSkillDesire(myself.sm, @s_antaras_jump, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else if (Rand(100) < 10)
+                        {
+                            AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else if (Rand(100) < 6)
+                        {
+                            AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else if (Rand(100) < 50)
+                        {
+                            AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else
+                        {
+                            AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                    }
+                    else if (myself.sm.hp < myself.sm.max_hp * 2.0 / 4.0)
+                    {
+                        if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                        {
+                            AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else if (Rand(100) < 40 && (DistFromMe(c2) < 850 && GetDirection(c2) < 180 + 30 && GetDirection(c2) > 180 - 30 || DistFromMe(c2) < 425 && GetDirection(c2) < 180 + 90 && GetDirection(c2) > 180 - 90))
+                        {
+                            AddUseSkillDesire(myself.sm, @s_antaras_debuff, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else if (Rand(100) < 10 && DistFromMe(c2) < 1100)
+                        {
+                            AddUseSkillDesire(myself.sm, @s_antaras_jump, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else if (Rand(100) < 10)
+                        {
+                            AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else if (Rand(100) < 6)
+                        {
+                            AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else if (Rand(100) < 50)
+                        {
+                            AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else
+                        {
+                            AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                    }
+                    else if (myself.sm.hp < myself.sm.max_hp * 3.0 / 4.0)
+                    {
+                        if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                        {
+                            AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else if (Rand(100) < 10 && DistFromMe(c2) < 1100)
+                        {
+                            AddUseSkillDesire(myself.sm, @s_antaras_jump, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else if (Rand(100) < 10)
+                        {
+                            AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else if (Rand(100) < 6)
+                        {
+                            AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else if (Rand(100) < 50)
+                        {
+                            AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                        else
+                        {
+                            AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                        }
+                    }
+                    else if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 6)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 50)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                }
+            }
+        }
+    }
+
+    EventHandler MOVE_TO_FINISHED()
+    {
+        AddTimerEx(1201, 2000);
+    }
+
+    EventHandler ATTACKED(attacker, damage, skill_name_id, i1, i2, c2)
+    {
+        myself.i_ai1 = GetTick();
+        if (skill_name_id == 0)
+        {
+            if (attacker == myself.c_ai2)
+            {
+                if (damage * 1000 + 1000 > myself.i_ai2)
+                {
+                    myself.i_ai2 = FloatToInt(damage * 1000 + Rand(3000));
+                }
+            }
+            else if (attacker == myself.c_ai3)
+            {
+                if (damage * 1000 + 1000 > myself.i_ai3)
+                {
+                    myself.i_ai3 = FloatToInt(damage * 1000 + Rand(3000));
+                }
+            }
+            else if (attacker == myself.c_ai4)
+            {
+                if (damage * 1000 + 1000 > myself.i_ai4)
+                {
+                    myself.i_ai4 = FloatToInt(damage * 1000 + Rand(3000));
+                }
+            }
+            else
+            {
+                if (myself.i_ai2 > myself.i_ai3)
+                {
+                    i1 = 3;
+                }
+                else if (myself.i_ai2 == myself.i_ai3)
+                {
+                    if (Rand(100) < 50)
+                    {
+                        i1 = 2;
+                    }
+                    else
+                    {
+                        i1 = 3;
+                    }
+                }
+                else if (myself.i_ai2 < myself.i_ai3)
+                {
+                    i1 = 2;
+                }
+
+                if (i1 == 2)
+                {
+                    if (myself.i_ai2 > myself.i_ai4)
+                    {
+                        i1 = 4;
+                    }
+                    else if (myself.i_ai2 == myself.i_ai4)
+                    {
+                        if (Rand(100) < 50)
+                        {
+                            i1 = 2;
+                        }
+                        else
+                        {
+                            i1 = 4;
+                        }
+                    }
+                    else if (myself.i_ai2 < myself.i_ai4)
+                    {
+                        i1 = 2;
+                    }
+                }
+                else if (i1 == 3)
+                {
+                    if (myself.i_ai3 > myself.i_ai4)
+                    {
+                        i1 = 4;
+                    }
+                    else if (myself.i_ai3 == myself.i_ai4)
+                    {
+                        if (Rand(100) < 50)
+                        {
+                            i1 = 3;
+                        }
+                        else
+                        {
+                            i1 = 4;
+                        }
+                    }
+                    else if (myself.i_ai3 < myself.i_ai4)
+                    {
+                        i1 = 3;
+                    }
+                }
+
+                select (i1)
+                {
+                case 2:
+                    myself.i_ai2 = FloatToInt(damage * 1000 + Rand(3000));
+                    myself.c_ai2 = attacker;
+                    break;
+                case 3:
+                    myself.i_ai3 = FloatToInt(damage * 1000 + Rand(3000));
+                    myself.c_ai3 = attacker;
+                    break;
+                case 4:
+                    myself.i_ai4 = FloatToInt(damage * 1000 + Rand(3000));
+                    myself.c_ai4 = attacker;
+                    break;
+                }
+            }
+        }
+        else if (myself.sm.hp < myself.sm.max_hp * 1.0 / 4.0)
+        {
+            if (attacker == myself.c_ai2)
+            {
+                if (damage / 30.0 * 1000 + 1000 > myself.i_ai2)
+                {
+                    myself.i_ai2 = FloatToInt(damage / 30.0 * 1000 + Rand(3000));
+                }
+            }
+            else if (attacker == myself.c_ai3)
+            {
+                if (damage / 30.0 * 1000 + 1000 > myself.i_ai3)
+                {
+                    myself.i_ai3 = FloatToInt(damage / 30.0 * 1000 + Rand(3000));
+                }
+            }
+            else if (attacker == myself.c_ai4)
+            {
+                if (damage / 30.0 * 1000 + 1000 > myself.i_ai4)
+                {
+                    myself.i_ai4 = FloatToInt(damage / 30.0 * 1000 + Rand(3000));
+                }
+            }
+            else
+            {
+                if (myself.i_ai2 > myself.i_ai3)
+                {
+                    i1 = 3;
+                }
+                else if (myself.i_ai2 == myself.i_ai3)
+                {
+                    if (Rand(100) < 50)
+                    {
+                        i1 = 2;
+                    }
+                    else
+                    {
+                        i1 = 3;
+                    }
+                }
+                else if (myself.i_ai2 < myself.i_ai3)
+                {
+                    i1 = 2;
+                }
+
+                if (i1 == 2)
+                {
+                    if (myself.i_ai2 > myself.i_ai4)
+                    {
+                        i1 = 4;
+                    }
+                    else if (myself.i_ai2 == myself.i_ai4)
+                    {
+                        if (Rand(100) < 50)
+                        {
+                            i1 = 2;
+                        }
+                        else
+                        {
+                            i1 = 4;
+                        }
+                    }
+                    else if (myself.i_ai2 < myself.i_ai4)
+                    {
+                        i1 = 2;
+                    }
+                }
+                else if (i1 == 3)
+                {
+                    if (myself.i_ai3 > myself.i_ai4)
+                    {
+                        i1 = 4;
+                    }
+                    else if (myself.i_ai3 == myself.i_ai4)
+                    {
+                        if (Rand(100) < 50)
+                        {
+                            i1 = 3;
+                        }
+                        else
+                        {
+                            i1 = 4;
+                        }
+                    }
+                    else if (myself.i_ai3 < myself.i_ai4)
+                    {
+                        i1 = 3;
+                    }
+                }
+
+                select (i1)
+                {
+                case 2:
+                    myself.i_ai2 = FloatToInt(damage / 30.0 * 1000 + Rand(3000));
+                    myself.c_ai2 = attacker;
+                    break;
+                case 3:
+                    myself.i_ai3 = FloatToInt(damage / 30.0 * 1000 + Rand(3000));
+                    myself.c_ai3 = attacker;
+                    break;
+                case 4:
+                    myself.i_ai4 = FloatToInt(damage / 30.0 * 1000 + Rand(3000));
+                    myself.c_ai4 = attacker;
+                    break;
+                }
+            }
+        }
+        else if (myself.sm.hp < myself.sm.max_hp * 2.0 / 4.0)
+        {
+            if (attacker == myself.c_ai2)
+            {
+                if (damage / 50.0 * 1000 + 1000 > myself.i_ai2)
+                {
+                    myself.i_ai2 = FloatToInt(damage / 50.0 * 1000 + Rand(3000));
+                }
+            }
+            else if (attacker == myself.c_ai3)
+            {
+                if (damage / 50.0 * 1000 + 1000 > myself.i_ai3)
+                {
+                    myself.i_ai3 = FloatToInt(damage / 50.0 * 1000 + Rand(3000));
+                }
+            }
+            else if (attacker == myself.c_ai4)
+            {
+                if (damage / 50.0 * 1000 + 1000 > myself.i_ai4)
+                {
+                    myself.i_ai4 = FloatToInt(damage / 50.0 * 1000 + Rand(3000));
+                }
+            }
+            else
+            {
+                if (myself.i_ai2 > myself.i_ai3)
+                {
+                    i1 = 3;
+                }
+                else if (myself.i_ai2 == myself.i_ai3)
+                {
+                    if (Rand(100) < 50)
+                    {
+                        i1 = 2;
+                    }
+                    else
+                    {
+                        i1 = 3;
+                    }
+                }
+                else if (myself.i_ai2 < myself.i_ai3)
+                {
+                    i1 = 2;
+                }
+
+                if (i1 == 2)
+                {
+                    if (myself.i_ai2 > myself.i_ai4)
+                    {
+                        i1 = 4;
+                    }
+                    else if (myself.i_ai2 == myself.i_ai4)
+                    {
+                        if (Rand(100) < 50)
+                        {
+                            i1 = 2;
+                        }
+                        else
+                        {
+                            i1 = 4;
+                        }
+                    }
+                    else if (myself.i_ai2 < myself.i_ai4)
+                    {
+                        i1 = 2;
+                    }
+                }
+                else if (i1 == 3)
+                {
+                    if (myself.i_ai3 > myself.i_ai4)
+                    {
+                        i1 = 4;
+                    }
+                    else if (myself.i_ai3 == myself.i_ai4)
+                    {
+                        if (Rand(100) < 50)
+                        {
+                            i1 = 3;
+                        }
+                        else
+                        {
+                            i1 = 4;
+                        }
+                    }
+                    else if (myself.i_ai3 < myself.i_ai4)
+                    {
+                        i1 = 3;
+                    }
+                }
+
+                select (i1)
+                {
+                case 2:
+                    myself.i_ai2 = FloatToInt(damage / 50.0 * 1000 + Rand(3000));
+                    myself.c_ai2 = attacker;
+                    break;
+                case 3:
+                    myself.i_ai3 = FloatToInt(damage / 50.0 * 1000 + Rand(3000));
+                    myself.c_ai3 = attacker;
+                    break;
+                case 4:
+                    myself.i_ai4 = FloatToInt(damage / 50.0 * 1000 + Rand(3000));
+                    myself.c_ai4 = attacker;
+                    break;
+                }
+            }
+        }
+        else if (myself.sm.hp < myself.sm.max_hp * 3.0 / 4.0)
+        {
+            if (attacker == myself.c_ai2)
+            {
+                if (damage / 100.0 * 1000 + 1000 > myself.i_ai2)
+                {
+                    myself.i_ai2 = FloatToInt(damage / 100.0 * 1000 + Rand(3000));
+                }
+            }
+            else if (attacker == myself.c_ai3)
+            {
+                if (damage / 100.0 * 1000 + 1000 > myself.i_ai3)
+                {
+                    myself.i_ai3 = FloatToInt(damage / 100.0 * 1000 + Rand(3000));
+                }
+            }
+            else if (attacker == myself.c_ai4)
+            {
+                if (damage / 100.0 * 1000 + 1000 > myself.i_ai4)
+                {
+                    myself.i_ai4 = FloatToInt(damage / 100.0 * 1000 + Rand(3000));
+                }
+            }
+            else
+            {
+                if (myself.i_ai2 > myself.i_ai3)
+                {
+                    i1 = 3;
+                }
+                else if (myself.i_ai2 == myself.i_ai3)
+                {
+                    if (Rand(100) < 50)
+                    {
+                        i1 = 2;
+                    }
+                    else
+                    {
+                        i1 = 3;
+                    }
+                }
+                else if (myself.i_ai2 < myself.i_ai3)
+                {
+                    i1 = 2;
+                }
+
+                if (i1 == 2)
+                {
+                    if (myself.i_ai2 > myself.i_ai4)
+                    {
+                        i1 = 4;
+                    }
+                    else if (myself.i_ai2 == myself.i_ai4)
+                    {
+                        if (Rand(100) < 50)
+                        {
+                            i1 = 2;
+                        }
+                        else
+                        {
+                            i1 = 4;
+                        }
+                    }
+                    else if (myself.i_ai2 < myself.i_ai4)
+                    {
+                        i1 = 2;
+                    }
+                }
+                else if (i1 == 3)
+                {
+                    if (myself.i_ai3 > myself.i_ai4)
+                    {
+                        i1 = 4;
+                    }
+                    else if (myself.i_ai3 == myself.i_ai4)
+                    {
+                        if (Rand(100) < 50)
+                        {
+                            i1 = 3;
+                        }
+                        else
+                        {
+                            i1 = 4;
+                        }
+                    }
+                    else if (myself.i_ai3 < myself.i_ai4)
+                    {
+                        i1 = 3;
+                    }
+                }
+
+                select (i1)
+                {
+                case 2:
+                    myself.i_ai2 = FloatToInt(damage / 100.0 * 1000 + Rand(3000));
+                    myself.c_ai2 = attacker;
+                    break;
+                case 3:
+                    myself.i_ai3 = FloatToInt(damage / 100.0 * 1000 + Rand(3000));
+                    myself.c_ai3 = attacker;
+                    break;
+                case 4:
+                    myself.i_ai4 = FloatToInt(damage / 100.0 * 1000 + Rand(3000));
+                    myself.c_ai4 = attacker;
+                    break;
+                }
+            }
+        }
+        else if (attacker == myself.c_ai2)
+        {
+            if (damage / 150.0 * 1000 + 1000 > myself.i_ai2)
+            {
+                myself.i_ai2 = FloatToInt(damage / 150.0 * 1000 + Rand(3000));
+            }
+        }
+        else if (attacker == myself.c_ai3)
+        {
+            if (damage / 150.0 * 1000 + 1000 > myself.i_ai3)
+            {
+                myself.i_ai3 = FloatToInt(damage / 150.0 * 1000 + Rand(3000));
+            }
+        }
+        else if (attacker == myself.c_ai4)
+        {
+            if (damage / 150.0 * 1000 + 1000 > myself.i_ai4)
+            {
+                myself.i_ai4 = FloatToInt(damage / 150.0 * 1000 + Rand(3000));
+            }
+        }
+        else
+        {
+            if (myself.i_ai2 > myself.i_ai3)
+            {
+                i1 = 3;
+            }
+            else if (myself.i_ai2 == myself.i_ai3)
+            {
+                if (Rand(100) < 50)
+                {
+                    i1 = 2;
+                }
+                else
+                {
+                    i1 = 3;
+                }
+            }
+            else if (myself.i_ai2 < myself.i_ai3)
+            {
+                i1 = 2;
+            }
+
+            if (i1 == 2)
+            {
+                if (myself.i_ai2 > myself.i_ai4)
+                {
+                    i1 = 4;
+                }
+                else if (myself.i_ai2 == myself.i_ai4)
+                {
+                    if (Rand(100) < 50)
+                    {
+                        i1 = 2;
+                    }
+                    else
+                    {
+                        i1 = 4;
+                    }
+                }
+                else if (myself.i_ai2 < myself.i_ai4)
+                {
+                    i1 = 2;
+                }
+            }
+            else if (i1 == 3)
+            {
+                if (myself.i_ai3 > myself.i_ai4)
+                {
+                    i1 = 4;
+                }
+                else if (myself.i_ai3 == myself.i_ai4)
+                {
+                    if (Rand(100) < 50)
+                    {
+                        i1 = 3;
+                    }
+                    else
+                    {
+                        i1 = 4;
+                    }
+                }
+                else if (myself.i_ai3 < myself.i_ai4)
+                {
+                    i1 = 3;
+                }
+            }
+
+            select (i1)
+            {
+            case 2:
+                myself.i_ai2 = FloatToInt(damage / 150.0 * 1000 + Rand(3000));
+                myself.c_ai2 = attacker;
+                break;
+            case 3:
+                myself.i_ai3 = FloatToInt(damage / 150.0 * 1000 + Rand(3000));
+                myself.c_ai3 = attacker;
+                break;
+            case 4:
+                myself.i_ai4 = FloatToInt(damage / 150.0 * 1000 + Rand(3000));
+                myself.c_ai4 = attacker;
+                break;
+            }
+        }
+
+        if (myself.sm.db_value == 3 && myself.p_state == PSTATE_MOVE_AROUND)
+        {
+            if (DistFromMe(myself.c_ai2) > 9000 || myself.c_ai2.alive == 0)
+            {
+                myself.i_ai2 = 0;
+            }
+
+            if (DistFromMe(myself.c_ai3) > 9000 || myself.c_ai3.alive == 0)
+            {
+                myself.i_ai3 = 0;
+            }
+
+            if (DistFromMe(myself.c_ai4) > 9000 || myself.c_ai4.alive == 0)
+            {
+                myself.i_ai4 = 0;
+            }
+
+            if (myself.i_ai2 > myself.i_ai3)
+            {
+                i1 = 2;
+                i2 = myself.i_ai2;
+                c2 = myself.c_ai2;
+            }
+            else
+            {
+                i1 = 3;
+                i2 = myself.i_ai3;
+                c2 = myself.c_ai3;
+            }
+
+            if (myself.i_ai4 > i2)
+            {
+                i1 = 4;
+                i2 = myself.i_ai4;
+                c2 = myself.c_ai4;
+            }
+
+            if (i2 > 0)
+            {
+                if (Rand(100) < 70)
+                {
+                    select (i1)
+                    {
+                    case 2:
+                        myself.i_ai2 = 500;
+                        break;
+                    case 3:
+                        myself.i_ai3 = 500;
+                        break;
+                    case 4:
+                        myself.i_ai4 = 500;
+                        break;
+                    }
+                }
+
+                if (myself.sm.hp < myself.sm.max_hp * 1.0 / 4.0)
+                {
+                    if (Rand(100) < 30)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_mouth, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 40 && (DistFromMe(c2) < 850 && GetDirection(c2) < 180 + 30 && GetDirection(c2) > 180 - 30 || DistFromMe(c2) < 425 && GetDirection(c2) < 180 + 90 && GetDirection(c2) > 180 - 90))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_debuff, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10 && DistFromMe(c2) < 1100)
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_jump, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 6)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 50)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                }
+                else if (myself.sm.hp < myself.sm.max_hp * 2.0 / 4.0)
+                {
+                    if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 40 && (DistFromMe(c2) < 850 && GetDirection(c2) < 180 + 30 && GetDirection(c2) > 180 - 30 || DistFromMe(c2) < 425 && GetDirection(c2) < 180 + 90 && GetDirection(c2) > 180 - 90))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_debuff, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10 && DistFromMe(c2) < 1100)
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_jump, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 6)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 50)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                }
+                else if (myself.sm.hp < myself.sm.max_hp * 3.0 / 4.0)
+                {
+                    if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10 && DistFromMe(c2) < 1100)
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_jump, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 6)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 50)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                }
+                else if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                {
+                    AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 10)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 6)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 50)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else
+                {
+                    AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+        }
+    }
+
+    EventHandler SEE_CREATURE(creature, i1, i2, c2)
+    {
+        if (myself.sm.db_value == 3 && IsInCategory(@cleric_group, creature.occupation))
+        {
+            if (myself.sm.hp < myself.sm.max_hp * 1.0 / 4.0)
+            {
+                if (creature == myself.c_ai2)
+                {
+                    if (10 * 1000 + 1000 > myself.i_ai2)
+                    {
+                        myself.i_ai2 = FloatToInt(10 * 1000 + Rand(3000));
+                    }
+                }
+                else if (creature == myself.c_ai3)
+                {
+                    if (10 * 1000 + 1000 > myself.i_ai3)
+                    {
+                        myself.i_ai3 = FloatToInt(10 * 1000 + Rand(3000));
+                    }
+                }
+                else if (creature == myself.c_ai4)
+                {
+                    if (10 * 1000 + 1000 > myself.i_ai4)
+                    {
+                        myself.i_ai4 = FloatToInt(10 * 1000 + Rand(3000));
+                    }
+                }
+                else
+                {
+                    if (myself.i_ai2 > myself.i_ai3)
+                    {
+                        i1 = 3;
+                    }
+                    else if (myself.i_ai2 == myself.i_ai3)
+                    {
+                        if (Rand(100) < 50)
+                        {
+                            i1 = 2;
+                        }
+                        else
+                        {
+                            i1 = 3;
+                        }
+                    }
+                    else if (myself.i_ai2 < myself.i_ai3)
+                    {
+                        i1 = 2;
+                    }
+
+                    if (i1 == 2)
+                    {
+                        if (myself.i_ai2 > myself.i_ai4)
+                        {
+                            i1 = 4;
+                        }
+                        else if (myself.i_ai2 == myself.i_ai4)
+                        {
+                            if (Rand(100) < 50)
+                            {
+                                i1 = 2;
+                            }
+                            else
+                            {
+                                i1 = 4;
+                            }
+                        }
+                        else if (myself.i_ai2 < myself.i_ai4)
+                        {
+                            i1 = 2;
+                        }
+                    }
+                    else if (i1 == 3)
+                    {
+                        if (myself.i_ai3 > myself.i_ai4)
+                        {
+                            i1 = 4;
+                        }
+                        else if (myself.i_ai3 == myself.i_ai4)
+                        {
+                            if (Rand(100) < 50)
+                            {
+                                i1 = 3;
+                            }
+                            else
+                            {
+                                i1 = 4;
+                            }
+                        }
+                        else if (myself.i_ai3 < myself.i_ai4)
+                        {
+                            i1 = 3;
+                        }
+                    }
+
+                    select (i1)
+                    {
+                    case 2:
+                        myself.i_ai2 = FloatToInt(10 * 1000 + Rand(3000));
+                        myself.c_ai2 = creature;
+                        break;
+                    case 3:
+                        myself.i_ai3 = FloatToInt(10 * 1000 + Rand(3000));
+                        myself.c_ai3 = creature;
+                        break;
+                    case 4:
+                        myself.i_ai4 = FloatToInt(10 * 1000 + Rand(3000));
+                        myself.c_ai4 = creature;
+                        break;
+                    }
+                }
+            }
+            else if (myself.sm.hp < myself.sm.max_hp * 2.0 / 4.0)
+            {
+                if (creature == myself.c_ai2)
+                {
+                    if (6 * 1000 + 1000 > myself.i_ai2)
+                    {
+                        myself.i_ai2 = FloatToInt(6 * 1000 + Rand(3000));
+                    }
+                }
+                else if (creature == myself.c_ai3)
+                {
+                    if (6 * 1000 + 1000 > myself.i_ai3)
+                    {
+                        myself.i_ai3 = FloatToInt(6 * 1000 + Rand(3000));
+                    }
+                }
+                else if (creature == myself.c_ai4)
+                {
+                    if (6 * 1000 + 1000 > myself.i_ai4)
+                    {
+                        myself.i_ai4 = FloatToInt(6 * 1000 + Rand(3000));
+                    }
+                }
+                else
+                {
+                    if (myself.i_ai2 > myself.i_ai3)
+                    {
+                        i1 = 3;
+                    }
+                    else if (myself.i_ai2 == myself.i_ai3)
+                    {
+                        if (Rand(100) < 50)
+                        {
+                            i1 = 2;
+                        }
+                        else
+                        {
+                            i1 = 3;
+                        }
+                    }
+                    else if (myself.i_ai2 < myself.i_ai3)
+                    {
+                        i1 = 2;
+                    }
+
+                    if (i1 == 2)
+                    {
+                        if (myself.i_ai2 > myself.i_ai4)
+                        {
+                            i1 = 4;
+                        }
+                        else if (myself.i_ai2 == myself.i_ai4)
+                        {
+                            if (Rand(100) < 50)
+                            {
+                                i1 = 2;
+                            }
+                            else
+                            {
+                                i1 = 4;
+                            }
+                        }
+                        else if (myself.i_ai2 < myself.i_ai4)
+                        {
+                            i1 = 2;
+                        }
+                    }
+                    else if (i1 == 3)
+                    {
+                        if (myself.i_ai3 > myself.i_ai4)
+                        {
+                            i1 = 4;
+                        }
+                        else if (myself.i_ai3 == myself.i_ai4)
+                        {
+                            if (Rand(100) < 50)
+                            {
+                                i1 = 3;
+                            }
+                            else
+                            {
+                                i1 = 4;
+                            }
+                        }
+                        else if (myself.i_ai3 < myself.i_ai4)
+                        {
+                            i1 = 3;
+                        }
+                    }
+
+                    select (i1)
+                    {
+                    case 2:
+                        myself.i_ai2 = FloatToInt(6 * 1000 + Rand(3000));
+                        myself.c_ai2 = creature;
+                        break;
+                    case 3:
+                        myself.i_ai3 = FloatToInt(6 * 1000 + Rand(3000));
+                        myself.c_ai3 = creature;
+                        break;
+                    case 4:
+                        myself.i_ai4 = FloatToInt(6 * 1000 + Rand(3000));
+                        myself.c_ai4 = creature;
+                        break;
+                    }
+                }
+            }
+            else if (myself.sm.hp < myself.sm.max_hp * 3.0 / 4.0)
+            {
+                if (creature == myself.c_ai2)
+                {
+                    if (3 * 1000 + 1000 > myself.i_ai2)
+                    {
+                        myself.i_ai2 = FloatToInt(3 * 1000 + Rand(3000));
+                    }
+                }
+                else if (creature == myself.c_ai3)
+                {
+                    if (3 * 1000 + 1000 > myself.i_ai3)
+                    {
+                        myself.i_ai3 = FloatToInt(3 * 1000 + Rand(3000));
+                    }
+                }
+                else if (creature == myself.c_ai4)
+                {
+                    if (3 * 1000 + 1000 > myself.i_ai4)
+                    {
+                        myself.i_ai4 = FloatToInt(3 * 1000 + Rand(3000));
+                    }
+                }
+                else
+                {
+                    if (myself.i_ai2 > myself.i_ai3)
+                    {
+                        i1 = 3;
+                    }
+                    else if (myself.i_ai2 == myself.i_ai3)
+                    {
+                        if (Rand(100) < 50)
+                        {
+                            i1 = 2;
+                        }
+                        else
+                        {
+                            i1 = 3;
+                        }
+                    }
+                    else if (myself.i_ai2 < myself.i_ai3)
+                    {
+                        i1 = 2;
+                    }
+
+                    if (i1 == 2)
+                    {
+                        if (myself.i_ai2 > myself.i_ai4)
+                        {
+                            i1 = 4;
+                        }
+                        else if (myself.i_ai2 == myself.i_ai4)
+                        {
+                            if (Rand(100) < 50)
+                            {
+                                i1 = 2;
+                            }
+                            else
+                            {
+                                i1 = 4;
+                            }
+                        }
+                        else if (myself.i_ai2 < myself.i_ai4)
+                        {
+                            i1 = 2;
+                        }
+                    }
+                    else if (i1 == 3)
+                    {
+                        if (myself.i_ai3 > myself.i_ai4)
+                        {
+                            i1 = 4;
+                        }
+                        else if (myself.i_ai3 == myself.i_ai4)
+                        {
+                            if (Rand(100) < 50)
+                            {
+                                i1 = 3;
+                            }
+                            else
+                            {
+                                i1 = 4;
+                            }
+                        }
+                        else if (myself.i_ai3 < myself.i_ai4)
+                        {
+                            i1 = 3;
+                        }
+                    }
+
+                    select (i1)
+                    {
+                    case 2:
+                        myself.i_ai2 = FloatToInt(3 * 1000 + Rand(3000));
+                        myself.c_ai2 = creature;
+                        break;
+                    case 3:
+                        myself.i_ai3 = FloatToInt(3 * 1000 + Rand(3000));
+                        myself.c_ai3 = creature;
+                        break;
+                    case 4:
+                        myself.i_ai4 = FloatToInt(3 * 1000 + Rand(3000));
+                        myself.c_ai4 = creature;
+                        break;
+                    }
+                }
+            }
+            else if (creature == myself.c_ai2)
+            {
+                if (2 * 1000 + 1000 > myself.i_ai2)
+                {
+                    myself.i_ai2 = FloatToInt(2 * 1000 + Rand(3000));
+                }
+            }
+            else if (creature == myself.c_ai3)
+            {
+                if (2 * 1000 + 1000 > myself.i_ai3)
+                {
+                    myself.i_ai3 = FloatToInt(2 * 1000 + Rand(3000));
+                }
+            }
+            else if (creature == myself.c_ai4)
+            {
+                if (2 * 1000 + 1000 > myself.i_ai4)
+                {
+                    myself.i_ai4 = FloatToInt(2 * 1000 + Rand(3000));
+                }
+            }
+            else
+            {
+                if (myself.i_ai2 > myself.i_ai3)
+                {
+                    i1 = 3;
+                }
+                else if (myself.i_ai2 == myself.i_ai3)
+                {
+                    if (Rand(100) < 50)
+                    {
+                        i1 = 2;
+                    }
+                    else
+                    {
+                        i1 = 3;
+                    }
+                }
+                else if (myself.i_ai2 < myself.i_ai3)
+                {
+                    i1 = 2;
+                }
+
+                if (i1 == 2)
+                {
+                    if (myself.i_ai2 > myself.i_ai4)
+                    {
+                        i1 = 4;
+                    }
+                    else if (myself.i_ai2 == myself.i_ai4)
+                    {
+                        if (Rand(100) < 50)
+                        {
+                            i1 = 2;
+                        }
+                        else
+                        {
+                            i1 = 4;
+                        }
+                    }
+                    else if (myself.i_ai2 < myself.i_ai4)
+                    {
+                        i1 = 2;
+                    }
+                }
+                else if (i1 == 3)
+                {
+                    if (myself.i_ai3 > myself.i_ai4)
+                    {
+                        i1 = 4;
+                    }
+                    else if (myself.i_ai3 == myself.i_ai4)
+                    {
+                        if (Rand(100) < 50)
+                        {
+                            i1 = 3;
+                        }
+                        else
+                        {
+                            i1 = 4;
+                        }
+                    }
+                    else if (myself.i_ai3 < myself.i_ai4)
+                    {
+                        i1 = 3;
+                    }
+                }
+
+                select (i1)
+                {
+                case 2:
+                    myself.i_ai2 = FloatToInt(2 * 1000 + Rand(3000));
+                    myself.c_ai2 = creature;
+                    break;
+                case 3:
+                    myself.i_ai3 = FloatToInt(2 * 1000 + Rand(3000));
+                    myself.c_ai3 = creature;
+                    break;
+                case 4:
+                    myself.i_ai4 = FloatToInt(2 * 1000 + Rand(3000));
+                    myself.c_ai4 = creature;
+                    break;
+                }
+            }
+        }
+        else if (creature == myself.c_ai2)
+        {
+            if (1 * 1000 + 1000 > myself.i_ai2)
+            {
+                myself.i_ai2 = FloatToInt(1 * 1000 + Rand(3000));
+            }
+        }
+        else if (creature == myself.c_ai3)
+        {
+            if (1 * 1000 + 1000 > myself.i_ai3)
+            {
+                myself.i_ai3 = FloatToInt(1 * 1000 + Rand(3000));
+            }
+        }
+        else if (creature == myself.c_ai4)
+        {
+            if (1 * 1000 + 1000 > myself.i_ai4)
+            {
+                myself.i_ai4 = FloatToInt(1 * 1000 + Rand(3000));
+            }
+        }
+        else
+        {
+            if (myself.i_ai2 > myself.i_ai3)
+            {
+                i1 = 3;
+            }
+            else if (myself.i_ai2 == myself.i_ai3)
+            {
+                if (Rand(100) < 50)
+                {
+                    i1 = 2;
+                }
+                else
+                {
+                    i1 = 3;
+                }
+            }
+            else if (myself.i_ai2 < myself.i_ai3)
+            {
+                i1 = 2;
+            }
+
+            if (i1 == 2)
+            {
+                if (myself.i_ai2 > myself.i_ai4)
+                {
+                    i1 = 4;
+                }
+                else if (myself.i_ai2 == myself.i_ai4)
+                {
+                    if (Rand(100) < 50)
+                    {
+                        i1 = 2;
+                    }
+                    else
+                    {
+                        i1 = 4;
+                    }
+                }
+                else if (myself.i_ai2 < myself.i_ai4)
+                {
+                    i1 = 2;
+                }
+            }
+            else if (i1 == 3)
+            {
+                if (myself.i_ai3 > myself.i_ai4)
+                {
+                    i1 = 4;
+                }
+                else if (myself.i_ai3 == myself.i_ai4)
+                {
+                    if (Rand(100) < 50)
+                    {
+                        i1 = 3;
+                    }
+                    else
+                    {
+                        i1 = 4;
+                    }
+                }
+                else if (myself.i_ai3 < myself.i_ai4)
+                {
+                    i1 = 3;
+                }
+            }
+
+            select (i1)
+            {
+            case 2:
+                myself.i_ai2 = FloatToInt(1 * 1000 + Rand(3000));
+                myself.c_ai2 = creature;
+                break;
+            case 3:
+                myself.i_ai3 = FloatToInt(1 * 1000 + Rand(3000));
+                myself.c_ai3 = creature;
+                break;
+            case 4:
+                myself.i_ai4 = FloatToInt(1 * 1000 + Rand(3000));
+                myself.c_ai4 = creature;
+                break;
+            }
+        }
+
+        if (myself.sm.db_value == 3 && myself.p_state == PSTATE_MOVE_AROUND)
+        {
+            if (DistFromMe(myself.c_ai2) > 9000 || myself.c_ai2.alive == 0)
+            {
+                myself.i_ai2 = 0;
+            }
+
+            if (DistFromMe(myself.c_ai3) > 9000 || myself.c_ai3.alive == 0)
+            {
+                myself.i_ai3 = 0;
+            }
+
+            if (DistFromMe(myself.c_ai4) > 9000 || myself.c_ai4.alive == 0)
+            {
+                myself.i_ai4 = 0;
+            }
+
+            if (myself.i_ai2 > myself.i_ai3)
+            {
+                i1 = 2;
+                i2 = myself.i_ai2;
+                c2 = myself.c_ai2;
+            }
+            else
+            {
+                i1 = 3;
+                i2 = myself.i_ai3;
+                c2 = myself.c_ai3;
+            }
+
+            if (myself.i_ai4 > i2)
+            {
+                i1 = 4;
+                i2 = myself.i_ai4;
+                c2 = myself.c_ai4;
+            }
+
+            if (i2 > 0)
+            {
+                if (Rand(100) < 70)
+                {
+                    select (i1)
+                    {
+                    case 2:
+                        myself.i_ai2 = 500;
+                        break;
+                    case 3:
+                        myself.i_ai3 = 500;
+                        break;
+                    case 4:
+                        myself.i_ai4 = 500;
+                        break;
+                    }
+                }
+
+                if (myself.sm.hp < myself.sm.max_hp * 1.0 / 4.0)
+                {
+                    if (Rand(100) < 30)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_mouth, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 40 && (DistFromMe(c2) < 850 && GetDirection(c2) < 180 + 30 && GetDirection(c2) > 180 - 30 || DistFromMe(c2) < 425 && GetDirection(c2) < 180 + 90 && GetDirection(c2) > 180 - 90))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_debuff, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10 && DistFromMe(c2) < 1100)
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_jump, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 6)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 50)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                }
+                else if (myself.sm.hp < myself.sm.max_hp * 2.0 / 4.0)
+                {
+                    if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 40 && (DistFromMe(c2) < 850 && GetDirection(c2) < 180 + 30 && GetDirection(c2) > 180 - 30 || DistFromMe(c2) < 425 && GetDirection(c2) < 180 + 90 && GetDirection(c2) > 180 - 90))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_debuff, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10 && DistFromMe(c2) < 1100)
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_jump, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 6)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 50)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                }
+                else if (myself.sm.hp < myself.sm.max_hp * 3.0 / 4.0)
+                {
+                    if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10 && DistFromMe(c2) < 1100)
+                    {
+                        AddUseSkillDesire(myself.sm, @s_antaras_jump, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 10)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 6)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else if (Rand(100) < 50)
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                    else
+                    {
+                        AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                    }
+                }
+                else if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                {
+                    AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 10)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 6)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 50)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else
+                {
+                    AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+        }
+    }
+
+    EventHandler USE_SKILL_FINISHED(i1, i2, c2)
+    {
+        if (DistFromMe(myself.c_ai2) > 9000 || myself.c_ai2.alive == 0)
+        {
+            myself.i_ai2 = 0;
+        }
+
+        if (DistFromMe(myself.c_ai3) > 9000 || myself.c_ai3.alive == 0)
+        {
+            myself.i_ai3 = 0;
+        }
+
+        if (DistFromMe(myself.c_ai4) > 9000 || myself.c_ai4.alive == 0)
+        {
+            myself.i_ai4 = 0;
+        }
+
+        if (myself.i_ai2 > myself.i_ai3)
+        {
+            i1 = 2;
+            i2 = myself.i_ai2;
+            c2 = myself.c_ai2;
+        }
+        else
+        {
+            i1 = 3;
+            i2 = myself.i_ai3;
+            c2 = myself.c_ai3;
+        }
+
+        if (myself.i_ai4 > i2)
+        {
+            i1 = 4;
+            i2 = myself.i_ai4;
+            c2 = myself.c_ai4;
+        }
+
+        if (i2 > 0)
+        {
+            if (Rand(100) < 70)
+            {
+                select (i1)
+                {
+                case 2:
+                    myself.i_ai2 = 500;
+                    break;
+                case 3:
+                    myself.i_ai3 = 500;
+                    break;
+                case 4:
+                    myself.i_ai4 = 500;
+                    break;
+                }
+            }
+
+            if (myself.sm.hp < myself.sm.max_hp * 1.0 / 4.0)
+            {
+                if (Rand(100) < 30)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_mouth, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                {
+                    AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 40 && (DistFromMe(c2) < 850 && GetDirection(c2) < 180 + 30 && GetDirection(c2) > 180 - 30 || DistFromMe(c2) < 425 && GetDirection(c2) < 180 + 90 && GetDirection(c2) > 180 - 90))
+                {
+                    AddUseSkillDesire(myself.sm, @s_antaras_debuff, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 10 && DistFromMe(c2) < 1100)
+                {
+                    AddUseSkillDesire(myself.sm, @s_antaras_jump, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 10)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 6)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 50)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else
+                {
+                    AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+            else if (myself.sm.hp < myself.sm.max_hp * 2.0 / 4.0)
+            {
+                if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                {
+                    AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 40 && (DistFromMe(c2) < 850 && GetDirection(c2) < 180 + 30 && GetDirection(c2) > 180 - 30 || DistFromMe(c2) < 425 && GetDirection(c2) < 180 + 90 && GetDirection(c2) > 180 - 90))
+                {
+                    AddUseSkillDesire(myself.sm, @s_antaras_debuff, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 10 && DistFromMe(c2) < 1100)
+                {
+                    AddUseSkillDesire(myself.sm, @s_antaras_jump, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 10)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 6)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 50)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else
+                {
+                    AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+            else if (myself.sm.hp < myself.sm.max_hp * 3.0 / 4.0)
+            {
+                if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+                {
+                    AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 10 && DistFromMe(c2) < 1100)
+                {
+                    AddUseSkillDesire(myself.sm, @s_antaras_jump, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 10)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 6)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else if (Rand(100) < 50)
+                {
+                    AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+                else
+                {
+                    AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+            else if (Rand(100) < 80 && (DistFromMe(c2) < 1423 && GetDirection(c2) < 180 + 8 && GetDirection(c2) > 180 - 8 || DistFromMe(c2) < 802 && GetDirection(c2) < 180 + 14 && GetDirection(c2) > 180 - 14))
+            {
+                AddUseSkillDesire(myself.sm, @s_antaras_tail, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+            else if (Rand(100) < 10)
+            {
+                AddUseSkillDesire(c2, @s_antaras_fear, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+            else if (Rand(100) < 6)
+            {
+                AddUseSkillDesire(c2, @s_antaras_breath, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+            else if (Rand(100) < 50)
+            {
+                AddUseSkillDesire(c2, @s_antaras_normal_attack, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+            else
+            {
+                AddUseSkillDesire(c2, @s_antaras_normal_attack_ex, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+        }
+    }
+
+    EventHandler MY_DYING()
+    {
+        SpecialCamera(myself.sm, 1200, 20, -10, 0, 10000, 13000);
+        SetDBValue(myself.sm, 0);
+        UnregisterGlobalMap(GM_ID);
+    }
+}

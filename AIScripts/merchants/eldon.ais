@@ -1,0 +1,21 @@
+class eldon : mseller
+{
+property:
+    BuySellList SellList0 = {
+        {"mticket_aden_sword_fix"; 15};
+        {"mticket_aden_pole_fix"; 15};
+        {"mticket_aden_bow_fix"; 15};
+        {"mticket_aden_cleric_fix"; 15};
+        {"mticket_aden_wizard_fix"; 15};
+        {"mticket_aden_sword_move"; 15};
+        {"mticket_aden_pole_move"; 15};
+        {"mticket_aden_bow_move"; 15};
+        {"mticket_aden_cleric_move"; 15};
+        {"mticket_aden_wizard_move"; 15};
+        {"mticket_aden_teleporter1"; 15};
+        {"mticket_aden_teleporter2"; 15};
+        {"mticket_aden_teleporter3"; 15};
+        {"mticket_aden_teleporter4"; 15};
+        {"mticket_aden_teleporter5"; 15}
+    };
+}

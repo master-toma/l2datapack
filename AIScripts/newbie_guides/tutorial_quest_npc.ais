@@ -1,0 +1,620 @@
+class tutorial_quest_npc : default_npc
+{
+handler:
+    EventHandler TUTORIAL_EVENT(talker, event_id, i0, i1)
+    {
+        i1 = GetMemoState(talker, 255);
+        i0 = i1 & 0x7fffff00;
+        if (event_id < 0)
+        {
+            select (-event_id)
+            {
+            case 1:
+                CloseTutorialHTML(talker);
+                ShowQuestionMark(talker, @letters_of_love1);
+                SoundEffect(talker, "ItemSound.quest_tutorial");
+                break;
+            case 2:
+                ShowTutorialHTML(talker, "tutorial_002.htm");
+                EnableTutorialEvent(talker, i0 | 0x1);
+                break;
+            case 3:
+                ShowTutorialHTML(talker, "tutorial_003.htm");
+                EnableTutorialEvent(talker, i0 | 0x2);
+                break;
+            case 4:
+                ShowTutorialHTML(talker, "tutorial_004.htm");
+                EnableTutorialEvent(talker, i0 | 0x4);
+                break;
+            case 5:
+                ShowTutorialHTML(talker, "tutorial_005.htm");
+                EnableTutorialEvent(talker, i0 | 0x8);
+                break;
+            case 6:
+                ShowTutorialHTML(talker, "tutorial_006.htm");
+                EnableTutorialEvent(talker, i0 | 0x10);
+                break;
+            case 7:
+                ShowTutorialHTML(talker, "tutorial_100.htm");
+                EnableTutorialEvent(talker, i0);
+                break;
+            case 8:
+                ShowTutorialHTML(talker, "tutorial_101.htm");
+                EnableTutorialEvent(talker, i0);
+                break;
+            case 9:
+                ShowTutorialHTML(talker, "tutorial_102.htm");
+                EnableTutorialEvent(talker, i0);
+                break;
+            case 10:
+                ShowTutorialHTML(talker, "tutorial_103.htm");
+                EnableTutorialEvent(talker, i0);
+                break;
+            case 11:
+                ShowTutorialHTML(talker, "tutorial_104.htm");
+                EnableTutorialEvent(talker, i0);
+                break;
+            }
+
+            return;
+        }
+
+        select (event_id)
+        {
+        case 1:
+            if (talker.level < 6)
+            {
+                ShowTutorialHTML2(talker, "tutorial_003.htm", 3, "ItemSound.quest_tutorial");
+                EnableTutorialEvent(talker, i0 | 0x2);
+            }
+
+            break;
+        case 2:
+            if (talker.level < 6)
+            {
+                ShowTutorialHTML2(talker, "tutorial_004.htm", 3, "ItemSound.quest_tutorial");
+                EnableTutorialEvent(talker, i0 | 0x4);
+            }
+
+            break;
+        case 4:
+            if (talker.level < 6)
+            {
+                ShowTutorialHTML2(talker, "tutorial_005.htm", 3, "ItemSound.quest_tutorial");
+                EnableTutorialEvent(talker, i0 | 0x8);
+            }
+
+            break;
+        case 8:
+            if (talker.level < 6)
+            {
+                ShowTutorialHTML2(talker, "tutorial_006.htm", 3, "ItemSound.quest_tutorial");
+                EnableTutorialEvent(talker, i0 | 0x10);
+            }
+
+            break;
+        case 16:
+            if (talker.level < 6)
+            {
+                if (talker.occupation == @fighter)
+                {
+                    ShowTutorialHTML2(talker, "tutorial_human_fighter007.htm", 3, "ItemSound.quest_tutorial");
+                    ShowRadar(talker, -71126, 258428, -3104);
+                    ShowRadar(talker, -71350, 258616, -3104);
+                    ShowRadar(talker, -71572, 258357, -3107);
+                    ShowRadar(talker, -71345, 258165, -3104);
+                }
+                else if (talker.occupation == @mage)
+                {
+                    ShowTutorialHTML2(talker, "tutorial_human_mage007.htm", 3, "ItemSound.quest_tutorial");
+                    ShowRadar(talker, -90544, 248065, -3564);
+                    ShowRadar(talker, -90391, 248166, -3564);
+                    ShowRadar(talker, -90835, 248502, -3564);
+                    ShowRadar(talker, -90685, 248602, -3564);
+                }
+                else if (talker.occupation == @elven_fighter || talker.occupation == @elven_mage)
+                {
+                    ShowTutorialHTML2(talker, "tutorial_elf007.htm", 3, "ItemSound.quest_tutorial");
+                    ShowRadar(talker, 46568, 41431, -3513);
+                    ShowRadar(talker, 46739, 41720, -3513);
+                    ShowRadar(talker, 45787, 41733, -3513);
+                    ShowRadar(talker, 45946, 41413, -3513);
+                }
+                else if (talker.occupation == @dark_fighter || talker.occupation == @dark_mage)
+                {
+                    ShowTutorialHTML2(talker, "tutorial_delf007.htm", 3, "ItemSound.quest_tutorial");
+                    ShowRadar(talker, 28612, 10618, -4240);
+                    ShowRadar(talker, 29648, 10736, -4240);
+                    ShowRadar(talker, 28640, 11336, -4240);
+                    ShowRadar(talker, 29672, 11286, -4240);
+                }
+                else if (talker.occupation == @orc_fighter || talker.occupation == @orc_mage)
+                {
+                    ShowTutorialHTML2(talker, "tutorial_orc007.htm", 3, "ItemSound.quest_tutorial");
+                    ShowRadar(talker, -57094, -112571, -672);
+                    ShowRadar(talker, -57097, -114574, -670);
+                }
+                else if (talker.occupation == @dwarven_fighter)
+                {
+                    ShowTutorialHTML2(talker, "tutorial_dwarven_fighter007.htm", 3, "ItemSound.quest_tutorial");
+                    ShowRadar(talker, 108195, -172897, -551);
+                    ShowRadar(talker, 108753, -175344, -402);
+                }
+
+                SetMemoState(talker, 255, i0 | 0x2);
+            }
+
+            break;
+        case 256:
+            if (talker.level < 6)
+            {
+                ShowQuestionMark(talker, 10);
+                SoundEffect(talker, "ItemSound.quest_tutorial");
+                SetMemoState(talker, 255, i1 & ~0x100);
+                EnableTutorialEvent(talker, i0 & ~0x100 | 0x800000);
+            }
+
+            break;
+        case 512:
+            ShowQuestionMark(talker, 8);
+            SoundEffect(talker, "ItemSound.quest_tutorial");
+            SetMemoState(talker, 255, i1 & ~0x200);
+            break;
+        case 1024:
+            ShowQuestionMark(talker, 9);
+            SoundEffect(talker, "ItemSound.quest_tutorial");
+            SetMemoState(talker, 255, i1 & ~0x400);
+            if (talker.occupation == @fighter)
+            {
+                ShowRadar(talker, -83020, 242553, -3718);
+                ShowRadar(talker, -82809, 242751, -3718);
+                ShowRadar(talker, -83175, 243065, -3718);
+            }
+            else if (talker.occupation == @elven_fighter)
+            {
+                ShowRadar(talker, 45061, 52468, -2796);
+                ShowRadar(talker, 46083, 52394, -2796);
+            }
+            else if (talker.occupation == @dark_fighter)
+            {
+                ShowRadar(talker, 10447, 14620, -4242);
+                ShowRadar(talker, 11283, 14226, -4242);
+            }
+            else if (talker.occupation == @orc_fighter)
+            {
+                ShowRadar(talker, -46389, -113905, -21);
+                ShowRadar(talker, -46224, -113904, -21);
+            }
+            else if (talker.occupation == @dwarven_fighter)
+            {
+                ShowRadar(talker, 115271, -182692, -1445);
+                ShowRadar(talker, 115315, -182155, -1444);
+            }
+
+            SetMemoState(talker, 255, i1 & ~0x400);
+            break;
+        case 2048:
+            if (IsInCategory(@mage_group, talker.occupation))
+            {
+                ShowQuestionMark(talker, 11);
+                SoundEffect(talker, "ItemSound.quest_tutorial");
+                if (talker.occupation == @mage)
+                {
+                    ShowRadar(talker, -84981, 244764, -3726);
+                    ShowRadar(talker, -84729, 245001, -3726);
+                    ShowRadar(talker, -84965, 245222, -3726);
+                    ShowRadar(talker, -85186, 245001, -3726);
+                }
+                else if (talker.occupation == @elven_mage)
+                {
+                    ShowRadar(talker, 45701, 52459, -2796);
+                    ShowRadar(talker, 46083, 52155, -2796);
+                }
+                else if (talker.occupation == @dark_mage)
+                {
+                    ShowRadar(talker, 10344, 14445, -4242);
+                    ShowRadar(talker, 11258, 14431, -4242);
+                }
+                else if (talker.occupation == @orc_mage)
+                {
+                    ShowRadar(talker, -46225, -113312, -21);
+                    ShowRadar(talker, -46384, -113312, -21);
+                }
+
+                SetMemoState(talker, 255, i1 & ~0x800);
+            }
+
+            break;
+        case 4096:
+            ShowQuestionMark(talker, 13);
+            SetMemoState(talker, 255, i1 & ~0x1000);
+            break;
+        case 1048576:
+            if (talker.level < 6)
+            {
+                ShowTutorialHTML(talker, "tutorial_023.htm");
+                SetMemoState(talker, 255, i1 & ~0x100000);
+            }
+
+            break;
+        case 2097152:
+            if (talker.level < 6)
+            {
+                ShowTutorialHTML(talker, "tutorial_024.htm");
+                SetMemoState(talker, 255, i1 & ~0x200000);
+            }
+
+            break;
+        case 4194304:
+            if (talker.level < 6)
+            {
+                ShowTutorialHTML(talker, "tutorial_022.htm");
+                SetMemoState(talker, 255, i1 & ~0x400000);
+            }
+
+            break;
+        case 8388608:
+            if (talker.level < 6)
+            {
+                ShowTutorialHTML(talker, "tutorial_021.htm");
+                SetMemoState(talker, 255, i1 & ~0x800000);
+            }
+
+            break;
+        }
+    }
+
+    EventHandler QUESTION_MARK_CLICKED(talker, question_id, i0)
+    {
+        i0 = GetMemoState(talker, 255) & 0x7fffff00;
+        select (question_id)
+        {
+        case 1:
+            if (talker.occupation == @fighter)
+            {
+                ShowTutorialHTML(talker, "tutorial_human_fighter007.htm");
+                ShowRadar(talker, -71126, 258428, -3104);
+                ShowRadar(talker, -71350, 258616, -3104);
+                ShowRadar(talker, -71572, 258357, -3107);
+                ShowRadar(talker, -71345, 258165, -3104);
+            }
+            else if (talker.occupation == @mage)
+            {
+                ShowTutorialHTML(talker, "tutorial_human_mage007.htm");
+                ShowRadar(talker, -90544, 248065, -3564);
+                ShowRadar(talker, -90391, 248166, -3564);
+                ShowRadar(talker, -90835, 248502, -3564);
+                ShowRadar(talker, -90685, 248602, -3564);
+            }
+            else if (talker.occupation == @elven_fighter || talker.occupation == @elven_mage)
+            {
+                ShowTutorialHTML(talker, "tutorial_elf007.htm");
+                ShowRadar(talker, 46568, 41431, -3513);
+                ShowRadar(talker, 46739, 41720, -3513);
+                ShowRadar(talker, 45787, 41733, -3513);
+                ShowRadar(talker, 45946, 41413, -3513);
+            }
+            else if (talker.occupation == @dark_fighter || talker.occupation == @dark_mage)
+            {
+                ShowTutorialHTML(talker, "tutorial_delf007.htm");
+                ShowRadar(talker, 28612, 10618, -4240);
+                ShowRadar(talker, 29648, 10736, -4240);
+                ShowRadar(talker, 28640, 11336, -4240);
+                ShowRadar(talker, 29672, 11286, -4240);
+            }
+            else if (talker.occupation == @orc_fighter || talker.occupation == @orc_mage)
+            {
+                ShowTutorialHTML(talker, "tutorial_orc007.htm");
+                ShowRadar(talker, -57094, -112571, -672);
+                ShowRadar(talker, -57097, -114574, -670);
+            }
+            else if (talker.occupation == @dwarven_fighter)
+            {
+                ShowTutorialHTML(talker, "tutorial_dwarven_fighter007.htm");
+                ShowRadar(talker, 108195, -172897, -551);
+                ShowRadar(talker, 108753, -175344, -402);
+            }
+
+            SetMemoState(talker, 255, i0 | 0x2);
+            break;
+        case 2:
+            if (talker.occupation == @fighter)
+            {
+                ShowTutorialHTML(talker, "tutorial_human_fighter008.htm");
+            }
+            else if (talker.occupation == @mage)
+            {
+                ShowTutorialHTML(talker, "tutorial_human_mage008.htm");
+            }
+            else if (talker.occupation == @elven_fighter || talker.occupation == @elven_mage)
+            {
+                ShowTutorialHTML(talker, "tutorial_elf008.htm");
+            }
+            else if (talker.occupation == @dark_fighter || talker.occupation == @dark_mage)
+            {
+                ShowTutorialHTML(talker, "tutorial_delf008.htm");
+            }
+            else if (talker.occupation == @orc_fighter || talker.occupation == @orc_mage)
+            {
+                ShowTutorialHTML(talker, "tutorial_orc008.htm");
+            }
+            else if (talker.occupation == @dwarven_fighter)
+            {
+                ShowTutorialHTML(talker, "tutorial_dwarven_fighter008.htm");
+            }
+
+            break;
+        case 3:
+            ShowTutorialHTML(talker, "tutorial_009.htm");
+            EnableTutorialEvent(talker, i0 | 0x200000);
+            break;
+        case 4:
+            ShowTutorialHTML(talker, "tutorial_010.htm");
+            break;
+        case 5:
+            if (talker.occupation == @fighter)
+            {
+                ShowRadar(talker, -71126, 258428, -3104);
+                ShowRadar(talker, -71350, 258616, -3104);
+                ShowRadar(talker, -71572, 258357, -3107);
+                ShowRadar(talker, -71345, 258165, -3104);
+            }
+            else if (talker.occupation == @mage)
+            {
+                ShowRadar(talker, -90544, 248065, -3564);
+                ShowRadar(talker, -90391, 248166, -3564);
+                ShowRadar(talker, -90835, 248502, -3564);
+                ShowRadar(talker, -90685, 248602, -3564);
+            }
+            else if (talker.occupation == @elven_fighter || talker.occupation == @elven_mage)
+            {
+                ShowRadar(talker, 46568, 41431, -3513);
+                ShowRadar(talker, 46739, 41720, -3513);
+                ShowRadar(talker, 45787, 41733, -3513);
+                ShowRadar(talker, 45946, 41413, -3513);
+            }
+            else if (talker.occupation == @dark_fighter || talker.occupation == @dark_mage)
+            {
+                ShowRadar(talker, 28612, 10618, -4240);
+                ShowRadar(talker, 29648, 10736, -4240);
+                ShowRadar(talker, 28640, 11336, -4240);
+                ShowRadar(talker, 29672, 11286, -4240);
+            }
+            else if (talker.occupation == @orc_fighter || talker.occupation == @orc_mage)
+            {
+                ShowRadar(talker, -57094, -112571, -672);
+                ShowRadar(talker, -57097, -114574, -670);
+            }
+            else if (talker.occupation == @dwarven_fighter)
+            {
+                ShowRadar(talker, 108195, -172897, -551);
+                ShowRadar(talker, 108753, -175344, -402);
+            }
+
+            ShowTutorialHTML(talker, "tutorial_011.htm");
+            break;
+        case 6:
+            ShowTutorialHTML(talker, "tutorial_012.htm");
+            SetMemoState(talker, 255, i0 | 0x3);
+            EnableTutorialEvent(talker, i0 | 0x400000);
+            break;
+        case 7:
+            ShowTutorialHTML(talker, "tutorial_015.htm");
+            SetMemoState(talker, 255, i0 | 0x5);
+            break;
+        case 8:
+            ShowTutorialHTML(talker, "tutorial_018.htm");
+            break;
+        case 9:
+            if (IsInCategory(@fighter_group, talker.occupation))
+            {
+                ShowTutorialHTML(talker, "tutorial_fighter017.htm");
+            }
+            else
+            {
+                ShowTutorialHTML(talker, "tutorial_mage017.htm");
+            }
+
+            break;
+        case 10:
+            ShowTutorialHTML(talker, "tutorial_019.htm");
+            break;
+        case 11:
+            ShowTutorialHTML(talker, "tutorial_mage020.htm");
+            break;
+        case 12:
+            ShowTutorialHTML(talker, "tutorial_015.htm");
+            break;
+        case 13:
+            if (talker.occupation == @mage)
+            {
+                ShowTutorialHTML(talker, "tutorial_human_mage010.htm");
+            }
+            else if (talker.occupation == @elven_mage)
+            {
+                ShowTutorialHTML(talker, "tutorial_elf_mage010.htm");
+            }
+            else if (talker.occupation == @dark_mage)
+            {
+                ShowTutorialHTML(talker, "tutorial_darkelf_mage010.htm");
+            }
+            else if (talker.occupation == @orc_mage)
+            {
+                ShowTutorialHTML(talker, "tutorial_orc_mage010.htm");
+            }
+            else if (talker.occupation == @fighter)
+            {
+                ShowTutorialHTML(talker, "tutorial_human_fighter010.htm");
+            }
+            else if (talker.occupation == @elven_fighter)
+            {
+                ShowTutorialHTML(talker, "tutorial_elf_fighter010.htm");
+            }
+            else if (talker.occupation == @dark_fighter)
+            {
+                ShowTutorialHTML(talker, "tutorial_darkelf_fighter010.htm");
+            }
+            else if (talker.occupation == @orc_fighter)
+            {
+                ShowTutorialHTML(talker, "tutorial_orc_fighter010.htm");
+            }
+            else if (talker.occupation == @dwarven_fighter)
+            {
+                ShowTutorialHTML(talker, "tutorial_dwarf010.htm");
+            }
+
+            break;
+        }
+    }
+
+    EventHandler USER_CONNECTED(talker, i0, i1, i2, i3, i4)
+    {
+        if (talker.level < 6)
+        {
+            if (GetOneTimeQuestFlag(talker, 255) != 0)
+            {
+                return;
+            }
+
+            i0 = GetMemoState(talker, 255);
+            if (i0 == -1)
+            {
+                i0 = 0;
+                i1 = 0;
+            }
+            else
+            {
+                i1 = i0 & 0xff;
+                i0 = i0 & 0x7fffff00;
+            }
+
+            select (i1)
+            {
+            case 0:
+                if (talker.occupation == @fighter)
+                {
+                    ShowTutorialHTML(talker, "tutorial_human_fighter001.htm");
+                }
+                else if (talker.occupation == @mage)
+                {
+                    ShowTutorialHTML(talker, "tutorial_human_mage001.htm");
+                }
+                else if (talker.occupation == @elven_fighter)
+                {
+                    ShowTutorialHTML(talker, "tutorial_elven_fighter001.htm");
+                }
+                else if (talker.occupation == @elven_mage)
+                {
+                    ShowTutorialHTML(talker, "tutorial_elven_mage001.htm");
+                }
+                else if (talker.occupation == @dark_fighter)
+                {
+                    ShowTutorialHTML(talker, "tutorial_delf_fighter001.htm");
+                }
+                else if (talker.occupation == @dark_mage)
+                {
+                    ShowTutorialHTML(talker, "tutorial_delf_mage001.htm");
+                }
+                else if (talker.occupation == @orc_fighter)
+                {
+                    ShowTutorialHTML(talker, "tutorial_orc_fighter001.htm");
+                }
+                else if (talker.occupation == @orc_mage)
+                {
+                    ShowTutorialHTML(talker, "tutorial_orc_mage001.htm");
+                }
+                else if (talker.occupation == @dwarven_fighter)
+                {
+                    ShowTutorialHTML(talker, "tutorial_dwarven_fighter001.htm");
+                }
+
+                i0 = 0x7fffff00 & ~(0x400000 | 0x200000 | 0x800000);
+                SetMemoState(talker, 255, 0x1 | i0);
+                break;
+            case 1:
+                ShowQuestionMark(talker, @letters_of_love1);
+                SoundEffect(talker, "ItemSound.quest_tutorial");
+                break;
+            case 2:
+                if (HaveMemo(talker, @hfighter_tutorial) || HaveMemo(talker, @hmage_tutorial) || HaveMemo(talker, @elf_tutorial) || HaveMemo(talker, @delf_tutorial) || HaveMemo(talker, @orc_tutorial) || HaveMemo(talker, @dwarf_tutorial))
+                {
+                    ShowQuestionMark(talker, 6);
+                    SoundEffect(talker, "ItemSound.quest_tutorial");
+                }
+                else
+                {
+                    ShowQuestionMark(talker, @what_women_want1);
+                    SoundEffect(talker, "ItemSound.quest_tutorial");
+                }
+
+                break;
+            case 3:
+                i3 = 0;
+                i4 = GetMemoState(talker, @hfighter_tutorial);
+                if (i4 > 0)
+                {
+                    i3 = i3 + i4;
+                }
+
+                i4 = GetMemoState(talker, @hmage_tutorial);
+                if (i4 > 0)
+                {
+                    i3 = i3 + i4;
+                }
+
+                i4 = GetMemoState(talker, @elf_tutorial);
+                if (i4 > 0)
+                {
+                    i3 = i3 + i4;
+                }
+
+                i4 = GetMemoState(talker, @delf_tutorial);
+                if (i4 > 0)
+                {
+                    i3 = i3 + i4;
+                }
+
+                i4 = GetMemoState(talker, @orc_tutorial);
+                if (i4 > 0)
+                {
+                    i3 = i3 + i4;
+                }
+
+                i4 = GetMemoState(talker, @dwarf_tutorial);
+                if (i4 > 0)
+                {
+                    i3 = i3 + i4;
+                }
+
+                if (i3 == 0)
+                {
+                    ShowQuestionMark(talker, 6);
+                    SoundEffect(talker, "ItemSound.quest_tutorial");
+                }
+                else if (i3 == 1)
+                {
+                    ShowQuestionMark(talker, @release_darkelf_elder1);
+                    SoundEffect(talker, "ItemSound.quest_tutorial");
+                }
+                else if (i3 == 2)
+                {
+                    ShowQuestionMark(talker, @long_live_lord_of_flame);
+                    SoundEffect(talker, "ItemSound.quest_tutorial");
+                }
+                else if (i3 == 3)
+                {
+                    ShowQuestionMark(talker, @miners_favor);
+                    SoundEffect(talker, "ItemSound.quest_tutorial");
+                }
+
+                break;
+            case 4:
+                ShowQuestionMark(talker, 12);
+                SoundEffect(talker, "ItemSound.quest_tutorial");
+                break;
+            }
+
+            EnableTutorialEvent(talker, i0);
+        }
+    }
+}

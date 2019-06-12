@@ -1,0 +1,48 @@
+class ai_boss03_raikel_leos : party_private
+{
+handler:
+    EventHandler CREATED()
+    {
+        AddTimerEx(2001, 10000);
+        myself.i_ai0 = myself.boss.flag;
+        myself.i_ai1 = 1;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 2001)
+        {
+            if ((myself.boss.flag != myself.i_ai0 || DistFromMe(myself.boss) > 3000) && myself.i_ai1 == 1 && myself.boss.alive != 0)
+            {
+                myself.i_ai0 = myself.boss.flag;
+                InstantTeleport(myself.sm, FloatToInt(myself.boss.x), FloatToInt(myself.boss.y), FloatToInt(myself.boss.z));
+                RemoveAllAttackDesire();
+            }
+
+            AddTimerEx(2001, 10000);
+        }
+
+        super;
+    }
+
+    EventHandler PARTY_ATTACKED(attacker, private, damage)
+    {
+        if (Rand(100) < 5)
+        {
+            if (Skill_GetConsumeMP(@s_npc_blow4) < myself.sm.mp && Skill_GetConsumeHP(@s_npc_blow4) < myself.sm.hp && Skill_InReuseDelay(@s_npc_blow4) == @FALSE)
+            {
+                AddUseSkillDesire(attacker, @s_npc_blow4, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+        }
+
+        super;
+    }
+
+    EventHandler PARTY_DIED(private)
+    {
+        if (private == myself.boss)
+        {
+            myself.i_ai1 = 0;
+        }
+    }
+}

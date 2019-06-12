@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_expertise_s]	/* [엑스퍼티즈 S] */	skill_id = 239	level = 5	operate_type = P	effect = {{p_remove_equip_penalty;s}}	skill_end

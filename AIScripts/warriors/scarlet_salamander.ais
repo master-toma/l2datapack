@@ -1,0 +1,79 @@
+class scarlet_salamander : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_orc_monk) == 1 && OwnItemCount(myself.c_quest0, @leather_pouch3) == 1 && myself.i_quest0 == 1)
+        {
+            if (OwnItemCount(myself.c_quest0, @s_salamander_scale) == 4)
+            {
+                DeleteItem1(myself.c_quest0, @s_salamander_scale, OwnItemCount(myself.c_quest0, @s_salamander_scale));
+                DeleteItem1(myself.c_quest0, @leather_pouch3, OwnItemCount(myself.c_quest0, @leather_pouch3));
+                GiveItem1(myself.c_quest0, @leather_pouch3full, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(myself.c_quest0, @s_salamander_scale, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_orc_shaman) == 1 && OwnItemCount(myself.c_quest0, @fire_charm) == 1 && OwnItemCount(myself.c_quest0, @fiery_egg1) < 1)
+        {
+            if (OwnItemCount(myself.c_quest0, @kasha_bear_pelt) + OwnItemCount(myself.c_quest0, @kasha_bspider_husk) + OwnItemCount(myself.c_quest0, @fiery_egg1) == 2)
+            {
+                GiveItem1(myself.c_quest0, @fiery_egg1, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(myself.c_quest0, @fiery_egg1, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker || attacker.attack_type != @AT_FIST && attacker.attack_type != @AT_DUALFIST)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

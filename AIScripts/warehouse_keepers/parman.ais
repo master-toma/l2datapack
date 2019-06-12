@@ -1,0 +1,238 @@
+class parman : warehouse_keeper
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_prosperity) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_prosperity) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Apply for Test of Prosperity");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_prosperity) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Apply for Test of Prosperity");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give four kinds of certificates");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @parmans_instructions) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Apply for second test");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @parmans_letter) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Apply for second test");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && (OwnItemCount(talker, @clay_dough) >= 1 || OwnItemCount(talker, @pattern_of_keyhole) >= 1 || OwnItemCount(talker, @nikolas_list) >= 1) && OwnItemCount(talker, @ring_of_testimony2) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about tablets");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @maphr_tablet_fragment) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Give Tablet of Marf");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_prosperity) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race == @race_dwarf && talker.level >= 37 && IsInCategory(@dwarf_2nd_group, talker.occupation))
+                        {
+                            FHTML_SetFileName(fhtml0, "parman_q0221_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @testimony_of_prosperity);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else if (talker.race == @race_dwarf && talker.level >= 37)
+                        {
+                            ShowPage(talker, "parman_q0221_01a.htm");
+                        }
+                        else if (talker.race == @race_dwarf)
+                        {
+                            ShowPage(talker, "parman_q0221_02.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "parman_q0221_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_prosperity) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) == 1)
+                {
+                    if (OwnItemCount(talker, @old_account_book) >= 1 && OwnItemCount(talker, @blessed_seed) >= 1 && OwnItemCount(talker, @recipe_of_emilly) >= 1 && OwnItemCount(talker, @rylith_elven_wafer) >= 1)
+                    {
+                        ShowPage(talker, "parman_q0221_06.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "parman_q0221_05.htm");
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @parmans_instructions) == 1)
+                {
+                    if (talker.level < 38)
+                    {
+                        ShowPage(talker, "parman_q0221_09.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "parman_q0221_10.htm");
+                        DeleteItem1(talker, @parmans_instructions, 1);
+                        GiveItem1(talker, @ring_of_testimony2, 1);
+                        GiveItem1(talker, @parmans_letter, 1);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @parmans_letter) >= 1)
+                {
+                    ShowPage(talker, "parman_q0221_11.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && (OwnItemCount(talker, @clay_dough) >= 1 || OwnItemCount(talker, @pattern_of_keyhole) >= 1 || OwnItemCount(talker, @nikolas_list) >= 1) && OwnItemCount(talker, @ring_of_testimony2) == 1)
+                {
+                    ShowPage(talker, "parman_q0221_12.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) >= 1 && OwnItemCount(talker, @maphr_tablet_fragment) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        IncrementParam(talker, @PARAM_EXP, 31000);
+                        IncrementParam(talker, @PARAM_SP, 3800);
+                        DeleteItem1(talker, @ring_of_testimony2, OwnItemCount(talker, @ring_of_testimony2));
+                        DeleteItem1(talker, @maphr_tablet_fragment, 1);
+                        GiveItem1(talker, @mark_of_prosperity, 1);
+                        ShowPage(talker, "parman_q0221_13.htm");
+                        RemoveMemo(talker, @testimony_of_prosperity);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @testimony_of_prosperity, 1);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @testimony_of_prosperity)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @ring_of_testimony1) == 0)
+                {
+                    GiveItem1(talker, @ring_of_testimony1, 1);
+                }
+
+                ShowPage(talker, "parman_q0221_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_prosperity)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    if (talker.level < 38)
+                    {
+                        ShowPage(talker, "parman_q0221_07.htm");
+                        DeleteItem1(talker, @ring_of_testimony1, OwnItemCount(talker, @ring_of_testimony1));
+                        DeleteItem1(talker, @old_account_book, OwnItemCount(talker, @old_account_book));
+                        DeleteItem1(talker, @blessed_seed, OwnItemCount(talker, @blessed_seed));
+                        DeleteItem1(talker, @recipe_of_emilly, OwnItemCount(talker, @recipe_of_emilly));
+                        DeleteItem1(talker, @rylith_elven_wafer, OwnItemCount(talker, @rylith_elven_wafer));
+                        GiveItem1(talker, @parmans_instructions, 1);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "parman_q0221_08.htm");
+                        DeleteItem1(talker, @ring_of_testimony1, OwnItemCount(talker, @ring_of_testimony1));
+                        DeleteItem1(talker, @old_account_book, OwnItemCount(talker, @old_account_book));
+                        DeleteItem1(talker, @blessed_seed, OwnItemCount(talker, @blessed_seed));
+                        DeleteItem1(talker, @recipe_of_emilly, OwnItemCount(talker, @recipe_of_emilly));
+                        DeleteItem1(talker, @rylith_elven_wafer, OwnItemCount(talker, @rylith_elven_wafer));
+                        GiveItem1(talker, @ring_of_testimony2, 1);
+                        GiveItem1(talker, @parmans_letter, 1);
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,75 @@
+class magister_clayton : mage_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 5 && OwnItemCount(talker, @letter_of_thifiell))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you came because you were sent by Tetrarch Thifiell");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 6 && OwnItemCount(talker, @order_of_clayton) && OwnItemCount(talker, @stakato_ichor) + OwnItemCount(talker, @honey_dew) + OwnItemCount(talker, @basilisk_plasma) < 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask what you should bring");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 6 && OwnItemCount(talker, @order_of_clayton) && OwnItemCount(talker, @stakato_ichor) + OwnItemCount(talker, @honey_dew) + OwnItemCount(talker, @basilisk_plasma) == 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show the ingredients that you brought");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 5 && OwnItemCount(talker, @letter_of_thifiell))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "magister_clayton_q0217_01.htm");
+                        GiveItem1(talker, @order_of_clayton, 1);
+                        DeleteItem1(talker, @letter_of_thifiell, 1);
+                        SetMemoState(talker, @testimoney_of_trust, 6);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 6 && OwnItemCount(talker, @order_of_clayton) && OwnItemCount(talker, @stakato_ichor) + OwnItemCount(talker, @honey_dew) + OwnItemCount(talker, @basilisk_plasma) < 3)
+                {
+                    ShowPage(talker, "magister_clayton_q0217_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 6 && OwnItemCount(talker, @order_of_clayton) && OwnItemCount(talker, @stakato_ichor) + OwnItemCount(talker, @honey_dew) + OwnItemCount(talker, @basilisk_plasma) == 3)
+                {
+                    ShowPage(talker, "magister_clayton_q0217_03.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

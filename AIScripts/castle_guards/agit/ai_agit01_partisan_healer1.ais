@@ -1,0 +1,25 @@
+class ai_agit01_partisan_healer1 : default_npc
+{
+parameter:
+    float Attack_DecayRatio = 6.6;
+    float UseSkill_DecayRatio = 66000.0;
+    float Attack_BoostValue = 500.0;
+    float UseSkill_BoostValue = 100000.0;
+    
+handler:
+    EventHandler NO_DESIRE()
+    {
+        AddDoNothingDesire(10, 30);
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, victim, damage)
+    {
+        if ((victim.class_id == @bloody_lord_nurka1 || victim.class_id == @bloody_lord_nurka2) && victim.hp < victim.max_hp * 0.6 && Rand(100) < 20)
+        {
+            if (Skill_GetConsumeMP(@s_partisan_heal) < myself.sm.mp && Skill_GetConsumeHP(@s_partisan_heal) < myself.sm.hp && Skill_InReuseDelay(@s_partisan_heal) == @FALSE)
+            {
+                AddUseSkillDesire(victim, @s_partisan_heal, @ST_HEAL, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+        }
+    }
+}

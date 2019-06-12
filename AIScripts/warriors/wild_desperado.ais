@@ -1,0 +1,3 @@
+class wild_desperado : party_leader_aggressive
+{
+}

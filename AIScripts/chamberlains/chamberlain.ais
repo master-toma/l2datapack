@@ -1,0 +1,642 @@
+class chamberlain : default_npc
+{
+parameter:
+    string fnHi = "chamberlain_saius001.htm";
+    string fnViewReport = "chamberlain_saius002.htm";
+    string fnViewTaxRate = "chamberlain_saius003.htm";
+    string fnSetTaxRate = "chamberlain_saius004.htm";
+    string fnSetGate = "chamberlain_saius005.htm";
+    string fnSetSiegeTime1 = "chamberlain_saius006.htm";
+    string fnViewSiegeTime = "chamberlain_saius007.htm";
+    string fnManageWarehouse = "chamberlain_saius008.htm";
+    string fnNotMyLord = "chamberlain_saius009.htm";
+    string fnAfterSetTaxRate = "chamberlain_saius010.htm";
+    string fnAfterOpenGate = "chamberlain_saius011.htm";
+    string fnAfterCloseGate = "chamberlain_saius012.htm";
+    string fnAlreadySetSiege = "chamberlain_saius013.htm";
+    string fnNotRegeistTime = "chamberlain_saius014.htm";
+    string fnSetSiegeTime2 = "chamberlain_saius015.htm";
+    string fnSetSiegeTime3 = "chamberlain_saius016.htm";
+    string fnSetSiegeTime4 = "chamberlain_saius017.htm";
+    string fnSetSiegeTime5 = "chamberlain_saius018.htm";
+    string fnAfterSetSiegeTime = "chamberlain_saius019.htm";
+    string fnSiegeViewReport = "chamberlain_saius020.htm";
+    string fnSiegeStoppedFunction = "chamberlain_saius021.htm";
+    string fnManorManage = "chamberlain_saius022.htm";
+    string fnViewCropList = "chamberlain_saius023.htm";
+    string fnNewCrop1 = "chamberlain_saius024.htm";
+    string fnNewCrop2 = "chamberlain_saius025.htm";
+    string fnNewCrop3 = "chamberlain_saius026.htm";
+    string fnAddCrop1 = "chamberlain_saius027.htm";
+    string fnAddCrop2 = "chamberlain_saius028.htm";
+    string fnAddCrop3 = "chamberlain_saius029.htm";
+    string fnSetCropDrop1 = "chamberlain_saius030.htm";
+    string fnDeleteCropDrop1 = "chamberlain_saius031.htm";
+    string fnReduceCropDrop1 = "chamberlain_saius032.htm";
+    string fnDropConfirmed = "chamberlain_saius033.htm";
+    string fnDropUnderflow = "chamberlain_saius034.htm";
+    string fnDropOverflow = "chamberlain_saius035.htm";
+    string fnSetCropPrice1 = "chamberlain_saius036.htm";
+    string fnPriceConfirmed = "chamberlain_saius037.htm";
+    string fnSetCropDrop2 = "chamberlain_saius038.htm";
+    string fnDeleteCropDrop2 = "chamberlain_saius039.htm";
+    string fnReduceCropDrop2 = "chamberlain_saius040.htm";
+    string fnSetCropPrice2 = "chamberlain_saius041.htm";
+    string fnSetCropDrop3 = "chamberlain_saius042.htm";
+    string fnDeleteCropDrop3 = "chamberlain_saius043.htm";
+    string fnReduceCropDrop3 = "chamberlain_saius044.htm";
+    string fnSetCropPrice3 = "chamberlain_saius045.htm";
+    string fnAddCropDrop1 = "chamberlain_saius046.htm";
+    string fnAddCropDrop2 = "chamberlain_saius047.htm";
+    string fnAddCropDrop3 = "chamberlain_saius048.htm";
+    string fnNotEnoughMoney = "chamberlain_saius049.htm";
+    string fnBanish = "chamberlain_saius050.htm";
+    string fnAfterBanish = "chamberlain_saius051.htm";
+    string fnSiegeDefendList = "chamberlain_saius052.htm";
+    string fnDoorStrengthen = "chamberlain_saius053.htm";
+    string fnDoorLevel = "chamberlain_saius054.htm";
+    string fnDoorStrengthenConfirm = "chamberlain_saius055.htm";
+    string fnCurrentDoorLevelHigher = "chamberlain_saius056.htm";
+    string fnDoorHpLevelUp = "chamberlain_saius057.htm";
+    string fnSetSlowZone = "chamberlain_saius058.htm";
+    string fnSetDmgLevel = "chamberlain_saius059.htm";
+    string fnDmgZoneConfirm = "chamberlain_saius060.htm";
+    string fnCurrentDmgzoneLevelHigher = "chamberlain_saius061.htm";
+    string fnDmgZoneLevelUp = "chamberlain_saius062.htm";
+    string DDoorName1_1 = "aden_castle_outter_001";
+    string DDoorName1_2 = "aden_castle_outter_002";
+    string DDoorName2_1 = "aden_castle_left_001";
+    string DDoorName2_2 = "aden_castle_left_002";
+    string DDoorName3_1 = "aden_castle_right_001";
+    string DDoorName3_2 = "aden_castle_right_002";
+    string DDoorName4_1 = "aden_castle_inner_001";
+    string DDoorName4_2 = "aden_castle_inner_002";
+    string DDoorName5_1 = "aden_castle_left_003";
+    string DDoorName5_2 = "aden_castle_left_004";
+    string DDoorName6_1 = "aden_castle_right_003";
+    string DDoorName6_2 = "aden_castle_right_004";
+    string SDoorName1 = "aden_castle_terrace";
+    string WallName1 = "aden_castle_wall_in";
+    string WallName2 = "aden_castle_wall_left";
+    string WallName3 = "aden_castle_wall_right";
+    string dmgzonename1 = "aden_damage1_ctrltower";
+    string dmgzonename2 = "aden_damage2_ctrltower";
+    int DDoorPrice1_1 = 3000000;
+    int DDoorPrice1_2 = 4000000;
+    int DDoorPrice1_3 = 5000000;
+    int DDoorPrice2_1 = 750000;
+    int DDoorPrice2_2 = 900000;
+    int DDoorPrice2_3 = 1000000;
+    int DDoorPrice3_1 = 750000;
+    int DDoorPrice3_2 = 900000;
+    int DDoorPrice3_3 = 1000000;
+    int DDoorPrice4_1 = 750000;
+    int DDoorPrice4_2 = 900000;
+    int DDoorPrice4_3 = 1000000;
+    int WallPrice1_1 = 1600000;
+    int WallPrice1_2 = 1800000;
+    int WallPrice1_3 = 2000000;
+    int WallPrice1_1 = 1600000;
+    int WallPrice1_2 = 1800000;
+    int WallPrice1_3 = 2000000;
+    int WallPrice1_1 = 1600000;
+    int WallPrice1_2 = 1800000;
+    int WallPrice1_3 = 2000000;
+    int dmgzoneprice1_1 = 3000000;
+    int dmgzoneprice1_2 = 4000000;
+    int dmgzoneprice1_3 = 5000000;
+    int dmgzoneprice1_4 = 6000000;
+    int dmgzoneprice1_1 = 3000000;
+    int dmgzoneprice1_2 = 4000000;
+    int dmgzoneprice1_3 = 5000000;
+    int dmgzoneprice1_4 = 6000000;
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        if (IsMyLord(talker))
+        {
+            ShowPage(talker, fnHi);
+        }
+        else
+        {
+            ShowPage(talker, fnNotMyLord);
+        }
+    }
+
+    EventHandler MENU_SELECTED(talker, ask, reply, fhtml0, i0, i1, i2)
+    {
+        if (ask == -201)
+        {
+            select (reply)
+            {
+            case 1:
+                if (Castle_IsUnderSiege())
+                {
+                    ShowPage(talker, fnSiegeViewReport);
+                }
+                else
+                {
+                    ShowPage(talker, fnViewReport);
+                }
+
+                break;
+            case 2:
+                FHTML_SetFileName(fhtml0, fnViewTaxRate);
+                FHTML_SetInt(fhtml0, "current_tax_rate", Residence_GetTaxRateCurrent());
+                FHTML_SetInt(fhtml0, "next_tax_rate", Residence_GetTaxRate());
+                ShowFHTML(talker, fhtml0);
+                break;
+            case 3:
+                if (Castle_IsUnderSiege())
+                {
+                    ShowPage(talker, fnSiegeStoppedFunction);
+                }
+                else
+                {
+                    ShowPage(talker, fnSetTaxRate);
+                }
+
+                break;
+            case 4:
+                if (Castle_IsUnderSiege())
+                {
+                    ShowPage(talker, fnSiegeStoppedFunction);
+                }
+                else
+                {
+                    ShowPage(talker, fnSetGate);
+                }
+
+                break;
+            case 5:
+                OpenSiegeInfo(talker);
+                break;
+            case 9:
+                FHTML_SetFileName(fhtml0, fnManageWarehouse);
+                FHTML_SetInt(fhtml0, "tax_income", Residence_GetTaxIncome());
+                ShowFHTML(talker, fhtml0);
+                break;
+            case 10:
+                FHTML_SetFileName(fhtml0, fnManorManage);
+                FHTML_SetFloat(fhtml0, "gludin_panacen", Castle_GetCropRate(@gludin_panacen));
+                FHTML_SetFloat(fhtml0, "gludin_vermouth", Castle_GetCropRate(@gludin_vermouth));
+                FHTML_SetFloat(fhtml0, "artemeter", Castle_GetCropRate(@artemeter));
+                FHTML_SetInt(fhtml0, "gludin_panacen_price", Castle_GetCropPrice(@gludin_panacen));
+                FHTML_SetInt(fhtml0, "gludin_vermouth_price", Castle_GetCropPrice(@gludin_vermouth));
+                FHTML_SetInt(fhtml0, "artemeter_price", Castle_GetCropPrice(@artemeter));
+                ShowFHTML(talker, fhtml0);
+                break;
+            case 11:
+                if (Castle_IsUnderSiege())
+                {
+                    ShowPage(talker, fnSiegeStoppedFunction);
+                }
+                else
+                {
+                    ShowPage(talker, fnBanish);
+                }
+
+                break;
+            case 12:
+                if (Castle_IsUnderSiege())
+                {
+                    ShowPage(talker, fnSiegeStoppedFunction);
+                }
+                else
+                {
+                    ShowPage(talker, fnSiegeDefendList);
+                }
+
+                break;
+            }
+        }
+        else if (ask == -202)
+        {
+            if (Castle_IsUnderSiege())
+            {
+                ShowPage(talker, fnSiegeStoppedFunction);
+            }
+            else
+            {
+                select (reply)
+                {
+                case 1:
+                    Residence_SetTaxRate(0);
+                    break;
+                case 2:
+                    Residence_SetTaxRate(5);
+                    break;
+                case 3:
+                    Residence_SetTaxRate(10);
+                    break;
+                case 4:
+                    Residence_SetTaxRate(15);
+                    break;
+                }
+            }
+
+            ShowPage(talker, fnAfterSetTaxRate);
+        }
+        else if (ask == -203)
+        {
+            if (Castle_IsUnderSiege())
+            {
+                ShowPage(talker, fnSiegeStoppedFunction);
+            }
+            else
+            {
+                select (reply)
+                {
+                case 1:
+                    Castle_GateOpenClose2(DDoorName1_1, 0);
+                    Castle_GateOpenClose2(DDoorName1_2, 0);
+                    ShowPage(talker, fnAfterOpenGate);
+                    break;
+                case 101:
+                    Castle_GateOpenClose2(DDoorName1_1, 1);
+                    Castle_GateOpenClose2(DDoorName1_2, 1);
+                    ShowPage(talker, fnAfterCloseGate);
+                    break;
+                case 2:
+                    Castle_GateOpenClose2(DDoorName2_1, 0);
+                    Castle_GateOpenClose2(DDoorName2_2, 0);
+                    ShowPage(talker, fnAfterOpenGate);
+                    break;
+                case 102:
+                    Castle_GateOpenClose2(DDoorName2_1, 1);
+                    Castle_GateOpenClose2(DDoorName2_2, 1);
+                    ShowPage(talker, fnAfterCloseGate);
+                    break;
+                case 3:
+                    Castle_GateOpenClose2(DDoorName3_1, 0);
+                    Castle_GateOpenClose2(DDoorName3_2, 0);
+                    ShowPage(talker, fnAfterOpenGate);
+                    break;
+                case 103:
+                    Castle_GateOpenClose2(DDoorName3_1, 1);
+                    Castle_GateOpenClose2(DDoorName3_2, 1);
+                    ShowPage(talker, fnAfterCloseGate);
+                    break;
+                case 4:
+                    Castle_GateOpenClose2(DDoorName4_1, 0);
+                    Castle_GateOpenClose2(DDoorName4_2, 0);
+                    ShowPage(talker, fnAfterOpenGate);
+                    break;
+                case 104:
+                    Castle_GateOpenClose2(DDoorName4_1, 1);
+                    Castle_GateOpenClose2(DDoorName4_2, 1);
+                    ShowPage(talker, fnAfterCloseGate);
+                    break;
+                case 5:
+                    Castle_GateOpenClose2(DDoorName5_1, 0);
+                    Castle_GateOpenClose2(DDoorName5_2, 0);
+                    ShowPage(talker, fnAfterOpenGate);
+                    break;
+                case 105:
+                    Castle_GateOpenClose2(DDoorName5_1, 1);
+                    Castle_GateOpenClose2(DDoorName5_2, 1);
+                    ShowPage(talker, fnAfterCloseGate);
+                    break;
+                case 6:
+                    Castle_GateOpenClose2(DDoorName6_1, 0);
+                    Castle_GateOpenClose2(DDoorName6_2, 0);
+                    ShowPage(talker, fnAfterOpenGate);
+                    break;
+                case 106:
+                    Castle_GateOpenClose2(DDoorName6_1, 1);
+                    Castle_GateOpenClose2(DDoorName6_2, 1);
+                    ShowPage(talker, fnAfterCloseGate);
+                    break;
+                case 11:
+                    Castle_GateOpenClose2(SDoorName1, 0);
+                    ShowPage(talker, fnAfterOpenGate);
+                    break;
+                case 111:
+                    Castle_GateOpenClose2(SDoorName1, 1);
+                    ShowPage(talker, fnAfterCloseGate);
+                    break;
+                case 99:
+                    Castle_GateOpenClose(0);
+                    ShowPage(talker, fnAfterOpenGate);
+                    break;
+                case 199:
+                    Castle_GateOpenClose(1);
+                    ShowPage(talker, fnAfterCloseGate);
+                    break;
+                }
+            }
+        }
+        else if (ask == -204)
+        {
+            select (reply)
+            {
+            case 1:
+                ShowPage(talker, fnDoorStrengthen);
+                break;
+            case 2:
+                ShowPage(talker, fnSetSlowZone);
+                break;
+            }
+        }
+        else if (ask == -205)
+        {
+            SetCookie(talker, "gate_num", reply);
+            ShowPage(talker, fnDoorLevel);
+        }
+        else if (ask == -206)
+        {
+            select (reply)
+            {
+            case 1:
+                SetCookie(talker, "gate_level", 200);
+                break;
+            case 2:
+                SetCookie(talker, "gate_level", 300);
+                break;
+            case 3:
+                SetCookie(talker, "gate_level", 500);
+                break;
+            }
+
+            i0 = GetCookie(talker, "gate_num");
+            i1 = GetCookie(talker, "gate_level");
+            if (i0 == 1 && i1 == 200)
+            {
+                i2 = DDoorPrice1_1;
+            }
+
+            if (i0 == 1 && i1 == 300)
+            {
+                i2 = DDoorPrice1_2;
+            }
+
+            if (i0 == 1 && i1 == 500)
+            {
+                i2 = DDoorPrice1_3;
+            }
+
+            if ((i0 == 2 || i0 == 3) && i1 == 200)
+            {
+                i2 = DDoorPrice2_1;
+            }
+
+            if ((i0 == 2 || i0 == 3) && i1 == 300)
+            {
+                i2 = DDoorPrice2_2;
+            }
+
+            if ((i0 == 2 || i0 == 3) && i1 == 500)
+            {
+                i2 = DDoorPrice2_3;
+            }
+
+            if (i0 == 4 && i1 == 200)
+            {
+                i2 = DDoorPrice4_1;
+            }
+
+            if (i0 == 4 && i1 == 300)
+            {
+                i2 = DDoorPrice4_2;
+            }
+
+            if (i0 == 4 && i1 == 500)
+            {
+                i2 = DDoorPrice4_3;
+            }
+
+            if (i0 == 21 && i1 == 200)
+            {
+                i2 = WallPrice1_1;
+            }
+
+            if (i0 == 21 && i1 == 300)
+            {
+                i2 = WallPrice1_2;
+            }
+
+            if (i0 == 21 && i1 == 500)
+            {
+                i2 = WallPrice1_3;
+            }
+
+            if (i0 == 22 && i1 == 200)
+            {
+                i2 = WallPrice1_1;
+            }
+
+            if (i0 == 22 && i1 == 300)
+            {
+                i2 = WallPrice1_2;
+            }
+
+            if (i0 == 22 && i1 == 500)
+            {
+                i2 = WallPrice1_3;
+            }
+
+            SetCookie(talker, "gate_price", i2);
+            FHTML_SetFileName(fhtml0, fnDoorStrengthenConfirm);
+            FHTML_SetInt(fhtml0, "gate_price", i2);
+            ShowFHTML(talker, fhtml0);
+        }
+        else if (ask == -207 && reply == 1)
+        {
+            if (Castle_IsUnderSiege())
+            {
+                ShowPage(talker, fnSiegeStoppedFunction);
+            }
+            else
+            {
+                i0 = GetCookie(talker, "gate_num");
+                i1 = GetCookie(talker, "gate_price");
+                select (i0)
+                {
+                case 1:
+                    GetDoorHpLevel(talker, DDoorName1_1);
+                    break;
+                case 2:
+                    GetDoorHpLevel(talker, DDoorName2_1);
+                    break;
+                case 3:
+                    GetDoorHpLevel(talker, DDoorName3_1);
+                    break;
+                case 4:
+                    GetDoorHpLevel(talker, DDoorName4_1);
+                    break;
+                case 21:
+                    GetDoorHpLevel(talker, WallName1);
+                    break;
+                case 22:
+                    GetDoorHpLevel(talker, WallName3);
+                    break;
+                }
+            }
+        }
+        else if (ask == -208)
+        {
+            if (reply == 1)
+            {
+                SetCookie(talker, "dmgzone_num", 1);
+            }
+            else if (reply == 2)
+            {
+                SetCookie(talker, "dmgzone_num", 2);
+            }
+
+            ShowPage(talker, fnSetDmgLevel);
+        }
+        else if (ask == -209)
+        {
+            SetCookie(talker, "dmgzone_level", reply);
+            select (reply)
+            {
+            case 1:
+                i0 = dmgzoneprice1_1;
+                break;
+            case 2:
+                i0 = dmgzoneprice1_2;
+                break;
+            case 3:
+                i0 = dmgzoneprice1_3;
+                break;
+            case 4:
+                i0 = dmgzoneprice1_4;
+                break;
+            }
+
+            SetCookie(talker, "dmgzone_price", i0);
+            FHTML_SetFileName(fhtml0, fnDmgZoneConfirm);
+            FHTML_SetInt(fhtml0, "dmgzone_price", i0);
+            ShowFHTML(talker, fhtml0);
+        }
+        else if (ask == -210 && reply == 1)
+        {
+            if (Castle_IsUnderSiege())
+            {
+                ShowPage(talker, fnSiegeStoppedFunction);
+            }
+            else if (GetCookie(talker, "dmgzone_num") == 1)
+            {
+                GetControlTowerLevel(talker, dmgzonename1);
+            }
+            else if (GetCookie(talker, "dmgzone_num") == 2)
+            {
+                GetControlTowerLevel(talker, dmgzonename2);
+            }
+        }
+        else if (ask == -219)
+        {
+            if (Castle_IsUnderSiege())
+            {
+                ShowPage(talker, fnSiegeStoppedFunction);
+            }
+            else
+            {
+                Castle_BanishOthers();
+                ShowPage(talker, fnAfterBanish);
+            }
+        }
+        else if (ask == -220 && reply == 1)
+        {
+            Residence_VaultTakeOutMoney(talker, Residence_GetTaxIncome());
+            ShowPage(talker, fnHi);
+        }
+    }
+
+    EventHandler DOOR_HP_LEVEL_INFORMED(talker, level, fhtml0, i0, i1, i2)
+    {
+        if (Castle_IsUnderSiege())
+        {
+            ShowPage(talker, fnSiegeStoppedFunction);
+        }
+        else
+        {
+            i0 = GetCookie(talker, "gate_price");
+            i1 = GetCookie(talker, "gate_level");
+            i2 = GetCookie(talker, "gate_num");
+            if (level >= i1)
+            {
+                FHTML_SetFileName(fhtml0, fnCurrentDoorLevelHigher);
+                FHTML_SetInt(fhtml0, "doorlevel", level);
+                ShowFHTML(talker, fhtml0);
+            }
+            else if (OwnItemCount(talker, @adena) >= i0)
+            {
+                DeleteItem1(talker, @adena, i0);
+                select (i2)
+                {
+                case 1:
+                    SetDoorHpLevel(DDoorName1_1, i1);
+                    SetDoorHpLevel(DDoorName1_2, i1);
+                    break;
+                case 2:
+                    SetDoorHpLevel(DDoorName2_1, i1);
+                    SetDoorHpLevel(DDoorName2_2, i1);
+                    break;
+                case 3:
+                    SetDoorHpLevel(DDoorName3_1, i1);
+                    SetDoorHpLevel(DDoorName3_2, i1);
+                    break;
+                case 4:
+                    SetDoorHpLevel(DDoorName4_1, i1);
+                    SetDoorHpLevel(DDoorName4_2, i1);
+                    break;
+                case 21:
+                    SetDoorHpLevel(WallName1, i1);
+                    SetDoorHpLevel(WallName2, i1);
+                    break;
+                case 22:
+                    SetDoorHpLevel(WallName3, i1);
+                    break;
+                }
+
+                ShowPage(talker, fnDoorHpLevelUp);
+            }
+            else
+            {
+                ShowPage(talker, fnNotEnoughMoney);
+            }
+        }
+    }
+
+    EventHandler CONTROLTOWER_LEVEL_INFORMED(talker, level, fhtml0, i0, i1, i2)
+    {
+        if (Castle_IsUnderSiege())
+        {
+            ShowPage(talker, fnSiegeStoppedFunction);
+        }
+        else
+        {
+            i0 = GetCookie(talker, "dmgzone_price");
+            i1 = GetCookie(talker, "dmgzone_level");
+            i2 = GetCookie(talker, "dmgzone_num");
+            if (level >= 2 * i1)
+            {
+                FHTML_SetFileName(fhtml0, fnCurrentDmgzoneLevelHigher);
+                FHTML_SetInt(fhtml0, "dmglevel", level / 2);
+                ShowFHTML(talker, fhtml0);
+            }
+            else if (OwnItemCount(talker, @adena) >= i0)
+            {
+                DeleteItem1(talker, @adena, i0);
+                select (i2)
+                {
+                case 1:
+                    SetControlTowerLevel(dmgzonename1, 2 * i1);
+                    break;
+                case 2:
+                    SetControlTowerLevel(dmgzonename2, 2 * i1);
+                    break;
+                }
+
+                ShowPage(talker, fnDmgZoneLevelUp);
+            }
+            else
+            {
+                ShowPage(talker, fnNotEnoughMoney);
+            }
+        }
+    }
+}

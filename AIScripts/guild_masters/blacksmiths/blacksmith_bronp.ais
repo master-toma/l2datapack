@@ -1,0 +1,227 @@
+class blacksmith_bronp : blacksmith
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bronps_dice))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Give Bruno's dice");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bronps_contract) && OwnItemCount(talker, @aquamarine) + OwnItemCount(talker, @chrysoberyl) < 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about jewel");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bronps_contract) && OwnItemCount(talker, @aquamarine) + OwnItemCount(talker, @chrysoberyl) >= 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give jewel");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @gem_box1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about gem box");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @coal_piece))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give coal piece");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bronps_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about gem box");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @berry_tart) || OwnItemCount(talker, @bat_diagram) || OwnItemCount(talker, @star_diamond))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask about gem box");
+            }
+
+            if (HaveMemo(talker, @miners_favor) && OwnItemCount(talker, @bolters_list) && OwnItemCount(talker, @miners_pick) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Say you were sent by Bolter");
+            }
+
+            if (HaveMemo(talker, @miners_favor) && OwnItemCount(talker, @bolters_list) && OwnItemCount(talker, @miners_pick))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Ask about miner's pick");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @marinas_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Show Letter from Marina");
+            }
+
+            if (HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @experiment_tools) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Show Letter from Marina");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bronps_dice))
+                {
+                    ShowPage(talker, "blacksmith_bronp_q0108_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bronps_contract) && OwnItemCount(talker, @aquamarine) + OwnItemCount(talker, @chrysoberyl) < 20)
+                {
+                    ShowPage(talker, "blacksmith_bronp_q0108_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bronps_contract) && OwnItemCount(talker, @aquamarine) + OwnItemCount(talker, @chrysoberyl) >= 20)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "blacksmith_bronp_q0108_04.htm");
+                        DeleteItem1(talker, @bronps_contract, 1);
+                        DeleteItem1(talker, @aquamarine, OwnItemCount(talker, @aquamarine));
+                        DeleteItem1(talker, @chrysoberyl, OwnItemCount(talker, @chrysoberyl));
+                        GiveItem1(talker, @gem_box1, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @gem_box1))
+                {
+                    ShowPage(talker, "blacksmith_bronp_q0108_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @coal_piece))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "blacksmith_bronp_q0108_06.htm");
+                        DeleteItem1(talker, @coal_piece, 1);
+                        GiveItem1(talker, @bronps_letter, 1);
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bronps_letter))
+                {
+                    ShowPage(talker, "blacksmith_bronp_q0108_07.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @berry_tart) || OwnItemCount(talker, @bat_diagram) || OwnItemCount(talker, @star_diamond)))
+                {
+                    ShowPage(talker, "blacksmith_bronp_q0108_08.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @miners_favor) && OwnItemCount(talker, @bolters_list) && OwnItemCount(talker, @miners_pick) == 0)
+                {
+                    ShowPage(talker, "blacksmith_bronp_q0005_01.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @miners_favor) && OwnItemCount(talker, @bolters_list) && OwnItemCount(talker, @miners_pick))
+                {
+                    ShowPage(talker, "blacksmith_bronp_q0005_03.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @marinas_letter) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "blacksmith_bronp _q0213_01.htm");
+                        DeleteItem1(talker, @marinas_letter, OwnItemCount(talker, @marinas_letter));
+                        GiveItem1(talker, @experiment_tools, 1);
+                    }
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_seeker) == 1 && OwnItemCount(talker, @experiment_tools) == 1)
+                {
+                    ShowPage(talker, "blacksmith_bronp _q0213_02.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @diamond_gambit && reply == 1 && OwnItemCount(talker, @bronps_dice) > 0)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "blacksmith_bronp_q0108_02.htm");
+                DeleteItem1(talker, @bronps_dice, 1);
+                GiveItem1(talker, @bronps_contract, 1);
+            }
+        }
+
+        if (ask == @miners_favor && reply == 1 && OwnItemCount(talker, @bolters_smelly_socks) > 0)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "blacksmith_bronp_q0005_02.htm");
+                DeleteItem1(talker, @bolters_smelly_socks, 1);
+                GiveItem1(talker, @miners_pick, 1);
+            }
+        }
+
+        super;
+    }
+}

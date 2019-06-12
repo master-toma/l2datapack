@@ -1,0 +1,3 @@
+class rscavenger_leader_rinoket : party_leader_aggressive
+{
+}

@@ -1,0 +1,38 @@
+class beamer : warrior_aggressive_casting_hold_magic
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @sense_for_business))
+        {
+            i0 = Rand(100);
+            if (i0 < 72)
+            {
+                GiveItem1(c1, @monster_eye_carcass, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+            else if (i0 < 74)
+            {
+                GiveItem1(c1, @monster_eye_lens, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_scholar) && OwnItemCount(c1, @miriens_sigil2) == 1 && OwnItemCount(c1, @gmagisters_sigil) == 1 && OwnItemCount(c1, @jureks_list) == 1 && OwnItemCount(c1, @beamers_skin) < 5)
+        {
+            if (Rand(100) < 50)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @beamers_skin, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+            }
+        }
+
+        super;
+    }
+}

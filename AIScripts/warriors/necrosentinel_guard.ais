@@ -1,0 +1,3 @@
+class necrosentinel_guard : party_leader_aggressive
+{
+}

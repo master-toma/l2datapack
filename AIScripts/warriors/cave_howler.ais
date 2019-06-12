@@ -1,0 +1,3 @@
+class cave_howler : warrior_passive_casting_enchant_self
+{
+}

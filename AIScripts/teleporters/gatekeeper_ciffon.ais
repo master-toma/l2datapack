@@ -1,0 +1,15 @@
+class gatekeeper_ciffon : instant_teleporter
+{
+handler:
+    EventHandler TELEPORT_REQUESTED(talker)
+    {
+        if (Rand(100) < 50)
+        {
+            InstantTeleport(talker, 48765, 248461, -6190);
+        }
+        else
+        {
+            InstantTeleport(talker, 48586, 248459, -6190);
+        }
+    }
+}

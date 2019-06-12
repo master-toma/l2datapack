@@ -1,0 +1,97 @@
+class levian : human_elf_mage_lv2_master
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @einhasad_church_mark2) == 0 && OwnItemCount(talker, @mark_of_esquire) && OwnItemCount(talker, @coin_of_lords4) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @einhasad_church_mark2) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @coin_of_lords4) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about changing occupation to a Knight");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @einhasad_church_mark2) == 0 && OwnItemCount(talker, @mark_of_esquire) && OwnItemCount(talker, @coin_of_lords4) == 0)
+                {
+                    ShowPage(talker, "levian_q0402_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @einhasad_church_mark2) > 0)
+                {
+                    if (OwnItemCount(talker, @lizardman_totem) < 20)
+                    {
+                        ShowPage(talker, "levian_q0402_03.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "levian_q0402_04.htm");
+                        DeleteItem1(talker, @lizardman_totem, OwnItemCount(talker, @lizardman_totem));
+                        DeleteItem1(talker, @einhasad_church_mark2, 1);
+                        GiveItem1(talker, @coin_of_lords4, 1);
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @coin_of_lords4) > 0)
+                {
+                    ShowPage(talker, "levian_q0402_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_knight)
+        {
+            if (reply = 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "levian_q0402_02.htm");
+                    GiveItem1(talker, @einhasad_church_mark2, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

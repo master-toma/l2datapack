@@ -1,0 +1,50 @@
+class master_lv3_ware : guild_master_lv3
+{
+parameter:
+    int lv2_class1 = @scavenger;
+    int lv3_class11 = @bounty_hunter;
+    int proof11x = @mark_of_guildsman;
+    int proof11y = @mark_of_prosperity;
+    int proof11z = @mark_of_searcher;
+    
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -2 && reply == 1)
+        {
+            if (IsInCategory(@bounty_hunter_group, talker.occupation))
+            {
+                if (talker.occupation == lv2_class1 || talker.occupation == lv3_class11 || talker.occupation == lv3_class12 || talker.occupation == lv3_class13)
+                {
+                    ShowPage(talker, fnClassList1);
+                }
+                else if (talker.occupation == lv2_class2 || talker.occupation == lv3_class21 || talker.occupation == lv3_class22 || talker.occupation == lv3_class23)
+                {
+                    ShowPage(talker, fnClassList2);
+                }
+                else if (talker.occupation == lv2_class3 || talker.occupation == lv3_class31 || talker.occupation == lv3_class32 || talker.occupation == lv3_class33)
+                {
+                    ShowPage(talker, fnClassList3);
+                }
+                else if (talker.occupation == lv2_class4 || talker.occupation == lv3_class41 || talker.occupation == lv3_class42 || talker.occupation == lv3_class43)
+                {
+                    ShowPage(talker, fnClassList4);
+                }
+                else if (talker.occupation == lv2_class5 || talker.occupation == lv3_class51 || talker.occupation == lv3_class52 || talker.occupation == lv3_class53)
+                {
+                    ShowPage(talker, fnClassList5);
+                }
+                else
+                {
+                    ShowPage(talker, fnYouAreFirstClass);
+                }
+            }
+            else
+            {
+                ShowPage(talker, fnClassMismatch);
+            }
+        }
+
+        super;
+    }
+}

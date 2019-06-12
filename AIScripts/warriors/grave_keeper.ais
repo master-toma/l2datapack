@@ -1,0 +1,3 @@
+class grave_keeper : warrior_passive_casting_ddmagic
+{
+}

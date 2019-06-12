@@ -1,0 +1,115 @@
+class morgan : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Greet as a member of the Black Lion Mercenaries");
+            }
+
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show box that you found while carrying out a task of the Black Lion Mercenaries");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) == 0)
+                {
+                    ShowPage(talker, "morgan_q0333_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) >= 1)
+                {
+                    ShowPage(talker, "morgan_q0333_02.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, i0, reply, talker)
+    {
+        if (ask == @hunt_of_blacklion)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @q_cargo_box1) + OwnItemCount(talker, @q_cargo_box2) + OwnItemCount(talker, @q_cargo_box3) + OwnItemCount(talker, @q_cargo_box4) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @q_cargo_box1) >= 1)
+                        {
+                            DeleteItem1(talker, @q_cargo_box1, 1);
+                        }
+                        else if (OwnItemCount(talker, @q_cargo_box2) >= 1)
+                        {
+                            DeleteItem1(talker, @q_cargo_box2, 1);
+                        }
+                        else if (OwnItemCount(talker, @q_cargo_box3) >= 1)
+                        {
+                            DeleteItem1(talker, @q_cargo_box3, 1);
+                        }
+                        else if (OwnItemCount(talker, @q_cargo_box4) >= 1)
+                        {
+                            DeleteItem1(talker, @q_cargo_box4, 1);
+                        }
+
+                        GiveItem1(talker, @q_guild_coin, 1);
+                        if (OwnItemCount(talker, @q_guild_coin) < 40)
+                        {
+                            GiveItem1(talker, @adena, 100);
+                            ShowPage(talker, "morgan_q0333_03.htm");
+                        }
+                        else if (OwnItemCount(talker, @q_guild_coin) >= 40 && OwnItemCount(talker, @q_guild_coin) <= 80)
+                        {
+                            GiveItem1(talker, @adena, 200);
+                            ShowPage(talker, "morgan_q0333_04.htm");
+                        }
+                        else
+                        {
+                            GiveItem1(talker, @adena, 300);
+                            ShowPage(talker, "morgan_q0333_05.htm");
+                        }
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "morgan_q0333_06.htm");
+                }
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "morgan_q0333_07.htm");
+            }
+        }
+
+        super;
+    }
+}

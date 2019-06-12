@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_mana_recovery]	/* [마나 리커버리] */	skill_id = 214	level = 1	operate_type = P	effect = {{p_mp_regen;{armor_magic};20;per}}	skill_end

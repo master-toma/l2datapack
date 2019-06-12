@@ -1,0 +1,30 @@
+class teleporter : default_npc
+{
+parameter:
+    string ShopName = "";
+    string fnHi = "thi.htm";
+    string fnYouAreChaotic = "tcm.htm";
+    
+property:
+    TelPosList Position = {
+        {1010001; -84169; 244693; -3729; 100000; 0}    // 1010001 - "Talking Island Village"
+    };
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        if (talker.karma > 0)
+        {
+            ShowPage(talker, fnYouAreChaotic);
+        }
+        else
+        {
+            ShowPage(talker, fnHi);
+        }
+    }
+
+    EventHandler TELEPORT_REQUESTED(talker)
+    {
+        Teleport(talker, Position, ShopName, "", "", "");
+    }
+}

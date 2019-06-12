@@ -1,0 +1,63 @@
+class castle_merchant : default_npc
+{
+parameter:
+    string fnHi = "castle_trader_brighum001.htm";
+    string fnMyLord = "castle_trader_brighum002.htm";
+    string fnSellCrop = "castle_trader_brighum003.htm";
+    string fnAfterSellCrop = "castle_trader_brighum004.htm";
+    string fnHaveNoCrop = "castle_trader_brighum005.htm";
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        if (IsMyLord(talker))
+        {
+            ShowPage(talker, fnMyLord);
+        }
+        else
+        {
+            ShowPage(talker, fnHi);
+        }
+    }
+
+    EventHandler MENU_SELECTED(talker, ask, reply, fhtml0)
+    {
+        if (ask == -201)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @gludin_panacen) + OwnItemCount(talker, @gludin_vermouth) + OwnItemCount(talker, @artemeter) > 0)
+                {
+                    FHTML_SetFileName(fhtml0, fnSellCrop);
+                    FHTML_SetInt(fhtml0, "gludin_panacen_price", Castle_GetCropPrice(@gludin_panacen));
+                    FHTML_SetInt(fhtml0, "gludin_vermouth_price", Castle_GetCropPrice(@gludin_vermouth));
+                    FHTML_SetInt(fhtml0, "artemeter_price", Castle_GetCropPrice(@artemeter));
+                    FHTML_SetInt(fhtml0, "gludin_panacen_num", OwnItemCount(talker, @gludin_panacen));
+                    FHTML_SetInt(fhtml0, "gludin_vermouth_num", OwnItemCount(talker, @gludin_vermouth));
+                    FHTML_SetInt(fhtml0, "artemeter_num", OwnItemCount(talker, @artemeter));
+                    FHTML_SetInt(fhtml0, "crop_prce_sum", Castle_GetCropPrice(@gludin_panacen) * OwnItemCount(talker, @gludin_panacen) + Castle_GetCropPrice(@gludin_vermouth) * OwnItemCount(talker, @gludin_vermouth) + Castle_GetCropPrice(@artemeter) * OwnItemCount(talker, @artemeter));
+                    ShowFHTML(talker, fhtml0);
+                }
+                else
+                {
+                    ShowPage(talker, fnHaveNoCrop);
+                }
+            }
+        }
+
+        if (ask == -202)
+        {
+            if (reply == 1)
+            {
+                DeleteItem1(talker, @gludin_panacen, OwnItemCount(talker, @gludin_panacen));
+                DeleteItem1(talker, @gludin_vermouth, OwnItemCount(talker, @gludin_vermouth));
+                DeleteItem1(talker, @artemeter, OwnItemCount(talker, @artemeter));
+                Castle_PostCropPurchase(talker, @gludin_panacen, OwnItemCount(talker, @gludin_panacen));
+                Castle_PostCropPurchase(talker, @gludin_vermouth, OwnItemCount(talker, @gludin_vermouth));
+                Castle_PostCropPurchase(talker, @artemeter, OwnItemCount(talker, @artemeter));
+                GiveItem1(talker, @adena, Castle_GetCropPrice(@gludin_panacen) * OwnItemCount(talker, @gludin_panacen) + Castle_GetCropPrice(@gludin_vermouth) * OwnItemCount(talker, @gludin_vermouth) + Castle_GetCropPrice(@artemeter) * OwnItemCount(talker, @artemeter));
+                ShowPage(talker, fnAfterSellCrop);
+            }
+        }
+    }
+}

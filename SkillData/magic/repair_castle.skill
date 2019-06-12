@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_repair_castle]	/* [리페어 캐슬] */	skill_id = 166	level = 1	operate_type = P	effect = {}	skill_end

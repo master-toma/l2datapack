@@ -1,0 +1,15 @@
+class teleport_cube_a001 : instant_teleporter
+{
+handler:
+    EventHandler TELEPORT_REQUESTED(talker)
+    {
+        if (Rand(100) < 50)
+        {
+            InstantTeleport(talker, 17252, 114121, -3439);
+        }
+        else
+        {
+            InstantTeleport(talker, 17253, 114232, -3439);
+        }
+    }
+}

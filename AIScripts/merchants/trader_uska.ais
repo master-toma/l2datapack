@@ -1,0 +1,85 @@
+class trader_uska : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"necklace_of_magic"; 15};
+        {"necklace_of_knowledge"; 15};
+        {"necklace_of_anguish"; 15};
+        {"necklace_of_wisdom"; 15};
+        {"apprentice's_earing"; 15};
+        {"mage_earing"; 15};
+        {"earing_of_strength"; 15};
+        {"earing_of_wisdom"; 15};
+        {"cat'seye_earing"; 15};
+        {"magic_ring"; 15};
+        {"ring_of_knowledge"; 15};
+        {"ring_of_anguish"; 15};
+        {"ring_of_wisdom"; 15};
+        {"wooden_arrow"; 15};
+        {"bone_arrow"; 15};
+        {"key_of_thief"; 15};
+        {"spirit_ore"; 15};
+        {"soul_ore"; 15};
+        {"blessed_spiritshot_none"; 15};
+        {"spiritshot_none"; 15};
+        {"soulshot_none"; 15};
+        {"scroll_of_escape"; 15};
+        {"lesser_healing_potion"; 15};
+        {"antidote"; 15};
+        {"bandage"; 15};
+        {"quick_step_potion"; 15};
+        {"swift_attack_potion"; 15};
+        {"world_map_2"; 15}
+    };
+    
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @long_live_lord_of_flame) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Receive gift from Uska");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @long_live_lord_of_flame) == 1)
+                {
+                    if (OwnItemCount(talker, @ancestor_skull) < 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "trader_uska_q0004_01.htm");
+                            GiveItem1(talker, @ancestor_skull, 1);
+                            SoundEffect(talker, "ItemSound.quest_itemget");
+                        }
+                    }
+                    else if (OwnItemCount(talker, @ancestor_skull) >= 1)
+                    {
+                        ShowPage(talker, "trader_uska_q0004_02.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

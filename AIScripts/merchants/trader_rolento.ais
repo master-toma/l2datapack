@@ -1,0 +1,146 @@
+class trader_rolento : merchant_for_chaotic
+{
+property:
+    BuySellList SellList0 = {
+        {"necklace_of_magic"; 50};
+        {"necklace_of_knowledge"; 50};
+        {"necklace_of_anguish"; 50};
+        {"necklace_of_wisdom"; 50};
+        {"apprentice's_earing"; 50};
+        {"mage_earing"; 50};
+        {"earing_of_strength"; 50};
+        {"earing_of_wisdom"; 50};
+        {"cat'seye_earing"; 50};
+        {"magic_ring"; 50};
+        {"ring_of_knowledge"; 50};
+        {"ring_of_anguish"; 50};
+        {"ring_of_wisdom"; 50};
+        {"wooden_arrow"; 50};
+        {"bone_arrow"; 50};
+        {"antidote"; 50};
+        {"bandage"; 50};
+        {"quick_step_potion"; 50};
+        {"swift_attack_potion"; 50};
+        {"healing_potion"; 50};
+        {"advanced_antidote"; 50}
+    };
+    
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @curiosity_of_dwarf) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Speak of Golems");
+            }
+
+            if (HaveMemo(talker, @curiosity_of_dwarf) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Speak of Golems");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @curiosity_of_dwarf) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 33)
+                        {
+                            FHTML_SetFileName(fhtml0, "trader_rolento_q0329_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @curiosity_of_dwarf);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "trader_rolento_q0329_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @curiosity_of_dwarf) == 1)
+                {
+                    if (OwnItemCount(talker, @broken_heartstone) + OwnItemCount(talker, @golem_heartstone) > 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @adena, 40 * OwnItemCount(talker, @broken_heartstone) + 800 * OwnItemCount(talker, @golem_heartstone));
+                            DeleteItem1(talker, @broken_heartstone, OwnItemCount(talker, @broken_heartstone));
+                            DeleteItem1(talker, @golem_heartstone, OwnItemCount(talker, @golem_heartstone));
+                            ShowPage(talker, "trader_rolento_q0329_05.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "trader_rolento_q0329_04.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @curiosity_of_dwarf)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "trader_rolento_q0329_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @curiosity_of_dwarf)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "trader_rolento_q0329_06.htm");
+                RemoveMemo(talker, @curiosity_of_dwarf);
+                SoundEffect(talker, "ItemSound.quest_finish");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "trader_rolento_q0329_07.htm");
+            }
+        }
+
+        super;
+    }
+}

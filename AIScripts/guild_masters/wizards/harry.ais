@@ -1,0 +1,146 @@
+class harry : wizard_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @shards_of_golem) == 0 && GetOneTimeQuestFlag(talker, @shards_of_golem) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the construction");
+            }
+
+            if (HaveMemo(talker, @shards_of_golem) == 0 && GetOneTimeQuestFlag(talker, @shards_of_golem) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the construction");
+            }
+
+            if (HaveMemo(talker, @shards_of_golem) != 0 && OwnItemCount(talker, @harrys_receipt1) != 0 && OwnItemCount(talker, @tool_box) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Inquire about Allman again");
+            }
+
+            if (HaveMemo(talker, @shards_of_golem) != 0 && OwnItemCount(talker, @harrys_receipt2) != 0 && OwnItemCount(talker, @tool_box) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Inquire about Allman again");
+            }
+
+            if (HaveMemo(talker, @shards_of_golem) != 0 && OwnItemCount(talker, @tool_box) != 0 && GetOneTimeQuestFlag(talker, @shards_of_golem) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Show the toolbox");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @shards_of_golem) == 0 && GetOneTimeQuestFlag(talker, @shards_of_golem) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 10)
+                        {
+                            FHTML_SetFileName(fhtml0, "harry_q0301_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @shards_of_golem);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "harry_q0301_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @shards_of_golem) == 0 && GetOneTimeQuestFlag(talker, @shards_of_golem) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @shards_of_golem) != 0 && OwnItemCount(talker, @harrys_receipt1) != 0 && OwnItemCount(talker, @tool_box) == 0)
+                {
+                    ShowPage(talker, "harry_q0301_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @shards_of_golem) != 0 && OwnItemCount(talker, @harrys_receipt2) != 0 && OwnItemCount(talker, @tool_box) == 0)
+                {
+                    ShowPage(talker, "harry_q0301_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @shards_of_golem) != 0 && OwnItemCount(talker, @tool_box) != 0 && GetOneTimeQuestFlag(talker, @shards_of_golem) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @tool_box, OwnItemCount(talker, @tool_box));
+                        DeleteItem1(talker, @harrys_receipt2, OwnItemCount(talker, @harrys_receipt2));
+                        RemoveMemo(talker, @shards_of_golem);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @shards_of_golem, 1);
+                        GiveItem1(talker, @cotton_tunic, 1);
+                        IncrementParam(talker, @PARAM_EXP, 5000);
+                        ShowPage(talker, "harry_q0301_06.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @shards_of_golem)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @harrys_receipt1) == 0)
+                {
+                    GiveItem1(talker, @harrys_receipt1, 1);
+                }
+
+                ShowPage(talker, "harry_q0301_04.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,125 @@
+class elliasin : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @destroy_plaguebringers) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about Wiret");
+            }
+
+            if (HaveMemo(talker, @destroy_plaguebringers))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Listen");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @destroy_plaguebringers) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_elf)
+                        {
+                            ShowPage(talker, "elliasin_q0316_00.htm");
+                        }
+                        else if (talker.level >= 18)
+                        {
+                            FHTML_SetFileName(fhtml0, "elliasin_q0316_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @destroy_plaguebringers);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "elliasin_q0316_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @destroy_plaguebringers))
+                {
+                    if (OwnItemCount(talker, @wererat_fang) >= 1 || OwnItemCount(talker, @varool_foulclaws_fang) >= 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "elliasin_q0316_07.htm");
+                            GiveItem1(talker, @adena, OwnItemCount(talker, @wererat_fang) * 60 + OwnItemCount(talker, @varool_foulclaws_fang) * 10000);
+                            DeleteItem1(talker, @wererat_fang, OwnItemCount(talker, @wererat_fang));
+                            DeleteItem1(talker, @varool_foulclaws_fang, OwnItemCount(talker, @varool_foulclaws_fang));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "elliasin_q0316_05.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @destroy_plaguebringers)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "elliasin_q0316_04.htm");
+                SetMemo(talker, @destroy_plaguebringers);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @destroy_plaguebringers)
+        {
+            if (reply == 2)
+            {
+                RemoveMemo(talker, @destroy_plaguebringers);
+                SoundEffect(talker, "ItemSound.quest_finish");
+                ShowPage(talker, "elliasin_q0316_08.htm");
+            }
+            else if (reply == 3)
+            {
+                ShowPage(talker, "elliasin_q0316_09.htm");
+            }
+        }
+
+        super;
+    }
+}

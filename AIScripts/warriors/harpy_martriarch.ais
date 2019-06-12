@@ -1,0 +1,23 @@
+class harpy_martriarch : warrior_aggressive_immediate
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_champion) && OwnItemCount(c1, @white_rose_insignia) && OwnItemCount(c1, @harpys_egg1) < 30)
+        {
+            if (OwnItemCount(c1, @harpys_egg1) == 29)
+            {
+                GiveItem1(c1, @harpys_egg1, 1);
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @harpys_egg1, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

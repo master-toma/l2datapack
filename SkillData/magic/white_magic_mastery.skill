@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_white_magic_mastery]	/* [화이트 매직 마스터리] */	skill_id = 154	level = 1	operate_type = P	effect = {}	skill_end

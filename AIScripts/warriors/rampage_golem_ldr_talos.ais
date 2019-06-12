@@ -1,0 +1,3 @@
+class rampage_golem_ldr_talos : party_leader_aggressive
+{
+}

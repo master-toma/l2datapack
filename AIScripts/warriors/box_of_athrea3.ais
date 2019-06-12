@@ -1,0 +1,60 @@
+class box_of_athrea3 : citizen
+{
+handler:
+    EventHandler MY_DYING(c1, c2)
+    {
+        c1 = GetLastAttacker();
+        c2 = Pledge_GetLeader(c1);
+        if (HaveMemo(c2, @pledge_of_blood) && GetMemoState(c2, @pledge_of_blood) == 4)
+        {
+            if (c2.flag == 3 && myself.boss.flag == 15)
+            {
+                c2.flag = c2.flag + 1;
+                Say(MakeFString(50110, "", "", "", "", ""));
+            }
+            else if (c2.flag == 2 && myself.boss.flag == 14)
+            {
+                c2.flag = c2.flag + 1;
+                Say(MakeFString(50110, "", "", "", "", ""));
+            }
+            else if (c2.flag == 1 && myself.boss.flag == 13)
+            {
+                c2.flag = c2.flag + 1;
+                Say(MakeFString(50110, "", "", "", "", ""));
+            }
+            else if (c2.flag == 0 && myself.boss.flag == 12)
+            {
+                c2.flag = c2.flag + 1;
+                Say(MakeFString(50110, "", "", "", "", ""));
+            }
+            else if (c2.flag < 4)
+            {
+                if (Rand(4) == 0)
+                {
+                    c2.flag = c2.flag + 1;
+                    Say(MakeFString(50110, "", "", "", "", ""));
+                }
+            }
+
+            myself.boss.flag = myself.boss.flag + 1;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 2501003)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(2501003, 300 * 1000);
+        super;
+    }
+}

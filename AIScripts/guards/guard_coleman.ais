@@ -1,0 +1,3 @@
+class guard_coleman : guard_fixed
+{
+}

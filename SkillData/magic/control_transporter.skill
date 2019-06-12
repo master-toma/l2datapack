@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_control_transporter]	/* [컨트롤 트랜스포터] */	skill_id = 188	level = 1	operate_type = P	effect = {}	skill_end

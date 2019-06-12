@@ -1,0 +1,3 @@
+class oren_mass_teleporter : mass_teleporter
+{
+}

@@ -1,0 +1,82 @@
+class drunkard_treaf : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @dieters_diary) >= 1 && OwnItemCount(talker, @scripture_chapter_1) >= 1 && OwnItemCount(talker, @strong_liquor) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Mention what Raut said");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @treafs_ring) >= 1 || OwnItemCount(talker, @symbol_of_cronos) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Mention what Raut said");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @dieters_diary) >= 1 && OwnItemCount(talker, @scripture_chapter_1) >= 1 && OwnItemCount(talker, @strong_liquor) >= 1))
+                {
+                    ShowPage(talker, "drunkard_treaf_q0214_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @treafs_ring) >= 1 || OwnItemCount(talker, @symbol_of_cronos) >= 1))
+                {
+                    ShowPage(talker, "drunkard_treaf_q0214_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_scholar)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "drunkard_treaf_q0214_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "drunkard_treaf_q0214_03.htm");
+            }
+
+            if (reply == 3)
+            {
+                if (OwnItemCount(talker, @strong_liquor) >= 1)
+                {
+                    ShowPage(talker, "drunkard_treaf_q0214_04.htm");
+                    DeleteItem1(talker, @strong_liquor, 1);
+                    GiveItem1(talker, @treafs_ring, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

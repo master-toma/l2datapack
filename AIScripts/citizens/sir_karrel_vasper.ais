@@ -1,0 +1,348 @@
+class sir_karrel_vasper : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_knight) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @mark_of_esquire) > 0 && OwnItemCount(talker, @coin_of_lords1) + OwnItemCount(talker, @coin_of_lords2) + OwnItemCount(talker, @coin_of_lords3) + OwnItemCount(talker, @coin_of_lords4) + OwnItemCount(talker, @coin_of_lords5) + OwnItemCount(talker, @coin_of_lords6) < 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @mark_of_esquire) > 0 && OwnItemCount(talker, @coin_of_lords1) + OwnItemCount(talker, @coin_of_lords2) + OwnItemCount(talker, @coin_of_lords3) + OwnItemCount(talker, @coin_of_lords4) + OwnItemCount(talker, @coin_of_lords5) + OwnItemCount(talker, @coin_of_lords6) == 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Display the lord's coin");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @mark_of_esquire) > 0 && OwnItemCount(talker, @coin_of_lords1) + OwnItemCount(talker, @coin_of_lords2) + OwnItemCount(talker, @coin_of_lords3) + OwnItemCount(talker, @coin_of_lords4) + OwnItemCount(talker, @coin_of_lords5) + OwnItemCount(talker, @coin_of_lords6) > 3 && OwnItemCount(talker, @coin_of_lords1) + OwnItemCount(talker, @coin_of_lords2) + OwnItemCount(talker, @coin_of_lords3) + OwnItemCount(talker, @coin_of_lords4) + OwnItemCount(talker, @coin_of_lords5) + OwnItemCount(talker, @coin_of_lords6) < 6)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Display the lord's coin");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @mark_of_esquire) > 0 && OwnItemCount(talker, @coin_of_lords1) + OwnItemCount(talker, @coin_of_lords2) + OwnItemCount(talker, @coin_of_lords3) + OwnItemCount(talker, @coin_of_lords4) + OwnItemCount(talker, @coin_of_lords5) + OwnItemCount(talker, @coin_of_lords6) == 6)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Display the lord's coin");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_instructions) >= 1 && OwnItemCount(talker, @orims_letter1) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Talk about the Sword of Sealing");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_instructions) >= 1 && OwnItemCount(talker, @sir_vaspers_letter) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Say that you want to use the Sword of Sealing");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_instructions) >= 1 && OwnItemCount(talker, @vadins_sanctions) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Show Written Permission from Vadin");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_instructions) >= 1 && OwnItemCount(talker, @sword_of_binding) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Thank the other person for having lent Sword of Sealing");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        ShowPage(talker, "sir_karrel_vasper_q0402_01.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @mark_of_esquire) > 0 && OwnItemCount(talker, @coin_of_lords1) + OwnItemCount(talker, @coin_of_lords2) + OwnItemCount(talker, @coin_of_lords3) + OwnItemCount(talker, @coin_of_lords4) + OwnItemCount(talker, @coin_of_lords5) + OwnItemCount(talker, @coin_of_lords6) < 3)
+                {
+                    ShowPage(talker, "sir_karrel_vasper_q0402_09.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @mark_of_esquire) > 0 && OwnItemCount(talker, @coin_of_lords1) + OwnItemCount(talker, @coin_of_lords2) + OwnItemCount(talker, @coin_of_lords3) + OwnItemCount(talker, @coin_of_lords4) + OwnItemCount(talker, @coin_of_lords5) + OwnItemCount(talker, @coin_of_lords6) == 3)
+                {
+                    ShowPage(talker, "sir_karrel_vasper_q0402_10.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @mark_of_esquire) > 0 && OwnItemCount(talker, @coin_of_lords1) + OwnItemCount(talker, @coin_of_lords2) + OwnItemCount(talker, @coin_of_lords3) + OwnItemCount(talker, @coin_of_lords4) + OwnItemCount(talker, @coin_of_lords5) + OwnItemCount(talker, @coin_of_lords6) > 3 && OwnItemCount(talker, @coin_of_lords1) + OwnItemCount(talker, @coin_of_lords2) + OwnItemCount(talker, @coin_of_lords3) + OwnItemCount(talker, @coin_of_lords4) + OwnItemCount(talker, @coin_of_lords5) + OwnItemCount(talker, @coin_of_lords6) < 6)
+                {
+                    ShowPage(talker, "sir_karrel_vasper_q0402_11.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @mark_of_esquire) > 0 && OwnItemCount(talker, @coin_of_lords1) + OwnItemCount(talker, @coin_of_lords2) + OwnItemCount(talker, @coin_of_lords3) + OwnItemCount(talker, @coin_of_lords4) + OwnItemCount(talker, @coin_of_lords5) + OwnItemCount(talker, @coin_of_lords6) == 6)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "sir_karrel_vasper_q0402_12.htm");
+                        DeleteItem1(talker, @coin_of_lords1, OwnItemCount(talker, @coin_of_lords1));
+                        DeleteItem1(talker, @coin_of_lords2, OwnItemCount(talker, @coin_of_lords2));
+                        DeleteItem1(talker, @coin_of_lords3, OwnItemCount(talker, @coin_of_lords3));
+                        DeleteItem1(talker, @coin_of_lords4, OwnItemCount(talker, @coin_of_lords4));
+                        DeleteItem1(talker, @coin_of_lords5, OwnItemCount(talker, @coin_of_lords5));
+                        DeleteItem1(talker, @coin_of_lords6, OwnItemCount(talker, @coin_of_lords6));
+                        DeleteItem1(talker, @gludio_guards_mark1, OwnItemCount(talker, @gludio_guards_mark1));
+                        DeleteItem1(talker, @gludio_guards_mark2, OwnItemCount(talker, @gludio_guards_mark2));
+                        DeleteItem1(talker, @gludio_guards_mark3, OwnItemCount(talker, @gludio_guards_mark3));
+                        DeleteItem1(talker, @einhasad_church_mark1, OwnItemCount(talker, @einhasad_church_mark1));
+                        DeleteItem1(talker, @einhasad_church_mark2, OwnItemCount(talker, @einhasad_church_mark2));
+                        DeleteItem1(talker, @einhasad_church_mark3, OwnItemCount(talker, @einhasad_church_mark3));
+                        DeleteItem1(talker, @bugbear_necklace, OwnItemCount(talker, @bugbear_necklace));
+                        DeleteItem1(talker, @einhasad_crucifix, OwnItemCount(talker, @einhasad_crucifix));
+                        DeleteItem1(talker, @poison_spider_leg1, OwnItemCount(talker, @poison_spider_leg1));
+                        DeleteItem1(talker, @lizardman_totem, OwnItemCount(talker, @lizardman_totem));
+                        DeleteItem1(talker, @giant_spider_husk, OwnItemCount(talker, @giant_spider_husk));
+                        DeleteItem1(talker, @horrible_skull, OwnItemCount(talker, @horrible_skull));
+                        DeleteItem1(talker, @mark_of_esquire, OwnItemCount(talker, @mark_of_esquire));
+                        GiveItem1(talker, @sword_of_ritual, 1);
+                        RemoveMemo(talker, @path_to_knight);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_instructions) >= 1 && OwnItemCount(talker, @orims_letter1) >= 1)
+                {
+                    ShowPage(talker, "sir_karrel_vasper_q0229_01.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_instructions) >= 1 && OwnItemCount(talker, @sir_vaspers_letter) >= 1)
+                {
+                    ShowPage(talker, "sir_karrel_vasper_q0229_04.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_instructions) >= 1 && OwnItemCount(talker, @vadins_sanctions) >= 1)
+                {
+                    ShowPage(talker, "sir_karrel_vasper_q0229_05.htm");
+                    DeleteItem1(talker, @vadins_sanctions, 1);
+                    GiveItem1(talker, @sword_of_binding, 1);
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @orims_instructions) >= 1 && OwnItemCount(talker, @sword_of_binding) >= 1)
+                {
+                    ShowPage(talker, "sir_karrel_vasper_q0229_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_knight)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                GiveItem1(talker, @mark_of_esquire, 1);
+                ShowPage(talker, "sir_karrel_vasper_q0402_08.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, quest_id, reply, talker)
+    {
+        if (ask == @path_to_knight)
+        {
+            if (reply == 1)
+            {
+                if (talker.occupation == @fighter)
+                {
+                    if (talker.level >= 19)
+                    {
+                        if (OwnItemCount(talker, @sword_of_ritual) > 0)
+                        {
+                            ShowPage(talker, "sir_karrel_vasper_q0402_04.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "sir_karrel_vasper_q0402_05.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "sir_karrel_vasper_q0402_02.htm");
+                    }
+                }
+                else if (talker.occupation == @knight)
+                {
+                    ShowPage(talker, "sir_karrel_vasper_q0402_02a.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "sir_karrel_vasper_q0402_03.htm");
+                }
+            }
+        }
+
+        if (ask == @path_to_knight)
+        {
+            if (reply == 2)
+            {
+                FHTML_SetFileName(fhtml0, "sir_karrel_vasper_q0402_07.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @path_to_knight);
+                ShowFHTML(talker, fhtml0);
+            }
+        }
+
+        if (ask == @path_to_knight)
+        {
+            if (reply == 3)
+            {
+                ShowPage(talker, "sir_karrel_vasper_q0402_15.htm");
+            }
+        }
+
+        if (ask == @path_to_knight)
+        {
+            if (reply == 4 && OwnItemCount(talker, @mark_of_esquire) > 0 && OwnItemCount(talker, @coin_of_lords1) + OwnItemCount(talker, @coin_of_lords2) + OwnItemCount(talker, @coin_of_lords3) + OwnItemCount(talker, @coin_of_lords4) + OwnItemCount(talker, @coin_of_lords5) + OwnItemCount(talker, @coin_of_lords6) == 3)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "sir_karrel_vasper_q0402_13.htm");
+                    DeleteItem1(talker, @coin_of_lords1, OwnItemCount(talker, @coin_of_lords1));
+                    DeleteItem1(talker, @coin_of_lords2, OwnItemCount(talker, @coin_of_lords2));
+                    DeleteItem1(talker, @coin_of_lords3, OwnItemCount(talker, @coin_of_lords3));
+                    DeleteItem1(talker, @coin_of_lords4, OwnItemCount(talker, @coin_of_lords4));
+                    DeleteItem1(talker, @coin_of_lords5, OwnItemCount(talker, @coin_of_lords5));
+                    DeleteItem1(talker, @coin_of_lords6, OwnItemCount(talker, @coin_of_lords6));
+                    DeleteItem1(talker, @gludio_guards_mark1, OwnItemCount(talker, @gludio_guards_mark1));
+                    DeleteItem1(talker, @gludio_guards_mark2, OwnItemCount(talker, @gludio_guards_mark2));
+                    DeleteItem1(talker, @gludio_guards_mark3, OwnItemCount(talker, @gludio_guards_mark3));
+                    DeleteItem1(talker, @einhasad_church_mark1, OwnItemCount(talker, @einhasad_church_mark1));
+                    DeleteItem1(talker, @einhasad_church_mark2, OwnItemCount(talker, @einhasad_church_mark2));
+                    DeleteItem1(talker, @einhasad_church_mark3, OwnItemCount(talker, @einhasad_church_mark3));
+                    DeleteItem1(talker, @bugbear_necklace, OwnItemCount(talker, @bugbear_necklace));
+                    DeleteItem1(talker, @einhasad_crucifix, OwnItemCount(talker, @einhasad_crucifix));
+                    DeleteItem1(talker, @poison_spider_leg1, OwnItemCount(talker, @poison_spider_leg1));
+                    DeleteItem1(talker, @lizardman_totem, OwnItemCount(talker, @lizardman_totem));
+                    DeleteItem1(talker, @giant_spider_husk, OwnItemCount(talker, @giant_spider_husk));
+                    DeleteItem1(talker, @horrible_skull, OwnItemCount(talker, @horrible_skull));
+                    DeleteItem1(talker, @mark_of_esquire, OwnItemCount(talker, @mark_of_esquire));
+                    GiveItem1(talker, @sword_of_ritual, 1);
+                    RemoveMemo(talker, @path_to_knight);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                }
+            }
+        }
+
+        if (ask == @path_to_knight)
+        {
+            if (reply == 5 && OwnItemCount(talker, @mark_of_esquire) > 0 && (OwnItemCount(talker, @coin_of_lords1) + OwnItemCount(talker, @coin_of_lords2) + OwnItemCount(talker, @coin_of_lords3) + OwnItemCount(talker, @coin_of_lords4) + OwnItemCount(talker, @coin_of_lords5) + OwnItemCount(talker, @coin_of_lords6) > 3 && OwnItemCount(talker, @coin_of_lords1) + OwnItemCount(talker, @coin_of_lords2) + OwnItemCount(talker, @coin_of_lords3) + OwnItemCount(talker, @coin_of_lords4) + OwnItemCount(talker, @coin_of_lords5) + OwnItemCount(talker, @coin_of_lords6) < 6))
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "sir_karrel_vasper_q0402_14.htm");
+                    DeleteItem1(talker, @coin_of_lords1, OwnItemCount(talker, @coin_of_lords1));
+                    DeleteItem1(talker, @coin_of_lords2, OwnItemCount(talker, @coin_of_lords2));
+                    DeleteItem1(talker, @coin_of_lords3, OwnItemCount(talker, @coin_of_lords3));
+                    DeleteItem1(talker, @coin_of_lords4, OwnItemCount(talker, @coin_of_lords4));
+                    DeleteItem1(talker, @coin_of_lords5, OwnItemCount(talker, @coin_of_lords5));
+                    DeleteItem1(talker, @coin_of_lords6, OwnItemCount(talker, @coin_of_lords6));
+                    DeleteItem1(talker, @gludio_guards_mark1, OwnItemCount(talker, @gludio_guards_mark1));
+                    DeleteItem1(talker, @gludio_guards_mark2, OwnItemCount(talker, @gludio_guards_mark2));
+                    DeleteItem1(talker, @gludio_guards_mark3, OwnItemCount(talker, @gludio_guards_mark3));
+                    DeleteItem1(talker, @einhasad_church_mark1, OwnItemCount(talker, @einhasad_church_mark1));
+                    DeleteItem1(talker, @einhasad_church_mark2, OwnItemCount(talker, @einhasad_church_mark2));
+                    DeleteItem1(talker, @einhasad_church_mark3, OwnItemCount(talker, @einhasad_church_mark3));
+                    DeleteItem1(talker, @bugbear_necklace, OwnItemCount(talker, @bugbear_necklace));
+                    DeleteItem1(talker, @einhasad_crucifix, OwnItemCount(talker, @einhasad_crucifix));
+                    DeleteItem1(talker, @poison_spider_leg1, OwnItemCount(talker, @poison_spider_leg1));
+                    DeleteItem1(talker, @lizardman_totem, OwnItemCount(talker, @lizardman_totem));
+                    DeleteItem1(talker, @giant_spider_husk, OwnItemCount(talker, @giant_spider_husk));
+                    DeleteItem1(talker, @horrible_skull, OwnItemCount(talker, @horrible_skull));
+                    DeleteItem1(talker, @mark_of_esquire, OwnItemCount(talker, @mark_of_esquire));
+                    GiveItem1(talker, @sword_of_ritual, 1);
+                    RemoveMemo(talker, @path_to_knight);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                }
+            }
+        }
+
+        if (ask == @test_of_witchcraft)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "sir_karrel_vasper_q0229_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (OwnItemCount(talker, @orims_letter1) >= 1)
+                {
+                    ShowPage(talker, "sir_karrel_vasper_q0229_03.htm");
+                    DeleteItem1(talker, @orims_letter1, 1);
+                    GiveItem1(talker, @sir_vaspers_letter, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

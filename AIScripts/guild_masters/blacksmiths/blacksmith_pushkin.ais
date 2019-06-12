@@ -1,0 +1,145 @@
+class blacksmith_pushkin : blacksmith
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @grail_diagram) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask for help");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @pushkins_list) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Give ingredients");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @pure_mithril_cup) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Express amazement at Water Cup of Mithril");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @grail_diagram) == 0 && OwnItemCount(talker, @pushkins_list) == 0 && OwnItemCount(talker, @pure_mithril_cup) == 0 && OwnItemCount(talker, @moonflower_charm) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Express amazement at Water Cup of Mithril");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @grail_diagram) >= 1)
+                {
+                    ShowPage(talker, "blacksmith_pushkin_q0218_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @pushkins_list) >= 1)
+                {
+                    if (OwnItemCount(talker, @pure_mithril_ore) >= 10 && OwnItemCount(talker, @ant_soldier_acid) >= 20 && OwnItemCount(talker, @wyrms_talon1) >= 20)
+                    {
+                        ShowPage(talker, "blacksmith_pushkin_q0218_08.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "blacksmith_pushkin_q0218_07.htm");
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @pure_mithril_cup) >= 1)
+                {
+                    ShowPage(talker, "blacksmith_pushkin_q0218_11.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @grail_diagram) == 0 && OwnItemCount(talker, @pushkins_list) == 0 && OwnItemCount(talker, @pure_mithril_cup) == 0 && OwnItemCount(talker, @moonflower_charm) == 1)
+                {
+                    ShowPage(talker, "blacksmith_pushkin_q0218_12.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_life)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "blacksmith_pushkin_q0218_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "blacksmith_pushkin_q0218_03.htm");
+            }
+
+            if (reply == 3)
+            {
+                ShowPage(talker, "blacksmith_pushkin_q0218_04.htm");
+            }
+
+            if (reply == 4)
+            {
+                ShowPage(talker, "blacksmith_pushkin_q0218_05.htm");
+            }
+
+            if (reply == 5)
+            {
+                if (OwnItemCount(talker, @grail_diagram) >= 1)
+                {
+                    ShowPage(talker, "blacksmith_pushkin_q0218_06.htm");
+                    DeleteItem1(talker, @grail_diagram, 1);
+                    GiveItem1(talker, @pushkins_list, 1);
+                }
+            }
+
+            if (reply == 6)
+            {
+                ShowPage(talker, "blacksmith_pushkin_q0218_09.htm");
+            }
+
+            if (reply == 7)
+            {
+                if (OwnItemCount(talker, @pushkins_list) >= 1)
+                {
+                    ShowPage(talker, "blacksmith_pushkin_q0218_10.htm");
+                    DeleteItem1(talker, @pure_mithril_ore, OwnItemCount(talker, @pure_mithril_ore));
+                    DeleteItem1(talker, @ant_soldier_acid, OwnItemCount(talker, @ant_soldier_acid));
+                    DeleteItem1(talker, @wyrms_talon1, OwnItemCount(talker, @wyrms_talon1));
+                    DeleteItem1(talker, @pushkins_list, 1);
+                    GiveItem1(talker, @pure_mithril_cup, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,8 @@
+class ai_special_susceptor : warrior_aggressive_casting_ddmagic
+{
+handler:
+    EventHandler CREATED()
+    {
+        myself.sit_on_stop = 1;
+    }
+}

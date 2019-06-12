@@ -1,0 +1,186 @@
+class hollin : master_lv3_hec
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimoney_of_trust) == 0 && GetOneTimeQuestFlag(talker, @testimoney_of_trust) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Test of Confidence");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 0 && GetOneTimeQuestFlag(talker, @testimoney_of_trust) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Test of Confidence");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 7 && OwnItemCount(talker, @scroll_of_elf_trust) && OwnItemCount(talker, @scroll_of_darkelf_trust))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give Letter of Confidence from Elf and Dark Elf");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 18 && OwnItemCount(talker, @scroll_of_dwarf_trust) && OwnItemCount(talker, @scroll_of_orc_trust))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give Letter of Confidence from Dwarf and Orc");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 19)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask who you should go find");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask who you should go find");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 8)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask who you should go find");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 0 && GetOneTimeQuestFlag(talker, @testimoney_of_trust) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race == @race_human && talker.level >= 37 && IsInCategory(@human_2nd_group, talker.occupation))
+                        {
+                            FHTML_SetFileName(fhtml0, "hollin_q0217_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @testimoney_of_trust);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else if (talker.race == @race_human && talker.level >= 37)
+                        {
+                            ShowPage(talker, "hollin_q0217_01a.htm");
+                        }
+                        else if (talker.race == @race_human)
+                        {
+                            ShowPage(talker, "hollin_q0217_01.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "hollin_q0217_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 0 && GetOneTimeQuestFlag(talker, @testimoney_of_trust) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 7 && OwnItemCount(talker, @scroll_of_elf_trust) && OwnItemCount(talker, @scroll_of_darkelf_trust))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "hollin_q0217_05.htm");
+                        GiveItem1(talker, @letter_to_seresin, 1);
+                        DeleteItem1(talker, @scroll_of_darkelf_trust, 1);
+                        DeleteItem1(talker, @scroll_of_elf_trust, 1);
+                        SetMemoState(talker, @testimoney_of_trust, 8);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 18 && OwnItemCount(talker, @scroll_of_dwarf_trust) && OwnItemCount(talker, @scroll_of_orc_trust))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "hollin_q0217_06.htm");
+                        GiveItem1(talker, @recommendation_of_hollin, 1);
+                        DeleteItem1(talker, @scroll_of_dwarf_trust, 1);
+                        DeleteItem1(talker, @scroll_of_orc_trust, 1);
+                        SetMemoState(talker, @testimoney_of_trust, 19);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 19)
+                {
+                    ShowPage(talker, "hollin_q0217_07.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 1)
+                {
+                    ShowPage(talker, "hollin_q0217_08.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 8)
+                {
+                    ShowPage(talker, "hollin_q0217_09.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @testimoney_of_trust)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "hollin_q0217_04.htm");
+                SetMemoState(talker, @testimoney_of_trust, 1);
+                GiveItem1(talker, @letter_to_elf, 1);
+                GiveItem1(talker, @letter_to_darkelf, 1);
+                talker.flag = 0;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

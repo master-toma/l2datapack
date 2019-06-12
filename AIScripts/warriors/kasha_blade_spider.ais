@@ -1,0 +1,113 @@
+class kasha_blade_spider : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_orc_monk) == 1 && OwnItemCount(myself.c_quest0, @leather_pouch2) == 1 && myself.i_quest0 == 1)
+        {
+            if (OwnItemCount(myself.c_quest0, @kasha_bspider_talon) == 4)
+            {
+                DeleteItem1(myself.c_quest0, @kasha_bspider_talon, OwnItemCount(myself.c_quest0, @kasha_bspider_talon));
+                DeleteItem1(myself.c_quest0, @leather_pouch2, OwnItemCount(myself.c_quest0, @leather_pouch2));
+                GiveItem1(myself.c_quest0, @leather_pouch2full, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(myself.c_quest0, @kasha_bspider_talon, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_orc_shaman) == 1 && OwnItemCount(myself.c_quest0, @fire_charm) == 1 && OwnItemCount(myself.c_quest0, @kasha_bspider_husk) < 1)
+        {
+            if (OwnItemCount(myself.c_quest0, @kasha_bear_pelt) + OwnItemCount(myself.c_quest0, @kasha_bspider_husk) + OwnItemCount(myself.c_quest0, @fiery_egg1) == 2)
+            {
+                GiveItem1(myself.c_quest0, @kasha_bspider_husk, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(myself.c_quest0, @kasha_bspider_husk, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        myself.c_quest0.quest_last_reward_time = 0;
+        if (HaveMemo(myself.c_quest0, @get_a_pet) == 1 && OwnItemCount(myself.c_quest0, @animal_slayer_list4) == 1 && myself.i_quest0 == 1)
+        {
+            if (OwnItemCount(myself.c_quest0, @bloody_kasha_fang) < 50 && Rand(100) < 100)
+            {
+                GiveItem1(myself.c_quest0, @bloody_kasha_fang, 1);
+                if (OwnItemCount(myself.c_quest0, @bloody_kasha_fang) >= 50)
+                {
+                    SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(myself.c_quest0, "ItemSound.quest_getitem");
+                }
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker || attacker.attack_type != @AT_FIST && attacker.attack_type != @AT_DUALFIST)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

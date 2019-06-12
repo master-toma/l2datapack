@@ -1,0 +1,60 @@
+class sentry_roseline : guard_fixed
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @sentry_blade2) == 1 && OwnItemCount(talker, @sentry_blade1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Deliver the Sentry Blade");
+            }
+
+            if (HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @sentry_blade2) == 0 && OwnItemCount(talker, @old_bronze_sword) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Speak of the Sentry Blade");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @sentry_blade2) == 1 && OwnItemCount(talker, @sentry_blade1) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "sentry_roseline_q0325_01.htm");
+                        DeleteItem1(talker, @sentry_blade2, 1);
+                        GiveItem1(talker, @old_bronze_sword, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @deliver_supplies) == 1 && OwnItemCount(talker, @sentry_blade2) == 0 && OwnItemCount(talker, @old_bronze_sword) >= 1)
+                {
+                    ShowPage(talker, "sentry_roseline_q0325_02.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

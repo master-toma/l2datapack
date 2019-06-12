@@ -1,0 +1,18 @@
+class ol_mahum_general : warrior_aggressive_run_away_to_clan
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @vanquish_remnants))
+        {
+            if (Rand(10) < 7)
+            {
+                GiveItem1(c1, @black_cross_badge, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

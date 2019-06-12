@@ -1,0 +1,3 @@
+class cave_spider : warrior_passive
+{
+}

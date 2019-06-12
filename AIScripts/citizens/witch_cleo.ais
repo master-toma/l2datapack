@@ -1,0 +1,133 @@
+class witch_cleo : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && talker.is_pledge_master == @FALSE)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the future of your clan");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 8000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Royal Seal of Legal Judgment");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 8100)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about fate");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) > 8100 && GetMemoState(talker, @pledge_seeks_ambition) < 10000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about fate");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 10000 && talker.is_pledge_master == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about fate");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && talker.is_pledge_master == @FALSE)
+                {
+                    ShowPage(talker, "witch_cleo_q0503_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 8000)
+                {
+                    ShowPage(talker, "witch_cleo_q0503_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 8100)
+                {
+                    ShowPage(talker, "witch_cleo_q0503_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) > 8100 && GetMemoState(talker, @pledge_seeks_ambition) < 10000)
+                {
+                    ShowPage(talker, "witch_cleo_q0503_06.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 10000 && talker.is_pledge_master == 1)
+                {
+                    ShowPage(talker, "witch_cleo_q0503_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @pledge_seeks_ambition)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "witch_cleo_q0503_03.htm");
+            }
+
+            if (reply == 2)
+            {
+                SetMemoState(talker, @pledge_seeks_ambition, 8100);
+                ShowPage(talker, "witch_cleo_q0503_04.htm");
+                Say(MakeFString(50338, "", "", "", "", ""));
+                CreateOnePrivateEx(@witch_athrea, "witch_athrea", 0, 5, 160688, 21296, -3714, 32768, 50301, 0);
+                CreateOnePrivateEx(@witch_kalis, "witch_kalis", 0, 5, 160690, 21176, -3712, 32768, 50302, 0);
+                SetJournal(talker, @pledge_seeks_ambition, 9);
+            }
+
+            if (reply == 3)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(talker, @q_proof_of_aspiration, 1);
+                    IncrementParam(talker, @PARAM_SP, 250000);
+                    DeleteItem1(talker, @q_scepter_of_judgemnt, OwnItemCount(talker, @q_scepter_of_judgemnt));
+                    RemoveMemo(talker, @pledge_seeks_ambition);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                    ShowPage(talker, "witch_cleo_q0503_08.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

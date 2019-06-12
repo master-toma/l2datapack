@@ -1,0 +1,3 @@
+class cliff : warehouse_keeper
+{
+}

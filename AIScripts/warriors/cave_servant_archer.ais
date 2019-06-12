@@ -1,0 +1,3 @@
+class cave_servant_archer : warrior_passive_use_power_shot
+{
+}

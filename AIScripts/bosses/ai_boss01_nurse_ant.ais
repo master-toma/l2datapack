@@ -1,0 +1,44 @@
+class ai_boss01_nurse_ant : default_npc
+{
+parameter:
+    float Attack_DecayRatio = 6.6;
+    float UseSkill_DecayRatio = 66000.0;
+    float Attack_BoostValue = 500.0;
+    float UseSkill_BoostValue = 100000.0;
+    
+handler:
+    EventHandler NO_DESIRE()
+    {
+        if (myself.boss.alive)
+        {
+            AddFollowDesire(myself.boss, 20);
+        }
+        else
+        {
+            AddMoveAroundDesire(40, 20);
+        }
+    }
+
+    EventHandler PARTY_ATTACKED(attacker, private, damage)
+    {
+        if (private.class_id == @queen_ant)
+        {
+            if (DistFromMe(private) > 2500 && myself.p_state == PSTATE_USE_SKILL && myself.top_desire_target.class_id == @queen_ant_larva)
+            {
+            }
+            else
+            {
+                AddUseSkillDesire(private, @s_heal_queen_ant1, @ST_HEAL, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+        }
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, victim, damage)
+    {
+        if (victim.class_id == @queen_ant_larva)
+        {
+            AddUseSkillDesire(victim, @s_heal_queen_ant1, @ST_HEAL, @AMT_MOVE_TO_TARGET, 100);
+            AddUseSkillDesire(victim, @s_heal_queen_ant2, @ST_HEAL, @AMT_MOVE_TO_TARGET, 100);
+        }
+    }
+}

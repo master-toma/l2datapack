@@ -1,0 +1,12 @@
+class partisan_healer2_01 : ai_agit01_partisan_healer2
+{
+parameter:
+    int b02_x0 = 20;
+    int b02_y0 = 0;
+    int b02_x1 = 45822;
+    int b02_y1 = 109981;
+    int b02_z1 = -1970;
+    int b02_x2 = @s_night_stalk;
+    int b02_y2 = 108867;
+    int b02_z2 = -2020;
+}

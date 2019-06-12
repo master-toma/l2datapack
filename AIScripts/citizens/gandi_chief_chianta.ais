@@ -1,0 +1,281 @@
+class gandi_chief_chianta : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @vokiyans_order2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Instructions of Vokiyan");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_breka) + OwnItemCount(talker, @scepter_of_vuku) + OwnItemCount(talker, @scepter_of_turek) + OwnItemCount(talker, @scepter_of_lennunt) + OwnItemCount(talker, @scepter_of_enku) < 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the dynamics of the Hawk Orcs");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_breka) && OwnItemCount(talker, @scepter_of_vuku) && OwnItemCount(talker, @scepter_of_turek) && OwnItemCount(talker, @scepter_of_lennunt) && OwnItemCount(talker, @scepter_of_enku))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show five royal seals");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about Royal Seal of Flames");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order3) && (OwnItemCount(talker, @tamlin_orc_skull) < 20 || OwnItemCount(talker, @timak_orc_head) < 20))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about war with other Orcs");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order3) && OwnItemCount(talker, @tamlin_orc_skull) >= 20 && OwnItemCount(talker, @timak_orc_head) >= 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Present Head of Orc of Other Orc Tribe");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @scepter_box))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask to whom you should give the royal seals");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && (OwnItemCount(talker, @tanapis_order1) || OwnItemCount(talker, @ritual_box)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask to whom you should give the royal seals");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @monstereye_woodcarving) == 0 && OwnItemCount(talker, @chianta_charm) == 0 && OwnItemCount(talker, @ordeal_necklace) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Say that you are currently challenging the Examination of Lord");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @chianta_charm) >= 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @monstereye_woodcarving) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Give Cornea of Enhanced Monster Eye");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @monstereye_woodcarving) >= 1 && OwnItemCount(talker, @chianta_charm) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Thank for having received Totem of Duda-Mara");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @vokiyans_order2))
+                {
+                    ShowPage(talker, "gandi_chief_chianta_q0220_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_breka) + OwnItemCount(talker, @scepter_of_vuku) + OwnItemCount(talker, @scepter_of_turek) + OwnItemCount(talker, @scepter_of_lennunt) + OwnItemCount(talker, @scepter_of_enku) < 5)
+                {
+                    ShowPage(talker, "gandi_chief_chianta_q0220_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_breka) && OwnItemCount(talker, @scepter_of_vuku) && OwnItemCount(talker, @scepter_of_turek) && OwnItemCount(talker, @scepter_of_lennunt) && OwnItemCount(talker, @scepter_of_enku))
+                {
+                    ShowPage(talker, "gandi_chief_chianta_q0220_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order2))
+                {
+                    if (talker.level < 38)
+                    {
+                        ShowPage(talker, "gandi_chief_chianta_q0220_08.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "gandi_chief_chianta_q0220_09.htm");
+                        GiveItem1(talker, @chiantas_order3, 1);
+                        DeleteItem1(talker, @chiantas_order2, 1);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order3) && (OwnItemCount(talker, @tamlin_orc_skull) < 20 || OwnItemCount(talker, @timak_orc_head) < 20))
+                {
+                    ShowPage(talker, "gandi_chief_chianta_q0220_10.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order3) && OwnItemCount(talker, @tamlin_orc_skull) >= 20 && OwnItemCount(talker, @timak_orc_head) >= 20)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @scepter_box, 1);
+                        DeleteItem1(talker, @necklace_of_authority, 1);
+                        DeleteItem1(talker, @chiantas_order3, 1);
+                        DeleteItem1(talker, @tamlin_orc_skull, OwnItemCount(talker, @tamlin_orc_skull));
+                        DeleteItem1(talker, @timak_orc_head, OwnItemCount(talker, @timak_orc_head));
+                        ShowPage(talker, "gandi_chief_chianta_q0220_11.htm");
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @scepter_box))
+                {
+                    ShowPage(talker, "gandi_chief_chianta_q0220_12.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && (OwnItemCount(talker, @tanapis_order1) || OwnItemCount(talker, @ritual_box)))
+                {
+                    ShowPage(talker, "gandi_chief_chianta_q0220_13.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @monstereye_woodcarving) == 0 && OwnItemCount(talker, @chianta_charm) == 0 && OwnItemCount(talker, @ordeal_necklace) == 1)
+                {
+                    ShowPage(talker, "gandi_chief_chianta_q0232_01.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @chianta_charm) >= 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @monstereye_woodcarving) == 0)
+                {
+                    if (OwnItemCount(talker, @cornea_of_en_monstereye) < 20)
+                    {
+                        ShowPage(talker, "gandi_chief_chianta_q0232_03.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "gandi_chief_chianta_q0232_04.htm");
+                        DeleteItem1(talker, @cornea_of_en_monstereye, OwnItemCount(talker, @cornea_of_en_monstereye));
+                        DeleteItem1(talker, @chianta_charm, 1);
+                        GiveItem1(talker, @monstereye_woodcarving, 1);
+                    }
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) >= 1 && OwnItemCount(talker, @monstereye_woodcarving) >= 1 && OwnItemCount(talker, @chianta_charm) == 0)
+                {
+                    ShowPage(talker, "gandi_chief_chianta_q0232_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_glory)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "gandi_chief_chianta_q0220_02.htm");
+            }
+            else if (reply == 2 && OwnItemCount(talker, @vokiyans_order2) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "gandi_chief_chianta_q0220_03.htm");
+                    GiveItem1(talker, @chiantas_order1, 1);
+                    DeleteItem1(talker, @vokiyans_order2, 1);
+                }
+            }
+            else if (reply == 3 && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_breka) && OwnItemCount(talker, @scepter_of_vuku) && OwnItemCount(talker, @scepter_of_turek) && OwnItemCount(talker, @scepter_of_lennunt) && OwnItemCount(talker, @scepter_of_enku))
+            {
+                if (talker.level < 38)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "gandi_chief_chianta_q0220_06.htm");
+                        GiveItem1(talker, @chiantas_order2, 1);
+                        DeleteItem1(talker, @scepter_of_breka, 1);
+                        DeleteItem1(talker, @scepter_of_enku, 1);
+                        DeleteItem1(talker, @scepter_of_vuku, 1);
+                        DeleteItem1(talker, @scepter_of_turek, 1);
+                        DeleteItem1(talker, @scepter_of_lennunt, 1);
+                        DeleteItem1(talker, @chiantas_order1, 1);
+                        DeleteItem1(talker, @manakias_letter1, OwnItemCount(talker, @manakias_letter1));
+                        DeleteItem1(talker, @manakias_letter2, OwnItemCount(talker, @manakias_letter2));
+                        DeleteItem1(talker, @kasmans_letter1, OwnItemCount(talker, @kasmans_letter1));
+                    }
+                }
+                else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "gandi_chief_chianta_q0220_07.htm");
+                    GiveItem1(talker, @chiantas_order3, 1);
+                    DeleteItem1(talker, @scepter_of_breka, 1);
+                    DeleteItem1(talker, @scepter_of_enku, 1);
+                    DeleteItem1(talker, @scepter_of_vuku, 1);
+                    DeleteItem1(talker, @scepter_of_turek, 1);
+                    DeleteItem1(talker, @scepter_of_lennunt, 1);
+                    DeleteItem1(talker, @chiantas_order1, 1);
+                    DeleteItem1(talker, @manakias_letter1, OwnItemCount(talker, @manakias_letter1));
+                    DeleteItem1(talker, @manakias_letter2, OwnItemCount(talker, @manakias_letter2));
+                    DeleteItem1(talker, @kasmans_letter1, OwnItemCount(talker, @kasmans_letter1));
+                }
+            }
+        }
+
+        if (ask == @test_of_lord)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "gandi_chief_chianta_q0232_02.htm");
+                    GiveItem1(talker, @chianta_charm, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

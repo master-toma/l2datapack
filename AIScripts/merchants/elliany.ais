@@ -1,0 +1,63 @@
+class elliany : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"necklace_of_wisdom"; 10};
+        {"blue_diamond_necklace"; 10};
+        {"necklace_of_devotion"; 10};
+        {"enchanted_necklace"; 10};
+        {"near_forest_necklace"; 10};
+        {"elven_necklace"; 10};
+        {"cat'seye_earing"; 10};
+        {"coral_earing"; 10};
+        {"red_cresent_earing"; 10};
+        {"enchanted_earing"; 10};
+        {"tiger'seye_earing"; 10};
+        {"elven_earing"; 10};
+        {"ring_of_wisdom"; 10};
+        {"blue_coral_ring"; 10};
+        {"ring_of_devotion"; 10};
+        {"enchanted_ring"; 10};
+        {"black_pearl_ring"; 10};
+        {"elven_ring"; 10}
+    };
+    
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @get_a_pet) && OwnItemCount(talker, @animal_lovers_list) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask for knowledge about pets");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @get_a_pet) && OwnItemCount(talker, @animal_lovers_list) == 1)
+                {
+                    SetMemoState(talker, @get_a_pet, GetMemoState(talker, @get_a_pet) | 0x8);
+                    ShowPage(talker, "elliany_q0419_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

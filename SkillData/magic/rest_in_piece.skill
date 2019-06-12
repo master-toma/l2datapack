@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_rest_in_piece]	/* [릴렉스] */	skill_id = 226	level = 1	operate_type = T	effect = {{c_rest;-1;3};{p_hp_regen;{all};5;diff}}	mp_consume1 = 0	reuse_delay = 0	target_type = self	next_action = sit	skill_end

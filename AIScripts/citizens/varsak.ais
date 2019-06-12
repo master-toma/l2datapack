@@ -1,0 +1,83 @@
+class varsak : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @grim_collector) == 1 && OwnItemCount(talker, @anatomy_diagram) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Speak of the undead");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @grim_collector) == 1 && OwnItemCount(talker, @anatomy_diagram) == 1)
+                {
+                    ShowPage(talker, "varsak_q0325_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @grim_collector)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @spine1) && OwnItemCount(talker, @arm_bone1) && OwnItemCount(talker, @skull1) && OwnItemCount(talker, @rib_bone1) && OwnItemCount(talker, @thigh_bone1))
+                {
+                    if (Rand(5) < 4)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "varsak_q0325_03.htm");
+                            DeleteItem1(talker, @spine1, 1);
+                            DeleteItem1(talker, @skull1, 1);
+                            DeleteItem1(talker, @arm_bone1, 1);
+                            DeleteItem1(talker, @rib_bone1, 1);
+                            DeleteItem1(talker, @thigh_bone1, 1);
+                            GiveItem1(talker, @complete_skeleton, 1);
+                        }
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @spine1, 1);
+                        DeleteItem1(talker, @skull1, 1);
+                        DeleteItem1(talker, @arm_bone1, 1);
+                        DeleteItem1(talker, @rib_bone1, 1);
+                        DeleteItem1(talker, @thigh_bone1, 1);
+                        ShowPage(talker, "varsak_q0325_04.htm");
+                    }
+                }
+                else
+                {
+                    ShowPage(talker, "varsak_q0325_02.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

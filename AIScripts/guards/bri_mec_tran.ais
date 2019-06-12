@@ -1,0 +1,124 @@
+class bri_mec_tran : guardian
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @wrath_of_verdure) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about goblins");
+            }
+
+            if (HaveMemo(talker, @wrath_of_verdure) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about goblins");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @wrath_of_verdure) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 4 && talker.race == @race_elf)
+                        {
+                            FHTML_SetFileName(fhtml0, "bri_mec_tran_q0267_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @wrath_of_verdure);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else if (talker.race != @race_elf)
+                        {
+                            ShowPage(talker, "bri_mec_tran_q0267_00.htm");
+                        }
+                        else if (talker.level < 4)
+                        {
+                            ShowPage(talker, "bri_mec_tran_q0267_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @wrath_of_verdure) == 1)
+                {
+                    if (OwnItemCount(talker, @goblin_club) > 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @silvery_leaf, 1 * OwnItemCount(talker, @goblin_club));
+                            DeleteItem1(talker, @goblin_club, OwnItemCount(talker, @goblin_club));
+                            ShowPage(talker, "bri_mec_tran_q0267_05.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "bri_mec_tran_q0267_04.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @wrath_of_verdure)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "bri_mec_tran_q0267_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @wrath_of_verdure)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "bri_mec_tran_q0267_06.htm");
+                RemoveMemo(talker, @wrath_of_verdure);
+                SoundEffect(talker, "ItemSound.quest_finish");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "bri_mec_tran_q0267_07.htm");
+            }
+        }
+
+        super;
+    }
+}

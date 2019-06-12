@@ -1,0 +1,4 @@
+skill_begin	skill_name = [s_black_magic_resist1]	/* [블랙 매직 레지스트] */	skill_id = 199	level = 1	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_black_magic_resist2]	/* [블랙 매직 레지스트] */	skill_id = 199	level = 2	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_black_magic_resist3]	/* [블랙 매직 레지스트] */	skill_id = 199	level = 3	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_black_magic_resist4]	/* [블랙 매직 레지스트] */	skill_id = 199	level = 4	operate_type = P	effect = {}	skill_end

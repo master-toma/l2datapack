@@ -1,0 +1,15 @@
+class stenoa_gorgon_queen : party_leader
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_warspirit) && OwnItemCount(c1, @manakias_totem) == 1 && OwnItemCount(c1, @hermodts_skull) == 0)
+        {
+            GiveItem1(c1, @hermodts_skull, 1);
+            SoundEffect(c1, "ItemSound.quest_middle");
+        }
+
+        super;
+    }
+}

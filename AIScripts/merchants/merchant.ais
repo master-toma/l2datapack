@@ -1,0 +1,155 @@
+class merchant : default_npc
+{
+parameter:
+    string ShopName = "";
+    string fnHi = "mhi.htm";
+    string fnSell = "msell.htm";
+    string fnBuy = "mbye.htm";
+    string fnUnableItemSell = "muib.htm";
+    string fnYouAreChaotic = "mcm.htm";
+    string fnNowSiege = "mns.htm";
+    
+property:
+    BuySellList SellList0 = {};
+    BuySellList SellList1 = {};
+    BuySellList SellList2 = {};
+    BuySellList SellList3 = {};
+    BuySellList SellList4 = {};
+    BuySellList SellList5 = {};
+    BuySellList SellList6 = {};
+    BuySellList SellList7 = {};
+    BuySellList BuyList0 = {
+        {"adena"; 0};
+        {"q_cybellins_dagger"; 0};
+        {"apprentice's_wand"; 0};
+        {"apprentice's_tunic"; 0};
+        {"apprentice's_hose"; 0};
+        {"dagger"; 0};
+        {"squire's_shirt"; 0};
+        {"squire's_pants"; 0};
+        {"training_gloves"; 0};
+        {"squire's_sword"; 0};
+        {"union_member's_club"; 0};
+        {"gallins_oak_wand"; 0};
+        {"rusted_bronze_sword3"; 0};
+        {"netis_bow"; 0};
+        {"netis_dagger"; 0};
+        {"guards_bow"; 0};
+        {"talins_spear"; 0};
+        {"old_knight_sword"; 0};
+        {"crescent_moon_bow"; 0};
+        {"sword_of_binding"; 0};
+        {"q_cybellins_dagger"; 0};
+        {"rp_titan_key"; 0};
+        {"rp_journeyman_ring"; 0};
+        {"rp_amber_bead"; 0};
+        {"q_rp_titans_powerstone"; 0};
+        {"q_herb_of_breka"; 0};
+        {"q_herb_of_vanor"; 0};
+        {"q_herb_of_oel_mahum"; 0};
+        {"q_blood_of_eva"; 0};
+        {"q_athreas_coin"; 0};
+        {"q_symbol_of_loyalty"; 0};
+        {"q_mist_drake_egg"; 0};
+        {"q_blitz_wyrm_egg"; 0};
+        {"q_drake_egg"; 0};
+        {"q_thunderwyrm_egg"; 0};
+        {"q_nebulite_crystals"; 0};
+        {"q_titan_powerstone"; 0};
+        {"q_imperial_key"; 0};
+        {"world_map"; 0};
+        {"world_map_2"; 0};
+        {"wolf_collar"; 0};
+        {"dragonflute_of_wind"; 0};
+        {"dragonflute_of_star"; 0};
+        {"dragonflute_of_twilight"; 0}
+    };
+    BuySellList BuyList1 = {};
+    BuySellList BuyList2 = {};
+    BuySellList BuyList3 = {};
+    BuySellList BuyList4 = {};
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        if (talker.karma > 0)
+        {
+            ShowPage(talker, fnYouAreChaotic);
+        }
+        else
+        {
+            ShowPage(talker, fnHi);
+        }
+    }
+
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -1)
+        {
+            if (reply == 0)
+            {
+                Sell(talker, SellList0, ShopName, fnBuy, "", "");
+            }
+
+            if (reply == 1)
+            {
+                Sell(talker, SellList1, ShopName, fnBuy, "", "");
+            }
+
+            if (reply == 2)
+            {
+                Sell(talker, SellList2, ShopName, fnBuy, "", "");
+            }
+
+            if (reply == 3)
+            {
+                Sell(talker, SellList3, ShopName, fnBuy, "", "");
+            }
+
+            if (reply == 4)
+            {
+                Sell(talker, SellList4, ShopName, fnBuy, "", "");
+            }
+
+            if (reply == 5)
+            {
+                Sell(talker, SellList5, ShopName, fnBuy, "", "");
+            }
+
+            if (reply == 6)
+            {
+                Sell(talker, SellList6, ShopName, fnBuy, "", "");
+            }
+
+            if (reply == 7)
+            {
+                Sell(talker, SellList7, ShopName, fnBuy, "", "");
+            }
+
+            if (reply == 8)
+            {
+                Buy(talker, BuyList0, ShopName, fnSell, fnUnableItemSell, -50);
+            }
+
+            if (reply == 9)
+            {
+                Buy(talker, BuyList1, ShopName, fnSell, fnUnableItemSell, -50);
+            }
+
+            if (reply == 10)
+            {
+                Buy(talker, BuyList2, ShopName, fnSell, fnUnableItemSell, -50);
+            }
+
+            if (reply == 11)
+            {
+                Buy(talker, BuyList3, ShopName, fnSell, fnUnableItemSell, -50);
+            }
+
+            if (reply == 12)
+            {
+                Buy(talker, BuyList4, ShopName, fnSell, fnUnableItemSell, -50);
+            }
+        }
+    }
+}

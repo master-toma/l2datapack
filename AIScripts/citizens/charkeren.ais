@@ -1,0 +1,90 @@
+class charkeren : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_darkwizard) == 1 && OwnItemCount(talker, @seeds_of_anger) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the Seeds of Anger");
+            }
+
+            if (HaveMemo(talker, @path_to_darkwizard) == 1 && OwnItemCount(talker, @seeds_of_anger) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the Seeds of Anger");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_darkwizard) == 1 && OwnItemCount(talker, @seeds_of_anger) == 0)
+                {
+                    if (OwnItemCount(talker, @seeds_of_despair) == 1 && OwnItemCount(talker, @familys_ashes) == 0 && OwnItemCount(talker, @lucky_key) == 0)
+                    {
+                        ShowPage(talker, "charkeren_q0412_01.htm");
+                    }
+                    else if (OwnItemCount(talker, @seeds_of_despair) == 1 && OwnItemCount(talker, @familys_ashes) < 3 && OwnItemCount(talker, @lucky_key) == 1)
+                    {
+                        ShowPage(talker, "charkeren_q0412_04.htm");
+                    }
+                    else if (OwnItemCount(talker, @seeds_of_despair) == 1 && OwnItemCount(talker, @familys_ashes) >= 3 && OwnItemCount(talker, @lucky_key) == 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "charkeren_q0412_05.htm");
+                            GiveItem1(talker, @seeds_of_anger, 1);
+                            DeleteItem1(talker, @familys_ashes, 3);
+                            DeleteItem1(talker, @lucky_key, 1);
+                        }
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_darkwizard) == 1 && OwnItemCount(talker, @seeds_of_anger) == 1)
+                {
+                    ShowPage(talker, "charkeren_q0412_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_darkwizard)
+        {
+            if (reply == 4)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "charkeren_q0412_03.htm");
+                    GiveItem1(talker, @lucky_key, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

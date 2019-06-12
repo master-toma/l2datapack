@@ -1,0 +1,22 @@
+class teleporter_need_item : teleporter
+{
+parameter:
+    string fnNoItem = "";
+    int ItemNeeded = @small_sword;
+    
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -6)
+        {
+            if (OwnItemCount(talker, ItemNeeded) != 0)
+            {
+                DeleteItem1(talker, ItemNeeded, 1);
+            }
+            else
+            {
+                ShowPage(talker, fnNoItem);
+            }
+        }
+    }
+}

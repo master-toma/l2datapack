@@ -1,0 +1,221 @@
+class martian : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && OwnItemCount(talker, @letter_of_kash) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Introduction Letter of Kash");
+            }
+
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 4 && OwnItemCount(talker, @watchers_eye1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Say that you haven’t killed a monster yet");
+            }
+
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && OwnItemCount(talker, @watchers_eye1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Say that you killed a monster");
+            }
+
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that the examination is too difficult");
+            }
+
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) >= 7)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Get angry saying that you were deceived");
+            }
+
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 6)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Get angry saying that you were deceived");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 1000 && talker.is_pledge_master == @FALSE)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Say that you came because you were sent by Sir Athebaldt");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 1000 && talker.is_pledge_master == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Say that you came because you were sent by Sir Athebaldt");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) < 3000 && GetMemoState(talker, @pledge_seeks_ambition) >= 2000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Ask about collecting eggs");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 3000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Ask about Sir Athebaldt");
+            }
+
+            if (HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) > 3000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Ask about Sir Athebaldt");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && OwnItemCount(talker, @letter_of_kash) == 1)
+                {
+                    ShowPage(talker, "martian_q0211_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 4 && OwnItemCount(talker, @watchers_eye1) == 0)
+                {
+                    ShowPage(talker, "martian_q0211_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && OwnItemCount(talker, @watchers_eye1))
+                {
+                    ShowPage(talker, "martian_q0211_04.htm");
+                    DeleteItem1(talker, @watchers_eye1, 1);
+                    SetMemoState(talker, @trial_of_challenger, 5);
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 5)
+                {
+                    ShowPage(talker, "martian_q0211_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) >= 7)
+                {
+                    ShowPage(talker, "martian_q0211_06.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 6)
+                {
+                    ShowPage(talker, "martian_q0211_07.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 1000 && talker.is_pledge_master == @FALSE)
+                {
+                    ShowPage(talker, "martian_q0503_01.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 1000 && talker.is_pledge_master == 1)
+                {
+                    ShowPage(talker, "martian_q0503_02.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) < 3000 && GetMemoState(talker, @pledge_seeks_ambition) >= 2000)
+                {
+                    if (OwnItemCount(talker, @q_mist_drake_egg) < 10 || OwnItemCount(talker, @q_blitz_wyrm_egg) < 10 || OwnItemCount(talker, @q_thunderwyrm_egg) < 10 || OwnItemCount(talker, @q_drake_egg) < 10)
+                    {
+                        ShowPage(talker, "martian_q0503_04.htm");
+                    }
+                    else
+                    {
+                        DeleteItem1(talker, @q_mist_drake_egg, OwnItemCount(talker, @q_mist_drake_egg));
+                        DeleteItem1(talker, @q_blitz_wyrm_egg, OwnItemCount(talker, @q_blitz_wyrm_egg));
+                        DeleteItem1(talker, @q_drake_egg, OwnItemCount(talker, @q_drake_egg));
+                        DeleteItem1(talker, @q_thunderwyrm_egg, OwnItemCount(talker, @q_thunderwyrm_egg));
+                        SetMemoState(talker, @pledge_seeks_ambition, 3000);
+                        ShowPage(talker, "martian_q0503_05.htm");
+                        SetJournal(talker, @pledge_seeks_ambition, 3);
+                    }
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) == 3000)
+                {
+                    ShowPage(talker, "martian_q0503_07.htm");
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(Pledge_GetLeader(talker), @pledge_seeks_ambition) == 1 && GetMemoState(talker, @pledge_seeks_ambition) > 3000)
+                {
+                    ShowPage(talker, "martian_q0503_08.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_challenger)
+        {
+            if (reply == 1 && OwnItemCount(talker, @letter_of_kash) > 0)
+            {
+                ShowPage(talker, "martian_q0211_02.htm");
+                DeleteItem1(talker, @letter_of_kash, 1);
+                SetMemoState(talker, @trial_of_challenger, 4);
+            }
+        }
+
+        if (ask == @pledge_seeks_ambition)
+        {
+            if (reply == 1)
+            {
+                DeleteItem1(talker, @q_gustafs_letter1, OwnItemCount(talker, @q_gustafs_letter1));
+                SetMemoState(talker, @pledge_seeks_ambition, 2000);
+                ShowPage(talker, "martian_q0503_03.htm");
+                SetJournal(talker, @pledge_seeks_ambition, 2);
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,81 @@
+class trader_daeronees : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"leather_pants"; 20};
+        {"leather_shirt"; 20};
+        {"hard_leather_pants"; 20};
+        {"wooden_breastplate"; 20};
+        {"wooden_gaiters"; 20};
+        {"tights_pants"; 20};
+        {"tights_shirt"; 20};
+        {"bone_breastplate"; 20};
+        {"bone_gaiters"; 20};
+        {"bronze_breastplate"; 20};
+        {"hard_leather_gaiters"; 20};
+        {"hard_leather_shirt"; 20};
+        {"bronze_gaiters"; 20};
+        {"ring_breastplate"; 20};
+        {"leather_shield"; 20};
+        {"small_shield"; 20};
+        {"buckler"; 20};
+        {"round_shield"; 20};
+        {"bone_shield"; 20};
+        {"bronze_shield"; 20};
+        {"short_leather_gloves"; 20};
+        {"gloves"; 20};
+        {"leather_gloves"; 20};
+        {"bracer"; 20};
+        {"excellence_leather_gloves"; 20};
+        {"crude_leather_shoes"; 20};
+        {"cotton_shoes"; 20};
+        {"leather_shoes"; 20};
+        {"low_boots"; 20};
+        {"boots"; 20};
+        {"leather_boots"; 20};
+        {"leather_cap"; 20};
+        {"wooden_helmet"; 20};
+        {"leather_helmet"; 20};
+        {"hard_leather_helmet"; 20};
+        {"bone_helmet"; 20};
+        {"wooden_arrow"; 20};
+        {"bone_arrow"; 20}
+    };
+    BuySellList SellList1 = {
+        {"cotton_tunic"; 20};
+        {"feriotic_hose"; 20};
+        {"feriotic_tunic"; 20};
+        {"leather_hose"; 20};
+        {"leather_tunic"; 20};
+        {"hose_of_devotion"; 20};
+        {"tunic_of_devotion"; 20};
+        {"hose_of_magicpower"; 20};
+        {"tunic_of_magicpower"; 20};
+        {"cursed_hose"; 20};
+        {"cursed_tunic"; 20};
+        {"leather_shield"; 20};
+        {"small_shield"; 20};
+        {"buckler"; 20};
+        {"round_shield"; 20};
+        {"bone_shield"; 20};
+        {"bronze_shield"; 20};
+        {"short_leather_gloves"; 20};
+        {"gloves"; 20};
+        {"leather_gloves"; 20};
+        {"bracer"; 20};
+        {"excellence_leather_gloves"; 20};
+        {"crude_leather_shoes"; 20};
+        {"cotton_shoes"; 20};
+        {"leather_shoes"; 20};
+        {"low_boots"; 20};
+        {"boots"; 20};
+        {"leather_boots"; 20};
+        {"leather_cap"; 20};
+        {"wooden_helmet"; 20};
+        {"leather_helmet"; 20};
+        {"hard_leather_helmet"; 20};
+        {"bone_helmet"; 20};
+        {"wooden_arrow"; 20};
+        {"bone_arrow"; 20}
+    };
+}

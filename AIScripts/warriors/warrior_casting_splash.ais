@@ -1,0 +1,38 @@
+class warrior_casting_splash : warrior
+{
+parameter:
+    int SelfRangeDDMagic = @s_npc_burn1;
+    
+handler:
+    EventHandler ATTACKED(attacker, damage)
+    {
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            if (DistFromMe(attacker) < 200 && Rand(100) < 10 && myself.top_desire_target == attacker)
+            {
+                if (Skill_GetConsumeMP(SelfRangeDDMagic) < myself.sm.mp && Skill_GetConsumeHP(SelfRangeDDMagic) < myself.sm.hp && Skill_InReuseDelay(SelfRangeDDMagic) == @FALSE)
+                {
+                    AddUseSkillDesire(myself.sm, SelfRangeDDMagic, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+        }
+
+        super;
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, damage)
+    {
+        if (GetLifeTime() > 7 && (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id)))
+        {
+            if (DistFromMe(attacker) < 200 && Rand(100) < 10 && myself.top_desire_target == attacker)
+            {
+                if (Skill_GetConsumeMP(SelfRangeDDMagic) < myself.sm.mp && Skill_GetConsumeHP(SelfRangeDDMagic) < myself.sm.hp && Skill_InReuseDelay(SelfRangeDDMagic) == @FALSE)
+                {
+                    AddUseSkillDesire(myself.sm, SelfRangeDDMagic, @ST_ATTACK, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+        }
+
+        super;
+    }
+}

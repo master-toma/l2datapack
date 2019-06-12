@@ -1,0 +1,3 @@
+class zenta_lizardman_warrior : warrior_aggressive
+{
+}

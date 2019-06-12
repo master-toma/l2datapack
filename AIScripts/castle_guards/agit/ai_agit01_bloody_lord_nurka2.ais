@@ -1,0 +1,55 @@
+class ai_agit01_bloody_lord_nurka2 : ai_agit01_bloody_lord_nurka1
+{
+parameter:
+    string Privates = "orc:party_private:1:20sec";
+    int b02_x1 = 45802;
+    int b02_y1 = 109981;
+    int b02_z1 = -1970;
+    int b02_x2 = 44525;
+    int b02_y2 = 108867;
+    int b02_z2 = -2020;
+    
+handler:
+    EventHandler CREATED()
+    {
+        InstantTeleportInMyTerritory(51952, 111060, -1970, 200);
+        AddTimerEx(2001, 10000);
+        myself.sm.flag = 0;
+        CreatePrivates(Privates);
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 2001)
+        {
+            if (Castle_GetRawSystemTime() - Castle_GetRawSiegeTime() < @s_sonic_storm32)
+            {
+            }
+            else if (Castle_GetRawSystemTime() - Castle_GetRawSiegeTime() < 3600)
+            {
+                if (myself.sm.flag < 1)
+                {
+                    AddMoveToDesire(b02_x1, b02_y1, b02_z1, 100000000);
+                    myself.sm.flag = 1;
+                }
+            }
+            else if (myself.sm.flag < 2)
+            {
+                AddMoveToDesire(b02_x2, b02_y2, b02_z2, 100000000);
+                myself.sm.flag = 2;
+            }
+
+            AddTimerEx(2001, 10000);
+        }
+
+        super;
+    }
+
+    EventHandler PARTY_DIED(private)
+    {
+        if (private != myself.sm)
+        {
+            CreateOnePrivate(private.class_id, private.ai, private.weight_point, private.respawn_time);
+        }
+    }
+}

@@ -1,0 +1,39 @@
+class human_elf_mage_lv2_master : guild_master_lv2
+{
+parameter:
+    int lv1_class1 = @mage;
+    int lv1_class2 = @elven_mage;
+    int lv2_class11 = @wizard;
+    int lv2_class12 = @cleric;
+    int lv2_class21 = @elven_wizard;
+    int lv2_class22 = @oracle;
+    int proof11 = @bead_of_season;
+    int proof12 = @mark_of_faith;
+    int proof21 = @eternity_diamond;
+    int proof22 = @leaf_of_oracle;
+    
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -2 && reply == 1)
+        {
+            if (IsInCategory(@mage_group, talker.occupation) && (talker.race == @race_human || talker.race == @race_elf))
+            {
+                if (talker.race == @race_human)
+                {
+                    ShowPage(talker, fnClassList1);
+                }
+                else if (talker.race == @race_elf)
+                {
+                    ShowPage(talker, fnClassList2);
+                }
+            }
+            else
+            {
+                ShowPage(talker, fnClassMismatch);
+            }
+        }
+
+        super;
+    }
+}

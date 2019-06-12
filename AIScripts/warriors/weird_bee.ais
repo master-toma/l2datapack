@@ -1,0 +1,64 @@
+class weird_bee : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @adept_of_taste) == 1 && OwnItemCount(c1, @ingredient_list) == 1 && OwnItemCount(c1, @red_mandragora_sap) + OwnItemCount(c1, @white_mandragora_sap) + OwnItemCount(c1, @honey) + OwnItemCount(c1, @golden_honey) + OwnItemCount(c1, @dionian_potato) + OwnItemCount(c1, @green_moss_bundle) + OwnItemCount(c1, @brown_moss_bundle) + OwnItemCount(c1, @monster_eye_meat) < 5 && OwnItemCount(c1, @jaycubs_insectbook) == 1)
+        {
+            i0 = Rand(100);
+            if (i0 < 92)
+            {
+                if (OwnItemCount(c1, @nectar) < 20)
+                {
+                    if (1)
+                    {
+                        c1.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(c1, @nectar, 1);
+                        if (OwnItemCount(c1, @nectar) == 20)
+                        {
+                            SoundEffect(c1, "ItemSound.quest_middle");
+                        }
+                        else
+                        {
+                            SoundEffect(c1, "ItemSound.quest_itemget");
+                        }
+                    }
+                }
+            }
+            else if (OwnItemCount(c1, @royal_jelly) < 10)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @royal_jelly, 1);
+                    if (OwnItemCount(c1, @royal_jelly) == 10)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_maestro) && GetMemoState(c1, @test_of_maestro) == 4 && OwnItemCount(c1, @weird_bees_needle) < 10 && OwnItemCount(c1, @ingredients_of_antidote) == 1)
+        {
+            if (OwnItemCount(c1, @weird_bees_needle) == 9)
+            {
+                GiveItem1(c1, @weird_bees_needle, 1);
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @weird_bees_needle, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

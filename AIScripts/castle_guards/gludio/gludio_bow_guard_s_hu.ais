@@ -1,0 +1,3 @@
+class gludio_bow_guard_s_hu : ai_gludio_bow_guard_stand
+{
+}

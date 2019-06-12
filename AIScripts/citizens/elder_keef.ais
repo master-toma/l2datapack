@@ -1,0 +1,207 @@
+class elder_keef : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @covert_business) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about the secret business");
+            }
+
+            if (HaveMemo(talker, @covert_business) == 1 && OwnItemCount(talker, @bat_fang) < 100)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the secret business");
+            }
+
+            if (HaveMemo(talker, @covert_business) == 1 && OwnItemCount(talker, @bat_fang) >= 100)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Receive compensation from Keef");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @lockirins_notice3) >= 1 && OwnItemCount(talker, @receipt_of_contribution3) == 0 && OwnItemCount(talker, @procuration_of_torocco) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that you came to collect the donation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution3) == 0 && OwnItemCount(talker, @procuration_of_torocco) == 0 && OwnItemCount(talker, @lockirins_notice3) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give donation that was collected");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @procuration_of_torocco) >= 1 && OwnItemCount(talker, @lockirins_notice3) == 0 && OwnItemCount(talker, @receipt_of_contribution3) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Give donation that was collected");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_contribution3) >= 1 && OwnItemCount(talker, @procuration_of_torocco) == 0 && OwnItemCount(talker, @lockirins_notice3) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Say that you are collecting the donation receipt");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @covert_business) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_dwarf)
+                        {
+                            ShowPage(talker, "elder_keef_q0294_00.htm");
+                        }
+                        else if (talker.level >= 10)
+                        {
+                            FHTML_SetFileName(fhtml0, "elder_keef_q0294_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @covert_business);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "elder_keef_q0294_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @covert_business) == 1 && OwnItemCount(talker, @bat_fang) < 100)
+                {
+                    ShowPage(talker, "elder_keef_q0294_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @covert_business) == 1 && OwnItemCount(talker, @bat_fang) >= 100)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @ring_of_raccoon) < 1)
+                        {
+                            ShowPage(talker, "elder_keef_q0294_05.htm");
+                            GiveItem1(talker, @ring_of_raccoon, 1);
+                            IncrementParam(talker, @PARAM_SP, 60);
+                            DeleteItem1(talker, @bat_fang, OwnItemCount(talker, @bat_fang));
+                            RemoveMemo(talker, @covert_business);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                        else if (OwnItemCount(talker, @ring_of_raccoon) >= 1)
+                        {
+                            ShowPage(talker, "elder_keef_q0294_06.htm");
+                            GiveItem1(talker, @adena, 2400);
+                            IncrementParam(talker, @PARAM_SP, 60);
+                            DeleteItem1(talker, @bat_fang, OwnItemCount(talker, @bat_fang));
+                            RemoveMemo(talker, @covert_business);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @lockirins_notice3) >= 1 && OwnItemCount(talker, @receipt_of_contribution3) == 0 && OwnItemCount(talker, @procuration_of_torocco) == 0)
+                {
+                    ShowPage(talker, "elder_keef_q0221_01.htm");
+                    DeleteItem1(talker, @lockirins_notice3, OwnItemCount(talker, @lockirins_notice3));
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution3) == 0 && OwnItemCount(talker, @procuration_of_torocco) == 0 && OwnItemCount(talker, @lockirins_notice3) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+                {
+                    ShowPage(talker, "elder_keef_q0221_02.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @procuration_of_torocco) >= 1 && OwnItemCount(talker, @lockirins_notice3) == 0 && OwnItemCount(talker, @receipt_of_contribution3) == 0)
+                {
+                    ShowPage(talker, "elder_keef_q0221_03.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_contribution3) >= 1 && OwnItemCount(talker, @procuration_of_torocco) == 0 && OwnItemCount(talker, @lockirins_notice3) == 0)
+                {
+                    ShowPage(talker, "elder_keef_q0221_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @covert_business)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @covert_business);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "elder_keef_q0294_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_prosperity)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @adena) < 5000)
+                {
+                    ShowPage(talker, "elder_keef_q0221_03a.htm");
+                }
+                else if (OwnItemCount(talker, @procuration_of_torocco) >= 1)
+                {
+                    ShowPage(talker, "elder_keef_q0221_03b.htm");
+                    DeleteItem1(talker, @adena, 5000);
+                    DeleteItem1(talker, @procuration_of_torocco, 1);
+                    GiveItem1(talker, @receipt_of_contribution3, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

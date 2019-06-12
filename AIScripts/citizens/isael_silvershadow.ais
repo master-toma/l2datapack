@@ -1,0 +1,181 @@
+class isael_silvershadow : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 8)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you want to carry out the next step of the trial");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 9)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about the article left by the departed");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask who you should go find");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @thalyas_letter2) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that Thalia sent you");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @isaels_instructions) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give Piece of Spear");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @talins_spear) >= 1 && OwnItemCount(talker, @isaels_letter) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Bid farewell");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && (OwnItemCount(talker, @grail_of_purity) >= 1 || OwnItemCount(talker, @water_of_life) >= 1 || OwnItemCount(talker, @camomile_charm) >= 1) && OwnItemCount(talker, @moonflower_charm) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Bid farewell");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 8)
+                {
+                    if (talker.level >= 36)
+                    {
+                        ShowPage(talker, "isael_silvershadow_q0212_02.htm");
+                        SetMemoState(talker, @trial_of_duty, 9);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "isael_silvershadow_q0212_01.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 9)
+                {
+                    if (OwnItemCount(talker, @militas_article) < 20)
+                    {
+                        ShowPage(talker, "isael_silvershadow_q0212_03.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "isael_silvershadow_q0212_04.htm");
+                        GiveItem1(talker, @tear_of_loyalty, 1);
+                        DeleteItem1(talker, @militas_article, OwnItemCount(talker, @militas_article));
+                        SetMemoState(talker, @trial_of_duty, 10);
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 10)
+                {
+                    ShowPage(talker, "isael_silvershadow_q0212_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @thalyas_letter2) >= 1)
+                {
+                    ShowPage(talker, "isael_silvershadow_q0218_01.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @isaels_instructions) >= 1)
+                {
+                    if (OwnItemCount(talker, @talins_spear_blade) >= 1 && OwnItemCount(talker, @talins_spear_shaft) >= 1 && OwnItemCount(talker, @talins_ruby) >= 1 && OwnItemCount(talker, @talins_aquamarine) >= 1 && OwnItemCount(talker, @talins_amethyst) >= 1 && OwnItemCount(talker, @talins_peridot) >= 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "isael_silvershadow_q0218_04.htm");
+                            DeleteItem1(talker, @talins_spear_blade, OwnItemCount(talker, @talins_spear_blade));
+                            DeleteItem1(talker, @talins_spear_shaft, OwnItemCount(talker, @talins_spear_shaft));
+                            DeleteItem1(talker, @talins_ruby, OwnItemCount(talker, @talins_ruby));
+                            DeleteItem1(talker, @talins_aquamarine, OwnItemCount(talker, @talins_aquamarine));
+                            DeleteItem1(talker, @talins_amethyst, OwnItemCount(talker, @talins_amethyst));
+                            DeleteItem1(talker, @talins_peridot, OwnItemCount(talker, @talins_peridot));
+                            DeleteItem1(talker, @isaels_instructions, 1);
+                            GiveItem1(talker, @isaels_letter, 1);
+                            GiveItem1(talker, @talins_spear, 1);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "isael_silvershadow_q0218_03.htm");
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @talins_spear) >= 1 && OwnItemCount(talker, @isaels_letter) >= 1)
+                {
+                    ShowPage(talker, "isael_silvershadow_q0218_05.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && (OwnItemCount(talker, @grail_of_purity) >= 1 || OwnItemCount(talker, @water_of_life) >= 1 || OwnItemCount(talker, @camomile_charm) >= 1) && OwnItemCount(talker, @moonflower_charm) == 1)
+                {
+                    ShowPage(talker, "isael_silvershadow_q0218_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_life)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @thalyas_letter2) >= 1)
+                {
+                    ShowPage(talker, "isael_silvershadow_q0218_02.htm");
+                    DeleteItem1(talker, @thalyas_letter2, 1);
+                    GiveItem1(talker, @isaels_instructions, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

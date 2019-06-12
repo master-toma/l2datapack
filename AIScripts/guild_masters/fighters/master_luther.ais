@@ -1,0 +1,141 @@
+class master_luther : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_searcher) == 0 && GetOneTimeQuestFlag(talker, @test_of_searcher) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Certificate of Searcher");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 0 && GetOneTimeQuestFlag(talker, @test_of_searcher) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Certificate of Searcher");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Certificate of Searcher");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 0 && GetOneTimeQuestFlag(talker, @test_of_searcher) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if ((talker.occupation == @rogue || talker.occupation == @elven_scout || talker.occupation == @assassin || talker.occupation == @scavenger) == @FALSE)
+                        {
+                            ShowPage(talker, "master_luther_q0225_01.htm");
+                        }
+                        else if ((talker.occupation == @rogue || talker.occupation == @elven_scout || talker.occupation == @assassin || talker.occupation == @scavenger) && talker.level < 39)
+                        {
+                            ShowPage(talker, "master_luther_q0225_02.htm");
+                        }
+                        else if ((talker.occupation == @rogue || talker.occupation == @elven_scout || talker.occupation == @assassin || talker.occupation == @scavenger) && talker.level >= 39)
+                        {
+                            if (talker.occupation == @scavenger)
+                            {
+                                FHTML_SetFileName(fhtml0, "master_luther_q0225_04.htm");
+                            }
+                            else
+                            {
+                                FHTML_SetFileName(fhtml0, "master_luther_q0225_03.htm");
+                            }
+
+                            FHTML_SetInt(fhtml0, "quest_id", @test_of_searcher);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 0 && GetOneTimeQuestFlag(talker, @test_of_searcher) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1)
+                {
+                    if (OwnItemCount(talker, @luthers_letter) == 1 && OwnItemCount(talker, @alankells_recommend) == 0)
+                    {
+                        ShowPage(talker, "master_luther_q0225_06.htm");
+                    }
+                    else if (OwnItemCount(talker, @luthers_letter) == 0 && OwnItemCount(talker, @alankells_recommend) == 0)
+                    {
+                        ShowPage(talker, "master_luther_q0225_07.htm");
+                    }
+                    else if (OwnItemCount(talker, @luthers_letter) == 0 && OwnItemCount(talker, @alankells_recommend) == 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            IncrementParam(talker, @PARAM_EXP, 21000);
+                            IncrementParam(talker, @PARAM_SP, 2600);
+                            ShowPage(talker, "master_luther_q0225_08.htm");
+                            RemoveMemo(talker, @test_of_searcher);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            SetOneTimeQuestFlag(talker, @test_of_searcher, 1);
+                            DeleteItem1(talker, @alankells_recommend, 1);
+                            GiveItem1(talker, @mark_of_searcher, 1);
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @test_of_searcher)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @luthers_letter) == 0)
+                {
+                    GiveItem1(talker, @luthers_letter, 1);
+                }
+
+                ShowPage(talker, "master_luther_q0225_05.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

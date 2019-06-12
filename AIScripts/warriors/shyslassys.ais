@@ -1,0 +1,22 @@
+class shyslassys : party_leader
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_challenger) && GetMemoState(c1, @trial_of_challenger) == 1 && OwnItemCount(c1, @scroll_of_shyslassy) == 0 && OwnItemCount(c1, @broken_key) == 0)
+        {
+            GiveItem1(c1, @scroll_of_shyslassy, 1);
+            GiveItem1(c1, @broken_key, 1);
+            if (Maker_GetNpcCount() < 10)
+            {
+                CreateOnePrivateEx(@chest_of_shyslassys, "chest_of_shyslassys", 0, 0, FloatToInt(myself.sm.x), FloatToInt(myself.sm.y), FloatToInt(myself.sm.z), 0, 0, 0);
+            }
+
+            SoundEffect(c1, "ItemSound.quest_middle");
+            SetMemoState(c1, @trial_of_challenger, 2);
+        }
+
+        super;
+    }
+}

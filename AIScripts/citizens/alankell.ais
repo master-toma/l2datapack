@@ -1,0 +1,198 @@
+class alankell : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @luthers_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Letter from Luther");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_warrant) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about Leylin");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && (OwnItemCount(talker, @leirynns_order1) == 1 || OwnItemCount(talker, @leirynns_order2) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about Leylin");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @leirynns_report) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about Leylin");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_order) == 1 && OwnItemCount(talker, @alankells_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Boris");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_order) == 1 && (OwnItemCount(talker, @old_order) == 1 || OwnItemCount(talker, @rexs_diary) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Talk about map");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_order) == 1 && OwnItemCount(talker, @combined_map) == 1 && OwnItemCount(talker, @gold_bar) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Talk about map");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_order) == 1 && OwnItemCount(talker, @combined_map) == 1 && OwnItemCount(talker, @gold_bar) == 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask for letter of recommendation");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_recommend) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Talk about map");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @luthers_letter) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "alankell_q0225_01.htm");
+                        GiveItem1(talker, @alankells_warrant, 1);
+                        DeleteItem1(talker, @luthers_letter, OwnItemCount(talker, @luthers_letter));
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_warrant) == 1)
+                {
+                    ShowPage(talker, "alankell_q0225_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && (OwnItemCount(talker, @leirynns_order1) == 1 || OwnItemCount(talker, @leirynns_order2) == 1))
+                {
+                    ShowPage(talker, "alankell_q0225_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @leirynns_report) == 1)
+                {
+                    ShowPage(talker, "alankell_q0225_04.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_order) == 1 && OwnItemCount(talker, @alankells_letter) == 1)
+                {
+                    ShowPage(talker, "alankell_q0225_08.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_order) == 1 && (OwnItemCount(talker, @old_order) == 1 || OwnItemCount(talker, @rexs_diary) == 1))
+                {
+                    ShowPage(talker, "alankell_q0225_09.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_order) == 1 && OwnItemCount(talker, @combined_map) == 1 && OwnItemCount(talker, @gold_bar) == 0)
+                {
+                    ShowPage(talker, "alankell_q0225_10.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_order) == 1 && OwnItemCount(talker, @combined_map) == 1 && OwnItemCount(talker, @gold_bar) == 20)
+                {
+                    ShowPage(talker, "alankell_q0225_11.htm");
+                    DeleteItem1(talker, @alankells_order, 1);
+                    GiveItem1(talker, @alankells_recommend, 1);
+                    DeleteItem1(talker, @combined_map, OwnItemCount(talker, @combined_map));
+                    DeleteItem1(talker, @gold_bar, OwnItemCount(talker, @gold_bar));
+                    DeleteRadar(talker, 10133, 157155, -2383);
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @alankells_recommend) == 1)
+                {
+                    ShowPage(talker, "alankell_q0225_12.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_searcher)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "alankell_q0225_05.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "alankell_q0225_06.htm");
+            }
+
+            if (reply == 3)
+            {
+                if (OwnItemCount(talker, @leirynns_report) >= 1 && OwnItemCount(talker, @strange_map) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "alankell_q0225_07.htm");
+                        DeleteItem1(talker, @leirynns_report, 1);
+                        GiveItem1(talker, @lamberts_map, 1);
+                        DeleteItem1(talker, @strange_map, 1);
+                        GiveItem1(talker, @alankells_letter, 1);
+                        GiveItem1(talker, @alankells_order, 1);
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

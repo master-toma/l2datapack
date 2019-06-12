@@ -1,0 +1,185 @@
+class alberryus : chief_guard
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @fungus_fever) == 0 && GetOneTimeQuestFlag(talker, @fungus_fever) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Task that should be done quietly");
+            }
+
+            if (HaveMemo(talker, @fungus_fever) == 0 && GetOneTimeQuestFlag(talker, @fungus_fever) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Task that should be done quietly");
+            }
+
+            if (HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about delivering a letter");
+            }
+
+            if (HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @evergreen_amulet) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about the medicine");
+            }
+
+            if (HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_list) == 0 && OwnItemCount(talker, @cobs_medicine1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Delivery of Cobendell's medicine");
+            }
+
+            if (HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_list) == 1 && (OwnItemCount(talker, @cobs_medicine1) == 1 || OwnItemCount(talker, @cobs_medicine2) == 1 || OwnItemCount(talker, @cobs_medicine3) == 1 || OwnItemCount(talker, @cobs_medicine4) == 1 || OwnItemCount(talker, @cobs_medicine5) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Delivery of Cobendell's medicine");
+            }
+
+            if (HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_list) == 1 && GetMemoState(talker, @fungus_fever) == 1 && OwnItemCount(talker, @cobs_medicine1) == 0 && OwnItemCount(talker, @cobs_medicine2) == 0 && OwnItemCount(talker, @cobs_medicine3) == 0 && OwnItemCount(talker, @cobs_medicine4) == 0 && OwnItemCount(talker, @cobs_medicine5) == 0 && GetOneTimeQuestFlag(talker, @fungus_fever) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Completed delivery of Cobendell's medicine");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @fungus_fever) == 0 && GetOneTimeQuestFlag(talker, @fungus_fever) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_elf)
+                        {
+                            ShowPage(talker, "alberryus_q0102_00.htm");
+                        }
+                        else if (talker.level >= 12)
+                        {
+                            FHTML_SetFileName(fhtml0, "alberryus_q0102_07.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @fungus_fever);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "alberryus_q0102_08.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @fungus_fever) == 0 && GetOneTimeQuestFlag(talker, @fungus_fever) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_letter) == 1)
+                {
+                    ShowPage(talker, "alberryus_q0102_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @evergreen_amulet) == 1)
+                {
+                    ShowPage(talker, "alberryus_q0102_09.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_list) == 0 && OwnItemCount(talker, @cobs_medicine1) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @cobs_medicine1, 1);
+                        GiveItem1(talker, @alberryus_list, 1);
+                        ShowPage(talker, "alberryus_q0102_04.htm");
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_list) == 1 && (OwnItemCount(talker, @cobs_medicine1) == 1 || OwnItemCount(talker, @cobs_medicine2) == 1 || OwnItemCount(talker, @cobs_medicine3) == 1 || OwnItemCount(talker, @cobs_medicine4) == 1 || OwnItemCount(talker, @cobs_medicine5) == 1))
+                {
+                    ShowPage(talker, "alberryus_q0102_05.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @fungus_fever) == 1 && OwnItemCount(talker, @alberryus_list) == 1 && GetMemoState(talker, @fungus_fever) == 1 && OwnItemCount(talker, @cobs_medicine1) == 0 && OwnItemCount(talker, @cobs_medicine2) == 0 && OwnItemCount(talker, @cobs_medicine3) == 0 && OwnItemCount(talker, @cobs_medicine4) == 0 && OwnItemCount(talker, @cobs_medicine5) == 0 && GetOneTimeQuestFlag(talker, @fungus_fever) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @alberryus_list, 1);
+                        RemoveMemo(talker, @fungus_fever);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        ShowPage(talker, "alberryus_q0102_06.htm");
+                        SetOneTimeQuestFlag(talker, @fungus_fever, 1);
+                        if (IsInCategory(@fighter_group, talker.occupation))
+                        {
+                            GiveItem1(talker, @sword_of_sentinel, 1);
+                        }
+                        else
+                        {
+                            GiveItem1(talker, @staff_of_sentinel, 1);
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @fungus_fever)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "alberryus_q0102_02.htm");
+                GiveItem1(talker, @alberryus_letter, 1);
+                SetMemo(talker, @fungus_fever);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

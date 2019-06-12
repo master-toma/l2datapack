@@ -1,0 +1,54 @@
+class hanged_man_ripper : warrior_aggressive_casting_hold_magic
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_duty) && GetMemoState(c1, @trial_of_duty) == 6)
+        {
+            if (Rand(100) < (c1.flag - 3) * 33)
+            {
+                CreateOnePrivateEx(@spirit_of_sir_talianus, "spirit_of_sir_talianus", 0, 0, FloatToInt(myself.sm.x), FloatToInt(myself.sm.y), FloatToInt(myself.sm.z), 0, 0, 0);
+                SoundEffect(c1, "ItemSound.quest_middle");
+                c1.flag = 0;
+            }
+            else
+            {
+                c1.flag = c1.flag + 1;
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_fate) && OwnItemCount(c1, @metheus_funeral_jar) && OwnItemCount(c1, @kasandras_remains) == 0)
+        {
+            GiveItem1(c1, @kasandras_remains, 1);
+            DeleteItem1(c1, @metheus_funeral_jar, 1);
+            SoundEffect(c1, "Itemsound.quest_middle");
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_searcher) == 1 && OwnItemCount(c1, @rexs_diary) == 1 && OwnItemCount(c1, @torn_map_piece2) < 4 && OwnItemCount(c1, @makels_map) == 0)
+        {
+            if (OwnItemCount(c1, @torn_map_piece2) < 3)
+            {
+                if (Rand(100) < 50)
+                {
+                    if (1)
+                    {
+                        c1.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(c1, @torn_map_piece2, 1);
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                }
+            }
+            else if (Rand(100) < 50)
+            {
+                DeleteItem1(c1, @torn_map_piece2, OwnItemCount(c1, @torn_map_piece2));
+                GiveItem1(c1, @makels_map, 1);
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+        }
+
+        super;
+    }
+}

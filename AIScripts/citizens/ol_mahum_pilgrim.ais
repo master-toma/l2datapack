@@ -1,0 +1,77 @@
+class ol_mahum_pilgrim : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 7)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk to the Ol Mahum Pilgrim");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 7)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "ol_mahum_pilgrim_q0227_01.htm");
+                        SetMemoState(talker, @trial_of_reformer, 8);
+                        GiveItem1(talker, @olmahums_money, 1);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker)
+    {
+        AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, 2000);
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 7778)
+        {
+            if (myself.i_quest0 < 60)
+            {
+                myself.i_quest0 = myself.i_quest0 + 1;
+                AddTimerEx(7778, 1000 * 5);
+            }
+            else
+            {
+                Despawn();
+            }
+        }
+
+        super;
+    }
+
+    EventHandler CREATED()
+    {
+        AddTimerEx(7778, 1000 * 5);
+        myself.i_quest0 = 0;
+        super;
+    }
+}

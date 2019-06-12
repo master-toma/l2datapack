@@ -1,0 +1,135 @@
+class kasha_bear : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1, i0, i1, i2)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_orc_monk) == 1 && OwnItemCount(myself.c_quest0, @leather_pouch1) == 1 && myself.i_quest0 == 1)
+        {
+            if (OwnItemCount(myself.c_quest0, @kasha_bear_claw) == 4)
+            {
+                DeleteItem1(myself.c_quest0, @kasha_bear_claw, OwnItemCount(myself.c_quest0, @kasha_bear_claw));
+                DeleteItem1(myself.c_quest0, @leather_pouch1, OwnItemCount(myself.c_quest0, @leather_pouch1));
+                GiveItem1(myself.c_quest0, @leather_pouch1full, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(myself.c_quest0, @kasha_bear_claw, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_orc_shaman) == 1 && OwnItemCount(myself.c_quest0, @fire_charm) == 1 && OwnItemCount(myself.c_quest0, @kasha_bear_pelt) < 1)
+        {
+            if (OwnItemCount(myself.c_quest0, @kasha_bear_pelt) + OwnItemCount(myself.c_quest0, @kasha_bspider_husk) + OwnItemCount(myself.c_quest0, @fiery_egg1) == 2)
+            {
+                GiveItem1(myself.c_quest0, @kasha_bear_pelt, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(myself.c_quest0, @kasha_bear_pelt, 1);
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @hestui_totem) && OwnItemCount(c1, @kasha_crystal) < 1)
+        {
+            i0 = OwnItemCount(c1, @kasha_parasite);
+            i1 = Rand(100);
+            i2 = 1;
+            if (i0 >= 79)
+            {
+                CreateOnePrivate(@kasha_bear_totem, "kasha_bear_totem", 0, 1);
+                DeleteItem1(c1, @kasha_parasite, OwnItemCount(c1, @kasha_parasite));
+                i2 = 0;
+            }
+            else if (i0 >= 69)
+            {
+                if (i1 <= 20)
+                {
+                    CreateOnePrivate(@kasha_bear_totem, "kasha_bear_totem", 0, 1);
+                    DeleteItem1(c1, @kasha_parasite, OwnItemCount(c1, @kasha_parasite));
+                    i2 = 0;
+                }
+            }
+            else if (i0 >= 59)
+            {
+                if (i1 <= 15)
+                {
+                    CreateOnePrivate(@kasha_bear_totem, "kasha_bear_totem", 0, 1);
+                    DeleteItem1(c1, @kasha_parasite, OwnItemCount(c1, @kasha_parasite));
+                    i2 = 0;
+                }
+            }
+            else if (i0 >= 49)
+            {
+                if (i1 <= 10)
+                {
+                    CreateOnePrivate(@kasha_bear_totem, "kasha_bear_totem", 0, 1);
+                    DeleteItem1(c1, @kasha_parasite, OwnItemCount(c1, @kasha_parasite));
+                    i2 = 0;
+                }
+            }
+            else if (i0 >= 39)
+            {
+                if (i1 <= 2)
+                {
+                    CreateOnePrivate(@kasha_bear_totem, "kasha_bear_totem", 0, 1);
+                    DeleteItem1(c1, @kasha_parasite, OwnItemCount(c1, @kasha_parasite));
+                    i2 = 0;
+                }
+            }
+
+            if (i2)
+            {
+                GiveItem1(c1, @kasha_parasite, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker || attacker.attack_type != @AT_FIST && attacker.attack_type != @AT_DUALFIST)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

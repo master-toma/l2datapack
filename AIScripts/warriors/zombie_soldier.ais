@@ -1,0 +1,69 @@
+class zombie_soldier : warrior_passive_casting_ddmagic
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_shillien_oracle) == 1 && OwnItemCount(myself.c_quest0, @penitents_mark) == 1 && myself.i_quest0 == 1 && OwnItemCount(myself.c_quest0, @ashen_bones) < 10)
+        {
+            GiveItem1(myself.c_quest0, @ashen_bones, 1);
+            if (OwnItemCount(myself.c_quest0, @ashen_bones) == 10)
+            {
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+            else
+            {
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (OwnItemCount(c1, @anatomy_diagram) && HaveMemo(c1, @grim_collector))
+        {
+            i0 = Rand(100);
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                if (i0 < 42)
+                {
+                    GiveItem1(c1, @zombie_head1, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+                else if (i0 < 67)
+                {
+                    GiveItem1(c1, @zombie_heart1, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+                else if (i0 < 100)
+                {
+                    GiveItem1(c1, @zombie_liver1, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

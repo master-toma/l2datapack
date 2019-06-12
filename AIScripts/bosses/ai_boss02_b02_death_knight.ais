@@ -1,0 +1,7 @@
+class ai_boss02_b02_death_knight : warrior_aggressive
+{
+handler:
+    EventHandler DESIRE_MANIPULATION(speller, desire)
+    {
+    }
+}

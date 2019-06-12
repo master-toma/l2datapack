@@ -1,0 +1,4 @@
+skill_begin	skill_name = [s_shield_mastery1]	/* [실드 마스터리] */	skill_id = 153	level = 1	operate_type = P	effect = {{p_shield_defence_rate;50}}	skill_end
+skill_begin	skill_name = [s_shield_mastery2]	/* [실드 마스터리] */	skill_id = 153	level = 2	operate_type = P	effect = {{p_shield_defence_rate;70}}	skill_end
+skill_begin	skill_name = [s_shield_mastery3]	/* [실드 마스터리] */	skill_id = 153	level = 3	operate_type = P	effect = {{p_shield_defence_rate;85}}	skill_end
+skill_begin	skill_name = [s_shield_mastery4]	/* [실드 마스터리] */	skill_id = 153	level = 4	operate_type = P	effect = {{p_shield_defence_rate;100}}	skill_end

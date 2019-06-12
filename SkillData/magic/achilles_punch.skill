@@ -1,0 +1,2 @@
+skill_begin	skill_name = [s_achilles_punch1]	/* [아킬레스 펀치] */	skill_id = 162	level = 1	operate_type = P	effect = {}	skill_end
+skill_begin	skill_name = [s_achilles_punch2]	/* [아킬레스 펀치] */	skill_id = 162	level = 2	operate_type = P	effect = {}	skill_end

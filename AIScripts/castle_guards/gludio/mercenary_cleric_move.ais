@@ -1,0 +1,3 @@
+class mercenary_cleric_move : ai_gludio_cleric
+{
+}

@@ -1,0 +1,381 @@
+class thalya : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @fruits_of_mothertree) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Listen");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @appetizing_apple) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show the apple");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @sap_of_world_tree) != 0 && OwnItemCount(talker, @gold_leaves) < 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about the gold leaf");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @sap_of_world_tree) != 0 && OwnItemCount(talker, @gold_leaves) >= 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show the gold leaf");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @hierarchs_letter) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Say that Asterios sent you");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @grail_diagram) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about Pushkin");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @pushkins_list) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Talk about Pushkin");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @pure_mithril_cup) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Give Water Cup of Fewer Mithril");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @thalyas_letter1) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Ask about Arkenia");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @arkenias_contract) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Talk about stardust");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @stardust) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Give stardust");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @thalyas_instructions) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 11;
+                AddChoice(11, "Ask about Talin's Spear");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @thalyas_letter2) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 12;
+                AddChoice(12, "Ask about Isael");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @isaels_instructions) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 13;
+                AddChoice(13, "Talk about Talin's Spear");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @talins_spear) >= 1 && OwnItemCount(talker, @isaels_letter) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 14;
+                AddChoice(14, "Give Talin's Spear");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @talins_spear) >= 1 && OwnItemCount(talker, @grail_of_purity) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 15;
+                AddChoice(15, "Talk about Unicorns");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @tears_of_unicorn) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 16;
+                AddChoice(16, "Give Tear of Unicorn");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && (OwnItemCount(talker, @camomile_charm) >= 1 || OwnItemCount(talker, @water_of_life) >= 1) && OwnItemCount(talker, @moonflower_charm) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 17;
+                AddChoice(17, "Talk about Unicorns");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @fruits_of_mothertree) == 1)
+                {
+                    if (OwnItemCount(talker, @andellrias_letter) == 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "thalya_q0312_01.htm");
+                            GiveItem1(talker, @mothertree_fruit, 1);
+                            DeleteItem1(talker, @andellrias_letter, 1);
+                        }
+                    }
+                    else if (OwnItemCount(talker, @mothertree_fruit) == 1)
+                    {
+                        ShowPage(talker, "thalya_q0312_02.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @appetizing_apple) != 0)
+                {
+                    ShowPage(talker, "thalya_q0408_01.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @sap_of_world_tree) != 0 && OwnItemCount(talker, @gold_leaves) < 5)
+                {
+                    ShowPage(talker, "thalya_q0408_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @sap_of_world_tree) != 0 && OwnItemCount(talker, @gold_leaves) >= 5)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @gold_leaves, OwnItemCount(talker, @gold_leaves));
+                        DeleteItem1(talker, @sap_of_world_tree, OwnItemCount(talker, @sap_of_world_tree));
+                        if (OwnItemCount(talker, @pure_aquamarine) == 0)
+                        {
+                            GiveItem1(talker, @pure_aquamarine, 1);
+                        }
+
+                        ShowPage(talker, "thalya_q0408_04.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @hierarchs_letter) >= 1)
+                {
+                    ShowPage(talker, "thalya_q0218_01.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @grail_diagram) >= 1)
+                {
+                    ShowPage(talker, "thalya_q0218_04.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @pushkins_list) >= 1)
+                {
+                    ShowPage(talker, "thalya_q0218_05.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @pure_mithril_cup) >= 1)
+                {
+                    ShowPage(talker, "thalya_q0218_06.htm");
+                    DeleteItem1(talker, @pure_mithril_cup, 1);
+                    GiveItem1(talker, @thalyas_letter1, 1);
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @thalyas_letter1) >= 1)
+                {
+                    ShowPage(talker, "thalya_q0218_07.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @arkenias_contract) >= 1)
+                {
+                    ShowPage(talker, "thalya_q0218_08.htm");
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @stardust) >= 1)
+                {
+                    ShowPage(talker, "thalya_q0218_09.htm");
+                }
+
+                break;
+            case 11:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @thalyas_instructions) >= 1)
+                {
+                    if (talker.level < 38)
+                    {
+                        ShowPage(talker, "thalya_q0218_12.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "thalya_q0218_13.htm");
+                        DeleteItem1(talker, @thalyas_instructions, 1);
+                        GiveItem1(talker, @thalyas_letter2, 1);
+                    }
+                }
+
+                break;
+            case 12:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @thalyas_letter2) >= 1)
+                {
+                    ShowPage(talker, "thalya_q0218_14.htm");
+                }
+
+                break;
+            case 13:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @isaels_instructions) >= 1)
+                {
+                    ShowPage(talker, "thalya_q0218_15.htm");
+                }
+
+                break;
+            case 14:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @talins_spear) >= 1 && OwnItemCount(talker, @isaels_letter) >= 1)
+                {
+                    ShowPage(talker, "thalya_q0218_16.htm");
+                    DeleteItem1(talker, @isaels_letter, 1);
+                    GiveItem1(talker, @grail_of_purity, 1);
+                }
+
+                break;
+            case 15:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @talins_spear) >= 1 && OwnItemCount(talker, @grail_of_purity) >= 1)
+                {
+                    ShowPage(talker, "thalya_q0218_17.htm");
+                }
+
+                break;
+            case 16:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @tears_of_unicorn) >= 1)
+                {
+                    ShowPage(talker, "thalya_q0218_18.htm");
+                    DeleteItem1(talker, @tears_of_unicorn, 1);
+                    GiveItem1(talker, @water_of_life, 1);
+                }
+
+                break;
+            case 17:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && (OwnItemCount(talker, @camomile_charm) >= 1 || OwnItemCount(talker, @water_of_life) >= 1) && OwnItemCount(talker, @moonflower_charm) == 1)
+                {
+                    ShowPage(talker, "thalya_q0218_19.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_elvenwizard && reply == 5)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @appetizing_apple) != 0)
+                {
+                    DeleteItem1(talker, @appetizing_apple, OwnItemCount(talker, @appetizing_apple));
+                    if (OwnItemCount(talker, @sap_of_world_tree) == 0)
+                    {
+                        GiveItem1(talker, @sap_of_world_tree, 1);
+                    }
+
+                    ShowPage(talker, "thalya_q0408_02.htm");
+                }
+                else
+                {
+                    Say("An error occurred");
+                }
+            }
+        }
+
+        if (ask == @testimony_of_life)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "thalya_q0218_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (OwnItemCount(talker, @hierarchs_letter) >= 1)
+                {
+                    ShowPage(talker, "thalya_q0218_03.htm");
+                    DeleteItem1(talker, @hierarchs_letter, 1);
+                    GiveItem1(talker, @grail_diagram, 1);
+                }
+            }
+
+            if (reply == 3)
+            {
+                if (talker.level < 38)
+                {
+                    if (OwnItemCount(talker, @stardust) >= 1)
+                    {
+                        ShowPage(talker, "thalya_q0218_10.htm");
+                        DeleteItem1(talker, @stardust, 1);
+                        GiveItem1(talker, @thalyas_instructions, 1);
+                    }
+                }
+                else if (OwnItemCount(talker, @stardust) >= 1)
+                {
+                    ShowPage(talker, "thalya_q0218_11.htm");
+                    DeleteItem1(talker, @stardust, 1);
+                    GiveItem1(talker, @thalyas_letter2, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

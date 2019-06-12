@@ -1,0 +1,9 @@
+class jasmine : teleporter
+{
+property:
+    TelPosList Position = {
+        {1010004; -80758; 149711; -3043; 6400; 0};    // 1010004 - "The Village of Gludin"
+        {1010005; -12787; 122779; -3114; 3700; 1};    // 1010005 - "The Town of Gludio"
+        {1010010; -61095; 75104; -3383; 1100; 0}    // 1010010 - "The Southern Part of the Dark Elven Forest"
+    };
+}

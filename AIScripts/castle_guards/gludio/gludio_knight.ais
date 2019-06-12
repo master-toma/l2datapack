@@ -1,0 +1,3 @@
+class gludio_knight : ai_gludio_knight
+{
+}

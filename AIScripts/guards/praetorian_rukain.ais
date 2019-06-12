@@ -1,0 +1,126 @@
+class praetorian_rukain : guard_fixed
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, i0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @proof_of_valor) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Prove courage");
+            }
+
+            if (HaveMemo(talker, @proof_of_valor))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show wolf fang");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @proof_of_valor) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_orc)
+                        {
+                            ShowPage(talker, "praetorian_rukain_q0271_00.htm");
+                        }
+                        else if (talker.level < 4)
+                        {
+                            ShowPage(talker, "praetorian_rukain_q0271_01.htm");
+                        }
+                        else if (OwnItemCount(talker, @necklace_of_courage) || OwnItemCount(talker, @necklace_of_valor))
+                        {
+                            FHTML_SetFileName(fhtml0, "praetorian_rukain_q0271_06.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @proof_of_valor);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            FHTML_SetFileName(fhtml0, "praetorian_rukain_q0271_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @proof_of_valor);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @proof_of_valor))
+                {
+                    if (OwnItemCount(talker, @kasha_wolf_fang) < 50)
+                    {
+                        ShowPage(talker, "praetorian_rukain_q0271_04.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        RemoveMemo(talker, @proof_of_valor);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        DeleteItem1(talker, @kasha_wolf_fang, OwnItemCount(talker, @kasha_wolf_fang));
+                        i0 = Rand(100);
+                        if (i0 <= 13)
+                        {
+                            GiveItem1(talker, @necklace_of_valor, 1);
+                        }
+                        else
+                        {
+                            GiveItem1(talker, @necklace_of_courage, 1);
+                        }
+
+                        ShowPage(talker, "praetorian_rukain_q0271_05.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @proof_of_valor)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @proof_of_valor);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @necklace_of_courage) && OwnItemCount(talker, @necklace_of_valor) > 0)
+                {
+                    ShowPage(talker, "praetorian_rukain_q0271_07.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "praetorian_rukain_q0271_03.htm");
+                }
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,74 @@
+class rollfnan : warehouse_keeper
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @fox_fur_yarn) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hand over the fox fur yarn");
+            }
+
+            if (HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @maiden_doll) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Listen");
+            }
+
+            if (HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @fox_fur_yarn) == 0 && OwnItemCount(talker, @maiden_doll) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Listen");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @fox_fur_yarn) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "rollfnan_q0304_01.htm");
+                        GiveItem1(talker, @maiden_doll, 1);
+                        DeleteItem1(talker, @fox_fur_yarn, OwnItemCount(talker, @fox_fur_yarn));
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @maiden_doll) >= 1)
+                {
+                    ShowPage(talker, "rollfnan_q0304_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @fox_fur_yarn) == 0 && OwnItemCount(talker, @maiden_doll) == 0)
+                {
+                    ShowPage(talker, "rollfnan_q0304_03.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

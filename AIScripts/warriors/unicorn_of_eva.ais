@@ -1,0 +1,20 @@
+class unicorn_of_eva : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_life) && OwnItemCount(c1, @moonflower_charm) == 1 && OwnItemCount(c1, @talins_spear) == 1 && OwnItemCount(c1, @grail_of_purity) == 1 && OwnItemCount(c1, @tears_of_unicorn) == 0)
+        {
+            if (myself.sm.last_blow_weapon_class_id == @talins_spear)
+            {
+                GiveItem1(c1, @tears_of_unicorn, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+                DeleteItem1(c1, @grail_of_purity, OwnItemCount(c1, @grail_of_purity));
+                DeleteItem1(c1, @talins_spear, OwnItemCount(c1, @talins_spear));
+            }
+        }
+
+        super;
+    }
+}

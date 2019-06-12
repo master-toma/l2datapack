@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_blunt_dagger_mastery]	/* [블런트/대거 마스터리] */	skill_id = 206	level = 1	operate_type = P	effect = {}	skill_end

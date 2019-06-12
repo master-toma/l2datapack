@@ -1,0 +1,3 @@
+class warrior_passive_use_bow : warrior_use_bow
+{
+}

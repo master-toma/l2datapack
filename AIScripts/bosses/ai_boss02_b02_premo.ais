@@ -1,0 +1,7 @@
+class ai_boss02_b02_premo : warrior_passive
+{
+handler:
+    EventHandler DESIRE_MANIPULATION(speller, desire)
+    {
+    }
+}

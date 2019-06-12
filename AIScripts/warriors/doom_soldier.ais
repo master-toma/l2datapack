@@ -1,0 +1,25 @@
+class doom_soldier : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (OwnItemCount(c1, @cecktinons_voucher2) == 1 && OwnItemCount(c1, @bone_fragment1) < 10)
+        {
+            if (Rand(10) < 3)
+            {
+                GiveItem1(c1, @bone_fragment1, 1);
+                if (OwnItemCount(c1, @bone_fragment1) == 10)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

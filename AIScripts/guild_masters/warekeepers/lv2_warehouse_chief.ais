@@ -1,0 +1,25 @@
+class lv2_warehouse_chief : guild_master_lv2
+{
+parameter:
+    int lv1_class1 = @dwarven_fighter;
+    int lv2_class11 = @scavenger;
+    int proof11 = @ring_of_raven;
+    
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -2 && reply == 1)
+        {
+            if (IsInCategory(@bounty_hunter_group, talker.occupation))
+            {
+                ShowPage(talker, fnClassList1);
+            }
+            else
+            {
+                ShowPage(talker, fnClassMismatch);
+            }
+        }
+
+        super;
+    }
+}

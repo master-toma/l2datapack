@@ -1,0 +1,3 @@
+skill_begin	skill_name = [s_acrobat_move1]	/* [아크로뱃 무브] */	skill_id = 225	level = 1	operate_type = P	effect = {{p_avoid_by_move_mode;run;4;diff}}	skill_end
+skill_begin	skill_name = [s_acrobat_move2]	/* [아크로뱃 무브] */	skill_id = 225	level = 2	operate_type = P	effect = {{p_avoid_by_move_mode;run;5;diff}}	skill_end
+skill_begin	skill_name = [s_acrobat_move3]	/* [아크로뱃 무브] */	skill_id = 225	level = 3	operate_type = P	effect = {{p_avoid_by_move_mode;run;6;diff}}	skill_end

@@ -1,0 +1,91 @@
+class emilly : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @mandragora_bouquet) >= 1 && OwnItemCount(talker, @recipe_of_emilly) == 0 && OwnItemCount(talker, @brights_list) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about great mother");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @recipe_of_emilly) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Say that you are thankful for the other person giving the recipe");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask how the other person is doing");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @mandragora_bouquet) >= 1 && OwnItemCount(talker, @recipe_of_emilly) == 0 && OwnItemCount(talker, @brights_list) == 0)
+                {
+                    ShowPage(talker, "emilly_q0221_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @recipe_of_emilly) >= 1)
+                {
+                    ShowPage(talker, "emilly_q0221_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony2) == 1)
+                {
+                    ShowPage(talker, "emilly_q0221_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_prosperity)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "emilly_q0221_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (OwnItemCount(talker, @mandragora_bouquet) >= 1)
+                {
+                    ShowPage(talker, "emilly_q0221_03.htm");
+                    DeleteItem1(talker, @mandragora_bouquet, 1);
+                    GiveItem1(talker, @recipe_of_emilly, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

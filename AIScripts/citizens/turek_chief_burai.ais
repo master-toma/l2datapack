@@ -1,0 +1,142 @@
+class turek_chief_burai : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_turek) == 0 && OwnItemCount(talker, @kasmans_letter2) == 0 && OwnItemCount(talker, @glove_of_burai) == 0 && OwnItemCount(talker, @makum_bugbear_head) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Speak arrogantly to the Head of the Lower Orc Tribe");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @kasmans_letter2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show Letter from Manakia");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @glove_of_burai))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Threaten and tell the other person to show the royal seals");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @makum_bugbear_head) >= 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask the other person to give the royal seals before you have to see more blood");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_turek))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Tell to follow well what us Higher Orcs say");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && (OwnItemCount(talker, @chiantas_order2) || OwnItemCount(talker, @chiantas_order3) || OwnItemCount(talker, @scepter_box)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask if the other person is doing well");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_turek) == 0 && OwnItemCount(talker, @kasmans_letter2) == 0 && OwnItemCount(talker, @glove_of_burai) == 0 && OwnItemCount(talker, @makum_bugbear_head) == 0)
+                {
+                    ShowPage(talker, "turek_chief_burai_q0220_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @kasmans_letter2))
+                {
+                    ShowPage(talker, "turek_chief_burai_q0220_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @glove_of_burai))
+                {
+                    ShowPage(talker, "turek_chief_burai_q0220_04.htm");
+                    if (Maker_GetNpcCount() < 3)
+                    {
+                        CreateOnePrivate(@makum_bugbear_thug, "makum_bugbear_thug", 0, 1);
+                        CreateOnePrivate(@makum_bugbear_thug, "makum_bugbear_thug", 0, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @makum_bugbear_head) >= 2)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "turek_chief_burai_q0220_05.htm");
+                        GiveItem1(talker, @scepter_of_turek, 1);
+                        DeleteItem1(talker, @makum_bugbear_head, OwnItemCount(talker, @makum_bugbear_head));
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && OwnItemCount(talker, @chiantas_order1) && OwnItemCount(talker, @scepter_of_turek))
+                {
+                    ShowPage(talker, "turek_chief_burai_q0220_06.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @necklace_of_authority) && (OwnItemCount(talker, @chiantas_order2) || OwnItemCount(talker, @chiantas_order3) || OwnItemCount(talker, @scepter_box)))
+                {
+                    ShowPage(talker, "turek_chief_burai_q0220_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_glory)
+        {
+            if (reply == 1 && OwnItemCount(talker, @kasmans_letter2) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "turek_chief_burai_q0220_03.htm");
+                    CreateOnePrivate(@makum_bugbear_thug, "makum_bugbear_thug", 0, 1);
+                    CreateOnePrivate(@makum_bugbear_thug, "makum_bugbear_thug", 0, 1);
+                    GiveItem1(talker, @glove_of_burai, 1);
+                    DeleteItem1(talker, @kasmans_letter2, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

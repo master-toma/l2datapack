@@ -1,0 +1,52 @@
+class hunter_bear : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_scavenger) == 1 && OwnItemCount(myself.c_quest0, @bear_pic) == 1 && OwnItemCount(myself.c_quest0, @honey_jar) < 5)
+        {
+            if (myself.c_quest0.flag > 20)
+            {
+                i0 = (myself.c_quest0.flag - 20) * 10;
+                if (Rand(100) <= i0)
+                {
+                    CreateOnePrivate(@honey_bear, "honey_bear", 0, 1);
+                    myself.c_quest0.flag = 0;
+                }
+                else
+                {
+                    myself.c_quest0.flag = myself.c_quest0.flag + 1;
+                }
+            }
+            else
+            {
+                myself.c_quest0.flag = myself.c_quest0.flag + 1;
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

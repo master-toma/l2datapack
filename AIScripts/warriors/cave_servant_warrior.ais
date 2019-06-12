@@ -1,0 +1,3 @@
+class cave_servant_warrior : warrior_passive_physicalspecial
+{
+}

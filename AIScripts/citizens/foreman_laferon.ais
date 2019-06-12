@@ -1,0 +1,59 @@
+class foreman_laferon : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @dwarf_tutorial))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask Laferon about tutorial quest");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @dwarf_tutorial))
+                {
+                    if (OwnItemCount(talker, @license_of_miner) && GetOneTimeQuestFlag(talker, @dwarf_tutorial) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            DeleteRadar(talker, 108593, -174041, -406);
+                            ShowPage(talker, "foreman_laferon_q0206_01.htm");
+                            IncrementParam(talker, @PARAM_SP, 50);
+                            DeleteItem1(talker, @license_of_miner, 1);
+                            RemoveMemo(talker, @dwarf_tutorial);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            ShowQuestionMark(talker, 7);
+                            ShowRadar(talker, 115632, -177996, -905);
+                            SetOneTimeQuestFlag(talker, @dwarf_tutorial, 1);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "foreman_laferon001.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

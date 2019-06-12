@@ -1,0 +1,3 @@
+class castle_trader_brighum : castle_merchant
+{
+}

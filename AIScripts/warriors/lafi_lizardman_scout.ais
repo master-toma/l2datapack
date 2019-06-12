@@ -1,0 +1,3 @@
+class lafi_lizardman_scout : warrior_passive_use_bow
+{
+}

@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_set_collected]	/* [세트 아이템 착용] */	skill_id = 3006	level = 1	operate_type = P	effect = {{p_set_collected}}	skill_end

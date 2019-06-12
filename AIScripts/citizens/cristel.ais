@@ -1,0 +1,88 @@
+class cristel : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @fox_fur) < 10 && OwnItemCount(talker, @fox_fur) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hand over the fox pelt");
+            }
+
+            if (HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @fox_fur) >= 10 && OwnItemCount(talker, @fox_fur_yarn) == 0 && OwnItemCount(talker, @maiden_doll) == 0 && OwnItemCount(talker, @maiden_doll) < 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hand over the fox pelt");
+            }
+
+            if (HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @fox_fur_yarn) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Tell a story");
+            }
+
+            if (HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @maiden_doll) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Tell a story");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @fox_fur) < 10 && OwnItemCount(talker, @fox_fur) > 0)
+                {
+                    ShowPage(talker, "cristel_q0304_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @fox_fur) >= 10 && OwnItemCount(talker, @fox_fur_yarn) == 0 && OwnItemCount(talker, @maiden_doll) == 0 && OwnItemCount(talker, @maiden_doll) < 10)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "cristel_q0304_02.htm");
+                        GiveItem1(talker, @fox_fur_yarn, 1);
+                        DeleteItem1(talker, @fox_fur, OwnItemCount(talker, @fox_fur));
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @fox_fur_yarn) >= 1)
+                {
+                    ShowPage(talker, "cristel_q0304_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @maiden_doll) == 1)
+                {
+                    ShowPage(talker, "cristel_q0304_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

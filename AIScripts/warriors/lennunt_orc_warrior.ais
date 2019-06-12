@@ -1,0 +1,43 @@
+class lennunt_orc_warrior : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (OwnItemCount(c1, @howtogo_ruins) > 0)
+        {
+            if (OwnItemCount(c1, @broken_blade_top) == 0)
+            {
+                if (Rand(5) == 0)
+                {
+                    GiveItem1(c1, @broken_blade_top, 1);
+                    if (OwnItemCount(c1, @broken_blade_bottom) == 1)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+            else if (OwnItemCount(c1, @broken_blade_bottom) == 0)
+            {
+                if (Rand(5) == 0)
+                {
+                    GiveItem1(c1, @broken_blade_bottom, 1);
+                    if (OwnItemCount(c1, @broken_blade_top) == 1)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

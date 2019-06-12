@@ -1,0 +1,61 @@
+class hook_spider : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @dream_of_moneylender1) == 1 && OwnItemCount(c1, @giant_spider_leg) < 8)
+        {
+            GiveItem1(c1, @giant_spider_leg, 1);
+            if (OwnItemCount(c1, @giant_spider_leg) == 8)
+            {
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+            else
+            {
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        myself.c_quest0.quest_last_reward_time = 0;
+        if (HaveMemo(myself.c_quest0, @get_a_pet) == 1 && OwnItemCount(myself.c_quest0, @animal_slayer_list2) == 1 && myself.i_quest0 == 1)
+        {
+            if (OwnItemCount(myself.c_quest0, @bloody_claw) < 50 && Rand(100) < 75)
+            {
+                GiveItem1(myself.c_quest0, @bloody_claw, 1);
+                if (OwnItemCount(myself.c_quest0, @bloody_claw) >= 50)
+                {
+                    SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.i_quest0 = 1;
+            myself.c_quest0 = attacker;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

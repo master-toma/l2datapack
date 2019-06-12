@@ -1,0 +1,101 @@
+class noble_ant : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_sagittarius) && GetMemoState(c1, @test_of_sagittarius) == 3 && OwnItemCount(c1, @hunters_rune1) < 10)
+        {
+            if (Rand(2) == 1)
+            {
+                if (OwnItemCount(c1, @hunters_rune1) == 9)
+                {
+                    GiveItem1(c1, @hunters_rune1, 1);
+                    SetMemoState(c1, @test_of_sagittarius, 4);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @hunters_rune1, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_summoner) && OwnItemCount(c1, @galateas_letter) == 0 && OwnItemCount(c1, @lars_list5) && OwnItemCount(c1, @wings_of_droneant) < 30)
+        {
+            if (Rand(10) < 6)
+            {
+                if (OwnItemCount(c1, @wings_of_droneant) == 29)
+                {
+                    GiveItem1(c1, @wings_of_droneant, 1);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @wings_of_droneant, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_warspirit) && OwnItemCount(c1, @racoys_totem) == 1 && OwnItemCount(c1, @insect_diagram_book) == 1)
+        {
+            i0 = Rand(100);
+            if (i0 > 70)
+            {
+                if (OwnItemCount(c1, @kirunas_thigh_bone) == 0)
+                {
+                    if (1)
+                    {
+                        c1.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(c1, @kirunas_thigh_bone, 1);
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                }
+                else if (OwnItemCount(c1, @kirunas_arm_bone) == 0)
+                {
+                    if (1)
+                    {
+                        c1.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(c1, @kirunas_arm_bone, 1);
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                }
+            }
+            else if (i0 > 40)
+            {
+                if (OwnItemCount(c1, @kirunas_spine) == 0)
+                {
+                    if (1)
+                    {
+                        c1.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(c1, @kirunas_spine, 1);
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                }
+                else if (OwnItemCount(c1, @kirunas_rib_bone) == 0)
+                {
+                    if (1)
+                    {
+                        c1.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(c1, @kirunas_rib_bone, 1);
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                }
+            }
+            else if (i0 > 10)
+            {
+                if (OwnItemCount(c1, @kirunas_skull) == 0)
+                {
+                    GiveItem1(c1, @kirunas_skull, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+            }
+        }
+
+        super;
+    }
+}

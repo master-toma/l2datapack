@@ -1,0 +1,76 @@
+class tree_q0225 : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @combined_map) == 1 && OwnItemCount(talker, @rusted_key1) == 0 && OwnItemCount(talker, @gold_bar) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about map");
+            }
+
+            if (HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @combined_map) == 1 && OwnItemCount(talker, @rusted_key1) == 1 && OwnItemCount(talker, @gold_bar) >= 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about map");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @combined_map) == 1 && OwnItemCount(talker, @rusted_key1) == 0 && OwnItemCount(talker, @gold_bar) == 0)
+                {
+                    ShowPage(talker, "tree_q0225_q0225_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_searcher) == 1 && OwnItemCount(talker, @combined_map) == 1 && OwnItemCount(talker, @rusted_key1) == 1 && OwnItemCount(talker, @gold_bar) >= 20)
+                {
+                    ShowPage(talker, "tree_q0225_q0225_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_searcher)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tree_q0225_q0225_01a.htm");
+                    if (Maker_GetNpcCount() < 5)
+                    {
+                        GiveItem1(talker, @rusted_key1, 1);
+                        CreateOnePrivate(@strong_wooden_chest, "strong_wooden_chest", 0, 1);
+                    }
+                }
+            }
+        }
+
+        super;
+    }
+}

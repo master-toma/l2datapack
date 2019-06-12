@@ -1,0 +1,232 @@
+class tataru_zu_hestui : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_orc_shaman) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about changing occupation to Orc Shaman");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @fire_charm) == 1 && OwnItemCount(talker, @kasha_bear_pelt) + OwnItemCount(talker, @kasha_bspider_husk) + OwnItemCount(talker, @fiery_egg1) < 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about three items");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @fire_charm) == 1 && OwnItemCount(talker, @kasha_bear_pelt) + OwnItemCount(talker, @kasha_bspider_husk) + OwnItemCount(talker, @fiery_egg1) >= 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give three items");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @hestui_mask) == 1 && OwnItemCount(talker, @fiery_egg2) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about the Hestui Totem Spirit");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @totem_spirit_claw) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give totem spirit claw");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @tatarus_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about Seer Umos");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_shaman) == 1 && (OwnItemCount(talker, @grizzly_blood) || OwnItemCount(talker, @flame_charm) || OwnItemCount(talker, @blood_cauldron) || OwnItemCount(talker, @spirit_net) || OwnItemCount(talker, @bound_durka_spirit) || OwnItemCount(talker, @totem_spirit_blood)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask about changing occupation to Orc Shaman");
+            }
+
+            if (HaveMemo(talker, @long_live_lord_of_flame) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Receive gift from Hestui");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_shaman) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        ShowPage(talker, "tataru_zu_hestui_q0416_01.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @fire_charm) == 1 && OwnItemCount(talker, @kasha_bear_pelt) + OwnItemCount(talker, @kasha_bspider_husk) + OwnItemCount(talker, @fiery_egg1) < 3)
+                {
+                    ShowPage(talker, "tataru_zu_hestui_q0416_07.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @fire_charm) == 1 && OwnItemCount(talker, @kasha_bear_pelt) + OwnItemCount(talker, @kasha_bspider_husk) + OwnItemCount(talker, @fiery_egg1) >= 3)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "tataru_zu_hestui_q0416_08.htm");
+                        DeleteItem1(talker, @fire_charm, OwnItemCount(talker, @fire_charm));
+                        DeleteItem1(talker, @kasha_bear_pelt, OwnItemCount(talker, @kasha_bear_pelt));
+                        DeleteItem1(talker, @kasha_bspider_husk, OwnItemCount(talker, @kasha_bspider_husk));
+                        DeleteItem1(talker, @fiery_egg1, OwnItemCount(talker, @fiery_egg1));
+                        GiveItem1(talker, @hestui_mask, 1);
+                        GiveItem1(talker, @fiery_egg2, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @hestui_mask) == 1 && OwnItemCount(talker, @fiery_egg2) == 1)
+                {
+                    ShowPage(talker, "tataru_zu_hestui_q0416_09.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @totem_spirit_claw) == 1)
+                {
+                    ShowPage(talker, "tataru_zu_hestui_q0416_10.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @tatarus_letter) == 1)
+                {
+                    ShowPage(talker, "tataru_zu_hestui_q0416_12.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_shaman) == 1 && (OwnItemCount(talker, @grizzly_blood) || OwnItemCount(talker, @flame_charm) || OwnItemCount(talker, @blood_cauldron) || OwnItemCount(talker, @spirit_net) || OwnItemCount(talker, @bound_durka_spirit) || OwnItemCount(talker, @totem_spirit_blood)))
+                {
+                    ShowPage(talker, "tataru_zu_hestui_q0416_13.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @long_live_lord_of_flame) == 1)
+                {
+                    if (OwnItemCount(talker, @bear_fur_cloak) < 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tataru_zu_hestui_q0004_01.htm");
+                            GiveItem1(talker, @bear_fur_cloak, 1);
+                            SoundEffect(talker, "ItemSound.quest_itemget");
+                        }
+                    }
+                    else if (OwnItemCount(talker, @bear_fur_cloak) >= 1)
+                    {
+                        ShowPage(talker, "tataru_zu_hestui_q0004_02.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_orc_shaman)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "tataru_zu_hestui_q0416_06.htm");
+                GiveItem1(talker, @fire_charm, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, quest_id, reply, talker)
+    {
+        if (ask == @path_to_orc_shaman && reply == 1)
+        {
+            if (talker.occupation != @orc_mage)
+            {
+                if (talker.occupation == @orc_shaman)
+                {
+                    ShowPage(talker, "tataru_zu_hestui_q0416_02a.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "tataru_zu_hestui_q0416_02.htm");
+                }
+            }
+            else if (talker.level < 19)
+            {
+                ShowPage(talker, "tataru_zu_hestui_q0416_03.htm");
+            }
+            else if (OwnItemCount(talker, @mask_of_medium) != 0)
+            {
+                ShowPage(talker, "tataru_zu_hestui_q0416_04.htm");
+            }
+            else
+            {
+                FHTML_SetFileName(fhtml0, "tataru_zu_hestui_q0416_05.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @path_to_orc_shaman);
+                ShowFHTML(talker, fhtml0);
+            }
+        }
+
+        if (ask == @path_to_orc_shaman && reply == 2 && OwnItemCount(talker, @totem_spirit_claw) > 0)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "tataru_zu_hestui_q0416_11.htm");
+                DeleteItem1(talker, @totem_spirit_claw, 1);
+                GiveItem1(talker, @tatarus_letter, 1);
+            }
+        }
+
+        super;
+    }
+}

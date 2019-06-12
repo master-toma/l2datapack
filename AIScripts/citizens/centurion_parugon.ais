@@ -1,0 +1,40 @@
+class centurion_parugon : guard_stand
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @show_no_mercy) == 1 && (OwnItemCount(talker, @hatoss_order1) || OwnItemCount(talker, @hatoss_order2) || OwnItemCount(talker, @hatoss_order3)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about the betrayer Baranka");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @show_no_mercy) == 1 && (OwnItemCount(talker, @hatoss_order1) || OwnItemCount(talker, @hatoss_order2) || OwnItemCount(talker, @hatoss_order3)))
+                {
+                    ShowPage(talker, "centurion_parugon_q0107_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

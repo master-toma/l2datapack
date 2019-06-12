@@ -1,0 +1,3 @@
+skill_begin	skill_name = [s_fast_spell_casting1]	/* [패스트 스펠 캐스팅] */	skill_id = 228	level = 1	operate_type = P	effect = {{p_magic_speed;{all};5;per}}	skill_end
+skill_begin	skill_name = [s_fast_spell_casting2]	/* [패스트 스펠 캐스팅] */	skill_id = 228	level = 2	operate_type = P	effect = {{p_magic_speed;{all};7;per}}	skill_end
+skill_begin	skill_name = [s_fast_spell_casting3]	/* [패스트 스펠 캐스팅] */	skill_id = 228	level = 3	operate_type = P	effect = {{p_magic_speed;{all};10;per}}	skill_end

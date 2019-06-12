@@ -1,0 +1,27 @@
+class summon_heal : default_npc
+{
+parameter:
+    int HealMagic = @s_cat_recharge1;
+    
+handler:
+    EventHandler CREATED()
+    {
+        AddPetDefaultDesire_Follow(20.0);
+    }
+
+    EventHandler NO_DESIRE()
+    {
+        AddPetDefaultDesire_Follow(20.0);
+    }
+
+    EventHandler MENU_SELECTED(ask, reply)
+    {
+        if (Skill_GetConsumeMP(HealMagic) < myself.sm.mp && Skill_GetConsumeHP(HealMagic) < myself.sm.hp && Skill_InReuseDelay(HealMagic) == @FALSE)
+        {
+            if (Skill_GetConsumeMP(HealMagic) < myself.sm.mp && Skill_GetConsumeHP(HealMagic) < myself.sm.hp && Skill_InReuseDelay(HealMagic) == @FALSE)
+            {
+                AddUseSkillDesire(myself.master, HealMagic, @ST_HEAL, @AMT_MOVE_TO_TARGET, 1000000);
+            }
+        }
+    }
+}

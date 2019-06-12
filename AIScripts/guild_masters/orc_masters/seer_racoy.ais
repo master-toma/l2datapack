@@ -1,0 +1,129 @@
+class seer_racoy : mage_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @racoys_totem) == 0 && OwnItemCount(talker, @kirunas_remains1) == 0 && OwnItemCount(talker, @kirunas_remains2) == 0 && OwnItemCount(talker, @vendetta_totem) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Remains of Kirunas");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @racoys_totem) == 1 && OwnItemCount(talker, @viviantes_letter) == 0 && OwnItemCount(talker, @insect_diagram_book) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about Remains of Kirunas");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @insect_diagram_book) == 0 && OwnItemCount(talker, @racoys_totem) >= 1 && OwnItemCount(talker, @viviantes_letter) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about Remains of Kirunas");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @viviantes_letter) == 0 && OwnItemCount(talker, @racoys_totem) >= 1 && OwnItemCount(talker, @insect_diagram_book) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give Bone Piece of Kirunas");
+            }
+
+            if (HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @racoys_totem) == 0 && (OwnItemCount(talker, @kirunas_remains1) >= 1 || OwnItemCount(talker, @kirunas_remains2) >= 1 || OwnItemCount(talker, @vendetta_totem) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Thank for Remains of Kirunas");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @racoys_totem) == 0 && OwnItemCount(talker, @kirunas_remains1) == 0 && OwnItemCount(talker, @kirunas_remains2) == 0 && OwnItemCount(talker, @vendetta_totem) == 0)
+                {
+                    ShowPage(talker, "seer_racoy_q0233_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @racoys_totem) == 1 && OwnItemCount(talker, @viviantes_letter) == 0 && OwnItemCount(talker, @insect_diagram_book) == 0)
+                {
+                    ShowPage(talker, "seer_racoy_q0233_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @insect_diagram_book) == 0 && OwnItemCount(talker, @racoys_totem) >= 1 && OwnItemCount(talker, @viviantes_letter) >= 1)
+                {
+                    ShowPage(talker, "seer_racoy_q0233_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @viviantes_letter) == 0 && OwnItemCount(talker, @racoys_totem) >= 1 && OwnItemCount(talker, @insect_diagram_book) >= 1)
+                {
+                    if (OwnItemCount(talker, @kirunas_skull) >= 1 && OwnItemCount(talker, @kirunas_rib_bone) >= 1 && OwnItemCount(talker, @kirunas_spine) >= 1 && OwnItemCount(talker, @kirunas_arm_bone) >= 1 && OwnItemCount(talker, @kirunas_thigh_bone) >= 1)
+                    {
+                        ShowPage(talker, "seer_racoy_q0233_06.htm");
+                        DeleteItem1(talker, @racoys_totem, OwnItemCount(talker, @racoys_totem));
+                        DeleteItem1(talker, @kirunas_skull, OwnItemCount(talker, @kirunas_skull));
+                        DeleteItem1(talker, @kirunas_rib_bone, OwnItemCount(talker, @kirunas_rib_bone));
+                        DeleteItem1(talker, @kirunas_spine, OwnItemCount(talker, @kirunas_spine));
+                        DeleteItem1(talker, @kirunas_arm_bone, OwnItemCount(talker, @kirunas_arm_bone));
+                        DeleteItem1(talker, @kirunas_thigh_bone, OwnItemCount(talker, @kirunas_thigh_bone));
+                        DeleteItem1(talker, @insect_diagram_book, 1);
+                        GiveItem1(talker, @kirunas_remains1, 1);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "seer_racoy_q0233_05.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_warspirit) == 1 && OwnItemCount(talker, @racoys_totem) == 0 && (OwnItemCount(talker, @kirunas_remains1) >= 1 || OwnItemCount(talker, @kirunas_remains2) >= 1 || OwnItemCount(talker, @vendetta_totem) >= 1))
+                {
+                    ShowPage(talker, "seer_racoy_q0233_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_warspirit)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "seer_racoy_q0233_02.htm");
+                    GiveItem1(talker, @racoys_totem, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

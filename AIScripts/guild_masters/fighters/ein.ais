@@ -1,0 +1,196 @@
+class ein : fighter_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_warrior) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about changing occupation to a Warrior");
+            }
+
+            if (HaveMemo(talker, @path_to_warrior) == 1 && OwnItemCount(talker, @eins_letter) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about changing occupation to a Warrior");
+            }
+
+            if (HaveMemo(talker, @path_to_warrior) == 1 && OwnItemCount(talker, @warrior_guild_mark) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about changing occupation to a Warrior");
+            }
+
+            if (HaveMemo(talker, @path_to_warrior) == 1 && OwnItemCount(talker, @simplons_letter) && OwnItemCount(talker, @rusted_bronze_sword2) && OwnItemCount(talker, @warrior_guild_mark) == 0 && OwnItemCount(talker, @eins_letter) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show the Sword of Pain");
+            }
+
+            if (HaveMemo(talker, @path_to_warrior) == 1 && OwnItemCount(talker, @rusted_bronze_sword3) && OwnItemCount(talker, @warrior_guild_mark) == 0 && OwnItemCount(talker, @eins_letter) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about changing occupation to a Warrior");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_warrior) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        ShowPage(talker, "ein_q0401_01.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_warrior) == 1 && OwnItemCount(talker, @eins_letter) > 0)
+                {
+                    ShowPage(talker, "ein_q0401_07.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_warrior) == 1 && OwnItemCount(talker, @warrior_guild_mark) == 1)
+                {
+                    ShowPage(talker, "ein_q0401_08.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_warrior) == 1 && OwnItemCount(talker, @simplons_letter) && OwnItemCount(talker, @rusted_bronze_sword2) && OwnItemCount(talker, @warrior_guild_mark) == 0 && OwnItemCount(talker, @eins_letter) == 0)
+                {
+                    ShowPage(talker, "ein_q0401_09.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_warrior) == 1 && OwnItemCount(talker, @rusted_bronze_sword3) && OwnItemCount(talker, @warrior_guild_mark) == 0 && OwnItemCount(talker, @eins_letter) == 0)
+                {
+                    if (OwnItemCount(talker, @poison_spider_leg2) < 20)
+                    {
+                        ShowPage(talker, "ein_q0401_12.htm");
+                    }
+                    else if (OwnItemCount(talker, @poison_spider_leg2) > 19)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            DeleteItem1(talker, @poison_spider_leg2, OwnItemCount(talker, @poison_spider_leg2));
+                            DeleteItem1(talker, @rusted_bronze_sword3, 1);
+                            GiveItem1(talker, @medallion_of_warrior, 1);
+                            ShowPage(talker, "ein_q0401_13.htm");
+                            RemoveMemo(talker, @path_to_warrior);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_warrior)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                if (OwnItemCount(talker, @eins_letter) == 0)
+                {
+                    SetMemo(talker, quest_id);
+                    SoundEffect(talker, "ItemSound.quest_accept");
+                    GiveItem1(talker, @eins_letter, 1);
+                    ShowPage(talker, "ein_q0401_06.htm");
+                }
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, quest_id, reply, talker)
+    {
+        if (ask == @path_to_warrior)
+        {
+            if (reply == 1)
+            {
+                if (talker.occupation == @fighter)
+                {
+                    if (talker.level >= 19)
+                    {
+                        if (OwnItemCount(talker, @medallion_of_warrior) > 0)
+                        {
+                            ShowPage(talker, "ein_q0401_04.htm");
+                        }
+                        else
+                        {
+                            FHTML_SetFileName(fhtml0, "ein_q0401_05.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @path_to_warrior);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "ein_q0401_02.htm");
+                    }
+                }
+                else if (talker.occupation == @warrior)
+                {
+                    ShowPage(talker, "ein_q0401_02a.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "ein_q0401_03.htm");
+                }
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "ein_q0401_10.htm");
+            }
+            else if (reply == 3 && OwnItemCount(talker, @simplons_letter) > 0 && OwnItemCount(talker, @rusted_bronze_sword2) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "ein_q0401_11.htm");
+                    DeleteItem1(talker, @simplons_letter, 1);
+                    DeleteItem1(talker, @rusted_bronze_sword2, 1);
+                    GiveItem1(talker, @rusted_bronze_sword3, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

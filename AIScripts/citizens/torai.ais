@@ -1,0 +1,84 @@
+class torai : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @routs_tp_scroll) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show teleport scroll");
+            }
+
+            if (HaveMemo(talker, @wish_potion) == 1 && OwnItemCount(talker, @q_fobbiden_love_scroll) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about Secret Book of Prohibited Love");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @routs_tp_scroll) == 1)
+                {
+                    ShowPage(talker, "torai_q0417_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @wish_potion) == 1 && OwnItemCount(talker, @q_fobbiden_love_scroll) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @adena, 500000);
+                        DeleteItem1(talker, @q_fobbiden_love_scroll, 1);
+                        SoundEffect(talker, "ItemSound.quest_middle");
+                    }
+
+                    ShowPage(talker, "torai_q0334_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_scavenger && reply == 1)
+        {
+            ShowPage(talker, "torai_q0417_02.htm");
+        }
+
+        if (ask == @path_to_scavenger && reply == 2 && OwnItemCount(talker, @routs_tp_scroll) > 0)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "torai_q0417_03.htm");
+                DeleteItem1(talker, @routs_tp_scroll, 1);
+                GiveItem1(talker, @succubus_undies, 1);
+                Despawn();
+            }
+        }
+
+        super;
+    }
+}

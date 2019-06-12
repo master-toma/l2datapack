@@ -1,0 +1,63 @@
+class barbed_bat : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @covert_business) && OwnItemCount(c1, @bat_fang) < 100)
+        {
+            i0 = Rand(10);
+            if (i0 > 6)
+            {
+                if (OwnItemCount(c1, @bat_fang) == 99)
+                {
+                    GiveItem1(c1, @bat_fang, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @bat_fang, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+            else if (i0 > 3)
+            {
+                if (OwnItemCount(c1, @bat_fang) >= 98)
+                {
+                    GiveItem1(c1, @bat_fang, 100 - OwnItemCount(c1, @bat_fang));
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @bat_fang, 2);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+            else if (i0 > 1)
+            {
+                if (OwnItemCount(c1, @bat_fang) >= 97)
+                {
+                    GiveItem1(c1, @bat_fang, 100 - OwnItemCount(c1, @bat_fang));
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @bat_fang, 3);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+            else if (OwnItemCount(c1, @bat_fang) >= 96)
+            {
+                GiveItem1(c1, @bat_fang, 100 - OwnItemCount(c1, @bat_fang));
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @bat_fang, 4);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

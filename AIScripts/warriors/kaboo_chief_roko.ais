@@ -1,0 +1,18 @@
+class kaboo_chief_roko : party_leader
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @skirmish_with_orcs) == 1)
+        {
+            if (OwnItemCount(c1, @kendnells_order6) && OwnItemCount(c1, @kaboo_chief_torc2) == 0)
+            {
+                GiveItem1(c1, @kaboo_chief_torc2, 1);
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,3 @@
+class death_blader : warrior_aggressive_casting_ddmagic
+{
+}

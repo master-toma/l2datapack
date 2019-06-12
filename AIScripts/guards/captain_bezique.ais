@@ -1,0 +1,225 @@
+class captain_bezique : guard_fixed
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @mark_of_esquire) > 0 && OwnItemCount(talker, @coin_of_lords3) == 0 && OwnItemCount(talker, @gludio_guards_mark2) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @gludio_guards_mark2) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @coin_of_lords3) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @path_to_rogue) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about changing occupation to a Rogue");
+            }
+
+            if (HaveMemo(talker, @path_to_rogue) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about changing occupation to a Warrior");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @mark_of_esquire) > 0 && OwnItemCount(talker, @coin_of_lords3) == 0 && OwnItemCount(talker, @gludio_guards_mark2) == 0)
+                {
+                    ShowPage(talker, "captain_bezique_q0402_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @gludio_guards_mark2) > 0)
+                {
+                    if (OwnItemCount(talker, @poison_spider_leg1) < 20)
+                    {
+                        ShowPage(talker, "captain_bezique_q0402_03.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "captain_bezique_q0402_04.htm");
+                        DeleteItem1(talker, @poison_spider_leg1, OwnItemCount(talker, @poison_spider_leg1));
+                        DeleteItem1(talker, @gludio_guards_mark2, 1);
+                        GiveItem1(talker, @coin_of_lords3, 1);
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @coin_of_lords3) > 0)
+                {
+                    ShowPage(talker, "captain_bezique_q0402_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_rogue) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        ShowPage(talker, "captain_bezique_q0403_01.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_rogue) == 1)
+                {
+                    if (OwnItemCount(talker, @horseshoe_of_light) == 0 && OwnItemCount(talker, @stolen_jewelry) && OwnItemCount(talker, @stolen_tomes) && OwnItemCount(talker, @stolen_ring) && OwnItemCount(talker, @stolen_necklace))
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "captain_bezique_q0403_09.htm");
+                            GiveItem1(talker, @beziques_recommendation, 1);
+                            DeleteItem1(talker, @netis_bow, OwnItemCount(talker, @netis_bow));
+                            DeleteItem1(talker, @netis_dagger, OwnItemCount(talker, @netis_dagger));
+                            DeleteItem1(talker, @stolen_jewelry, 1);
+                            DeleteItem1(talker, @stolen_tomes, 1);
+                            DeleteItem1(talker, @stolen_ring, 1);
+                            DeleteItem1(talker, @stolen_necklace, 1);
+                            DeleteItem1(talker, @wanted_bill, OwnItemCount(talker, @wanted_bill));
+                            RemoveMemo(talker, @path_to_rogue);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                    }
+                    else if (OwnItemCount(talker, @horseshoe_of_light) == 0 && OwnItemCount(talker, @beziques_letter) > 0)
+                    {
+                        ShowPage(talker, "captain_bezique_q0403_07.htm");
+                    }
+                    else if (OwnItemCount(talker, @horseshoe_of_light) > 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "captain_bezique_q0403_08.htm");
+                            DeleteItem1(talker, @horseshoe_of_light, 1);
+                            GiveItem1(talker, @wanted_bill, 1);
+                        }
+                    }
+                    else if (OwnItemCount(talker, @netis_bow) && OwnItemCount(talker, @netis_dagger) && OwnItemCount(talker, @wanted_bill) == 0)
+                    {
+                        ShowPage(talker, "captain_bezique_q0403_10.htm");
+                    }
+                    else if (OwnItemCount(talker, @wanted_bill))
+                    {
+                        ShowPage(talker, "captain_bezique_q0403_11.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @path_to_rogue)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                GiveItem1(talker, @beziques_letter, 1);
+                ShowPage(talker, "captain_bezique_q0403_06.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @path_to_knight)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "captain_bezique_q0402_02.htm");
+                    GiveItem1(talker, @gludio_guards_mark2, 1);
+                }
+            }
+        }
+
+        if (ask == @path_to_rogue)
+        {
+            if (reply == 2)
+            {
+                if (talker.occupation == @fighter)
+                {
+                    if (talker.level >= 19)
+                    {
+                        if (OwnItemCount(talker, @beziques_recommendation) > 0)
+                        {
+                            ShowPage(talker, "captain_bezique_q0403_04.htm");
+                        }
+                        else
+                        {
+                            FHTML_SetFileName(fhtml0, "captain_bezique_q0403_05.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @path_to_rogue);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "captain_bezique_q0403_03.htm");
+                    }
+                }
+                else if (talker.occupation == @rogue)
+                {
+                    ShowPage(talker, "captain_bezique_q0403_02a.htm");
+                }
+                else
+                {
+                    ShowPage(talker, "captain_bezique_q0403_02.htm");
+                }
+            }
+        }
+
+        super;
+    }
+}

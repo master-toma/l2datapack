@@ -1,0 +1,3 @@
+class monster_eye : warrior_passive
+{
+}

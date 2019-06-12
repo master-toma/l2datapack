@@ -1,0 +1,246 @@
+class warehouse_keeper_norman : warehouse_keeper
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @dwarven_kinship) == 1 && OwnItemCount(talker, @normans_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Deliver the letter");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @alders_receipt))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Give payment slip");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @revelations_manuscript))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Bid farewell");
+            }
+
+            if (HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) == 1 && OwnItemCount(talker, @alltrans_recommend1) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that you were introduced by Allman");
+            }
+
+            if (HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) >= 1 && OwnItemCount(talker, @normans_instructions) >= 1 && OwnItemCount(talker, @normans_receipt) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Dunning");
+            }
+
+            if (HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) >= 1 && OwnItemCount(talker, @normans_instructions) >= 1 && OwnItemCount(talker, @dunings_instructions) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Talk about Dunning");
+            }
+
+            if (HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) >= 1 && OwnItemCount(talker, @normans_instructions) >= 1 && OwnItemCount(talker, @dunings_key) >= 30)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Give key");
+            }
+
+            if (HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) >= 1 && OwnItemCount(talker, @normans_list) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Give ingredients that were collected");
+            }
+
+            if (HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @normans_instructions) == 0 && OwnItemCount(talker, @normans_list) == 0 && OwnItemCount(talker, @alltrans_instructions) == 1 && (OwnItemCount(talker, @journeyman_gem) >= 1 || OwnItemCount(talker, @journeyman_ring) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Talk about ring");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @dwarven_kinship) == 1 && OwnItemCount(talker, @normans_letter) == 1)
+                {
+                    ShowPage(talker, "warehouse_keeper_norman_q0323_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @alders_receipt))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "warehouse_keeper_norman_q0219_01.htm");
+                        GiveItem1(talker, @revelations_manuscript, 1);
+                        DeleteItem1(talker, @alders_receipt, 1);
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @revelations_manuscript))
+                {
+                    ShowPage(talker, "warehouse_keeper_norman_q0219_02.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) == 1 && OwnItemCount(talker, @alltrans_recommend1) == 1)
+                {
+                    ShowPage(talker, "warehouse_keeper_norman_q0216_01.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) >= 1 && OwnItemCount(talker, @normans_instructions) >= 1 && OwnItemCount(talker, @normans_receipt) >= 1)
+                {
+                    ShowPage(talker, "warehouse_keeper_norman_q0216_05.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) >= 1 && OwnItemCount(talker, @normans_instructions) >= 1 && OwnItemCount(talker, @dunings_instructions) >= 1)
+                {
+                    ShowPage(talker, "warehouse_keeper_norman_q0216_06.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) >= 1 && OwnItemCount(talker, @normans_instructions) >= 1 && OwnItemCount(talker, @dunings_key) >= 30)
+                {
+                    ShowPage(talker, "warehouse_keeper_norman_q0216_07.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @alltrans_instructions) >= 1 && OwnItemCount(talker, @normans_list) >= 1)
+                {
+                    if (OwnItemCount(talker, @gray_bone_powder) >= 70 && OwnItemCount(talker, @granite_whetstone) >= 70 && OwnItemCount(talker, @red_pigment) >= 70 && OwnItemCount(talker, @braided_yarn) >= 70)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "warehouse_keeper_norman_q0216_12.htm");
+                            DeleteItem1(talker, @normans_list, OwnItemCount(talker, @normans_list));
+                            DeleteItem1(talker, @gray_bone_powder, OwnItemCount(talker, @gray_bone_powder));
+                            DeleteItem1(talker, @granite_whetstone, OwnItemCount(talker, @granite_whetstone));
+                            DeleteItem1(talker, @red_pigment, OwnItemCount(talker, @red_pigment));
+                            DeleteItem1(talker, @braided_yarn, OwnItemCount(talker, @braided_yarn));
+                            GiveItem1(talker, @journeyman_gem, 7);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "warehouse_keeper_norman_q0216_11.htm");
+                    }
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_guildsman) == 1 && OwnItemCount(talker, @normans_instructions) == 0 && OwnItemCount(talker, @normans_list) == 0 && OwnItemCount(talker, @alltrans_instructions) == 1 && (OwnItemCount(talker, @journeyman_gem) >= 1 || OwnItemCount(talker, @journeyman_ring) >= 1))
+                {
+                    ShowPage(talker, "warehouse_keeper_norman_q0216_13.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @dwarven_kinship)
+        {
+            if (reply == 1 && GetOneTimeQuestFlag(talker, @dwarven_kinship) == 0 && OwnItemCount(talker, @normans_letter) == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "warehouse_keeper_norman_q0323_02.htm");
+                    DeleteItem1(talker, @normans_letter, 1);
+                    GiveItem1(talker, @adena, 5100);
+                    RemoveMemo(talker, @dwarven_kinship);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                    SetOneTimeQuestFlag(talker, @dwarven_kinship, 1);
+                }
+            }
+        }
+
+        if (ask == @trial_of_guildsman)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "warehouse_keeper_norman_q0216_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "warehouse_keeper_norman_q0216_03.htm");
+            }
+
+            if (reply == 3)
+            {
+                if (OwnItemCount(talker, @alltrans_recommend1) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "warehouse_keeper_norman_q0216_04.htm");
+                        DeleteItem1(talker, @alltrans_recommend1, 1);
+                        GiveItem1(talker, @normans_instructions, 1);
+                        GiveItem1(talker, @normans_receipt, 1);
+                    }
+                }
+            }
+
+            if (reply == 4)
+            {
+                ShowPage(talker, "warehouse_keeper_norman_q0216_08.htm");
+            }
+
+            if (reply == 5)
+            {
+                ShowPage(talker, "warehouse_keeper_norman_q0216_09.htm");
+            }
+
+            if (reply == 6)
+            {
+                if (OwnItemCount(talker, @normans_instructions) >= 1)
+                {
+                    ShowPage(talker, "warehouse_keeper_norman_q0216_10.htm");
+                    DeleteItem1(talker, @dunings_key, OwnItemCount(talker, @dunings_key));
+                    DeleteItem1(talker, @normans_instructions, 1);
+                    GiveItem1(talker, @normans_list, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,3 @@
+class goblin_scout : warrior_passive
+{
+}

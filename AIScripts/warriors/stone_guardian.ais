@@ -1,0 +1,3 @@
+class stone_guardian : warrior_passive_casting_ddmagic
+{
+}

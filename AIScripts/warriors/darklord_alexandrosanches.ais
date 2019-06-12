@@ -1,0 +1,39 @@
+class darklord_alexandrosanches : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @wish_potion) && GetMemoState(c1, @wish_potion) == 2 && c1.flag == 3)
+        {
+            Say(MakeFString(33414, "", "", "", "", ""));
+            if (Rand(2) == 0)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    CreateOnePrivate(@abyssking_bonaparterius, "abyssking_bonaparterius", 0, 1);
+                }
+            }
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 2336004)
+        {
+            Despawn();
+            Say(MakeFString(33411, "", "", "", "", ""));
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(2336004, 1000 * 200);
+        super;
+    }
+}

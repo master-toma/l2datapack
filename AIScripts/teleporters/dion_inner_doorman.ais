@@ -1,0 +1,3 @@
+class dion_inner_doorman : doorkeeper
+{
+}

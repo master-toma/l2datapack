@@ -1,0 +1,3 @@
+class rot_golem : warrior_passive_casting_splash
+{
+}

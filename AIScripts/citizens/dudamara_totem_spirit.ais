@@ -1,0 +1,109 @@
+class dudamara_totem_spirit : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @blood_cauldron))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show blood cauldron");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @spirit_net) && OwnItemCount(talker, @bound_durka_spirit) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Durka spirit");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @spirit_net) == 0 && OwnItemCount(talker, @bound_durka_spirit))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give Durka spirit");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @totem_spirit_blood))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about totem spirit blood");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @blood_cauldron))
+                {
+                    ShowPage(talker, "dudamara_totem_spirit_q0416_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @spirit_net) && OwnItemCount(talker, @bound_durka_spirit) == 0)
+                {
+                    ShowPage(talker, "dudamara_totem_spirit_q0416_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @spirit_net) == 0 && OwnItemCount(talker, @bound_durka_spirit))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "dudamara_totem_spirit_q0416_05.htm");
+                        DeleteItem1(talker, @bound_durka_spirit, 1);
+                        GiveItem1(talker, @totem_spirit_blood, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @totem_spirit_blood))
+                {
+                    ShowPage(talker, "dudamara_totem_spirit_q0416_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_orc_shaman && reply == 1)
+        {
+            ShowPage(talker, "dudamara_totem_spirit_q0416_02.htm");
+        }
+
+        if (ask == @path_to_orc_shaman && reply == 2 && OwnItemCount(talker, @blood_cauldron) > 0)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "dudamara_totem_spirit_q0416_03.htm");
+                DeleteItem1(talker, @blood_cauldron, 1);
+                GiveItem1(talker, @spirit_net, 1);
+            }
+        }
+
+        super;
+    }
+}

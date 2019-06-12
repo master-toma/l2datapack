@@ -1,0 +1,2108 @@
+class tor : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @song_of_hunters) && (OwnItemCount(talker, @q_hunter_license_2) == 0 && OwnItemCount(talker, @q_hunter_license_1) == 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you want to receive a hunt request");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && talker.level < 45 && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_1) + OwnItemCount(talker, @q_request_1c_2) + OwnItemCount(talker, @q_request_1c_3) + OwnItemCount(talker, @q_request_1c_4) + OwnItemCount(talker, @q_request_1c_5) + OwnItemCount(talker, @q_request_1c_6) + OwnItemCount(talker, @q_request_1c_7) + OwnItemCount(talker, @q_request_1c_8) + OwnItemCount(talker, @q_request_1c_9) + OwnItemCount(talker, @q_request_1c_10) + OwnItemCount(talker, @q_request_1c_11) + OwnItemCount(talker, @q_request_1c_12) + OwnItemCount(talker, @q_request_1u_1) + OwnItemCount(talker, @q_request_1u_2) + OwnItemCount(talker, @q_request_1u_3) + OwnItemCount(talker, @q_request_1u_4) + OwnItemCount(talker, @q_request_1u_5) + OwnItemCount(talker, @q_request_1u_6) + OwnItemCount(talker, @q_request_1r_1) + OwnItemCount(talker, @q_request_1r_2) + OwnItemCount(talker, @q_request_1r_3) + OwnItemCount(talker, @q_request_2c_1) + OwnItemCount(talker, @q_request_2c_2) + OwnItemCount(talker, @q_request_2c_3) + OwnItemCount(talker, @q_request_2c_4) + OwnItemCount(talker, @q_request_2c_5) + OwnItemCount(talker, @q_request_2c_6) + OwnItemCount(talker, @q_request_2c_7) + OwnItemCount(talker, @q_request_2c_8) + OwnItemCount(talker, @q_request_2c_9) + OwnItemCount(talker, @q_request_2c_10) + OwnItemCount(talker, @q_request_2c_11) + OwnItemCount(talker, @q_request_2c_12) + OwnItemCount(talker, @q_request_2u_1) + OwnItemCount(talker, @q_request_2u_2) + OwnItemCount(talker, @q_request_2u_3) + OwnItemCount(talker, @q_request_2u_4) + OwnItemCount(talker, @q_request_2u_5) + OwnItemCount(talker, @q_request_2u_6) + OwnItemCount(talker, @q_request_2r_1) + OwnItemCount(talker, @q_request_2r_2) + OwnItemCount(talker, @q_request_2r_3) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Say that you want to receive a hunt request");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && talker.level >= 45 && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_1) + OwnItemCount(talker, @q_request_1c_2) + OwnItemCount(talker, @q_request_1c_3) + OwnItemCount(talker, @q_request_1c_4) + OwnItemCount(talker, @q_request_1c_5) + OwnItemCount(talker, @q_request_1c_6) + OwnItemCount(talker, @q_request_1c_7) + OwnItemCount(talker, @q_request_1c_8) + OwnItemCount(talker, @q_request_1c_9) + OwnItemCount(talker, @q_request_1c_10) + OwnItemCount(talker, @q_request_1c_11) + OwnItemCount(talker, @q_request_1c_12) + OwnItemCount(talker, @q_request_1u_1) + OwnItemCount(talker, @q_request_1u_2) + OwnItemCount(talker, @q_request_1u_3) + OwnItemCount(talker, @q_request_1u_4) + OwnItemCount(talker, @q_request_1u_5) + OwnItemCount(talker, @q_request_1u_6) + OwnItemCount(talker, @q_request_1r_1) + OwnItemCount(talker, @q_request_1r_2) + OwnItemCount(talker, @q_request_1r_3) + OwnItemCount(talker, @q_request_2c_1) + OwnItemCount(talker, @q_request_2c_2) + OwnItemCount(talker, @q_request_2c_3) + OwnItemCount(talker, @q_request_2c_4) + OwnItemCount(talker, @q_request_2c_5) + OwnItemCount(talker, @q_request_2c_6) + OwnItemCount(talker, @q_request_2c_7) + OwnItemCount(talker, @q_request_2c_8) + OwnItemCount(talker, @q_request_2c_9) + OwnItemCount(talker, @q_request_2c_10) + OwnItemCount(talker, @q_request_2c_11) + OwnItemCount(talker, @q_request_2c_12) + OwnItemCount(talker, @q_request_2u_1) + OwnItemCount(talker, @q_request_2u_2) + OwnItemCount(talker, @q_request_2u_3) + OwnItemCount(talker, @q_request_2u_4) + OwnItemCount(talker, @q_request_2u_5) + OwnItemCount(talker, @q_request_2u_6) + OwnItemCount(talker, @q_request_2r_1) + OwnItemCount(talker, @q_request_2r_2) + OwnItemCount(talker, @q_request_2r_3) == 0 && OwnItemCount(talker, @q_test_instructions_2) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Say that you want to receive a hunt request");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && talker.level >= 45 && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_1) + OwnItemCount(talker, @q_request_1c_2) + OwnItemCount(talker, @q_request_1c_3) + OwnItemCount(talker, @q_request_1c_4) + OwnItemCount(talker, @q_request_1c_5) + OwnItemCount(talker, @q_request_1c_6) + OwnItemCount(talker, @q_request_1c_7) + OwnItemCount(talker, @q_request_1c_8) + OwnItemCount(talker, @q_request_1c_9) + OwnItemCount(talker, @q_request_1c_10) + OwnItemCount(talker, @q_request_1c_11) + OwnItemCount(talker, @q_request_1c_12) + OwnItemCount(talker, @q_request_1u_1) + OwnItemCount(talker, @q_request_1u_2) + OwnItemCount(talker, @q_request_1u_3) + OwnItemCount(talker, @q_request_1u_4) + OwnItemCount(talker, @q_request_1u_5) + OwnItemCount(talker, @q_request_1u_6) + OwnItemCount(talker, @q_request_1r_1) + OwnItemCount(talker, @q_request_1r_2) + OwnItemCount(talker, @q_request_1r_3) + OwnItemCount(talker, @q_request_2c_1) + OwnItemCount(talker, @q_request_2c_2) + OwnItemCount(talker, @q_request_2c_3) + OwnItemCount(talker, @q_request_2c_4) + OwnItemCount(talker, @q_request_2c_5) + OwnItemCount(talker, @q_request_2c_6) + OwnItemCount(talker, @q_request_2c_7) + OwnItemCount(talker, @q_request_2c_8) + OwnItemCount(talker, @q_request_2c_9) + OwnItemCount(talker, @q_request_2c_10) + OwnItemCount(talker, @q_request_2c_11) + OwnItemCount(talker, @q_request_2c_12) + OwnItemCount(talker, @q_request_2u_1) + OwnItemCount(talker, @q_request_2u_2) + OwnItemCount(talker, @q_request_2u_3) + OwnItemCount(talker, @q_request_2u_4) + OwnItemCount(talker, @q_request_2u_5) + OwnItemCount(talker, @q_request_2u_6) + OwnItemCount(talker, @q_request_2r_1) + OwnItemCount(talker, @q_request_2r_2) + OwnItemCount(talker, @q_request_2r_3) == 0 && OwnItemCount(talker, @q_test_instructions_2) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that you want to receive a hunt request");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_1c_1) + OwnItemCount(talker, @q_request_1c_2) + OwnItemCount(talker, @q_request_1c_3) + OwnItemCount(talker, @q_request_1c_4) + OwnItemCount(talker, @q_request_1c_5) + OwnItemCount(talker, @q_request_1c_6) + OwnItemCount(talker, @q_request_1c_7) + OwnItemCount(talker, @q_request_1c_8) + OwnItemCount(talker, @q_request_1c_9) + OwnItemCount(talker, @q_request_1c_10) + OwnItemCount(talker, @q_request_1c_11) + OwnItemCount(talker, @q_request_1c_12) + OwnItemCount(talker, @q_request_1u_1) + OwnItemCount(talker, @q_request_1u_2) + OwnItemCount(talker, @q_request_1u_3) + OwnItemCount(talker, @q_request_1u_4) + OwnItemCount(talker, @q_request_1u_5) + OwnItemCount(talker, @q_request_1u_6) + OwnItemCount(talker, @q_request_1r_1) + OwnItemCount(talker, @q_request_1r_2) + OwnItemCount(talker, @q_request_1r_3) + OwnItemCount(talker, @q_request_2c_1) + OwnItemCount(talker, @q_request_2c_2) + OwnItemCount(talker, @q_request_2c_3) + OwnItemCount(talker, @q_request_2c_4) + OwnItemCount(talker, @q_request_2c_5) + OwnItemCount(talker, @q_request_2c_6) + OwnItemCount(talker, @q_request_2c_7) + OwnItemCount(talker, @q_request_2c_8) + OwnItemCount(talker, @q_request_2c_9) + OwnItemCount(talker, @q_request_2c_10) + OwnItemCount(talker, @q_request_2c_11) + OwnItemCount(talker, @q_request_2c_12) + OwnItemCount(talker, @q_request_2u_1) + OwnItemCount(talker, @q_request_2u_2) + OwnItemCount(talker, @q_request_2u_3) + OwnItemCount(talker, @q_request_2u_4) + OwnItemCount(talker, @q_request_2u_5) + OwnItemCount(talker, @q_request_2u_6) + OwnItemCount(talker, @q_request_2r_1) + OwnItemCount(talker, @q_request_2r_2) + OwnItemCount(talker, @q_request_2r_3) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Say that you want to receive a hunt request");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_3))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_4))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_5))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_6))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_7))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 11;
+                AddChoice(11, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_8))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 12;
+                AddChoice(12, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_9))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 13;
+                AddChoice(13, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_10))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 14;
+                AddChoice(14, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_11))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 15;
+                AddChoice(15, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_12))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 16;
+                AddChoice(16, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1u_1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 17;
+                AddChoice(17, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1u_2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 18;
+                AddChoice(18, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1u_3))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 19;
+                AddChoice(19, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1u_4))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 20;
+                AddChoice(20, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1u_5))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 21;
+                AddChoice(21, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1u_6))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 22;
+                AddChoice(22, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1r_1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 23;
+                AddChoice(23, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1r_2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 24;
+                AddChoice(24, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1r_3))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 25;
+                AddChoice(25, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 26;
+                AddChoice(26, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 27;
+                AddChoice(27, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_3))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 28;
+                AddChoice(28, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_4))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 29;
+                AddChoice(29, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_5))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 30;
+                AddChoice(30, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_6))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 31;
+                AddChoice(31, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_7))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 32;
+                AddChoice(32, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_8))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 33;
+                AddChoice(33, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_9))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 34;
+                AddChoice(34, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_10))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 35;
+                AddChoice(35, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_11))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 36;
+                AddChoice(36, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_12))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 37;
+                AddChoice(37, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2u_1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 38;
+                AddChoice(38, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2u_2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 39;
+                AddChoice(39, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2u_3))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 40;
+                AddChoice(40, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2u_4))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 41;
+                AddChoice(41, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2u_5))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 42;
+                AddChoice(42, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2u_6))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 43;
+                AddChoice(43, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2r_1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 44;
+                AddChoice(44, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2r_2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 45;
+                AddChoice(45, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2r_3))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 46;
+                AddChoice(46, "Talk about the hunt request that you are currently carrying out");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && (OwnItemCount(talker, @q_hunter_license_2) == 0 && OwnItemCount(talker, @q_hunter_license_1) == 0))
+                {
+                    ShowPage(talker, "tor_q0335_01a.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && talker.level < 45 && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_1) + OwnItemCount(talker, @q_request_1c_2) + OwnItemCount(talker, @q_request_1c_3) + OwnItemCount(talker, @q_request_1c_4) + OwnItemCount(talker, @q_request_1c_5) + OwnItemCount(talker, @q_request_1c_6) + OwnItemCount(talker, @q_request_1c_7) + OwnItemCount(talker, @q_request_1c_8) + OwnItemCount(talker, @q_request_1c_9) + OwnItemCount(talker, @q_request_1c_10) + OwnItemCount(talker, @q_request_1c_11) + OwnItemCount(talker, @q_request_1c_12) + OwnItemCount(talker, @q_request_1u_1) + OwnItemCount(talker, @q_request_1u_2) + OwnItemCount(talker, @q_request_1u_3) + OwnItemCount(talker, @q_request_1u_4) + OwnItemCount(talker, @q_request_1u_5) + OwnItemCount(talker, @q_request_1u_6) + OwnItemCount(talker, @q_request_1r_1) + OwnItemCount(talker, @q_request_1r_2) + OwnItemCount(talker, @q_request_1r_3) + OwnItemCount(talker, @q_request_2c_1) + OwnItemCount(talker, @q_request_2c_2) + OwnItemCount(talker, @q_request_2c_3) + OwnItemCount(talker, @q_request_2c_4) + OwnItemCount(talker, @q_request_2c_5) + OwnItemCount(talker, @q_request_2c_6) + OwnItemCount(talker, @q_request_2c_7) + OwnItemCount(talker, @q_request_2c_8) + OwnItemCount(talker, @q_request_2c_9) + OwnItemCount(talker, @q_request_2c_10) + OwnItemCount(talker, @q_request_2c_11) + OwnItemCount(talker, @q_request_2c_12) + OwnItemCount(talker, @q_request_2u_1) + OwnItemCount(talker, @q_request_2u_2) + OwnItemCount(talker, @q_request_2u_3) + OwnItemCount(talker, @q_request_2u_4) + OwnItemCount(talker, @q_request_2u_5) + OwnItemCount(talker, @q_request_2u_6) + OwnItemCount(talker, @q_request_2r_1) + OwnItemCount(talker, @q_request_2r_2) + OwnItemCount(talker, @q_request_2r_3) == 0)
+                {
+                    ShowPage(talker, "tor_q0335_01b.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && talker.level >= 45 && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_1) + OwnItemCount(talker, @q_request_1c_2) + OwnItemCount(talker, @q_request_1c_3) + OwnItemCount(talker, @q_request_1c_4) + OwnItemCount(talker, @q_request_1c_5) + OwnItemCount(talker, @q_request_1c_6) + OwnItemCount(talker, @q_request_1c_7) + OwnItemCount(talker, @q_request_1c_8) + OwnItemCount(talker, @q_request_1c_9) + OwnItemCount(talker, @q_request_1c_10) + OwnItemCount(talker, @q_request_1c_11) + OwnItemCount(talker, @q_request_1c_12) + OwnItemCount(talker, @q_request_1u_1) + OwnItemCount(talker, @q_request_1u_2) + OwnItemCount(talker, @q_request_1u_3) + OwnItemCount(talker, @q_request_1u_4) + OwnItemCount(talker, @q_request_1u_5) + OwnItemCount(talker, @q_request_1u_6) + OwnItemCount(talker, @q_request_1r_1) + OwnItemCount(talker, @q_request_1r_2) + OwnItemCount(talker, @q_request_1r_3) + OwnItemCount(talker, @q_request_2c_1) + OwnItemCount(talker, @q_request_2c_2) + OwnItemCount(talker, @q_request_2c_3) + OwnItemCount(talker, @q_request_2c_4) + OwnItemCount(talker, @q_request_2c_5) + OwnItemCount(talker, @q_request_2c_6) + OwnItemCount(talker, @q_request_2c_7) + OwnItemCount(talker, @q_request_2c_8) + OwnItemCount(talker, @q_request_2c_9) + OwnItemCount(talker, @q_request_2c_10) + OwnItemCount(talker, @q_request_2c_11) + OwnItemCount(talker, @q_request_2c_12) + OwnItemCount(talker, @q_request_2u_1) + OwnItemCount(talker, @q_request_2u_2) + OwnItemCount(talker, @q_request_2u_3) + OwnItemCount(talker, @q_request_2u_4) + OwnItemCount(talker, @q_request_2u_5) + OwnItemCount(talker, @q_request_2u_6) + OwnItemCount(talker, @q_request_2r_1) + OwnItemCount(talker, @q_request_2r_2) + OwnItemCount(talker, @q_request_2r_3) == 0 && OwnItemCount(talker, @q_test_instructions_2) == 0)
+                {
+                    ShowPage(talker, "tor_q0335_03a.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && talker.level >= 45 && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_1) + OwnItemCount(talker, @q_request_1c_2) + OwnItemCount(talker, @q_request_1c_3) + OwnItemCount(talker, @q_request_1c_4) + OwnItemCount(talker, @q_request_1c_5) + OwnItemCount(talker, @q_request_1c_6) + OwnItemCount(talker, @q_request_1c_7) + OwnItemCount(talker, @q_request_1c_8) + OwnItemCount(talker, @q_request_1c_9) + OwnItemCount(talker, @q_request_1c_10) + OwnItemCount(talker, @q_request_1c_11) + OwnItemCount(talker, @q_request_1c_12) + OwnItemCount(talker, @q_request_1u_1) + OwnItemCount(talker, @q_request_1u_2) + OwnItemCount(talker, @q_request_1u_3) + OwnItemCount(talker, @q_request_1u_4) + OwnItemCount(talker, @q_request_1u_5) + OwnItemCount(talker, @q_request_1u_6) + OwnItemCount(talker, @q_request_1r_1) + OwnItemCount(talker, @q_request_1r_2) + OwnItemCount(talker, @q_request_1r_3) + OwnItemCount(talker, @q_request_2c_1) + OwnItemCount(talker, @q_request_2c_2) + OwnItemCount(talker, @q_request_2c_3) + OwnItemCount(talker, @q_request_2c_4) + OwnItemCount(talker, @q_request_2c_5) + OwnItemCount(talker, @q_request_2c_6) + OwnItemCount(talker, @q_request_2c_7) + OwnItemCount(talker, @q_request_2c_8) + OwnItemCount(talker, @q_request_2c_9) + OwnItemCount(talker, @q_request_2c_10) + OwnItemCount(talker, @q_request_2c_11) + OwnItemCount(talker, @q_request_2c_12) + OwnItemCount(talker, @q_request_2u_1) + OwnItemCount(talker, @q_request_2u_2) + OwnItemCount(talker, @q_request_2u_3) + OwnItemCount(talker, @q_request_2u_4) + OwnItemCount(talker, @q_request_2u_5) + OwnItemCount(talker, @q_request_2u_6) + OwnItemCount(talker, @q_request_2r_1) + OwnItemCount(talker, @q_request_2r_2) + OwnItemCount(talker, @q_request_2r_3) == 0 && OwnItemCount(talker, @q_test_instructions_2) == 1)
+                {
+                    ShowPage(talker, "tor_q0335_03.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_1c_1) + OwnItemCount(talker, @q_request_1c_2) + OwnItemCount(talker, @q_request_1c_3) + OwnItemCount(talker, @q_request_1c_4) + OwnItemCount(talker, @q_request_1c_5) + OwnItemCount(talker, @q_request_1c_6) + OwnItemCount(talker, @q_request_1c_7) + OwnItemCount(talker, @q_request_1c_8) + OwnItemCount(talker, @q_request_1c_9) + OwnItemCount(talker, @q_request_1c_10) + OwnItemCount(talker, @q_request_1c_11) + OwnItemCount(talker, @q_request_1c_12) + OwnItemCount(talker, @q_request_1u_1) + OwnItemCount(talker, @q_request_1u_2) + OwnItemCount(talker, @q_request_1u_3) + OwnItemCount(talker, @q_request_1u_4) + OwnItemCount(talker, @q_request_1u_5) + OwnItemCount(talker, @q_request_1u_6) + OwnItemCount(talker, @q_request_1r_1) + OwnItemCount(talker, @q_request_1r_2) + OwnItemCount(talker, @q_request_1r_3) + OwnItemCount(talker, @q_request_2c_1) + OwnItemCount(talker, @q_request_2c_2) + OwnItemCount(talker, @q_request_2c_3) + OwnItemCount(talker, @q_request_2c_4) + OwnItemCount(talker, @q_request_2c_5) + OwnItemCount(talker, @q_request_2c_6) + OwnItemCount(talker, @q_request_2c_7) + OwnItemCount(talker, @q_request_2c_8) + OwnItemCount(talker, @q_request_2c_9) + OwnItemCount(talker, @q_request_2c_10) + OwnItemCount(talker, @q_request_2c_11) + OwnItemCount(talker, @q_request_2c_12) + OwnItemCount(talker, @q_request_2u_1) + OwnItemCount(talker, @q_request_2u_2) + OwnItemCount(talker, @q_request_2u_3) + OwnItemCount(talker, @q_request_2u_4) + OwnItemCount(talker, @q_request_2u_5) + OwnItemCount(talker, @q_request_2u_6) + OwnItemCount(talker, @q_request_2r_1) + OwnItemCount(talker, @q_request_2r_2) + OwnItemCount(talker, @q_request_2r_3) == 0)
+                {
+                    ShowPage(talker, "tor_q0335_03b.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_1))
+                {
+                    if (OwnItemCount(talker, @q_charm_of_kadesh) >= 40)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 4500);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1c_1, OwnItemCount(talker, @q_request_1c_1));
+                            DeleteItem1(talker, @q_charm_of_kadesh, OwnItemCount(talker, @q_charm_of_kadesh));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_2))
+                {
+                    if (OwnItemCount(talker, @q_timak_jade_necklace) >= 50)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 7500);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1c_2, OwnItemCount(talker, @q_request_1c_2));
+                            DeleteItem1(talker, @q_timak_jade_necklace, OwnItemCount(talker, @q_timak_jade_necklace));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_3))
+                {
+                    if (OwnItemCount(talker, @q_en_golem_shard) >= 50)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 7300);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1c_3, OwnItemCount(talker, @q_request_1c_3));
+                            DeleteItem1(talker, @q_en_golem_shard, OwnItemCount(talker, @q_en_golem_shard));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_4))
+                {
+                    if (OwnItemCount(talker, @q_g_monstereye_meat) >= 30)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 5500);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1c_4, OwnItemCount(talker, @q_request_1c_4));
+                            DeleteItem1(talker, @q_g_monstereye_meat, 30);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_5))
+                {
+                    if (OwnItemCount(talker, @q_dire_wyrm_egg) >= 40)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 5000);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1c_5, OwnItemCount(talker, @q_request_1c_5));
+                            DeleteItem1(talker, @q_dire_wyrm_egg, OwnItemCount(talker, @q_dire_wyrm_egg));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_6))
+                {
+                    if (OwnItemCount(talker, @q_grd_basilisk_talon) >= 100)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 6500);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1c_6, OwnItemCount(talker, @q_request_1c_6));
+                            DeleteItem1(talker, @q_grd_basilisk_talon, OwnItemCount(talker, @q_grd_basilisk_talon));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 11:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_7))
+                {
+                    if (OwnItemCount(talker, @q_revenants_chains) >= 50)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 4500);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1c_7, OwnItemCount(talker, @q_request_1c_7));
+                            DeleteItem1(talker, @q_revenants_chains, OwnItemCount(talker, @q_revenants_chains));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 12:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_8))
+                {
+                    if (OwnItemCount(talker, @q_windsus_tusk) >= 30)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 5200);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1c_8, OwnItemCount(talker, @q_request_1c_8));
+                            DeleteItem1(talker, @q_windsus_tusk, OwnItemCount(talker, @q_windsus_tusk));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 13:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_9))
+                {
+                    if (OwnItemCount(talker, @q_grandis_skull) >= 100)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 7600);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1c_9, OwnItemCount(talker, @q_request_1c_9));
+                            DeleteItem1(talker, @q_grandis_skull, OwnItemCount(talker, @q_grandis_skull));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 14:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_10))
+                {
+                    if (OwnItemCount(talker, @q_taik_obsidian_amulet) >= 50)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 4900);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1c_10, OwnItemCount(talker, @q_request_1c_10));
+                            DeleteItem1(talker, @q_taik_obsidian_amulet, OwnItemCount(talker, @q_taik_obsidian_amulet));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 15:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_11))
+                {
+                    if (OwnItemCount(talker, @q_karul_bugbear_head) >= 30)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 7600);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1c_11, OwnItemCount(talker, @q_request_1c_11));
+                            DeleteItem1(talker, @q_karul_bugbear_head, OwnItemCount(talker, @q_karul_bugbear_head));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 16:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1c_12))
+                {
+                    if (OwnItemCount(talker, @q_tamlin_ivory_charm) >= 40)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 7200);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1c_12, OwnItemCount(talker, @q_request_1c_12));
+                            DeleteItem1(talker, @q_tamlin_ivory_charm, OwnItemCount(talker, @q_tamlin_ivory_charm));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 17:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1u_1))
+                {
+                    if (OwnItemCount(talker, @q_fang_of_narak) >= 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 4500);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1u_1, OwnItemCount(talker, @q_request_1u_1));
+                            DeleteItem1(talker, @q_fang_of_narak, OwnItemCount(talker, @q_fang_of_narak));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 18:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1u_2))
+                {
+                    if (OwnItemCount(talker, @q_en_gargoyle_horn) >= 50)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 9500);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1u_2, OwnItemCount(talker, @q_request_1u_2));
+                            DeleteItem1(talker, @q_en_gargoyle_horn, OwnItemCount(talker, @q_en_gargoyle_horn));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 19:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1u_3))
+                {
+                    if (OwnItemCount(talker, @q_coiled_serpent_totem) >= 50)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 5800);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1u_3, OwnItemCount(talker, @q_request_1u_3));
+                            DeleteItem1(talker, @q_coiled_serpent_totem, OwnItemCount(talker, @q_coiled_serpent_totem));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 20:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1u_4))
+                {
+                    if (OwnItemCount(talker, @q_totem_of_kadesh) >= 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 4500);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1u_4, OwnItemCount(talker, @q_request_1u_4));
+                            DeleteItem1(talker, @q_totem_of_kadesh, OwnItemCount(talker, @q_totem_of_kadesh));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 21:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1u_5))
+                {
+                    if (OwnItemCount(talker, @q_kaikis_head) >= 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 7000);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1u_5, OwnItemCount(talker, @q_request_1u_5));
+                            DeleteItem1(talker, @q_kaikis_head, OwnItemCount(talker, @q_kaikis_head));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 22:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1u_6))
+                {
+                    if (OwnItemCount(talker, @q_kronbe_venom_sac) >= 30)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 10000);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1u_6, OwnItemCount(talker, @q_request_1u_6));
+                            DeleteItem1(talker, @q_kronbe_venom_sac, OwnItemCount(talker, @q_kronbe_venom_sac));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 23:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1r_1))
+                {
+                    if (OwnItemCount(talker, @q_evas_charm) >= 30)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 18000);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1r_1, OwnItemCount(talker, @q_request_1r_1));
+                            DeleteItem1(talker, @q_evas_charm, OwnItemCount(talker, @q_evas_charm));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 24:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1r_2))
+                {
+                    if (OwnItemCount(talker, @q_titans_tablet) >= 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 12000);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1r_2, OwnItemCount(talker, @q_request_1r_2));
+                            DeleteItem1(talker, @q_titans_tablet, OwnItemCount(talker, @q_titans_tablet));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 25:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_1) && OwnItemCount(talker, @q_request_1r_3))
+                {
+                    if (OwnItemCount(talker, @q_book_of_shunaiman) >= 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06a.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 15000);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_1r_3, OwnItemCount(talker, @q_request_1r_3));
+                            DeleteItem1(talker, @q_book_of_shunaiman, OwnItemCount(talker, @q_book_of_shunaiman));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 26:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_1))
+                {
+                    if (OwnItemCount(talker, @q_rot_tree_spores) >= 40)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 6200);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2c_1, OwnItemCount(talker, @q_request_2c_1));
+                            DeleteItem1(talker, @q_rot_tree_spores, OwnItemCount(talker, @q_rot_tree_spores));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 27:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_2))
+                {
+                    if (OwnItemCount(talker, @q_trisalim_venom_sac) >= 40)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 5900);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2c_2, OwnItemCount(talker, @q_request_2c_2));
+                            DeleteItem1(talker, @q_trisalim_venom_sac, OwnItemCount(talker, @q_trisalim_venom_sac));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 28:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_3))
+                {
+                    if (OwnItemCount(talker, @q_taik_orc_totem) >= 50)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 7200);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2c_3, OwnItemCount(talker, @q_request_2c_3));
+                            DeleteItem1(talker, @q_taik_orc_totem, OwnItemCount(talker, @q_taik_orc_totem));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 29:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_4))
+                {
+                    if (OwnItemCount(talker, @q_harit_barbed_necklace) >= 40)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 7200);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2c_4, OwnItemCount(talker, @q_request_2c_4));
+                            DeleteItem1(talker, @q_harit_barbed_necklace, OwnItemCount(talker, @q_harit_barbed_necklace));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 30:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_5))
+                {
+                    if (OwnItemCount(talker, @q_coin_of_old_empire) >= 20)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 8700);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2c_5, OwnItemCount(talker, @q_request_2c_5));
+                            DeleteItem1(talker, @q_coin_of_old_empire, OwnItemCount(talker, @q_coin_of_old_empire));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 31:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_6))
+                {
+                    if (OwnItemCount(talker, @q_skin_of_farcran) >= 30)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 11600);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2c_6, OwnItemCount(talker, @q_request_2c_6));
+                            DeleteItem1(talker, @q_skin_of_farcran, OwnItemCount(talker, @q_skin_of_farcran));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 32:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_7))
+                {
+                    if (OwnItemCount(talker, @q_tempest_shard) >= 40)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 6200);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2c_7, OwnItemCount(talker, @q_request_2c_7));
+                            DeleteItem1(talker, @q_tempest_shard, OwnItemCount(talker, @q_tempest_shard));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 33:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_8))
+                {
+                    if (OwnItemCount(talker, @q_tsunami_shard) >= 40)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 6300);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2c_8, OwnItemCount(talker, @q_request_2c_8));
+                            DeleteItem1(talker, @q_tsunami_shard, OwnItemCount(talker, @q_tsunami_shard));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 34:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_9))
+                {
+                    if (OwnItemCount(talker, @q_pan_ruem_mane) >= 40)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 7800);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2c_9, OwnItemCount(talker, @q_request_2c_9));
+                            DeleteItem1(talker, @q_pan_ruem_mane, OwnItemCount(talker, @q_pan_ruem_mane));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 35:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_10))
+                {
+                    if (OwnItemCount(talker, @q_hamadryad_shard) >= 40)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 7000);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2c_10, OwnItemCount(talker, @q_request_2c_10));
+                            DeleteItem1(talker, @q_hamadryad_shard, OwnItemCount(talker, @q_hamadryad_shard));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 36:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_11))
+                {
+                    if (OwnItemCount(talker, @q_vanor_silenos_mane) >= 30)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 7100);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2c_11, OwnItemCount(talker, @q_request_2c_11));
+                            DeleteItem1(talker, @q_vanor_silenos_mane, OwnItemCount(talker, @q_vanor_silenos_mane));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 37:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2c_12))
+                {
+                    if (OwnItemCount(talker, @q_talk_bugbear_totem) >= 30)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 13400);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2c_12, OwnItemCount(talker, @q_request_2c_12));
+                            DeleteItem1(talker, @q_talk_bugbear_totem, OwnItemCount(talker, @q_talk_bugbear_totem));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 38:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2u_1))
+                {
+                    if (OwnItemCount(talker, @q_okuns_head) >= 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 8200);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2u_1, OwnItemCount(talker, @q_request_2u_1));
+                            DeleteItem1(talker, @q_okuns_head, OwnItemCount(talker, @q_okuns_head));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 39:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2u_2))
+                {
+                    if (OwnItemCount(talker, @q_kakrans_head) >= 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 5300);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2u_2, OwnItemCount(talker, @q_request_2u_2));
+                            DeleteItem1(talker, @q_kakrans_head, OwnItemCount(talker, @q_kakrans_head));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 40:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2u_3))
+                {
+                    if (OwnItemCount(talker, @q_narcissus_soulstone) >= 40)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 8800);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2u_3, OwnItemCount(talker, @q_request_2u_3));
+                            DeleteItem1(talker, @q_narcissus_soulstone, OwnItemCount(talker, @q_narcissus_soulstone));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 41:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2u_4))
+                {
+                    if (OwnItemCount(talker, @q_diprive_eye) >= 20)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 11000);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2u_4, OwnItemCount(talker, @q_request_2u_4));
+                            DeleteItem1(talker, @q_diprive_eye, OwnItemCount(talker, @q_diprive_eye));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 42:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2u_5))
+                {
+                    if (OwnItemCount(talker, @q_unicorns_horn) >= 20)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 8000);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2u_5, OwnItemCount(talker, @q_request_2u_5));
+                            DeleteItem1(talker, @q_unicorns_horn, OwnItemCount(talker, @q_unicorns_horn));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 43:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2u_6))
+                {
+                    if (OwnItemCount(talker, @q_kerunos_gold_mane) >= 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 5500);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2u_6, OwnItemCount(talker, @q_request_2u_6));
+                            DeleteItem1(talker, @q_kerunos_gold_mane, OwnItemCount(talker, @q_kerunos_gold_mane));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 44:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2r_1))
+                {
+                    if (OwnItemCount(talker, @q_skull_of_executed) >= 20)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 18000);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2r_1, OwnItemCount(talker, @q_request_2r_1));
+                            DeleteItem1(talker, @q_skull_of_executed, OwnItemCount(talker, @q_skull_of_executed));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 45:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2r_2))
+                {
+                    if (OwnItemCount(talker, @q_bust_of_travis) >= 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 16000);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2r_2, OwnItemCount(talker, @q_request_2r_2));
+                            DeleteItem1(talker, @q_bust_of_travis, OwnItemCount(talker, @q_bust_of_travis));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            case 46:
+                if (_from_choice == 0 || HaveMemo(talker, @song_of_hunters) && OwnItemCount(talker, @q_hunter_license_2) && OwnItemCount(talker, @q_request_2r_3))
+                {
+                    if (OwnItemCount(talker, @q_sword_of_cadmus) >= 10)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tor_q0335_06b.htm");
+                            GiveItem1(talker, @q_laurel_leaf_pin, 1);
+                            GiveItem1(talker, @adena, 18000);
+                            SoundEffect(talker, "ItemSound.quest_middle");
+                            SetMemoState(talker, @song_of_hunters, 0);
+                            DeleteItem1(talker, @q_request_2r_3, OwnItemCount(talker, @q_request_2r_3));
+                            DeleteItem1(talker, @q_sword_of_cadmus, OwnItemCount(talker, @q_sword_of_cadmus));
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "tor_q0335_05.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, i0, i1, i2, i3, i4, i5, reply, talker)
+    {
+        if (ask == @song_of_hunters)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "tor_q0335_02.htm");
+            }
+            else if (reply == 2)
+            {
+                if (GetMemoState(talker, @song_of_hunters) == 0)
+                {
+                    i0 = 0;
+                    i1 = 0;
+                    i2 = 0;
+                    i3 = 0;
+                    i4 = 0;
+                    i5 = 0;
+                    while (i0 == i1 || i1 == i2 || i2 == i3 || i3 == i4 || i0 == i4 || i0 == i2 || i0 == i3 || i1 == i3 || i1 == i4 || i2 == i4)
+                    {
+                        if (OwnItemCount(talker, @q_laurel_leaf_pin) < 4)
+                        {
+                            if (Rand(100) < 20)
+                            {
+                                i0 = Rand(6) + 12;
+                                i1 = Rand(12);
+                                i2 = Rand(6);
+                                i3 = Rand(6) + 6;
+                                i4 = Rand(12);
+                                SetMemoState(talker, @song_of_hunters, i0 * 32 * 32 * 32 * 32 + i1 * 32 * 32 * 32 + i2 * 32 * 32 + i3 * 32 * 1 + i4 * 1 * 1);
+                            }
+                            else
+                            {
+                                i0 = Rand(12);
+                                i1 = Rand(12);
+                                i2 = Rand(12);
+                                i3 = Rand(12);
+                                i4 = Rand(12);
+                                SetMemoState(talker, @song_of_hunters, i0 * 32 * 32 * 32 * 32 + i1 * 32 * 32 * 32 + i2 * 32 * 32 + i3 * 32 * 1 + i4 * 1 * 1);
+                            }
+                        }
+                        else if (Rand(100) < 20)
+                        {
+                            i0 = Rand(6) + 12;
+                            if (Rand(20) == 0)
+                            {
+                                i1 = Rand(3) + 18;
+                            }
+                            else
+                            {
+                                i1 = Rand(12);
+                            }
+
+                            i2 = Rand(6);
+                            i3 = Rand(6) + 6;
+                            i4 = Rand(12);
+                            SetMemoState(talker, @song_of_hunters, i0 * 32 * 32 * 32 * 32 + i1 * 32 * 32 * 32 + i2 * 32 * 32 + i3 * 32 * 1 + i4 * 1 * 1);
+                        }
+                        else
+                        {
+                            i0 = Rand(12);
+                            if (Rand(20) == 0)
+                            {
+                                i1 = Rand(3) + 18;
+                            }
+                            else
+                            {
+                                i1 = Rand(12);
+                            }
+
+                            i2 = Rand(6);
+                            i3 = Rand(6) + 6;
+                            i4 = Rand(12);
+                            SetMemoState(talker, @song_of_hunters, i0 * 32 * 32 * 32 * 32 + i1 * 32 * 32 * 32 + i2 * 32 * 32 + i3 * 32 * 1 + i4 * 1 * 1);
+                        }
+                    }
+
+                    i0 = 33520 + i0;
+                    i1 = 33520 + i1;
+                    i2 = 33520 + i2;
+                    i3 = 33520 + i3;
+                    i4 = 33520 + i4;
+                    FHTML_SetFileName(fhtml0, "tor_q0335_16.htm");
+                    FHTML_SetStr(fhtml0, "reply1", MakeFString(i0, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply2", MakeFString(i1, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply3", MakeFString(i2, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply4", MakeFString(i3, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply5", MakeFString(i4, "", "", "", "", ""));
+                    ShowFHTML(talker, fhtml0);
+                }
+                else
+                {
+                    i5 = GetMemoState(talker, @song_of_hunters);
+                    i0 = i5 % 32;
+                    i5 = i5 / 32;
+                    i1 = i5 % 32;
+                    i5 = i5 / 32;
+                    i2 = i5 % 32;
+                    i5 = i5 / 32;
+                    i3 = i5 % 32;
+                    i5 = i5 / 32;
+                    i4 = i5 % 32;
+                    i5 = i5 / 32;
+                    i0 = 33520 + i0;
+                    i1 = 33520 + i1;
+                    i2 = 33520 + i2;
+                    i3 = 33520 + i3;
+                    i4 = 33520 + i4;
+                    FHTML_SetFileName(fhtml0, "tor_q0335_16.htm");
+                    FHTML_SetStr(fhtml0, "reply1", MakeFString(i4, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply2", MakeFString(i3, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply3", MakeFString(i2, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply4", MakeFString(i1, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply5", MakeFString(i0, "", "", "", "", ""));
+                    ShowFHTML(talker, fhtml0);
+                }
+            }
+            else if (reply == 3)
+            {
+                ShowPage(talker, "tor_q0335_04.htm");
+            }
+            else if (reply == 4)
+            {
+                if (GetMemoState(talker, @song_of_hunters) == 0)
+                {
+                    i0 = 0;
+                    i1 = 0;
+                    i2 = 0;
+                    i3 = 0;
+                    i4 = 0;
+                    i5 = 0;
+                    while (i0 == i1 || i1 == i2 || i2 == i3 || i3 == i4 || i0 == i4 || i0 == i2 || i0 == i3 || i1 == i3 || i1 == i4 || i2 == i4)
+                    {
+                        if (OwnItemCount(talker, @q_laurel_leaf_pin) < 4)
+                        {
+                            if (Rand(100) < 20)
+                            {
+                                i0 = Rand(6) + 12;
+                                i1 = Rand(12);
+                                i2 = Rand(6);
+                                i3 = Rand(6) + 6;
+                                i4 = Rand(12);
+                                SetMemoState(talker, @song_of_hunters, i0 * 32 * 32 * 32 * 32 + i1 * 32 * 32 * 32 + i2 * 32 * 32 + i3 * 32 * 1 + i4 * 1 * 1);
+                            }
+                            else
+                            {
+                                i0 = Rand(12);
+                                i1 = Rand(12);
+                                i2 = Rand(6);
+                                i3 = Rand(6) + 6;
+                                i4 = Rand(12);
+                                SetMemoState(talker, @song_of_hunters, i0 * 32 * 32 * 32 * 32 + i1 * 32 * 32 * 32 + i2 * 32 * 32 + i3 * 32 * 1 + i4 * 1 * 1);
+                            }
+                        }
+                        else if (Rand(100) < 20)
+                        {
+                            i0 = Rand(6) + 12;
+                            if (Rand(20) == 0)
+                            {
+                                i1 = Rand(3) + 18;
+                            }
+                            else
+                            {
+                                i1 = Rand(12);
+                            }
+
+                            i2 = Rand(6);
+                            i3 = Rand(6) + 6;
+                            i4 = Rand(12);
+                            SetMemoState(talker, @song_of_hunters, i0 * 32 * 32 * 32 * 32 + i1 * 32 * 32 * 32 + i2 * 32 * 32 + i3 * 32 * 1 + i4 * 1 * 1);
+                        }
+                        else
+                        {
+                            i0 = Rand(12);
+                            if (Rand(20) == 0)
+                            {
+                                i1 = Rand(3) + 18;
+                            }
+                            else
+                            {
+                                i1 = Rand(12);
+                            }
+
+                            i2 = Rand(6);
+                            i3 = Rand(6) + 6;
+                            i4 = Rand(12);
+                            SetMemoState(talker, @song_of_hunters, i0 * 32 * 32 * 32 * 32 + i1 * 32 * 32 * 32 + i2 * 32 * 32 + i3 * 32 * 1 + i4 * 1 * 1);
+                        }
+                    }
+
+                    i0 = 33520 + (i0 + 21);
+                    i1 = 33520 + (i1 + 21);
+                    i2 = 33520 + (i2 + 21);
+                    i3 = 33520 + (i3 + 21);
+                    i4 = 33520 + (i4 + 21);
+                    FHTML_SetFileName(fhtml0, "tor_q0335_16.htm");
+                    FHTML_SetStr(fhtml0, "reply1", MakeFString(i0, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply2", MakeFString(i1, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply3", MakeFString(i2, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply4", MakeFString(i3, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply5", MakeFString(i4, "", "", "", "", ""));
+                    ShowFHTML(talker, fhtml0);
+                }
+                else
+                {
+                    i5 = GetMemoState(talker, @song_of_hunters);
+                    i0 = i5 % 32;
+                    i5 = i5 / 32;
+                    i1 = i5 % 32;
+                    i5 = i5 / 32;
+                    i2 = i5 % 32;
+                    i5 = i5 / 32;
+                    i3 = i5 % 32;
+                    i5 = i5 / 32;
+                    i4 = i5 % 32;
+                    i5 = i5 / 32;
+                    i0 = 33520 + (i0 + 21);
+                    i1 = 33520 + (i1 + 21);
+                    i2 = 33520 + (i2 + 21);
+                    i3 = 33520 + (i3 + 21);
+                    i4 = 33520 + (i4 + 21);
+                    FHTML_SetFileName(fhtml0, "tor_q0335_16.htm");
+                    FHTML_SetStr(fhtml0, "reply1", MakeFString(i4, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply2", MakeFString(i3, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply3", MakeFString(i2, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply4", MakeFString(i1, "", "", "", "", ""));
+                    FHTML_SetStr(fhtml0, "reply5", MakeFString(i0, "", "", "", "", ""));
+                    ShowFHTML(talker, fhtml0);
+                }
+            }
+            else if (reply == 48)
+            {
+                ShowPage(talker, "tor_q0335_05a.htm");
+            }
+            else if (reply == 49)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_05b.htm");
+                    DeleteItem1(talker, @q_laurel_leaf_pin, OwnItemCount(talker, @q_laurel_leaf_pin));
+                    DeleteItem1(talker, @q_request_1c_1, OwnItemCount(talker, @q_request_1c_1));
+                    DeleteItem1(talker, @q_request_1c_2, OwnItemCount(talker, @q_request_1c_2));
+                    DeleteItem1(talker, @q_request_1c_3, OwnItemCount(talker, @q_request_1c_3));
+                    DeleteItem1(talker, @q_request_1c_4, OwnItemCount(talker, @q_request_1c_4));
+                    DeleteItem1(talker, @q_request_1c_5, OwnItemCount(talker, @q_request_1c_5));
+                    DeleteItem1(talker, @q_request_1c_6, OwnItemCount(talker, @q_request_1c_6));
+                    DeleteItem1(talker, @q_request_1c_7, OwnItemCount(talker, @q_request_1c_7));
+                    DeleteItem1(talker, @q_request_1c_8, OwnItemCount(talker, @q_request_1c_8));
+                    DeleteItem1(talker, @q_request_1c_9, OwnItemCount(talker, @q_request_1c_9));
+                    DeleteItem1(talker, @q_request_1c_10, OwnItemCount(talker, @q_request_1c_10));
+                    DeleteItem1(talker, @q_request_1c_11, OwnItemCount(talker, @q_request_1c_11));
+                    DeleteItem1(talker, @q_request_1c_12, OwnItemCount(talker, @q_request_1c_12));
+                    DeleteItem1(talker, @q_request_1u_1, OwnItemCount(talker, @q_request_1u_1));
+                    DeleteItem1(talker, @q_request_1u_2, OwnItemCount(talker, @q_request_1u_2));
+                    DeleteItem1(talker, @q_request_1u_3, OwnItemCount(talker, @q_request_1u_3));
+                    DeleteItem1(talker, @q_request_1u_4, OwnItemCount(talker, @q_request_1u_4));
+                    DeleteItem1(talker, @q_request_1u_5, OwnItemCount(talker, @q_request_1u_5));
+                    DeleteItem1(talker, @q_request_1u_6, OwnItemCount(talker, @q_request_1u_6));
+                    DeleteItem1(talker, @q_request_1r_1, OwnItemCount(talker, @q_request_1r_1));
+                    DeleteItem1(talker, @q_request_1r_2, OwnItemCount(talker, @q_request_1r_2));
+                    DeleteItem1(talker, @q_request_1r_3, OwnItemCount(talker, @q_request_1r_3));
+                    DeleteItem1(talker, @q_request_2c_1, OwnItemCount(talker, @q_request_2c_1));
+                    DeleteItem1(talker, @q_request_2c_2, OwnItemCount(talker, @q_request_2c_2));
+                    DeleteItem1(talker, @q_request_2c_3, OwnItemCount(talker, @q_request_2c_3));
+                    DeleteItem1(talker, @q_request_2c_4, OwnItemCount(talker, @q_request_2c_4));
+                    DeleteItem1(talker, @q_request_2c_5, OwnItemCount(talker, @q_request_2c_5));
+                    DeleteItem1(talker, @q_request_2c_6, OwnItemCount(talker, @q_request_2c_6));
+                    DeleteItem1(talker, @q_request_2c_7, OwnItemCount(talker, @q_request_2c_7));
+                    DeleteItem1(talker, @q_request_2c_8, OwnItemCount(talker, @q_request_2c_8));
+                    DeleteItem1(talker, @q_request_2c_9, OwnItemCount(talker, @q_request_2c_9));
+                    DeleteItem1(talker, @q_request_2c_10, OwnItemCount(talker, @q_request_2c_10));
+                    DeleteItem1(talker, @q_request_2c_11, OwnItemCount(talker, @q_request_2c_11));
+                    DeleteItem1(talker, @q_request_2c_12, OwnItemCount(talker, @q_request_2c_12));
+                    DeleteItem1(talker, @q_request_2u_1, OwnItemCount(talker, @q_request_2u_1));
+                    DeleteItem1(talker, @q_request_2u_2, OwnItemCount(talker, @q_request_2u_2));
+                    DeleteItem1(talker, @q_request_2u_3, OwnItemCount(talker, @q_request_2u_3));
+                    DeleteItem1(talker, @q_request_2u_4, OwnItemCount(talker, @q_request_2u_4));
+                    DeleteItem1(talker, @q_request_2u_5, OwnItemCount(talker, @q_request_2u_5));
+                    DeleteItem1(talker, @q_request_2u_6, OwnItemCount(talker, @q_request_2u_6));
+                    DeleteItem1(talker, @q_request_2r_1, OwnItemCount(talker, @q_request_2r_1));
+                    DeleteItem1(talker, @q_request_2r_2, OwnItemCount(talker, @q_request_2r_2));
+                    DeleteItem1(talker, @q_request_2r_3, OwnItemCount(talker, @q_request_2r_3));
+                    DeleteItem1(talker, @q_charm_of_kadesh, OwnItemCount(talker, @q_charm_of_kadesh));
+                    DeleteItem1(talker, @q_timak_jade_necklace, OwnItemCount(talker, @q_timak_jade_necklace));
+                    DeleteItem1(talker, @q_en_golem_shard, OwnItemCount(talker, @q_en_golem_shard));
+                    DeleteItem1(talker, @q_g_monstereye_meat, OwnItemCount(talker, @q_g_monstereye_meat));
+                    DeleteItem1(talker, @q_dire_wyrm_egg, OwnItemCount(talker, @q_dire_wyrm_egg));
+                    DeleteItem1(talker, @q_grd_basilisk_talon, OwnItemCount(talker, @q_grd_basilisk_talon));
+                    DeleteItem1(talker, @q_revenants_chains, OwnItemCount(talker, @q_revenants_chains));
+                    DeleteItem1(talker, @q_windsus_tusk, OwnItemCount(talker, @q_windsus_tusk));
+                    DeleteItem1(talker, @q_grandis_skull, OwnItemCount(talker, @q_grandis_skull));
+                    DeleteItem1(talker, @q_taik_obsidian_amulet, OwnItemCount(talker, @q_taik_obsidian_amulet));
+                    DeleteItem1(talker, @q_karul_bugbear_head, OwnItemCount(talker, @q_karul_bugbear_head));
+                    DeleteItem1(talker, @q_tamlin_ivory_charm, OwnItemCount(talker, @q_tamlin_ivory_charm));
+                    DeleteItem1(talker, @q_fang_of_narak, OwnItemCount(talker, @q_fang_of_narak));
+                    DeleteItem1(talker, @q_en_gargoyle_horn, OwnItemCount(talker, @q_en_gargoyle_horn));
+                    DeleteItem1(talker, @q_coiled_serpent_totem, OwnItemCount(talker, @q_coiled_serpent_totem));
+                    DeleteItem1(talker, @q_totem_of_kadesh, OwnItemCount(talker, @q_totem_of_kadesh));
+                    DeleteItem1(talker, @q_kaikis_head, OwnItemCount(talker, @q_kaikis_head));
+                    DeleteItem1(talker, @q_kronbe_venom_sac, OwnItemCount(talker, @q_kronbe_venom_sac));
+                    DeleteItem1(talker, @q_evas_charm, OwnItemCount(talker, @q_evas_charm));
+                    DeleteItem1(talker, @q_titans_tablet, OwnItemCount(talker, @q_titans_tablet));
+                    DeleteItem1(talker, @q_book_of_shunaiman, OwnItemCount(talker, @q_book_of_shunaiman));
+                    DeleteItem1(talker, @q_rot_tree_spores, OwnItemCount(talker, @q_rot_tree_spores));
+                    DeleteItem1(talker, @q_trisalim_venom_sac, OwnItemCount(talker, @q_trisalim_venom_sac));
+                    DeleteItem1(talker, @q_taik_orc_totem, OwnItemCount(talker, @q_taik_orc_totem));
+                    DeleteItem1(talker, @q_harit_barbed_necklace, OwnItemCount(talker, @q_harit_barbed_necklace));
+                    DeleteItem1(talker, @q_coin_of_old_empire, OwnItemCount(talker, @q_coin_of_old_empire));
+                    DeleteItem1(talker, @q_skin_of_farcran, OwnItemCount(talker, @q_skin_of_farcran));
+                    DeleteItem1(talker, @q_tempest_shard, OwnItemCount(talker, @q_tempest_shard));
+                    DeleteItem1(talker, @q_tsunami_shard, OwnItemCount(talker, @q_tsunami_shard));
+                    DeleteItem1(talker, @q_pan_ruem_mane, OwnItemCount(talker, @q_pan_ruem_mane));
+                    DeleteItem1(talker, @q_hamadryad_shard, OwnItemCount(talker, @q_hamadryad_shard));
+                    DeleteItem1(talker, @q_vanor_silenos_mane, OwnItemCount(talker, @q_vanor_silenos_mane));
+                    DeleteItem1(talker, @q_talk_bugbear_totem, OwnItemCount(talker, @q_talk_bugbear_totem));
+                    DeleteItem1(talker, @q_okuns_head, OwnItemCount(talker, @q_okuns_head));
+                    DeleteItem1(talker, @q_kakrans_head, OwnItemCount(talker, @q_kakrans_head));
+                    DeleteItem1(talker, @q_narcissus_soulstone, OwnItemCount(talker, @q_narcissus_soulstone));
+                    DeleteItem1(talker, @q_diprive_eye, OwnItemCount(talker, @q_diprive_eye));
+                    DeleteItem1(talker, @q_unicorns_horn, OwnItemCount(talker, @q_unicorns_horn));
+                    DeleteItem1(talker, @q_kerunos_gold_mane, OwnItemCount(talker, @q_kerunos_gold_mane));
+                    DeleteItem1(talker, @q_skull_of_executed, OwnItemCount(talker, @q_skull_of_executed));
+                    DeleteItem1(talker, @q_bust_of_travis, OwnItemCount(talker, @q_bust_of_travis));
+                    DeleteItem1(talker, @q_sword_of_cadmus, OwnItemCount(talker, @q_sword_of_cadmus));
+                }
+            }
+            else if (reply == 5)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_10a.htm");
+                    GiveItem1(talker, @q_request_1c_1, 1);
+                }
+            }
+            else if (reply == 6)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_10b.htm");
+                    GiveItem1(talker, @q_request_1c_2, 1);
+                }
+            }
+            else if (reply == 7)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_10c.htm");
+                    GiveItem1(talker, @q_request_1c_3, 1);
+                }
+            }
+            else if (reply == 8)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_10d.htm");
+                    GiveItem1(talker, @q_request_1c_4, 1);
+                }
+            }
+            else if (reply == 9)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_10e.htm");
+                    GiveItem1(talker, @q_request_1c_5, 1);
+                }
+            }
+            else if (reply == 10)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_10f.htm");
+                    GiveItem1(talker, @q_request_1c_6, 1);
+                }
+            }
+            else if (reply == 11)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_10g.htm");
+                    GiveItem1(talker, @q_request_1c_7, 1);
+                }
+            }
+            else if (reply == 12)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_10h.htm");
+                    GiveItem1(talker, @q_request_1c_8, 1);
+                }
+            }
+            else if (reply == 13)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_10i.htm");
+                    GiveItem1(talker, @q_request_1c_9, 1);
+                }
+            }
+            else if (reply == 14)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_10j.htm");
+                    GiveItem1(talker, @q_request_1c_10, 1);
+                }
+            }
+            else if (reply == 15)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_10k.htm");
+                    GiveItem1(talker, @q_request_1c_11, 1);
+                }
+            }
+            else if (reply == 16)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_10l.htm");
+                    GiveItem1(talker, @q_request_1c_12, 1);
+                }
+            }
+            else if (reply == 17)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_11a.htm");
+                    GiveItem1(talker, @q_request_1u_1, 1);
+                }
+            }
+            else if (reply == 18)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_11b.htm");
+                    GiveItem1(talker, @q_request_1u_2, 1);
+                }
+            }
+            else if (reply == 19)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_11c.htm");
+                    GiveItem1(talker, @q_request_1u_3, 1);
+                }
+            }
+            else if (reply == 20)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_11d.htm");
+                    GiveItem1(talker, @q_request_1u_4, 1);
+                }
+            }
+            else if (reply == 21)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_11e.htm");
+                    GiveItem1(talker, @q_request_1u_5, 1);
+                }
+            }
+            else if (reply == 22)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_11f.htm");
+                    GiveItem1(talker, @q_request_1u_6, 1);
+                }
+            }
+            else if (reply == 23)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_12a.htm");
+                    GiveItem1(talker, @q_request_1r_1, 1);
+                }
+            }
+            else if (reply == 24)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_12b.htm");
+                    GiveItem1(talker, @q_request_1r_2, 1);
+                }
+            }
+            else if (reply == 25)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_12c.htm");
+                    GiveItem1(talker, @q_request_1r_3, 1);
+                }
+            }
+            else if (reply == 26)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_13a.htm");
+                    GiveItem1(talker, @q_request_2c_1, 1);
+                }
+            }
+            else if (reply == 27)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_13b.htm");
+                    GiveItem1(talker, @q_request_2c_2, 1);
+                }
+            }
+            else if (reply == 28)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_13c.htm");
+                    GiveItem1(talker, @q_request_2c_3, 1);
+                }
+            }
+            else if (reply == 29)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_13d.htm");
+                    GiveItem1(talker, @q_request_2c_4, 1);
+                }
+            }
+            else if (reply == 30)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_13e.htm");
+                    GiveItem1(talker, @q_request_2c_5, 1);
+                }
+            }
+            else if (reply == 31)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_13f.htm");
+                    GiveItem1(talker, @q_request_2c_6, 1);
+                }
+            }
+            else if (reply == 32)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_13g.htm");
+                    GiveItem1(talker, @q_request_2c_7, 1);
+                }
+            }
+            else if (reply == 33)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_13h.htm");
+                    GiveItem1(talker, @q_request_2c_8, 1);
+                }
+            }
+            else if (reply == 34)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_13i.htm");
+                    GiveItem1(talker, @q_request_2c_9, 1);
+                }
+            }
+            else if (reply == 35)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_13j.htm");
+                    GiveItem1(talker, @q_request_2c_10, 1);
+                }
+            }
+            else if (reply == 36)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_13k.htm");
+                    GiveItem1(talker, @q_request_2c_11, 1);
+                }
+            }
+            else if (reply == 37)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_13l.htm");
+                    GiveItem1(talker, @q_request_2c_12, 1);
+                }
+            }
+            else if (reply == 38)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_14a.htm");
+                    GiveItem1(talker, @q_request_2u_1, 1);
+                }
+            }
+            else if (reply == 39)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_14b.htm");
+                    GiveItem1(talker, @q_request_2u_2, 1);
+                }
+            }
+            else if (reply == 40)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_14c.htm");
+                    GiveItem1(talker, @q_request_2u_3, 1);
+                }
+            }
+            else if (reply == 41)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_14d.htm");
+                    GiveItem1(talker, @q_request_2u_4, 1);
+                }
+            }
+            else if (reply == 42)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_14e.htm");
+                    GiveItem1(talker, @q_request_2u_5, 1);
+                }
+            }
+            else if (reply == 43)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_14f.htm");
+                    GiveItem1(talker, @q_request_2u_6, 1);
+                }
+            }
+            else if (reply == 44)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_15a.htm");
+                    GiveItem1(talker, @q_request_2r_1, 1);
+                }
+            }
+            else if (reply == 45)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_15b.htm");
+                    GiveItem1(talker, @q_request_2r_2, 1);
+                }
+            }
+            else if (reply == 46)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "tor_q0335_15c.htm");
+                    GiveItem1(talker, @q_request_2r_3, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

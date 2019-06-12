@@ -1,0 +1,64 @@
+class baraq_orc_fighter : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @legacy_of_poet) == 1)
+        {
+            if (Rand(10) == 0 && OwnItemCount(c1, @rumiels_poem_1) == 0)
+            {
+                GiveItem1(c1, @rumiels_poem_1, 1);
+                if (OwnItemCount(c1, @rumiels_poem_1) + OwnItemCount(c1, @rumiels_poem_3) + OwnItemCount(c1, @rumiels_poem_4) + OwnItemCount(c1, @rumiels_poem_5) == 4)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+
+            if (Rand(10) > 7 && OwnItemCount(c1, @rumiels_poem_3) == 0)
+            {
+                GiveItem1(c1, @rumiels_poem_3, 1);
+                if (OwnItemCount(c1, @rumiels_poem_1) + OwnItemCount(c1, @rumiels_poem_3) + OwnItemCount(c1, @rumiels_poem_4) + OwnItemCount(c1, @rumiels_poem_5) == 4)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+
+            if (Rand(10) > 7 && OwnItemCount(c1, @rumiels_poem_4) == 0)
+            {
+                GiveItem1(c1, @rumiels_poem_4, 1);
+                if (OwnItemCount(c1, @rumiels_poem_1) + OwnItemCount(c1, @rumiels_poem_3) + OwnItemCount(c1, @rumiels_poem_4) + OwnItemCount(c1, @rumiels_poem_5) == 4)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+
+            if (Rand(10) > 5 && OwnItemCount(c1, @rumiels_poem_5) == 0)
+            {
+                GiveItem1(c1, @rumiels_poem_5, 1);
+                if (OwnItemCount(c1, @rumiels_poem_1) + OwnItemCount(c1, @rumiels_poem_3) + OwnItemCount(c1, @rumiels_poem_4) + OwnItemCount(c1, @rumiels_poem_5) == 4)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

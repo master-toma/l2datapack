@@ -1,0 +1,37 @@
+class orc_lv2_master : guild_master_lv2
+{
+parameter:
+    int lv1_class1 = @orc_fighter;
+    int lv1_class2 = @orc_mage;
+    int lv2_class11 = @orc_raider;
+    int lv2_class12 = @orc_monk;
+    int lv2_class21 = @orc_shaman;
+    int proof11 = @mark_of_raider;
+    int proof12 = @khavatari_totem;
+    int proof21 = @mask_of_medium;
+    
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -2 && reply == 1)
+        {
+            if (talker.race == @race_orc)
+            {
+                if (IsInCategory(@fighter_group, talker.occupation))
+                {
+                    ShowPage(talker, fnClassList1);
+                }
+                else if (IsInCategory(@mage_group, talker.occupation))
+                {
+                    ShowPage(talker, fnClassList2);
+                }
+            }
+            else
+            {
+                ShowPage(talker, fnClassMismatch);
+            }
+        }
+
+        super;
+    }
+}

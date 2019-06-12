@@ -1,0 +1,20 @@
+class house_master : default_npc
+{
+parameter:
+    string fnHi = "sir_tyron001.htm";
+    string fnNotPledgeLeader = "sir_tyron002.htm";
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        if (talker.is_pledge_master == @FALSE)
+        {
+            Agit_SetMaster(talker);
+            ShowPage(talker, fnHi);
+        }
+        else
+        {
+            ShowPage(talker, fnNotPledgeLeader);
+        }
+    }
+}

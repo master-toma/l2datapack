@@ -1,0 +1,20 @@
+class human_mage_lv1_master : guild_master_lv1
+{
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -2 && reply == 1)
+        {
+            if (talker.race == @race_human && IsInCategory(@mage_group, talker.occupation))
+            {
+                ShowPage(talker, fnClassList1);
+            }
+            else
+            {
+                ShowPage(talker, fnClassMismatch);
+            }
+        }
+
+        super;
+    }
+}

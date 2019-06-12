@@ -1,0 +1,23 @@
+class road_collector : warrior_aggressive_immediate
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_champion) && OwnItemCount(c1, @mouens_order1) && OwnItemCount(c1, @road_ratman_head) < 100)
+        {
+            if (OwnItemCount(c1, @road_ratman_head) == 99)
+            {
+                GiveItem1(c1, @road_ratman_head, 1);
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @road_ratman_head, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

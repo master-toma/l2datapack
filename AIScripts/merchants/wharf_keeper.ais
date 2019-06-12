@@ -1,0 +1,3 @@
+class wharf_keeper : merchant_for_chaotic
+{
+}

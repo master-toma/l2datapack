@@ -1,0 +1,136 @@
+class trader_edroc : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"brandish"; 30};
+        {"gladius"; 30};
+        {"orcish_sword"; 30};
+        {"handmade_sword"; 30};
+        {"dwarven_mace"; 30};
+        {"dirk"; 30};
+        {"hunting_bow"; 30};
+        {"long_sword"; 30};
+        {"throw_knife"; 30};
+        {"bow_of_forest"; 30};
+        {"short_spear"; 30};
+        {"falchion"; 30};
+        {"sword_breaker"; 30};
+        {"composition_bow"; 30};
+        {"buzdygan"; 30};
+        {"iron_hammer"; 30};
+        {"long_spear"; 30};
+        {"saber"; 30};
+        {"handiwork_dagger"; 30};
+        {"assassin_knife"; 30};
+        {"strengthening_bow"; 30};
+        {"hand_axe"; 30};
+        {"heavy_mace"; 30};
+        {"work_hammer"; 30};
+        {"trident"; 30};
+        {"cestus"; 30};
+        {"viper's_canine"; 30};
+        {"bagh-nakh"; 30};
+        {"wooden_arrow"; 30};
+        {"bone_arrow"; 30}
+    };
+    BuySellList SellList1 = {
+        {"cedar_staff"; 30};
+        {"apprentice's_staff"; 30};
+        {"relic_of_saints"; 30};
+        {"mage_staff"; 30};
+        {"crucifix_of_blessing"; 30};
+        {"voodoo_doll"; 30};
+        {"bone_staff"; 30};
+        {"scroll_of_wisdom"; 30};
+        {"branch_of_life"; 30};
+        {"proof_of_revenge"; 30};
+        {"mace_of_prayer"; 30};
+        {"doom_hammer"; 30};
+        {"wooden_arrow"; 30};
+        {"bone_arrow"; 30}
+    };
+    
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @dieters_diary) >= 1 && OwnItemCount(talker, @dieters_letter) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show Letter from Dieter");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @dieters_diary) >= 1 && OwnItemCount(talker, @rauts_letter_envelope) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show Letter from Dieter");
+            }
+
+            if (HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @dieters_diary) == 1 && (OwnItemCount(talker, @strong_liquor) >= 1 || OwnItemCount(talker, @treafs_ring) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask the whereabouts of Lost Scriptures");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @dieters_diary) >= 1 && OwnItemCount(talker, @dieters_letter) >= 1))
+                {
+                    ShowPage(talker, "trader_edroc_q0214_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && (OwnItemCount(talker, @dieters_diary) >= 1 && OwnItemCount(talker, @rauts_letter_envelope) >= 1))
+                {
+                    ShowPage(talker, "trader_edroc_q0214_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_scholar) == 1 && OwnItemCount(talker, @dieters_diary) == 1 && (OwnItemCount(talker, @strong_liquor) >= 1 || OwnItemCount(talker, @treafs_ring) >= 1))
+                {
+                    ShowPage(talker, "trader_edroc_q0214_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_scholar)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @dieters_letter) >= 1)
+                {
+                    ShowPage(talker, "trader_edroc_q0214_02.htm");
+                    DeleteItem1(talker, @dieters_letter, 1);
+                    GiveItem1(talker, @rauts_letter_envelope, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

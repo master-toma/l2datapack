@@ -1,0 +1,315 @@
+class kakai_the_lord_of_flame : orc_lv1_master
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 9 && OwnItemCount(talker, @letter_to_orc))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you want to get Confidence of Orc");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask who you should go find");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 13)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give Letter from Manakia");
+            }
+
+            if (HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 14)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Bid farewell");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @ritual_box) == 0 && (OwnItemCount(talker, @scepter_box) || OwnItemCount(talker, @tanapis_order1)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Present Box Containing Royal Seal");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @ritual_box))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Present ceremonial box");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 0 && GetOneTimeQuestFlag(talker, @test_of_lord) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask about Examination of Lord");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 0 && GetOneTimeQuestFlag(talker, @test_of_lord) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask about Examination of Lord");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Give Certificates of Tribe");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @bear_fang_necklace) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Talk about the spirits of the ancestors");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @martankus_charm) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Talk about the spirits of the ancestors");
+            }
+
+            if (HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @immortal_flame) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 11;
+                AddChoice(11, "Talk about the spirits of the ancestors");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 9 && OwnItemCount(talker, @letter_to_orc))
+                {
+                    ShowPage(talker, "kakai_the_lord_of_flame_q0217_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 10)
+                {
+                    ShowPage(talker, "kakai_the_lord_of_flame_q0217_03.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 13)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "kakai_the_lord_of_flame_q0217_04.htm");
+                        GiveItem1(talker, @scroll_of_orc_trust, 1);
+                        DeleteItem1(talker, @letter_of_manakia, OwnItemCount(talker, @letter_of_manakia));
+                        SetMemoState(talker, @testimoney_of_trust, 14);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimoney_of_trust) == 1 && GetMemoState(talker, @testimoney_of_trust) == 14)
+                {
+                    ShowPage(talker, "kakai_the_lord_of_flame_q0217_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @ritual_box) == 0 && (OwnItemCount(talker, @scepter_box) || OwnItemCount(talker, @tanapis_order1)))
+                {
+                    ShowPage(talker, "kakai_the_lord_of_flame_q0220_01.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @ritual_box))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        IncrementParam(talker, @PARAM_EXP, 40000);
+                        IncrementParam(talker, @PARAM_SP, 5000);
+                        ShowPage(talker, "kakai_the_lord_of_flame_q0220_02.htm");
+                        GiveItem1(talker, @mark_of_glory, 1);
+                        DeleteItem1(talker, @ritual_box, 1);
+                        RemoveMemo(talker, @testimony_of_glory);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @testimony_of_glory, 1);
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 0 && GetOneTimeQuestFlag(talker, @test_of_lord) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_orc)
+                        {
+                            ShowPage(talker, "kakai_the_lord_of_flame_q0232_01.htm");
+                        }
+                        else if (talker.occupation != @orc_shaman)
+                        {
+                            ShowPage(talker, "kakai_the_lord_of_flame_q0232_02.htm");
+                        }
+                        else if (talker.level < 39)
+                        {
+                            ShowPage(talker, "kakai_the_lord_of_flame_q0232_03.htm");
+                        }
+                        else
+                        {
+                            FHTML_SetFileName(fhtml0, "kakai_the_lord_of_flame_q0232_04.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @test_of_lord);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 0 && GetOneTimeQuestFlag(talker, @test_of_lord) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @ordeal_necklace) == 1)
+                {
+                    if (OwnItemCount(talker, @huge_orc_fang) >= 1 && OwnItemCount(talker, @sword_into_skull) >= 1 && OwnItemCount(talker, @axe_of_ceremony) >= 1 && OwnItemCount(talker, @monstereye_woodcarving) >= 1 && OwnItemCount(talker, @handiwork_spider_brooch) >= 1)
+                    {
+                        ShowPage(talker, "kakai_the_lord_of_flame_q0232_07.htm");
+                    }
+                    else
+                    {
+                        ShowPage(talker, "kakai_the_lord_of_flame_q0232_06.htm");
+                    }
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @bear_fang_necklace) == 1)
+                {
+                    ShowPage(talker, "kakai_the_lord_of_flame_q0232_09.htm");
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @martankus_charm) == 1)
+                {
+                    ShowPage(talker, "kakai_the_lord_of_flame_q0232_10.htm");
+                }
+
+                break;
+            case 11:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_lord) == 1 && OwnItemCount(talker, @immortal_flame) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        IncrementParam(talker, @PARAM_EXP, 25000);
+                        IncrementParam(talker, @PARAM_SP, 3000);
+                        DeleteItem1(talker, @immortal_flame, 1);
+                        GiveItem1(talker, @mark_of_lord, 1);
+                        ShowPage(talker, "kakai_the_lord_of_flame_q0232_11.htm");
+                        RemoveMemo(talker, @test_of_lord);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @test_of_lord, 1);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @test_of_lord)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @ordeal_necklace) == 0)
+                {
+                    GiveItem1(talker, @ordeal_necklace, 1);
+                }
+
+                ShowPage(talker, "kakai_the_lord_of_flame_q0232_05.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimoney_of_trust)
+        {
+            if (reply == 1 && OwnItemCount(talker, @letter_to_orc) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "kakai_the_lord_of_flame_q0217_02.htm");
+                    GiveItem1(talker, @letter_to_manakia, 1);
+                    DeleteItem1(talker, @letter_to_orc, 1);
+                    SetMemoState(talker, @testimoney_of_trust, 10);
+                }
+            }
+        }
+
+        if (ask == @test_of_lord)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @huge_orc_fang) >= 1)
+                {
+                    ShowPage(talker, "kakai_the_lord_of_flame_q0232_08.htm");
+                    DeleteItem1(talker, @sword_into_skull, OwnItemCount(talker, @sword_into_skull));
+                    DeleteItem1(talker, @axe_of_ceremony, OwnItemCount(talker, @axe_of_ceremony));
+                    DeleteItem1(talker, @monstereye_woodcarving, OwnItemCount(talker, @monstereye_woodcarving));
+                    DeleteItem1(talker, @handiwork_spider_brooch, OwnItemCount(talker, @handiwork_spider_brooch));
+                    DeleteItem1(talker, @ordeal_necklace, OwnItemCount(talker, @ordeal_necklace));
+                    DeleteItem1(talker, @huge_orc_fang, 1);
+                    GiveItem1(talker, @bear_fang_necklace, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

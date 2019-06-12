@@ -1,0 +1,25 @@
+class lv2_head_blacksmith : guild_master_lv2
+{
+parameter:
+    int lv1_class1 = @dwarven_fighter;
+    int lv2_class11 = @artisan;
+    int proof11 = @pass_final;
+    
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -2 && reply == 1)
+        {
+            if (IsInCategory(@warsmith_group, talker.occupation))
+            {
+                ShowPage(talker, fnClassList1);
+            }
+            else
+            {
+                ShowPage(talker, fnClassMismatch);
+            }
+        }
+
+        super;
+    }
+}

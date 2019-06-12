@@ -1,0 +1,5 @@
+skill_begin	skill_name = [s_full_of_energy1]	/* [에스프리] */	skill_id = 171	level = 1	operate_type = P	effect = {{p_hp_regen_by_move_mode;run;2.5;diff};{p_mp_regen_by_move_mode;run;0.8;diff}}	skill_end
+skill_begin	skill_name = [s_full_of_energy2]	/* [에스프리] */	skill_id = 171	level = 2	operate_type = P	effect = {{p_hp_regen_by_move_mode;run;3;diff};{p_mp_regen_by_move_mode;run;0.9;diff}}	skill_end
+skill_begin	skill_name = [s_full_of_energy3]	/* [에스프리] */	skill_id = 171	level = 3	operate_type = P	effect = {{p_hp_regen_by_move_mode;run;3.5;diff};{p_mp_regen_by_move_mode;run;1;diff}}	skill_end
+skill_begin	skill_name = [s_full_of_energy4]	/* [에스프리] */	skill_id = 171	level = 4	operate_type = P	effect = {{p_hp_regen_by_move_mode;run;4;diff};{p_mp_regen_by_move_mode;run;1.1;diff}}	skill_end
+skill_begin	skill_name = [s_full_of_energy5]	/* [에스프리] */	skill_id = 171	level = 5	operate_type = P	effect = {{p_hp_regen_by_move_mode;run;4.5;diff};{p_mp_regen_by_move_mode;run;1.2;diff}}	skill_end

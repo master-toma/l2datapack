@@ -1,0 +1,47 @@
+class abyssal_jewel_3 : citizen
+{
+handler:
+    EventHandler ATTACKED(attacker, damage)
+    {
+        if (GetMemoState(attacker, @audience_with_earth_dragon) == 70000 && HaveMemo(attacker, @audience_with_earth_dragon) == 1)
+        {
+            if (myself.sm.hp < myself.sm.max_hp * 0.8 && myself.i_quest0 == 0)
+            {
+                CreateOnePrivate(@jewel_guardian_pyton, "jewel_guardian_pyton", 0, 1);
+                CreateOnePrivate(@jewel_guardian_pyton, "jewel_guardian_pyton", 0, 1);
+                CreateOnePrivate(@jewel_guardian_pyton, "jewel_guardian_pyton", 0, 1);
+                CreateOnePrivate(@jewel_guardian_pyton, "jewel_guardian_pyton", 0, 1);
+                myself.i_quest0 = 1;
+            }
+
+            if (myself.sm.hp < myself.sm.max_hp * 0.4 && OwnItemCount(attacker, @q_frag_of_abyss_jewel3) == 0)
+            {
+                GiveItem1(attacker, @q_frag_of_abyss_jewel3, 1);
+                SoundEffect(attacker, "ItemSound.quest_itemget");
+            }
+        }
+
+        if (myself.sm.hp < myself.sm.max_hp * 0.1)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 233721)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(233721, 1000 * 3 * 60);
+        super;
+    }
+}

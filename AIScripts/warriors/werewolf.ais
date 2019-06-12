@@ -1,0 +1,22 @@
+class werewolf : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (OwnItemCount(c1, @gludio_lords_mark) && HaveMemo(c1, @guard_is_busy1))
+        {
+            if (Rand(10) < 5)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @werewolf_fang, 1);
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

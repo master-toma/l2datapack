@@ -1,0 +1,271 @@
+class veteran_ascalon : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_champion) == 0 && GetOneTimeQuestFlag(talker, @test_of_champion) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Examination of Champion");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 0 && GetOneTimeQuestFlag(talker, @test_of_champion) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Examination of Champion");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @ascalons_letter1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask who you should go find");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @iron_rose_ring))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that you met Mason before coming");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @masons_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Show Letter from Mason");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @ascalons_letter2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask who you should go find");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @white_rose_insignia))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask about Groot");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @groots_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Say that you helped Groot before coming");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @ascalons_letter3))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Ask who you should go find");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && (OwnItemCount(talker, @mouens_order1) || OwnItemCount(talker, @mouens_order2)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Ask about Mouen");
+            }
+
+            if (HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @mouens_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Give Letter from Mouen");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 0 && GetOneTimeQuestFlag(talker, @test_of_champion) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if ((talker.occupation == @warrior || talker.occupation == @orc_raider) && talker.level >= 39)
+                        {
+                            if (talker.occupation == @warrior)
+                            {
+                                ShowPage(talker, "veteran_ascalon_q0223_03.htm");
+                            }
+                            else
+                            {
+                                ShowPage(talker, "veteran_ascalon_q0223_04.htm");
+                            }
+                        }
+                        else if (talker.occupation == @warrior || talker.occupation == @orc_raider)
+                        {
+                            ShowPage(talker, "veteran_ascalon_q0223_02.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "veteran_ascalon_q0223_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 0 && GetOneTimeQuestFlag(talker, @test_of_champion) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @ascalons_letter1))
+                {
+                    ShowPage(talker, "veteran_ascalon_q0223_07.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @iron_rose_ring))
+                {
+                    ShowPage(talker, "veteran_ascalon_q0223_08.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @masons_letter))
+                {
+                    ShowPage(talker, "veteran_ascalon_q0223_09.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @ascalons_letter2))
+                {
+                    ShowPage(talker, "veteran_ascalon_q0223_11.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @white_rose_insignia))
+                {
+                    ShowPage(talker, "veteran_ascalon_q0223_12.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @groots_letter))
+                {
+                    ShowPage(talker, "veteran_ascalon_q0223_13.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @ascalons_letter3))
+                {
+                    ShowPage(talker, "veteran_ascalon_q0223_15.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && (OwnItemCount(talker, @mouens_order1) || OwnItemCount(talker, @mouens_order2)))
+                {
+                    ShowPage(talker, "veteran_ascalon_q0223_16.htm");
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_champion) == 1 && OwnItemCount(talker, @mouens_letter))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        IncrementParam(talker, @PARAM_EXP, 36000);
+                        IncrementParam(talker, @PARAM_SP, 4600);
+                        ShowPage(talker, "veteran_ascalon_q0223_17.htm");
+                        GiveItem1(talker, @mark_of_champion, 1);
+                        DeleteItem1(talker, @mouens_letter, 1);
+                        RemoveMemo(talker, @test_of_champion);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @test_of_champion, 1);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @test_of_champion)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "veteran_ascalon_q0223_06.htm");
+                GiveItem1(talker, @ascalons_letter1, 1);
+                talker.flag = 0;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @test_of_champion)
+        {
+            if (reply == 1)
+            {
+                FHTML_SetFileName(fhtml0, "veteran_ascalon_q0223_05.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @test_of_champion);
+                ShowFHTML(talker, fhtml0);
+            }
+            else if (reply == 2 && OwnItemCount(talker, @masons_letter) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "veteran_ascalon_q0223_10.htm");
+                    GiveItem1(talker, @ascalons_letter2, 1);
+                    DeleteItem1(talker, @masons_letter, 1);
+                }
+            }
+            else if (reply == 3 && OwnItemCount(talker, @groots_letter) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "veteran_ascalon_q0223_14.htm");
+                    GiveItem1(talker, @ascalons_letter3, 1);
+                    DeleteItem1(talker, @groots_letter, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

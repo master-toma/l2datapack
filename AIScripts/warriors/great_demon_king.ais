@@ -1,0 +1,62 @@
+class great_demon_king : warrior_aggressive_immediate
+{
+handler:
+    EventHandler MY_DYING(c1, i0, i1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @wish_potion) && GetMemoState(c1, @wish_potion) == 2 && c1.flag == 3)
+        {
+            if (Rand(2) == 0)
+            {
+                i0 = Rand(5);
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    if (i0 == 1)
+                    {
+                        GiveItem1(c1, @"demon's_boots", 1);
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                    else if (i0 == 2)
+                    {
+                        GiveItem1(c1, @"demon's_gloves", 1);
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                    else if (i0 == 3)
+                    {
+                        GiveItem1(c1, @"demon's_hose", 1);
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                    else if (i0 == 4)
+                    {
+                        GiveItem1(c1, @"demon's_tunic", 1);
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+
+            c1.flag = 0;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 2336007)
+        {
+            Despawn();
+            Say(MakeFString(33409, "", "", "", "", ""));
+            Say(MakeFString(33410, "", "", "", "", ""));
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(2336007, 1000 * 600);
+        Say(MakeFString(33418, "", "", "", "", ""));
+        super;
+    }
+}

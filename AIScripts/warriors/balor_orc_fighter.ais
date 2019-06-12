@@ -1,0 +1,18 @@
+class balor_orc_fighter : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @kill_all_sylphs1))
+        {
+            if (Rand(10) > 4)
+            {
+                GiveItem1(c1, @orc_necklace2, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,29 @@
+class bandor : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"sb_corpse_life_drain1"; 15};
+        {"sb_fire_resist1"; 15};
+        {"sb_recharge1"; 15};
+        {"sb_power_break1"; 15};
+        {"sb_speed_walk1"; 15};
+        {"sb_decrease_weight1"; 15};
+        {"sb_berserker_spirit1"; 15};
+        {"sb_bright_servitor1"; 15};
+        {"sb_curse_bleary1"; 15};
+        {"sb_erase_hostility1"; 15};
+        {"sb_fast_servitor1"; 15};
+        {"sb_mighty_servitor1"; 15};
+        {"sb_regeneration1"; 15};
+        {"sb_resist_poison1"; 15};
+        {"sb_slow1"; 15};
+        {"sb_wind_resist1"; 15};
+        {"sb_freezing_strike1"; 15};
+        {"sb_zero_g1"; 15};
+        {"sb_engrave_seal_of_timid1"; 15};
+        {"sb_power_of_paagrio1"; 15};
+        {"sb_pure_inspiration1"; 15};
+        {"sb_blessing_of_paagrio1"; 15};
+        {"sb_engrave_seal_of_lazy1"; 15}
+    };
+}

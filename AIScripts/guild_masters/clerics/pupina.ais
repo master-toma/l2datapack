@@ -1,0 +1,149 @@
+class pupina : cleric_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_reformer) == 0 && GetOneTimeQuestFlag(talker, @trial_of_reformer) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about current religious organization");
+            }
+
+            if (HaveMemo(talker, @trial_of_reformer) == 0 && GetOneTimeQuestFlag(talker, @trial_of_reformer) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about current religious organization");
+            }
+
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && OwnItemCount(talker, @huge_nail) >= 1 && GetMemoState(talker, @trial_of_reformer) == 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about things that were experienced");
+            }
+
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) >= 4)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Say that you are thankful for the other person having introduced Sla");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 0 && GetOneTimeQuestFlag(talker, @trial_of_reformer) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.occupation == @cleric || talker.occupation == @shillien_oracle)
+                        {
+                            if (talker.level >= 39)
+                            {
+                                FHTML_SetFileName(fhtml0, "pupina_q0227_03.htm");
+                                FHTML_SetInt(fhtml0, "quest_id", @trial_of_reformer);
+                                ShowFHTML(talker, fhtml0);
+                            }
+                            else
+                            {
+                                ShowPage(talker, "pupina_q0227_01.htm");
+                            }
+                        }
+                        else
+                        {
+                            ShowPage(talker, "pupina_q0227_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 0 && GetOneTimeQuestFlag(talker, @trial_of_reformer) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && OwnItemCount(talker, @huge_nail) >= 1 && GetMemoState(talker, @trial_of_reformer) == 3)
+                {
+                    ShowPage(talker, "pupina_q0227_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) >= 4)
+                {
+                    ShowPage(talker, "pupina_q0227_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @trial_of_reformer)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                if (OwnItemCount(talker, @book_of_reform) == 0)
+                {
+                    GiveItem1(talker, @book_of_reform, 1);
+                }
+
+                ShowPage(talker, "pupina_q0227_04.htm");
+                SetMemoState(talker, @trial_of_reformer, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_reformer)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @book_of_reform) >= 1)
+                {
+                    ShowPage(talker, "pupina_q0227_06.htm");
+                    DeleteItem1(talker, @book_of_reform, 1);
+                    GiveItem1(talker, @letter_of_introduction, 1);
+                    SetMemoState(talker, @trial_of_reformer, 4);
+                    DeleteItem1(talker, @huge_nail, OwnItemCount(talker, @huge_nail));
+                }
+            }
+        }
+
+        super;
+    }
+}

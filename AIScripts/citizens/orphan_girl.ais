@@ -1,0 +1,57 @@
+class orphan_girl : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @test_of_healer) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the holy woman");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_healer) == 1)
+                {
+                    select (Rand(5))
+                    {
+                    case 0:
+                        ShowPage(talker, "orphan_girl_q0226_01.htm");
+                        break;
+                    case 1:
+                        ShowPage(talker, "orphan_girl_q0226_02.htm");
+                        break;
+                    case 2:
+                        ShowPage(talker, "orphan_girl_q0226_03.htm");
+                        break;
+                    case 3:
+                        ShowPage(talker, "orphan_girl_q0226_04.htm");
+                        break;
+                    case 4:
+                        ShowPage(talker, "orphan_girl_q0226_05.htm");
+                        break;
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

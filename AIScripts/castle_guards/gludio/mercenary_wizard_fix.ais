@@ -1,0 +1,3 @@
+class mercenary_wizard_fix : ai_gludio_wizard_stand
+{
+}

@@ -1,0 +1,178 @@
+class collector_gouph : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @diamond_gambit) == 0 && GetOneTimeQuestFlag(talker, @diamond_gambit) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about the star diamond");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 0 && GetOneTimeQuestFlag(talker, 108 == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about the star diamond");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @gouphs_contract))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Trader Reep");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && (OwnItemCount(talker, @reeps_contract) || OwnItemCount(talker, @elven_wine) || OwnItemCount(talker, @bronps_dice) || OwnItemCount(talker, @bronps_contract)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about Trader Reep");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @gem_box1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give gem box");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && (OwnItemCount(talker, @bronps_letter) || OwnItemCount(talker, @coal_piece) || OwnItemCount(talker, @berry_tart) || OwnItemCount(talker, @bat_diagram)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Show coal piece");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @star_diamond) && GetOneTimeQuestFlag(talker, @diamond_gambit) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Give star diamond");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 0 && GetOneTimeQuestFlag(talker, @diamond_gambit) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_dwarf)
+                        {
+                            ShowPage(talker, "collector_gouph_q0108_00.htm");
+                        }
+                        else if (talker.level >= 10)
+                        {
+                            FHTML_SetFileName(fhtml0, "collector_gouph_q0108_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @diamond_gambit);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "collector_gouph_q0108_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 0 && GetOneTimeQuestFlag(talker, 108 == 1))
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @gouphs_contract))
+                {
+                    ShowPage(talker, "collector_gouph_q0108_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && (OwnItemCount(talker, @reeps_contract) || OwnItemCount(talker, @elven_wine) || OwnItemCount(talker, @bronps_dice) || OwnItemCount(talker, @bronps_contract)))
+                {
+                    ShowPage(talker, "collector_gouph_q0108_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @gem_box1))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "collector_gouph_q0108_06.htm");
+                        DeleteItem1(talker, @gem_box1, 1);
+                        GiveItem1(talker, @coal_piece, 1);
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && (OwnItemCount(talker, @bronps_letter) || OwnItemCount(talker, @coal_piece) || OwnItemCount(talker, @berry_tart) || OwnItemCount(talker, @bat_diagram)))
+                {
+                    ShowPage(talker, "collector_gouph_q0108_07.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @star_diamond) && GetOneTimeQuestFlag(talker, @diamond_gambit) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "collector_gouph_q0108_08.htm");
+                        GiveItem1(talker, @silversmith_hammer, 1);
+                        DeleteItem1(talker, @star_diamond, 1);
+                        RemoveMemo(talker, @diamond_gambit);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @diamond_gambit, 1);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @diamond_gambit)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "collector_gouph_q0108_03.htm");
+                SetMemo(talker, @diamond_gambit);
+                GiveItem1(talker, @gouphs_contract, 1);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

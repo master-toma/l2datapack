@@ -1,0 +1,23 @@
+class trader_papuma : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"sb_blood_lust1"; 15};
+        {"sb_chill_flame1"; 15};
+        {"sb_devotioin_of_shine1"; 15};
+        {"sb_night_murmur1"; 15};
+        {"sb_pain_thorn1"; 15};
+        {"sb_external_fear1"; 15};
+        {"sb_mass_frenzy1"; 15};
+        {"sb_inspire_life_force1"; 15};
+        {"sb_blaze_quake1"; 15};
+        {"sb_burning_spirit1"; 15};
+        {"sb_devotioin_of_soul1"; 15};
+        {"sb_entice_madness1"; 15};
+        {"sb_pain_edge1"; 15};
+        {"key_of_thief"; 15};
+        {"spirit_ore"; 15};
+        {"soul_ore"; 15};
+        {"world_map_2"; 15}
+    };
+}

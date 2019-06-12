@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_rg_ant_body]	/* [근위병개미의 몸] */	skill_id = 4023	level = 1	operate_type = P	effect = {}	skill_end

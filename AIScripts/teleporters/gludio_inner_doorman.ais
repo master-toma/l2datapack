@@ -1,0 +1,3 @@
+class gludio_inner_doorman : doorkeeper
+{
+}

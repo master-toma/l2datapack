@@ -1,0 +1,353 @@
+class elder_filaur : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @hidden_vein) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about a hidden vein");
+            }
+
+            if (HaveMemo(talker, @hidden_vein) == 1 && OwnItemCount(talker, @oriharukon_ore_1) < 1 && OwnItemCount(talker, @hidden_vein_map) < 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about a hidden vein");
+            }
+
+            if (HaveMemo(talker, @hidden_vein) == 1 && OwnItemCount(talker, @oriharukon_ore_1) < 1 && OwnItemCount(talker, @hidden_vein_map) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Receive compensation for completed map");
+            }
+
+            if (HaveMemo(talker, @hidden_vein) == 1 && OwnItemCount(talker, @oriharukon_ore_1) >= 1 && OwnItemCount(talker, @hidden_vein_map) < 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Receive compensation for oriharukon ore");
+            }
+
+            if (HaveMemo(talker, @hidden_vein) == 1 && OwnItemCount(talker, @oriharukon_ore_1) >= 1 && OwnItemCount(talker, @hidden_vein_map) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Receive compensation");
+            }
+
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 7)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Talk about the aura");
+            }
+
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 8)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask to give guidance directly");
+            }
+
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 9)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask to give guidance directly");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @recommendation_of_filaur) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Say that you want to receive a letter of recommendation");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 4 && OwnItemCount(talker, @architecture_of_kruma) && OwnItemCount(talker, @report_of_kruma) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Ask where to go and who you’ll meet there");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 4 && OwnItemCount(talker, @architecture_of_kruma) == 0 && OwnItemCount(talker, @report_of_kruma))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Give Cruma Research Materials");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @recommendation_of_filaur))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 11;
+                AddChoice(11, "Ask whom to go to see once you've collected 3 letters of recommendation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @lockirins_notice4) >= 1 && OwnItemCount(talker, @receipt_of_contribution4) == 0 && OwnItemCount(talker, @receipt_of_bolter) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 12;
+                AddChoice(12, "Say that you came to collect the donation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution4) == 0 && OwnItemCount(talker, @receipt_of_bolter) == 0 && OwnItemCount(talker, @lockirins_notice4) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 13;
+                AddChoice(13, "Give donation that was collected");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_bolter) >= 1 && OwnItemCount(talker, @receipt_of_contribution4) == 0 && OwnItemCount(talker, @lockirins_notice4) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 14;
+                AddChoice(14, "Give donation that was collected");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_contribution4) >= 1 && OwnItemCount(talker, @receipt_of_bolter) == 0 && OwnItemCount(talker, @lockirins_notice4) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 15;
+                AddChoice(15, "Say that you are collecting the donation receipt");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @hidden_vein) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_dwarf)
+                        {
+                            ShowPage(talker, "elder_filaur_q0293_00.htm");
+                        }
+                        else if (talker.level >= 6)
+                        {
+                            FHTML_SetFileName(fhtml0, "elder_filaur_q0293_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @hidden_vein);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "elder_filaur_q0293_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @hidden_vein) == 1 && OwnItemCount(talker, @oriharukon_ore_1) < 1 && OwnItemCount(talker, @hidden_vein_map) < 1)
+                {
+                    ShowPage(talker, "elder_filaur_q0293_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @hidden_vein) == 1 && OwnItemCount(talker, @oriharukon_ore_1) < 1 && OwnItemCount(talker, @hidden_vein_map) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "elder_filaur_q0293_08.htm");
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @hidden_vein_map) * 1000);
+                        DeleteItem1(talker, @hidden_vein_map, OwnItemCount(talker, @hidden_vein_map));
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @hidden_vein) == 1 && OwnItemCount(talker, @oriharukon_ore_1) >= 1 && OwnItemCount(talker, @hidden_vein_map) < 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "elder_filaur_q0293_05.htm");
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @oriharukon_ore_1) * 10);
+                        DeleteItem1(talker, @oriharukon_ore_1, OwnItemCount(talker, @oriharukon_ore_1));
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @hidden_vein) == 1 && OwnItemCount(talker, @oriharukon_ore_1) >= 1 && OwnItemCount(talker, @hidden_vein_map) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "elder_filaur_q0293_09.htm");
+                        GiveItem1(talker, @adena, OwnItemCount(talker, @oriharukon_ore_1) * 10 + OwnItemCount(talker, @hidden_vein_map) * 1000);
+                        DeleteItem1(talker, @hidden_vein_map, OwnItemCount(talker, @hidden_vein_map));
+                        DeleteItem1(talker, @oriharukon_ore_1, OwnItemCount(talker, @oriharukon_ore_1));
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 7)
+                {
+                    if (talker.level >= 36)
+                    {
+                        ShowPage(talker, "elder_filaur_q0211_01.htm");
+                        ShowRadar(talker, 176560, -184969, -3729);
+                        SetMemoState(talker, @trial_of_challenger, 8);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "elder_filaur_q0211_03.htm");
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 8)
+                {
+                    ShowPage(talker, "elder_filaur_q0211_02.htm");
+                    ShowRadar(talker, 176560, -184969, -3729);
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 9)
+                {
+                    ShowPage(talker, "elder_filaur_q0211_04.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @recommendation_of_filaur) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "elder_filaur_q0231_01.htm");
+                        GiveItem1(talker, @architecture_of_kruma, 1);
+                        SetMemoState(talker, @test_of_maestro, 4);
+                    }
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 4 && OwnItemCount(talker, @architecture_of_kruma) && OwnItemCount(talker, @report_of_kruma) == 0)
+                {
+                    ShowPage(talker, "elder_filaur_q0231_02.htm");
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 4 && OwnItemCount(talker, @architecture_of_kruma) == 0 && OwnItemCount(talker, @report_of_kruma))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "elder_filaur_q0231_03.htm");
+                        GiveItem1(talker, @recommendation_of_filaur, 1);
+                        DeleteItem1(talker, @report_of_kruma, 1);
+                        SetMemoState(talker, @test_of_maestro, 1);
+                    }
+                }
+
+                break;
+            case 11:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && OwnItemCount(talker, @recommendation_of_filaur))
+                {
+                    ShowPage(talker, "elder_filaur_q0231_04.htm");
+                }
+
+                break;
+            case 12:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @lockirins_notice4) >= 1 && OwnItemCount(talker, @receipt_of_contribution4) == 0 && OwnItemCount(talker, @receipt_of_bolter) == 0)
+                {
+                    ShowPage(talker, "elder_filaur_q0221_01.htm");
+                    DeleteItem1(talker, @lockirins_notice4, OwnItemCount(talker, @lockirins_notice4));
+                }
+
+                break;
+            case 13:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution4) == 0 && OwnItemCount(talker, @receipt_of_bolter) == 0 && OwnItemCount(talker, @lockirins_notice4) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+                {
+                    ShowPage(talker, "elder_filaur_q0221_02.htm");
+                }
+
+                break;
+            case 14:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_bolter) >= 1 && OwnItemCount(talker, @receipt_of_contribution4) == 0 && OwnItemCount(talker, @lockirins_notice4) == 0)
+                {
+                    ShowPage(talker, "elder_filaur_q0221_03.htm");
+                    DeleteItem1(talker, @receipt_of_bolter, 1);
+                    GiveItem1(talker, @receipt_of_contribution4, 1);
+                }
+
+                break;
+            case 15:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @receipt_of_contribution4) >= 1 && OwnItemCount(talker, @receipt_of_bolter) == 0 && OwnItemCount(talker, @lockirins_notice4) == 0)
+                {
+                    ShowPage(talker, "elder_filaur_q0221_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @hidden_vein)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @hidden_vein);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "elder_filaur_q0293_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @hidden_vein)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "elder_filaur_q0293_06.htm");
+                DeleteItem1(talker, @torn_map_fragment, OwnItemCount(talker, @torn_map_fragment));
+                RemoveMemo(talker, @hidden_vein);
+                SoundEffect(talker, "ItemSound.quest_finish");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "elder_filaur_q0293_07.htm");
+            }
+        }
+
+        super;
+    }
+}

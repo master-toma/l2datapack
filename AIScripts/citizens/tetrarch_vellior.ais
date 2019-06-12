@@ -1,0 +1,122 @@
+class tetrarch_vellior : npc_elder
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @dangerous_allure) == 0 && GetOneTimeQuestFlag(talker, @dangerous_allure) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about the wooden horse");
+            }
+
+            if (HaveMemo(talker, @dangerous_allure) == 0 && GetOneTimeQuestFlag(talker, @dangerous_allure) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about the wooden horse");
+            }
+
+            if (HaveMemo(talker, @dangerous_allure))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about the wooden horse");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @dangerous_allure) == 0 && GetOneTimeQuestFlag(talker, @dangerous_allure) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_dark_elf)
+                        {
+                            ShowPage(talker, "tetrarch_vellior_q0327_00.htm");
+                        }
+                        else if (talker.level >= 21)
+                        {
+                            FHTML_SetFileName(fhtml0, "tetrarch_vellior_q0327_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @dangerous_allure);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "tetrarch_vellior_q0327_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @dangerous_allure) == 0 && GetOneTimeQuestFlag(talker, @dangerous_allure) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @dangerous_allure))
+                {
+                    if (OwnItemCount(talker, @nightmare_crystal) < 1)
+                    {
+                        ShowPage(talker, "tetrarch_vellior_q0327_05.htm");
+                    }
+                    else if (OwnItemCount(talker, @nightmare_crystal) >= 1 && GetOneTimeQuestFlag(talker, @dangerous_allure) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "tetrarch_vellior_q0327_06.htm");
+                            GiveItem1(talker, @piece_bone_breastplate, 1);
+                            DeleteItem1(talker, @nightmare_crystal, OwnItemCount(talker, @nightmare_crystal));
+                            RemoveMemo(talker, @dangerous_allure);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            SetOneTimeQuestFlag(talker, @dangerous_allure, 1);
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @dangerous_allure)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "tetrarch_vellior_q0327_04.htm");
+                SetMemo(talker, @dangerous_allure);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

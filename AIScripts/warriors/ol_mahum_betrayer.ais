@@ -1,0 +1,42 @@
+class ol_mahum_betrayer : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_reformer) == 1 && GetMemoState(c1, @trial_of_reformer) == 8)
+        {
+            SetMemoState(c1, @trial_of_reformer, 9);
+            GiveItem1(c1, @letter_of_betrayer, 1);
+            SoundEffect(c1, "ItemSound.quest_itemget");
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 7778)
+        {
+            if (myself.i_quest0 < 12)
+            {
+                myself.i_quest0 = myself.i_quest0 + 1;
+                AddTimerEx(7778, 1000 * 5);
+            }
+            else
+            {
+                Despawn();
+            }
+        }
+
+        super;
+    }
+
+    EventHandler CREATED()
+    {
+        AddTimerEx(7778, 1000 * 5);
+        myself.i_quest0 = 0;
+        AddMoveToDesire(-7732, 36787, -3709, 10000);
+        super;
+    }
+}

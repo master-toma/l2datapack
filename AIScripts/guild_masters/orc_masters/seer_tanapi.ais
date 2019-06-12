@@ -1,0 +1,239 @@
+class seer_tanapi : mage_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, i0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @hestui_totem) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about gray bear");
+            }
+
+            if (HaveMemo(talker, @hestui_totem))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show Kasha's totem spirit");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 1 && OwnItemCount(talker, @voucher_of_trial))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Say that you came because Santiago sent you");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask where you should go and look");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 5 && OwnItemCount(talker, @spirit_of_flame))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Show Mind of Flame");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @scepter_box))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Show Box Containing Royal Seals");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @tanapis_order1) && OwnItemCount(talker, @scepter_of_tantos) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask what royal seals you should return to get");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @tanapis_order1) && OwnItemCount(talker, @scepter_of_tantos) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Give Royal Seal of Tantus Tribe");
+            }
+
+            if (HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @ritual_box))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Ask if it’s OK to go to the lord now");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @hestui_totem) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_orc)
+                        {
+                            ShowPage(talker, "seer_tanapi_q0276_00.htm");
+                        }
+                        else if (talker.level < 15)
+                        {
+                            ShowPage(talker, "seer_tanapi_q0276_01.htm");
+                        }
+                        else
+                        {
+                            FHTML_SetFileName(fhtml0, "seer_tanapi_q0276_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @hestui_totem);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @hestui_totem))
+                {
+                    if (OwnItemCount(talker, @kasha_crystal) < 1)
+                    {
+                        ShowPage(talker, "seer_tanapi_q0276_04.htm");
+                    }
+                    else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "seer_tanapi_q0276_05.htm");
+                        RemoveMemo(talker, @hestui_totem);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        DeleteItem1(talker, @kasha_crystal, OwnItemCount(talker, @kasha_crystal));
+                        DeleteItem1(talker, @kasha_parasite, OwnItemCount(talker, @kasha_parasite));
+                        GiveItem1(talker, @hestuis_totem, 1);
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 1 && OwnItemCount(talker, @voucher_of_trial))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "seer_tanapi_q0215_01.htm");
+                        DeleteItem1(talker, @voucher_of_trial, 1);
+                        SetMemoState(talker, @trial_of_pilgrim, 2);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 2)
+                {
+                    ShowPage(talker, "seer_tanapi_q0215_02.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 5 && OwnItemCount(talker, @spirit_of_flame))
+                {
+                    ShowPage(talker, "seer_tanapi_q0215_03.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @scepter_box))
+                {
+                    ShowPage(talker, "seer_tanapi_q0220_01.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @tanapis_order1) && OwnItemCount(talker, @scepter_of_tantos) == 0)
+                {
+                    ShowPage(talker, "seer_tanapi_q0220_04.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @tanapis_order1) && OwnItemCount(talker, @scepter_of_tantos) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "seer_tanapi_q0220_05.htm");
+                        GiveItem1(talker, @ritual_box, 1);
+                        DeleteItem1(talker, @scepter_of_tantos, 1);
+                        DeleteItem1(talker, @tanapis_order1, 1);
+                    }
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_glory) == 1 && OwnItemCount(talker, @ritual_box))
+                {
+                    ShowPage(talker, "seer_tanapi_q0220_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @hestui_totem)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @hestui_totem);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "seer_tanapi_q0276_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @testimony_of_glory)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "seer_tanapi_q0220_02.htm");
+            }
+            else if (reply == 2 && OwnItemCount(talker, @scepter_box) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "seer_tanapi_q0220_03.htm");
+                    GiveItem1(talker, @tanapis_order1, 1);
+                    DeleteItem1(talker, @scepter_box, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

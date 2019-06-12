@@ -1,0 +1,10 @@
+class teleport_cube_antaras : ai_boss04_teleport_cube_antaras
+{
+handler:
+    EventHandler TELEPORT_REQUESTED(talker, i1, i2)
+    {
+        i1 = 79800 + Rand(600);
+        i2 = 151200 + Rand(1100);
+        InstantTeleport(talker, i1, i2, -3534);
+    }
+}

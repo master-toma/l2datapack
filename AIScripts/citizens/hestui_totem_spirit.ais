@@ -1,0 +1,90 @@
+class hestui_totem_spirit : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @hestui_mask) && OwnItemCount(talker, @fiery_egg2))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Speak to Hestui Totem Spirit");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @totem_spirit_claw))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the ritual");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_shaman) == 1 && (OwnItemCount(talker, @grizzly_blood) || OwnItemCount(talker, @flame_charm) || OwnItemCount(talker, @blood_cauldron) || OwnItemCount(talker, @spirit_net) || OwnItemCount(talker, @bound_durka_spirit) || OwnItemCount(talker, @totem_spirit_blood)) || OwnItemCount(talker, @tatarus_letter))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about changing occupation to Orc Shaman");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @hestui_mask) && OwnItemCount(talker, @fiery_egg2))
+                {
+                    ShowPage(talker, "hestui_totem_spirit_q0416_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_shaman) == 1 && OwnItemCount(talker, @totem_spirit_claw))
+                {
+                    ShowPage(talker, "hestui_totem_spirit_q0416_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || (HaveMemo(talker, @path_to_orc_shaman) == 1 && (OwnItemCount(talker, @grizzly_blood) || OwnItemCount(talker, @flame_charm) || OwnItemCount(talker, @blood_cauldron) || OwnItemCount(talker, @spirit_net) || OwnItemCount(talker, @bound_durka_spirit) || OwnItemCount(talker, @totem_spirit_blood)) || OwnItemCount(talker, @tatarus_letter)))
+                {
+                    ShowPage(talker, "hestui_totem_spirit_q0416_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_orc_shaman && reply == 1)
+        {
+            ShowPage(talker, "hestui_totem_spirit_q0416_02.htm");
+        }
+
+        if (ask == @path_to_orc_shaman && reply == 2 && OwnItemCount(talker, @hestui_mask) > 0 && OwnItemCount(talker, @fiery_egg2) > 0)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "hestui_totem_spirit_q0416_03.htm");
+                DeleteItem1(talker, @hestui_mask, 1);
+                DeleteItem1(talker, @fiery_egg2, 1);
+                GiveItem1(talker, @totem_spirit_claw, 1);
+            }
+        }
+
+        super;
+    }
+}

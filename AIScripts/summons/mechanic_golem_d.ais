@@ -1,0 +1,3 @@
+class mechanic_golem_d : summon_magicalattack
+{
+}

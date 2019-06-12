@@ -1,0 +1,88 @@
+class ruin_spartoi : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest0, @path_to_elven_knight) != 0 && OwnItemCount(myself.c_quest0, @kluto_box) == 0 && OwnItemCount(myself.c_quest0, @topaz_piece) < 20 && myself.i_quest0 == 1 && Rand(100) < 70)
+        {
+            GiveItem1(myself.c_quest0, @topaz_piece, 1);
+            if (OwnItemCount(myself.c_quest0, @topaz_piece) == 20)
+            {
+                SoundEffect(myself.c_quest0, "ItemSound.quest_middle");
+            }
+            else
+            {
+                SoundEffect(myself.c_quest0, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(myself.c_quest2, @path_to_rogue) && OwnItemCount(myself.c_quest2, @spatois_bones) < 10 && myself.i_quest2 == 1 && Rand(10) < 8)
+        {
+            GiveItem1(myself.c_quest2, @spatois_bones, 1);
+            if (OwnItemCount(myself.c_quest2, @spatois_bones) == 10)
+            {
+                SoundEffect(myself.c_quest2, "ItemSound.quest_middle");
+            }
+            else
+            {
+                SoundEffect(myself.c_quest2, "ItemSound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage, weapon_class_id)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.c_quest0 = attacker;
+            myself.i_quest0 = 1;
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                myself.i_quest0 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        select (myself.i_quest2)
+        {
+        case 0:
+            myself.c_quest2 = attacker;
+            if (myself.c_quest2.equiped_weapon_class_id != @netis_bow && myself.c_quest2.equiped_weapon_class_id != @netis_dagger)
+            {
+                myself.i_quest2 = 2;
+            }
+            else
+            {
+                myself.i_quest2 = 1;
+            }
+
+            break;
+        case 1:
+            if (myself.c_quest2.equiped_weapon_class_id != @netis_bow && myself.c_quest2.equiped_weapon_class_id != @netis_dagger)
+            {
+                myself.i_quest2 = 2;
+            }
+
+            if (myself.c_quest2 != attacker)
+            {
+                myself.i_quest2 = 2;
+            }
+
+            break;
+        case 2:
+            break;
+        }
+
+        super;
+    }
+}

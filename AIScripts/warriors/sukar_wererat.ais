@@ -1,0 +1,15 @@
+class sukar_wererat : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (Rand(10) > 5 && HaveMemo(c1, @destroy_plaguebringers) == 1)
+        {
+            GiveItem1(c1, @wererat_fang, 1);
+            SoundEffect(c1, "ItemSound.quest_itemget");
+        }
+
+        super;
+    }
+}

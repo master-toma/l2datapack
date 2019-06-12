@@ -1,0 +1,3 @@
+class guard_norton : guard_fixed
+{
+}

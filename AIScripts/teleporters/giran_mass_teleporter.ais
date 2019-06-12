@@ -1,0 +1,3 @@
+class giran_mass_teleporter : mass_teleporter
+{
+}

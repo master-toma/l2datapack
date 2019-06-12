@@ -1,0 +1,3 @@
+class life_control_tower_dead : default_npc
+{
+}

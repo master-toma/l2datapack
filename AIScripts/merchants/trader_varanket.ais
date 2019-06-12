@@ -1,0 +1,30 @@
+class trader_varanket : merchant
+{
+property:
+    BuySellList SellList0 = {
+        {"necklace_of_wisdom"; 20};
+        {"blue_diamond_necklace"; 20};
+        {"necklace_of_devotion"; 20};
+        {"cat'seye_earing"; 20};
+        {"coral_earing"; 20};
+        {"red_cresent_earing"; 20};
+        {"ring_of_wisdom"; 20};
+        {"blue_coral_ring"; 20};
+        {"ring_of_devotion"; 20};
+        {"world_map"; 20};
+        {"key_of_thief"; 20};
+        {"spirit_ore"; 20};
+        {"soul_ore"; 20};
+        {"wooden_arrow"; 20};
+        {"bone_arrow"; 20};
+        {"quick_step_potion"; 20};
+        {"swift_attack_potion"; 20};
+        {"healing_potion"; 20};
+        {"advanced_antidote"; 20};
+        {"emergency_dressing"; 20};
+        {"scroll_of_escape"; 20};
+        {"scroll_of_resurrection"; 20};
+        {"scroll_of_escape_to_agit"; 20};
+        {"gemstone_d"; 20}
+    };
+}

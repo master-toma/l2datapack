@@ -1,0 +1,3 @@
+class skeleton_longbowman : warrior_aggressive_use_bow
+{
+}

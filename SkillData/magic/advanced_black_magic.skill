@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_advanced_black_magic]	/* [어드밴스드 블랙 매직] */	skill_id = 203	level = 1	operate_type = P	effect = {}	skill_end

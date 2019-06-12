@@ -1,0 +1,154 @@
+class rockswell : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @sacrifice_to_sea) == 0 && GetOneTimeQuestFlag(talker, @sacrifice_to_sea) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Listen");
+            }
+
+            if (HaveMemo(talker, @sacrifice_to_sea) == 0 && GetOneTimeQuestFlag(talker, @sacrifice_to_sea) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Listen");
+            }
+
+            if (HaveMemo(talker, @sacrifice_to_sea) == 1 && (OwnItemCount(talker, @fox_fur_yarn) == 0 && OwnItemCount(talker, @maiden_doll) == 0) && OwnItemCount(talker, @fox_fur) < 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Hear about the fox pelt");
+            }
+
+            if (HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @fox_fur) >= 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Hear about the fox pelt");
+            }
+
+            if (HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @fox_fur_yarn) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Hand over the fox fur yarn");
+            }
+
+            if (HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @maiden_doll) >= 1 && GetOneTimeQuestFlag(talker, @sacrifice_to_sea) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Hand over the doll");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @sacrifice_to_sea) == 0 && GetOneTimeQuestFlag(talker, @sacrifice_to_sea) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 2)
+                        {
+                            FHTML_SetFileName(fhtml0, "rockswell_q0304_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @sacrifice_to_sea);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "rockswell_q0304_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @sacrifice_to_sea) == 0 && GetOneTimeQuestFlag(talker, @sacrifice_to_sea) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @sacrifice_to_sea) == 1 && (OwnItemCount(talker, @fox_fur_yarn) == 0 && OwnItemCount(talker, @maiden_doll) == 0) && OwnItemCount(talker, @fox_fur) < 10)
+                {
+                    ShowPage(talker, "rockswell_q0304_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @fox_fur) >= 10)
+                {
+                    ShowPage(talker, "rockswell_q0304_08.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @fox_fur_yarn) >= 1)
+                {
+                    ShowPage(talker, "rockswell_q0304_06.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @sacrifice_to_sea) == 1 && OwnItemCount(talker, @maiden_doll) >= 1 && GetOneTimeQuestFlag(talker, @sacrifice_to_sea) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "rockswell_q0304_07.htm");
+                        DeleteItem1(talker, @maiden_doll, OwnItemCount(talker, @maiden_doll));
+                        GiveItem1(talker, @adena, 400);
+                        IncrementParam(talker, @PARAM_EXP, 1100);
+                        RemoveMemo(talker, @sacrifice_to_sea);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @sacrifice_to_sea, 1);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @sacrifice_to_sea)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "rockswell_q0304_04.htm");
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

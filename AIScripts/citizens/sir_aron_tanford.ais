@@ -1,0 +1,152 @@
+class sir_aron_tanford : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @mark_of_esquire) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about changing occupation to a Knight");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Say that you were sent by Grand Master Hanavalt");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && OwnItemCount(talker, @knights_tear) == 0 && GetMemoState(talker, @trial_of_duty) == 2)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask who you should knock down");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && OwnItemCount(talker, @knights_tear) && GetMemoState(talker, @trial_of_duty) == 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give Tear of Knight");
+            }
+
+            if (HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 4)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask who you should meet");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 2 && OwnItemCount(talker, @letter_of_hamil1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Show Letter from Hamil");
+            }
+
+            if (HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 3)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask what you should investigate");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_knight) == 1 && OwnItemCount(talker, @mark_of_esquire) > 0)
+                {
+                    ShowPage(talker, "sir_aron_tanford_q0402_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "sir_aron_tanford_q0212_01.htm");
+                        if (OwnItemCount(talker, @old_knight_sword) == 0)
+                        {
+                            GiveItem1(talker, @old_knight_sword, 1);
+                        }
+
+                        SetMemoState(talker, @trial_of_duty, 2);
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && OwnItemCount(talker, @knights_tear) == 0 && GetMemoState(talker, @trial_of_duty) == 2)
+                {
+                    ShowPage(talker, "sir_aron_tanford_q0212_02.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && OwnItemCount(talker, @knights_tear) && GetMemoState(talker, @trial_of_duty) == 3)
+                {
+                    ShowPage(talker, "sir_aron_tanford_q0212_03.htm");
+                    DeleteItem1(talker, @knights_tear, 1);
+                    DeleteItem1(talker, @old_knight_sword, OwnItemCount(talker, @old_knight_sword));
+                    SetMemoState(talker, @trial_of_duty, 4);
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_duty) == 1 && GetMemoState(talker, @trial_of_duty) == 4)
+                {
+                    ShowPage(talker, "sir_aron_tanford_q0212_04.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 2 && OwnItemCount(talker, @letter_of_hamil1))
+                {
+                    ShowPage(talker, "sir_aron_tanford_q0224_01.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_sagittarius) == 1 && GetMemoState(talker, @test_of_sagittarius) == 3)
+                {
+                    ShowPage(talker, "sir_aron_tanford_q0224_03.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_sagittarius)
+        {
+            if (reply == 1 && OwnItemCount(talker, @letter_of_hamil1) > 0)
+            {
+                ShowPage(talker, "sir_aron_tanford_q0224_02.htm");
+                DeleteItem1(talker, @letter_of_hamil1, 1);
+                SetMemoState(talker, @test_of_sagittarius, 3);
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,3 @@
+class auction_dealer_human : auction_dealer
+{
+}

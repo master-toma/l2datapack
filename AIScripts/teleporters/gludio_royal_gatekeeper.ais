@@ -1,0 +1,15 @@
+class gludio_royal_gatekeeper : castle_instant_teleporter
+{
+handler:
+    EventHandler TELEPORT_REQUESTED(talker)
+    {
+        if (Rand(100) < 50)
+        {
+            InstantTeleport(talker, -18707, 111406, -2650);
+        }
+        else
+        {
+            InstantTeleport(talker, -18601, 111332, -2650);
+        }
+    }
+}

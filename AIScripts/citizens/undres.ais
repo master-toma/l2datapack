@@ -1,0 +1,203 @@
+class undres : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, fhtml1, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @dark_mass) == 0 && GetOneTimeQuestFlag(talker, @dark_mass) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the Ritual of Darkness");
+            }
+
+            if (HaveMemo(talker, @dark_mass) == 0 && GetOneTimeQuestFlag(talker, @dark_mass) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the Ritual of Darkness");
+            }
+
+            if (HaveMemo(talker, @dark_mass) == 1 && OwnItemCount(talker, @undres_letter) == 1 && (OwnItemCount(talker, @garmiels_scripture) < 1 || OwnItemCount(talker, @dreviant_wine) < 1 || OwnItemCount(talker, @ceremonial_dagger) < 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about the Ritual of Darkness");
+            }
+
+            if (HaveMemo(talker, @dark_mass) == 1 && OwnItemCount(talker, @undres_letter) == 1 && OwnItemCount(talker, @ceremonial_dagger) == 1 && OwnItemCount(talker, @dreviant_wine) == 1 && OwnItemCount(talker, @garmiels_scripture) == 1 && GetOneTimeQuestFlag(talker, @dark_mass) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show Undrias's letter");
+            }
+
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_loot_14) + OwnItemCount(talker, @q_loot_15) + OwnItemCount(talker, @q_loot_16) + OwnItemCount(talker, @q_loot_17) < 1 && OwnItemCount(talker, @q_loot_18) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Greet as a member of the Black Lion Mercenaries");
+            }
+
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_loot_14) + OwnItemCount(talker, @q_loot_15) + OwnItemCount(talker, @q_loot_16) + OwnItemCount(talker, @q_loot_17) >= 1 && OwnItemCount(talker, @q_loot_18) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Show relic that you found while carrying out a task of the Black Lion Mercenaries");
+            }
+
+            if (HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_loot_18) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Show relic that you found while carrying out a task of the Black Lion Mercenaries");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @dark_mass) == 0 && GetOneTimeQuestFlag(talker, @dark_mass) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_dark_elf && talker.race != @race_human)
+                        {
+                            ShowPage(talker, "undres_q0322_00.htm");
+                        }
+                        else if (talker.level >= 2)
+                        {
+                            FHTML_SetFileName(fhtml1, "undres_q0322_03.htm");
+                            FHTML_SetInt(fhtml1, "quest_id", @dark_mass);
+                            ShowFHTML(talker, fhtml1);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "undres_q0322_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @dark_mass) == 0 && GetOneTimeQuestFlag(talker, @dark_mass) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @dark_mass) == 1 && OwnItemCount(talker, @undres_letter) == 1 && (OwnItemCount(talker, @garmiels_scripture) < 1 || OwnItemCount(talker, @dreviant_wine) < 1 || OwnItemCount(talker, @ceremonial_dagger) < 1))
+                {
+                    ShowPage(talker, "undres_q0322_05.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @dark_mass) == 1 && OwnItemCount(talker, @undres_letter) == 1 && OwnItemCount(talker, @ceremonial_dagger) == 1 && OwnItemCount(talker, @dreviant_wine) == 1 && OwnItemCount(talker, @garmiels_scripture) == 1 && GetOneTimeQuestFlag(talker, @dark_mass) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "undres_q0322_06.htm");
+                        DeleteItem1(talker, @ceremonial_dagger, 1);
+                        DeleteItem1(talker, @dreviant_wine, 1);
+                        DeleteItem1(talker, @garmiels_scripture, 1);
+                        DeleteItem1(talker, @undres_letter, 1);
+                        GiveItem1(talker, @adena, 250);
+                        IncrementParam(talker, @PARAM_EXP, 500);
+                        RemoveMemo(talker, @dark_mass);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                        SetOneTimeQuestFlag(talker, @dark_mass, 1);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_loot_14) + OwnItemCount(talker, @q_loot_15) + OwnItemCount(talker, @q_loot_16) + OwnItemCount(talker, @q_loot_17) < 1 && OwnItemCount(talker, @q_loot_18) == 0)
+                {
+                    ShowPage(talker, "undres_q0333_01.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_loot_14) + OwnItemCount(talker, @q_loot_15) + OwnItemCount(talker, @q_loot_16) + OwnItemCount(talker, @q_loot_17) >= 1 && OwnItemCount(talker, @q_loot_18) == 0)
+                {
+                    ShowPage(talker, "undres_q0333_02.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @hunt_of_blacklion) == 1 && OwnItemCount(talker, @q_loot_18) >= 1)
+                {
+                    ShowPage(talker, "undres_q0333_03.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @dark_mass)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "undres_q0322_04.htm");
+                GiveItem1(talker, @undres_letter, 1);
+                SetMemo(talker, @dark_mass);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @hunt_of_blacklion)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @q_loot_18) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @adena, 30000);
+                        DeleteItem1(talker, @q_loot_18, 1);
+                        ShowPage(talker, "undres_q0333_04.htm");
+                    }
+                }
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "undres_q0333_05.htm");
+            }
+        }
+
+        super;
+    }
+}

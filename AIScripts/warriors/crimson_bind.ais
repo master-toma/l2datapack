@@ -1,0 +1,76 @@
+class crimson_bind : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_summoner) && OwnItemCount(c1, @galateas_letter) == 0 && OwnItemCount(c1, @lars_list3) && OwnItemCount(c1, @crimson_bloodstone) < 30)
+        {
+            if (Rand(10) < 6)
+            {
+                if (OwnItemCount(c1, @crimson_bloodstone) == 29)
+                {
+                    GiveItem1(c1, @crimson_bloodstone, 1);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @crimson_bloodstone, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_duelist) && OwnItemCount(c1, @crimsonbinds_chain) < 10 && GetMemoState(c1, @test_of_duelist) == 1)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @crimsonbinds_chain, 1);
+                if (OwnItemCount(c1, @crimsonbinds_chain) >= 10)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_scholar) && OwnItemCount(c1, @treafs_ring) == 1 && OwnItemCount(c1, @poitans_notes) == 1 && OwnItemCount(c1, @kasians_list) == 1 && OwnItemCount(c1, @crimsonbinds_ichor) < 5)
+        {
+            GiveItem1(c1, @crimsonbinds_ichor, 1);
+            if (OwnItemCount(c1, @crimsonbinds_ichor) >= 5)
+            {
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+            else
+            {
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_1c_7) && OwnItemCount(c1, @q_revenants_chains) < 50)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @q_revenants_chains, 1);
+                if (OwnItemCount(c1, @q_revenants_chains) >= 50)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        super;
+    }
+}

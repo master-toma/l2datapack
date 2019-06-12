@@ -1,0 +1,283 @@
+class master_toma : citizen
+{
+handler:
+    EventHandler CREATED()
+    {
+        SetTimerPeriod(1800);
+    }
+
+    EventHandler TIMER_FIRED(i6)
+    {
+        i6 = Rand(90);
+        if (i6 > 60)
+        {
+            InstantTeleport(myself.sm, 178849, -184342, -342);
+        }
+        else if (i6 > 30)
+        {
+            InstantTeleport(myself.sm, 154132, -220070, -3404);
+        }
+        else
+        {
+            InstantTeleport(myself.sm, 151572, -174829, -1781);
+        }
+    }
+
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @mions_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Give Mion's letter");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @bear_pic) == 1 && OwnItemCount(talker, @honey_jar) < 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about honey bear");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @bear_pic) == 1 && OwnItemCount(talker, @honey_jar) >= 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give honey jar");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @tarantula_pic) == 1 && OwnItemCount(talker, @bead) < 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about tarantulas");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @tarantula_pic) == 1 && OwnItemCount(talker, @bead) >= 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give bead");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @bead_parcel) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about Rout");
+            }
+
+            if (HaveMemo(talker, @path_to_scavenger) == 1 && (OwnItemCount(talker, @routs_tp_scroll) > 0 || OwnItemCount(talker, @succubus_undies) > 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask about changing occupation to Dwarven Raider");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 3 && OwnItemCount(talker, @paint_of_teleport_device))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask to return the teleport device that was stolen");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 3 && OwnItemCount(talker, @broken_teleport_device))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Get angry saying that you almost died while teleporting");
+            }
+
+            if (HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 3 && OwnItemCount(talker, @teleport_device) == 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Ask to return the teleport device now");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution5) == 0 && OwnItemCount(talker, @contribution_of_toma) == 0 && OwnItemCount(talker, @lockirins_notice5) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Ask for donation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @contribution_of_toma) >= 1 && OwnItemCount(talker, @receipt_of_contribution5) == 0 && OwnItemCount(talker, @lockirins_notice5) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 11;
+                AddChoice(11, "Say that you are thankful for the other person giving the donation");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @mions_letter) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "master_toma_q0417_01.htm");
+                        DeleteItem1(talker, @mions_letter, 1);
+                        GiveItem1(talker, @bear_pic, 1);
+                        talker.flag = 0;
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @bear_pic) == 1 && OwnItemCount(talker, @honey_jar) < 5)
+                {
+                    ShowPage(talker, "master_toma_q0417_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @bear_pic) == 1 && OwnItemCount(talker, @honey_jar) >= 5)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "master_toma_q0417_03.htm");
+                        DeleteItem1(talker, @honey_jar, OwnItemCount(talker, @honey_jar));
+                        DeleteItem1(talker, @bear_pic, 1);
+                        GiveItem1(talker, @tarantula_pic, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @tarantula_pic) == 1 && OwnItemCount(talker, @bead) < 20)
+                {
+                    ShowPage(talker, "master_toma_q0417_04.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @tarantula_pic) == 1 && OwnItemCount(talker, @bead) >= 20)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "master_toma_q0417_05.htm");
+                        DeleteItem1(talker, @bead, OwnItemCount(talker, @bead));
+                        DeleteItem1(talker, @tarantula_pic, 1);
+                        GiveItem1(talker, @bead_parcel, 1);
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && OwnItemCount(talker, @bead_parcel) > 0)
+                {
+                    ShowPage(talker, "master_toma_q0417_06.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_scavenger) == 1 && (OwnItemCount(talker, @routs_tp_scroll) > 0 || OwnItemCount(talker, @succubus_undies) > 0))
+                {
+                    ShowPage(talker, "master_toma_q0417_07.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 3 && OwnItemCount(talker, @paint_of_teleport_device))
+                {
+                    ShowPage(talker, "master_toma_q0231_01.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 3 && OwnItemCount(talker, @broken_teleport_device))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "master_toma_q0231_06.htm");
+                        GiveItem1(talker, @teleport_device, 5);
+                        DeleteItem1(talker, @broken_teleport_device, 1);
+                    }
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_maestro) == 1 && GetMemoState(talker, @test_of_maestro) == 3 && OwnItemCount(talker, @teleport_device) == 5)
+                {
+                    ShowPage(talker, "master_toma_q0231_07.htm");
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @receipt_of_contribution5) == 0 && OwnItemCount(talker, @contribution_of_toma) == 0 && OwnItemCount(talker, @lockirins_notice5) == 0 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "master_toma_q0221_01.htm");
+                        GiveItem1(talker, @contribution_of_toma, 1);
+                    }
+                }
+
+                break;
+            case 11:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_prosperity) == 1 && OwnItemCount(talker, @ring_of_testimony1) >= 1 && OwnItemCount(talker, @collection_license) >= 1 && OwnItemCount(talker, @contribution_of_toma) >= 1 && OwnItemCount(talker, @receipt_of_contribution5) == 0 && OwnItemCount(talker, @lockirins_notice5) == 0)
+                {
+                    ShowPage(talker, "master_toma_q0221_02.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @test_of_maestro)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "master_toma_q0231_02.htm");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "master_toma_q0231_03.htm");
+            }
+            else if (reply == 3 && OwnItemCount(talker, @paint_of_teleport_device) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "master_toma_q0231_05.htm");
+                    GiveItem1(talker, @broken_teleport_device, 1);
+                    DeleteItem1(talker, @paint_of_teleport_device, 1);
+                    InstantTeleport(talker, 140352, -194133, -3146);
+                    CreateOnePrivateEx(@king_bugbear, "king_bugbear", 0, 5, 140333, -194153, -3138, GetIndexFromCreature(talker), 0, 0);
+                    CreateOnePrivateEx(@king_bugbear, "king_bugbear", 0, 5, 140395, -194147, -3146, GetIndexFromCreature(talker), 0, 0);
+                    CreateOnePrivateEx(@king_bugbear, "king_bugbear", 0, 5, 140304, -194082, -3157, GetIndexFromCreature(talker), 0, 0);
+                }
+            }
+            else if (reply == 4)
+            {
+                ShowPage(talker, "master_toma_q0231_04.htm");
+            }
+        }
+
+        super;
+    }
+}

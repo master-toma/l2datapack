@@ -1,0 +1,3 @@
+class party_leader_pa_patrol_casting_ddmagic : party_leader_patrol_casting_ddmagic
+{
+}

@@ -1,0 +1,11 @@
+class gatekeeper_esmeralda : teleporter
+{
+property:
+    TelPosList Position = {
+        {1010007; 83458; 148012; -3400; 9400; 3};    // 1010007 - "The Town of Giran"
+        {1010013; 82956; 53162; -1470; 4900; 4};    // 1010013 - "Oren Castle Town"
+        {1010014; 85343; 16267; -3640; 8200; 4};    // 1010014 - "Ivory Tower"
+        {1010022; 105846; 109762; -3170; 4100; 3};    // 1010022 - "Hardin’s Private Academy"
+        {1010023; 146705; 25840; -2000; 11000; 5}    // 1010023 - "Aden Castle Town"
+    };
+}

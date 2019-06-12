@@ -1,0 +1,137 @@
+class grain : wizard_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @what_women_want1) == 1 && GetOneTimeQuestFlag(talker, @what_women_want1) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "What are the whereabouts of Arujien's love?");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @rogellias_letter) != 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show Rosella's letter");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @charm_of_grain) != 0 && OwnItemCount(talker, @red_down) < 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about the red fleece");
+            }
+
+            if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @charm_of_grain) != 0 && OwnItemCount(talker, @red_down) >= 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Show the red fleece");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @what_women_want1) == 1 && GetOneTimeQuestFlag(talker, @what_women_want1) == 0)
+                {
+                    if (OwnItemCount(talker, @poetry_book))
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "grain_q0002_02.htm");
+                            DeleteItem1(talker, @poetry_book, 1);
+                            GiveItem1(talker, @greenis_letter, 1);
+                        }
+                    }
+                    else if (OwnItemCount(talker, @greenis_letter))
+                    {
+                        ShowPage(talker, "grain_q0002_03.htm");
+                    }
+                    else if (OwnItemCount(talker, @arujiens_letter1) || OwnItemCount(talker, @arujiens_letter2) || OwnItemCount(talker, @arujiens_letter3))
+                    {
+                        ShowPage(talker, "grain_q0002_01.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @rogellias_letter) != 0)
+                {
+                    ShowPage(talker, "grain_q0408_01.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @charm_of_grain) != 0 && OwnItemCount(talker, @red_down) < 5)
+                {
+                    ShowPage(talker, "grain_q0408_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @charm_of_grain) != 0 && OwnItemCount(talker, @red_down) >= 5)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @red_down, OwnItemCount(talker, @red_down));
+                        DeleteItem1(talker, @charm_of_grain, OwnItemCount(talker, @charm_of_grain));
+                        if (OwnItemCount(talker, @magical_powers_ruby) == 0)
+                        {
+                            GiveItem1(talker, @magical_powers_ruby, 1);
+                        }
+
+                        ShowPage(talker, "grain_q0408_04.htm");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_elvenwizard && reply == 4)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                if (HaveMemo(talker, @path_to_elvenwizard) != 0 && OwnItemCount(talker, @rogellias_letter) != 0)
+                {
+                    DeleteItem1(talker, @rogellias_letter, OwnItemCount(talker, @rogellias_letter));
+                    if (OwnItemCount(talker, @charm_of_grain) == 0)
+                    {
+                        GiveItem1(talker, @charm_of_grain, 1);
+                    }
+
+                    ShowPage(talker, "grain_q0408_02.htm");
+                }
+                else
+                {
+                    Say("An error occurred");
+                }
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,3 @@
+class guard_herven : guard_fixed
+{
+}

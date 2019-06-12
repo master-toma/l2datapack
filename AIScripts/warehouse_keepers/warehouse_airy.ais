@@ -1,0 +1,88 @@
+class warehouse_airy : warehouse_keeper
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bat_diagram) == 0 && OwnItemCount(talker, @berry_tart) && OwnItemCount(talker, @star_diamond) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Give berry tart");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bat_diagram) && OwnItemCount(talker, @berry_tart) == 0 && OwnItemCount(talker, @star_diamond) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Kurupuru");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bat_diagram) == 0 && OwnItemCount(talker, @berry_tart) == 0 && OwnItemCount(talker, @star_diamond))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show star diamond");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bat_diagram) == 0 && OwnItemCount(talker, @berry_tart) == 0 && OwnItemCount(talker, @star_diamond) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about Kurupuru");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bat_diagram) == 0 && OwnItemCount(talker, @berry_tart) && OwnItemCount(talker, @star_diamond) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "warehouse_airy_q0108_01.htm");
+                        GiveItem1(talker, @bat_diagram, 1);
+                        DeleteItem1(talker, @berry_tart, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bat_diagram) && OwnItemCount(talker, @berry_tart) == 0 && OwnItemCount(talker, @star_diamond) == 0)
+                {
+                    ShowPage(talker, "warehouse_airy_q0108_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bat_diagram) == 0 && OwnItemCount(talker, @berry_tart) == 0 && OwnItemCount(talker, @star_diamond))
+                {
+                    ShowPage(talker, "warehouse_airy_q0108_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bat_diagram) == 0 && OwnItemCount(talker, @berry_tart) == 0 && OwnItemCount(talker, @star_diamond) == 0)
+                {
+                    ShowPage(talker, "warehouse_airy_q0108_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

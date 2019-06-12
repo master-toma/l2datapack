@@ -1,0 +1,132 @@
+class pixy_murika : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, i0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @plea_of_pixies) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about Pixie's request");
+            }
+
+            if (HaveMemo(talker, @plea_of_pixies) == 1 && OwnItemCount(talker, @predators_fang) < 100)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about Pixie's request");
+            }
+
+            if (HaveMemo(talker, @plea_of_pixies) == 1 && OwnItemCount(talker, @predators_fang) >= 100)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about Pixie's request");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @plea_of_pixies) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 3 && talker.race == @race_elf)
+                        {
+                            FHTML_SetFileName(fhtml0, "pixy_murika_q0266_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @plea_of_pixies);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else if (talker.race != @race_elf)
+                        {
+                            ShowPage(talker, "pixy_murika_q0266_00.htm");
+                        }
+                        else if (talker.level < 3)
+                        {
+                            ShowPage(talker, "pixy_murika_q0266_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @plea_of_pixies) == 1 && OwnItemCount(talker, @predators_fang) < 100)
+                {
+                    ShowPage(talker, "pixy_murika_q0266_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @plea_of_pixies) == 1 && OwnItemCount(talker, @predators_fang) >= 100)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        DeleteItem1(talker, @predators_fang, OwnItemCount(talker, @predators_fang));
+                        i0 = Rand(100);
+                        if (i0 < 2)
+                        {
+                            GiveItem1(talker, @emerald, 1);
+                            SoundEffect(talker, "ItemSound.quest_jackpot");
+                        }
+                        else if (i0 < 20)
+                        {
+                            GiveItem1(talker, @blue_onyx, 1);
+                        }
+                        else if (i0 < 45)
+                        {
+                            GiveItem1(talker, @onyx, 1);
+                        }
+                        else
+                        {
+                            GiveItem1(talker, @glass_shard, 1);
+                        }
+
+                        ShowPage(talker, "pixy_murika_q0266_05.htm");
+                        RemoveMemo(talker, @plea_of_pixies);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @plea_of_pixies)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @plea_of_pixies);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "pixy_murika_q0266_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

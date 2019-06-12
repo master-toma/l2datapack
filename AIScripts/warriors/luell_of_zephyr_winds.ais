@@ -1,0 +1,40 @@
+class luell_of_zephyr_winds : warrior_passive_casting_curse
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimoney_of_trust) && GetMemoState(c1, @testimoney_of_trust) == 2 && OwnItemCount(c1, @breath_of_winds) == 0)
+        {
+            if (OwnItemCount(c1, @seed_of_verdure))
+            {
+                GiveItem1(c1, @breath_of_winds, 1);
+                SetMemoState(c1, @testimoney_of_trust, 3);
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @breath_of_winds, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 21701)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(21701, 1000 * 200);
+        super;
+    }
+}

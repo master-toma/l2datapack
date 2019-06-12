@@ -1,0 +1,3 @@
+class gludio_cleric : ai_gludio_cleric
+{
+}

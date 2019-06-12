@@ -1,0 +1,3 @@
+class oren_cleric : ai_gludio_cleric
+{
+}

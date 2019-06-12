@@ -1,0 +1,233 @@
+class andellria : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @fruits_of_mothertree) == 0 && GetOneTimeQuestFlag(talker, @fruits_of_mothertree) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about the World Tree");
+            }
+
+            if (HaveMemo(talker, @fruits_of_mothertree) == 0 && GetOneTimeQuestFlag(talker, @fruits_of_mothertree) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about the World Tree");
+            }
+
+            if (HaveMemo(talker, @fruits_of_mothertree))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Listen");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 12)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about Eva");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 13)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask whether it works if handled directly");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 14)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask whether it works if handled directly");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 15 && OwnItemCount(talker, @book_of_darkness))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Show Writings of Darkness");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 16)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask who you should meet");
+            }
+
+            if (HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 15 && OwnItemCount(talker, @book_of_darkness) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Ask who you should meet");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @fruits_of_mothertree) == 0 && GetOneTimeQuestFlag(talker, @fruits_of_mothertree) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_elf)
+                        {
+                            ShowPage(talker, "andellria_q0312_00.htm");
+                        }
+                        else if (talker.level >= 3)
+                        {
+                            FHTML_SetFileName(fhtml0, "andellria_q0312_03.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @fruits_of_mothertree);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "andellria_q0312_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @fruits_of_mothertree) == 0 && GetOneTimeQuestFlag(talker, @fruits_of_mothertree) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @fruits_of_mothertree))
+                {
+                    if (OwnItemCount(talker, @andellrias_letter) == 1 && OwnItemCount(talker, @mothertree_fruit) == 0)
+                    {
+                        ShowPage(talker, "andellria_q0312_05.htm");
+                    }
+                    else if (OwnItemCount(talker, @mothertree_fruit) == 1 && GetOneTimeQuestFlag(talker, @fruits_of_mothertree) == 0)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "andellria_q0312_06.htm");
+                            GiveItem1(talker, @adena, 500);
+                            IncrementParam(talker, @PARAM_EXP, 1000);
+                            DeleteItem1(talker, @mothertree_fruit, 1);
+                            RemoveMemo(talker, @fruits_of_mothertree);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                            SetOneTimeQuestFlag(talker, @fruits_of_mothertree, 1);
+                        }
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 12)
+                {
+                    ShowPage(talker, "andellria_q0215_01.htm");
+                    SetMemoState(talker, @trial_of_pilgrim, 13);
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 13)
+                {
+                    ShowPage(talker, "andellria_q0215_02.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 14)
+                {
+                    ShowPage(talker, "andellria_q0215_02a.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 15 && OwnItemCount(talker, @book_of_darkness))
+                {
+                    ShowPage(talker, "andellria_q0215_03.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 16)
+                {
+                    ShowPage(talker, "andellria_q0215_06.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_pilgrim) == 1 && GetMemoState(talker, @trial_of_pilgrim) == 15 && OwnItemCount(talker, @book_of_darkness) == 0)
+                {
+                    ShowPage(talker, "andellria_q0215_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @fruits_of_mothertree)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                ShowPage(talker, "andellria_q0312_04.htm");
+                GiveItem1(talker, @andellrias_letter, 1);
+                SetMemo(talker, @fruits_of_mothertree);
+                SoundEffect(talker, "ItemSound.quest_accept");
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @trial_of_pilgrim)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "andellria_q0215_05.htm");
+                    DeleteItem1(talker, @book_of_darkness, OwnItemCount(talker, @book_of_darkness));
+                    SetMemoState(talker, @trial_of_pilgrim, 16);
+                }
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "andellria_q0215_04.htm");
+                SetMemoState(talker, @trial_of_pilgrim, 16);
+            }
+        }
+
+        super;
+    }
+}

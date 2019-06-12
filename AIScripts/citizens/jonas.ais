@@ -1,0 +1,316 @@
+class jonas : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @adept_of_taste) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about the cooking competition");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about the cooking competition");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) >= 5)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about cooking ingredients");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) == 0 && OwnItemCount(talker, @ingredient_list) == 0 && OwnItemCount(talker, @jonas_steak_dish1) + OwnItemCount(talker, @jonas_steak_dish2) + OwnItemCount(talker, @jonas_steak_dish3) + OwnItemCount(talker, @jonas_steak_dish4) + OwnItemCount(talker, @jonas_steak_dish5) == 1 && OwnItemCount(talker, @miriens_review1) + OwnItemCount(talker, @miriens_review2) + OwnItemCount(talker, @miriens_review3) + OwnItemCount(talker, @miriens_review4) + OwnItemCount(talker, @miriens_review5) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about cooking ingredients");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) == 0 && OwnItemCount(talker, @ingredient_list) == 0 && OwnItemCount(talker, @jonas_steak_dish1) + OwnItemCount(talker, @jonas_steak_dish2) + OwnItemCount(talker, @jonas_steak_dish3) + OwnItemCount(talker, @jonas_steak_dish4) + OwnItemCount(talker, @jonas_steak_dish5) == 0 && OwnItemCount(talker, @miriens_review1) + OwnItemCount(talker, @miriens_review2) + OwnItemCount(talker, @miriens_review3) + OwnItemCount(talker, @miriens_review4) + OwnItemCount(talker, @miriens_review5) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about cooking ingredients");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.level >= 24)
+                        {
+                            FHTML_SetFileName(fhtml0, "jonas_q0330_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @adept_of_taste);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "jonas_q0330_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5)
+                {
+                    ShowPage(talker, "jonas_q0330_04.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) >= 5)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @brown_moss_bundle) == 0)
+                        {
+                            if (Rand(10) < 1)
+                            {
+                                ShowPage(talker, "jonas_q0330_05t2.htm");
+                                DeleteItem1(talker, @ingredient_list, OwnItemCount(talker, @ingredient_list));
+                                DeleteItem1(talker, @red_mandragora_sap, OwnItemCount(talker, @red_mandragora_sap));
+                                DeleteItem1(talker, @white_mandragora_sap, OwnItemCount(talker, @white_mandragora_sap));
+                                DeleteItem1(talker, @honey, OwnItemCount(talker, @honey));
+                                DeleteItem1(talker, @golden_honey, OwnItemCount(talker, @golden_honey));
+                                DeleteItem1(talker, @dionian_potato, OwnItemCount(talker, @dionian_potato));
+                                DeleteItem1(talker, @green_moss_bundle, OwnItemCount(talker, @green_moss_bundle));
+                                DeleteItem1(talker, @brown_moss_bundle, OwnItemCount(talker, @brown_moss_bundle));
+                                DeleteItem1(talker, @monster_eye_meat, OwnItemCount(talker, @monster_eye_meat));
+                                GiveItem1(talker, @jonas_steak_dish2, 1);
+                            }
+                            else
+                            {
+                                ShowPage(talker, "jonas_q0330_05t1.htm");
+                                DeleteItem1(talker, @ingredient_list, OwnItemCount(talker, @ingredient_list));
+                                DeleteItem1(talker, @red_mandragora_sap, OwnItemCount(talker, @red_mandragora_sap));
+                                DeleteItem1(talker, @white_mandragora_sap, OwnItemCount(talker, @white_mandragora_sap));
+                                DeleteItem1(talker, @honey, OwnItemCount(talker, @honey));
+                                DeleteItem1(talker, @golden_honey, OwnItemCount(talker, @golden_honey));
+                                DeleteItem1(talker, @dionian_potato, OwnItemCount(talker, @dionian_potato));
+                                DeleteItem1(talker, @green_moss_bundle, OwnItemCount(talker, @green_moss_bundle));
+                                DeleteItem1(talker, @brown_moss_bundle, OwnItemCount(talker, @brown_moss_bundle));
+                                DeleteItem1(talker, @monster_eye_meat, OwnItemCount(talker, @monster_eye_meat));
+                                GiveItem1(talker, @jonas_steak_dish1, 1);
+                            }
+                        }
+
+                        if (OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @brown_moss_bundle) == 1)
+                        {
+                            if (Rand(10) < 1)
+                            {
+                                ShowPage(talker, "jonas_q0330_05t3.htm");
+                                DeleteItem1(talker, @ingredient_list, OwnItemCount(talker, @ingredient_list));
+                                DeleteItem1(talker, @red_mandragora_sap, OwnItemCount(talker, @red_mandragora_sap));
+                                DeleteItem1(talker, @white_mandragora_sap, OwnItemCount(talker, @white_mandragora_sap));
+                                DeleteItem1(talker, @honey, OwnItemCount(talker, @honey));
+                                DeleteItem1(talker, @golden_honey, OwnItemCount(talker, @golden_honey));
+                                DeleteItem1(talker, @dionian_potato, OwnItemCount(talker, @dionian_potato));
+                                DeleteItem1(talker, @green_moss_bundle, OwnItemCount(talker, @green_moss_bundle));
+                                DeleteItem1(talker, @brown_moss_bundle, OwnItemCount(talker, @brown_moss_bundle));
+                                DeleteItem1(talker, @monster_eye_meat, OwnItemCount(talker, @monster_eye_meat));
+                                GiveItem1(talker, @jonas_steak_dish3, 1);
+                            }
+                            else
+                            {
+                                ShowPage(talker, "jonas_q0330_05t2.htm");
+                                DeleteItem1(talker, @ingredient_list, OwnItemCount(talker, @ingredient_list));
+                                DeleteItem1(talker, @red_mandragora_sap, OwnItemCount(talker, @red_mandragora_sap));
+                                DeleteItem1(talker, @white_mandragora_sap, OwnItemCount(talker, @white_mandragora_sap));
+                                DeleteItem1(talker, @honey, OwnItemCount(talker, @honey));
+                                DeleteItem1(talker, @golden_honey, OwnItemCount(talker, @golden_honey));
+                                DeleteItem1(talker, @dionian_potato, OwnItemCount(talker, @dionian_potato));
+                                DeleteItem1(talker, @green_moss_bundle, OwnItemCount(talker, @green_moss_bundle));
+                                DeleteItem1(talker, @brown_moss_bundle, OwnItemCount(talker, @brown_moss_bundle));
+                                DeleteItem1(talker, @monster_eye_meat, OwnItemCount(talker, @monster_eye_meat));
+                                GiveItem1(talker, @jonas_steak_dish2, 1);
+                            }
+                        }
+
+                        if (OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @brown_moss_bundle) == 2)
+                        {
+                            if (Rand(10) < 1)
+                            {
+                                ShowPage(talker, "jonas_q0330_05t4.htm");
+                                DeleteItem1(talker, @ingredient_list, OwnItemCount(talker, @ingredient_list));
+                                DeleteItem1(talker, @red_mandragora_sap, OwnItemCount(talker, @red_mandragora_sap));
+                                DeleteItem1(talker, @white_mandragora_sap, OwnItemCount(talker, @white_mandragora_sap));
+                                DeleteItem1(talker, @honey, OwnItemCount(talker, @honey));
+                                DeleteItem1(talker, @golden_honey, OwnItemCount(talker, @golden_honey));
+                                DeleteItem1(talker, @dionian_potato, OwnItemCount(talker, @dionian_potato));
+                                DeleteItem1(talker, @green_moss_bundle, OwnItemCount(talker, @green_moss_bundle));
+                                DeleteItem1(talker, @brown_moss_bundle, OwnItemCount(talker, @brown_moss_bundle));
+                                DeleteItem1(talker, @monster_eye_meat, OwnItemCount(talker, @monster_eye_meat));
+                                GiveItem1(talker, @jonas_steak_dish4, 1);
+                            }
+                            else
+                            {
+                                ShowPage(talker, "jonas_q0330_05t3.htm");
+                                DeleteItem1(talker, @ingredient_list, OwnItemCount(talker, @ingredient_list));
+                                DeleteItem1(talker, @red_mandragora_sap, OwnItemCount(talker, @red_mandragora_sap));
+                                DeleteItem1(talker, @white_mandragora_sap, OwnItemCount(talker, @white_mandragora_sap));
+                                DeleteItem1(talker, @honey, OwnItemCount(talker, @honey));
+                                DeleteItem1(talker, @golden_honey, OwnItemCount(talker, @golden_honey));
+                                DeleteItem1(talker, @dionian_potato, OwnItemCount(talker, @dionian_potato));
+                                DeleteItem1(talker, @green_moss_bundle, OwnItemCount(talker, @green_moss_bundle));
+                                DeleteItem1(talker, @brown_moss_bundle, OwnItemCount(talker, @brown_moss_bundle));
+                                DeleteItem1(talker, @monster_eye_meat, OwnItemCount(talker, @monster_eye_meat));
+                                GiveItem1(talker, @jonas_steak_dish3, 1);
+                            }
+                        }
+
+                        if (OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @brown_moss_bundle) == 3)
+                        {
+                            if (Rand(10) < 1)
+                            {
+                                ShowPage(talker, "jonas_q0330_05t5.htm");
+                                DeleteItem1(talker, @ingredient_list, OwnItemCount(talker, @ingredient_list));
+                                DeleteItem1(talker, @red_mandragora_sap, OwnItemCount(talker, @red_mandragora_sap));
+                                DeleteItem1(talker, @white_mandragora_sap, OwnItemCount(talker, @white_mandragora_sap));
+                                DeleteItem1(talker, @honey, OwnItemCount(talker, @honey));
+                                DeleteItem1(talker, @golden_honey, OwnItemCount(talker, @golden_honey));
+                                DeleteItem1(talker, @dionian_potato, OwnItemCount(talker, @dionian_potato));
+                                DeleteItem1(talker, @green_moss_bundle, OwnItemCount(talker, @green_moss_bundle));
+                                DeleteItem1(talker, @brown_moss_bundle, OwnItemCount(talker, @brown_moss_bundle));
+                                DeleteItem1(talker, @monster_eye_meat, OwnItemCount(talker, @monster_eye_meat));
+                                SoundEffect(talker, "ItemSound.quest_jackpot");
+                            }
+                            else
+                            {
+                                ShowPage(talker, "jonas_q0330_05t4.htm");
+                                DeleteItem1(talker, @ingredient_list, OwnItemCount(talker, @ingredient_list));
+                                DeleteItem1(talker, @red_mandragora_sap, OwnItemCount(talker, @red_mandragora_sap));
+                                DeleteItem1(talker, @white_mandragora_sap, OwnItemCount(talker, @white_mandragora_sap));
+                                DeleteItem1(talker, @honey, OwnItemCount(talker, @honey));
+                                DeleteItem1(talker, @golden_honey, OwnItemCount(talker, @golden_honey));
+                                DeleteItem1(talker, @dionian_potato, OwnItemCount(talker, @dionian_potato));
+                                DeleteItem1(talker, @green_moss_bundle, OwnItemCount(talker, @green_moss_bundle));
+                                DeleteItem1(talker, @brown_moss_bundle, OwnItemCount(talker, @brown_moss_bundle));
+                                DeleteItem1(talker, @monster_eye_meat, OwnItemCount(talker, @monster_eye_meat));
+                                GiveItem1(talker, @jonas_steak_dish4, 1);
+                            }
+                        }
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) == 0 && OwnItemCount(talker, @ingredient_list) == 0 && OwnItemCount(talker, @jonas_steak_dish1) + OwnItemCount(talker, @jonas_steak_dish2) + OwnItemCount(talker, @jonas_steak_dish3) + OwnItemCount(talker, @jonas_steak_dish4) + OwnItemCount(talker, @jonas_steak_dish5) == 1 && OwnItemCount(talker, @miriens_review1) + OwnItemCount(talker, @miriens_review2) + OwnItemCount(talker, @miriens_review3) + OwnItemCount(talker, @miriens_review4) + OwnItemCount(talker, @miriens_review5) == 0)
+                {
+                    ShowPage(talker, "jonas_q0330_06.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) == 0 && OwnItemCount(talker, @ingredient_list) == 0 && OwnItemCount(talker, @jonas_steak_dish1) + OwnItemCount(talker, @jonas_steak_dish2) + OwnItemCount(talker, @jonas_steak_dish3) + OwnItemCount(talker, @jonas_steak_dish4) + OwnItemCount(talker, @jonas_steak_dish5) == 0 && OwnItemCount(talker, @miriens_review1) + OwnItemCount(talker, @miriens_review2) + OwnItemCount(talker, @miriens_review3) + OwnItemCount(talker, @miriens_review4) + OwnItemCount(talker, @miriens_review5) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        if (OwnItemCount(talker, @miriens_review1) == 1)
+                        {
+                            ShowPage(talker, "jonas_q0330_06t1.htm");
+                            DeleteItem1(talker, @miriens_review1, 1);
+                            GiveItem1(talker, @adena, 7500);
+                            IncrementParam(talker, @PARAM_EXP, 6000);
+                            RemoveMemo(talker, @adept_of_taste);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+
+                        if (OwnItemCount(talker, @miriens_review2) == 1)
+                        {
+                            ShowPage(talker, "jonas_q0330_06t2.htm");
+                            DeleteItem1(talker, @miriens_review2, 1);
+                            GiveItem1(talker, @adena, 9000);
+                            IncrementParam(talker, @PARAM_EXP, 7000);
+                            RemoveMemo(talker, @adept_of_taste);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+
+                        if (OwnItemCount(talker, @miriens_review3) == 1)
+                        {
+                            ShowPage(talker, "jonas_q0330_06t3.htm");
+                            DeleteItem1(talker, @miriens_review3, 1);
+                            GiveItem1(talker, @adena, 5800);
+                            GiveItem1(talker, @jonas_salad_recipe, 1);
+                            IncrementParam(talker, @PARAM_EXP, 9000);
+                            RemoveMemo(talker, @adept_of_taste);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+
+                        if (OwnItemCount(talker, @miriens_review4) == 1)
+                        {
+                            ShowPage(talker, "jonas_q0330_06t4.htm");
+                            DeleteItem1(talker, @miriens_review4, 1);
+                            GiveItem1(talker, @adena, 6800);
+                            GiveItem1(talker, @jonas_sauce_recipe, 1);
+                            IncrementParam(talker, @PARAM_EXP, 10500);
+                            RemoveMemo(talker, @adept_of_taste);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+
+                        if (OwnItemCount(talker, @miriens_review5) == 1)
+                        {
+                            ShowPage(talker, "jonas_q0330_06t5.htm");
+                            DeleteItem1(talker, @miriens_review5, 1);
+                            GiveItem1(talker, @adena, 7800);
+                            GiveItem1(talker, @jonas_steak_recipe, 1);
+                            IncrementParam(talker, @PARAM_EXP, 12000);
+                            RemoveMemo(talker, @adept_of_taste);
+                            SoundEffect(talker, "ItemSound.quest_finish");
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @adept_of_taste)
+        {
+            ShowPage(talker, "jonas_q0330_03.htm");
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                GiveItem1(talker, @ingredient_list, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

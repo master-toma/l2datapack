@@ -1,0 +1,28 @@
+class maraku_werewolf_chief : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1, i0)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @against_wolf_men) && OwnItemCount(c1, @maraku_werewolf_head) < 40)
+        {
+            if (OwnItemCount(c1, @maraku_werewolf_head) < 39)
+            {
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+            else
+            {
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+
+            GiveItem1(c1, @maraku_werewolf_head, 1);
+            i0 = Rand(100);
+            if (i0 <= 5)
+            {
+                GiveItem1(c1, @maraku_wolfmen_totem, 1);
+            }
+        }
+
+        super;
+    }
+}

@@ -1,0 +1,3 @@
+class iron_golem : warrior_aggressive
+{
+}

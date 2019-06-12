@@ -1,0 +1,106 @@
+class unicorn_racer : warrior_passive_hold
+{
+handler:
+    EventHandler MY_DYING(c0, c1)
+    {
+        c1 = GetLastAttacker();
+        if (c1.master)
+        {
+            c0 = c1.master;
+            if (HaveMemo(c0, @test_of_summoner) && OwnItemCount(c0, @crystal_of_inprogress3))
+            {
+                GiveItem1(c0, @crystal_of_victory3, 1);
+                DeleteItem1(c0, @crystal_of_inprogress3, OwnItemCount(c0, @crystal_of_inprogress3));
+                SoundEffect(c0, "Itemsound.quest_middle");
+                Say(MakeFString(23062, "", "", "", "", ""));
+            }
+        }
+
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, c0, c1, damage)
+    {
+        select (myself.i_quest0)
+        {
+        case 0:
+            myself.c_quest0 = attacker;
+            myself.i_quest0 = 1;
+            AddTimerEx(23001, 1000 * 120);
+            if (myself.c_quest0.master)
+            {
+                AddTimerEx(23008, 1000 * 5);
+                c0 = myself.c_quest0.master;
+                myself.c_quest1 = myself.c_quest0.master;
+                if (HaveMemo(c0, @test_of_summoner) && OwnItemCount(c0, @crystal_of_starting3))
+                {
+                    Say(MakeFString(23060, "", "", "", "", ""));
+                    GiveItem1(c0, @crystal_of_inprogress3, 1);
+                    DeleteItem1(c0, @crystal_of_starting3, OwnItemCount(c0, @crystal_of_starting3));
+                    AddAttackDesire(myself.c_quest0, @AMT_MOVE_TO_TARGET, 100000);
+                }
+            }
+
+            break;
+        case 1:
+            if (myself.c_quest0 != attacker)
+            {
+                if (OwnItemCount(myself.c_quest1, @crystal_of_starting3) == 0 && OwnItemCount(myself.c_quest1, @crystal_of_inprogress3))
+                {
+                    myself.i_quest0 = 2;
+                    Say(MakeFString(23061, "", "", "", "", ""));
+                    GiveItem1(myself.c_quest1, @crystal_of_foul3, 1);
+                    DeleteItem1(myself.c_quest1, @crystal_of_inprogress3, OwnItemCount(myself.c_quest1, @crystal_of_inprogress3));
+                    DeleteItem1(myself.c_quest1, @crystal_of_starting3, OwnItemCount(myself.c_quest1, @crystal_of_starting3));
+                    Despawn();
+                    myself.c_quest2 = attacker;
+                    if (myself.c_quest2.master)
+                    {
+                        c1 = myself.c_quest2.master;
+                        if (HaveMemo(c1, @test_of_summoner) && OwnItemCount(c1, @crystal_of_inprogress3))
+                        {
+                            GiveItem1(c1, @crystal_of_foul3, 1);
+                            DeleteItem1(c1, @crystal_of_inprogress3, OwnItemCount(c1, @crystal_of_inprogress3));
+                            DeleteItem1(c1, @crystal_of_starting3, OwnItemCount(c1, @crystal_of_starting3));
+                        }
+                    }
+                    else if (myself.c_quest2 != myself.c_quest1 && HaveMemo(myself.c_quest2, @test_of_summoner) && OwnItemCount(myself.c_quest2, @crystal_of_inprogress3))
+                    {
+                        GiveItem1(myself.c_quest2, @crystal_of_foul3, 1);
+                        DeleteItem1(myself.c_quest2, @crystal_of_inprogress3, OwnItemCount(myself.c_quest2, @crystal_of_inprogress3));
+                        DeleteItem1(myself.c_quest2, @crystal_of_starting3, OwnItemCount(myself.c_quest2, @crystal_of_starting3));
+                    }
+                }
+                else
+                {
+                    Despawn();
+                }
+            }
+        case 2:
+            break;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 23001)
+        {
+            Despawn();
+        }
+        else if (timer_id == 23008)
+        {
+            if (myself.c_quest0.alive == 0)
+            {
+                Despawn();
+            }
+            else
+            {
+                AddTimerEx(23008, 1000 * 5);
+            }
+        }
+
+        super;
+    }
+}

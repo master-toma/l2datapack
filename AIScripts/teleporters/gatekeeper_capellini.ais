@@ -1,0 +1,15 @@
+class gatekeeper_capellini : instant_teleporter
+{
+handler:
+    EventHandler TELEPORT_REQUESTED(talker)
+    {
+        if (Rand(100) < 50)
+        {
+            InstantTeleport(talker, 17792, 107760, -11849);
+        }
+        else
+        {
+            InstantTeleport(talker, 17648, 107760, -11849);
+        }
+    }
+}

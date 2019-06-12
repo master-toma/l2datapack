@@ -1,0 +1,110 @@
+class blacksmith_helton : blacksmith
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && (GetMemoState(talker, @audience_with_earth_dragon) == 40000 || GetMemoState(talker, @audience_with_earth_dragon) == 40010) && (OwnItemCount(talker, @q_frag_of_abyss_jewel2) == 0 || OwnItemCount(talker, @q_musfel_fang) == 0))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about aura");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && (GetMemoState(talker, @audience_with_earth_dragon) == 40000 || GetMemoState(talker, @audience_with_earth_dragon) == 40010) && (OwnItemCount(talker, @q_frag_of_abyss_jewel2) == 1 && OwnItemCount(talker, @q_musfel_fang) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show Frament of Abyss Jewel and Musfel Fang");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 40001)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about aura");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) >= 50000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Hear about conquering Antharas");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && (GetMemoState(talker, @audience_with_earth_dragon) == 40000 || GetMemoState(talker, @audience_with_earth_dragon) == 40010) && (OwnItemCount(talker, @q_frag_of_abyss_jewel2) == 0 || OwnItemCount(talker, @q_musfel_fang) == 0))
+                {
+                    ShowPage(talker, "blacksmith_helton_q0337_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && (GetMemoState(talker, @audience_with_earth_dragon) == 40000 || GetMemoState(talker, @audience_with_earth_dragon) == 40010) && (OwnItemCount(talker, @q_frag_of_abyss_jewel2) == 1 && OwnItemCount(talker, @q_musfel_fang) == 1))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @q_mark_of_watchers, 1);
+                        DeleteItem1(talker, @q_frag_of_abyss_jewel2, OwnItemCount(talker, @q_frag_of_abyss_jewel2));
+                        DeleteItem1(talker, @q_musfel_fang, OwnItemCount(talker, @q_musfel_fang));
+                        ShowPage(talker, "blacksmith_helton_q0337_02.htm");
+                        if (GetMemoState(talker, @audience_with_earth_dragon) == 40010)
+                        {
+                            SetMemoState(talker, @audience_with_earth_dragon, 50000);
+                        }
+                        else
+                        {
+                            SetMemoState(talker, @audience_with_earth_dragon, 40001);
+                        }
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) == 40001)
+                {
+                    ShowPage(talker, "blacksmith_helton_q0337_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) >= 50000)
+                {
+                    ShowPage(talker, "blacksmith_helton_q0337_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @audience_with_earth_dragon)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "blacksmith_helton_q0337_1a.htm");
+            }
+        }
+
+        super;
+    }
+}

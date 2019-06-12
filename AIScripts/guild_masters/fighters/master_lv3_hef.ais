@@ -1,0 +1,90 @@
+class master_lv3_hef : guild_master_lv3
+{
+parameter:
+    int lv2_class1 = @warrior;
+    int lv2_class2 = @knight;
+    int lv2_class3 = @rogue;
+    int lv2_class4 = @elven_knight;
+    int lv2_class5 = @elven_scout;
+    int lv3_class11 = @gladiator;
+    int lv3_class12 = @warlord;
+    int lv3_class21 = @paladin;
+    int lv3_class22 = @dark_avenger;
+    int lv3_class31 = @treasure_hunter;
+    int lv3_class32 = @hawkeye;
+    int lv3_class41 = @temple_knight;
+    int lv3_class42 = @swordsinger;
+    int lv3_class51 = @plains_walker;
+    int lv3_class52 = @silver_ranger;
+    int proof11x = 2627;
+    int proof11y = 2734;
+    int proof11z = 2762;
+    int proof12x = 2627;
+    int proof12y = 2734;
+    int proof12z = 3276;
+    int proof21x = 2633;
+    int proof21y = 2734;
+    int proof21z = 2820;
+    int proof22x = 2633;
+    int proof22y = 2734;
+    int proof22z = 3307;
+    int proof31x = 2673;
+    int proof31y = 2734;
+    int proof31z = 2809;
+    int proof32x = 2673;
+    int proof32y = 2734;
+    int proof32z = 3293;
+    int proof41x = 2633;
+    int proof41y = 3140;
+    int proof41z = 2820;
+    int proof42x = 2627;
+    int proof42y = 3140;
+    int proof42z = 2762;
+    int proof51x = 2673;
+    int proof51y = 3140;
+    int proof51z = 2809;
+    int proof52x = 2673;
+    int proof52y = 3140;
+    int proof52z = 3293;
+    
+handler:
+    EventHandler MENU_SELECTED(talker, ask, reply)
+    {
+        if (ask == -2 && reply == 1)
+        {
+            if (IsInCategory(@fighter_group, talker.occupation) && (talker.race == @race_human || talker.race == @race_elf))
+            {
+                if (talker.occupation == lv2_class1 || talker.occupation == lv3_class11 || talker.occupation == lv3_class12 || talker.occupation == lv3_class13)
+                {
+                    ShowPage(talker, fnClassList1);
+                }
+                else if (talker.occupation == lv2_class2 || talker.occupation == lv3_class21 || talker.occupation == lv3_class22 || talker.occupation == lv3_class23)
+                {
+                    ShowPage(talker, fnClassList2);
+                }
+                else if (talker.occupation == lv2_class3 || talker.occupation == lv3_class31 || talker.occupation == lv3_class32 || talker.occupation == lv3_class33)
+                {
+                    ShowPage(talker, fnClassList3);
+                }
+                else if (talker.occupation == lv2_class4 || talker.occupation == lv3_class41 || talker.occupation == lv3_class42 || talker.occupation == lv3_class43)
+                {
+                    ShowPage(talker, fnClassList4);
+                }
+                else if (talker.occupation == lv2_class5 || talker.occupation == lv3_class51 || talker.occupation == lv3_class52 || talker.occupation == lv3_class53)
+                {
+                    ShowPage(talker, fnClassList5);
+                }
+                else
+                {
+                    ShowPage(talker, fnYouAreFirstClass);
+                }
+            }
+            else
+            {
+                ShowPage(talker, fnClassMismatch);
+            }
+        }
+
+        super;
+    }
+}

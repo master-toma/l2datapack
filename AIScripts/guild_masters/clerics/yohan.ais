@@ -1,0 +1,67 @@
+class yohan : cleric_coach
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @save_my_sister1) == 1 && OwnItemCount(talker, @poison_sac) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Give the pouch of poison");
+            }
+
+            if (HaveMemo(talker, @save_my_sister1) == 1 && OwnItemCount(talker, @fever_medicine) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about the antidote");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @save_my_sister1) == 1 && OwnItemCount(talker, @poison_sac) > 0)
+                {
+                    if (OwnItemCount(talker, @poison_sac) == 1)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            GiveItem1(talker, @fever_medicine, 1);
+                            DeleteItem1(talker, @poison_sac, 1);
+                            ShowPage(talker, "yohan_q0259_01.htm");
+                        }
+                    }
+                    else if (OwnItemCount(talker, @fever_medicine) == 1)
+                    {
+                        ShowPage(talker, "yohan_q0259_02.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @save_my_sister1) == 1 && OwnItemCount(talker, @fever_medicine) > 0)
+                {
+                    ShowPage(talker, "yohan_q0259_02.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

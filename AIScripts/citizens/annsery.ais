@@ -1,0 +1,76 @@
+class annsery : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_darkwizard) == 1 && OwnItemCount(talker, @seeds_of_horror) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about the Seeds of Horror");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_darkwizard) == 1 && OwnItemCount(talker, @seeds_of_horror) == 0)
+                {
+                    if (OwnItemCount(talker, @seeds_of_despair) == 1 && OwnItemCount(talker, @candle) == 0 && OwnItemCount(talker, @knee_bone) == 0)
+                    {
+                        ShowPage(talker, "annsery_q0412_01.htm");
+                    }
+                    else if (OwnItemCount(talker, @seeds_of_despair) == 1 && OwnItemCount(talker, @candle) == 1 && OwnItemCount(talker, @knee_bone) < 2)
+                    {
+                        ShowPage(talker, "annsery_q0412_03.htm");
+                    }
+                    else if (OwnItemCount(talker, @seeds_of_despair) == 1 && OwnItemCount(talker, @candle) == 1 && OwnItemCount(talker, @knee_bone) >= 2)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "annsery_q0412_04.htm");
+                            GiveItem1(talker, @seeds_of_horror, 1);
+                            DeleteItem1(talker, @candle, 1);
+                            DeleteItem1(talker, @knee_bone, 2);
+                        }
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_darkwizard)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "annsery_q0412_02.htm");
+                    GiveItem1(talker, @candle, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

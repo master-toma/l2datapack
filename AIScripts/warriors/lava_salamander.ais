@@ -1,0 +1,23 @@
+class lava_salamander : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_pilgrim) && GetMemoState(c1, @trial_of_pilgrim) == 3 && OwnItemCount(c1, @essense_of_flame) == 0)
+        {
+            if (Rand(5) == 1)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @essense_of_flame, 1);
+                    SetMemoState(c1, @trial_of_pilgrim, 4);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+            }
+        }
+
+        super;
+    }
+}

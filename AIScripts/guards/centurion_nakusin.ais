@@ -1,0 +1,134 @@
+class centurion_nakusin : guard_fixed
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @long_live_lord_of_flame) == 0 && GetOneTimeQuestFlag(talker, @long_live_lord_of_flame) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Hear about Paagrio Lord Kakai");
+            }
+
+            if (HaveMemo(talker, @long_live_lord_of_flame) == 0 && GetOneTimeQuestFlag(talker, @long_live_lord_of_flame) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Hear about Paagrio Lord Kakai");
+            }
+
+            if (HaveMemo(talker, @long_live_lord_of_flame) == 1 && OwnItemCount(talker, @honey_khandar) + OwnItemCount(talker, @bear_fur_cloak) + OwnItemCount(talker, @bloody_axe) + OwnItemCount(talker, @ancestor_skull) + OwnItemCount(talker, @spider_dust) + OwnItemCount(talker, @deep_sea_orb) < 6)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Paagrio Lord Kakai");
+            }
+
+            if (HaveMemo(talker, @long_live_lord_of_flame) == 1 && OwnItemCount(talker, @honey_khandar) + OwnItemCount(talker, @bear_fur_cloak) + OwnItemCount(talker, @bloody_axe) + OwnItemCount(talker, @ancestor_skull) + OwnItemCount(talker, @spider_dust) + OwnItemCount(talker, @deep_sea_orb) >= 6 && GetOneTimeQuestFlag(talker, @long_live_lord_of_flame) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Receive compensation from Nakusin");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @long_live_lord_of_flame) == 0 && GetOneTimeQuestFlag(talker, @long_live_lord_of_flame) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race != @race_orc)
+                        {
+                            ShowPage(talker, "centurion_nakusin_q0004_00.htm");
+                        }
+                        else if (talker.level >= 2)
+                        {
+                            FHTML_SetFileName(fhtml0, "centurion_nakusin_q0004_02.htm");
+                            FHTML_SetInt(fhtml0, "quest_id", @long_live_lord_of_flame);
+                            ShowFHTML(talker, fhtml0);
+                        }
+                        else
+                        {
+                            ShowPage(talker, "centurion_nakusin_q0004_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @long_live_lord_of_flame) == 0 && GetOneTimeQuestFlag(talker, @long_live_lord_of_flame) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @long_live_lord_of_flame) == 1 && OwnItemCount(talker, @honey_khandar) + OwnItemCount(talker, @bear_fur_cloak) + OwnItemCount(talker, @bloody_axe) + OwnItemCount(talker, @ancestor_skull) + OwnItemCount(talker, @spider_dust) + OwnItemCount(talker, @deep_sea_orb) < 6)
+                {
+                    ShowPage(talker, "centurion_nakusin_q0004_04.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @long_live_lord_of_flame) == 1 && OwnItemCount(talker, @honey_khandar) + OwnItemCount(talker, @bear_fur_cloak) + OwnItemCount(talker, @bloody_axe) + OwnItemCount(talker, @ancestor_skull) + OwnItemCount(talker, @spider_dust) + OwnItemCount(talker, @deep_sea_orb) >= 6 && GetOneTimeQuestFlag(talker, @long_live_lord_of_flame) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "centurion_nakusin_q0004_06.htm");
+                        GiveItem1(talker, @adena, 450);
+                        DeleteItem1(talker, @honey_khandar, OwnItemCount(talker, @honey_khandar));
+                        DeleteItem1(talker, @bear_fur_cloak, OwnItemCount(talker, @bear_fur_cloak));
+                        DeleteItem1(talker, @bloody_axe, OwnItemCount(talker, @bloody_axe));
+                        DeleteItem1(talker, @ancestor_skull, OwnItemCount(talker, @ancestor_skull));
+                        DeleteItem1(talker, @spider_dust, OwnItemCount(talker, @spider_dust));
+                        DeleteItem1(talker, @deep_sea_orb, OwnItemCount(talker, @deep_sea_orb));
+                        SetOneTimeQuestFlag(talker, @long_live_lord_of_flame, 1);
+                        RemoveMemo(talker, @long_live_lord_of_flame);
+                        SoundEffect(talker, "ItemSound.quest_finish");
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @long_live_lord_of_flame)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, @long_live_lord_of_flame);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "centurion_nakusin_q0004_03.htm");
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

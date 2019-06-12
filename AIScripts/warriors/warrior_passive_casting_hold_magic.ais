@@ -1,0 +1,3 @@
+class warrior_passive_casting_hold_magic : warrior_casting_hold_magic
+{
+}

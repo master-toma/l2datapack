@@ -1,0 +1,177 @@
+class khavatari_rosheek : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @pomegranate))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Give pomegranate");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_pouch1) && OwnItemCount(talker, @leather_pouch1full) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Kasha bear");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_pouch1) == 0 && OwnItemCount(talker, @leather_pouch1full))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give Kasha bear claw");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_pouch2) == 1 && OwnItemCount(talker, @leather_pouch2full) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about blade spider");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_pouch2) == 0 && OwnItemCount(talker, @leather_pouch2full) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Give blade spider claw");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_pouch3) == 1 && OwnItemCount(talker, @leather_pouch3full) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Ask about salamander");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_pouch3) == 0 && OwnItemCount(talker, @leather_pouch3full) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Give salamander scale");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @rosheeks_letter) == 1 && OwnItemCount(talker, @scroll_fiery_spirit) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Ask about Gantaki");
+            }
+
+            if (HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @rosheeks_letter) == 0 && OwnItemCount(talker, @scroll_fiery_spirit) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Ask about changing occupation to Paagrio Monk");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @pomegranate))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "khavatari_rosheek_q0415_01.htm");
+                        DeleteItem1(talker, @pomegranate, 1);
+                        GiveItem1(talker, @leather_pouch1, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_pouch1) && OwnItemCount(talker, @leather_pouch1full) == 0)
+                {
+                    ShowPage(talker, "khavatari_rosheek_q0415_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_pouch1) == 0 && OwnItemCount(talker, @leather_pouch1full))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "khavatari_rosheek_q0415_03.htm");
+                        DeleteItem1(talker, @leather_pouch1full, 1);
+                        GiveItem1(talker, @leather_pouch2, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_pouch2) == 1 && OwnItemCount(talker, @leather_pouch2full) == 0)
+                {
+                    ShowPage(talker, "khavatari_rosheek_q0415_04.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_pouch2) == 0 && OwnItemCount(talker, @leather_pouch2full) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "khavatari_rosheek_q0415_05.htm");
+                        DeleteItem1(talker, @leather_pouch2full, 1);
+                        GiveItem1(talker, @leather_pouch3, 1);
+                    }
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_pouch3) == 1 && OwnItemCount(talker, @leather_pouch3full) == 0)
+                {
+                    ShowPage(talker, "khavatari_rosheek_q0415_06.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @leather_pouch3) == 0 && OwnItemCount(talker, @leather_pouch3full) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "khavatari_rosheek_q0415_07.htm");
+                        DeleteItem1(talker, @leather_pouch3full, 1);
+                        GiveItem1(talker, @scroll_fiery_spirit, 1);
+                        GiveItem1(talker, @rosheeks_letter, 1);
+                    }
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @rosheeks_letter) == 1 && OwnItemCount(talker, @scroll_fiery_spirit) == 1)
+                {
+                    ShowPage(talker, "khavatari_rosheek_q0415_08.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_orc_monk) && OwnItemCount(talker, @rosheeks_letter) == 0 && OwnItemCount(talker, @scroll_fiery_spirit) == 1)
+                {
+                    ShowPage(talker, "khavatari_rosheek_q0415_09.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

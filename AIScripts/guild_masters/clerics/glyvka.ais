@@ -1,0 +1,130 @@
+class glyvka : cleric_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @glyvkas_botanybook) == 0 && OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about marsh moss");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @glyvkas_botanybook) == 1 && OwnItemCount(talker, @green_marsh_moss) + OwnItemCount(talker, @brown_marsh_moss) < 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Talk about marsh moss");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @glyvkas_botanybook) == 1 && OwnItemCount(talker, @green_marsh_moss) + OwnItemCount(talker, @brown_marsh_moss) >= 20 && OwnItemCount(talker, @brown_marsh_moss) < 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Talk about marsh moss");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @glyvkas_botanybook) == 1 && OwnItemCount(talker, @green_marsh_moss) + OwnItemCount(talker, @brown_marsh_moss) >= 20 && OwnItemCount(talker, @brown_marsh_moss) >= 20)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about marsh moss");
+            }
+
+            if (HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @glyvkas_botanybook) == 0 && OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about marsh moss");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @glyvkas_botanybook) == 0 && OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "glyvka_q0330_01.htm");
+                        GiveItem1(talker, @glyvkas_botanybook, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @glyvkas_botanybook) == 1 && OwnItemCount(talker, @green_marsh_moss) + OwnItemCount(talker, @brown_marsh_moss) < 20)
+                {
+                    ShowPage(talker, "glyvka_q0330_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @glyvkas_botanybook) == 1 && OwnItemCount(talker, @green_marsh_moss) + OwnItemCount(talker, @brown_marsh_moss) >= 20 && OwnItemCount(talker, @brown_marsh_moss) < 20)
+                {
+                    ShowPage(talker, "glyvka_q0330_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @glyvkas_botanybook) == 1 && OwnItemCount(talker, @green_marsh_moss) + OwnItemCount(talker, @brown_marsh_moss) >= 20 && OwnItemCount(talker, @brown_marsh_moss) >= 20)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "glyvka_q0330_06.htm");
+                        DeleteItem1(talker, @glyvkas_botanybook, 1);
+                        DeleteItem1(talker, @green_marsh_moss, OwnItemCount(talker, @green_marsh_moss));
+                        DeleteItem1(talker, @brown_marsh_moss, OwnItemCount(talker, @brown_marsh_moss));
+                        GiveItem1(talker, @brown_moss_bundle, 1);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @adept_of_taste) == 1 && OwnItemCount(talker, @ingredient_list) == 1 && OwnItemCount(talker, @red_mandragora_sap) + OwnItemCount(talker, @white_mandragora_sap) + OwnItemCount(talker, @honey) + OwnItemCount(talker, @golden_honey) + OwnItemCount(talker, @dionian_potato) + OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) + OwnItemCount(talker, @monster_eye_meat) < 5 && OwnItemCount(talker, @glyvkas_botanybook) == 0 && OwnItemCount(talker, @green_moss_bundle) + OwnItemCount(talker, @brown_moss_bundle) == 1)
+                {
+                    ShowPage(talker, "glyvka_q0330_07.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @adept_of_taste)
+        {
+            if (reply == 1 && OwnItemCount(talker, @glyvkas_botanybook) == 1 && OwnItemCount(talker, @green_marsh_moss) + OwnItemCount(talker, @brown_marsh_moss) >= 20 && OwnItemCount(talker, @brown_marsh_moss) < 20)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "glyvka_q0330_05.htm");
+                    DeleteItem1(talker, @glyvkas_botanybook, 1);
+                    DeleteItem1(talker, @green_marsh_moss, OwnItemCount(talker, @green_marsh_moss));
+                    DeleteItem1(talker, @brown_marsh_moss, OwnItemCount(talker, @brown_marsh_moss));
+                    GiveItem1(talker, @green_moss_bundle, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

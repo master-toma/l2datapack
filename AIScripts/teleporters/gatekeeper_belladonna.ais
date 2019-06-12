@@ -1,0 +1,51 @@
+class gatekeeper_belladonna : teleporter
+{
+property:
+    TelPosList Position = {
+        {1010002; 46890; 51531; -2976; 3700; 0};    // 1010002 - "The Elven Village"
+        {1010003; 9716; 15502; -4500; 3700; 0};    // 1010003 - "The Dark Elven Village"
+        {1010004; -80826; 149775; -3043; 2900; 0};    // 1010004 - "The Village of Gludin"
+        {1010006; 15744; 142928; -2704; 4100; 2};    // 1010006 - "The Town of Dion"
+        {1010008; -45186; -112459; -236; 6000; 0};    // 1010008 - "Orc Village"
+        {1010009; 115120; -178112; -916; 6000; 0}    // 1010009 - "Dwarven Village"
+    };
+    
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @get_a_pet) && OwnItemCount(talker, @animal_lovers_list) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask for knowledge about pets");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @get_a_pet) && OwnItemCount(talker, @animal_lovers_list) == 1)
+                {
+                    SetMemoState(talker, @get_a_pet, GetMemoState(talker, @get_a_pet) | 0x2);
+                    ShowPage(talker, "gatekeeper_belladonna_q0419_01.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

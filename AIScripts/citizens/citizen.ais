@@ -1,0 +1,11 @@
+class citizen : default_npc
+{
+parameter:
+    string fnHi = "chi.htm";
+    
+handler:
+    EventHandler TALKED(talker)
+    {
+        ShowPage(talker, fnHi);
+    }
+}

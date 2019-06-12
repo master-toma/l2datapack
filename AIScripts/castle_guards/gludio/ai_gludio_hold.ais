@@ -1,0 +1,100 @@
+class ai_gludio_hold : default_npc
+{
+parameter:
+    float DoNothing_DecayRatio = 1.0;
+    float Attack_DecayRatio = 6.6;
+    float UseSkill_DecayRatio = 66000.0;
+    float Attack_BoostValue = 300.0;
+    float UseSkill_BoostValue = 100000.0;
+    
+handler:
+    EventHandler NO_DESIRE()
+    {
+        AddMoveToDesire(myself.start_x, myself.start_y, myself.start_z, 30);
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        if (attacker.z > myself.sm.z + 100)
+        {
+            AddFleeDesire(attacker, 30);
+        }
+        else if (Castle_GetPledgeState(attacker) != 2)
+        {
+            if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+            {
+                AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, damage / myself.sm.max_hp / 0.05 * 100);
+            }
+        }
+    }
+
+    EventHandler CLAN_ATTACKED(attacker, victim, damage)
+    {
+        if (victim.z > myself.sm.z + 100)
+        {
+        }
+        else if (Castle_GetPledgeState(attacker) != 2)
+        {
+            if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+            {
+                AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, damage / myself.sm.max_hp / 0.05 * 50);
+            }
+        }
+    }
+
+    EventHandler STATIC_OBJECT_CLAN_ATTACKED(attacker, damage)
+    {
+        if (attacker.class_id == @siege_golem)
+        {
+            if (Rand(100) < 10)
+            {
+                AddAttackDesire(attacker.master, @AMT_MOVE_TO_TARGET, 5000.0);
+            }
+            else
+            {
+                AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, 1000.0);
+            }
+        }
+        else if (Castle_GetPledgeState(attacker) != 2)
+        {
+            if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+            {
+                AddAttackDesire(attacker, @AMT_MOVE_TO_TARGET, damage / myself.sm.max_hp / 0.05 * 50);
+            }
+        }
+    }
+
+    EventHandler SEE_SPELL(speller, skill_name_id)
+    {
+        if (Castle_GetPledgeState(speller) != 2)
+        {
+            if (Skill_GetEffectPoint(skill_name_id) > 0)
+            {
+                AddAttackDesire(speller, @AMT_MOVE_TO_TARGET, Skill_GetEffectPoint(skill_name_id) / myself.sm.max_hp / 0.05 * 150);
+            }
+        }
+    }
+
+    EventHandler SEE_CREATURE(creature)
+    {
+        if (Castle_GetPledgeState(creature) != 2)
+        {
+            if (GetLifeTime() > 7 && InMyTerritory(myself.sm))
+            {
+                AddAttackDesire(creature, @AMT_MOVE_TO_TARGET, 200);
+            }
+        }
+    }
+
+    EventHandler MOVE_TO_FINISHED(x, y, z)
+    {
+        if (x == myself.start_x && y == myself.start_y && z == myself.start_z)
+        {
+            AddDoNothingDesire(40, 30);
+        }
+        else
+        {
+            AddMoveToDesire(myself.start_x, myself.start_y, myself.start_z, 30);
+        }
+    }
+}

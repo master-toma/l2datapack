@@ -1,0 +1,106 @@
+class highpriest_orven : master_lv3_hec
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && (GetMemoState(talker, @audience_with_earth_dragon) == 21011 || GetMemoState(talker, @audience_with_earth_dragon) == 21010 || GetMemoState(talker, @audience_with_earth_dragon) == 21001 || GetMemoState(talker, @audience_with_earth_dragon) == 21000 || GetMemoState(talker, @audience_with_earth_dragon) == 20011 || GetMemoState(talker, @audience_with_earth_dragon) == 20010 || GetMemoState(talker, @audience_with_earth_dragon) == 20001 || GetMemoState(talker, @audience_with_earth_dragon) == 20000) && OwnItemCount(talker, @q_remains_of_sacrificed) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about conquering Antharas");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && (GetMemoState(talker, @audience_with_earth_dragon) == 21011 || GetMemoState(talker, @audience_with_earth_dragon) == 21010 || GetMemoState(talker, @audience_with_earth_dragon) == 21001 || GetMemoState(talker, @audience_with_earth_dragon) == 21000 || GetMemoState(talker, @audience_with_earth_dragon) == 20011 || GetMemoState(talker, @audience_with_earth_dragon) == 20010 || GetMemoState(talker, @audience_with_earth_dragon) == 20001 || GetMemoState(talker, @audience_with_earth_dragon) == 20000) && OwnItemCount(talker, @q_remains_of_sacrificed) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show Remains of Sacrifice");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && (GetMemoState(talker, @audience_with_earth_dragon) == 21110 || GetMemoState(talker, @audience_with_earth_dragon) == 21101 || GetMemoState(talker, @audience_with_earth_dragon) == 21100 || GetMemoState(talker, @audience_with_earth_dragon) == 20111 || GetMemoState(talker, @audience_with_earth_dragon) == 20110 || GetMemoState(talker, @audience_with_earth_dragon) == 20101 || GetMemoState(talker, @audience_with_earth_dragon) == 20100))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about conquering Antharas");
+            }
+
+            if (HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) >= 30000)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about conquering Antharas");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && (GetMemoState(talker, @audience_with_earth_dragon) == 21011 || GetMemoState(talker, @audience_with_earth_dragon) == 21010 || GetMemoState(talker, @audience_with_earth_dragon) == 21001 || GetMemoState(talker, @audience_with_earth_dragon) == 21000 || GetMemoState(talker, @audience_with_earth_dragon) == 20011 || GetMemoState(talker, @audience_with_earth_dragon) == 20010 || GetMemoState(talker, @audience_with_earth_dragon) == 20001 || GetMemoState(talker, @audience_with_earth_dragon) == 20000) && OwnItemCount(talker, @q_remains_of_sacrificed) == 0)
+                {
+                    ShowPage(talker, "highpriest_orven_q0337_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && (GetMemoState(talker, @audience_with_earth_dragon) == 21011 || GetMemoState(talker, @audience_with_earth_dragon) == 21010 || GetMemoState(talker, @audience_with_earth_dragon) == 21001 || GetMemoState(talker, @audience_with_earth_dragon) == 21000 || GetMemoState(talker, @audience_with_earth_dragon) == 20011 || GetMemoState(talker, @audience_with_earth_dragon) == 20010 || GetMemoState(talker, @audience_with_earth_dragon) == 20001 || GetMemoState(talker, @audience_with_earth_dragon) == 20000) && OwnItemCount(talker, @q_remains_of_sacrificed) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        GiveItem1(talker, @q_mark_of_watchers, 1);
+                        DeleteItem1(talker, @q_remains_of_sacrificed, OwnItemCount(talker, @q_remains_of_sacrificed));
+                        if (GetMemoState(talker, @audience_with_earth_dragon) + 100 == 21111)
+                        {
+                            SetMemoState(talker, @audience_with_earth_dragon, 30000);
+                        }
+                        else
+                        {
+                            SetMemoState(talker, @audience_with_earth_dragon, GetMemoState(talker, @audience_with_earth_dragon) + 100);
+                        }
+
+                        ShowPage(talker, "highpriest_orven_q0337_02.htm");
+                    }
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && (GetMemoState(talker, @audience_with_earth_dragon) == 21110 || GetMemoState(talker, @audience_with_earth_dragon) == 21101 || GetMemoState(talker, @audience_with_earth_dragon) == 21100 || GetMemoState(talker, @audience_with_earth_dragon) == 20111 || GetMemoState(talker, @audience_with_earth_dragon) == 20110 || GetMemoState(talker, @audience_with_earth_dragon) == 20101 || GetMemoState(talker, @audience_with_earth_dragon) == 20100))
+                {
+                    ShowPage(talker, "highpriest_orven_q0337_03.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @audience_with_earth_dragon) == 1 && GetMemoState(talker, @audience_with_earth_dragon) >= 30000)
+                {
+                    ShowPage(talker, "highpriest_orven_q0337_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @audience_with_earth_dragon)
+        {
+        }
+
+        super;
+    }
+}

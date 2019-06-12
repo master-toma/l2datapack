@@ -1,0 +1,26 @@
+class ol_mahum_guerilla : warrior_passive_run_away_to_clan
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @hunt_of_blacklion) == 1 && OwnItemCount(c1, @q_sophias_order2) >= 1)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                if (Rand(2) == 0)
+                {
+                    GiveItem1(c1, @q_bloodyaxe_insignia, 1);
+                }
+
+                if (Rand(100) < 7)
+                {
+                    GiveItem1(c1, @q_cargo_box2, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

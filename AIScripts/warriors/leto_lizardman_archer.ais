@@ -1,0 +1,182 @@
+class leto_lizardman_archer : warrior_passive_use_bow
+{
+handler:
+    EventHandler MY_DYING(c1, weapon_class_id)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_duty) && GetMemoState(c1, @trial_of_duty) == 9 && OwnItemCount(c1, @militas_article) < 20)
+        {
+            if (OwnItemCount(c1, @militas_article) == 19)
+            {
+                GiveItem1(c1, @militas_article, 1);
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @militas_article, 1);
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_sagittarius) && GetMemoState(c1, @test_of_sagittarius) == 13 && OwnItemCount(c1, @blood_of_lizardman) < 140)
+        {
+            if ((OwnItemCount(c1, @blood_of_lizardman) - 120) * 5 > Rand(100))
+            {
+                CreateOnePrivateEx(@serpent_demon_kadesh, "serpent_demon_kadesh", 0, 0, FloatToInt(myself.sm.x), FloatToInt(myself.sm.y), FloatToInt(myself.sm.z), 0, 0, 0);
+                DeleteItem1(c1, @blood_of_lizardman, OwnItemCount(c1, @blood_of_lizardman));
+                SoundEffect(c1, "Itemsound.quest_before_battle");
+            }
+            else
+            {
+                GiveItem1(c1, @blood_of_lizardman, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_champion) && OwnItemCount(c1, @mouens_order2) && OwnItemCount(c1, @leto_lizardman_fang1) < 100)
+        {
+            if (Rand(10) < 6)
+            {
+                if (OwnItemCount(c1, @leto_lizardman_fang1) == 99)
+                {
+                    GiveItem1(c1, @leto_lizardman_fang1, 1);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @leto_lizardman_fang1, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_summoner) && OwnItemCount(c1, @galateas_letter) == 0 && OwnItemCount(c1, @lars_list1) && OwnItemCount(c1, @letolizardman_amulet) < 30)
+        {
+            if (Rand(20) < 5)
+            {
+                if (OwnItemCount(c1, @letolizardman_amulet) == 29)
+                {
+                    GiveItem1(c1, @letolizardman_amulet, 1);
+                    SoundEffect(c1, "Itemsound.quest_middle");
+                }
+                else
+                {
+                    GiveItem1(c1, @letolizardman_amulet, 1);
+                    SoundEffect(c1, "Itemsound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_witchcraft) == 1 && OwnItemCount(c1, @alexandrias_book) == 1 && OwnItemCount(c1, @ikers_list) == 1)
+        {
+            if (Rand(100) <= 50 && OwnItemCount(c1, @leto_lizardman_charm) < 20)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @leto_lizardman_charm, 1);
+                    if (OwnItemCount(c1, @leto_lizardman_charm) >= 20)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (1)
+        {
+            c1.quest_last_reward_time = GetCurrentTick();
+            if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_1c_1) && OwnItemCount(c1, @q_charm_of_kadesh) < 40)
+            {
+                if (Rand(10) < 8)
+                {
+                    GiveItem1(c1, @q_charm_of_kadesh, 1);
+                    if (OwnItemCount(c1, @q_charm_of_kadesh) >= 40)
+                    {
+                        SoundEffect(c1, "ItemSound.quest_middle");
+                    }
+                    else
+                    {
+                        SoundEffect(c1, "ItemSound.quest_itemget");
+                    }
+                }
+            }
+
+            if (HaveMemo(c1, @song_of_hunters) && myself.sm.last_blow_weapon_class_id == @q_cybellins_dagger && (OwnItemCount(c1, @q_hunter_license_1) || OwnItemCount(c1, @q_hunter_license_2)))
+            {
+                if (Rand(2) == 0)
+                {
+                    if (OwnItemCount(c1, @q_cybellins_request))
+                    {
+                        if (OwnItemCount(c1, @q_blood_crystal_1))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_2, 1);
+                            DeleteItem1(c1, @q_blood_crystal_1, OwnItemCount(c1, @q_blood_crystal_1));
+                        }
+                        else if (OwnItemCount(c1, @q_blood_crystal_2))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_3, 1);
+                            DeleteItem1(c1, @q_blood_crystal_2, OwnItemCount(c1, @q_blood_crystal_2));
+                        }
+                        else if (OwnItemCount(c1, @q_blood_crystal_3))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_4, 1);
+                            DeleteItem1(c1, @q_blood_crystal_3, OwnItemCount(c1, @q_blood_crystal_3));
+                        }
+                        else if (OwnItemCount(c1, @q_blood_crystal_4))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_5, 1);
+                            DeleteItem1(c1, @q_blood_crystal_4, OwnItemCount(c1, @q_blood_crystal_4));
+                        }
+                        else if (OwnItemCount(c1, @q_blood_crystal_5))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_6, 1);
+                            DeleteItem1(c1, @q_blood_crystal_5, OwnItemCount(c1, @q_blood_crystal_5));
+                        }
+                        else if (OwnItemCount(c1, @q_blood_crystal_6))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_7, 1);
+                            SoundEffect(c1, "ItemSound.quest_jackpot");
+                            DeleteItem1(c1, @q_blood_crystal_6, OwnItemCount(c1, @q_blood_crystal_6));
+                        }
+                        else if (OwnItemCount(c1, @q_blood_crystal_7))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_8, 1);
+                            SoundEffect(c1, "ItemSound.quest_jackpot");
+                            DeleteItem1(c1, @q_blood_crystal_7, OwnItemCount(c1, @q_blood_crystal_7));
+                        }
+                        else if (OwnItemCount(c1, @q_blood_crystal_8))
+                        {
+                            GiveItem1(c1, @q_blood_crystal_9, 1);
+                            SoundEffect(c1, "ItemSound.quest_jackpot");
+                            DeleteItem1(c1, @q_blood_crystal_8, OwnItemCount(c1, @q_blood_crystal_8));
+                        }
+                    }
+                }
+                else if (OwnItemCount(c1, @q_cybellins_request) && OwnItemCount(c1, @q_blood_crystal_x) == 0)
+                {
+                    DeleteItem1(c1, @q_blood_crystal_1, OwnItemCount(c1, @q_blood_crystal_1));
+                    DeleteItem1(c1, @q_blood_crystal_2, OwnItemCount(c1, @q_blood_crystal_2));
+                    DeleteItem1(c1, @q_blood_crystal_3, OwnItemCount(c1, @q_blood_crystal_3));
+                    DeleteItem1(c1, @q_blood_crystal_4, OwnItemCount(c1, @q_blood_crystal_4));
+                    DeleteItem1(c1, @q_blood_crystal_5, OwnItemCount(c1, @q_blood_crystal_5));
+                    DeleteItem1(c1, @q_blood_crystal_6, OwnItemCount(c1, @q_blood_crystal_6));
+                    DeleteItem1(c1, @q_blood_crystal_7, OwnItemCount(c1, @q_blood_crystal_7));
+                    DeleteItem1(c1, @q_blood_crystal_8, OwnItemCount(c1, @q_blood_crystal_8));
+                    GiveItem1(c1, @q_blood_crystal_x, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

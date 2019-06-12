@@ -1,0 +1,95 @@
+class harne : mage_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @spirit_of_craftsman) == 1 && OwnItemCount(talker, @cecktinons_voucher1) >= 1 && GetOneTimeQuestFlag(talker, @spirit_of_craftsman) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Deliver Cecktinon's letter of introduction");
+            }
+
+            if (HaveMemo(talker, @spirit_of_craftsman) == 1 && OwnItemCount(talker, @cecktinons_voucher2) >= 1 && OwnItemCount(talker, @bone_fragment1) < 10 && GetOneTimeQuestFlag(talker, @spirit_of_craftsman) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Inquire about the Soul Catcher");
+            }
+
+            if (HaveMemo(talker, @spirit_of_craftsman) == 1 && OwnItemCount(talker, @cecktinons_voucher2) == 1 && OwnItemCount(talker, @bone_fragment1) >= 10 && GetOneTimeQuestFlag(talker, @spirit_of_craftsman) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give the piece of bone");
+            }
+
+            if (HaveMemo(talker, @spirit_of_craftsman) == 1 && OwnItemCount(talker, @soul_catcher) == 1 && GetOneTimeQuestFlag(talker, @spirit_of_craftsman) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Inquire about the Soul Catcher");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @spirit_of_craftsman) == 1 && OwnItemCount(talker, @cecktinons_voucher1) >= 1 && GetOneTimeQuestFlag(talker, @spirit_of_craftsman) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "harne_q0103_01.htm");
+                        DeleteItem1(talker, @cecktinons_voucher1, 1);
+                        GiveItem1(talker, @cecktinons_voucher2, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @spirit_of_craftsman) == 1 && OwnItemCount(talker, @cecktinons_voucher2) >= 1 && OwnItemCount(talker, @bone_fragment1) < 10 && GetOneTimeQuestFlag(talker, @spirit_of_craftsman) == 0)
+                {
+                    ShowPage(talker, "harne_q0103_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @spirit_of_craftsman) == 1 && OwnItemCount(talker, @cecktinons_voucher2) == 1 && OwnItemCount(talker, @bone_fragment1) >= 10 && GetOneTimeQuestFlag(talker, @spirit_of_craftsman) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "harne_q0103_03.htm");
+                        DeleteItem1(talker, @cecktinons_voucher2, 1);
+                        DeleteItem1(talker, @bone_fragment1, 10);
+                        GiveItem1(talker, @soul_catcher, 1);
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @spirit_of_craftsman) == 1 && OwnItemCount(talker, @soul_catcher) == 1 && GetOneTimeQuestFlag(talker, @spirit_of_craftsman) == 0)
+                {
+                    ShowPage(talker, "harne_q0103_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

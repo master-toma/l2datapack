@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_polearm_range_ mastery]	/* [폴암 레인지 마스터리] */	skill_id = 215	level = 1	operate_type = P	effect = {}	skill_end

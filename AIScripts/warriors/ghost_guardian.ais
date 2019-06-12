@@ -1,0 +1,3 @@
+class ghost_guardian : warrior_aggressive
+{
+}

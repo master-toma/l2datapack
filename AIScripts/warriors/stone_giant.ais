@@ -1,0 +1,3 @@
+class stone_giant : warrior_passive_casting_ddmagic
+{
+}

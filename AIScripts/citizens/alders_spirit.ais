@@ -1,0 +1,56 @@
+class alders_spirit : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @alders_skull1) || OwnItemCount(talker, @alders_skull2)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that you want to get the Book of Revelation of Kaisha");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @alders_skull1) || OwnItemCount(talker, @alders_skull2)))
+                {
+                    ShowPage(talker, "alders_spirit_q0219_02.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler TIMER_FIRED_EX(timer_id)
+    {
+        if (timer_id == 21901)
+        {
+            Despawn();
+        }
+
+        super;
+    }
+
+    EventHandler CREATED(i0)
+    {
+        AddTimerEx(21901, 1000 * 200);
+        super;
+    }
+}

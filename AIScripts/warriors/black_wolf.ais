@@ -1,0 +1,23 @@
+class black_wolf : warrior_passive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @red_bonnets_revenge) && OwnItemCount(c1, @black_wolf_pelt) < 40)
+        {
+            if (OwnItemCount(c1, @black_wolf_pelt) < 39)
+            {
+                SoundEffect(c1, "ItemSound.quest_itemget");
+            }
+            else
+            {
+                SoundEffect(c1, "ItemSound.quest_middle");
+            }
+
+            GiveItem1(c1, @black_wolf_pelt, 1);
+        }
+
+        super;
+    }
+}

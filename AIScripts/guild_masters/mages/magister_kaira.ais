@@ -1,0 +1,339 @@
+class magister_kaira : mage_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @testimony_of_fate) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_fate) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Test of Fate");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_fate) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Test of Fate");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @kairas_letter1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask who you should go find and investigate");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @metheus_funeral_jar) || OwnItemCount(talker, @kasandras_remains)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Talk about the Remains of the Younger Sister of Metheus");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @herbalism_textbook) || OwnItemCount(talker, @ixias_list)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about Poison of Belladonna");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @alders_skull1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Give Skull of Alders");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @alders_skull2) || OwnItemCount(talker, @alders_receipt)))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Ask who you should look for as the descendant of Alders");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @revelations_manuscript))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 7;
+                AddChoice(7, "Give Restored Book of Revelation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @kairas_instructions) && talker.level < 38)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 8;
+                AddChoice(8, "Say that you will go through Initiation to Shillien");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @kairas_instructions) && talker.level >= 38)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 9;
+                AddChoice(9, "Say that you will go through Initiation to Shillien");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @kairas_recommend) && talker.level >= 38)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 10;
+                AddChoice(10, "Ask who you should go find in order to go through the initiation");
+            }
+
+            if (HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @palus_charm))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 11;
+                AddChoice(11, "Bid farewell");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @alexandrias_book) == 1 && OwnItemCount(talker, @aklantos_gem2) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 12;
+                AddChoice(12, "Say that you are looking for jewels");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @aklantos_gem2) == 1 && OwnItemCount(talker, @alexandrias_book) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 13;
+                AddChoice(13, "Ask about jewels");
+            }
+
+            if (HaveMemo(talker, @test_of_witchcraft) == 1 && (OwnItemCount(talker, @brimstone1) >= 1 || OwnItemCount(talker, @orims_instructions) >= 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 14;
+                AddChoice(14, "Ask about jewels");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_fate) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (talker.race == @race_dark_elf && talker.level >= 37 && IsInCategory(@delf_2nd_group, talker.occupation))
+                        {
+                            ShowPage(talker, "magister_kaira_q0219_03.htm");
+                        }
+                        else if (talker.race == @race_dark_elf && talker.level >= 37)
+                        {
+                            ShowPage(talker, "magister_kaira_q0219_01a.htm");
+                        }
+                        else if (talker.race == @race_dark_elf)
+                        {
+                            ShowPage(talker, "magister_kaira_q0219_02.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "magister_kaira_q0219_01.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 0 && GetOneTimeQuestFlag(talker, @testimony_of_fate) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @kairas_letter1))
+                {
+                    ShowPage(talker, "magister_kaira_q0219_06.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @metheus_funeral_jar) || OwnItemCount(talker, @kasandras_remains)))
+                {
+                    ShowPage(talker, "magister_kaira_q0219_07.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @herbalism_textbook) || OwnItemCount(talker, @ixias_list)))
+                {
+                    ShowPage(talker, "magister_kaira_q0219_08.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @alders_skull1))
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "magister_kaira_q0219_09.htm");
+                        GiveItem1(talker, @alders_skull2, 1);
+                        DeleteItem1(talker, @alders_skull1, 1);
+                        CreateOnePrivateEx(@alders_spirit, "alders_spirit", 0, 0, 78977, 149036, -3597, 0, 0, 0);
+                    }
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && (OwnItemCount(talker, @alders_skull2) || OwnItemCount(talker, @alders_receipt)))
+                {
+                    ShowPage(talker, "magister_kaira_q0219_10.htm");
+                }
+
+                break;
+            case 7:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @revelations_manuscript))
+                {
+                    ShowPage(talker, "magister_kaira_q0219_11.htm");
+                }
+
+                break;
+            case 8:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @kairas_instructions) && talker.level < 38)
+                {
+                    ShowPage(talker, "magister_kaira_q0219_14.htm");
+                }
+
+                break;
+            case 9:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @kairas_instructions) && talker.level >= 38)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "magister_kaira_q0219_15.htm");
+                        GiveItem1(talker, @kairas_recommend, 1);
+                        DeleteItem1(talker, @kairas_instructions, 1);
+                    }
+                }
+
+                break;
+            case 10:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @kairas_recommend) && talker.level >= 38)
+                {
+                    ShowPage(talker, "magister_kaira_q0219_16.htm");
+                }
+
+                break;
+            case 11:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_fate) == 1 && OwnItemCount(talker, @palus_charm))
+                {
+                    ShowPage(talker, "magister_kaira_q0219_17.htm");
+                }
+
+                break;
+            case 12:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @alexandrias_book) == 1 && OwnItemCount(talker, @aklantos_gem2) == 0)
+                {
+                    ShowPage(talker, "magister_kaira_q0229_01.htm");
+                }
+
+                break;
+            case 13:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && OwnItemCount(talker, @aklantos_gem2) == 1 && OwnItemCount(talker, @alexandrias_book) == 1)
+                {
+                    ShowPage(talker, "magister_kaira_q0229_03.htm");
+                }
+
+                break;
+            case 14:
+                if (_from_choice == 0 || HaveMemo(talker, @test_of_witchcraft) == 1 && (OwnItemCount(talker, @brimstone1) >= 1 || OwnItemCount(talker, @orims_instructions) >= 1))
+                {
+                    ShowPage(talker, "magister_kaira_q0229_04.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @testimony_of_fate)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "magister_kaira_q0219_05.htm");
+                GiveItem1(talker, @kairas_letter1, 1);
+                talker.flag = 0;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @testimony_of_fate)
+        {
+            if (reply == 1)
+            {
+                FHTML_SetFileName(fhtml0, "magister_kaira_q0219_04.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @testimony_of_fate);
+                ShowFHTML(talker, fhtml0);
+            }
+            else if (reply == 2 && OwnItemCount(talker, @revelations_manuscript) > 0)
+            {
+                if (talker.level >= 38)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "magister_kaira_q0219_12.htm");
+                        GiveItem1(talker, @kairas_recommend, 1);
+                        DeleteItem1(talker, @revelations_manuscript, 1);
+                    }
+                }
+                else if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "magister_kaira_q0219_13.htm");
+                    GiveItem1(talker, @kairas_instructions, 1);
+                    DeleteItem1(talker, @revelations_manuscript, 1);
+                }
+            }
+        }
+
+        if (ask == @test_of_witchcraft)
+        {
+            if (reply == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "magister_kaira_q0229_02.htm");
+                    GiveItem1(talker, @aklantos_gem2, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

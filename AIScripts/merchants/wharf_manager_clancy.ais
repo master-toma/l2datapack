@@ -1,0 +1,8 @@
+class wharf_manager_clancy : wharf_keeper
+{
+property:
+    BuySellList SellList0 = {
+        {"boat_ticket_talk_glu"; 20};
+        {"boat_ticket_glu_talk"; 20}
+    };
+}

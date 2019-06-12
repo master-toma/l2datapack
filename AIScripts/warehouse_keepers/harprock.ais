@@ -1,0 +1,90 @@
+class harprock : warehouse_keeper
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @dwarven_kinship) == 1 && OwnItemCount(talker, @calculains_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Show the letter of Collette");
+            }
+
+            if (HaveMemo(talker, @dwarven_kinship) == 1 && OwnItemCount(talker, @normans_letter) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about delivering a letter");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @dwarven_kinship) == 1 && OwnItemCount(talker, @calculains_letter) == 1)
+                {
+                    ShowPage(talker, "harprock_q0323_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @dwarven_kinship) == 1 && OwnItemCount(talker, @normans_letter) == 1)
+                {
+                    ShowPage(talker, "harprock_q0323_05.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @dwarven_kinship)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @calculains_letter) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "harprock_q0323_03.htm");
+                        DeleteItem1(talker, @calculains_letter, 1);
+                        GiveItem1(talker, @normans_letter, 1);
+                        GiveItem1(talker, @adena, 1000);
+                    }
+                }
+            }
+            else if (reply == 2 && GetOneTimeQuestFlag(talker, @dwarven_kinship) == 0 && OwnItemCount(talker, @calculains_letter) == 1)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    DeleteItem1(talker, @calculains_letter, 1);
+                    ShowPage(talker, "harprock_q0323_04.htm");
+                    GiveItem1(talker, @adena, 3000);
+                    RemoveMemo(talker, @dwarven_kinship);
+                    SoundEffect(talker, "ItemSound.quest_finish");
+                    SetOneTimeQuestFlag(talker, @dwarven_kinship, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

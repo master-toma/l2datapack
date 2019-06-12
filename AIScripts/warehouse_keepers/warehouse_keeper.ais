@@ -1,0 +1,46 @@
+class warehouse_keeper : default_npc
+{
+parameter:
+    string ShopName = "Warehouse Keeper";
+    string fnHi = "whi.htm";
+    string fnBye = "wbye.htm";
+    string fnYouAreChaotic = "wyac.htm";
+    string fnClassMismatch = "";
+    string fnEmpty = "we.htm";
+    string fnNowSiege = "";
+    
+handler:
+    EventHandler NO_DESIRE()
+    {
+        AddDoNothingDesire(-1, 9999);
+    }
+
+    EventHandler TALKED(talker)
+    {
+        if (talker.karma > 0)
+        {
+            ShowPage(talker, fnYouAreChaotic);
+        }
+        else
+        {
+            ShowPage(talker, fnHi);
+        }
+    }
+
+    EventHandler LEARN_SKILL_REQUESTED(talker)
+    {
+        if (talker.race == myself.sm.race && IsInCategory(@fighter_group, talker.occupation))
+        {
+            ShowSkillList(talker, "");
+        }
+        else
+        {
+            ShowPage(talker, fnClassMismatch);
+        }
+    }
+
+    EventHandler ONE_SKILL_SELECTED(talker, skill_name_id, need_quest)
+    {
+        ShowGrowSkillMessage(talker, skill_name_id, "");
+    }
+}

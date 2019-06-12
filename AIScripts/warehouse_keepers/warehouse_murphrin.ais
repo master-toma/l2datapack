@@ -1,0 +1,74 @@
+class warehouse_murphrin : warehouse_keeper
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bronps_letter) && OwnItemCount(talker, @berry_tart) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Give Bruno's letter");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bronps_letter) == 0 && OwnItemCount(talker, @berry_tart))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about berry tarts");
+            }
+
+            if (HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bronps_letter) == 0 && OwnItemCount(talker, @berry_tart) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Warehouse Keeper Airy");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bronps_letter) && OwnItemCount(talker, @berry_tart) == 0)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "warehouse_murphrin_q0108_01.htm");
+                        GiveItem1(talker, @berry_tart, 1);
+                        DeleteItem1(talker, @bronps_letter, 1);
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bronps_letter) == 0 && OwnItemCount(talker, @berry_tart))
+                {
+                    ShowPage(talker, "warehouse_murphrin_q0108_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @diamond_gambit) == 1 && OwnItemCount(talker, @bronps_letter) == 0 && OwnItemCount(talker, @berry_tart) == 0)
+                {
+                    ShowPage(talker, "warehouse_murphrin_q0108_03.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

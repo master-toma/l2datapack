@@ -1,0 +1,157 @@
+class guard_byron : guard_stand
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 3 && (OwnItemCount(talker, @q_fairy_stone) == 1 || OwnItemCount(talker, @q_fairy_stone_delux) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Valley of Fairies");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 11 && OwnItemCount(talker, @q_fairy_stone) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Show Elven stone");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 11 && OwnItemCount(talker, @q_fairy_stone_delux) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Show pure-white Elven stone");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 4 && OwnItemCount(talker, @q_fairy_stone) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Ask about Valley of Fairies");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 4 && OwnItemCount(talker, @q_fairy_stone_delux) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask about Valley of Fairies");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 10)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Say that the pure-white Elven stone broke");
+            }
+
+            if (HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 11 && OwnItemCount(talker, @q_fairy_stone) == 0 && OwnItemCount(talker, @q_fairy_stone_delux) == 0 && (OwnItemCount(talker, @q_list_of_stuff_for_fs) == 1 || OwnItemCount(talker, @q_list_of_stuff_for_fsd) == 1))
+            {
+                _choiceN = _choiceN + 1;
+                _code = 6;
+                AddChoice(6, "Show the list of Elven stone ingredients");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 3 && (OwnItemCount(talker, @q_fairy_stone) == 1 || OwnItemCount(talker, @q_fairy_stone_delux) == 1))
+                {
+                    ShowPage(talker, "guard_byron_q0420_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 11 && OwnItemCount(talker, @q_fairy_stone) == 1)
+                {
+                    SetMemoState(talker, @little_wings, 4);
+                    ShowPage(talker, "guard_byron_q0420_05.htm");
+                    SetJournal(talker, @little_wings, 4);
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 11 && OwnItemCount(talker, @q_fairy_stone_delux) == 1)
+                {
+                    SetMemoState(talker, @little_wings, 4);
+                    ShowPage(talker, "guard_byron_q0420_06.htm");
+                    SetJournal(talker, @little_wings, 4);
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 4 && OwnItemCount(talker, @q_fairy_stone) == 1)
+                {
+                    ShowPage(talker, "guard_byron_q0420_07.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 4 && OwnItemCount(talker, @q_fairy_stone_delux) == 1)
+                {
+                    ShowPage(talker, "guard_byron_q0420_08.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 10)
+                {
+                    ShowPage(talker, "guard_byron_q0420_09.htm");
+                }
+
+                break;
+            case 6:
+                if (_from_choice == 0 || HaveMemo(talker, @little_wings) == 1 && GetMemoState(talker, @little_wings) == 11 && OwnItemCount(talker, @q_fairy_stone) == 0 && OwnItemCount(talker, @q_fairy_stone_delux) == 0 && (OwnItemCount(talker, @q_list_of_stuff_for_fs) == 1 || OwnItemCount(talker, @q_list_of_stuff_for_fsd) == 1))
+                {
+                    ShowPage(talker, "guard_byron_q0420_10.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @little_wings)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "guard_byron_q0420_02.htm");
+            }
+
+            if (reply == 2)
+            {
+                if (OwnItemCount(talker, @q_fairy_stone) == 1)
+                {
+                    SetMemoState(talker, @little_wings, 4);
+                    ShowPage(talker, "guard_byron_q0420_03.htm");
+                    SetJournal(talker, @little_wings, 4);
+                }
+                else
+                {
+                    SetMemoState(talker, @little_wings, 4);
+                    ShowPage(talker, "guard_byron_q0420_04.htm");
+                    SetJournal(talker, @little_wings, 4);
+                }
+            }
+        }
+
+        super;
+    }
+}

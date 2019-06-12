@@ -1,0 +1,26 @@
+class lemures : warrior_passive_casting_ddmagic
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @hunt_of_blacklion) == 1 && OwnItemCount(c1, @q_sophias_order1) >= 1)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                if (Rand(2) == 0)
+                {
+                    GiveItem1(c1, @q_undead_ash, 1);
+                }
+
+                if (Rand(100) < 8)
+                {
+                    GiveItem1(c1, @q_cargo_box1, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

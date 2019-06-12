@@ -1,0 +1,2 @@
+skill_begin	skill_name = [s_lung_capacity1]	/* [부스트 브레스] */	skill_id = 195	level = 1	operate_type = P	effect = {{p_breath;180;diff}}	skill_end
+skill_begin	skill_name = [s_lung_capacity2]	/* [부스트 브레스] */	skill_id = 195	level = 2	operate_type = P	effect = {{p_breath;300;diff}}	skill_end

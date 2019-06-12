@@ -1,0 +1,31 @@
+class warrior_casting_enchant : warrior
+{
+parameter:
+    int Buff = @s_self_might1;
+    
+handler:
+    EventHandler CREATED()
+    {
+        myself.i_ai0 = 0;
+        myself.i_ai1 = 0;
+        super;
+    }
+
+    EventHandler ATTACKED(attacker, damage)
+    {
+        if (attacker.is_pc == @TRUE || IsInCategory(@summon_npc_group, attacker.class_id))
+        {
+            if (myself.i_ai1 == 0 && Rand(100) < 33 && FloatToInt(myself.sm.hp / myself.sm.max_hp * 100) > 50)
+            {
+                if (Skill_GetConsumeMP(Buff) < myself.sm.mp && Skill_GetConsumeHP(Buff) < myself.sm.hp && Skill_InReuseDelay(Buff) == @FALSE)
+                {
+                    AddUseSkillDesire(myself.sm, Buff, @ST_HEAL, @AMT_MOVE_TO_TARGET, 1000000);
+                }
+            }
+
+            myself.i_ai1 = 1;
+        }
+
+        super;
+    }
+}

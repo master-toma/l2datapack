@@ -1,0 +1,3 @@
+class warrior_passive_casting_enchant_self : warrior_casting_enchant_self
+{
+}

@@ -1,0 +1,80 @@
+class nyakuri : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 13 && OwnItemCount(talker, @greetings) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that your dad sent you");
+            }
+
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 14 && OwnItemCount(talker, @greetings) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Tell to be careful in the future");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 13 && OwnItemCount(talker, @greetings) > 0)
+                {
+                    ShowPage(talker, "nyakuri_q0227_01.htm");
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 14 && OwnItemCount(talker, @greetings) > 0)
+                {
+                    ShowPage(talker, "nyakuri_q0227_04.htm");
+                    SetMemoState(talker, @trial_of_reformer, 15);
+                    DeleteItem1(talker, @greetings, 1);
+                    GiveItem1(talker, @nyakuris_letter, 1);
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, i0, reply, talker)
+    {
+        if (ask == @trial_of_reformer)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "nyakuri_q0227_03.htm");
+                if (Maker_GetNpcCount() == 1)
+                {
+                    i0 = CreateOnePrivateEx(@ol_mahum_pilgrim, "ol_mahum_pilgrim", 0, 0, 125947, -180049, -1778, 0, 0, 0);
+                    CreateOnePrivateEx(@krudel_lizardman, "krudel_lizardman", 0, 0, 126019, -179983, -1781, i0, 0, 0);
+                }
+            }
+
+            if (reply == 2)
+            {
+                ShowPage(talker, "nyakuri_q0227_02.htm");
+            }
+        }
+
+        super;
+    }
+}

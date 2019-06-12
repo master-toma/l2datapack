@@ -1,0 +1,173 @@
+class priest_adonius : cleric_coach
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @path_to_shillien_oracle) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Talk about Song of Light");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @arkenias_instructions) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Andariel Book");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @adonius_list) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Give ingredients");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @andariel_scripture_copy) >= 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give ingredients");
+            }
+
+            if (HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @arkenias_instructions) == 0 && OwnItemCount(talker, @adonius_list) == 0 && OwnItemCount(talker, @andariel_scripture_copy) == 0 && OwnItemCount(talker, @moonflower_charm) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Talk about Andariel Scripture Copy");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @path_to_shillien_oracle) == 1)
+                {
+                    if (OwnItemCount(talker, @prayer_of_adon) == 1)
+                    {
+                        ShowPage(talker, "priest_adonius_q0413_01.htm");
+                    }
+                    else if (OwnItemCount(talker, @penitents_mark) == 1 && OwnItemCount(talker, @ashen_bones) == 0 && OwnItemCount(talker, @andariel_book) == 0)
+                    {
+                        ShowPage(talker, "priest_adonius_q0413_05.htm");
+                    }
+                    else if (OwnItemCount(talker, @penitents_mark) == 1 && OwnItemCount(talker, @ashen_bones) < 10 && OwnItemCount(talker, @ashen_bones) > 0)
+                    {
+                        ShowPage(talker, "priest_adonius_q0413_06.htm");
+                    }
+                    else if (OwnItemCount(talker, @penitents_mark) == 1 && OwnItemCount(talker, @ashen_bones) >= 10)
+                    {
+                        if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                        {
+                            talker.quest_last_reward_time = GetCurrentTick();
+                            ShowPage(talker, "priest_adonius_q0413_07.htm");
+                            DeleteItem1(talker, @ashen_bones, OwnItemCount(talker, @ashen_bones));
+                            DeleteItem1(talker, @penitents_mark, OwnItemCount(talker, @penitents_mark));
+                            GiveItem1(talker, @andariel_book, 1);
+                        }
+                    }
+                    else if (OwnItemCount(talker, @andariel_book) == 1)
+                    {
+                        ShowPage(talker, "priest_adonius_q0413_08.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @arkenias_instructions) >= 1)
+                {
+                    ShowPage(talker, "priest_adonius_q0218_01.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @adonius_list) >= 1)
+                {
+                    if (OwnItemCount(talker, @spider_ichor) >= 20 && OwnItemCount(talker, @harpys_down) >= 20)
+                    {
+                        ShowPage(talker, "priest_adonius_q0218_04.htm");
+                        DeleteItem1(talker, @spider_ichor, OwnItemCount(talker, @spider_ichor));
+                        DeleteItem1(talker, @harpys_down, OwnItemCount(talker, @harpys_down));
+                        DeleteItem1(talker, @adonius_list, 1);
+                        GiveItem1(talker, @andariel_scripture_copy, 1);
+                    }
+                    else
+                    {
+                        ShowPage(talker, "priest_adonius_q0218_03.htm");
+                    }
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @moonflower_charm) >= 1 && OwnItemCount(talker, @andariel_scripture_copy) >= 1)
+                {
+                    ShowPage(talker, "priest_adonius_q0218_05.htm");
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @testimony_of_life) == 1 && OwnItemCount(talker, @arkenias_instructions) == 0 && OwnItemCount(talker, @adonius_list) == 0 && OwnItemCount(talker, @andariel_scripture_copy) == 0 && OwnItemCount(talker, @moonflower_charm) == 1)
+                {
+                    ShowPage(talker, "priest_adonius_q0218_06.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, reply, talker)
+    {
+        if (ask == @path_to_shillien_oracle)
+        {
+            if (reply == 1)
+            {
+                ShowPage(talker, "priest_adonius_q0413_02.htm");
+            }
+            else if (reply == 2)
+            {
+                ShowPage(talker, "priest_adonius_q0413_03.htm");
+            }
+            else if (reply == 3 && OwnItemCount(talker, @prayer_of_adon) > 0)
+            {
+                if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                {
+                    talker.quest_last_reward_time = GetCurrentTick();
+                    ShowPage(talker, "priest_adonius_q0413_04.htm");
+                    DeleteItem1(talker, @prayer_of_adon, 1);
+                    GiveItem1(talker, @penitents_mark, 1);
+                }
+            }
+        }
+
+        if (ask == @testimony_of_life)
+        {
+            if (reply == 1)
+            {
+                if (OwnItemCount(talker, @arkenias_instructions) >= 1)
+                {
+                    ShowPage(talker, "priest_adonius_q0218_02.htm");
+                    DeleteItem1(talker, @arkenias_instructions, 1);
+                    GiveItem1(talker, @adonius_list, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

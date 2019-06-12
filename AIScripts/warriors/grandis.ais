@@ -1,0 +1,81 @@
+class grandis : warrior_aggressive
+{
+handler:
+    EventHandler MY_DYING(c1)
+    {
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @testimony_of_fate) && OwnItemCount(c1, @palus_charm) && OwnItemCount(c1, @arkenias_note) && OwnItemCount(c1, @red_fairy_dust) == 0 && OwnItemCount(c1, @pixy_garnet) && OwnItemCount(c1, @grandis_skull) < 10)
+        {
+            if (OwnItemCount(c1, @grandis_skull) == 9)
+            {
+                GiveItem1(c1, @grandis_skull, 1);
+                SoundEffect(c1, "Itemsound.quest_middle");
+            }
+            else
+            {
+                GiveItem1(c1, @grandis_skull, 1);
+                SoundEffect(c1, "Itemsound.quest_itemget");
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @test_of_duelist) && OwnItemCount(c1, @grandis_skin) < 3 && GetMemoState(c1, @test_of_duelist) == 2)
+        {
+            if (1)
+            {
+                c1.quest_last_reward_time = GetCurrentTick();
+                GiveItem1(c1, @grandis_skin, 1);
+                if (OwnItemCount(c1, @grandis_skin) >= 3)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (HaveMemo(c1, @trial_of_scholar) && OwnItemCount(c1, @miriens_sigil3) == 1 && OwnItemCount(c1, @cronos_sigil) == 1 && OwnItemCount(c1, @treafs_ring) == 1 && OwnItemCount(c1, @scripture_chapter_3) == 0)
+        {
+            if (Rand(100) < 30)
+            {
+                if (1)
+                {
+                    c1.quest_last_reward_time = GetCurrentTick();
+                    GiveItem1(c1, @scripture_chapter_3, 1);
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+            }
+        }
+
+        c1 = GetLastAttacker();
+        if (1)
+        {
+            c1.quest_last_reward_time = GetCurrentTick();
+            if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_1c_9) && OwnItemCount(c1, @q_grandis_skull) < 100)
+            {
+                GiveItem1(c1, @q_grandis_skull, 2);
+                if (OwnItemCount(c1, @q_grandis_skull) >= 100)
+                {
+                    SoundEffect(c1, "ItemSound.quest_middle");
+                }
+                else
+                {
+                    SoundEffect(c1, "ItemSound.quest_itemget");
+                }
+            }
+
+            if (HaveMemo(c1, @song_of_hunters) && OwnItemCount(c1, @q_request_1r_2) && OwnItemCount(c1, @q_titans_tablet) < 1)
+            {
+                if (Rand(10) == 0)
+                {
+                    CreateOnePrivate(@grandis_chief_gok_magok, "grandis_chief_gok_magok", 0, 1);
+                }
+            }
+        }
+
+        super;
+    }
+}

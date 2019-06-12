@@ -1,0 +1,12 @@
+class ai_boss02_b02_susceptor : warrior_aggressive_casting_ddmagic
+{
+handler:
+    EventHandler CREATED()
+    {
+        myself.sit_on_stop = 1;
+    }
+
+    EventHandler DESIRE_MANIPULATION(speller, desire)
+    {
+    }
+}

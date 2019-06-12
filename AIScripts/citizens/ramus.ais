@@ -1,0 +1,82 @@
+class ramus : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 15 && OwnItemCount(talker, @greetings) > 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Say that your teacher sent you");
+            }
+
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 16)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask the specific location");
+            }
+
+            if (HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 17)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask if the other person has another request");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 15 && OwnItemCount(talker, @greetings) > 0)
+                {
+                    ShowPage(talker, "ramus_q0227_01.htm");
+                    SetMemoState(talker, @trial_of_reformer, 16);
+                    DeleteItem1(talker, @greetings, 1);
+                    GiveItem1(talker, @undead_list, 1);
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 16)
+                {
+                    ShowPage(talker, "ramus_q0227_02.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_reformer) == 1 && GetMemoState(talker, @trial_of_reformer) == 17)
+                {
+                    if (OwnItemCount(talker, @undead_list) >= 1)
+                    {
+                        ShowPage(talker, "ramus_q0227_03.htm");
+                        SetMemoState(talker, @trial_of_reformer, 18);
+                        DeleteItem1(talker, @bone_fragment4, OwnItemCount(talker, @bone_fragment4));
+                        DeleteItem1(talker, @bone_fragment5, OwnItemCount(talker, @bone_fragment5));
+                        DeleteItem1(talker, @bone_fragment6, OwnItemCount(talker, @bone_fragment6));
+                        DeleteItem1(talker, @bone_fragment7, OwnItemCount(talker, @bone_fragment7));
+                        DeleteItem1(talker, @bone_fragment8, OwnItemCount(talker, @bone_fragment8));
+                        DeleteItem1(talker, @undead_list, 1);
+                        GiveItem1(talker, @ramuss_letter, 1);
+                    }
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+}

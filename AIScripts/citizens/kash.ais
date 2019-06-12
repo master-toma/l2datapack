@@ -1,0 +1,169 @@
+class kash : citizen
+{
+handler:
+    EventHandler TALK_SELECTED(fhtml0, talker)
+    {
+        if (_from_choice == 0)
+        {
+            if (HaveMemo(talker, @trial_of_challenger) == 0 && GetOneTimeQuestFlag(talker, @trial_of_challenger) == 0)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 0;
+                AddChoice(0, "Ask about Certificate of Challenger");
+            }
+
+            if (HaveMemo(talker, @trial_of_challenger) == 0 && GetOneTimeQuestFlag(talker, @trial_of_challenger) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 1;
+                AddChoice(1, "Ask about Certificate of Challenger");
+            }
+
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 2;
+                AddChoice(2, "Ask about Shyslassys");
+            }
+
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && OwnItemCount(talker, @scroll_of_shyslassy) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 3;
+                AddChoice(3, "Give Ancient Document of Medusa");
+            }
+
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && OwnItemCount(talker, @letter_of_kash) == 1)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 4;
+                AddChoice(4, "Ask what kind of person Martin is");
+            }
+
+            if (HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) >= 7)
+            {
+                _choiceN = _choiceN + 1;
+                _code = 5;
+                AddChoice(5, "Get angry saying that you were deceived");
+            }
+
+            if (_choiceN > 1)
+            {
+                ShowChoicePage(talker, 1);
+                return;
+            }
+        }
+
+        if (_from_choice || _choiceN == 1)
+        {
+            select (_code)
+            {
+            case 0:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 0 && GetOneTimeQuestFlag(talker, @trial_of_challenger) == 0)
+                {
+                    if (GetMemoCount(talker) < 16)
+                    {
+                        if (IsInCategory(@warrior_group, talker.occupation) && talker.level >= 35)
+                        {
+                            ShowPage(talker, "kash_q0211_03.htm");
+                        }
+                        else if (IsInCategory(@warrior_group, talker.occupation))
+                        {
+                            ShowPage(talker, "kash_q0211_01.htm");
+                        }
+                        else
+                        {
+                            ShowPage(talker, "kash_q0211_02.htm");
+                        }
+                    }
+                    else
+                    {
+                        ShowPage(talker, "fullquest.htm");
+                    }
+                }
+
+                break;
+            case 1:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 0 && GetOneTimeQuestFlag(talker, @trial_of_challenger) == 1)
+                {
+                    ShowPage(talker, "finishedquest.htm");
+                }
+
+                break;
+            case 2:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) == 1)
+                {
+                    ShowPage(talker, "kash_q0211_06.htm");
+                }
+
+                break;
+            case 3:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && OwnItemCount(talker, @scroll_of_shyslassy) == 1)
+                {
+                    if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+                    {
+                        talker.quest_last_reward_time = GetCurrentTick();
+                        ShowPage(talker, "kash_q0211_07.htm");
+                        GiveItem1(talker, @letter_of_kash, 1);
+                        DeleteItem1(talker, @scroll_of_shyslassy, 1);
+                        SetMemoState(talker, @trial_of_challenger, 3);
+                    }
+                }
+
+                break;
+            case 4:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && OwnItemCount(talker, @letter_of_kash) == 1)
+                {
+                    ShowPage(talker, "kash_q0211_08.htm");
+                }
+
+                break;
+            case 5:
+                if (_from_choice == 0 || HaveMemo(talker, @trial_of_challenger) == 1 && GetMemoState(talker, @trial_of_challenger) >= 7)
+                {
+                    ShowPage(talker, "kash_q0211_09.htm");
+                }
+
+                break;
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler QUEST_ACCEPTED(quest_id, talker)
+    {
+        if (quest_id == @trial_of_challenger)
+        {
+            if (GetCurrentTick() - talker.quest_last_reward_time > 1)
+            {
+                talker.quest_last_reward_time = GetCurrentTick();
+                SetMemo(talker, quest_id);
+                SoundEffect(talker, "ItemSound.quest_accept");
+                ShowPage(talker, "kash_q0211_05.htm");
+                SetMemoState(talker, @trial_of_challenger, 1);
+            }
+
+            return;
+        }
+
+        super;
+    }
+
+    EventHandler MENU_SELECTED(ask, fhtml0, reply, talker)
+    {
+        if (ask == @trial_of_challenger)
+        {
+            if (reply == 1)
+            {
+                FHTML_SetFileName(fhtml0, "kash_q0211_04.htm");
+                FHTML_SetInt(fhtml0, "quest_id", @trial_of_challenger);
+                ShowFHTML(talker, fhtml0);
+            }
+        }
+
+        super;
+    }
+}

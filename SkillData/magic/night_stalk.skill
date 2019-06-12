@@ -1,0 +1,1 @@
+skill_begin	skill_name = [s_night_stalk]	/* [나이트 스토커] */	skill_id = 174	level = 1	operate_type = P	effect = {}	skill_end
