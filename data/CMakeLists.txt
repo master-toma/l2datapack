@@ -45,8 +45,6 @@ add_custom_command(
     VERBATIM
 )
 
-set(SCRIPT_L2CC_PATH ${CMAKE_BINARY_DIR}/install/L2CC/l2cc.exe CACHE FILEPATH "Path to l2cc.exe")
-
 add_custom_command(
     TARGET  ${PROJECT_NAME}
     WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/install/Script"
