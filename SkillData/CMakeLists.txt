@@ -18,9 +18,7 @@ add_custom_command(
 
 add_custom_command(
     TARGET  ${PROJECT_NAME}
-    WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/install/Script"
-    COMMAND ${SCRIPT_MERGE_SCRIPT_PATH} -e ".skill" --root_dir "${CMAKE_CURRENT_LIST_DIR}" --out_name "${CMAKE_BINARY_DIR}/install/CachedScript/skilldata.txt"
-    COMMENT "Merging skills to ${CMAKE_BINARY_DIR}/install/CachedScript/skilldata.txt"
+    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_BINARY_DIR}/install/Script/skilldata.txt" "${CMAKE_BINARY_DIR}/install/CachedScript/skilldata.txt"
     VERBATIM
 )
 
