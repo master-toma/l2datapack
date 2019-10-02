@@ -1,0 +1,18 @@
+//명품관 무기
+MultiSell_begin	[blackmerchant_weapon]	1
+selllist={{{[flamberge];1};{{[crystal_c];573};{[crystal_d];2865}}};
+{{[stormbringer];1};{{[crystal_c];573};{[crystal_d];2865}}};
+{{[sword_of_delusion];1};{{[crystal_c];1075};{[crystal_d];5375}}};
+{{[war_pick];1};{{[crystal_c];573};{[crystal_d];2865}}};
+{{[war_axe];1};{{[crystal_c];1075};{[crystal_d];5375}}};
+{{[crystal_staff];1};{{[crystal_c];573};{[crystal_d];2865}}};
+{{[sage's_staff];1};{{[crystal_c];1075};{[crystal_d];5375}}};
+{{[cursed_dagger];1};{{[crystal_c];573};{[crystal_d];2865}}};
+{{[dark_screamer];1};{{[crystal_c];1075};{[crystal_d];5375}}};
+{{[chakram];1};{{[crystal_c];573};{[crystal_d];2865}}};
+{{[fist_blade];1};{{[crystal_c];1075};{[crystal_d];5375}}};
+{{[crystallized_ice_bow];1};{{[crystal_c];573};{[crystal_d];2865}}};
+{{[akat_long_bow];1};{{[crystal_c];1075};{[crystal_d];5375}}};
+{{[orcish_glaive];1};{{[crystal_c];573};{[crystal_d];2865}}};
+{{[poleaxe];1};{{[crystal_c];1075};{[crystal_d];5375}}}}
+MultiSell_end

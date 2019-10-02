@@ -1,0 +1,26 @@
+//명품관 방어구
+MultiSell_begin	[blackmerchant_armor]	2
+selllist={{{[chain_mail_shirt];1};{{[crystal_c];127};{[crystal_d];635}}};
+{{[chain_gaiters];1};{{[crystal_c];79};{[crystal_d];395}}};
+{{[composite_armor];1};{{[crystal_c];360};{[crystal_d];1800}}};
+{{[tempered_mithril_shirt];1};{{[crystal_c];95};{[crystal_d];475}}};
+{{[tempered_mithril_gaiters];1};{{[crystal_c];59};{[crystal_d];295}}};
+{{[theca_leather_mail];1};{{[crystal_c];207};{[crystal_d];1035}}};
+{{[theca_leather_gaiters];1};{{[crystal_c];129};{[crystal_d];645}}};
+{{[karmian_tunic];1};{{[crystal_c];95};{[crystal_d];475}}};
+{{[demon's_tunic];1};{{[crystal_c];184};{[crystal_d];920}}};
+{{[karmian_hose];1};{{[crystal_c];59};{[crystal_d];295}}};
+{{[demon's_hose];1};{{[crystal_c];115};{[crystal_d];575}}};
+{{[chain_boots];1};{{[crystal_c];32};{[crystal_d];160}}};
+{{[composite_boots];1};{{[crystal_c];62};{[crystal_d];310}}};
+{{[reinforce_mithril_gloves];1};{{[crystal_c];32};{[crystal_d];160}}};
+{{[mithril_gauntlet];1};{{[crystal_c];62};{[crystal_d];310}}};
+{{[eldarake];1};{{[crystal_c];34};{[crystal_d];170}}};
+{{[tower_shield];1};{{[crystal_c];65};{[crystal_d];325}}};
+{{[moonstone_earing];1};{{[crystal_c];39};{[crystal_d];195}}};
+{{[earing_of_binding];1};{{[crystal_c];74};{[crystal_d];370}}};
+{{[aquastone_ring];1};{{[crystal_c];26};{[crystal_d];130}}};
+{{[ring_of_ages];1};{{[crystal_c];49};{[crystal_d];245}}};
+{{[aquastone_necklace];1};{{[crystal_c];52};{[crystal_d];260}}};
+{{[necklace_of_mermaid];1};{{[crystal_c];99};{[crystal_d];495}}}}
+MultiSell_end
