@@ -1,0 +1,254 @@
+//FFighter: 인간 여자 전사
+//MFighter: 인간 남자 전사
+//Fmagic: 인간 여자 마법사
+//MMagic: 인간 남자 마법사
+//FElfFighter: 엘프 여자 전사
+//MElfFighter: 엘프 남자 전사
+//FElfMagic: 엘프 여자 마법사
+//MElfMagic: 엘프 남자 마법사
+//FDarkelfFighter: 다크엘프 여자 전사
+//MDarkelfFighter: 다크엘프 남자 전사
+//FDarkelfMagic: 다크엘프 여자 마법사
+//MDarkelfMagic: 다크엘프 남자 마법사
+//FOrcFighter: 오크 여자 전사
+//MOrcFighter: 오크 남자 전사
+//FShaman: 오크 여자 마법사
+//MShaman: 오크 남자 마법사
+//FDwarfFighter: 드워프 여자 전사
+//MDwarfFighter: 드워프 남자 전사
+
+//PC의 기본 무기와 방어구 능력치.
+base_physical_attack_begin
+    FFighter=4
+    MFighter=4
+    FMagic=3
+    MMagic=3
+    FElfFighter=4
+    MElfFighter=4
+    FElfMagic=3
+    MElfMagic=3
+    FDarkelfFighter=4
+    MDarkelfFighter=4
+    FDarkelfMagic=3
+    MDarkelfMagic=3
+    FOrcFighter=4
+    MOrcFighter=4
+    FShaman=3
+    MShaman=3
+    FDwarfFighter=4
+    MDwarfFighter=4
+base_physical_attack_end
+
+base_critical_begin
+    FFighter=4
+    MFighter=4
+    FMagic=4
+    MMagic=4
+    FElfFighter=4
+    MElfFighter=4
+    FElfMagic=4
+    MElfMagic=4
+    FDarkelfFighter=4
+    MDarkelfFighter=4
+    FDarkelfMagic=4
+    MDarkelfMagic=4
+    FOrcFighter=4
+    MOrcFighter=4
+    FShaman=4
+    MShaman=4
+    FDwarfFighter=4
+    MDwarfFighter=4
+base_critical_end
+
+base_attack_type_begin
+    FFighter=fist
+    MFighter=fist
+    FMagic=fist
+    MMagic=fist
+    FElfFighter=fist
+    MElfFighter=fist
+    FElfMagic=fist
+    MElfMagic=fist
+    FDarkelfFighter=fist
+    MDarkelfFighter=fist
+    FDarkelfMagic=fist
+    MDarkelfMagic=fist
+    FOrcFighter=fist
+    MOrcFighter=fist
+    FShaman=fist
+    MShaman=fist
+    FDwarfFighter=fist
+    MDwarfFighter=fist
+base_attack_type_end
+
+base_attack_speed_begin
+    FFighter=300
+    MFighter=300
+    FMagic=300
+    MMagic=300
+    FElfFighter=300
+    MElfFighter=300
+    FElfMagic=300
+    MElfMagic=300
+    FDarkelfFighter=300
+    MDarkelfFighter=300
+    FDarkelfMagic=300
+    MDarkelfMagic=300
+    FOrcFighter=300
+    MOrcFighter=300
+    FShaman=300
+    MShaman=300
+    FDwarfFighter=300
+    MDwarfFighter=300
+base_attack_speed_end
+
+
+//맨몸 방어력. {상체;하체;투구;부츠;장갑;속옷;망토} 순서.
+base_defend_begin
+    FFighter={31;18;12;7;8;3;1}
+    MFighter={31;18;12;7;8;3;1}
+    FMagic={15;8;12;7;8;3;1}
+    MMagic={15;8;12;7;8;3;1}
+    FElfFighter={31;18;12;7;8;3;1}
+    MElfFighter={31;18;12;7;8;3;1}
+    FElfMagic={15;8;12;7;8;3;1}
+    MElfMagic={15;8;12;7;8;3;1}
+    FDarkelfFighter={31;18;12;7;8;3;1}
+    MDarkelfFighter={31;18;12;7;8;3;1}
+    FDarkelfMagic={15;8;12;7;8;3;1}
+    MDarkelfMagic={15;8;12;7;8;3;1}
+    FOrcFighter={31;18;12;7;8;3;1}
+    MOrcFighter={31;18;12;7;8;3;1}
+    FShaman={15;8;12;7;8;3;1}
+    MShaman={15;8;12;7;8;3;1}
+    FDwarfFighter={31;18;12;7;8;3;1}
+    MDwarfFighter={31;18;12;7;8;3;1}
+base_defend_end
+
+
+base_magic_attack_begin
+    FFighter=6
+    MFighter=6
+    FMagic=6
+    MMagic=6
+    FElfFighter=6
+    MElfFighter=6
+    FElfMagic=6
+    MElfMagic=6
+    FDarkelfFighter=6
+    MDarkelfFighter=6
+    FDarkelfMagic=6
+    MDarkelfMagic=6
+    FOrcFighter=6
+    MOrcFighter=6
+    FShaman=6
+    MShaman=6
+    FDwarfFighter=6
+    MDwarfFighter=6
+base_magic_attack_end
+
+//맨몸 마법 방어력. {오른귀걸이;왼귀걸이;오른반지;왼반지;목} 순서.
+base_magic_defend_begin
+    FFighter={9;9;5;5;13}
+    MFighter={9;9;5;5;13}
+    FMagic={9;9;5;5;13}
+    MMagic={9;9;5;5;13}
+    FElfFighter={9;9;5;5;13}
+    MElfFighter={9;9;5;5;13}
+    FElfMagic={9;9;5;5;13}
+    MElfMagic={9;9;5;5;13}
+    FDarkelfFighter={9;9;5;5;13}
+    MDarkelfFighter={9;9;5;5;13}
+    FDarkelfMagic={9;9;5;5;13}
+    MDarkelfMagic={9;9;5;5;13}
+    FOrcFighter={9;9;5;5;13}
+    MOrcFighter={9;9;5;5;13}
+    FShaman={9;9;5;5;13}
+    MShaman={9;9;5;5;13}
+    FDwarfFighter={9;9;5;5;13}
+    MDwarfFighter={9;9;5;5;13}
+base_magic_defend_end
+
+base_can_penetrate_begin
+    FFighter=0
+    MFighter=0
+    FMagic=0
+    MMagic=0
+    FElfFighter=0
+    MElfFighter=0
+    FElfMagic=0
+    MElfMagic=0
+    FDarkelfFighter=0
+    MDarkelfFighter=0
+    FDarkelfMagic=0
+    MDarkelfMagic=0
+    FOrcFighter=0
+    MOrcFighter=0
+    FShaman=0
+    MShaman=0
+    FDwarfFighter=0
+    MDwarfFighter=0
+base_can_penetrate_end
+
+base_attack_range_begin
+    FFighter=20
+    MFighter=20
+    FMagic=20
+    MMagic=20
+    FElfFighter=20
+    MElfFighter=20
+    FElfMagic=20
+    MElfMagic=20
+    FDarkelfFighter=20
+    MDarkelfFighter=20
+    FDarkelfMagic=20
+    MDarkelfMagic=20
+    FOrcFighter=25
+    MOrcFighter=25
+    FShaman=25
+    MShaman=25
+    FDwarfFighter=20
+    MDwarfFighter=20
+base_attack_range_end
+
+base_damage_range_begin
+    FFighter={0;0;26;120}
+    MFighter={0;0;26;120}
+    FMagic={0;0;26;120}
+    MMagic={0;0;26;120}
+    FElfFighter={0;0;26;120}
+    MElfFighter={0;0;26;120}
+    FElfMagic={0;0;26;120}
+    MElfMagic={0;0;26;120}
+    FDarkelfFighter={0;0;26;120}
+    MDarkelfFighter={0;0;26;120}
+    FDarkelfMagic={0;0;26;120}
+    MDarkelfMagic={0;0;26;120}
+    FOrcFighter={0;0;26;120}
+    MOrcFighter={0;0;26;120}
+    FShaman={0;0;26;120}
+    MShaman={0;0;26;120}
+    FDwarfFighter={0;0;26;120}
+    MDwarfFighter={0;0;26;120}
+base_damage_range_end
+
+base_rand_dam_begin
+    FFighter=10
+    MFighter=10
+    FMagic=10
+    MMagic=10
+    FElfFighter=10
+    MElfFighter=10
+    FElfMagic=10
+    MElfMagic=10
+    FDarkelfFighter=10
+    MDarkelfFighter=10
+    FDarkelfMagic=10
+    MDarkelfMagic=10
+    FOrcFighter=10
+    MOrcFighter=10
+    FShaman=10
+    MShaman=10
+    FDwarfFighter=10
+    MDwarfFighter=10
+base_rand_dam_end

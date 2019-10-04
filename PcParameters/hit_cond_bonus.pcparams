@@ -1,0 +1,10 @@
+//명중 상태 보너스
+hit_cond_bonus_begin
+    ahead = 0%	//공격자가 피격자의 앞에 있는 경우
+    side = 5%	//옆에 있는 경우
+    back = 10%	//뒤에 있는 경우
+    high = 3%	//높은 곳에 있는 경우
+    low = -3%	//낮은 곳에 있는 경우
+    dark = -10%	//조명이 없는 경우
+    rain = -3%	//비가 오는 경우
+hit_cond_bonus_end

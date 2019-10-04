@@ -1,0 +1,21 @@
+//종족별 기본 점프력
+org_jump_begin
+    FFighter=15
+    MFighter=15
+    FMagic=15
+    MMagic=15
+    FElfFighter=18
+    MElfFighter=18
+    FElfMagic=18
+    MElfMagic=18
+    FDarkelfFighter=18
+    MDarkelfFighter=18
+    FDarkelfMagic=18
+    MDarkelfMagic=18
+    FOrcFighter=15
+    MOrcFighter=15
+    FShaman=15
+    MShaman=15
+    FDwarfFighter=12
+    MDwarfFighter=12
+org_jump_end

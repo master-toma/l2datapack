@@ -1,0 +1,7 @@
+//소리 상태 보너스
+noise_move_mode_bonus_begin
+    sit = -100%
+    stand = -100%	//서있을 때
+    low = 0%	//저속 이동 때
+    high = 100%      //고속 이동할 때
+noise_move_mode_bonus_end

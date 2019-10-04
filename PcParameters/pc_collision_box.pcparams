@@ -1,0 +1,21 @@
+//PC의 collision box. {반지름;높이}
+pc_collision_box_table_begin
+    FFighter={8.0;23.5}
+    MFighter={9.0;23}
+    FMagic={6.5;22.5}
+    MMagic={7.5;22.8}
+    FElfFighter={7.5;23}
+    MElfFighter={7.5;24}
+    FElfMagic={7.5;23}
+    MElfMagic={7.5;24}
+    FDarkelfFighter={7.0;23.5}
+    MDarkelfFighter={7.5;24}
+    FDarkelfMagic={7.0;23.5}
+    MDarkelfMagic={7.5;24}
+    FOrcFighter={7;27.0}
+    MOrcFighter={11;28.0}
+    FShaman={8.0;25.5}
+    MShaman={7.0;27.5}
+    FDwarfFighter={5.0;19.0}
+    MDwarfFighter={9.0;18.0}
+pc_collision_box_table_end

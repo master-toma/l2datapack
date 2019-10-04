@@ -1,0 +1,8 @@
+//PC의 성향치 증가에 필요한 성향치 조정 상수
+pc_karma_increase_constant_begin
+    penalty_start_karma=0
+    penalty_duration_default=1
+    penalty_duration_increase=0.5
+    down_time_multiple=1
+    criminal_duration_multiple=10
+pc_karma_increase_constant_end

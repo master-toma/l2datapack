@@ -1,0 +1,38 @@
+//PC creation시 종족/클래스 별 최소치/최대치/권장치
+//앞에서부터 INT / STR / CON / MEN / DEX/ WIT
+
+minimum_stat_begin
+    human_fighter={10;10;10;10;10;10}
+    human_magician={10;10;10;10;10;10}
+    elf_fighter={10;10;10;10;10;10}
+    elf_magician={10;10;10;10;10;10}
+    darkelf_fighter={10;10;10;10;10;10}
+    darkelf_magician={10;10;10;10;10;10}
+    orc_fighter={10;10;10;10;10;10}
+    orc_shaman={10;10;10;10;10;10}
+    dwarf_apprentice={10;10;10;10;10;10}
+minimum_stat_end
+
+maximum_stat_begin
+    human_fighter={70;70;70;70;70;70}
+    human_magician={70;70;70;70;70;70}
+    elf_fighter={70;70;70;70;70;70}
+    elf_magician={70;70;70;70;70;70}
+    darkelf_fighter={70;70;70;70;70;70}
+    darkelf_magician={70;70;70;70;70;70}
+    orc_fighter={70;70;70;70;70;70}
+    orc_shaman={70;70;70;70;70;70}
+    dwarf_apprentice={70;70;70;70;70;70}
+maximum_stat_end
+
+recommended_stat_begin
+    human_fighter={21;40;43;25;30;11}
+    human_magician={41;22;27;39;21;20}
+    elf_fighter={23;36;36;26;35;14}
+    elf_magician={37;21;25;40;24;23}
+    darkelf_fighter={25;41;32;26;34;12}
+    darkelf_magician={44;23;24;37;23;19}
+    orc_fighter={18;40;47;27;26;12}
+    orc_shaman={31;27;31;42;24;15}
+    dwarf_apprentice={20;39;45;27;29;10}
+recommended_stat_end

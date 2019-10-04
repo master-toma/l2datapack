@@ -1,0 +1,21 @@
+//PC의 종족별 안전 낙하높이(단위는 grid)
+pc_safe_fall_height_table_begin
+    FFighter=100
+    MFighter=100
+    FMagic=100
+    MMagic=100
+    FElfFighter=150
+    MElfFighter=150
+    FElfMagic=150
+    MElfMagic=150
+    FDarkelfFighter=150
+    MDarkelfFighter=150
+    FDarkelfMagic=150
+    MDarkelfMagic=150
+    FOrcFighter=90
+    MOrcFighter=90
+    FShaman=90
+    MShaman=90
+    FDwarfFighter=80
+    MDwarfFighter=80
+pc_safe_fall_height_table_end

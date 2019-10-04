@@ -1,0 +1,21 @@
+//지상저속, 지상고속, 수중저속, 수중고속, 비행저속, 비행고속, 부유저속, 부유고속 이동시의 속도
+moving_speed_begin
+    FFighter={80; 115; 50; 50; 0; 0; 0; 0}
+    MFighter={80; 115; 50; 50; 0; 0; 0; 0}
+    FMagic={78; 120; 50; 50; 0; 0; 0; 0}
+    MMagic={78; 120; 50; 50; 0; 0; 0; 0}
+    FElfFighter={90; 125; 50; 50; 0; 0; 0; 0}
+    MElfFighter={90; 125; 50; 50; 0; 0; 0; 0}
+    FElfMagic={85; 122; 50; 50; 0; 0; 0; 0}
+    MElfMagic={85; 122; 50; 50; 0; 0; 0; 0}
+    FDarkelfFighter={85; 122; 50; 50; 0; 0; 0; 0}
+    MDarkelfFighter={85; 122; 50; 50; 0; 0; 0; 0}
+    FDarkelfMagic={85; 122; 50; 50; 0; 0; 0; 0}
+    MDarkelfMagic={85; 122; 50; 50; 0; 0; 0; 0}
+    FOrcFighter={70; 117; 50; 50; 0; 0; 0; 0}
+    MOrcFighter={70; 117; 50; 50; 0; 0; 0; 0}
+    FShaman={70; 121; 50; 50; 0; 0; 0; 0}
+    MShaman={70; 121; 50; 50; 0; 0; 0; 0}
+    FDwarfFighter={80; 115; 50; 50; 0; 0; 0; 0}
+    MDwarfFighter={80; 115; 50; 50; 0; 0; 0; 0}
+moving_speed_end
