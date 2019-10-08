@@ -1,0 +1,12 @@
+recipe_begin
+[mk_hard_leather_shirt]
+83
+level=1
+material={{[hard_leather_shirt_pattern];3};{[animal_skin];110};{[thread];55}}
+catalyst={}
+product={{[hard_leather_shirt];1}}
+npc_fee={{[rp_hard_leather_shirt];1};{[adena];7380}}
+mp_consume=72
+success_rate=100
+item_id=2173
+recipe_end

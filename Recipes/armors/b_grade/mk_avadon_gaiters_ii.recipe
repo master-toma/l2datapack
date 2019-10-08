@@ -1,0 +1,12 @@
+recipe_begin
+[mk_avadon_gaiters_ii]
+377
+level=6
+material={{[rp_avadon_gaiters];1};{[avadon_gaiters_material];12};{[maestro_mold];2};{[mithirl_alloy];12};{[asofe];8};{[crystal_c];54};{[gemstone_b];7}}
+catalyst={}
+product={{[avadon_gaiters];1}}
+npc_fee={}
+mp_consume=174
+success_rate=80
+item_id=4142
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_tunic_of_shrnoen_i]
+384
+level=6
+material={{[rp_tunic_of_shrnoen];1};{[tunic_of_shrnoen_fabric];12};{[crafted_leather];40};{[metallic_fiber];20};{[asofe];20};{[crystal_c];65};{[gemstone_b];9}}
+catalyst={}
+product={{[tunic_of_shrnoen];1}}
+npc_fee={}
+mp_consume=174
+success_rate=60
+item_id=4146
+recipe_end

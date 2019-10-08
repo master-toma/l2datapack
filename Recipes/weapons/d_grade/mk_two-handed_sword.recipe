@@ -1,0 +1,12 @@
+recipe_begin
+[mk_two-handed_sword]
+174
+level=3
+material={{[two-handed_sword_edge];6};{[steel_mold];3};{[steel];144};{[cokes];72};{[crystal_d];300};{[gemstone_d];91}}
+catalyst={}
+product={{[two-handed_sword];1}}
+npc_fee={{[rp_two-handed_sword];1};{[adena];193400}}
+mp_consume=108
+success_rate=100
+item_id=2264
+recipe_end

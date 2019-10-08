@@ -1,0 +1,12 @@
+recipe_begin
+[mk_necklace_of_anguish]
+18
+level=1
+material={{[necklace_of_anguish_chain];2};{[stem];20};{[varnish];4}}
+catalyst={}
+product={{[necklace_of_anguish];1}}
+npc_fee={{[rp_necklace_of_anguish];1};{[adena];936}}
+mp_consume=45
+success_rate=100
+item_id=1802
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_excellence_leather_gloves]
+89
+level=2
+material={{[excellence_leather_gloves_lining];4};{[leather];8};{[high_grade_suede];1};{[gemstone_d];1}}
+catalyst={}
+product={{[excellence_leather_gloves];1}}
+npc_fee={{[rp_excellence_leather_gloves];1};{[adena];4180}}
+mp_consume=84
+success_rate=100
+item_id=2179
+recipe_end

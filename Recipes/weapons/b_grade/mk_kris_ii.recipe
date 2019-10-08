@@ -1,0 +1,12 @@
+recipe_begin
+[mk_kris_ii]
+466
+level=6
+material={{[rp_kris];1};{[kris_edge];12};{[craftsman_mold];2};{[mithirl_alloy];72};{[synthesis_cokes];72};{[enria];36};{[crystal_c];410};{[gemstone_b];62}}
+catalyst={}
+product={{[kris];1}}
+npc_fee={}
+mp_consume=174
+success_rate=80
+item_id=4187
+recipe_end

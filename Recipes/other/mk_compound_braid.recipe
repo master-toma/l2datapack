@@ -1,0 +1,12 @@
+recipe_begin
+[mk_compound_braid]
+54
+level=2
+material={{[braided_hemp];5};{[thread];5}}
+catalyst={}
+product={{[compound_braid];1}}
+npc_fee={{[rp_compound_braid];1};{[adena];600}}
+mp_consume=20
+success_rate=100
+item_id=2144
+recipe_end

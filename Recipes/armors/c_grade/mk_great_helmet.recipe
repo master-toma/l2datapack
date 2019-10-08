@@ -1,0 +1,12 @@
+recipe_begin
+[mk_great_helmet]
+126
+level=5
+material={{[great_helmet_material];9};{[blacksmith's_frame];1};{[crafted_leather];6};{[crystal_c];16};{[gemstone_c];6}}
+catalyst={}
+product={{[great_helmet];1}}
+npc_fee={{[rp_great_helmet];1};{[adena];48400}}
+mp_consume=147
+success_rate=100
+item_id=2216
+recipe_end

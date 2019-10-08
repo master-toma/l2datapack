@@ -1,0 +1,12 @@
+recipe_begin
+[mk_knight_shield]
+127
+level=5
+material={{[knight_shield_fragment];9};{[mithirl_alloy];4};{[synthesis_cokes];1};{[crafted_leather];1};{[crystal_c];12};{[gemstone_c];4}}
+catalyst={}
+product={{[knight_shield];1}}
+npc_fee={{[rp_knight_shield];1};{[adena];33800}}
+mp_consume=147
+success_rate=100
+item_id=2217
+recipe_end

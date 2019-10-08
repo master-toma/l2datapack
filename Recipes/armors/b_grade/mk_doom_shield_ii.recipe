@@ -1,0 +1,12 @@
+recipe_begin
+[mk_doom_shield_ii]
+401
+level=7
+material={{[rp_doom_shield];1};{[doom_shield_fragment];13};{[maestro_anvil_lock];1};{[mithirl_alloy];9};{[synthesis_cokes];3};{[crafted_leather];3};{[asofe];3};{[crystal_b];20};{[gemstone_b];4}}
+catalyst={}
+product={{[doom_shield];1}}
+npc_fee={}
+mp_consume=183
+success_rate=80
+item_id=4154
+recipe_end

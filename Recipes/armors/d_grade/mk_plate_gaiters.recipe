@@ -1,0 +1,12 @@
+recipe_begin
+[mk_plate_gaiters]
+106
+level=4
+material={{[plate_gaiters_part];8};{[steel_mold];2};{[steel];45};{[crystal_d];70};{[gemstone_d];19}}
+catalyst={}
+product={{[plate_gaiters];1}}
+npc_fee={{[rp_plate_gaiters];1};{[adena];48800}}
+mp_consume=129
+success_rate=100
+item_id=2196
+recipe_end

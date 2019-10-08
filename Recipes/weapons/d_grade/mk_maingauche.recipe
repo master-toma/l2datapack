@@ -1,0 +1,12 @@
+recipe_begin
+[mk_maingauche]
+186
+level=3
+material={{[maingauche_edge];7};{[steel_mold];2};{[steel];175};{[cokes];175};{[crystal_d];430};{[gemstone_d];139}}
+catalyst={}
+product={{[maingauche];1}}
+npc_fee={{[rp_maingauche];1};{[adena];280000}}
+mp_consume=120
+success_rate=100
+item_id=2276
+recipe_end

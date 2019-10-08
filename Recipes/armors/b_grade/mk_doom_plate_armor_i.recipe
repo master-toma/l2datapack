@@ -1,0 +1,12 @@
+recipe_begin
+[mk_doom_plate_armor_i]
+408
+level=7
+material={{[rp_doom_plate_armor];1};{[doom_plate_armor_temper];13};{[blacksmith's_frame];4};{[mithirl_alloy];45};{[varnish_of_purity];15};{[asofe];30};{[crystal_b];60};{[gemstone_b];31}}
+catalyst={}
+product={{[doom_plate_armor];1}}
+npc_fee={}
+mp_consume=183
+success_rate=60
+item_id=4158
+recipe_end

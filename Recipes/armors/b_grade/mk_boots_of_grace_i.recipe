@@ -1,0 +1,12 @@
+recipe_begin
+[mk_boots_of_grace_i]
+372
+level=7
+material={{[rp_boots_of_grace];1};{[boots_of_grace_lining];13};{[crafted_leather];32};{[high_grade_suede];4};{[asofe];4};{[crystal_b];8};{[gemstone_b];4}}
+catalyst={}
+product={{[boots_of_grace];1}}
+npc_fee={}
+mp_consume=183
+success_rate=60
+item_id=4140
+recipe_end

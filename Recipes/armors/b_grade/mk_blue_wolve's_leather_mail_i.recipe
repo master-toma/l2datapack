@@ -1,0 +1,12 @@
+recipe_begin
+[mk_blue_wolve's_leather_mail_i]
+410
+level=7
+material={{[rp_blue_wolve's_leather_mail];1};{[blue_wolve's_leather_mail_texture];12};{[crafted_leather];100};{[metallic_fiber];50};{[compound_braid];25};{[asofe];25};{[crystal_b];48};{[gemstone_b];22}}
+catalyst={}
+product={{[blue_wolve's_leather_mail];1}}
+npc_fee={}
+mp_consume=183
+success_rate=60
+item_id=4159
+recipe_end

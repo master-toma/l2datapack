@@ -1,0 +1,12 @@
+recipe_begin
+[mk_shrnoen's_helmet_ii]
+451
+level=6
+material={{[rp_shrnoen's_helmet];1};{[shrnoen's_helmet_design];12};{[maestro_mold];1};{[crafted_leather];20};{[asofe];2};{[crystal_c];42};{[gemstone_b];4}}
+catalyst={}
+product={{[shrnoen's_helmet];1}}
+npc_fee={}
+mp_consume=174
+success_rate=80
+item_id=4179
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_paagrio_hand]
+128
+level=5
+material={{[paagrio_hand_design];9};{[crafted_leather];10};{[high_grade_suede];1};{[crystal_c];12};{[gemstone_c];4}}
+catalyst={}
+product={{[paagrio_hand];1}}
+npc_fee={{[rp_paagrio_hand];1};{[adena];32200}}
+mp_consume=147
+success_rate=100
+item_id=2218
+recipe_end

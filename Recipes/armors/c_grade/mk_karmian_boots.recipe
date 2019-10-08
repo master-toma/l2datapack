@@ -1,0 +1,12 @@
+recipe_begin
+[mk_karmian_boots]
+299
+level=4
+material={{[karmian_boots_fabric];8};{[crafted_leather];8};{[high_grade_suede];1};{[crystal_d];40};{[gemstone_c];3}}
+catalyst={}
+product={{[karmian_boots];1}}
+npc_fee={{[rp_karmian_boots];1};{[adena];25200}}
+mp_consume=138
+success_rate=100
+item_id=2991
+recipe_end

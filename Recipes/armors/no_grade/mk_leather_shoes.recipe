@@ -1,0 +1,12 @@
+recipe_begin
+[mk_leather_shoes]
+11
+level=1
+material={{[leather_shoes_texture];2};{[animal_skin];8};{[suede];1}}
+catalyst={}
+product={{[leather_shoes];1}}
+npc_fee={{[rp_leather_shoes];1};{[adena];530}}
+mp_consume=45
+success_rate=100
+item_id=1795
+recipe_end

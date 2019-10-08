@@ -1,0 +1,12 @@
+recipe_begin
+[mk_half_plate]
+105
+level=4
+material={{[half_plate_temper];8};{[steel_mold];3};{[steel];70};{[crystal_d];120};{[gemstone_d];32}}
+catalyst={}
+product={{[half_plate];1}}
+npc_fee={{[rp_half_plate];1};{[adena];78200}}
+mp_consume=129
+success_rate=100
+item_id=2195
+recipe_end

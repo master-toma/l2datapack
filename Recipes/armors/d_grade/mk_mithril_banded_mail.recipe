@@ -1,0 +1,12 @@
+recipe_begin
+[mk_mithril_banded_mail]
+93
+level=3
+material={{[mithril_banded_mail_material];6};{[steel_mold];3};{[steel];25};{[crystal_d];45};{[gemstone_d];11}}
+catalyst={}
+product={{[mithril_banded_mail];1}}
+npc_fee={{[rp_mithril_banded_mail];1};{[adena];30400}}
+mp_consume=108
+success_rate=100
+item_id=2183
+recipe_end

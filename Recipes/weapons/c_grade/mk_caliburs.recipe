@@ -1,0 +1,12 @@
+recipe_begin
+[mk_caliburs]
+237
+level=5
+material={{[caliburs_edge];10};{[artisan's_frame];2};{[mithirl_alloy];75};{[synthesis_cokes];75};{[crystal_c];300};{[gemstone_c];166}}
+catalyst={}
+product={{[caliburs];1}}
+npc_fee={{[rp_caliburs];1};{[adena];860000}}
+mp_consume=156
+success_rate=100
+item_id=2327
+recipe_end

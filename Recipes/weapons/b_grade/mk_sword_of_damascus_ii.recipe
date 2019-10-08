@@ -1,0 +1,12 @@
+recipe_begin
+[mk_sword_of_damascus_ii]
+476
+level=7
+material={{[rp_sword_of_damascus];1};{[sword_of_damascus_blade];13};{[craftsman_mold];2};{[mithirl_alloy];120};{[synthesis_cokes];120};{[enria];60};{[crystal_b];256};{[gemstone_b];98}}
+catalyst={}
+product={{[sword_of_damascus];1}}
+npc_fee={}
+mp_consume=183
+success_rate=80
+item_id=4192
+recipe_end

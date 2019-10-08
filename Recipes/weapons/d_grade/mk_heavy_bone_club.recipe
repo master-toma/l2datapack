@@ -1,0 +1,12 @@
+recipe_begin
+[mk_heavy_bone_club]
+185
+level=3
+material={{[heavy_bone_club_head];7};{[steel];128};{[cokes];128};{[high_grade_suede];64};{[crystal_d];430};{[gemstone_d];139}}
+catalyst={}
+product={{[heavy_bone_club];1}}
+npc_fee={{[rp_heavy_bone_club];1};{[adena];280000}}
+mp_consume=120
+success_rate=100
+item_id=2275
+recipe_end

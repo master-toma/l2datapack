@@ -1,0 +1,12 @@
+recipe_begin
+[mk_heathen's_book]
+258
+level=5
+material={{[heathen's_book_page];10};{[oriharukon];55};{[coarse_bone_powder];110};{[compound_braid];55};{[crystal_c];300};{[gemstone_c];166}}
+catalyst={}
+product={{[heathen's_book];1}}
+npc_fee={{[rp_heathen's_book];1};{[adena];860000}}
+mp_consume=156
+success_rate=100
+item_id=2348
+recipe_end

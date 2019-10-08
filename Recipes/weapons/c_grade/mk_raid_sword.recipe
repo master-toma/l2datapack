@@ -1,0 +1,12 @@
+recipe_begin
+[mk_raid_sword]
+229
+level=5
+material={{[raid_sword_blade];9};{[artisan's_frame];2};{[mithirl_alloy];50};{[synthesis_cokes];50};{[crystal_c];180};{[gemstone_c];105}}
+catalyst={}
+product={{[raid_sword];1}}
+npc_fee={{[rp_raid_sword];1};{[adena];574000}}
+mp_consume=147
+success_rate=100
+item_id=2319
+recipe_end

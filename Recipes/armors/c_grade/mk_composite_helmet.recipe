@@ -1,0 +1,12 @@
+recipe_begin
+[mk_composite_helmet]
+318
+level=5
+material={{[composite_helmet_design];10};{[blacksmith's_frame];1};{[crafted_leather];14};{[crystal_c];25};{[gemstone_c];10}}
+catalyst={}
+product={{[composite_helmet];1}}
+npc_fee={{[rp_composite_helmet];1};{[adena];73600}}
+mp_consume=156
+success_rate=100
+item_id=3010
+recipe_end

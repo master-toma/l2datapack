@@ -1,0 +1,12 @@
+recipe_begin
+[mk_mithril_banded_gaiters]
+94
+level=3
+material={{[mithril_banded_gaiters_material];6};{[steel_mold];2};{[steel];14};{[crystal_d];30};{[gemstone_d];6}}
+catalyst={}
+product={{[mithril_banded_gaiters];1}}
+npc_fee={{[rp_mithril_banded_gaiters];1};{[adena];19040}}
+mp_consume=108
+success_rate=100
+item_id=2184
+recipe_end

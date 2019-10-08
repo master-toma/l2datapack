@@ -1,0 +1,12 @@
+recipe_begin
+[mk_shrnoen's_leather_shirts_i]
+378
+level=6
+material={{[rp_shrnoen's_leather_shirts];1};{[shrnoen's_leather_shirts_fabric];12};{[crafted_leather];40};{[metallic_fiber];20};{[asofe];20};{[crystal_c];65};{[gemstone_b];9}}
+catalyst={}
+product={{[shrnoen's_leather_shirts];1}}
+npc_fee={}
+mp_consume=174
+success_rate=60
+item_id=4143
+recipe_end

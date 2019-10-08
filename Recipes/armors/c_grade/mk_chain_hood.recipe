@@ -1,0 +1,12 @@
+recipe_begin
+[mk_chain_hood]
+297
+level=4
+material={{[chain_hood_pattern];8};{[blacksmith's_frame];1};{[crafted_leather];2};{[crystal_d];60};{[gemstone_c];5}}
+catalyst={}
+product={{[chain_hood];1}}
+npc_fee={{[rp_chain_hood];1};{[adena];37800}}
+mp_consume=138
+success_rate=100
+item_id=2989
+recipe_end

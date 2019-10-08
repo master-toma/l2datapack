@@ -1,0 +1,12 @@
+recipe_begin
+[mk_shrnoen's_boots_ii]
+441
+level=6
+material={{[rp_shrnoen's_boots];1};{[shrnoen's_boots_design];12};{[maestro_anvil_lock];1};{[crafted_leather];16};{[high_grade_suede];2};{[asofe];2};{[crystal_c];25};{[gemstone_b];2}}
+catalyst={}
+product={{[shrnoen's_boots];1}}
+npc_fee={}
+mp_consume=174
+success_rate=80
+item_id=4174
+recipe_end

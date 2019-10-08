@@ -1,0 +1,12 @@
+recipe_begin
+[mk_necklace_of_binding]
+79
+level=6
+material={{[necklace_of_binding_chain];11};{[blacksmith's_frame];1};{[compound_braid];35};{[varnish_of_purity];7};{[crystal_c];38};{[gemstone_c];16}}
+catalyst={}
+product={{[necklace_of_binding];1}}
+npc_fee={{[rp_necklace_of_binding];1};{[adena];113000}}
+mp_consume=165
+success_rate=100
+item_id=2169
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_stiletto]
+231
+level=5
+material={{[stiletto_edge];9};{[artisan's_frame];2};{[mithirl_alloy];50};{[synthesis_cokes];50};{[crystal_c];180};{[gemstone_c];105}}
+catalyst={}
+product={{[stiletto];1}}
+npc_fee={{[rp_stiletto];1};{[adena];574000}}
+mp_consume=147
+success_rate=100
+item_id=2321
+recipe_end

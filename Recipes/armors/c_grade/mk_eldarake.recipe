@@ -1,0 +1,12 @@
+recipe_begin
+[mk_eldarake]
+119
+level=4
+material={{[eldarake_temper];8};{[mithirl_alloy];3};{[synthesis_cokes];1};{[crafted_leather];1};{[crystal_d];40};{[gemstone_c];3}}
+catalyst={}
+product={{[eldarake];1}}
+npc_fee={{[rp_eldarake];1};{[adena];26600}}
+mp_consume=138
+success_rate=100
+item_id=2209
+recipe_end

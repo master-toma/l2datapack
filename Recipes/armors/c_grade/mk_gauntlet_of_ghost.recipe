@@ -1,0 +1,12 @@
+recipe_begin
+[mk_gauntlet_of_ghost]
+158
+level=6
+material={{[gauntlet_of_ghost_pattern];11};{[crafted_leather];24};{[high_grade_suede];3};{[crystal_c];24};{[gemstone_c];10}}
+catalyst={}
+product={{[gauntlet_of_ghost];1}}
+npc_fee={{[rp_gauntlet_of_ghost];1};{[adena];71600}}
+mp_consume=165
+success_rate=100
+item_id=2248
+recipe_end

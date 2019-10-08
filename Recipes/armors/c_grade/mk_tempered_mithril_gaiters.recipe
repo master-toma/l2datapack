@@ -1,0 +1,12 @@
+recipe_begin
+[mk_tempered_mithril_gaiters]
+296
+level=4
+material={{[tempered_mithril_gaiters_fragment];8};{[crafted_leather];15};{[metallic_fiber];15};{[crystal_d];70};{[gemstone_c];6}}
+catalyst={}
+product={{[tempered_mithril_gaiters];1}}
+npc_fee={{[rp_tempered_mithril_gaiters];1};{[adena];47400}}
+mp_consume=138
+success_rate=100
+item_id=2988
+recipe_end

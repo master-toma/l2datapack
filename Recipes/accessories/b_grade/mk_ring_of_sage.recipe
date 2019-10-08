@@ -1,0 +1,12 @@
+recipe_begin
+[mk_ring_of_sage]
+81
+level=7
+material={{[rp_ring_of_sage];1};{[ring_of_sage_gemstone];13};{[blacksmith's_frame];1};{[metallic_fiber];40};{[varnish_of_purity];8};{[thons];8};{[crystal_b];15};{[gemstone_b];9}}
+catalyst={}
+product={{[sage's_ring];1}}
+npc_fee={{[rp_ring_of_sage];1};{[adena];123200}}
+mp_consume=183
+success_rate=100
+item_id=2171
+recipe_end

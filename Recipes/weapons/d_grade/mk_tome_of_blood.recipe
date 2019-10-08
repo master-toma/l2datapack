@@ -1,0 +1,12 @@
+recipe_begin
+[mk_tome_of_blood]
+178
+level=3
+material={{[tome_of_blood_page];6};{[steel];70};{[coarse_bone_powder];140};{[braided_hemp];70};{[crystal_d];300};{[gemstone_d];91}}
+catalyst={}
+product={{[tome_of_blood];1}}
+npc_fee={{[rp_tome_of_blood];1};{[adena];193400}}
+mp_consume=108
+success_rate=100
+item_id=2268
+recipe_end

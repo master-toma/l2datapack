@@ -1,0 +1,12 @@
+recipe_begin
+[mk_fine_steel_arrow]
+161
+level=5
+material={{[stem];4};{[steel];1}}
+catalyst={}
+product={{[fine_steel_arrow];600}}
+npc_fee={{[rp_fine_steel_arrow];1};{[adena];600}}
+mp_consume=150
+success_rate=100
+item_id=2251
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_homunkulus's_sword]
+240
+level=5
+material={{[homunkulus's_sword_blade];10};{[artisan's_frame];2};{[mithirl_alloy];75};{[synthesis_cokes];75};{[crystal_c];300};{[gemstone_c];166}}
+catalyst={}
+product={{[homunkulus's_sword];1}}
+npc_fee={{[rp_homunkulus's_sword];1};{[adena];860000}}
+mp_consume=156
+success_rate=100
+item_id=2330
+recipe_end

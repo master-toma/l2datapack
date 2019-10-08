@@ -1,0 +1,12 @@
+recipe_begin
+[mk_avadon_leather_mail_ii]
+383
+level=6
+material={{[rp_avadon_leather_mail];1};{[avadon_leather_mail_lining];12};{[maestro_anvil_lock];3};{[crafted_leather];65};{[metallic_fiber];32};{[compound_braid];16};{[asofe];16};{[crystal_c];126};{[gemstone_b];14}}
+catalyst={}
+product={{[avadon_leather_mail];1}}
+npc_fee={}
+mp_consume=174
+success_rate=80
+item_id=4145
+recipe_end

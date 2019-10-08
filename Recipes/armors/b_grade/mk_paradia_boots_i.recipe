@@ -1,0 +1,12 @@
+recipe_begin
+[mk_paradia_boots_i]
+368
+level=7
+material={{[rp_paradia_boots];1};{[paradia_boots_pattern];13};{[crafted_leather];32};{[high_grade_suede];4};{[asofe];4};{[crystal_b];8};{[gemstone_b];4}}
+catalyst={}
+product={{[paradia_boots];1}}
+npc_fee={}
+mp_consume=183
+success_rate=60
+item_id=4138
+recipe_end

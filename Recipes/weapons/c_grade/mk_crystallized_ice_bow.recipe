@@ -1,0 +1,12 @@
+recipe_begin
+[mk_crystallized_ice_bow]
+222
+level=4
+material={{[crystallized_ice_bow_shaft];8};{[mithirl_alloy];65};{[compound_braid];13};{[high_grade_suede];13};{[crystal_d];700};{[gemstone_c];81}}
+catalyst={}
+product={{[crystallized_ice_bow];1}}
+npc_fee={{[rp_crystallized_ice_bow];1};{[adena];458000}}
+mp_consume=138
+success_rate=100
+item_id=2312
+recipe_end

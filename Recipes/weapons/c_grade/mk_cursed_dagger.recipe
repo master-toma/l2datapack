@@ -1,0 +1,12 @@
+recipe_begin
+[mk_cursed_dagger]
+218
+level=4
+material={{[cursed_dagger_blade];8};{[artisan's_frame];2};{[mithirl_alloy];38};{[synthesis_cokes];38};{[crystal_d];700};{[gemstone_c];81}}
+catalyst={}
+product={{[cursed_dagger];1}}
+npc_fee={{[rp_cursed_dagger];1};{[adena];458000}}
+mp_consume=138
+success_rate=100
+item_id=2308
+recipe_end

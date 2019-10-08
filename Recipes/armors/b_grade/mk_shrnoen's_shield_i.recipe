@@ -1,0 +1,12 @@
+recipe_begin
+[mk_shrnoen's_shield_i]
+448
+level=6
+material={{[rp_shrnoen's_shield];1};{[shrnoen's_shield_fragment];12};{[mithirl_alloy];6};{[synthesis_cokes];2};{[crafted_leather];2};{[asofe];2};{[crystal_c];25};{[gemstone_b];3}}
+catalyst={}
+product={{[shrnoen's_shield];1}}
+npc_fee={}
+mp_consume=174
+success_rate=60
+item_id=4178
+recipe_end

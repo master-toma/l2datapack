@@ -1,0 +1,12 @@
+recipe_begin
+[mk_necklace_of_darkness]
+69
+level=4
+material={{[necklace_of_darkness_gem];8};{[silver_mold];1};{[braided_hemp];90};{[varnish];18};{[crystal_d];50};{[gemstone_d];12}}
+catalyst={}
+product={{[necklace_of_darkness];1}}
+npc_fee={{[rp_necklace_of_darkness];1};{[adena];32400}}
+mp_consume=129
+success_rate=100
+item_id=2159
+recipe_end

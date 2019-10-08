@@ -1,0 +1,12 @@
+recipe_begin
+[mk_battle_axe]
+211
+level=4
+material={{[battle_axe_head];8};{[mithirl_alloy];44};{[synthesis_cokes];44};{[high_grade_suede];22};{[crystal_d];700};{[gemstone_c];81}}
+catalyst={}
+product={{[battle_axe];1}}
+npc_fee={{[rp_battle_axe];1};{[adena];458000}}
+mp_consume=138
+success_rate=100
+item_id=2301
+recipe_end

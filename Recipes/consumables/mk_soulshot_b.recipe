@@ -1,0 +1,12 @@
+recipe_begin
+[mk_soulshot_b]
+22
+level=6
+material={{[soul_ore];10};{[crystal_b];1}}
+catalyst={}
+product={{[soulshot_b];300}}
+npc_fee={{[rp_soulshot_b];1};{[adena];3000}}
+mp_consume=90
+success_rate=100
+item_id=1806
+recipe_end

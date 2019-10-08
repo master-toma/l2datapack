@@ -1,0 +1,12 @@
+recipe_begin
+[mk_bow]
+4
+level=1
+material={{[bow_shaft];1};{[iron_ore];20};{[braided_hemp];4};{[suede];4}}
+catalyst={}
+product={{[bow];1}}
+npc_fee={{[rp_bow];1};{[adena];2500}}
+mp_consume=30
+success_rate=100
+item_id=1788
+recipe_end

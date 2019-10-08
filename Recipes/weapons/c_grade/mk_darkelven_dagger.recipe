@@ -1,0 +1,12 @@
+recipe_begin
+[mk_darkelven_dagger]
+220
+level=4
+material={{[darkelven_dagger_edge];8};{[artisan's_frame];2};{[mithirl_alloy];38};{[synthesis_cokes];38};{[crystal_d];700};{[gemstone_c];81}}
+catalyst={}
+product={{[darkelven_dagger];1}}
+npc_fee={{[rp_darkelven_dagger];1};{[adena];458000}}
+mp_consume=138
+success_rate=100
+item_id=2310
+recipe_end

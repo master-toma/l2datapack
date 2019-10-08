@@ -1,0 +1,12 @@
+recipe_begin
+[mk_plate_leather]
+121
+level=5
+material={{[plate_leather_fragment];9};{[crafted_leather];30};{[metallic_fiber];15};{[crystal_c];30};{[gemstone_c];12}}
+catalyst={}
+product={{[plate_leather];1}}
+npc_fee={{[rp_plate_leather];1};{[adena];89200}}
+mp_consume=144
+success_rate=100
+item_id=2211
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_avadon_gloves_ii]
+393
+level=6
+material={{[rp_avadon_gloves];1};{[avadon_gloves_part];12};{[maestro_anvil_lock];1};{[crafted_leather];16};{[high_grade_suede];2};{[asofe];2};{[crystal_c];25};{[gemstone_b];2}}
+catalyst={}
+product={{[avadon_gloves];1}}
+npc_fee={}
+mp_consume=174
+success_rate=80
+item_id=4150
+recipe_end

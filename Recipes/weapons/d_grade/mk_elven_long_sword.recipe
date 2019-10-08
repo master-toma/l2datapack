@@ -1,0 +1,12 @@
+recipe_begin
+[mk_elven_long_sword]
+328
+level=4
+material={{[elven_long_sword_blade];8};{[steel_mold];2};{[steel];220};{[cokes];220};{[crystal_d];550};{[gemstone_d];185}}
+catalyst={}
+product={{[elven_long_sword];1}}
+npc_fee={{[rp_elven_long_sword];1};{[adena];360000}}
+mp_consume=129
+success_rate=100
+item_id=3020
+recipe_end

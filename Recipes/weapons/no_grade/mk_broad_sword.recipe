@@ -1,0 +1,12 @@
+recipe_begin
+[mk_broad_sword]
+2
+level=1
+material={{[broad_sword_blade];1};{[iron_ore];18};{[coal];18}}
+catalyst={}
+product={{[broad_sword];1}}
+npc_fee={{[rp_broad_sword];1};{[adena];2500}}
+mp_consume=30
+success_rate=100
+item_id=1786
+recipe_end

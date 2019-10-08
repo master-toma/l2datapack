@@ -1,0 +1,12 @@
+recipe_begin
+[mk_square_shield]
+111
+level=4
+material={{[square_shield_fragment];8};{[steel];15};{[cokes];5};{[leather];5};{[crystal_d];32};{[gemstone_d];7}}
+catalyst={}
+product={{[square_shield];1}}
+npc_fee={{[rp_square_shield];1};{[adena];20600}}
+mp_consume=129
+success_rate=100
+item_id=2201
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_hose_of_doom_ii]
+421
+level=7
+material={{[rp_hose_of_doom];1};{[hose_of_doom_pattern];13};{[maestro_anvil_lock];1};{[crafted_leather];30};{[metallic_fiber];30};{[asofe];30};{[crystal_b];35};{[gemstone_b];8}}
+catalyst={}
+product={{[hose_of_doom];1}}
+npc_fee={}
+mp_consume=183
+success_rate=80
+item_id=4164
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_coarse_bone_powder]
+48
+level=1
+material={{[animal_bone];10}}
+catalyst={}
+product={{[coarse_bone_powder];1}}
+npc_fee={{[rp_coarse_bone_powder];1};{[adena];300}}
+mp_consume=10
+success_rate=100
+item_id=2138
+recipe_end

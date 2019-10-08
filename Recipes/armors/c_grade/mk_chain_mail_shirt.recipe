@@ -1,0 +1,12 @@
+recipe_begin
+[mk_chain_mail_shirt]
+114
+level=4
+material={{[chain_mail_shirt_material];8};{[blacksmith's_frame];3};{[mithirl_alloy];1};{[crystal_d];150};{[gemstone_c];14}}
+catalyst={}
+product={{[chain_mail_shirt];1}}
+npc_fee={{[rp_chain_mail_shirt];1};{[adena];101000}}
+mp_consume=138
+success_rate=100
+item_id=2204
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_sage's_necklace]
+82
+level=7
+material={{[sage's_necklace_chain];11};{[blacksmith's_frame];1};{[compound_braid];35};{[varnish_of_purity];7};{[crystal_a];10000};{[gemstone_c];16}}
+catalyst={}
+product={{[sage's_necklace];1}}
+npc_fee={{[rp_sage's_necklace];1};{[adena];246000}}
+mp_consume=165
+success_rate=100
+item_id=2172
+recipe_end

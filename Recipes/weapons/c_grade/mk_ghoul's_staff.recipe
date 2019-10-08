@@ -1,0 +1,12 @@
+recipe_begin
+[mk_ghoul's_staff]
+265
+level=6
+material={{[ghoul's_staff_head];11};{[oriharukon];80};{[coarse_bone_powder];160};{[compound_braid];80};{[crystal_c];410};{[gemstone_c];248}}
+catalyst={}
+product={{[ghoul's_staff];1}}
+npc_fee={{[rp_ghoul's_staff];1};{[adena];1226000}}
+mp_consume=165
+success_rate=100
+item_id=2355
+recipe_end

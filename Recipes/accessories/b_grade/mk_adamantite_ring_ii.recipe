@@ -1,0 +1,12 @@
+recipe_begin
+[mk_adamantite_ring_ii]
+348
+level=6
+material={{[rp_adamantite_ring];1};{[adamantite_ring_wire];12};{[blacksmith's_frame];1};{[metallic_fiber];40};{[varnish_of_purity];8};{[thons];8};{[crystal_c];26};{[gemstone_b];2}}
+catalyst={}
+product={{[adamantite_ring];1}}
+npc_fee={}
+mp_consume=174
+success_rate=90
+item_id=4127
+recipe_end

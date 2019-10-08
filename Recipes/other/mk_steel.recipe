@@ -1,0 +1,12 @@
+recipe_begin
+[mk_steel]
+47
+level=1
+material={{[varnish];5};{[iron_ore];5}}
+catalyst={}
+product={{[steel];1}}
+npc_fee={{[rp_steel];1};{[adena];400}}
+mp_consume=10
+success_rate=100
+item_id=2137
+recipe_end

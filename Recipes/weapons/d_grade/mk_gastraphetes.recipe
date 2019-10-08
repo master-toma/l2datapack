@@ -1,0 +1,12 @@
+recipe_begin
+[mk_gastraphetes]
+177
+level=3
+material={{[gastraphetes_shaft];6};{[steel];150};{[braided_hemp];30};{[high_grade_suede];30};{[crystal_d];300};{[gemstone_d];91}}
+catalyst={}
+product={{[gastraphetes];1}}
+npc_fee={{[rp_gastraphetes];1};{[adena];193400}}
+mp_consume=108
+success_rate=100
+item_id=2267
+recipe_end

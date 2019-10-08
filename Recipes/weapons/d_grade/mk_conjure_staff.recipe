@@ -1,0 +1,12 @@
+recipe_begin
+[mk_conjure_staff]
+171
+level=2
+material={{[conjure_staff_head];5};{[steel];45};{[coarse_bone_powder];90};{[braided_hemp];45};{[crystal_d];200};{[gemstone_d];57}}
+catalyst={}
+product={{[conjure_staff];1}}
+npc_fee={{[rp_conjure_staff];1};{[adena];128800}}
+mp_consume=96
+success_rate=100
+item_id=2261
+recipe_end

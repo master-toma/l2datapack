@@ -1,0 +1,12 @@
+recipe_begin
+[mk_war_axe]
+245
+level=5
+material={{[war_axe_blade];10};{[mithirl_alloy];80};{[synthesis_cokes];80};{[high_grade_suede];40};{[crystal_c];300};{[gemstone_c];166}}
+catalyst={}
+product={{[war_axe];1}}
+npc_fee={{[rp_war_axe];1};{[adena];860000}}
+mp_consume=156
+success_rate=100
+item_id=2335
+recipe_end

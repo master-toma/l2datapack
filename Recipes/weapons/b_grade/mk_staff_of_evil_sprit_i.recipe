@@ -1,0 +1,12 @@
+recipe_begin
+[mk_staff_of_evil_sprit_i]
+483
+level=7
+material={{[rp_staff_of_evil_sprit];1};{[staff_of_evil_sprit_head];13};{[oriharukon];75};{[coarse_bone_powder];150};{[compound_braid];75};{[enria];75};{[crystal_b];165};{[gemstone_b];98}}
+catalyst={}
+product={{[staff_of_evil_sprit];1}}
+npc_fee={}
+mp_consume=183
+success_rate=60
+item_id=4196
+recipe_end

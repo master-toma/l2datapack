@@ -1,0 +1,12 @@
+recipe_begin
+[mk_vajra_wands]
+204
+level=4
+material={{[vajra_wands_frame];8};{[steel];130};{[coarse_bone_powder];260};{[braided_hemp];130};{[crystal_d];550};{[gemstone_d];185}}
+catalyst={}
+product={{[vajra_wands];1}}
+npc_fee={{[rp_vajra_wands];1};{[adena];360000}}
+mp_consume=129
+success_rate=100
+item_id=2294
+recipe_end

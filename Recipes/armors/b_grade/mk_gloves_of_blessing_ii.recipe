@@ -1,0 +1,12 @@
+recipe_begin
+[mk_gloves_of_blessing_ii]
+399
+level=6
+material={{[rp_gloves_of_blessing];1};{[gloves_of_blessing_pattern];12};{[maestro_anvil_lock];1};{[crafted_leather];16};{[high_grade_suede];2};{[asofe];2};{[crystal_c];25};{[gemstone_b];2}}
+catalyst={}
+product={{[gloves_of_blessing];1}}
+npc_fee={}
+mp_consume=174
+success_rate=80
+item_id=4153
+recipe_end

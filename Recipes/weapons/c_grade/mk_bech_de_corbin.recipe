@@ -1,0 +1,12 @@
+recipe_begin
+[mk_bech_de_corbin]
+227
+level=5
+material={{[bech_de_corbin_blade];9};{[mithirl_alloy];68};{[synthesis_cokes];34};{[high_grade_suede];17};{[crystal_c];180};{[gemstone_c];105}}
+catalyst={}
+product={{[bech_de_corbin];1}}
+npc_fee={{[rp_bech_de_corbin];1};{[adena];574000}}
+mp_consume=147
+success_rate=100
+item_id=2317
+recipe_end

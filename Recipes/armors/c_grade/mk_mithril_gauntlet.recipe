@@ -1,0 +1,12 @@
+recipe_begin
+[mk_mithril_gauntlet]
+136
+level=5
+material={{[mithril_gauntlet_design];10};{[crafted_leather];16};{[high_grade_suede];2};{[crystal_c];16};{[gemstone_c];6}}
+catalyst={}
+product={{[mithril_gauntlet];1}}
+npc_fee={{[rp_mithril_gauntlet];1};{[adena];49000}}
+mp_consume=156
+success_rate=100
+item_id=2226
+recipe_end

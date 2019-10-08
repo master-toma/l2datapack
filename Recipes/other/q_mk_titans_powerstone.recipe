@@ -1,0 +1,12 @@
+recipe_begin
+[q_mk_titans_powerstone]
+339
+level=2
+material={{[q_bk_titan_powerstone];1}}
+catalyst={}
+product={{[q_titan_powerstone];1}}
+npc_fee={{[q_rp_titans_powerstone];1};{[adena];0}}
+mp_consume=100
+success_rate=25
+item_id=3838
+recipe_end

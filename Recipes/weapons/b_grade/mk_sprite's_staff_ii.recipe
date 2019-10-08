@@ -1,0 +1,12 @@
+recipe_begin
+[mk_sprite's_staff_ii]
+460
+level=6
+material={{[rp_sprite's_staff];1};{[sprite's_staff_head];12};{[maestro_holder];3};{[oriharukon];50};{[coarse_bone_powder];100};{[compound_braid];50};{[enria];50};{[crystal_c];380};{[gemstone_b];62}}
+catalyst={}
+product={{[sprite's_staff];1}}
+npc_fee={}
+mp_consume=174
+success_rate=80
+item_id=4184
+recipe_end

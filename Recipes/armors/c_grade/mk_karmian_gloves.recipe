@@ -1,0 +1,12 @@
+recipe_begin
+[mk_karmian_gloves]
+305
+level=4
+material={{[karmian_gloves_fabric];8};{[crafted_leather];8};{[high_grade_suede];1};{[crystal_d];40};{[gemstone_c];3}}
+catalyst={}
+product={{[karmian_gloves];1}}
+npc_fee={{[rp_karmian_gloves];1};{[adena];25200}}
+mp_consume=138
+success_rate=100
+item_id=2997
+recipe_end

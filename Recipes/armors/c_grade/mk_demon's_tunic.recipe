@@ -1,0 +1,12 @@
+recipe_begin
+[mk_demon's_tunic]
+134
+level=5
+material={{[demon's_tunic_fabric];10};{[crafted_leather];48};{[metallic_fiber];24};{[crystal_c];50};{[gemstone_c];22}}
+catalyst={}
+product={{[demon's_tunic];1}}
+npc_fee={{[rp_demon's_tunic];1};{[adena];147200}}
+mp_consume=156
+success_rate=100
+item_id=2224
+recipe_end

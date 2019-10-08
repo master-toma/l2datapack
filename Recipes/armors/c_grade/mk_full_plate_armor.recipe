@@ -1,0 +1,12 @@
+recipe_begin
+[mk_full_plate_armor]
+141
+level=6
+material={{[full_plate_armor_temper];11};{[blacksmith's_frame];4};{[mithirl_alloy];36};{[varnish_of_purity];12};{[crystal_c];140};{[gemstone_c];73}}
+catalyst={}
+product={{[full_plate_armor];1}}
+npc_fee={{[rp_full_plate_armor];1};{[adena];418000}}
+mp_consume=165
+success_rate=100
+item_id=2231
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_bow_of_forest]
+10
+level=1
+material={{[bow_of_forest_shaft];3};{[iron_ore];225};{[braided_hemp];45};{[suede];45}}
+catalyst={}
+product={{[bow_of_forest];1}}
+npc_fee={{[rp_bow_of_forest];1};{[adena];27200}}
+mp_consume=60
+success_rate=100
+item_id=1794
+recipe_end

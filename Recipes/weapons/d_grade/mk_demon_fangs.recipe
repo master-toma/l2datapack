@@ -1,0 +1,12 @@
+recipe_begin
+[mk_demon_fangs]
+194
+level=4
+material={{[demon_fangs_part];7};{[steel];110};{[coarse_bone_powder];220};{[braided_hemp];110};{[crystal_d];470};{[gemstone_d];153}}
+catalyst={}
+product={{[demon_fangs];1}}
+npc_fee={{[rp_demon_fangs];1};{[adena];304000}}
+mp_consume=123
+success_rate=100
+item_id=2284
+recipe_end

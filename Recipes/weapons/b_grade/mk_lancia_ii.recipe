@@ -1,0 +1,12 @@
+recipe_begin
+[mk_lancia_ii]
+478
+level=7
+material={{[rp_lancia];1};{[lancia_blade];13};{[maestro_holder];4};{[mithirl_alloy];160};{[synthesis_cokes];80};{[high_grade_suede];40};{[enria];40};{[crystal_b];220};{[gemstone_b];98}}
+catalyst={}
+product={{[lancia];1}}
+npc_fee={}
+mp_consume=183
+success_rate=80
+item_id=4193
+recipe_end

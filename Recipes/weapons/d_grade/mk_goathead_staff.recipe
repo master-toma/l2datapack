@@ -1,0 +1,12 @@
+recipe_begin
+[mk_goathead_staff]
+180
+level=3
+material={{[goathead_staff_head];7};{[steel];100};{[coarse_bone_powder];200};{[braided_hemp];100};{[crystal_d];430};{[gemstone_d];139}}
+catalyst={}
+product={{[goathead_staff];1}}
+npc_fee={{[rp_goathead_staff];1};{[adena];280000}}
+mp_consume=120
+success_rate=100
+item_id=2270
+recipe_end

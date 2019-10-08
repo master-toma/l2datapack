@@ -1,0 +1,12 @@
+recipe_begin
+[mk_silver_arrow]
+452
+level=7
+material={{[braided_hemp];4};{[silver_nugget];2}}
+catalyst={}
+product={{[silver_arrow];550}}
+npc_fee={}
+mp_consume=180
+success_rate=100
+item_id=4180
+recipe_end

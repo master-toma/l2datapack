@@ -1,0 +1,12 @@
+recipe_begin
+[mk_white_tunic]
+91
+level=2
+material={{[white_tunic_pattern];5};{[leather];40};{[cord];20};{[crystal_d];28};{[gemstone_d];7}}
+catalyst={}
+product={{[white_tunic];1}}
+npc_fee={{[rp_white_tunic];1};{[adena];19980}}
+mp_consume=96
+success_rate=100
+item_id=2181
+recipe_end

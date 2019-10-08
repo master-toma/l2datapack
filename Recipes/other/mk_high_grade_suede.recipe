@@ -1,0 +1,12 @@
+recipe_begin
+[mk_high_grade_suede]
+50
+level=2
+material={{[coarse_bone_powder];1};{[suede];3}}
+catalyst={}
+product={{[high_grade_suede];1}}
+npc_fee={{[rp_high_grade_suede];1};{[adena];480}}
+mp_consume=20
+success_rate=100
+item_id=2140
+recipe_end

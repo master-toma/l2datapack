@@ -1,0 +1,12 @@
+recipe_begin
+[mk_necklace_of_black_ore_ii]
+356
+level=7
+material={{[rp_necklace_of_black_ore];1};{[necklace_of_black_ore_beads];13};{[maestro_mold];1};{[compound_braid];40};{[varnish_of_purity];8};{[thons];8};{[crystal_b];32};{[gemstone_b];8}}
+catalyst={}
+product={{[necklace_of_black_ore];1}}
+npc_fee={}
+mp_consume=183
+success_rate=90
+item_id=4131
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_blessed_spiritshot_b]
+342
+level=6
+material={{[spirit_ore];16};{[crystal_b];2}}
+catalyst={}
+product={{[blessed_spiritshot_b];100}}
+npc_fee={{[rp_blessed_spiritshot_b];1};{[adena];4900}}
+mp_consume=180
+success_rate=100
+item_id=3955
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_maestro_mold]
+494
+level=6
+material={{[blacksmith's_frame];1};{[mold_glue];10};{[asofe];5}}
+catalyst={}
+product={{[maestro_mold];1}}
+npc_fee={}
+mp_consume=60
+success_rate=100
+item_id=4125
+recipe_end

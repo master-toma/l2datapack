@@ -1,0 +1,12 @@
+recipe_begin
+[mk_avadon_circlet_i]
+390
+level=6
+material={{[rp_avadon_circlet];1};{[avadon_circlet_pattern];12};{[blacksmith's_frame];1};{[crafted_leather];20};{[asofe];2};{[crystal_c];30};{[gemstone_b];4}}
+catalyst={}
+product={{[avadon_circlet];1}}
+npc_fee={}
+mp_consume=174
+success_rate=60
+item_id=4149
+recipe_end

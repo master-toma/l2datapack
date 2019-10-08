@@ -1,0 +1,12 @@
+recipe_begin
+[mk_blue_wolve's_gaiters_i]
+406
+level=7
+material={{[rp_blue_wolve's_gaiters];1};{[blue_wolve's_gaiters_material];13};{[blacksmith's_frame];2};{[mithirl_alloy];24};{[asofe];16};{[crystal_b];20};{[gemstone_b];12}}
+catalyst={}
+product={{[blue_wolve's_gaiters];1}}
+npc_fee={}
+mp_consume=183
+success_rate=60
+item_id=4157
+recipe_end

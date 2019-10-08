@@ -1,0 +1,12 @@
+recipe_begin
+[mk_arthro_nail_i]
+469
+level=6
+material={{[rp_arthro_nail];1};{[arthro_nail_blade];12};{[mithirl_alloy];80};{[synthesis_cokes];80};{[high_grade_suede];40};{[enria];40};{[crystal_c];325};{[gemstone_b];62}}
+catalyst={}
+product={{[arthro_nail];1}}
+npc_fee={}
+mp_consume=174
+success_rate=60
+item_id=4189
+recipe_end

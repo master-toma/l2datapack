@@ -1,0 +1,12 @@
+recipe_begin
+[mk_mace_of_judgment]
+170
+level=2
+material={{[mace_of_judgment_head];5};{[steel];60};{[cokes];60};{[high_grade_suede];30};{[crystal_d];200};{[gemstone_d];57}}
+catalyst={}
+product={{[mace_of_judgment];1}}
+npc_fee={{[rp_mace_of_judgment];1};{[adena];128800}}
+mp_consume=96
+success_rate=100
+item_id=2260
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_craftsman_mold]
+493
+level=6
+material={{[artisan's_frame];2};{[mold_hardener];20};{[enria];5}}
+catalyst={}
+product={{[craftsman_mold];1}}
+npc_fee={}
+mp_consume=60
+success_rate=100
+item_id=4124
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_elven_bow]
+172
+level=2
+material={{[elven_bow_shaft];5};{[steel];100};{[braided_hemp];20};{[high_grade_suede];20};{[crystal_d];200};{[gemstone_d];57}}
+catalyst={}
+product={{[elven_bow];1}}
+npc_fee={{[rp_elven_bow];1};{[adena];128800}}
+mp_consume=96
+success_rate=100
+item_id=2262
+recipe_end

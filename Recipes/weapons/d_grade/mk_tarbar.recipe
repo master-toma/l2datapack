@@ -1,0 +1,12 @@
+recipe_begin
+[mk_tarbar]
+183
+level=3
+material={{[tarbar_head];7};{[steel];128};{[cokes];128};{[high_grade_suede];64};{[crystal_d];430};{[gemstone_d];139}}
+catalyst={}
+product={{[tarbar];1}}
+npc_fee={{[rp_tarbar];1};{[adena];280000}}
+mp_consume=120
+success_rate=100
+item_id=2273
+recipe_end

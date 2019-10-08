@@ -1,0 +1,12 @@
+recipe_begin
+[mk_hazard_bow_i]
+489
+level=7
+material={{[rp_hazard_bow];1};{[hazard_bow_shaft];13};{[mithirl_alloy];200};{[compound_braid];40};{[high_grade_suede];40};{[enria];40};{[crystal_b];155};{[gemstone_b];98}}
+catalyst={}
+product={{[hazard_bow];1}}
+npc_fee={}
+mp_consume=183
+success_rate=60
+item_id=4199
+recipe_end

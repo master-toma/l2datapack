@@ -1,0 +1,12 @@
+recipe_begin
+[mk_demon's_gloves]
+314
+level=5
+material={{[demon's_gloves_fabric];10};{[crafted_leather];16};{[high_grade_suede];2};{[crystal_c];16};{[gemstone_c];6}}
+catalyst={}
+product={{[demon's_gloves];1}}
+npc_fee={{[rp_demon's_gloves];1};{[adena];49000}}
+mp_consume=156
+success_rate=100
+item_id=3006
+recipe_end

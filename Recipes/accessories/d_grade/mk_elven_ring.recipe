@@ -1,0 +1,12 @@
+recipe_begin
+[mk_elven_ring]
+65
+level=3
+material={{[elven_ring_piece];7};{[silver_mold];1};{[cord];30};{[varnish];6};{[crystal_d];20};{[gemstone_d];4}}
+catalyst={}
+product={{[elven_ring];1}}
+npc_fee={{[rp_elven_ring];1};{[adena];12460}}
+mp_consume=120
+success_rate=100
+item_id=2155
+recipe_end

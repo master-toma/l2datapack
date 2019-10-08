@@ -1,0 +1,12 @@
+recipe_begin
+[mk_poleaxe]
+241
+level=5
+material={{[poleaxe_blade];10};{[mithirl_alloy];100};{[synthesis_cokes];50};{[high_grade_suede];25};{[crystal_c];300};{[gemstone_c];166}}
+catalyst={}
+product={{[poleaxe];1}}
+npc_fee={{[rp_poleaxe];1};{[adena];860000}}
+mp_consume=156
+success_rate=100
+item_id=2331
+recipe_end

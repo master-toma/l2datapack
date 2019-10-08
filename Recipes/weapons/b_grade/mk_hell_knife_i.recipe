@@ -1,0 +1,12 @@
+recipe_begin
+[mk_hell_knife_i]
+467
+level=6
+material={{[rp_hell_knife];1};{[hell_knife_edge];12};{[artisan's_frame];2};{[mithirl_alloy];72};{[synthesis_cokes];72};{[enria];36};{[crystal_c];360};{[gemstone_b];62}}
+catalyst={}
+product={{[hell_knife];1}}
+npc_fee={}
+mp_consume=174
+success_rate=60
+item_id=4188
+recipe_end

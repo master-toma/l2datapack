@@ -1,0 +1,12 @@
+recipe_begin
+[mk_pata_i]
+453
+level=6
+material={{[rp_pata];1};{[pata_blade];12};{[mithirl_alloy];70};{[synthesis_cokes];70};{[high_grade_suede];35};{[enria];35};{[crystal_c];310};{[gemstone_b];55}}
+catalyst={}
+product={{[pata];1}}
+npc_fee={}
+mp_consume=171
+success_rate=60
+item_id=4181
+recipe_end

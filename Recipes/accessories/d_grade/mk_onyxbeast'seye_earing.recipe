@@ -1,0 +1,12 @@
+recipe_begin
+[mk_onyxbeast'seye_earing]
+67
+level=4
+material={{[onyxbeast'seye_earing_gemstone];8};{[silver_mold];1};{[cord];90};{[varnish];18};{[crystal_d];40};{[gemstone_d];8}}
+catalyst={}
+product={{[onyxbeast'seye_earing];1}}
+npc_fee={{[rp_onyxbeast'seye_earing];1};{[adena];24200}}
+mp_consume=129
+success_rate=100
+item_id=2157
+recipe_end

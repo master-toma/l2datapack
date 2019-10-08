@@ -1,0 +1,12 @@
+recipe_begin
+[mk_demon's_sword_i]
+485
+level=7
+material={{[rp_demon's_sword];1};{[demon's_sword_edge];13};{[artisan's_frame];2};{[mithirl_alloy];120};{[synthesis_cokes];120};{[enria];60};{[crystal_b];160};{[gemstone_b];98}}
+catalyst={}
+product={{[demon's_sword];1}}
+npc_fee={}
+mp_consume=183
+success_rate=60
+item_id=4197
+recipe_end

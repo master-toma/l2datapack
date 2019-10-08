@@ -1,0 +1,12 @@
+recipe_begin
+[mk_fist_blade]
+256
+level=5
+material={{[fist_blade_piece];10};{[mithirl_alloy];80};{[synthesis_cokes];80};{[high_grade_suede];40};{[crystal_c];300};{[gemstone_c];166}}
+catalyst={}
+product={{[fist_blade];1}}
+npc_fee={{[rp_fist_blade];1};{[adena];860000}}
+mp_consume=156
+success_rate=100
+item_id=2346
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_great_axe_i]
+473
+level=6
+material={{[rp_great_axe];1};{[great_axe_head];12};{[mithirl_alloy];100};{[synthesis_cokes];50};{[high_grade_suede];25};{[enria];25};{[crystal_c];360};{[gemstone_b];62}}
+catalyst={}
+product={{[great_axe];1}}
+npc_fee={}
+mp_consume=174
+success_rate=60
+item_id=4191
+recipe_end

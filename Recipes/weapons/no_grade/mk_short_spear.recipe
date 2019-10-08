@@ -1,0 +1,12 @@
+recipe_begin
+[mk_short_spear]
+8
+level=1
+material={{[short_spear_edge];3};{[iron_ore];220};{[coal];110};{[suede];55}}
+catalyst={}
+product={{[short_spear];1}}
+npc_fee={{[rp_short_spear];1};{[adena];27200}}
+mp_consume=60
+success_rate=100
+item_id=1792
+recipe_end

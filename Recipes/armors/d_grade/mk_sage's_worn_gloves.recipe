@@ -1,0 +1,12 @@
+recipe_begin
+[mk_sage's_worn_gloves]
+294
+level=4
+material={{[sage's_worn_gloves_lining];8};{[leather];32};{[high_grade_suede];4};{[crystal_d];30};{[gemstone_d];6}}
+catalyst={}
+product={{[sage's_worn_gloves];1}}
+npc_fee={{[rp_sage's_worn_gloves];1};{[adena];19560}}
+mp_consume=129
+success_rate=100
+item_id=2986
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_elven_necklace]
+66
+level=3
+material={{[elven_necklace_beads];7};{[silver_mold];1};{[braided_hemp];70};{[varnish];14};{[crystal_d];38};{[gemstone_d];9}}
+catalyst={}
+product={{[elven_necklace];1}}
+npc_fee={{[rp_elven_necklace];1};{[adena];25000}}
+mp_consume=120
+success_rate=100
+item_id=2156
+recipe_end

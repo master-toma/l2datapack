@@ -1,0 +1,12 @@
+recipe_begin
+[mk_great_pata]
+268
+level=6
+material={{[great_pata_blade];11};{[mithirl_alloy];116};{[synthesis_cokes];116};{[high_grade_suede];58};{[crystal_c];410};{[gemstone_c];248}}
+catalyst={}
+product={{[great_pata];1}}
+npc_fee={{[rp_great_pata];1};{[adena];1226000}}
+mp_consume=165
+success_rate=100
+item_id=2358
+recipe_end

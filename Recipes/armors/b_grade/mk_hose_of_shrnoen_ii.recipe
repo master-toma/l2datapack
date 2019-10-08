@@ -1,0 +1,12 @@
+recipe_begin
+[mk_hose_of_shrnoen_ii]
+387
+level=6
+material={{[rp_hose_of_shrnoen];1};{[hose_of_shrnoen_fabric];12};{[maestro_anvil_lock];1};{[crafted_leather];20};{[metallic_fiber];20};{[asofe];20};{[crystal_c];56};{[gemstone_b];5}}
+catalyst={}
+product={{[hose_of_shrnoen];1}}
+npc_fee={}
+mp_consume=174
+success_rate=80
+item_id=4147
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_samurai_longsword]
+263
+level=6
+material={{[samurai_longsword_blade];11};{[artisan's_frame];3};{[mithirl_alloy];130};{[synthesis_cokes];65};{[crystal_c];410};{[gemstone_c];248}}
+catalyst={}
+product={{[samurai_longsword];1}}
+npc_fee={{[rp_samurai_longsword];1};{[adena];1226000}}
+mp_consume=165
+success_rate=100
+item_id=2353
+recipe_end

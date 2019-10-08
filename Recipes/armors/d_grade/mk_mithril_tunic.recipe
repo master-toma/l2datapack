@@ -1,0 +1,12 @@
+recipe_begin
+[mk_mithril_tunic]
+99
+level=3
+material={{[mithril_tunic_fabric];7};{[leather];84};{[cord];42};{[crystal_d];70};{[gemstone_d];17}}
+catalyst={}
+product={{[mithril_tunic];1}}
+npc_fee={{[rp_mithril_tunic];1};{[adena];44800}}
+mp_consume=120
+success_rate=100
+item_id=2189
+recipe_end

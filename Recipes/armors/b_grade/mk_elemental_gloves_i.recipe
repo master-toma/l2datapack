@@ -1,0 +1,12 @@
+recipe_begin
+[mk_elemental_gloves_i]
+430
+level=7
+material={{[rp_elemental_gloves];1};{[elemental_gloves_lining];13};{[crafted_leather];32};{[high_grade_suede];4};{[asofe];4};{[crystal_b];8};{[gemstone_b];4}}
+catalyst={}
+product={{[elemental_gloves];1}}
+npc_fee={}
+mp_consume=183
+success_rate=60
+item_id=4169
+recipe_end

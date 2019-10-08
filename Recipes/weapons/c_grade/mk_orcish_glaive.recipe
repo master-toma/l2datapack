@@ -1,0 +1,12 @@
+recipe_begin
+[mk_orcish_glaive]
+223
+level=4
+material={{[orcish_glaive_blade];8};{[mithirl_alloy];56};{[synthesis_cokes];28};{[high_grade_suede];14};{[crystal_d];700};{[gemstone_c];81}}
+catalyst={}
+product={{[orcish_glaive];1}}
+npc_fee={{[rp_orcish_glaive];1};{[adena];458000}}
+mp_consume=138
+success_rate=100
+item_id=2313
+recipe_end

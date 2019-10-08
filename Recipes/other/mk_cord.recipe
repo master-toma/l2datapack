@@ -1,0 +1,12 @@
+recipe_begin
+[mk_cord]
+33
+level=2
+material={{[steel];2};{[thread];25}}
+catalyst={}
+product={{[cord];20}}
+npc_fee={{[rp_cord];1};{[adena];1300}}
+mp_consume=20
+success_rate=100
+item_id=1817
+recipe_end

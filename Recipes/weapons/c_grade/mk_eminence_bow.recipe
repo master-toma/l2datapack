@@ -1,0 +1,12 @@
+recipe_begin
+[mk_eminence_bow]
+269
+level=6
+material={{[eminence_bow_shaft];11};{[mithirl_alloy];170};{[compound_braid];34};{[high_grade_suede];34};{[crystal_c];410};{[gemstone_c];248}}
+catalyst={}
+product={{[eminence_bow];1}}
+npc_fee={{[rp_eminence_bow];1};{[adena];1226000}}
+mp_consume=165
+success_rate=100
+item_id=2359
+recipe_end

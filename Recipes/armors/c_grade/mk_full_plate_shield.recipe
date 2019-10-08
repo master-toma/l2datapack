@@ -1,0 +1,12 @@
+recipe_begin
+[mk_full_plate_shield]
+327
+level=6
+material={{[full_plate_shield_fragment];11};{[mithirl_alloy];9};{[synthesis_cokes];3};{[crafted_leather];3};{[crystal_c];25};{[gemstone_c];10}}
+catalyst={}
+product={{[full_plate_shield];1}}
+npc_fee={{[rp_full_plate_shield];1};{[adena];75000}}
+mp_consume=165
+success_rate=100
+item_id=3019
+recipe_end

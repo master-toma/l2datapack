@@ -1,0 +1,12 @@
+recipe_begin
+[mk_elven_earing]
+64
+level=3
+material={{[elven_earing_beads];7};{[silver_mold];1};{[cord];60};{[varnish];12};{[crystal_d];30};{[gemstone_d];6}}
+catalyst={}
+product={{[elven_earing];1}}
+npc_fee={{[rp_elven_earing];1};{[adena];18680}}
+mp_consume=120
+success_rate=100
+item_id=2154
+recipe_end

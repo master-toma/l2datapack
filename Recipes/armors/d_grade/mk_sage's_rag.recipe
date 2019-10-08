@@ -1,0 +1,12 @@
+recipe_begin
+[mk_sage's_rag]
+108
+level=4
+material={{[sage's_rag_lining];8};{[leather];140};{[cord];70};{[braided_hemp];35};{[crystal_d];130};{[gemstone_d];36}}
+catalyst={}
+product={{[sage's_rag];1}}
+npc_fee={{[rp_sage's_rag];1};{[adena];85800}}
+mp_consume=129
+success_rate=100
+item_id=2198
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_implosion_gauntlet_ii]
+435
+level=7
+material={{[rp_implosion_gauntlet];1};{[implosion_gauntlet_fabric];13};{[maestro_anvil_lock];1};{[crafted_leather];32};{[high_grade_suede];4};{[asofe];4};{[crystal_b];12};{[gemstone_b];4}}
+catalyst={}
+product={{[implosion_gauntlet];1}}
+npc_fee={}
+mp_consume=183
+success_rate=80
+item_id=4171
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_eye_of_infinity]
+191
+level=3
+material={{[eye_of_infinity_stone];7};{[steel];100};{[coarse_bone_powder];200};{[braided_hemp];100};{[crystal_d];430};{[gemstone_d];139}}
+catalyst={}
+product={{[eye_of_infinity];1}}
+npc_fee={{[rp_eye_of_infinity];1};{[adena];280000}}
+mp_consume=120
+success_rate=100
+item_id=2281
+recipe_end

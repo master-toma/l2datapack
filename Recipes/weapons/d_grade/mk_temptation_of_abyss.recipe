@@ -1,0 +1,12 @@
+recipe_begin
+[mk_temptation_of_abyss]
+168
+level=2
+material={{[temptation_of_abyss_piece];4};{[steel];30};{[coarse_bone_powder];60};{[braided_hemp];30};{[gemstone_d];34}}
+catalyst={}
+product={{[temptation_of_abyss];1}}
+npc_fee={{[rp_temptation_of_abyss];1};{[adena];81800}}
+mp_consume=84
+success_rate=100
+item_id=2258
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_doom_helmet_ii]
+425
+level=7
+material={{[rp_doom_helmet];1};{[doom_helmet_pattern];13};{[maestro_mold];1};{[crafted_leather];40};{[asofe];4};{[crystal_b];26};{[gemstone_b];7}}
+catalyst={}
+product={{[doom_helmet];1}}
+npc_fee={}
+mp_consume=183
+success_rate=80
+item_id=4166
+recipe_end

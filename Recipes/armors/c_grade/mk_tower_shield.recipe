@@ -1,0 +1,12 @@
+recipe_begin
+[mk_tower_shield]
+133
+level=5
+material={{[tower_shield_fragment];10};{[mithirl_alloy];6};{[synthesis_cokes];2};{[crafted_leather];2};{[crystal_c];17};{[gemstone_c];7}}
+catalyst={}
+product={{[tower_shield];1}}
+npc_fee={{[rp_tower_shield];1};{[adena];51600}}
+mp_consume=156
+success_rate=100
+item_id=2223
+recipe_end

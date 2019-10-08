@@ -1,0 +1,12 @@
+recipe_begin
+[mk_avadon_breastplate_ii]
+375
+level=6
+material={{[rp_avadon_breastplate];1};{[avadon_breastplate_part];12};{[maestro_mold];3};{[mithirl_alloy];18};{[asofe];12};{[crystal_c];102};{[gemstone_b];12}}
+catalyst={}
+product={{[avadon_breastplate];1}}
+npc_fee={}
+mp_consume=174
+success_rate=80
+item_id=4141
+recipe_end

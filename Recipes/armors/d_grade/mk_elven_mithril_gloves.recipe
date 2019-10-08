@@ -1,0 +1,12 @@
+recipe_begin
+[mk_elven_mithril_gloves]
+289
+level=3
+material={{[elven_mithril_gloves_design];7};{[leather];24};{[high_grade_suede];3};{[crystal_d];24};{[gemstone_d];5}}
+catalyst={}
+product={{[elven_mithril_gloves];1}}
+npc_fee={{[rp_elven_mithril_gloves];1};{[adena];14940}}
+mp_consume=120
+success_rate=100
+item_id=2981
+recipe_end

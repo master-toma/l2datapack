@@ -1,0 +1,12 @@
+recipe_begin
+[mk_maestro_holder]
+491
+level=6
+material={{[varnish_of_purity];10};{[mold_lubricant];10};{[mold_hardener];10}}
+catalyst={}
+product={{[maestro_holder];1}}
+npc_fee={}
+mp_consume=60
+success_rate=100
+item_id=4122
+recipe_end

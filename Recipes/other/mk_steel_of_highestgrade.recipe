@@ -1,0 +1,12 @@
+recipe_begin
+[mk_steel_of_highestgrade]
+44
+level=2
+material={{[animal_skin];6}}
+catalyst={}
+product={{[animal_skin];6}}
+npc_fee={}
+mp_consume=15
+success_rate=100
+item_id=1703
+recipe_end

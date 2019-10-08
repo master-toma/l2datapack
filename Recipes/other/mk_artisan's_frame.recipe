@@ -1,0 +1,12 @@
+recipe_begin
+[mk_artisan's_frame]
+56
+level=4
+material={{[steel_mold];1};{[varnish_of_purity];5};{[admantite_nugget];10}}
+catalyst={}
+product={{[artisan's_frame];1}}
+npc_fee={{[rp_artisan's_frame];1};{[adena];19000}}
+mp_consume=40
+success_rate=100
+item_id=2146
+recipe_end

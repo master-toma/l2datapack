@@ -1,0 +1,12 @@
+recipe_begin
+[mk_blacksmith's_frame]
+57
+level=4
+material={{[silver_mold];1};{[varnish_of_purity];5};{[mithril_ore];10}}
+catalyst={}
+product={{[blacksmith's_frame];1}}
+npc_fee={{[rp_blacksmith's_frame];1};{[adena];12800}}
+mp_consume=40
+success_rate=100
+item_id=2147
+recipe_end

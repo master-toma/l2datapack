@@ -1,0 +1,12 @@
+recipe_begin
+[mk_spinebone_sword]
+169
+level=2
+material={{[spinebone_sword_blade];5};{[steel_mold];2};{[steel];75};{[cokes];75};{[crystal_d];200};{[gemstone_d];57}}
+catalyst={}
+product={{[spinebone_sword];1}}
+npc_fee={{[rp_spinebone_sword];1};{[adena];128800}}
+mp_consume=96
+success_rate=100
+item_id=2259
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_blue_wolve's_tunic_i]
+414
+level=7
+material={{[rp_blue_wolve's_tunic];1};{[blue_wolve's_tunic_fabric];13};{[crafted_leather];64};{[metallic_fiber];32};{[asofe];32};{[crystal_b];32};{[gemstone_b];14}}
+catalyst={}
+product={{[blue_wolve's_tunic];1}}
+npc_fee={}
+mp_consume=183
+success_rate=60
+item_id=4161
+recipe_end

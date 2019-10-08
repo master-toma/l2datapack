@@ -1,0 +1,12 @@
+recipe_begin
+[mk_flame_bonnet]
+154
+level=6
+material={{[flame_bonnet_design];11};{[blacksmith's_frame];1};{[crafted_leather];26};{[crystal_c];36};{[gemstone_c];15}}
+catalyst={}
+product={{[flame_bonnet];1}}
+npc_fee={{[rp_flame_bonnet];1};{[adena];107200}}
+mp_consume=165
+success_rate=100
+item_id=2244
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_dwarven_chain_boots]
+301
+level=4
+material={{[dwarven_chain_boots_part];8};{[crafted_leather];8};{[high_grade_suede];1};{[crystal_d];40};{[gemstone_c];3}}
+catalyst={}
+product={{[dwarven_chain_boots];1}}
+npc_fee={{[rp_dwarven_chain_boots];1};{[adena];25200}}
+mp_consume=138
+success_rate=100
+item_id=2993
+recipe_end

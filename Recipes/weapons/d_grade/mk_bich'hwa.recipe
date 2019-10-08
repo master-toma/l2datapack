@@ -1,0 +1,12 @@
+recipe_begin
+[mk_bich'hwa]
+187
+level=3
+material={{[bich'hwa_edge];7};{[steel];128};{[cokes];128};{[high_grade_suede];64};{[crystal_d];430};{[gemstone_d];139}}
+catalyst={}
+product={{[bich'hwa];1}}
+npc_fee={{[rp_bich'hwa];1};{[adena];280000}}
+mp_consume=120
+success_rate=100
+item_id=2277
+recipe_end

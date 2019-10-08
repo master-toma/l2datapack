@@ -1,0 +1,12 @@
+recipe_begin
+[mk_manticor_skin_gaiters]
+98
+level=3
+material={{[manticor_skin_gaiters_pattern];7};{[leather];45};{[cord];45};{[crystal_d];45};{[gemstone_d];10}}
+catalyst={}
+product={{[manticor_skin_gaiters];1}}
+npc_fee={{[rp_manticor_skin_gaiters];1};{[adena];28000}}
+mp_consume=120
+success_rate=100
+item_id=2188
+recipe_end

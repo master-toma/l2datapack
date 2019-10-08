@@ -1,0 +1,12 @@
+recipe_begin
+[mk_mithril_dagger]
+200
+level=4
+material={{[mithril_dagger_blade];8};{[steel_mold];2};{[steel];220};{[cokes];220};{[crystal_d];550};{[gemstone_d];185}}
+catalyst={}
+product={{[mithril_dagger];1}}
+npc_fee={{[rp_mithril_dagger];1};{[adena];360000}}
+mp_consume=129
+success_rate=100
+item_id=2290
+recipe_end

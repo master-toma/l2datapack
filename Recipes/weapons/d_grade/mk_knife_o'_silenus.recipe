@@ -1,0 +1,12 @@
+recipe_begin
+[mk_knife_o'_silenus]
+176
+level=3
+material={{[knife_o'_silenus_edge];6};{[steel_mold];2};{[steel];118};{[cokes];118};{[crystal_d];300};{[gemstone_d];91}}
+catalyst={}
+product={{[knife_o'_silenus];1}}
+npc_fee={{[rp_knife_o'_silenus];1};{[adena];193400}}
+mp_consume=108
+success_rate=100
+item_id=2266
+recipe_end

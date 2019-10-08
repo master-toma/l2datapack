@@ -1,0 +1,12 @@
+recipe_begin
+[mk_war_pick]
+212
+level=4
+material={{[war_pick_head];8};{[mithirl_alloy];44};{[synthesis_cokes];44};{[high_grade_suede];22};{[crystal_d];700};{[gemstone_c];81}}
+catalyst={}
+product={{[war_pick];1}}
+npc_fee={{[rp_war_pick];1};{[adena];458000}}
+mp_consume=138
+success_rate=100
+item_id=2302
+recipe_end

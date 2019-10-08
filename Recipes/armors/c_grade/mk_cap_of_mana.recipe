@@ -1,0 +1,12 @@
+recipe_begin
+[mk_cap_of_mana]
+146
+level=6
+material={{[cap_of_mana_pattern];11};{[blacksmith's_frame];1};{[crafted_leather];26};{[crystal_c];36};{[gemstone_c];15}}
+catalyst={}
+product={{[cap_of_mana];1}}
+npc_fee={{[rp_cap_of_mana];1};{[adena];107200}}
+mp_consume=165
+success_rate=100
+item_id=2236
+recipe_end

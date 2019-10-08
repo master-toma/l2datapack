@@ -1,0 +1,12 @@
+recipe_begin
+[mk_theca_leather_gaiters]
+140
+level=5
+material={{[theca_leather_gaiters_pattern];10};{[crafted_leather];32};{[metallic_fiber];32};{[crystal_c];35};{[gemstone_c];15}}
+catalyst={}
+product={{[theca_leather_gaiters];1}}
+npc_fee={{[rp_theca_leather_gaiters];1};{[adena];103200}}
+mp_consume=159
+success_rate=100
+item_id=2230
+recipe_end

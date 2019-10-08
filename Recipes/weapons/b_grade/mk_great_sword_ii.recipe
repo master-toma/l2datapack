@@ -1,0 +1,12 @@
+recipe_begin
+[mk_great_sword_ii]
+456
+level=6
+material={{[rp_great_sword];1};{[great_sword_blade];12};{[craftsman_mold];3};{[mithirl_alloy];80};{[synthesis_cokes];40};{[enria];40};{[crystal_c];200};{[gemstone_b];62}}
+catalyst={}
+product={{[great_sword];1}}
+npc_fee={}
+mp_consume=174
+success_rate=80
+item_id=4182
+recipe_end

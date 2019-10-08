@@ -1,0 +1,12 @@
+recipe_begin
+[mk_steel_mold]
+49
+level=2
+material={{[braided_hemp];5};{[iron_ore];5};{[coal];5}}
+catalyst={}
+product={{[steel_mold];1}}
+npc_fee={{[rp_steel_mold];1};{[adena];900}}
+mp_consume=20
+success_rate=100
+item_id=2139
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_blue_wolve's_breastplate_ii]
+403
+level=7
+material={{[rp_blue_wolve's_breastplate];1};{[blue_wolve's_breastplate_part];13};{[maestro_mold];3};{[mithirl_alloy];36};{[asofe];24};{[crystal_b];68};{[gemstone_b];20}}
+catalyst={}
+product={{[blue_wolve's_breastplate];1}}
+npc_fee={}
+mp_consume=183
+success_rate=80
+item_id=4155
+recipe_end

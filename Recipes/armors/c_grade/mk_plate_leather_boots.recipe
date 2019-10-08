@@ -1,0 +1,12 @@
+recipe_begin
+[mk_plate_leather_boots]
+300
+level=4
+material={{[plate_leather_boots_lining];8};{[crafted_leather];8};{[high_grade_suede];1};{[crystal_d];40};{[gemstone_c];3}}
+catalyst={}
+product={{[plate_leather_boots];1}}
+npc_fee={{[rp_plate_leather_boots];1};{[adena];25200}}
+mp_consume=138
+success_rate=100
+item_id=2992
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_winged_spear]
+181
+level=3
+material={{[winged_spear_blade];7};{[steel];180};{[cokes];90};{[high_grade_suede];45};{[crystal_d];430};{[gemstone_d];139}}
+catalyst={}
+product={{[winged_spear];1}}
+npc_fee={{[rp_winged_spear];1};{[adena];280000}}
+mp_consume=120
+success_rate=100
+item_id=2271
+recipe_end

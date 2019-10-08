@@ -1,0 +1,12 @@
+recipe_begin
+[mk_karmian_tunic]
+117
+level=4
+material={{[karmian_tunic_pattern];8};{[crafted_leather];24};{[metallic_fiber];12};{[crystal_d];120};{[gemstone_c];10}}
+catalyst={}
+product={{[karmian_tunic];1}}
+npc_fee={{[rp_karmian_tunic];1};{[adena];75800}}
+mp_consume=138
+success_rate=100
+item_id=2207
+recipe_end

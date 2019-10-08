@@ -1,0 +1,12 @@
+recipe_begin
+[mk_enchanted_necklace]
+62
+level=2
+material={{[enchanted_necklace_chain];5};{[silver_mold];1};{[braided_hemp];15};{[varnish];3};{[crystal_d];18};{[gemstone_d];3}}
+catalyst={}
+product={{[enchanted_necklace];1}}
+npc_fee={{[rp_enchanted_necklace];1};{[adena];11360}}
+mp_consume=96
+success_rate=100
+item_id=2152
+recipe_end

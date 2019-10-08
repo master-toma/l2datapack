@@ -1,0 +1,12 @@
+recipe_begin
+[mk_nassen's_earing]
+80
+level=6
+material={{[nassen's_earing_gemstone];11};{[blacksmith's_frame];1};{[metallic_fiber];45};{[varnish_of_purity];9};{[crystal_c];28};{[gemstone_c];12}}
+catalyst={}
+product={{[nassen's_earing];1}}
+npc_fee={{[rp_nassen's_earing];1};{[adena];84800}}
+mp_consume=165
+success_rate=100
+item_id=2170
+recipe_end

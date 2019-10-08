@@ -1,0 +1,12 @@
+recipe_begin
+[mk_bellion_cestus_ii]
+488
+level=7
+material={{[rp_bellion_cestus];1};{[bellion_cestus_edge];13};{[maestro_holder];3};{[mithirl_alloy];120};{[synthesis_cokes];120};{[high_grade_suede];60};{[enria];60};{[crystal_b];260};{[gemstone_b];98}}
+catalyst={}
+product={{[bellion_cestus];1}}
+npc_fee={}
+mp_consume=183
+success_rate=80
+item_id=4198
+recipe_end

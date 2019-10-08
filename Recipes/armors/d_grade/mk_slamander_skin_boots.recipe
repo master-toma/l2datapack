@@ -1,0 +1,12 @@
+recipe_begin
+[mk_slamander_skin_boots]
+292
+level=4
+material={{[slamander_skin_boots_lining];8};{[leather];32};{[high_grade_suede];4};{[crystal_d];30};{[gemstone_d];6}}
+catalyst={}
+product={{[slamander_skin_boots];1}}
+npc_fee={{[rp_slamander_skin_boots];1};{[adena];19560}}
+mp_consume=129
+success_rate=100
+item_id=2984
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_dark_elven_long_bow_ii]
+472
+level=6
+material={{[rp_dark_elven_long_bow];1};{[dark_elven_long_bow_shaft];12};{[maestro_holder];3};{[mithirl_alloy];125};{[compound_braid];25};{[high_grade_suede];25};{[enria];25};{[crystal_c];400};{[gemstone_b];62}}
+catalyst={}
+product={{[dark_elven_long_bow];1}}
+npc_fee={}
+mp_consume=174
+success_rate=80
+item_id=4190
+recipe_end

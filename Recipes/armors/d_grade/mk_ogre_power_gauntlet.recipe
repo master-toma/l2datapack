@@ -1,0 +1,12 @@
+recipe_begin
+[mk_ogre_power_gauntlet]
+118
+level=4
+material={{[ogre_power_gauntlet_part];8};{[leather];32};{[high_grade_suede];4};{[crystal_d];30};{[gemstone_d];6}}
+catalyst={}
+product={{[ogre_power_gauntlet];1}}
+npc_fee={{[rp_ogre_power_gauntlet];1};{[adena];19560}}
+mp_consume=129
+success_rate=100
+item_id=2208
+recipe_end

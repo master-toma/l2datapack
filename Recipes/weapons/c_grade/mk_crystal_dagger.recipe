@@ -1,0 +1,12 @@
+recipe_begin
+[mk_crystal_dagger]
+267
+level=6
+material={{[crystal_dagger_blade];11};{[artisan's_frame];2};{[mithirl_alloy];115};{[synthesis_cokes];115};{[crystal_c];410};{[gemstone_c];248}}
+catalyst={}
+product={{[crystal_dagger];1}}
+npc_fee={{[rp_crystal_dagger];1};{[adena];1226000}}
+mp_consume=165
+success_rate=100
+item_id=2357
+recipe_end

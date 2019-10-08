@@ -1,0 +1,12 @@
+recipe_begin
+[mk_cerberus's_eye]
+274
+level=6
+material={{[cerberus's_eye_fragment];11};{[oriharukon];80};{[coarse_bone_powder];160};{[compound_braid];80};{[crystal_c];410};{[gemstone_c];248}}
+catalyst={}
+product={{[cerberus's_eye];1}}
+npc_fee={{[rp_cerberus's_eye];1};{[adena];1226000}}
+mp_consume=165
+success_rate=100
+item_id=2364
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_blue_wolve's_hose_ii]
+419
+level=7
+material={{[rp_blue_wolve's_hose];1};{[blue_wolve's_hose_pattern];13};{[maestro_anvil_lock];1};{[crafted_leather];30};{[metallic_fiber];30};{[asofe];30};{[crystal_b];35};{[gemstone_b];8}}
+catalyst={}
+product={{[blue_wolve's_hose];1}}
+npc_fee={}
+mp_consume=183
+success_rate=80
+item_id=4163
+recipe_end

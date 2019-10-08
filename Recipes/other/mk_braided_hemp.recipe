@@ -1,0 +1,12 @@
+recipe_begin
+[mk_braided_hemp]
+45
+level=1
+material={{[stem];5}}
+catalyst={}
+product={{[braided_hemp];1}}
+npc_fee={{[rp_braided_hemp];1};{[adena];100}}
+mp_consume=10
+success_rate=100
+item_id=2135
+recipe_end

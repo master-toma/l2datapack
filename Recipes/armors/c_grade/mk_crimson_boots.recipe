@@ -1,0 +1,12 @@
+recipe_begin
+[mk_crimson_boots]
+129
+level=5
+material={{[crimson_boots_fabric];9};{[crafted_leather];10};{[high_grade_suede];1};{[crystal_c];12};{[gemstone_c];4}}
+catalyst={}
+product={{[crimson_boots];1}}
+npc_fee={{[rp_crimson_boots];1};{[adena];32200}}
+mp_consume=147
+success_rate=100
+item_id=2219
+recipe_end

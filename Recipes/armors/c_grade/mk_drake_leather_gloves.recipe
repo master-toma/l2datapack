@@ -1,0 +1,12 @@
+recipe_begin
+[mk_drake_leather_gloves]
+323
+level=6
+material={{[drake_leather_gloves_design];11};{[crafted_leather];24};{[high_grade_suede];3};{[crystal_c];24};{[gemstone_c];10}}
+catalyst={}
+product={{[drake_leather_gloves];1}}
+npc_fee={{[rp_drake_leather_gloves];1};{[adena];71600}}
+mp_consume=165
+success_rate=100
+item_id=3015
+recipe_end

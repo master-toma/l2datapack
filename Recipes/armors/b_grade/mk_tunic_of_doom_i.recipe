@@ -1,0 +1,12 @@
+recipe_begin
+[mk_tunic_of_doom_i]
+416
+level=7
+material={{[rp_tunic_of_doom];1};{[tunic_of_doom_pattern];13};{[crafted_leather];64};{[metallic_fiber];32};{[asofe];32};{[crystal_b];32};{[gemstone_b];14}}
+catalyst={}
+product={{[tunic_of_doom];1}}
+npc_fee={}
+mp_consume=183
+success_rate=60
+item_id=4162
+recipe_end

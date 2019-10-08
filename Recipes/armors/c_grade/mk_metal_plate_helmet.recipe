@@ -1,0 +1,12 @@
+recipe_begin
+[mk_metal_plate_helmet]
+120
+level=4
+material={{[metal_plate_helmet_material];9};{[blacksmith's_frame];1};{[crafted_leather];3};{[crystal_c];14};{[gemstone_c];5}}
+catalyst={}
+product={{[metal_plate_helmet];1}}
+npc_fee={{[rp_metal_plate_helmet];1};{[adena];41200}}
+mp_consume=141
+success_rate=100
+item_id=2210
+recipe_end

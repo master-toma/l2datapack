@@ -1,0 +1,12 @@
+recipe_begin
+[mk_dwarven_chain_gloves]
+310
+level=5
+material={{[dwarven_chain_gloves_design];9};{[crafted_leather];10};{[high_grade_suede];1};{[crystal_c];12};{[gemstone_c];4}}
+catalyst={}
+product={{[dwarven_chain_gloves];1}}
+npc_fee={{[rp_dwarven_chain_gloves];1};{[adena];32200}}
+mp_consume=147
+success_rate=100
+item_id=3002
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_art_of_battle_axe_ii]
+482
+level=7
+material={{[rp_art_of_battle_axe];1};{[art_of_battle_axe_blade];13};{[maestro_holder];3};{[mithirl_alloy];120};{[synthesis_cokes];120};{[high_grade_suede];60};{[enria];60};{[crystal_b];260};{[gemstone_b];98}}
+catalyst={}
+product={{[art_of_battle_axe];1}}
+npc_fee={}
+mp_consume=183
+success_rate=80
+item_id=4195
+recipe_end

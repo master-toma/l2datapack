@@ -1,0 +1,12 @@
+recipe_begin
+[mk_claymore]
+195
+level=4
+material={{[claymore_blade];8};{[steel_mold];3};{[steel];270};{[cokes];135};{[crystal_d];550};{[gemstone_d];185}}
+catalyst={}
+product={{[claymore];1}}
+npc_fee={{[rp_claymore];1};{[adena];360000}}
+mp_consume=129
+success_rate=100
+item_id=2285
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_dwarven_chain_gaiters]
+124
+level=5
+material={{[dwarven_chain_gaiters_material];9};{[blacksmith's_frame];2};{[mithirl_alloy];3};{[crystal_c];25};{[gemstone_c];11}}
+catalyst={}
+product={{[dwarven_chain_gaiters];1}}
+npc_fee={{[rp_dwarven_chain_gaiters];1};{[adena];80600}}
+mp_consume=147
+success_rate=100
+item_id=2214
+recipe_end

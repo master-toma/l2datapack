@@ -1,0 +1,12 @@
+recipe_begin
+[mk_mithril_ring]
+68
+level=4
+material={{[mithril_ring_wire];8};{[silver_mold];1};{[cord];50};{[varnish];10};{[crystal_d];25};{[gemstone_d];5}}
+catalyst={}
+product={{[mithril_ring];1}}
+npc_fee={{[rp_mithril_ring];1};{[adena];16160}}
+mp_consume=129
+success_rate=100
+item_id=2158
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_leather_boots]
+86
+level=2
+material={{[leather_boots_lining];4};{[leather];8};{[high_grade_suede];1};{[gemstone_d];1}}
+catalyst={}
+product={{[leather_boots];1}}
+npc_fee={{[rp_leather_boots];1};{[adena];4180}}
+mp_consume=84
+success_rate=100
+item_id=2176
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_avadon_robe_i]
+388
+level=6
+material={{[rp_avadon_robe];1};{[avadon_robe_fabric];12};{[crafted_leather];65};{[metallic_fiber];32};{[compound_braid];16};{[asofe];16};{[crystal_c];95};{[gemstone_b];14}}
+catalyst={}
+product={{[avadon_robe];1}}
+npc_fee={}
+mp_consume=174
+success_rate=60
+item_id=4148
+recipe_end

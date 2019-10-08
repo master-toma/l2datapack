@@ -1,0 +1,12 @@
+recipe_begin
+[mk_ring_of_binding]
+278
+level=6
+material={{[ring_of_binding_gemstone];11};{[silver_mold];1};{[metallic_fiber];40};{[varnish_of_purity];8};{[crystal_c];20};{[gemstone_c];7}}
+catalyst={}
+product={{[ring_of_binding];1}}
+npc_fee={{[rp_ring_of_binding];1};{[adena];56400}}
+mp_consume=165
+success_rate=100
+item_id=2970
+recipe_end

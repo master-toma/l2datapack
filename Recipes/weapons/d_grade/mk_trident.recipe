@@ -1,0 +1,12 @@
+recipe_begin
+[mk_trident]
+167
+level=2
+material={{[trident_edge];4};{[steel];80};{[cokes];40};{[high_grade_suede];20};{[gemstone_d];34}}
+catalyst={}
+product={{[trident];1}}
+npc_fee={{[rp_trident];1};{[adena];81800}}
+mp_consume=84
+success_rate=100
+item_id=2257
+recipe_end

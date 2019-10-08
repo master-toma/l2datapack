@@ -1,0 +1,12 @@
+recipe_begin
+[mk_blue_crystal_skull]
+193
+level=4
+material={{[blue_crystal_skull_part];7};{[steel];110};{[coarse_bone_powder];220};{[braided_hemp];110};{[crystal_d];470};{[gemstone_d];153}}
+catalyst={}
+product={{[blue_crystal_skull];1}}
+npc_fee={{[rp_blue_crystal_skull];1};{[adena];304000}}
+mp_consume=123
+success_rate=100
+item_id=2283
+recipe_end

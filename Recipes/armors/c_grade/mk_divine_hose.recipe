@@ -1,0 +1,12 @@
+recipe_begin
+[mk_divine_hose]
+144
+level=6
+material={{[divine_hose_pattern];11};{[crafted_leather];42};{[metallic_fiber];42};{[crystal_c];45};{[gemstone_c];20}}
+catalyst={}
+product={{[divine_hose];1}}
+npc_fee={{[rp_divine_hose];1};{[adena];134200}}
+mp_consume=165
+success_rate=100
+item_id=2234
+recipe_end

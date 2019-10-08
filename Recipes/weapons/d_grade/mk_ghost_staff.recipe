@@ -1,0 +1,12 @@
+recipe_begin
+[mk_ghost_staff]
+198
+level=4
+material={{[ghost_staff_head];8};{[steel];130};{[coarse_bone_powder];260};{[braided_hemp];130};{[crystal_d];550};{[gemstone_d];185}}
+catalyst={}
+product={{[ghost_staff];1}}
+npc_fee={{[rp_ghost_staff];1};{[adena];360000}}
+mp_consume=129
+success_rate=100
+item_id=2288
+recipe_end

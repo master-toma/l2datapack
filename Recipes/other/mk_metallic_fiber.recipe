@@ -1,0 +1,12 @@
+recipe_begin
+[mk_metallic_fiber]
+59
+level=4
+material={{[cord];20};{[silver_nugget];15}}
+catalyst={}
+product={{[metallic_fiber];20}}
+npc_fee={{[rp_metallic_fiber];1};{[adena];2800}}
+mp_consume=40
+success_rate=100
+item_id=2149
+recipe_end

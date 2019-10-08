@@ -1,0 +1,12 @@
+recipe_begin
+[mk_amber_bead]
+333
+level=2
+material={{[amber_lump];1}}
+catalyst={}
+product={{[amber_bead];5}}
+npc_fee={{[rp_amber_bead];1};{[adena];0}}
+mp_consume=100
+success_rate=100
+item_id=3025
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_leather_hose]
+13
+level=1
+material={{[leather_hose_pattern];2};{[animal_skin];12};{[thread];12}}
+catalyst={}
+product={{[leather_hose];1}}
+npc_fee={{[rp_leather_hose];1};{[adena];994}}
+mp_consume=45
+success_rate=100
+item_id=1797
+recipe_end

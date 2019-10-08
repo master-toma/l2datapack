@@ -1,0 +1,12 @@
+recipe_begin
+[mk_shrnoen's_breastplate_ii]
+359
+level=6
+material={{[rp_shrnoen's_breastplate];1};{[shrnoen's_breastplate_part];12};{[maestro_mold];3};{[mithirl_alloy];18};{[asofe];12};{[crystal_c];102};{[gemstone_b];12}}
+catalyst={}
+product={{[shrnoen's_breastplate];1}}
+npc_fee={}
+mp_consume=174
+success_rate=80
+item_id=4133
+recipe_end

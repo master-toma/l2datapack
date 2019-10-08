@@ -1,0 +1,12 @@
+recipe_begin
+[mk_journeyman_ring]
+332
+level=1
+material={{[journeyman_deco_beads];1};{[journeyman_gem];1};{[steel];1};{[varnish];10};{[crystal_d];10}}
+catalyst={}
+product={{[journeyman_ring];1}}
+npc_fee={{[rp_journeyman_ring];1};{[adena];0}}
+mp_consume=100
+success_rate=100
+item_id=3024
+recipe_end

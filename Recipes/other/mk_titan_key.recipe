@@ -1,0 +1,12 @@
+recipe_begin
+[mk_titan_key]
+331
+level=1
+material={{[stakato_shell];20};{[inpicio_sac];10};{[spider_thorn];10};{[crystal_d];10}}
+catalyst={}
+product={{[key_of_titan];1}}
+npc_fee={{[rp_titan_key];1};{[adena];0}}
+mp_consume=100
+success_rate=100
+item_id=3023
+recipe_end

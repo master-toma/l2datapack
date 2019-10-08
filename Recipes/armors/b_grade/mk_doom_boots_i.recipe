@@ -1,0 +1,12 @@
+recipe_begin
+[mk_doom_boots_i]
+444
+level=7
+material={{[rp_doom_boots];1};{[doom_boots_part];13};{[crafted_leather];32};{[high_grade_suede];4};{[asofe];4};{[crystal_b];8};{[gemstone_b];4}}
+catalyst={}
+product={{[doom_boots];1}}
+npc_fee={}
+mp_consume=183
+success_rate=60
+item_id=4176
+recipe_end

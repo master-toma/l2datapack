@@ -1,0 +1,12 @@
+recipe_begin
+[mk_spike_club]
+175
+level=3
+material={{[spike_club_head];6};{[steel];90};{[cokes];90};{[high_grade_suede];45};{[crystal_d];300};{[gemstone_d];91}}
+catalyst={}
+product={{[spike_club];1}}
+npc_fee={{[rp_spike_club];1};{[adena];193400}}
+mp_consume=108
+success_rate=100
+item_id=2265
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_dwarven_chain_shield]
+308
+level=5
+material={{[dwarven_chain_shield_fragment];9};{[mithirl_alloy];3};{[synthesis_cokes];1};{[crafted_leather];1};{[crystal_c];12};{[gemstone_c];4}}
+catalyst={}
+product={{[dwarven_chain_shield];1}}
+npc_fee={{[rp_dwarven_chain_shield];1};{[adena];31200}}
+mp_consume=144
+success_rate=100
+item_id=3000
+recipe_end

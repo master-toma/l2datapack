@@ -1,0 +1,12 @@
+recipe_begin
+[mk_avadon_breastplate_i]
+374
+level=6
+material={{[rp_avadon_breastplate];1};{[avadon_breastplate_part];12};{[blacksmith's_frame];3};{[mithirl_alloy];18};{[asofe];12};{[crystal_c];82};{[gemstone_b];12}}
+catalyst={}
+product={{[avadon_breastplate];1}}
+npc_fee={}
+mp_consume=174
+success_rate=60
+item_id=4141
+recipe_end

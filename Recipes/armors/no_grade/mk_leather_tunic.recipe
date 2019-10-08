@@ -1,0 +1,12 @@
+recipe_begin
+[mk_leather_tunic]
+12
+level=1
+material={{[leather_tunic_pattern];2};{[animal_skin];24};{[thread];12}}
+catalyst={}
+product={{[leather_tunic];1}}
+npc_fee={{[rp_leather_tunic];1};{[adena];1592}}
+mp_consume=45
+success_rate=100
+item_id=1796
+recipe_end

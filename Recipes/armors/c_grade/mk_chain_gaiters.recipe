@@ -1,0 +1,12 @@
+recipe_begin
+[mk_chain_gaiters]
+115
+level=4
+material={{[chain_gaiters_part];8};{[blacksmith's_frame];2};{[mithirl_alloy];1};{[crystal_d];90};{[gemstone_c];8}}
+catalyst={}
+product={{[chain_gaiters];1}}
+npc_fee={{[rp_chain_gaiters];1};{[adena];63200}}
+mp_consume=138
+success_rate=100
+item_id=2205
+recipe_end

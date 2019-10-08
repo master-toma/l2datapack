@@ -1,0 +1,12 @@
+recipe_begin
+[mk_deadman's_glory_ii]
+480
+level=7
+material={{[rp_deadman's_glory];1};{[deadman's_glory_stone];13};{[maestro_holder];3};{[mithirl_alloy];120};{[synthesis_cokes];120};{[high_grade_suede];60};{[enria];60};{[crystal_b];260};{[gemstone_b];98}}
+catalyst={}
+product={{[deadman's_glory];1}}
+npc_fee={}
+mp_consume=183
+success_rate=80
+item_id=4194
+recipe_end

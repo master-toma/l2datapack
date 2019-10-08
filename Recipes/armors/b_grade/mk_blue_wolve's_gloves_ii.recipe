@@ -1,0 +1,12 @@
+recipe_begin
+[mk_blue_wolve's_gloves_ii]
+439
+level=7
+material={{[rp_blue_wolve's_gloves];1};{[blue_wolve's_gloves_fabric];13};{[maestro_anvil_lock];1};{[crafted_leather];32};{[high_grade_suede];4};{[asofe];4};{[crystal_b];12};{[gemstone_b];4}}
+catalyst={}
+product={{[blue_wolve's_gloves];1}}
+npc_fee={}
+mp_consume=183
+success_rate=80
+item_id=4173
+recipe_end

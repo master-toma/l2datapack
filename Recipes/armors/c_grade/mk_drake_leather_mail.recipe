@@ -1,0 +1,12 @@
+recipe_begin
+[mk_drake_leather_mail]
+142
+level=6
+material={{[drake_leather_mail_texture];11};{[crafted_leather];96};{[metallic_fiber];48};{[compound_braid];24};{[crystal_c];100};{[gemstone_c];53}}
+catalyst={}
+product={{[drake_leather_mail];1}}
+npc_fee={{[rp_drake_leather_mail];1};{[adena];314000}}
+mp_consume=165
+success_rate=100
+item_id=2232
+recipe_end

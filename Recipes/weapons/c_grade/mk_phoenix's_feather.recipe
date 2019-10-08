@@ -1,0 +1,12 @@
+recipe_begin
+[mk_phoenix's_feather]
+273
+level=6
+material={{[phoenix's_feather_piece];11};{[oriharukon];80};{[coarse_bone_powder];160};{[compound_braid];80};{[crystal_c];410};{[gemstone_c];248}}
+catalyst={}
+product={{[phoenix's_feather];1}}
+npc_fee={{[rp_phoenix's_feather];1};{[adena];1226000}}
+mp_consume=165
+success_rate=100
+item_id=2363
+recipe_end

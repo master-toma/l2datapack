@@ -1,0 +1,12 @@
+recipe_begin
+[mk_blue_wolve's_helmet_i]
+422
+level=7
+material={{[rp_blue_wolve's_helmet];1};{[blue_wolve's_helmet_design];13};{[blacksmith's_frame];1};{[crafted_leather];40};{[asofe];4};{[crystal_b];14};{[gemstone_b];7}}
+catalyst={}
+product={{[blue_wolve's_helmet];1}}
+npc_fee={}
+mp_consume=183
+success_rate=60
+item_id=4165
+recipe_end

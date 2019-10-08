@@ -1,0 +1,12 @@
+recipe_begin
+[mk_adamantite_necklace_i]
+349
+level=6
+material={{[rp_adamantite_necklace];1};{[adamantite_necklace_chain];12};{[blacksmith's_frame];1};{[compound_braid];30};{[varnish_of_purity];6};{[thons];6};{[crystal_c];34};{[gemstone_b];5}}
+catalyst={}
+product={{[adamantite_necklace];1}}
+npc_fee={}
+mp_consume=174
+success_rate=70
+item_id=4128
+recipe_end

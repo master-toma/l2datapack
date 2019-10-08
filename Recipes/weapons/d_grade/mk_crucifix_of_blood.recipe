@@ -1,0 +1,12 @@
+recipe_begin
+[mk_crucifix_of_blood]
+190
+level=3
+material={{[crucifix_of_blood_piece];7};{[steel];100};{[coarse_bone_powder];200};{[braided_hemp];100};{[crystal_d];430};{[gemstone_d];139}}
+catalyst={}
+product={{[crucifix_of_blood];1}}
+npc_fee={{[rp_crucifix_of_blood];1};{[adena];280000}}
+mp_consume=120
+success_rate=100
+item_id=2280
+recipe_end

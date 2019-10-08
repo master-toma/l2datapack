@@ -1,0 +1,12 @@
+recipe_begin
+[mk_scallop_jamadhr]
+201
+level=4
+material={{[scallop_jamadhr_edge];8};{[steel];160};{[cokes];160};{[high_grade_suede];80};{[crystal_d];550};{[gemstone_d];185}}
+catalyst={}
+product={{[scallop_jamadhr];1}}
+npc_fee={{[rp_scallop_jamadhr];1};{[adena];360000}}
+mp_consume=129
+success_rate=100
+item_id=2291
+recipe_end

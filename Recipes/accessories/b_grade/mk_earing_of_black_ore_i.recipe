@@ -1,0 +1,12 @@
+recipe_begin
+[mk_earing_of_black_ore_i]
+351
+level=7
+material={{[rp_earing_of_black_ore];1};{[earing_of_black_ore_piece];13};{[blacksmith's_frame];1};{[metallic_fiber];50};{[varnish_of_purity];10};{[thons];10};{[crystal_b];16};{[gemstone_b];6}}
+catalyst={}
+product={{[earing_of_black_ore];1}}
+npc_fee={}
+mp_consume=183
+success_rate=70
+item_id=4129
+recipe_end

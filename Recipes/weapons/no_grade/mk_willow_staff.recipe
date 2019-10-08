@@ -1,0 +1,12 @@
+recipe_begin
+[mk_willow_staff]
+3
+level=1
+material={{[willow_staff_head];1};{[iron_ore];12};{[animal_bone];24};{[stem];12}}
+catalyst={}
+product={{[willow_staff];1}}
+npc_fee={{[rp_willow_staff];1};{[adena];2500}}
+mp_consume=30
+success_rate=100
+item_id=1787
+recipe_end

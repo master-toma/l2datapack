@@ -1,0 +1,12 @@
+recipe_begin
+[mk_assassin_knife]
+166
+level=2
+material={{[assassin_knife_edge];4};{[steel_mold];2};{[steel];70};{[cokes];70};{[gemstone_d];34}}
+catalyst={}
+product={{[assassin_knife];1}}
+npc_fee={{[rp_assassin_knife];1};{[adena];81800}}
+mp_consume=84
+success_rate=100
+item_id=2256
+recipe_end

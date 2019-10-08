@@ -1,0 +1,12 @@
+recipe_begin
+[mk_mithirl_alloy]
+55
+level=4
+material={{[varnish_of_purity];1};{[steel];2};{[mithril_ore];1}}
+catalyst={}
+product={{[mithirl_alloy];1}}
+npc_fee={{[rp_mithirl_alloy];1};{[adena];2620}}
+mp_consume=40
+success_rate=100
+item_id=2145
+recipe_end

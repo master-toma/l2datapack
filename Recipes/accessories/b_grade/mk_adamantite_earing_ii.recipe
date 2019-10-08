@@ -1,0 +1,12 @@
+recipe_begin
+[mk_adamantite_earing_ii]
+346
+level=6
+material={{[rp_adamantite_earing];1};{[adamantite_earing_gemstone];12};{[maestro_mold];1};{[metallic_fiber];30};{[varnish_of_purity];6};{[thons];6};{[crystal_c];30};{[gemstone_b];4}}
+catalyst={}
+product={{[adamantite_earing];1}}
+npc_fee={}
+mp_consume=174
+success_rate=90
+item_id=4126
+recipe_end

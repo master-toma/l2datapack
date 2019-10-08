@@ -1,0 +1,12 @@
+recipe_begin
+[mk_composition_bow]
+164
+level=1
+material={{[composition_bow_shaft];3};{[iron_ore];400};{[braided_hemp];80};{[suede];80}}
+catalyst={}
+product={{[composition_bow];1}}
+npc_fee={{[rp_composition_bow];1};{[adena];48800}}
+mp_consume=72
+success_rate=100
+item_id=2254
+recipe_end

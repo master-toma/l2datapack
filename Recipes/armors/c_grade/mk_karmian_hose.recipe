@@ -1,0 +1,12 @@
+recipe_begin
+[mk_karmian_hose]
+109
+level=4
+material={{[karmian_hose_pattern];8};{[crafted_leather];15};{[metallic_fiber];15};{[crystal_d];70};{[gemstone_c];6}}
+catalyst={}
+product={{[karmian_hose];1}}
+npc_fee={{[rp_karmian_hose];1};{[adena];47400}}
+mp_consume=138
+success_rate=100
+item_id=2199
+recipe_end

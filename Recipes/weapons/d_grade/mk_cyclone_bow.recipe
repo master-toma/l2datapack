@@ -1,0 +1,12 @@
+recipe_begin
+[mk_cyclone_bow]
+202
+level=4
+material={{[cyclone_bow_shaft];8};{[steel];275};{[braided_hemp];55};{[high_grade_suede];55};{[crystal_d];550};{[gemstone_d];185}}
+catalyst={}
+product={{[cyclone_bow];1}}
+npc_fee={{[rp_cyclone_bow];1};{[adena];360000}}
+mp_consume=129
+success_rate=100
+item_id=2292
+recipe_end

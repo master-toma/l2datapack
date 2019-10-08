@@ -1,0 +1,12 @@
+recipe_begin
+[mk_sword_of_reflexion]
+9
+level=1
+material={{[sword_of_reflexion_blade];3};{[iron_ore];200};{[coal];200}}
+catalyst={}
+product={{[sword_of_reflexion];1}}
+npc_fee={{[rp_sword_of_reflexion];1};{[adena];27200}}
+mp_consume=60
+success_rate=100
+item_id=1793
+recipe_end

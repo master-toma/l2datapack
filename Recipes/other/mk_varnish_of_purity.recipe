@@ -1,0 +1,12 @@
+recipe_begin
+[mk_varnish_of_purity]
+52
+level=2
+material={{[coarse_bone_powder];3};{[varnish];3};{[stone_of_purity];1}}
+catalyst={}
+product={{[varnish_of_purity];1}}
+npc_fee={{[rp_varnish_of_purity];1};{[adena];1620}}
+mp_consume=20
+success_rate=100
+item_id=2142
+recipe_end

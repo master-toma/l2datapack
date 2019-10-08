@@ -1,0 +1,12 @@
+recipe_begin
+[mk_ring_of_black_ore_ii]
+354
+level=7
+material={{[rp_ring_of_black_ore];1};{[ring_of_black_ore_gemstone];13};{[blacksmith's_frame];1};{[metallic_fiber];40};{[varnish_of_purity];8};{[thons];8};{[crystal_b];15};{[gemstone_b];4}}
+catalyst={}
+product={{[ring_of_black_ore];1}}
+npc_fee={}
+mp_consume=183
+success_rate=90
+item_id=4130
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_elven_mithril_tunic]
+281
+level=3
+material={{[elven_mithril_tunic_pattern];7};{[leather];84};{[cord];42};{[crystal_d];70};{[gemstone_d];17}}
+catalyst={}
+product={{[elven_mithril_tunic];1}}
+npc_fee={{[rp_elven_mithril_tunic];1};{[adena];44800}}
+mp_consume=120
+success_rate=100
+item_id=2973
+recipe_end

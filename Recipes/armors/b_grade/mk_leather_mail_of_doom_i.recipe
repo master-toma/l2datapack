@@ -1,0 +1,12 @@
+recipe_begin
+[mk_leather_mail_of_doom_i]
+412
+level=7
+material={{[rp_leather_mail_of_doom];1};{[leather_mail_of_doom_design];12};{[crafted_leather];100};{[metallic_fiber];50};{[compound_braid];25};{[asofe];25};{[crystal_b];48};{[gemstone_b];22}}
+catalyst={}
+product={{[leather_mail_of_doom];1}}
+npc_fee={}
+mp_consume=183
+success_rate=60
+item_id=4160
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_shrnoen's_leather_gaiters_ii]
+381
+level=6
+material={{[rp_shrnoen's_leather_gaiters];1};{[shrnoen's_leather_gaiters_texture];12};{[maestro_anvil_lock];1};{[crafted_leather];20};{[metallic_fiber];20};{[asofe];20};{[crystal_c];56};{[gemstone_b];5}}
+catalyst={}
+product={{[shrnoen's_leather_gaiters];1}}
+npc_fee={}
+mp_consume=174
+success_rate=80
+item_id=4144
+recipe_end

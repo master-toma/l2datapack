@@ -1,0 +1,12 @@
+recipe_begin
+[mk_crafted_leather]
+58
+level=4
+material={{[cord];4};{[leather];4};{[coal];4}}
+catalyst={}
+product={{[crafted_leather];1}}
+npc_fee={{[rp_crafted_leather];1};{[adena];1140}}
+mp_consume=40
+success_rate=100
+item_id=2148
+recipe_end

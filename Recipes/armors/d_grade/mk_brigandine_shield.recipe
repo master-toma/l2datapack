@@ -1,0 +1,12 @@
+recipe_begin
+[mk_brigandine_shield]
+290
+level=3
+material={{[brigandine_shield_fragment];7};{[steel];12};{[cokes];4};{[leather];4};{[crystal_d];24};{[gemstone_d];5}}
+catalyst={}
+product={{[brigandine_shield];1}}
+npc_fee={{[rp_brigandine_shield];1};{[adena];15680}}
+mp_consume=120
+success_rate=100
+item_id=2982
+recipe_end

@@ -1,0 +1,12 @@
+recipe_begin
+[mk_tiger'seye_earing]
+63
+level=3
+material={{[tiger'seye_earing_stone];6};{[silver_mold];1};{[cord];30};{[varnish];6};{[crystal_d];22};{[gemstone_d];4}}
+catalyst={}
+product={{[tiger'seye_earing];1}}
+npc_fee={{[rp_tiger'seye_earing];1};{[adena];12860}}
+mp_consume=108
+success_rate=100
+item_id=2153
+recipe_end

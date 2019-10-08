@@ -1,0 +1,12 @@
+recipe_begin
+[mk_iron_hammer]
+162
+level=1
+material={{[iron_hammer_head];3};{[iron_ore];260};{[coal];260};{[suede];130}}
+catalyst={}
+product={{[iron_hammer];1}}
+npc_fee={{[rp_iron_hammer];1};{[adena];48800}}
+mp_consume=72
+success_rate=100
+item_id=2252
+recipe_end
