@@ -1,0 +1,5 @@
+default_setting_begin type=mother_tree hp_regen_bonus=2 mp_regen_bonus=1 default_setting_end
+default_setting_begin type=damage damage_on_hp=200 damage_on_mp=0 default_setting_end
+default_setting_begin type=poison skill_name=[s_area_a_speed_down] default_setting_end
+default_setting_begin type=swamp move_bonus=-50 default_setting_end
+

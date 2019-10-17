@@ -1,0 +1,20 @@
+//아덴 성 슬로우 존. 예상보다 틱에 의한 오차가 많아, 효과를 80%로 증가.
+area_begin name=[aden_slow_8] type=swamp move_bonus=-80 default_status = off  event_id=2418008 range = {{149084;7070;-560;-360};{149349;7069;-560;-360};{149349;7203;-560;-360};{149084;7204;-560;-360}} area_end
+area_begin name=[aden_slow_7] type=swamp move_bonus=-80 default_status = off  event_id=2418007 range = {{149084;6942;-528;-328};{149349;6941;-528;-328};{149349;7075;-528;-328};{149084;7076;-528;-328}} area_end
+area_begin name=[aden_slow_6] type=swamp move_bonus=-80 default_status = off  event_id=2418006 range = {{149084;6814;-528;-328};{149349;6813;-528;-328};{149349;6947;-528;-328};{149084;6948;-528;-328}} area_end
+area_begin name=[aden_slow_5] type=swamp move_bonus=-80 default_status = off  event_id=2418005 range = {{149084;6686;-528;-328};{149349;6685;-528;-328};{149349;6819;-528;-328};{149084;6820;-528;-328}} area_end
+area_begin name=[aden_slow_4] type=swamp move_bonus=-80 default_status = off  event_id=2418004 range = {{145548;7054;-528;-328};{145813;7053;-528;-328};{145813;7187;-528;-328};{145548;7188;-528;-328}} area_end
+area_begin name=[aden_slow_3] type=swamp move_bonus=-80 default_status = off  event_id=2418003 range = {{145548;6926;-496;-296};{145813;6925;-496;-296};{145813;7059;-496;-296};{145548;7060;-496;-296}} area_end
+area_begin name=[aden_slow_2] type=swamp move_bonus=-80 default_status = off  event_id=2418002 range = {{145548;6798;-496;-296};{145813;6797;-496;-296};{145813;6931;-496;-296};{145548;6932;-496;-296}} area_end
+area_begin name=[aden_slow_1] type=swamp move_bonus=-80 default_status = off  event_id=2418001 range = {{145548;6670;-496;-296};{145813;6669;-496;-296};{145813;6803;-496;-296};{145548;6804;-496;-296}} area_end
+
+//아덴 성 슬로우 존
+area_begin name=[aden_damage_8] type=damage damage_on_hp=200 damage_on_mp=0 default_status = off message_no = 686 range = {{149084;7070;-560;-360};{149349;7069;-560;-360};{149349;7203;-560;-360};{149084;7204;-560;-360}} area_end
+area_begin name=[aden_damage_7] type=damage damage_on_hp=200 damage_on_mp=0 default_status = off message_no = 686 range = {{149084;6942;-528;-328};{149349;6941;-528;-328};{149349;7075;-528;-328};{149084;7076;-528;-328}} area_end
+area_begin name=[aden_damage_6] type=damage damage_on_hp=200 damage_on_mp=0 default_status = off message_no = 686 range = {{149084;6814;-528;-328};{149349;6813;-528;-328};{149349;6947;-528;-328};{149084;6948;-528;-328}} area_end
+area_begin name=[aden_damage_5] type=damage damage_on_hp=200 damage_on_mp=0 default_status = off message_no = 686 range = {{149084;6686;-528;-328};{149349;6685;-528;-328};{149349;6819;-528;-328};{149084;6820;-528;-328}} area_end
+area_begin name=[aden_damage_4] type=damage damage_on_hp=200 damage_on_mp=0 default_status = off message_no = 686 range = {{145548;7054;-528;-328};{145813;7053;-528;-328};{145813;7187;-528;-328};{145548;7188;-528;-328}} area_end
+area_begin name=[aden_damage_3] type=damage damage_on_hp=200 damage_on_mp=0 default_status = off message_no = 686 range = {{145548;6926;-496;-296};{145813;6925;-496;-296};{145813;7059;-496;-296};{145548;7060;-496;-296}} area_end
+area_begin name=[aden_damage_2] type=damage damage_on_hp=200 damage_on_mp=0 default_status = off message_no = 686 range = {{145548;6798;-496;-296};{145813;6797;-496;-296};{145813;6931;-496;-296};{145548;6932;-496;-296}} area_end
+area_begin name=[aden_damage_1] type=damage damage_on_hp=200 damage_on_mp=0 default_status = off message_no = 686 range = {{145548;6670;-496;-296};{145813;6669;-496;-296};{145813;6803;-496;-296};{145548;6804;-496;-296}} area_end
+
