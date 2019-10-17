@@ -1,0 +1,5 @@
+castle_common_begin
+base_siege_time = 2003 / 4 / 2 / 20 / 0
+reservable_siege_time = {{SAT;20};{SUN;16}}
+max_concurrent_siege = 3
+castle_common_end

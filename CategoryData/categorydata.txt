@@ -1,4 +1,0 @@
-category_define_begin
-name=[dwarf_2nd_group]
-category={@scavenger;@artisan}
-category_define_end

@@ -1,0 +1,41 @@
+castle_begin
+[giran_castle]
+3
+//residence_owner_id = -1
+residence_territory = {{{119122;142784;-6827;17556};{119206;147431;-6827;17556};{112064;147446;-6827;17556};{112156;142760;-6827;17556}}}
+battlefield_territory = {{{120511;139312;-5601;18782};{120439;148252;-5601;18782};{109096;148835;-5601;18782};{109140;139146;-5601;18782}}}
+headquarter_territory = {{{111503;140956;-4536;13848};{111587;146909;-4536;13848};{108530;147004;-4536;13848};{108557;140964;-4536;13848}};{{117282;142422;-4556;13828};{117298;139861;-4556;13828};{114267;139843;-4556;13828};{114140;142430;-4556;13828}};{{115657;149415;-4074;14310};{115694;147608;-4074;14310};{112663;147589;-4074;14310};{112623;149343;-4074;14310}}}
+domain_territory = {}
+manor_territory = {}
+owner_restart_point = {116546;146804;-1853}
+other_restart_village_list = {{116127;76015;-2729};{115683;77610;-2650};{117304;76318;-2670};{119862;76603;-2220};{117671;78998;-2210};{117189;78952;-2210};{115861;75200;-2550};{118275;74859;-2557};{118229;74677;-2450};{115685;75072;-2550};{116704;75695;-2680};{116737;76738;-2650};{115193;77594;-2670};{116158;77443;-2660}}
+chao_restart_point_list = {{122098;70373;-2864};{118674;71218;-2743};{118040;67175;-2905};{119300;70660;-2850};{118851;70566;-2800};{112655;70976;-3122};{119712;66376;-2960};{107511;82890;-2515};{105702;82773;-2803};{104257;82194;-2581};{104474;81109;-2651}}
+banish_point_list = {{115275;147273;-2770};{115758;147475;-2770};{115146;147601;-2770};{115784;147873;-2770}}
+mercenary_point_list  = {}
+residence_guard_mapping = {{3986;sword;notmove;12301;15};{3987;pole;notmove;12302;10};{3988;bow;notmove;12303;40};{3989;cleric;notmove;12304;5};{3990;wizard;notmove;12305;5};{3991;sword;move;12306;15};{3992;pole;move;12307;10};{3993;bow;move;12308;40};{3994;cleric;move;12309;5};{3995;wizard;move;12310;5};{3996;teleporter;notmove;12162;2};{3997;teleporter;notmove;12163;2};{3998;teleporter;notmove;12164;2}}
+owning_npc_list = {{[chamberlain_saul];0};{[sir_holmes];0};{[giran_mass_teleporter];0};{[giran_defend_teleporter1];0};{[giran_defend_teleporter2];0};{[giran_defend_teleporter3];0};{[giran_default_teleporter1];0};{[giran_default_teleporter2];0};{[giran_default_teleporter3];0};{[giran_outter_doorman];1};{[giran_inner_doorman];1};{[giran_royal_gatekeeper];0};{[wharf_manager_felton];0};{[gatekeeper_angelina];0};{[wyrm_shamhai];0};{[watcher_of_antaras_gilmore];0};{[orim_the_shadow];0};{[breka_chief_voltar];0};{[torai];0};{[helvetia];0};{[denkus];0};{[grabner];0};{[stany];0};{[phojett];0};{[radia];0};{[groot];0};{[gentler];0};{[warehouse_chief_gesto];0};{[valkon];0};{[parman];0};{[head_blacksmith_kusto];0};{[blacksmith_pushkin];0};{[blacksmith_rupio];0};{[jurek];0};{[iker];0};{[dieter];0};{[clinch];0};{[juria];0};{[roa];0};{[pet_manager_cooper];0};{[sir_kristof_rodemai];0};{[gabrielle];0};{[maximilian];0};{[dustin];0};{[pupina];0};{[primoz];0};{[priest_bandellos];0};{[isabellin];0};{[macken];0};{[hannavalt];0};{[genwiter];0};{[goldian];0};{[dufner];0};{[master_riberia];0};{[high_prefect_penatus];0};{[seer_manakia];0};{[prefect_vokiyan];0};{[martian];0};{[veteran_ascalon];0};{[brother_metheus];0};{[sandra];0};{[elliany];0};{[grandmaster_angus];0};{[master_stapiin];0};{[magister_kaira];0};{[galladuchi];0};{[alexandria];0};{[atanas];0};{[guard_reikin];0};{[rarshints];0};{[beltkem];0};{[vesa];0};{[zerome];0};{[guard_kurtys];0};{[sir_ortho_lancer];0};{[jeronin];0};{[blas];0};{[pochi];0};{[taurin];0};{[collob];0};{[landolf];0};{[clavier];0};{[hardin];0};{[lich_king_icarus];0};{[master_kaspar];0};{[magic_trader_cema];0};{[gatekeeper_minevea];0};{[witch_athrea];0};{[corpse_of_fritz];0};{[corpse_of_lutz];0};{[corpse_of_kurtz];0};{[summoner_brynthea];0};{[arvid];0}}
+additional_npc_list = {}
+boss_npc_list = {}
+agit_list = {}
+//bulletin_id = none
+next_siege = 2003/4/2/20/00
+siege_term = 7200
+residence_state = initial
+residence_gate_list = {[giran_castle_outter_001];[giran_castle_outter_002];[giran_castle_inner_001];[giran_castle_inner_002];[giran_castle_station]}
+breakable_wall_list = {}
+control_tower_list = {[giran_life1_ctrltower];[giran_life2_ctrltower];[giran_life3_ctrltower]}
+holything = {[giran_holything];{117794;145041;-2636};32768;25.0;98.0}
+residence_grade = 3
+tax_rate = 15
+tax_sysget_rate = 85
+tribute_rate = 50
+agit_auction_min = 0
+agit_deposit = 0
+agit_lease = 0
+agit_size = 0
+agit_parent_castleid = 5
+agit_auction = 0
+next_auction = 0/0/0/0
+owner_restart_territory = {{116741;145956;-1909;14844};{116741;146910;-1909;14844};{116388;146910;-1909;14844};{116387;145957;-1909;14844}}
+castle_end
+

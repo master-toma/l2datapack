@@ -1,0 +1,41 @@
+castle_begin
+[oren_castle]
+4
+//residence_owner_id = -1
+residence_territory = {{{85200;34932;-6827;17556};{85284;39579;-6827;17556};{78142;39594;-6827;17556};{78234;34908;-6827;17556}}}
+battlefield_territory = {{{86589;31460;-5601;18782};{86517;40400;-5601;18782};{75174;40983;-5601;18782};{75218;31294;-5601;18782}}}
+headquarter_territory = {{{77581;33104;-4536;13848};{77665;39057;-4536;13848};{74608;39152;-4536;13848};{74635;33112;-4536;13848}};{{83360;34570;-4556;13828};{83376;32009;-4556;13828};{80345;31991;-4556;13828};{80218;34578;-4556;13828}};{{81735;41563;-4074;14310};{81772;39756;-4074;14310};{78741;39737;-4074;14310};{78701;41491;-4074;14310}}}
+domain_territory = {}
+manor_territory = {}
+owner_restart_point = {82624;38952;-1574}
+other_restart_village_list = {{116127;76015;-2729};{115683;77610;-2650};{117304;76318;-2670};{119862;76603;-2220};{117671;78998;-2210};{117189;78952;-2210};{115861;75200;-2550};{118275;74859;-2557};{118229;74677;-2450};{115685;75072;-2550};{116704;75695;-2680};{116737;76738;-2650};{115193;77594;-2670};{116158;77443;-2660}}
+chao_restart_point_list = {{122098;70373;-2864};{118674;71218;-2743};{118040;67175;-2905};{119300;70660;-2850};{118851;70566;-2800};{112655;70976;-3122};{119712;66376;-2960};{107511;82890;-2515};{105702;82773;-2803};{104257;82194;-2581};{104474;81109;-2651}}
+banish_point_list = {{81353;39421;-2770};{81836;39623;-2770};{81224;39749;-2770};{81862;40021;-2770}}
+mercenary_point_list  = {}
+residence_guard_mapping = {{3999;sword;notmove;12301;15};{4000;pole;notmove;12302;10};{4001;bow;notmove;12303;40};{4002;cleric;notmove;12304;5};{4003;wizard;notmove;12305;5};{4004;sword;move;12306;15};{4005;pole;move;12307;10};{4006;bow;move;12308;40};{4007;cleric;move;12309;5};{4008;wizard;move;12310;5};{4009;teleporter;notmove;12243;2};{4010;teleporter;notmove;12244;2};{4011;teleporter;notmove;12245;2}}
+owning_npc_list = {{[chamberlain_brasseur];0};{[messenger_sherwood];0};{[oren_mass_teleporter];0};{[oren_defend_teleporter1];0};{[oren_defend_teleporter2];0};{[oren_defend_teleporter3];0};{[oren_default_teleporter1];0};{[oren_default_teleporter2];0};{[oren_default_teleporter3];0};{[oren_outter_doorman];1};{[oren_inner_doorman];1};{[oren_royal_gatekeeper];0};{[annsery];0};{[slein_shining_blade];0};{[mystery_darkelf];0};{[saint_kristina];0};{[mystery_darkelf];0};{[kein_flying_knife];0};{[varika];0};{[arkenia];0};{[tweety];0};{[uruha];0};{[mystery_darkelf];0};{[piper_longbow];0};{[katari];0};{[charkeren];0};{[prigun];0};{[sentry_irine];0};{[sentry_cathyday];0};{[sentinel_trionell];0};{[sentinel_eriel];0};{[pixy_murika];0};{[jundin];0};{[guide_delf_frankia];0};{[redry];0};{[tetrarch_kaitar];0};{[harne];0};{[master_harant];0};{[trudy];0};{[tetrarch_thifiell];0};{[tetrarch_vellior];0};{[vlasti];0};{[calculain];0};{[ervic];0};{[doran];0};{[paint];0};{[blacksmith_karoyd];0};{[iria];0};{[vollodos];0};{[mina];0};{[sentry_marion];0};{[sentry_kayleen];0};{[karta];0};{[cecon];0};{[prakia];0};{[poeny];0};{[undres];0};{[sentry_nelsya];0};{[sentry_jenine];0};{[astaron];0};{[jasmine];0};{[karinar];0};{[jewel];0};{[jughead];0};{[sentry_krpion];0};{[sentry_altimees];0};{[sentry_roseline];0};{[sentry_knight_railra];0};{[markus];0};{[chad];0};{[jud];0};{[blacksmith_aios];0};{[ozzy];0};{[cob];0};{[grain];0};{[elliasin];0};{[eso];0};{[summoner_celestiel];0};{[northwindel];0};{[ariel];0};{[bri_mec_tran];0};{[guide_elf_roios];0};{[rogellia];0};{[green];0};{[cel];0};{[uno];0};{[arujien];0};{[moneylender_alshupes];0};{[rizraell];0};{[andellria];0};{[mother_temp_b];0};{[nerupa];0};{[mother_temp_d];0};{[mother_temp_c];0};{[mother_temp_a];0};{[sentinel_wheelendel];0};{[sentinel_berryos];0};{[sentinel_stardyen];0};{[sentinel_rayjien];0};{[alberryus];0};{[sentinel_gartrandell];0};{[mint];0};{[sentinel_kendnell];0};{[sentinel_veltress];0};{[drake_zwov];0};{[thalya];0};{[drake_exarion];0};{[alchemist_matild];0};{[statue_of_offering];0};{[witch_kalis];0};{[marty];0};{[radic];0};{[karin];0};{[bandor];0};{[rapin];0};{[iz];0};{[rex];0};{[gatekeeper_verona];0};{[gatekeeper_cecile];0};{[az];0};{[yan];0};{[magister_marina];0};{[magister_gauen];0};{[biralri];0};{[magister_joan];0};{[gatekeeper_mariell];0};{[fairen];0};{[magister_kaiena];0};{[magister_ladd];0};{[gatekeeper_merian];0};{[guard_tebose];0};{[guard_yening];0};{[captain_roy];0};{[guard_tavillian];0};{[drake_kalibran];0};{[sir_gustaf_athebaldt];0};{[pet_manager_joey];0};{[cardinal_seresin];0};{[dudamara_chief_takuna];0};{[duelist_kaien];0};{[zenkin];0};{[raudia];0};{[sara];0};{[galicbredo];0};{[warehouse_chief_croop];0};{[cliff];0};{[hagger];0};{[head_blacksmith_flutter];0};{[blacksmith_helton];0};{[valentina];0};{[kai];0};{[taniac];0};{[bhan];0};{[master_roameria];0};{[rigol];0};{[hollin];0};{[vadin];0};{[rovia];0};{[priest_egnos];0};{[phanovia];0};{[brecson];0};{[darvi];0};{[guyder];0};{[prefect_daunt];0};{[high_prefect_karia];0};{[seer_pekiron];0};{[heiac];0};{[mouen];0};{[yaik];0};{[jerin];0};{[pinaps];0};{[stan];0};{[rowan];0};{[bowman];0};{[bowman];0};{[bowman];0};{[trent];0};{[harlow];0};{[calder];0};{[dino];0};{[venedict];0};{[biktor_van_dake];0};{[sanders];0};{[oskar_blackbird];0};{[sutton];0};{[morrison];0}}
+additional_npc_list = {}
+boss_npc_list = {}
+agit_list = {}
+//bulletin_id = none
+next_siege = 2003/4/2/20/00
+siege_term = 7200
+residence_state = initial
+residence_gate_list = {[oren_castle_outter_001];[oren_castle_outter_002];[oren_castle_inner_001];[oren_castle_inner_002];[oren_castle_station]}
+breakable_wall_list = {}
+control_tower_list = {[oren_life1_ctrltower];[oren_life2_ctrltower];[oren_life3_ctrltower]}
+holything = {[oren_holything];{83872;37189;-2361};32768;25.0;98.0}
+residence_grade = 3
+tax_rate = 15
+tax_sysget_rate = 50
+tribute_rate = 30
+agit_auction_min = 0
+agit_deposit = 0
+agit_lease = 0
+agit_size = 0
+agit_parent_castleid = 5
+agit_auction = 0
+next_auction = 0/0/0/0
+owner_restart_territory = {{82819;38104;-1630;14844};{82819;39058;-1630;14844};{82466;39058;-1630;14844};{82465;38105;-1630;14844}}
+castle_end
+

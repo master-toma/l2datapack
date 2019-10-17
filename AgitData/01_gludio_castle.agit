@@ -1,0 +1,41 @@
+castle_begin
+[gludio_castle]
+1
+//residence_owner_id = -1
+residence_territory = {{{-20370;106804;-6827;1172};{-15723;106720;-6827;1172};{-15708;113862;-6827;1172};{-20394;113770;-6827;1172}}}
+battlefield_territory = {{{-23842;105415;-5601;2398};{-14902;105487;-5601;2398};{-14319;116830;-5601;2398};{-24008;116786;-5601;2398}}}
+headquarter_territory = {{{-22198;114423;-4536;-2536};{-16245;114339;-4536;-2536};{-16150;117396;-4536;-2536};{-22190;117369;-4536;-2536}};{{-20732;108644;-4556;-2556};{-23293;108628;-4556;-2556};{-23311;111659;-4556;-2556};{-20724;111786;-4556;-2556}};{{-13739;110269;-4074;-2074};{-15546;110232;-4074;-2074};{-15565;113263;-4074;-2074};{-13811;113303;-4074;-2074}}}
+domain_territory = {}
+manor_territory = {}
+owner_restart_point = {-16350;109380;-1784}
+other_restart_village_list = {{-81447;152760;-3170};{-81447;152880;-3170};{-81447;152640;-3170};{-82186;152760;-3170};{-82186;152880;-3170};{-82186;152640;-3170};{-81780;152760;-3170};{-81780;152880;-3170};{-81780;152640;-3170}}
+chao_restart_point_list = {{-81616;157104;-3150};{-80688;157216;-3150};{-79568;156960;-3150};{-78800;157744;-3150};{-80448;157968;-3130};{-81712;159536;-3230};{-79744;160592;-3330};{-79584;159408;-3180};{-74016;150656;-2800};{-72720;149632;-2780};{-75904;162000;-3300};{-75488;161472;-3250};{-74688;160736;-3200};{-74352;161488;-3250};{-76656;160768;-3280};{-77472;160960;-3470};{-77776;158752;-3270};{-80448;161488;-3420};{-75440;162672;-3350};{-81760;161248;-3200}}
+banish_point_list = {{-15881;110651;-2770};{-15679;110168;-2770};{-15553;110780;-2770};{-15281;110142;-2770}}
+mercenary_point_list  = {}
+residence_guard_mapping = {{3960;sword;notmove;12301;15};{3961;pole;notmove;12302;10};{3962;bow;notmove;12303;40};{3963;cleric;notmove;12304;5};{3964;wizard;notmove;12305;5};{3965;sword;move;12306;15};{3966;pole;move;12307;10};{3967;bow;move;12308;40};{3968;cleric;move;12309;5};{3969;wizard;move;12310;5};{3970;teleporter;notmove;7488;2};{3971;teleporter;notmove;7489;2};{3972;teleporter;notmove;7490;2}}
+owning_npc_list = {{[chamberlain_saius];0};{[sir_tyron];0};{[gludio_mass_teleporter];0};{[gludio_defend_teleporter1];0};{[gludio_defend_teleporter2];0};{[gludio_defend_teleporter3];0};{[gludio_default_teleporter1];0};{[gludio_default_teleporter2];0};{[gludio_default_teleporter3];0};{[gludio_outter_doorman];1};{[gludio_inner_doorman];1};{[gludio_royal_gatekeeper];0};{[marius];0};{[mesella];0};{[edmond];0};{[ramus];0};{[summoner_almors];0};{[sir_collin_windawood];0};{[daurin_hammercrush];0};{[hermit_santiago];0};{[turek_chief_burai];0};{[piotur];0};{[khavatari_toruku];0};{[trader_arodin];0};{[trader_daeronees];0};{[pet_manager_martin];0};{[neti];0};{[auction_dealer_human];0};{[high_summoner_galatea];0};{[drunkard_treaf];0};{[head_blacksmith_tapoy];0};{[ein];0};{[grandmaster_ramos];0};{[master_baenedes];0};{[celma];0};{[master_rhodiell];0};{[priest_adonius];0};{[gigon];0};{[iris];0};{[magister_nell];0};{[levian];0};{[high_prefect_osborn];0};{[seer_umos];0};{[prefect_kasman];0};{[warehouse_chief_moke];0};{[warehouse_keeper_norman];0};{[warehouse_keeper_raut];0};{[blacksmith_kluto];0};{[dudamara_totem_spirit];0};{[parina];0};{[magister_talbot];0};{[kalinta];0};{[allana];0};{[perrin];0};{[bishop_raimund];0};{[vivi];0};{[magister_ramoniell];0};{[magister_rohmer];0};{[father_manuell];0};{[head_blacksmith_mendio];0};{[warehouse_chief_rikadio];0};{[high_prefect_drikus];0};{[seer_racoy];0};{[prefect_buka];0};{[trader_poesia];0};{[master_escar];0};{[master_xenos];0};{[sir_karrel_vasper];0};{[trader_nestle];0};{[trader_acellopy];0};{[trader_cullinas];0};{[guard_weisz];0};{[gatekeeper_richlin];0};{[guard_luis];0};{[captain_bezique];0};{[guard_plink];0};{[wharf_manager_clancy];0};{[guard_leikan];0};{[guard_scott];0};{[guard_lynchuss];0};{[guard_alvah];0};{[leopold];0};{[rayon];0};{[bowman];0};{[bowman];0};{[bowman];0};{[bowman];0};{[bowman];0};{[bowman];0};{[roien];0};{[carl];0};{[guts];0};{[langu];0};{[maslin];0};{[guide_human_cnacelot];0};{[rylith];0};{[quilt];0};{[ken];0};{[hank];0};{[chip];0};{[johnson];0};{[arnold];0};{[abel];0};{[lee];0};{[gilbert];0};{[bitz];0};{[gwyn];0};{[pin];0};{[minx];0};{[matheo];0};{[gallin];0};{[guflang];0};{[doff];0};{[philly];0};{[silvia];0};{[wilph];0};{[rant];0};{[rollfnan];0};{[blacksmith_alltran];0};{[rapunzel];0};{[yohan];0};{[harry];0};{[potter];0};{[baul];0};{[daring];0};{[cristel];0};{[elias];0};{[voni];0};{[rockswell];0};{[lector];0};{[jackson];0};{[katrine];0};{[ria];0};{[gatekeeper_ciffon];0};{[gatekeeper_tiramisu];0};{[flame_salamander];0};{[water_undine];0};{[earth_snake];0};{[lizardman_of_wasteland];0};{[wind_sylph];0};{[lennunt_chief_harak];0};{[renny];0};{[auction_dealer_human];0};{[pet_manager_lundy];0};{[father_gupu];0};{[orphan_girl];0};{[orphan_girl];0};{[orphan_girl];0};{[orphan_girl];0};{[orphan_girl];0};{[orphan_girl];0};{[orphan_girl];0};{[orphan_girl];0};{[orphan_girl];0};{[vuku_chief_driko];0};{[drunkard_borys];0};{[guard_moretti];0};{[guard_melville];0};{[captain_bathia];0};{[guard_thoma];0};{[guard_praga];0};{[guard_babenco];0};{[guard_brynner];0};{[guard_curtiz];0};{[blacksmith_pinter];0};{[trader_harmony];0};{[trader_varanket];0};{[trader_simplon];0};{[trader_sydney];0};{[master_rains];0};{[master_sorius];0};{[master_tobias];0};{[master_virgil];0};{[master_sidra];0};{[triskel];0};{[harprock];0};{[warehouse_keeper_balcon];0};{[gatekeeper_belladonna];0};{[master_audiberti];0};{[master_leona];0};{[master_reoria];0};{[samed];0};{[varsak];0};{[gatekeeper_tiramisu];0};{[preacher_sla];0};{[windy_shaoring];0};{[sage_kasian];0};{[sir_aron_tanford];0};{[bodyguard_jax];0};{[summoner_basillia];0};{[trader_salient];0};{[trader_rolento];0};{[greenspan];0}}
+additional_npc_list = {}
+boss_npc_list = {}
+agit_list = {}
+//bulletin_id = none
+next_siege = 2003/4/2/20/00
+siege_term = 7200
+residence_state = initial
+residence_gate_list = {[gludio_castle_outter_001];[gludio_castle_outter_002];[gludio_castle_inner_001];[gludio_castle_inner_002];[gludio_castle_station]}
+breakable_wall_list = {}
+control_tower_list = {[gludio_life1_ctrltower];[gludio_life2_ctrltower];[gludio_life3_ctrltower]}
+holything = {[gludio_holything];{-18113;108132;-2567};16384;25.0;98.0}
+residence_grade = 3
+tax_rate = 15
+tax_sysget_rate = 50
+tribute_rate = 30
+agit_auction_min = 0
+agit_deposit = 0
+agit_lease = 0
+agit_size = 0
+agit_parent_castleid = 5
+agit_auction = 0
+next_auction = 0/0/0/0
+owner_restart_territory = {{-17198;109185;-1840;-1540};{-16244;109185;-1840;-1540};{-16244;109538;-1840;-1540};{-17197;109539;-1840;-1540}}
+castle_end
+

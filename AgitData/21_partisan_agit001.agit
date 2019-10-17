@@ -1,0 +1,41 @@
+agit_begin
+[partisan_agit001]
+21
+//residence_owner_id = -1
+residence_territory = {{{43048;108832;-2104;-1104};{43692;108204;-2104;-1104};{44052;108604;-2104;-1104};{43976;109180;-2104;-1104};{43684;109496;-2104;-1104}}}
+battlefield_territory = {{{42768;109156;-2344;-1544};{44460;107584;-2344;-1544};{47219;108081;-2344;-1544};{48281;109544;-2344;-1544};{47600;112400;-2344;-1544};{44092;113504;-2344;-1544};{43180;112736;-2344;-1544}}}
+headquarter_territory = {}
+domain_territory = {}
+manor_territory = {}
+owner_restart_point = {43370;108839;-1980}
+other_restart_village_list = {{51952;111060;-1970}}
+chao_restart_point_list = {}
+banish_point_list = {{51952;111060;-1970}}
+mercenary_point_list  = {}
+residence_guard_mapping = {}
+owning_npc_list = {{[ol_mahum_steward_tamutak];0};{[partisan_ordery_brakel];0};{[partisan_doorman_harkel];0}}
+additional_npc_list = {}
+boss_npc_list = {[bloody_lord_nurka1];[bloody_lord_nurka2]}
+agit_list = {}
+//bulletin_id = none
+next_siege = 2003/4/2/20/00
+siege_term = 7200
+residence_state = initial
+residence_gate_list = {[partisan001];[partisan002]}
+breakable_wall_list = {}
+control_tower_list = {}
+holything = {[];{;;};;;}
+residence_grade = 3
+tax_rate = 0
+tax_sysget_rate = 0
+tribute_rate = 50
+agit_auction_min = 0
+agit_deposit = 0
+agit_lease = 0
+agit_size = 0
+agit_parent_castleid = -1
+agit_auction = 0
+next_auction = 0/0/0/0
+owner_restart_territory = {}
+agit_end
+

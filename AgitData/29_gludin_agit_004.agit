@@ -1,0 +1,41 @@
+agit_begin
+[gludin_agit_004]
+29
+//residence_owner_id = -1
+residence_territory = {{{-79657;149419;-3948;-2448};{-79290;149424;-3948;-2448};{-79284;150296;-3948;-2448};{-79656;150298;-3948;-2448}};{{-80066;149420;-3948;-2448};{-79491;149419;-3948;-2448};{-79491;149859;-3948;-2448};{-80066;149857;-3948;-2448}}}
+battlefield_territory = {}
+headquarter_territory = {}
+domain_territory = {}
+manor_territory = {}
+owner_restart_point = {-79544;150181;-3038}
+other_restart_village_list = {{-79856;150144;-3042}}
+chao_restart_point_list = {}
+banish_point_list = {{-79856;150144;-3042}}
+mercenary_point_list  = {}
+residence_guard_mapping = {}
+owning_npc_list = {{[ruben];0};{[luce];0}}
+additional_npc_list = {}
+boss_npc_list = {}
+agit_list = {}
+//bulletin_id = none
+next_siege = 2003/4/2/20/00
+siege_term = 0
+residence_state = initial
+residence_gate_list = {}
+breakable_wall_list = {}
+control_tower_list = {}
+holything = {[];{;;};;;}
+residence_grade = 3
+tax_rate = 0
+tax_sysget_rate = 0
+tribute_rate = 50
+agit_auction_min = 5000000
+agit_deposit = 500000
+agit_lease = 100000
+agit_size = 30
+agit_parent_castleid = 1
+agit_auction = 1
+next_auction = 2004/1/2/10
+owner_restart_territory = {}
+agit_end
+

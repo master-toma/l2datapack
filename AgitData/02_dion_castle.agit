@@ -1,0 +1,41 @@
+castle_begin
+[dion_castle]
+2
+//residence_owner_id = -1
+residence_territory = {{{24341;163017;-6827;33940};{19694;163101;-6827;33940};{19679;155959;-6827;33940};{24365;156051;-6827;33940}}}
+battlefield_territory = {{{27813;164406;-5601;35166};{18873;164334;-5601;35166};{18290;152991;-5601;35166};{27979;153035;-5601;35166}}}
+headquarter_territory = {{{26169;155398;-4536;30232};{20216;155482;-4536;30232};{20121;152425;-4536;30232};{26161;152452;-4536;30232}};{{24703;161177;-4556;30212};{27264;161193;-4556;30212};{27282;158162;-4556;30212};{24695;158035;-4556;30212}};{{17710;159552;-4074;30694};{19517;159589;-4074;30694};{19536;156558;-4074;30694};{17782;156518;-4074;30694}}}
+domain_territory = {}
+manor_territory = {}
+owner_restart_point = {20321;160441;-1978}
+other_restart_village_list = {{-81447;152760;-3170};{-81447;152880;-3170};{-81447;152640;-3170};{-82186;152760;-3170};{-82186;152880;-3170};{-82186;152640;-3170};{-81780;152760;-3170};{-81780;152880;-3170};{-81780;152640;-3170}}
+chao_restart_point_list = {{-81616;157104;-3150};{-80688;157216;-3150};{-79568;156960;-3150};{-78800;157744;-3150};{-80448;157968;-3130};{-81712;159536;-3230};{-79744;160592;-3330};{-79584;159408;-3180};{-74016;150656;-2800};{-72720;149632;-2780};{-75904;162000;-3300};{-75488;161472;-3250};{-74688;160736;-3200};{-74352;161488;-3250};{-76656;160768;-3280};{-77472;160960;-3470};{-77776;158752;-3270};{-80448;161488;-3420};{-75440;162672;-3350};{-81760;161248;-3200}}
+banish_point_list = {{19852;159170;-2770};{19650;159653;-2770};{19524;159041;-2770};{19252;159679;-2770}}
+mercenary_point_list  = {}
+residence_guard_mapping = {{3973;sword;notmove;12301;15};{3974;pole;notmove;12302;10};{3975;bow;notmove;12303;40};{3976;cleric;notmove;12304;5};{3977;wizard;notmove;12305;5};{3978;sword;move;12306;15};{3979;pole;move;12307;10};{3980;bow;move;12308;40};{3981;cleric;move;12309;5};{3982;wizard;move;12310;5};{3983;teleporter;notmove;12155;2};{3984;teleporter;notmove;12156;2};{3985;teleporter;notmove;12157;2}}
+owning_npc_list = {{[chamberlain_crosby];0};{[sir_gibbson];0};{[dion_mass_teleporter];0};{[dion_defend_teleporter1];0};{[dion_defend_teleporter2];0};{[dion_defend_teleporter3];0};{[dion_default_teleporter1];0};{[dion_default_teleporter2];0};{[dion_default_teleporter3];0};{[dion_outter_doorman];1};{[dion_inner_doorman];1};{[dion_royal_gatekeeper];0};{[summoner_belthus];0};{[researcher_lorain];0};{[box_of_titan];0};{[maestro_nikola];0};{[gatekeeper_mozzarella];0};{[gatekeeper_pontina];0};{[gatekeeper_penne];0};{[gatekeeper_capellini];0};{[gatekeeper_havarti];0};{[sophia];0};{[redfoot];0};{[morgan];0};{[pet_manager_waters];0};{[auction_dealer_human];0};{[tree_q0225];0};{[kash];0};{[sir_kiel_nighthawk];0};{[bard_rukal];0};{[gandi_chief_chianta];0};{[mason];0};{[emilly];0};{[marya];0};{[head_blacksmith_opix];0};{[warehouse_chief_ranspo];0};{[high_prefect_cional];0};{[seer_somak];0};{[prefect_dowki];0};{[glyvka];0};{[shegfield];0};{[magister_mirien];0};{[rollant];0};{[sylvain];0};{[amidol];0};{[holvas];0};{[jonas];0};{[terry];0};{[pabris];0};{[master_wandius];0};{[arne];0};{[master_cardien];0};{[sonia];0};{[lars];0};{[sabrin];0};{[kc];0};{[master_ixia];0};{[magister_clayton];0};{[grandmaster_tronix];0};{[trishya];0};{[metty];0};{[lucas];0};{[guard_bright];0};{[guard_herven];0};{[xaber];0};{[listto];0};{[hitsran];0};{[jaycub];0};{[blacksmith_poitan];0};{[alankell];0};{[militiaman_leirynn];0};{[fisher_evert];0};{[sagittarius_hamil];0};{[astrologer_creta];0};{[enku_chief_kepra];0};{[summoner_camoniell];0};{[barder];0};{[pano];0};{[wyrm_suzet];0};{[partisan_doorman_harkel];0};{[warden_roderik];0};{[warden_endrigo];0};{[sanford];0}}
+additional_npc_list = {}
+boss_npc_list = {}
+agit_list = {}
+//bulletin_id = none
+next_siege = 2003/4/2/20/00
+siege_term = 7200
+residence_state = initial
+residence_gate_list = {[dion_castle_outter_001];[dion_castle_outter_002];[dion_castle_inner_001];[dion_castle_inner_002];[dion_castle_station]}
+breakable_wall_list = {}
+control_tower_list = {[dion_life1_ctrltower];[dion_life2_ctrltower];[dion_life3_ctrltower]}
+holything = {[dion_holything];{22084;161689;-2760};49152;25.0;98.0}
+residence_grade = 3
+tax_rate = 15
+tax_sysget_rate = 50
+tribute_rate = 30
+agit_auction_min = 0
+agit_deposit = 0
+agit_lease = 0
+agit_size = 0
+agit_parent_castleid = 5
+agit_auction = 0
+next_auction = 0/0/0/0
+owner_restart_territory = {{21169;160636;-2034;31228};{20215;160636;-2034;31228};{20215;160283;-2034;31228};{21168;160282;-2034;31228}}
+castle_end
+

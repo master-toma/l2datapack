@@ -1,0 +1,41 @@
+agit_begin
+[gludio_castle_agit_001]
+22
+//residence_owner_id = -1
+residence_territory = {{{-16362;123496;-3598;-2098};{-15748;123315;-3598;-2098};{-15645;123655;-3598;-2098};{-16234;123831;-3598;-2098}}}
+battlefield_territory = {}
+headquarter_territory = {}
+domain_territory = {}
+manor_territory = {}
+owner_restart_point = {-16029;123642;-3101}
+other_restart_village_list = {{-15872;123824;-3116}}
+chao_restart_point_list = {}
+banish_point_list = {{-15872;123824;-3116}}
+mercenary_point_list  = {}
+residence_guard_mapping = {}
+owning_npc_list = {{[black];0};{[renny];0}}
+additional_npc_list = {}
+boss_npc_list = {}
+agit_list = {}
+//bulletin_id = none
+next_siege = 2003/4/2/20/00
+siege_term = 0
+residence_state = initial
+residence_gate_list = {}
+breakable_wall_list = {}
+control_tower_list = {}
+holything = {[];{;;};;;}
+residence_grade = 1
+tax_rate = 0
+tax_sysget_rate = 0
+tribute_rate = 50
+agit_auction_min = 5000000
+agit_deposit = 500000
+agit_lease = 100000
+agit_size = 30
+agit_parent_castleid = 1
+agit_auction = 1
+next_auction = 2004/1/2/10
+owner_restart_territory = {}
+agit_end
+
