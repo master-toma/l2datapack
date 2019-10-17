@@ -1,0 +1,6 @@
+category_define_begin
+name=[wizard_group]
+category={@mage;@wizard;@sorcerer;@necromancer;@warlock
+    ;@elven_mage;@elven_wizard;@spellsinger;@elemental_summoner
+    ;@dark_mage;@dark_wizard;@spellhowler;@phantom_summoner}
+category_define_end

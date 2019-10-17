@@ -1,0 +1,4 @@
+category_define_begin
+name=[warsmith_group]
+category={@dwarven_fighter;@artisan;@warsmith}
+category_define_end

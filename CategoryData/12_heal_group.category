@@ -1,0 +1,4 @@
+category_define_begin
+name=[heal_group]
+category={@cleric;@oracle;@shillien_oracle;@orc_shaman}
+category_define_end

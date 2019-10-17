@@ -1,0 +1,6 @@
+category_define_begin
+name=[second_class_group]
+category={@warrior;@knight;@rogue;@wizard;@cleric;@elven_knight;@elven_scout;@elven_wizard
+    ;@oracle;@palus_knight;@assassin;@dark_wizard;@shillien_oracle;@orc_raider
+    ;@orc_monk;@orc_shaman;@scavenger;@artisan}
+category_define_end

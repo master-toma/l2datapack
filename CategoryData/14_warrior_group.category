@@ -1,0 +1,4 @@
+category_define_begin
+name=[warrior_group]
+category={@warrior;@elven_knight;@palus_knight;@orc_raider;@orc_monk}
+category_define_end

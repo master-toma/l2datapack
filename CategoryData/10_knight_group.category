@@ -1,0 +1,4 @@
+category_define_begin
+name=[knight_group]
+category={@knight;@elven_knight;@palus_knight}
+category_define_end

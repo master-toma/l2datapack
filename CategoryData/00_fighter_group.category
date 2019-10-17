@@ -1,0 +1,9 @@
+category_define_begin
+name=[fighter_group]
+category={@fighter;@warrior;@gladiator;@warlord;@knight;@paladin;@dark_avenger;@rogue
+    ;@treasure_hunter;@hawkeye;@elven_fighter;@elven_knight;@temple_knight;@swordsinger
+    ;@elven_scout;@plains_walker;@silver_ranger;@dark_fighter;@palus_knight
+    ;@shillien_knight;@bladedancer;@assassin;@abyss_walker;@phantom_ranger
+    ;@orc_fighter;@orc_raider;@destroyer;@orc_monk;@tyrant;@dwarven_fighter
+    ;@scavenger;@bounty_hunter;@artisan;@warsmith}
+category_define_end

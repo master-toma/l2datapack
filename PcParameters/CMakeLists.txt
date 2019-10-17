@@ -1,11 +1,11 @@
 project(PcParameters)
 
-file(GLOB_RECURSE MULTISELL_FILES
+file(GLOB_RECURSE SCRIPT_FILES
     ./*.pcparams
 )
 
 add_custom_target(${PROJECT_NAME}
-    SOURCES ${MULTISELL_FILES}
+    SOURCES ${SCRIPT_FILES}
 )
 
 add_custom_command(

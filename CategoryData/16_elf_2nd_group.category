@@ -1,0 +1,4 @@
+category_define_begin
+name=[elf_2nd_group]
+category={@elven_scout;@elven_knight;@elven_wizard;@oracle}
+category_define_end

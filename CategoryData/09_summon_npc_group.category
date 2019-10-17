@@ -1,0 +1,16 @@
+category_define_begin
+name=[summon_npc_group]
+category={@cat_the_cat_a;@cat_the_cat_b;@cat_the_cat_c;@cat_the_cat_d;@cat_the_cat_e;@cat_the_cat_f;@cat_the_cat_g;@cat_the_cat_h;@cat_the_cat_i
+    ;@cuti_cat_a;@cuti_cat_b;@cuti_cat_c;@cuti_cat_d;@cuti_cat_e;@cuti_cat_f;@cuti_cat_g;@cuti_cat_h;@cuti_cat_i
+    ;@unicorn_boxer_a;@unicorn_boxer_b;@unicorn_boxer_c;@unicorn_boxer_d;@unicorn_boxer_e;@unicorn_boxer_f;@unicorn_boxer_g;@unicorn_boxer_h;@unicorn_boxer_i
+    ;@unicorn_mirage_a;@unicorn_mirage_b;@unicorn_mirage_c;@unicorn_mirage_d;@unicorn_mirage_e;@unicorn_mirage_f;@unicorn_mirage_g;@unicorn_mirage_h;@unicorn_mirage_i
+    ;@shadow_a;@shadow_b;@shadow_c;@shadow_d;@shadow_e;@shadow_f;@shadow_g;@shadow_h;@shadow_i
+    ;@silhouette_a;@silhouette_b;@silhouette_c;@silhouette_d;@silhouette_e;@silhouette_f;@silhouette_g;@silhouette_h;@silhouette_i
+    ;@dark_panther_a;@dark_panther_b;@dark_panther_c
+    ;@mechanic_golem_a;@mechanic_golem_b;@mechanic_golem_c;@mechanic_golem_d;@mechanic_golem_e
+    ;@reanimated_man_a;@reanimated_man_b
+    ;@corrupted_man_a;@corrupted_man_b;@corrupted_man_c
+    ;@siege_golem
+    ;@pet_wolf_a
+    ;@hatchling_of_wind;@hatchling_of_star;@hatchling_of_twilight}
+category_define_end

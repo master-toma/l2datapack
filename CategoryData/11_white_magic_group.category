@@ -1,0 +1,4 @@
+category_define_begin
+name=[white_magic_group]
+category={@cleric;@oracle;@paladin;@elven_knight;@knight}
+category_define_end

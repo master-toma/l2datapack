@@ -1,0 +1,4 @@
+category_define_begin
+name=[orc_2nd_group]
+category={@orc_shaman;@orc_raider;@orc_monk}
+category_define_end

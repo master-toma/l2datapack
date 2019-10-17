@@ -1,0 +1,5 @@
+category_define_begin
+name=[first_class_group]
+category={@fighter;@mage;@elven_fighter;@elven_mage;@dark_fighter;@dark_mage
+    ;@orc_fighter;@orc_mage;@dwarven_fighter}
+category_define_end

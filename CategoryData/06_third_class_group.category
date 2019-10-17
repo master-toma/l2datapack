@@ -1,0 +1,8 @@
+category_define_begin
+name=[third_class_group]
+category={@gladiator;@warlord;@paladin;@dark_avenger;@treasure_hunter;@hawkeye;@sorcerer
+    ;@necromancer;@warlock;@bishop;@prophet;@temple_knight;@swordsinger;@plains_walker
+    ;@silver_ranger;@spellsinger;@elemental_summoner;@elder;@shillien_knight
+    ;@bladedancer;@abyss_walker;@phantom_ranger;@spellhowler;@phantom_summoner
+    ;@shillien_elder;@destroyer;@tyrant;@overlord;@warcryer;@bounty_hunter;@warsmith}
+category_define_end

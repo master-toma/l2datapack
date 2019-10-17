@@ -1,0 +1,4 @@
+category_define_begin
+name=[bounty_hunter_group]
+category={@dwarven_fighter;@scavenger;@bounty_hunter}
+category_define_end
