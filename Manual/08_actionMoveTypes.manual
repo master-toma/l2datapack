@@ -1,0 +1,6 @@
+[AMT_STAND]		=	0
+[AMT_MOVE_TO_TARGET]	=	1
+
+[ST_ATTACK]		=	0
+[ST_HEAL]		=	1
+

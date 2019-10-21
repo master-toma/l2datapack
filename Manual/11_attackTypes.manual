@@ -1,0 +1,11 @@
+[AT_NONE]	=	0
+[AT_SWORD]	=	1
+[AT_BLUNT]	=	2
+[AT_DAGGER]	=	3
+[AT_POLE]	=	4
+[AT_FIST]	=	5
+[AT_BOW]	=	6
+[AT_ETC]	=	7
+[AT_DUAL]	=	8
+[AT_DUALFIST]	=	9
+

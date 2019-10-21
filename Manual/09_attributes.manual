@@ -1,0 +1,29 @@
+[attr_sword]	=	1
+[attr_blunt]	=	2
+[attr_dagger]	=	3
+[attr_pole]	=	4
+[attr_fist]	=	5
+[attr_bow]	=	6
+[attr_etc]	=	7
+
+[attr_earth]	=	9
+[attr_water]	=	10
+[attr_wind]	=	11
+[attr_fire]	=	12
+[attr_poison]	=	13
+[attr_holy]	=	14
+[attr_hold]	=	15
+[attr_bleed]	=	16
+[attr_sleep]	=	17
+[attr_shock]	=	18
+[attr_derangement]	=	19
+[attr_unholy]	=	20
+[attr_bug_weakness]	=	21
+[attr_animal_weakness]	=	22
+[attr_plant_weakness]	=	23
+[attr_beast_weakness]	=	24
+[attr_dragon_weakness]	=	25
+[attr_paralyze]	=	26
+[attr_dual]	=	27
+[attr_dualfist]	=	28
+
