@@ -1,4 +1,4 @@
-﻿1	[hello! Who am i? Ha-ha, who are you? Hee hee hee hee]
+1	[hello! Who am i? Ha-ha, who are you? Hee hee hee hee]
 2	[hee hee hee hee]
 3	[start using]
 4	[stop using]
