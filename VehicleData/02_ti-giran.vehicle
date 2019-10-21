@@ -10,17 +10,17 @@ vehicle_begin
             action_begin
                 set_kick_pos = {{46763;187041;-3451};0}
                 play_sound = {[itemsound.ship_arrival_departure];0}
-                message = {[定期船通知];[抵达了奇岩，停泊10分钟。];300000}
+                message = {[Boat Schedule Announcements];[The ship has docked at Giran. It will remain anchored for 10 minutes.];300000}
                 play_sound = {[itemsound.ship_5min];0}
-                message = {[定期船通知];[5分钟后，向说话之岛出发。];240000}
+                message = {[Boat Schedule Announcements];[The ship will depart for Talking Island in 5 minute. All aboard, please.];240000}
                 play_sound = {[itemsound.ship_1min];0}
-                message = {[定期船通知];[1分钟后向说话之岛出发。想搭乘的乘客，请尽快。];40000}
+                message = {[Boat Schedule Announcements];[The ship will depart in 1 minute. All aboard, please.];40000}
 
                 play_sound = {[itemsound.ship_1min];0}
-                message = {[定期船通知];[马上要向说话之岛出发。请各位马上搭乘。];20000}
+                message = {[Boat Schedule Announcements];[The ship will be departing for Talking Island shortly.  All aboard.];20000}
 
                 play_sound = {[itemsound.ship_arrival_departure];0}
-                message = {[定期船通知];[出发];0}
+                message = {[Boat Schedule Announcements];[The ship is now departing.];0}
                 departure = {150;800;10000}
                 check_ticket = {[boat_ticket_kiran_talk];{46763;187041;-3451};0}
             action_end
@@ -52,17 +52,17 @@ vehicle_begin
             action_begin
                 set_kick_pos = {{-96777;258970;-3623};0}
                 play_sound = {[itemsound.ship_arrival_departure];0}
-                message = {[定期船通知];[抵达了说话之岛，停泊10分钟后，向奇岩出发。];300000}
+                message = {[Boat Schedule Announcements];[The ship has docked at Talking Island. It will remain anchored for 10 minutes.];300000}
                 play_sound = {[itemsound.ship_5min];0}
-                message = {[定期船通知];[5分钟后，向奇岩出发。];240000}
+                message = {[Boat Schedule Announcements];[The ship will depart for Giran in 5 minute. All aboard, please.];240000}
                 play_sound = {[itemsound.ship_1min];0}
-                message = {[定期船通知];[1分钟后向奇岩出发。想搭乘的乘客，请尽快。];40000}
+                message = {[Boat Schedule Announcements];[The ship will depart in 1 minute. All aboard, please];40000}
 
                 play_sound = {[itemsound.ship_1min];0}
-                message = {[定期船通知];[马上要向奇岩出发。请各位马上搭乘。];20000}
+                message = {[Boat Schedule Announcements];[The ship will be departing for Giran shortly. All aboard.];20000}
 
                 play_sound = {[itemsound.ship_arrival_departure];0}
-                message = {[定期船通知];[出发];0}
+                message = {[Boat Schedule Announcements];[The Ship is now departing.];0}
                 departure = {150;800;10000}		//속도, 각속도, 딜레이(ms). 출항 신호
                 check_ticket = {[boat_ticket_talk_kiran];{-96777;258970;-3623};0}	//티켓 및 튕기는 장소
             action_end
@@ -89,3 +89,4 @@ vehicle_begin
 
     route_end
 vehicle_end
+
