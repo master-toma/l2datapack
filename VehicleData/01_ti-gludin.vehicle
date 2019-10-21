@@ -1,0 +1,75 @@
+vehicle_begin
+    name = [glu_talk_ship]
+    captain = {[captain_bezique];{0;0;0}}
+    route_begin
+
+        station_begin
+            station_id = 1
+            point={-96622;261660;-3610}
+            action_begin
+                set_kick_pos = {{-96777;258970;-3623};0}
+                play_sound = {[itemsound.ship_arrival_departure];0}
+                message = {[定期船通知];[抵达了说话之岛，停泊10分钟后，向古鲁丁出发。];300000}
+                play_sound = {[itemsound.ship_5min];0}
+                message = {[定期船通知];[5分钟后，向古鲁丁出发。];240000}
+                play_sound = {[itemsound.ship_1min];0}
+                message = {[定期船通知];[1分钟后向古鲁丁出发。想搭乘的乘客，请尽快。];40000}
+
+                play_sound = {[itemsound.ship_1min];0}
+                message = {[定期船通知];[马上要向古鲁丁出发。请各位马上搭乘。];20000}
+
+                play_sound = {[itemsound.ship_arrival_departure];0}
+                message = {[定期船通知];[出发];0}
+                departure = {150;800;10000}
+                check_ticket = {[boat_ticket_talk_glu];{-96777;258970;-3623};0}
+            action_end
+        station_end
+
+        station_begin station_id = 0 point={-121385;261660;-3610} action_begin departure = {180;800;0} action_end station_end
+        station_begin station_id = 0 point={-127694;253312;-3610} action_begin departure = {200;800;0} action_end station_end
+        station_begin station_id = 0 point={-129274;237060;-3610} action_begin departure = {250;800;0} action_end station_end
+        station_begin station_id = 0 point={-114688;139040;-3610} action_begin departure = {200;800;0} action_end station_end
+
+        station_begin station_id = 0 point={-109663;135704;-3610} action_begin departure = {180;800;0} action_end station_end
+        station_begin station_id = 0 point={-102151;135704;-3610} action_begin departure = {180;800;0} action_end station_end
+
+        station_begin station_id = 0 point={-96686;140595;-3610} action_begin departure = {180;1800;0} action_end station_end
+        station_begin station_id = 0 point={-95686;147718;-3610} action_begin departure = {180;1800;0} action_end station_end
+        station_begin station_id = 0 point={-95686;148718;-3610} action_begin departure = {180;1800;0} action_end station_end
+        station_begin station_id = 0 point={-95686;149718;-3610} action_begin departure = {150;1800;0} action_end station_end
+
+
+        station_begin
+            station_id = 2
+            point = {-95686;150514;-3610}
+            action_begin
+                set_kick_pos = {{-90015;150422;-3000};0}
+                play_sound = {[itemsound.ship_arrival_departure];0}
+                message = {[定期船通知];[抵达了古鲁丁，停泊10分钟。];300000}
+                play_sound = {[itemsound.ship_5min];0}
+                message = {[定期船通知];[5分钟后，向说话之岛出发。];240000}
+                play_sound = {[itemsound.ship_1min];0}
+                message = {[定期船通知];[1分钟后向说话之岛出发。想搭乘的乘客，请尽快。];40000}
+
+                play_sound = {[itemsound.ship_1min];0}
+                message = {[定期船通知];[马上要向说话之岛出发。请各位马上搭乘。];20000}
+
+                play_sound = {[itemsound.ship_arrival_departure];0}
+                message = {[定期船通知];[出发];0}
+                departure = {150;800;10000}		//속도, 각속도, 딜레이(ms). 출항 신호
+                check_ticket = {[boat_ticket_glu_talk];{-90015;150422;-3000};0}	//티켓 및 튕기는 장소
+            action_end
+        station_end
+
+        station_begin station_id = 0 point = {-95686;155514;-3610} action_begin departure = {180;800;0} action_end station_end
+        station_begin station_id = 0 point = {-95686;185514;-3610} action_begin departure = {250;800;0} action_end station_end
+        station_begin station_id = 0 point = {-60136;238816;-3610} action_begin departure = {200;800;0} action_end station_end
+        station_begin station_id = 0 point = {-60520;259609;-3610} action_begin departure = {180;1800;0} action_end station_end
+        station_begin station_id = 0 point = {-65344;261460;-3610} action_begin departure = {180;1800;0} action_end station_end
+        station_begin station_id = 0 point = {-83344;261560;-3610} action_begin departure = {180;1800;0} action_end station_end
+        station_begin station_id = 0 point = {-88344;261660;-3610} action_begin departure = {180;1800;0} action_end station_end
+        station_begin station_id = 0 point = {-92344;261660;-3610} action_begin departure = {150;1800;0} action_end station_end
+
+    route_end
+vehicle_end
+
