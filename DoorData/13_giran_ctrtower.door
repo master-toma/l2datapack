@@ -1,0 +1,36 @@
+controltower_begin
+[giran_life1_ctrltower]
+controltower_type = life_control
+toggle=false
+pos = {113115;144829;-2446}
+hp=10000
+physical_defence=837
+magical_defence=674
+display_npc_working = [life_control_tower_live]
+display_npc_not_working = [life_control_tower_dead]
+controltower_end
+
+controltower_begin
+[giran_life2_ctrltower]
+controltower_type = life_control
+toggle=false
+pos = {118828;145106;-2447}
+hp=10000
+physical_defence=837
+magical_defence=674
+display_npc_working = [life_control_tower_live]
+display_npc_not_working = [life_control_tower_dead]
+controltower_end
+
+controltower_begin
+[giran_life3_ctrltower]
+controltower_type = life_control
+toggle=false
+pos = {117329;145041;-2412}
+hp=10000
+physical_defence=837
+magical_defence=674
+display_npc_working = [life_control_tower_live]
+display_npc_not_working = [life_control_tower_dead]
+controltower_end
+

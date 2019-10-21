@@ -1,0 +1,5 @@
+door_begin	[kuruma_parent]	type=parent_type	open_method=by_skill	close_time=300	hp=150000	physical_defence=476	magical_defence=383	level=3	door_end
+door_begin	[kuruma001]	type=child_type	static_object_id=9001	pos={17822;112427;-6454}	range={{17713;112401;-6454};{17934;112406;-6454};{17935;112448;-6454};{17712;112452;-6454}}	height=150	hp=150000	physical_defence=476	magical_defence=383	parent=[kuruma_parent]	door_end
+door_begin	[kuruma002]	type=child_type	static_object_id=9001	pos={17623;112427;-6454}	range={{17511;112406;-6454};{17733;112402;-6454};{17734;112452;-6454};{17510;112448;-6454}}	height=150	hp=150000	physical_defence=476	magical_defence=383	parent=[kuruma_parent]	door_end
+door_begin	[kuruma003]	type=child_type	static_object_id=9001	pos={17721;112427;-6579}	range={{17503;112396;-6579};{17940;112396;-6579};{17940;112457;-6579};{17502;112458;-6579}}	height=150	hp=150000	physical_defence=476	magical_defence=383	parent=[kuruma_parent]	door_end
+

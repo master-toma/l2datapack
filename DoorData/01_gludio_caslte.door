@@ -1,0 +1,7 @@
+//각 성문의 HP를 기준의 1/3로 낮추었음. 너무 못 뚫길래.
+door_begin	[gludio_castle_outter_001]	type=normal_type	static_object_id=9001	open_method=by_npc	pos={-18450;113067;-2466}	range={{-18450;113061;-2789};{-18320;113061;-2789};{-18320;113073;-2789};{-18450;113073;-2789}}	height=300	hp=316500	physical_defence=644	magical_defence=518	door_end
+door_begin	[gludio_castle_outter_002]	type=normal_type	static_object_id=9001	open_method=by_npc	pos={-18190;113067;-2466}	range={{-18321;113061;-2789};{-18190;113061;-2789};{-18190;113073;-2789};{-18321;113073;-2789}}	height=300	hp=316500	physical_defence=644	magical_defence=518	door_end
+door_begin	[gludio_castle_inner_001]	type=normal_type	static_object_id=9001	open_method=by_npc	pos={-18240;110520;-2280}	range={{-18240;110514;-2538};{-18110;110514;-2538};{-18110;110526;-2538};{-18240;110526;-2538}}	height=256	hp=158250	physical_defence=644	magical_defence=518	door_end
+door_begin	[gludio_castle_inner_002]	type=normal_type	static_object_id=9001	open_method=by_npc	pos={-17978;110520;-2280}	range={{-18109;110514;-2538};{-17978;110514;-2538};{-17978;110526;-2538};{-18109;110526;-2538}}	height=256	hp=158250	physical_defence=644	magical_defence=518	door_end
+door_begin	[gludio_castle_station]	type=normal_type	static_object_id=9001	open_method=by_npc	pos={-18994;108062;-1807}	range={{-19000;108058;-2059};{-18988;108058;-2059};{-18988;108217;-2059};{-19000;108217;-2059}}	height=256	hp=158250	physical_defence=644	magical_defence=518	door_end
+

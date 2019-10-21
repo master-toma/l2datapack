@@ -1,0 +1,62 @@
+controltower_begin
+[aden_damage1_ctrltower]
+controltower_type = trap_control
+toggle=false
+pos = {149976;1583;-450}
+hp=10000
+physical_defence=837
+magical_defence=674
+display_npc_working = [flame_control_tower_live]
+display_npc_not_working = [flame_control_tower_dead]
+control_area = {[aden_damage_1];[aden_slow_1];[aden_damage_2];[aden_slow_2];[aden_damage_3];[aden_slow_3];[aden_damage_4];[aden_slow_4]}
+controltower_end
+
+controltower_begin
+[aden_damage2_ctrltower]
+controltower_type = trap_control
+toggle=false
+pos = {144955;1603;-450}
+hp=10000
+physical_defence=837
+magical_defence=674
+display_npc_working = [flame_control_tower_live]
+display_npc_not_working = [flame_control_tower_dead]
+control_area = {[aden_damage_5];[aden_slow_5];[aden_damage_6];[aden_slow_6];[aden_damage_7];[aden_slow_7];[aden_damage_8];[aden_slow_8]}
+controltower_end
+
+controltower_begin
+[aden_life1_ctrltower]
+controltower_type = life_control
+toggle=false
+pos = {148774;2351;-389}
+hp=10000
+physical_defence=837
+magical_defence=674
+display_npc_working = [life_control_tower_live]
+display_npc_not_working = [life_control_tower_dead]
+controltower_end
+
+controltower_begin
+[aden_life2_ctrltower]
+controltower_type = life_control
+toggle=false
+pos = {147456;5724;158}
+hp=10000
+physical_defence=837
+magical_defence=674
+display_npc_working = [life_control_tower_live]
+display_npc_not_working = [life_control_tower_dead]
+controltower_end
+
+controltower_begin
+[aden_life3_ctrltower]
+controltower_type = life_control
+toggle=false
+pos = {146137;2352;-389}
+hp=10000
+physical_defence=837
+magical_defence=674
+display_npc_working = [life_control_tower_live]
+display_npc_not_working = [life_control_tower_dead]
+controltower_end
+

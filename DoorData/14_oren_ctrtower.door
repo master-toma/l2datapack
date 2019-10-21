@@ -1,0 +1,36 @@
+controltower_begin
+[oren_life1_ctrltower]
+controltower_type = life_control
+toggle=false
+pos = {79193;36977;-2167}
+hp=10000
+physical_defence=837
+magical_defence=674
+display_npc_working = [life_control_tower_live]
+display_npc_not_working = [life_control_tower_dead]
+controltower_end
+
+controltower_begin
+[oren_life2_ctrltower]
+controltower_type = life_control
+toggle=false
+pos = {84906;37254;-2168}
+hp=10000
+physical_defence=837
+magical_defence=674
+display_npc_working = [life_control_tower_live]
+display_npc_not_working = [life_control_tower_dead]
+controltower_end
+
+controltower_begin
+[oren_life3_ctrltower]
+controltower_type = life_control
+toggle=false
+pos = {83407;37189;-2133}
+hp=10000
+physical_defence=837
+magical_defence=674
+display_npc_working = [life_control_tower_live]
+display_npc_not_working = [life_control_tower_dead]
+controltower_end
+

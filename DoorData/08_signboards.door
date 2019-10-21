@@ -1,0 +1,34 @@
+//signboard_begin
+//[temp_signboard] editor_id = 17250001
+// pos = {-84263;243000;-3376}
+//html = [lector006.htm]
+//signboard_end
+
+//글루딘 PvP 결투장 안내판 1 (17_22)
+signboard_begin
+[pvp_signboard_gl_1] editor_id = 17220001
+pos = {-88696;142315;-3621}
+html = [pvp_signboard001.htm]
+signboard_end
+
+//글루딘 PvP 결투장 안내판 2 (17_22)
+signboard_begin
+[pvp_signboard_gl_2] editor_id = 17220002
+pos={-87136;142490;-3623}
+html = [pvp_signboard001.htm]
+signboard_end
+
+//기란 PvP 결투장 안내판 1 (22_22)
+signboard_begin
+[pvp_signboard_gi_1] editor_id = 22220001
+pos={73766;142489;-3748}
+html = [pvp_signboard001.htm]
+signboard_end
+
+//기란 PvP 결투장 안내판 2 (22_22)
+signboard_begin
+[pvp_signboard_gi_2] editor_id = 22220002
+pos={72200;143102;-3748}
+html = [pvp_signboard001.htm]
+signboard_end
+

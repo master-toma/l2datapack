@@ -1,0 +1,36 @@
+controltower_begin
+[dion_life1_ctrltower]
+controltower_type = life_control
+toggle=false
+pos = {22296;157010;-2571}
+hp=10000
+physical_defence=837
+magical_defence=674
+display_npc_working = [life_control_tower_live]
+display_npc_not_working = [life_control_tower_dead]
+controltower_end
+
+controltower_begin
+[dion_life2_ctrltower]
+controltower_type = life_control
+toggle=false
+pos = {22019;162723;-2572}
+hp=10000
+physical_defence=837
+magical_defence=674
+display_npc_working = [life_control_tower_live]
+display_npc_not_working = [life_control_tower_dead]
+controltower_end
+
+controltower_begin
+[dion_life3_ctrltower]
+controltower_type = life_control
+toggle=false
+pos = {22084;161224;-2537}
+hp=10000
+physical_defence=837
+magical_defence=674
+display_npc_working = [life_control_tower_live]
+display_npc_not_working = [life_control_tower_dead]
+controltower_end
+

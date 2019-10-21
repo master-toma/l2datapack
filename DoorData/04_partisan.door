@@ -1,0 +1,3 @@
+door_begin	[partisan001]	type=normal_type	static_object_id=9001	open_method=by_npc	pos={43643;108908;-1970}	range={{43643;108846;-1970};{43651;108846;-1970};{43651;108908;-1970};{43643;108908;-1970}}	height=150	hp=158250	physical_defence=644	magical_defence=518	door_end
+door_begin	[partisan002]	type=normal_type	static_object_id=9001	open_method=by_npc	pos={43643;108783;-1970}	range={{43643;108783;-1970};{43651;108783;-1970};{43651;108845;-1970};{43643;108845;-1970}}	height=150	hp=158250	physical_defence=644	magical_defence=518	door_end
+
