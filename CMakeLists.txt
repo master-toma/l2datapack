@@ -9,6 +9,7 @@ set(SCRIPT_MERGE_SCRIPT_PATH ${LINEAGE_2_ROOT_DIR}/tools/merge_files.py CACHE FI
 add_subdirectory(AgitData)
 add_subdirectory(AIScripts)
 add_subdirectory(AreaData)
+add_subdirectory(BuilderAliases)
 add_subdirectory(CategoryData)
 add_subdirectory(data)
 add_subdirectory(Manual)

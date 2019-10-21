@@ -1,0 +1,89 @@
+command_begin 	command = [bbs] 	alias = [布告栏] 	command_end
+command_begin 	command = [setskill] 	alias = [技能] 	command_end
+command_begin 	command = [event] 	alias = [活动] 	command_end
+command_begin 	command = [delskill] 	alias = [删除技能] 	command_end
+command_begin 	command = [who] 	alias = [谁] 	command_end
+command_begin 	command = [addbookmark]	alias = [加入书签]	command_end
+command_begin 	command = [delbookmark]	alias = [删除书签]	command_end
+command_begin 	command = [telbookmark]	alias = [书签]	command_end
+command_begin 	command = [getbookmark]	alias = [观看书签]	command_end
+// command_begin 	command = [set_skill_all]	alias = [set_skill_all]	command_end
+// command_begin	command = [setonetimequest]	alias = [setonetimequest]	command_end
+// command_begin	command = [setquest]	alias = [setquest]	command_end
+// command_begin 	command = [reset_skill]	alias = [reset_skill]	command_end
+// command_begin	command = [healthy]	alias = [healthy]	command_end
+// command_begin	command = [gmon]	alias = [gmon]	command_end
+// command_begin 	command = [killme]	alias = [killme]	command_end
+// command_begin	command = [home]	alias = [home]	command_end
+// command_begin	command = [setkarma]	alias = [setkarma]	command_end
+// command_begin	command = [stopsay]	alias = [stopsay]	command_end
+// command_begin	command = [gmliston]	alias = [gmliston]	command_end
+// command_begin	command = [petans]	alias = [petans]	command_end
+// command_begin	command = [endpet]	alias = [endpet]	command_end
+// command_begin	command = [startpet]	alias = [startpet]	command_end
+// command_begin	command = [cancelgmpeti]	alias = [cancelgmpeti]	command_end
+// command_begin	command = [leavepetimsg]	alias = [leavepetimsg]	command_end
+// command_begin 	command = [recall]	alias = [recall]	command_end
+// command_begin 	command = [sendhome]	alias = [sendhome]	command_end
+// command_begin	command = [teleportto]	alias = [teleportto]	command_end
+// command_begin	command = [announce]	alias = [announce]	command_end
+// command_begin	command = [setannounce]	alias = [setannounce]	command_end
+// command_begin	command = [delannounce]	alias = [delannounce]	command_end
+// command_begin	command = [undying]	alias = [undying]	command_end
+// command_begin	command = [hide]	alias = [hide]	command_end
+// command_begin	command = [gmspeed]	alias = [gmspeed]	command_end
+// command_begin	command = [whisper]	alias = [whisper]	command_end
+// command_begin	command = [summon]	alias = [summon]	command_end
+// command_begin	command = [set_siege]	alias = [set_siege]	command_end
+// command_begin	command = [set_quick_siege]	alias = [set_quick_siege]	command_end
+// command_begin	command = [set_interval_announce]	alias = [set_interval_announce]	command_end
+// command_begin	command = [add_peti_chat]	alias = [add_peti_chat]	command_end
+// command_begin	command = [left_peti_chat]	alias = [left_peti_chat]	command_end
+// command_begin	command = [force_peti]	alias = [force_peti]	command_end
+// command_begin	command = [gmchat]	alias = [gmchat]	command_end
+// command_begin	command = [show_castle_door_hp]	alias = [show_castle_door_hp]	command_end
+// command_begin	command = [setbuilder]	alias = [setbuilder]	command_end
+// command_begin	command = [setai]	alias = [setai]	command_end
+// command_begin	command = [reset_skill]	alias = [reset_skill]	command_end
+// command_begin	command = [set_skill_all]	alias = [set_skill_all]	command_end
+// command_begin	command = [setparam]	alias = [setparam]	command_end
+// command_begin	command = [delquest]	alias = [delquest]	command_end
+// command_begin	command = [setclass]	alias = [setclass]	command_end
+// command_begin	command = [stoplogin]	alias = [stoplogin]	command_end
+// command_begin	command = [partytel]	alias = [partytel]	command_end
+// command_begin	command = [killnpc]	alias = [killnpc]	command_end
+// command_begin	command = [kick]	alias = [kick]	command_end
+// command_begin	command = [ride]	alias = [ride]	command_end
+// command_begin	command = [dropping]	alias = [dropping]	command_end
+// command_begin	command = [diet]	alias = [diet]	command_end
+// command_begin	command = [teleport]	alias = [teleport]	command_end
+// command_begin	command = [ask_now]	alias = [ask_now]	command_end
+// command_begin	command = [ping]	alias = [ping]	command_end
+// command_begin	command = [netping]	alias = [netping]	command_end
+// command_begin	command = [serverstat]	alias = [serverstat]	command_end
+// command_begin	command = [create_pet]	alias = [create_pet]	command_end
+// command_begin	command = [gmchat]	alias = [gmchat]	command_end
+// command_begin	command = [setcastleincome]	alias = [setcastleincome]	command_end
+// command_begin	command = [set_freeze_field]	alias = [set_freeze_field]	command_end
+// command_begin	command = [set_pausable]	alias = [set_pausable]	command_end
+// command_begin	command = [set_controltower_status]	alias = [set_controltower_status]	command_end
+// command_begin	command = [set_siege_end]	alias = [set_siege_end]	command_end
+// command_begin	command = [door_levelup]	alias = [door_levelup]	command_end
+// command_begin	command = [set_door_hp]	alias = [set_door_hp]	command_end
+// command_begin	command = [defend]	alias = [defend]	command_end
+// command_begin	command = [attack]	alias = [attack]	command_end
+// command_begin	command = [unregister]	alias = [unregister]	command_end
+// command_begin	command = [set_siege_period]	alias = [set_siege_period]	command_end
+// command_begin	command = [controltower_levelup]	alias = [controltower_levelup]	command_end
+// command_begin	command = [castleincome]	alias = [castleincome]	command_end
+// command_begin	command = [ask_residence]	alias = [ask_residence]	command_end
+// command_begin	command = [cease_fire2]	alias = [cease_fire2]	command_end
+// command_begin	command = [view_enemy_list2]	alias = [view_enemy_list2]	command_end
+// command_begin	command = [set_pledge_level]	alias = [set_pledge_level]	command_end
+// command_begin	command = [cease_fire]	alias = [cease_fire]	command_end
+// command_begin	command = [load_pledge]	alias = [load_pledge]	command_end
+// command_begin	command = [view_enemy_list]	alias = [view_enemy_list]	command_end
+// command_begin	command = [auction_close]	alias = [auction_close]	command_end
+// command_begin	command = [auction_open]	alias = [auction_open]	command_end
+// command_begin	command = [show_agit_info]	alias = [show_agit_info]	command_end
+
