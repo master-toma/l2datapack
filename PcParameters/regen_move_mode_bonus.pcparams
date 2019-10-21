@@ -5,3 +5,4 @@ regen_move_mode_bonus_begin
     low = 0%	//저속 이동하는 경우
     high = -30%	//고속 이동하는 경우
 regen_move_mode_bonus_end
+

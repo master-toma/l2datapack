@@ -5,3 +5,4 @@ noise_move_mode_bonus_begin
     low = 0%	//저속 이동 때
     high = 100%      //고속 이동할 때
 noise_move_mode_bonus_end
+

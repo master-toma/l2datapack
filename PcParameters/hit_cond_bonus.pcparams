@@ -8,3 +8,4 @@ hit_cond_bonus_begin
     dark = -10%	//조명이 없는 경우
     rain = -3%	//비가 오는 경우
 hit_cond_bonus_end
+
