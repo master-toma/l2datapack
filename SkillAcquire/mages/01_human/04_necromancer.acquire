@@ -110,8 +110,8 @@ skill_begin	/* [뱀피릭 클로] */	skill_name = [s_vampiric_claw41]	get_lv = 5
 skill_begin	/* [뱀피릭 클로] */	skill_name = [s_vampiric_claw42]	get_lv = 52	lv_up_sp = 65000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [콥스 버스트] */	skill_name = [s_corpse_burst21]	get_lv = 52	lv_up_sp = 65000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [콥스 버스트] */	skill_name = [s_corpse_burst22]	get_lv = 52	lv_up_sp = 65000	auto_get = false	item_needed = {}	skill_end
-skill_begin	/* [커스 데스 링크] */	skill_name = [s_curse death link11]	get_lv = 52	lv_up_sp = 65000	auto_get = false	item_needed = {{[sb_curse death link1];1}}	skill_end
-skill_begin	/* [커스 데스 링크] */	skill_name = [s_curse death link12]	get_lv = 52	lv_up_sp = 65000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [커스 데스 링크] */	skill_name = [s_curse_death_link11]	get_lv = 52	lv_up_sp = 65000	auto_get = false	item_needed = {{[sb_curse_death_link1];1}}	skill_end
+skill_begin	/* [커스 데스 링크] */	skill_name = [s_curse_death_link12]	get_lv = 52	lv_up_sp = 65000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [콥스 라이프 드레인] */	skill_name = [s_corpse_life_drain6]	get_lv = 52	lv_up_sp = 130000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [커스 포이즌] */	skill_name = [s_curse_poison5]	get_lv = 52	lv_up_sp = 130000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [데스 스파이크] */	skill_name = [s_death_spike3]	get_lv = 52	lv_up_sp = 130000	auto_get = false	item_needed = {}	skill_end
@@ -126,8 +126,8 @@ skill_begin	/* [뱀피릭 클로] */	skill_name = [s_vampiric_claw51]	get_lv = 5
 skill_begin	/* [뱀피릭 클로] */	skill_name = [s_vampiric_claw52]	get_lv = 56	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [콥스 버스트] */	skill_name = [s_corpse_burst31]	get_lv = 56	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [콥스 버스트] */	skill_name = [s_corpse_burst32]	get_lv = 56	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
-skill_begin	/* [커스 데스 링크] */	skill_name = [s_curse death link21]	get_lv = 56	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
-skill_begin	/* [커스 데스 링크] */	skill_name = [s_curse death link22]	get_lv = 56	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [커스 데스 링크] */	skill_name = [s_curse_death_link21]	get_lv = 56	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [커스 데스 링크] */	skill_name = [s_curse_death_link22]	get_lv = 56	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [콥스 라이프 드레인] */	skill_name = [s_corpse_life_drain7]	get_lv = 56	lv_up_sp = 210000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [데스 스파이크] */	skill_name = [s_death_spike4]	get_lv = 56	lv_up_sp = 210000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [포이즌 클라우드] */	skill_name = [s_poison_cloud4]	get_lv = 56	lv_up_sp = 210000	auto_get = false	item_needed = {}	skill_end

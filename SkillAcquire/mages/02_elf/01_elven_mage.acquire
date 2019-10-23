@@ -42,6 +42,6 @@ skill_begin	/* [배틀 힐] */	skill_name = [s_battle_heal13]	get_lv = 14	lv_up_
 skill_begin	/* [그룹 힐] */	skill_name = [s_group_heal11]	get_lv = 14	lv_up_sp = 700	auto_get = false	item_needed = {{[sb_group_heal1];1}}	skill_end
 skill_begin	/* [그룹 힐] */	skill_name = [s_group_heal12]	get_lv = 14	lv_up_sp = 700	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [그룹 힐] */	skill_name = [s_group_heal13]	get_lv = 14	lv_up_sp = 700	auto_get = false	item_needed = {}	skill_end
-skill_begin	/* [커스 위크니스] */	skill_name = [s_curse_weakness1]	get_lv = 14	lv_up_sp = 2100	auto_get = false	item_needed = {{[sb_curse:weakness];1}}	skill_end
+skill_begin	/* [커스 위크니스] */	skill_name = [s_curse_weakness1]	get_lv = 14	lv_up_sp = 2100	auto_get = false	item_needed = {{[sb_curse_weakness];1}}	skill_end
 skill_begin	/* [윈드 셰클] */	skill_name = [s_breeze1]	get_lv = 14	lv_up_sp = 2100	auto_get = false	item_needed = {{[sb_breeze1];1}}	skill_end
 elven_mage_end

@@ -29,7 +29,7 @@ skill_begin	/* [힐] */	skill_name = [s_heal13]	get_lv = 7	lv_up_sp = 160	auto_g
 skill_begin	/* [마이트] */	skill_name = [s_might1]	get_lv = 7	lv_up_sp = 470	auto_get = false	item_needed = {{[sb_might1];1}}	skill_end
 skill_begin	/* [실드] */	skill_name = [s_shield1]	get_lv = 7	lv_up_sp = 470	auto_get = false	item_needed = {{[sb_shield1];1}}	skill_end
 skill_begin	/* [큐어 포이즌] */	skill_name = [s_cure_poison1]	get_lv = 7	lv_up_sp = 470	auto_get = false	item_needed = {{[sb_cure_poison1];1}}	skill_end
-skill_begin	/* [커스 포이즌] */	skill_name = [s_curse_poison1]	get_lv = 7	lv_up_sp = 470	auto_get = false	item_needed = {{[sb_curse:poison1];1}}	skill_end
+skill_begin	/* [커스 포이즌] */	skill_name = [s_curse_poison1]	get_lv = 7	lv_up_sp = 470	auto_get = false	item_needed = {{[sb_curse_poison1];1}}	skill_end
 skill_begin	/* [윈드 스트라이크] */	skill_name = [s_wind_strike31]	get_lv = 14	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [윈드 스트라이크] */	skill_name = [s_wind_strike32]	get_lv = 14	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [아이스 볼트] */	skill_name = [s_ice_bolt21]	get_lv = 14	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
