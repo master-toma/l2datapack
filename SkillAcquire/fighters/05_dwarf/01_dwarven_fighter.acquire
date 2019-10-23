@@ -1,0 +1,20 @@
+dwarven_fighter_begin
+skill_begin	/* [럭키] */	skill_name = [s_lucky]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 D] */	skill_name = [s_expertise_d]	get_lv = 20	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 C] */	skill_name = [s_expertise_c]	get_lv = 40	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 B] */	skill_name = [s_expertise_b]	get_lv = 52	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 A] */	skill_name = [s_expertise_a]	get_lv = 61	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 S] */	skill_name = [s_expertise_s]	get_lv = 67	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery1]	get_lv = 5	lv_up_sp = 320	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery11]	get_lv = 5	lv_up_sp = 320	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [크리에이트 아이템] */	skill_name = [s_create_item1]	get_lv = 5	lv_up_sp = 320	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery2]	get_lv = 10	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery21]	get_lv = 10	lv_up_sp = 550	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery22]	get_lv = 10	lv_up_sp = 550	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스포일] */	skill_name = [s_spoil1]	get_lv = 10	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스위퍼] */	skill_name = [s_sweeper1]	get_lv = 10	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨이트 리미트] */	skill_name = [s_weight_limit1]	get_lv = 10	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery3]	get_lv = 15	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery31]	get_lv = 15	lv_up_sp = 2000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery32]	get_lv = 15	lv_up_sp = 2000	auto_get = false	item_needed = {}	skill_end
+dwarven_fighter_end

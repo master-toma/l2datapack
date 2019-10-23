@@ -1,0 +1,119 @@
+bladedancer_begin
+include_palus_knight
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance61]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance62]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance63]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery11]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery12]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery13]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy71]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy72]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy73]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack51]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack52]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack53]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike21]	get_lv = 40	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike22]	get_lv = 40	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헥스] */	skill_name = [s_hex1]	get_lv = 40	lv_up_sp = 57000	auto_get = false	item_needed = {{[sb_hex1];1}}	skill_end
+skill_begin	/* [댄스 오브 파이어] */	skill_name = [s_dance_of_fire]	get_lv = 40	lv_up_sp = 57000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance71]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance72]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance73]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery21]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery22]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery23]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy81]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy82]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy83]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack61]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack62]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack63]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike31]	get_lv = 43	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike32]	get_lv = 43	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스 마인드] */	skill_name = [s_focus_mind2]	get_lv = 43	lv_up_sp = 65000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [댄스 오브 라이트] */	skill_name = [s_dance_of_light]	get_lv = 43	lv_up_sp = 65000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance81]	get_lv = 46	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance82]	get_lv = 46	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance83]	get_lv = 46	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery31]	get_lv = 46	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery32]	get_lv = 46	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery33]	get_lv = 46	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy91]	get_lv = 46	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy92]	get_lv = 46	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy93]	get_lv = 46	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack71]	get_lv = 46	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack72]	get_lv = 46	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack73]	get_lv = 46	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike41]	get_lv = 46	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike42]	get_lv = 46	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [컨퓨전] */	skill_name = [s_confusion2]	get_lv = 46	lv_up_sp = 85000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [댄스 오브 인스퍼레이션] */	skill_name = [s_dance_of_inspiration]	get_lv = 46	lv_up_sp = 85000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance91]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance92]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance93]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery41]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery42]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery43]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy101]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy102]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy103]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack81]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack82]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack83]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike51]	get_lv = 49	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike52]	get_lv = 49	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스 마인드] */	skill_name = [s_focus_mind3]	get_lv = 49	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포이즌] */	skill_name = [s_poison2]	get_lv = 49	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [댄스 오브 미스틱] */	skill_name = [s_dance_of_mystic]	get_lv = 49	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance101]	get_lv = 52	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance102]	get_lv = 52	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance103]	get_lv = 52	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery51]	get_lv = 52	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery52]	get_lv = 52	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery53]	get_lv = 52	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy111]	get_lv = 52	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy112]	get_lv = 52	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy113]	get_lv = 52	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack91]	get_lv = 52	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack92]	get_lv = 52	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack93]	get_lv = 52	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike61]	get_lv = 52	lv_up_sp = 94000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike62]	get_lv = 52	lv_up_sp = 94000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 브레이크] */	skill_name = [s_power_break2]	get_lv = 52	lv_up_sp = 190000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헥스] */	skill_name = [s_hex2]	get_lv = 52	lv_up_sp = 190000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [댄스 오브 콘센트레이션] */	skill_name = [s_dance_of_concentration]	get_lv = 52	lv_up_sp = 190000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance111]	get_lv = 55	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance112]	get_lv = 55	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance113]	get_lv = 55	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery61]	get_lv = 55	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery62]	get_lv = 55	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery63]	get_lv = 55	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy121]	get_lv = 55	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy122]	get_lv = 55	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy123]	get_lv = 55	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack101]	get_lv = 55	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack102]	get_lv = 55	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack103]	get_lv = 55	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike71]	get_lv = 55	lv_up_sp = 150000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike72]	get_lv = 55	lv_up_sp = 150000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스 마인드] */	skill_name = [s_focus_mind4]	get_lv = 55	lv_up_sp = 300000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포이즌 블레이드 댄스] */	skill_name = [s_poison_blade_dance1]	get_lv = 55	lv_up_sp = 300000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [댄스 오브 워리어] */	skill_name = [s_dance_of_warrior]	get_lv = 55	lv_up_sp = 300000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance121]	get_lv = 58	lv_up_sp = 140000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance122]	get_lv = 58	lv_up_sp = 140000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance123]	get_lv = 58	lv_up_sp = 140000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery71]	get_lv = 58	lv_up_sp = 140000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery72]	get_lv = 58	lv_up_sp = 140000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery73]	get_lv = 58	lv_up_sp = 140000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy131]	get_lv = 58	lv_up_sp = 140000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy132]	get_lv = 58	lv_up_sp = 140000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy133]	get_lv = 58	lv_up_sp = 140000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack111]	get_lv = 58	lv_up_sp = 140000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack112]	get_lv = 58	lv_up_sp = 140000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack113]	get_lv = 58	lv_up_sp = 140000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike81]	get_lv = 58	lv_up_sp = 210000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike82]	get_lv = 58	lv_up_sp = 210000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [컨퓨전] */	skill_name = [s_confusion3]	get_lv = 58	lv_up_sp = 410000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포이즌] */	skill_name = [s_poison3]	get_lv = 58	lv_up_sp = 410000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [댄스 오브 퓨리] */	skill_name = [s_dance_of_fury]	get_lv = 58	lv_up_sp = 410000	auto_get = false	item_needed = {}	skill_end
+bladedancer_end

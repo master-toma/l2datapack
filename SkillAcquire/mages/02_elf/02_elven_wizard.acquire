@@ -1,0 +1,104 @@
+elven_wizard_begin
+include_elven_mage
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag31]	get_lv = 20	lv_up_sp = 3700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_wiz11]	get_lv = 20	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_wiz12]	get_lv = 20	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence31]	get_lv = 20	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence32]	get_lv = 20	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 마나] */	skill_name = [s_boost_mana1]	get_lv = 20	lv_up_sp = 3700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [퀵 리커버리] */	skill_name = [s_fast_spell_recovery1]	get_lv = 20	lv_up_sp = 3700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [하이어 마나 게인] */	skill_name = [s_higher_mana_gain11]	get_lv = 20	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [하이어 마나 게인] */	skill_name = [s_higher_mana_gain12]	get_lv = 20	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag41]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag42]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_wiz21]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_wiz22]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence41]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence42]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 스펠 캐스팅] */	skill_name = [s_fast_spell_casting1]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 마나 리커버리] */	skill_name = [s_fast_mana_recovery1]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [하이어 마나 게인] */	skill_name = [s_higher_mana_gain21]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [하이어 마나 게인] */	skill_name = [s_higher_mana_gain22]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag51]	get_lv = 30	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag52]	get_lv = 30	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_wiz31]	get_lv = 30	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_wiz32]	get_lv = 30	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence51]	get_lv = 30	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence52]	get_lv = 30	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 마나] */	skill_name = [s_boost_mana2]	get_lv = 30	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [퀵 리커버리] */	skill_name = [s_fast_spell_recovery2]	get_lv = 30	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [하이어 마나 게인] */	skill_name = [s_higher_mana_gain31]	get_lv = 30	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [하이어 마나 게인] */	skill_name = [s_higher_mana_gain32]	get_lv = 30	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag61]	get_lv = 35	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag62]	get_lv = 35	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_wiz41]	get_lv = 35	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_wiz42]	get_lv = 35	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence61]	get_lv = 35	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence62]	get_lv = 35	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 HP 리커버리] */	skill_name = [s_fast_hp_recovery1]	get_lv = 35	lv_up_sp = 25000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 마나 리커버리] */	skill_name = [s_fast_mana_recovery2]	get_lv = 35	lv_up_sp = 25000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [하이어 마나 게인] */	skill_name = [s_higher_mana_gain41]	get_lv = 35	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [하이어 마나 게인] */	skill_name = [s_higher_mana_gain42]	get_lv = 35	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이스 볼트] */	skill_name = [s_ice_bolt31]	get_lv = 20	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이스 볼트] */	skill_name = [s_ice_bolt32]	get_lv = 20	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아쿠아 스월] */	skill_name = [s_aqua_swirl11]	get_lv = 20	lv_up_sp = 1900	auto_get = false	item_needed = {{[sb_aqua_swirl1];1}}	skill_end
+skill_begin	/* [아쿠아 스월] */	skill_name = [s_aqua_swirl12]	get_lv = 20	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [오라 번] */	skill_name = [s_aura_burn11]	get_lv = 20	lv_up_sp = 1900	auto_get = false	item_needed = {{[sb_aura_burn1];1}}	skill_end
+skill_begin	/* [오라 번] */	skill_name = [s_aura_burn12]	get_lv = 20	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 힐] */	skill_name = [s_servitor_heal11]	get_lv = 20	lv_up_sp = 1200	auto_get = false	item_needed = {{[sb_servitor_heal1];1}}	skill_end
+skill_begin	/* [서비터 힐] */	skill_name = [s_servitor_heal12]	get_lv = 20	lv_up_sp = 1200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 힐] */	skill_name = [s_servitor_heal13]	get_lv = 20	lv_up_sp = 1200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [플레임 스트라이크] */	skill_name = [s_flame_strike1]	get_lv = 20	lv_up_sp = 3700	auto_get = false	item_needed = {{[sb_flame_strike1];1}}	skill_end
+skill_begin	/* [서먼 유니콘 박서] */	skill_name = [s_summon_unicorn_boxer1]	get_lv = 20	lv_up_sp = 3700	auto_get = false	item_needed = {{[sb_summon_unicorn_boxer1];1}}	skill_end
+skill_begin	/* [서먼 유니콘 미라쥬] */	skill_name = [s_summon_unicorn_mirage1]	get_lv = 20	lv_up_sp = 3700	auto_get = false	item_needed = {{[sb_summon_unicorn_mirage1];1}}	skill_end
+skill_begin	/* [콘센트레이션] */	skill_name = [s_concentration1]	get_lv = 20	lv_up_sp = 3700	auto_get = false	item_needed = {{[sb_concentration1];1}}	skill_end
+skill_begin	/* [아쿠아 스월] */	skill_name = [s_aqua_swirl21]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아쿠아 스월] */	skill_name = [s_aqua_swirl22]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [오라 번] */	skill_name = [s_aura_burn21]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [오라 번] */	skill_name = [s_aura_burn22]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 힐] */	skill_name = [s_servitor_heal21]	get_lv = 25	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 힐] */	skill_name = [s_servitor_heal22]	get_lv = 25	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 힐] */	skill_name = [s_servitor_heal23]	get_lv = 25	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 리챠지] */	skill_name = [s_servitor_mana_charge11]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {{[sb_servitor_mana_charge1];1}}	skill_end
+skill_begin	/* [서비터 리챠지] */	skill_name = [s_servitor_mana_charge12]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [슬리프] */	skill_name = [s_sleep11]	get_lv = 25	lv_up_sp = 2300	auto_get = false	item_needed = {{[sb_sleep1];1}}	skill_end
+skill_begin	/* [슬리프] */	skill_name = [s_sleep12]	get_lv = 25	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [슬리프] */	skill_name = [s_sleep13]	get_lv = 25	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [플레임 스트라이크] */	skill_name = [s_flame_strike2]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서먼 유니콘 박서] */	skill_name = [s_summon_unicorn_boxer2]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서먼 유니콘 미라쥬] */	skill_name = [s_summon_unicorn_mirage2]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [레지스트 아쿠아] */	skill_name = [s_auqa_resist1]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {{[sb_auqa_resist1];1}}	skill_end
+skill_begin	/* [커스 위크니스] */	skill_name = [s_curse_weakness2]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아쿠아 스월] */	skill_name = [s_aqua_swirl31]	get_lv = 30	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아쿠아 스월] */	skill_name = [s_aqua_swirl32]	get_lv = 30	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [오라 번] */	skill_name = [s_aura_burn31]	get_lv = 30	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [오라 번] */	skill_name = [s_aura_burn32]	get_lv = 30	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 힐] */	skill_name = [s_servitor_heal31]	get_lv = 30	lv_up_sp = 4700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 힐] */	skill_name = [s_servitor_heal32]	get_lv = 30	lv_up_sp = 4700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 힐] */	skill_name = [s_servitor_heal33]	get_lv = 30	lv_up_sp = 4700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 리챠지] */	skill_name = [s_servitor_mana_charge21]	get_lv = 30	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 리챠지] */	skill_name = [s_servitor_mana_charge22]	get_lv = 30	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [슬리프] */	skill_name = [s_sleep21]	get_lv = 30	lv_up_sp = 4700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [슬리프] */	skill_name = [s_sleep22]	get_lv = 30	lv_up_sp = 4700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [슬리프] */	skill_name = [s_sleep23]	get_lv = 30	lv_up_sp = 4700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [플레임 스트라이크] */	skill_name = [s_flame_strike3]	get_lv = 30	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서먼 유니콘 박서] */	skill_name = [s_summon_unicorn_boxer3]	get_lv = 30	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서먼 유니콘 미라쥬] */	skill_name = [s_summon_unicorn_mirage3]	get_lv = 30	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [콘센트레이션] */	skill_name = [s_concentration2]	get_lv = 30	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아쿠아 스월] */	skill_name = [s_aqua_swirl41]	get_lv = 35	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아쿠아 스월] */	skill_name = [s_aqua_swirl42]	get_lv = 35	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [오라 번] */	skill_name = [s_aura_burn41]	get_lv = 35	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [오라 번] */	skill_name = [s_aura_burn42]	get_lv = 35	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 힐] */	skill_name = [s_servitor_heal41]	get_lv = 35	lv_up_sp = 8200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 힐] */	skill_name = [s_servitor_heal42]	get_lv = 35	lv_up_sp = 8200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 힐] */	skill_name = [s_servitor_heal43]	get_lv = 35	lv_up_sp = 8200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 리챠지] */	skill_name = [s_servitor_mana_charge31]	get_lv = 35	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서비터 리챠지] */	skill_name = [s_servitor_mana_charge32]	get_lv = 35	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [슬리프] */	skill_name = [s_sleep31]	get_lv = 35	lv_up_sp = 8200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [슬리프] */	skill_name = [s_sleep32]	get_lv = 35	lv_up_sp = 8200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [슬리프] */	skill_name = [s_sleep33]	get_lv = 35	lv_up_sp = 8200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서먼 유니콘 박서] */	skill_name = [s_summon_unicorn_boxer4]	get_lv = 35	lv_up_sp = 25000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [서먼 유니콘 미라쥬] */	skill_name = [s_summon_unicorn_mirage4]	get_lv = 35	lv_up_sp = 25000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [브라이트 서비터] */	skill_name = [s_bright_servitor1]	get_lv = 35	lv_up_sp = 25000	auto_get = false	item_needed = {{[sb_bright_servitor1];1}}	skill_end
+skill_begin	/* [서렌더 투 어스] */	skill_name = [s_surrender_to_earth1]	get_lv = 35	lv_up_sp = 25000	auto_get = false	item_needed = {{[sb_surrender_to_earth1];1}}	skill_end
+elven_wizard_end

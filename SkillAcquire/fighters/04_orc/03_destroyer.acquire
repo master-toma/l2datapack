@@ -1,0 +1,171 @@
+destroyer_begin
+include_orc_raider
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war61]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war62]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war63]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery61]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery62]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery63]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war61]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war62]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war63]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war61]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war62]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war63]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike11]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike12]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike13]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush11]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush12]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush13]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher11]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher12]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher13]	get_lv = 40	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [바이탈 포스] */	skill_name = [s_meditation3]	get_lv = 40	lv_up_sp = 40000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 HP 리커버리] */	skill_name = [s_fast_hp_recovery3]	get_lv = 40	lv_up_sp = 40000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [배틀 로어] */	skill_name = [s_battle_roar2]	get_lv = 40	lv_up_sp = 40000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war71]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war72]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war73]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery71]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery72]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery73]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war71]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war72]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war73]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war71]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war72]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war73]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike21]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike22]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike23]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush21]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush22]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush23]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher21]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher22]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher23]	get_lv = 43	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 HP] */	skill_name = [s_boost_hp4]	get_lv = 43	lv_up_sp = 46000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 HP 리커버리] */	skill_name = [s_fast_hp_recovery4]	get_lv = 43	lv_up_sp = 46000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [거츠] */	skill_name = [s_pinch_shield2]	get_lv = 43	lv_up_sp = 46000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war81]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war82]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war83]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery81]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery82]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery83]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war81]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war82]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war83]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war81]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war82]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war83]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike31]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike32]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike33]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush31]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush32]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush33]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher31]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher32]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher33]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [바이탈 포스] */	skill_name = [s_meditation4]	get_lv = 46	lv_up_sp = 60000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [밴디지] */	skill_name = [s_bandage2]	get_lv = 46	lv_up_sp = 60000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프렌지] */	skill_name = [s_frenzy2]	get_lv = 46	lv_up_sp = 60000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war91]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war92]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war93]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery91]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery92]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery93]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war91]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war92]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war93]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war91]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war92]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war93]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike41]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike42]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike43]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush41]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush42]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush43]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher41]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher42]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher43]	get_lv = 49	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 HP] */	skill_name = [s_boost_hp5]	get_lv = 49	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [배틀 로어] */	skill_name = [s_battle_roar3]	get_lv = 49	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이온하트] */	skill_name = [s_lionheart2]	get_lv = 49	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war101]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war102]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war103]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery101]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery102]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery103]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war101]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war102]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war103]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war101]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war102]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war103]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike51]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike52]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike53]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush51]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush52]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush53]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher51]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher52]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher53]	get_lv = 52	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [바이탈 포스] */	skill_name = [s_meditation5]	get_lv = 52	lv_up_sp = 150000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 HP 리커버리] */	skill_name = [s_fast_hp_recovery5]	get_lv = 52	lv_up_sp = 150000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [거츠] */	skill_name = [s_pinch_shield3]	get_lv = 52	lv_up_sp = 150000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war111]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war112]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war113]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery111]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery112]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery113]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war111]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war112]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war113]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war111]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war112]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war113]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike61]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike62]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike63]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush61]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush62]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush63]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher61]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher62]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher63]	get_lv = 55	lv_up_sp = 80000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 HP] */	skill_name = [s_boost_hp6]	get_lv = 55	lv_up_sp = 240000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프렌지] */	skill_name = [s_frenzy3]	get_lv = 55	lv_up_sp = 240000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [레이지] */	skill_name = [s_rage2]	get_lv = 55	lv_up_sp = 240000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war121]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war122]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war123]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery121]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery122]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery123]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war121]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war122]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war123]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war121]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war122]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war123]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike71]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike72]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike73]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush71]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush72]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush73]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher71]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher72]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피닝 슬래셔] */	skill_name = [s_spinning_slasher73]	get_lv = 58	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [바이탈 포스] */	skill_name = [s_meditation6]	get_lv = 58	lv_up_sp = 330000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 HP 리커버리] */	skill_name = [s_fast_hp_recovery6]	get_lv = 58	lv_up_sp = 330000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [배틀 로어] */	skill_name = [s_battle_roar4]	get_lv = 58	lv_up_sp = 330000	auto_get = false	item_needed = {}	skill_end
+destroyer_end

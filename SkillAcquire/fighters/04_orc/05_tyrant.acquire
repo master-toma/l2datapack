@@ -1,0 +1,169 @@
+tyrant_begin
+include_orc_monk
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery61]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery62]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery63]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog61]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog62]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog63]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike51]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike52]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike53]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist11]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist12]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist13]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker11]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker12]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker13]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스 포스] */	skill_name = [s_focus_force3]	get_lv = 40	lv_up_sp = 44000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [크리플] */	skill_name = [s_slow_down2]	get_lv = 40	lv_up_sp = 44000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [토템 스피릿 퓨마] */	skill_name = [s_totem_spirit_puma]	get_lv = 40	lv_up_sp = 44000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault21]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault22]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault23]	get_lv = 40	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery71]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery72]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery73]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog71]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog72]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog73]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike61]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike62]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike63]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist21]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist22]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist23]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker21]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker22]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker23]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster11]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster12]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster13]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 퓨리] */	skill_name = [s_fist_fury1]	get_lv = 43	lv_up_sp = 58000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault31]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault32]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault33]	get_lv = 43	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery81]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery82]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery83]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog81]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog82]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog83]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike71]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike72]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike73]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist31]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist32]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist33]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker31]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker32]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker33]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster21]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster22]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster23]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 어택 스피드] */	skill_name = [s_fast_attack2]	get_lv = 46	lv_up_sp = 67000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [토템 스피릿 오우거] */	skill_name = [s_spirit_of_ogre]	get_lv = 46	lv_up_sp = 67000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault41]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault42]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault43]	get_lv = 46	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery91]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery92]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery93]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog91]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog92]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog93]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike81]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike82]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike83]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist41]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist42]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist43]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker41]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker42]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker43]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster31]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster32]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster33]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 스톰] */	skill_name = [s_force_storm11]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 스톰] */	skill_name = [s_force_storm12]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 스톰] */	skill_name = [s_force_storm13]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [크리플] */	skill_name = [s_slow_down3]	get_lv = 49	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault51]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault52]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault53]	get_lv = 49	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery101]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery102]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery103]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog101]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog102]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog103]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike91]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike92]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike93]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist51]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist52]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist53]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker51]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker52]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker53]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster41]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster42]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster43]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 스톰] */	skill_name = [s_force_storm21]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 스톰] */	skill_name = [s_force_storm22]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 스톰] */	skill_name = [s_force_storm23]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스 포스] */	skill_name = [s_focus_force4]	get_lv = 52	lv_up_sp = 170000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault61]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault62]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault63]	get_lv = 52	lv_up_sp = 56000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery111]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery112]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery113]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog111]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog112]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog113]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike101]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike102]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike103]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist61]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist62]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist63]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker61]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker62]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker63]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster51]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster52]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster53]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 스톰] */	skill_name = [s_force_storm31]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 스톰] */	skill_name = [s_force_storm32]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 스톰] */	skill_name = [s_force_storm33]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [펀치 오브 둠] */	skill_name = [s_punch_of_doom]	get_lv = 55	lv_up_sp = 270000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault71]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault72]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault73]	get_lv = 55	lv_up_sp = 89000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery121]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery122]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery123]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog121]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog122]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog123]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike111]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike112]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike113]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist71]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist72]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버닝 피스트] */	skill_name = [s_burning_fist73]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker71]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker72]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 브레이커] */	skill_name = [s_soul_breaker73]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster61]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster62]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 버스터] */	skill_name = [s_force_buster63]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 스톰] */	skill_name = [s_force_storm41]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 스톰] */	skill_name = [s_force_storm42]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 스톰] */	skill_name = [s_force_storm43]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 어택 스피드] */	skill_name = [s_fast_attack3]	get_lv = 58	lv_up_sp = 370000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault81]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault82]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault83]	get_lv = 58	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+tyrant_end

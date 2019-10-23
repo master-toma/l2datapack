@@ -1,0 +1,91 @@
+palus_knight_begin
+include_dark_fighter
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery11]	get_lv = 20	lv_up_sp = 4700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_kni11]	get_lv = 20	lv_up_sp = 1500	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_kni12]	get_lv = 20	lv_up_sp = 1500	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_kni13]	get_lv = 20	lv_up_sp = 1500	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance11]	get_lv = 20	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance12]	get_lv = 20	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy21]	get_lv = 20	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy22]	get_lv = 20	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [디펜스 오라] */	skill_name = [s_advanced_defence_power2]	get_lv = 20	lv_up_sp = 4700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [실드 마스터리] */	skill_name = [s_shield_mastery1]	get_lv = 20	lv_up_sp = 4700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [얼터미트 디펜스] */	skill_name = [s_ultimate_defence1]	get_lv = 20	lv_up_sp = 4700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포이즌] */	skill_name = [s_poison1]	get_lv = 20	lv_up_sp = 4700	auto_get = false	item_needed = {{[sb_poison1];1}}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery21]	get_lv = 24	lv_up_sp = 8800	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_kni21]	get_lv = 24	lv_up_sp = 2900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_kni22]	get_lv = 24	lv_up_sp = 2900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_kni23]	get_lv = 24	lv_up_sp = 2900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance21]	get_lv = 24	lv_up_sp = 2900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance22]	get_lv = 24	lv_up_sp = 2900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance23]	get_lv = 24	lv_up_sp = 2900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy31]	get_lv = 24	lv_up_sp = 2900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy32]	get_lv = 24	lv_up_sp = 2900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy33]	get_lv = 24	lv_up_sp = 2900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤이트] */	skill_name = [s_hate11]	get_lv = 24	lv_up_sp = 2900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤이트] */	skill_name = [s_hate12]	get_lv = 24	lv_up_sp = 2900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤이트] */	skill_name = [s_hate13]	get_lv = 24	lv_up_sp = 2900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack11]	get_lv = 24	lv_up_sp = 2900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack12]	get_lv = 24	lv_up_sp = 2900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack13]	get_lv = 24	lv_up_sp = 2900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [디플렉트 애로우] */	skill_name = [s_deflect_arrow1]	get_lv = 24	lv_up_sp = 8800	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [컨퓨전] */	skill_name = [s_confusion1]	get_lv = 24	lv_up_sp = 8800	auto_get = false	item_needed = {{[sb_confusion1];1}}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery31]	get_lv = 28	lv_up_sp = 7500	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery32]	get_lv = 28	lv_up_sp = 7500	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_kni31]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_kni32]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_kni33]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance31]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance32]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance33]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy41]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy42]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy43]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤이트] */	skill_name = [s_hate21]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤이트] */	skill_name = [s_hate22]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤이트] */	skill_name = [s_hate23]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack21]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack22]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack23]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [실드 마스터리] */	skill_name = [s_shield_mastery2]	get_lv = 28	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [어택 오라] */	skill_name = [s_advanced_attack_power2]	get_lv = 28	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery41]	get_lv = 32	lv_up_sp = 12500	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery42]	get_lv = 32	lv_up_sp = 12500	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_kni41]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_kni42]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_kni43]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance41]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance42]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance43]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy51]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy52]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy53]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤이트] */	skill_name = [s_hate31]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤이트] */	skill_name = [s_hate32]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤이트] */	skill_name = [s_hate33]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack31]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack32]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack33]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [디플렉트 애로우] */	skill_name = [s_deflect_arrow2]	get_lv = 32	lv_up_sp = 25000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 브레이크] */	skill_name = [s_power_break1]	get_lv = 32	lv_up_sp = 25000	auto_get = false	item_needed = {{[sb_power_break1];1}}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery51]	get_lv = 36	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery52]	get_lv = 36	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_kni51]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_kni52]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_kni53]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance51]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance52]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance53]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy61]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy62]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy63]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤이트] */	skill_name = [s_hate41]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤이트] */	skill_name = [s_hate42]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤이트] */	skill_name = [s_hate43]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack41]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack42]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스팅] */	skill_name = [s_bleed_attack43]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike11]	get_lv = 36	lv_up_sp = 19000	auto_get = false	item_needed = {{[sb_freezing_strike1];1}}	skill_end
+skill_begin	/* [프리징 스트라이크] */	skill_name = [s_freezing_strike12]	get_lv = 36	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스 마인드] */	skill_name = [s_focus_mind1]	get_lv = 36	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+palus_knight_end

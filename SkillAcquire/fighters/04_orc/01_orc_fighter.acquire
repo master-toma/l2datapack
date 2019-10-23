@@ -1,0 +1,36 @@
+orc_fighter_begin
+skill_begin	/* [럭키] */	skill_name = [s_lucky]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [터프니스] */	skill_name = [s_toughness]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 D] */	skill_name = [s_expertise_d]	get_lv = 20	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 C] */	skill_name = [s_expertise_c]	get_lv = 40	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 B] */	skill_name = [s_expertise_b]	get_lv = 52	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 A] */	skill_name = [s_expertise_a]	get_lv = 61	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 S] */	skill_name = [s_expertise_s]	get_lv = 67	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery1]	get_lv = 5	lv_up_sp = 190	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery11]	get_lv = 5	lv_up_sp = 190	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike11]	get_lv = 5	lv_up_sp = 60	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike12]	get_lv = 5	lv_up_sp = 60	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike13]	get_lv = 5	lv_up_sp = 60	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch11]	get_lv = 5	lv_up_sp = 60	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch12]	get_lv = 5	lv_up_sp = 60	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch13]	get_lv = 5	lv_up_sp = 60	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [릴렉스] */	skill_name = [s_rest_in_piece]	get_lv = 5	lv_up_sp = 190	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery2]	get_lv = 10	lv_up_sp = 1400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery21]	get_lv = 10	lv_up_sp = 700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery22]	get_lv = 10	lv_up_sp = 700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike21]	get_lv = 10	lv_up_sp = 450	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike22]	get_lv = 10	lv_up_sp = 450	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike23]	get_lv = 10	lv_up_sp = 450	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch21]	get_lv = 10	lv_up_sp = 450	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch22]	get_lv = 10	lv_up_sp = 450	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch23]	get_lv = 10	lv_up_sp = 450	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery3]	get_lv = 15	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery31]	get_lv = 15	lv_up_sp = 2500	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery32]	get_lv = 15	lv_up_sp = 2500	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike31]	get_lv = 15	lv_up_sp = 1700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike32]	get_lv = 15	lv_up_sp = 1700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike33]	get_lv = 15	lv_up_sp = 1700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch31]	get_lv = 15	lv_up_sp = 1700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch32]	get_lv = 15	lv_up_sp = 1700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch33]	get_lv = 15	lv_up_sp = 1700	auto_get = false	item_needed = {}	skill_end
+orc_fighter_end

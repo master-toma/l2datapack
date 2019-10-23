@@ -1,0 +1,95 @@
+orc_shaman_begin
+include_orc_mage
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_sha31]	get_lv = 20	lv_up_sp = 3300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_sha31]	get_lv = 20	lv_up_sp = 1600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_sha32]	get_lv = 20	lv_up_sp = 1600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_sha31]	get_lv = 20	lv_up_sp = 1600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_sha32]	get_lv = 20	lv_up_sp = 1600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_sha21]	get_lv = 20	lv_up_sp = 1600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_sha22]	get_lv = 20	lv_up_sp = 1600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence31]	get_lv = 20	lv_up_sp = 1600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence32]	get_lv = 20	lv_up_sp = 1600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack11]	get_lv = 20	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack12]	get_lv = 20	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack13]	get_lv = 20	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 마나] */	skill_name = [s_boost_mana1]	get_lv = 20	lv_up_sp = 3300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [퀵 리커버리] */	skill_name = [s_fast_spell_recovery1]	get_lv = 20	lv_up_sp = 3300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_sha41]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_sha42]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_sha41]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_sha42]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_sha41]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_sha42]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_sha31]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_sha32]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence41]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence42]	get_lv = 25	lv_up_sp = 3400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack21]	get_lv = 25	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack22]	get_lv = 25	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack23]	get_lv = 25	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 스펠 캐스팅] */	skill_name = [s_fast_spell_casting1]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 마나 리커버리] */	skill_name = [s_fast_mana_recovery1]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_sha51]	get_lv = 30	lv_up_sp = 6600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_sha52]	get_lv = 30	lv_up_sp = 6600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_sha51]	get_lv = 30	lv_up_sp = 6600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_sha52]	get_lv = 30	lv_up_sp = 6600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_sha51]	get_lv = 30	lv_up_sp = 6600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_sha52]	get_lv = 30	lv_up_sp = 6600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_sha41]	get_lv = 30	lv_up_sp = 6600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_sha42]	get_lv = 30	lv_up_sp = 6600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence51]	get_lv = 30	lv_up_sp = 6600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence52]	get_lv = 30	lv_up_sp = 6600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack31]	get_lv = 30	lv_up_sp = 4400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack32]	get_lv = 30	lv_up_sp = 4400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack33]	get_lv = 30	lv_up_sp = 4400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 마나] */	skill_name = [s_boost_mana2]	get_lv = 30	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [퀵 리커버리] */	skill_name = [s_fast_spell_recovery2]	get_lv = 30	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_sha61]	get_lv = 35	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_sha62]	get_lv = 35	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_sha61]	get_lv = 35	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_sha62]	get_lv = 35	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_sha61]	get_lv = 35	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_sha62]	get_lv = 35	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_sha51]	get_lv = 35	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_sha52]	get_lv = 35	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence61]	get_lv = 35	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence62]	get_lv = 35	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack41]	get_lv = 35	lv_up_sp = 7200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack42]	get_lv = 35	lv_up_sp = 7200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack43]	get_lv = 35	lv_up_sp = 7200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 HP 리커버리] */	skill_name = [s_fast_hp_recovery1]	get_lv = 35	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 마나 리커버리] */	skill_name = [s_fast_mana_recovery2]	get_lv = 35	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프로스트 플레임] */	skill_name = [s_blaze_quake1]	get_lv = 20	lv_up_sp = 3300	auto_get = false	item_needed = {{[sb_blaze_quake1];1}}	skill_end
+skill_begin	/* [챈트 오브 실딩] */	skill_name = [s_devotioin_of_soul1]	get_lv = 20	lv_up_sp = 3300	auto_get = false	item_needed = {{[sb_devotioin_of_soul1];1}}	skill_end
+skill_begin	/* [챈트 오브 파이어] */	skill_name = [s_burning_spirit1]	get_lv = 20	lv_up_sp = 3300	auto_get = false	item_needed = {{[sb_burning_spirit1];1}}	skill_end
+skill_begin	/* [실 오브 포이즌] */	skill_name = [s_pain_edge1]	get_lv = 20	lv_up_sp = 3300	auto_get = false	item_needed = {{[sb_pain_edge1];1}}	skill_end
+skill_begin	/* [베넘] */	skill_name = [s_pain_thorn3]	get_lv = 20	lv_up_sp = 3300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이프 드레인] */	skill_name = [s_blood_lust3]	get_lv = 20	lv_up_sp = 3300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매드니스] */	skill_name = [s_entice_madness1]	get_lv = 20	lv_up_sp = 3300	auto_get = false	item_needed = {{[sb_entice_madness1];1}}	skill_end
+skill_begin	/* [챈트 오브 라이프] */	skill_name = [s_inspire_life_force1]	get_lv = 20	lv_up_sp = 3300	auto_get = false	item_needed = {{[sb_inspire_life_force1];1}}	skill_end
+skill_begin	/* [소울 크라이] */	skill_name = [s_soul_cry3]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블레이즈 퀘이크] */	skill_name = [s_eternal_flame1]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {{[sb_eternal_flame1];1}}	skill_end
+skill_begin	/* [소울 실드] */	skill_name = [s_devotioin_of_shine2]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [챈트 오브 배틀] */	skill_name = [s_mass_frenzy2]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [실 오브 바인딩] */	skill_name = [s_bind_will1]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {{[sb_bind_will1];1}}	skill_end
+skill_begin	/* [오라 싱크] */	skill_name = [s_aura_sway1]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {{[sb_aura_sway1];1}}	skill_end
+skill_begin	/* [드리밍 스피릿] */	skill_name = [s_night_murmur2]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [챈트 오브 라이프] */	skill_name = [s_inspire_life_force2]	get_lv = 25	lv_up_sp = 6900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [프로스트 플레임] */	skill_name = [s_blaze_quake2]	get_lv = 30	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [챈트 오브 실딩] */	skill_name = [s_devotioin_of_soul2]	get_lv = 30	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 오브 파아그리오] */	skill_name = [s_power_of_paagrio1]	get_lv = 30	lv_up_sp = 13000	auto_get = false	item_needed = {{[sb_power_of_paagrio1];1}}	skill_end
+skill_begin	/* [챈트 오브 플레임] */	skill_name = [s_pure_inspiration1]	get_lv = 30	lv_up_sp = 13000	auto_get = false	item_needed = {{[sb_pure_inspiration1];1}}	skill_end
+skill_begin	/* [실 오브 카오스] */	skill_name = [s_engrave_seal_of_timid1]	get_lv = 30	lv_up_sp = 13000	auto_get = false	item_needed = {{[sb_engrave_seal_of_timid1];1}}	skill_end
+skill_begin	/* [실 오브 포이즌] */	skill_name = [s_pain_edge2]	get_lv = 30	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피어] */	skill_name = [s_external_fear2]	get_lv = 30	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [챈트 오브 라이프] */	skill_name = [s_inspire_life_force3]	get_lv = 30	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 크라이] */	skill_name = [s_soul_cry4]	get_lv = 35	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블레이즈 퀘이크] */	skill_name = [s_eternal_flame2]	get_lv = 35	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 실드] */	skill_name = [s_devotioin_of_shine3]	get_lv = 35	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블레싱 오브 파아그리오] */	skill_name = [s_blessing_of_paagrio1]	get_lv = 35	lv_up_sp = 22000	auto_get = false	item_needed = {{[sb_blessing_of_paagrio1];1}}	skill_end
+skill_begin	/* [실 오브 슬로우] */	skill_name = [s_engrave_seal_of_lazy1]	get_lv = 35	lv_up_sp = 22000	auto_get = false	item_needed = {{[sb_engrave_seal_of_lazy1];1}}	skill_end
+skill_begin	/* [실 오브 바인딩] */	skill_name = [s_bind_will2]	get_lv = 35	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [오라 싱크] */	skill_name = [s_aura_sway2]	get_lv = 35	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매드니스] */	skill_name = [s_entice_madness2]	get_lv = 35	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [챈트 오브 라이프] */	skill_name = [s_inspire_life_force4]	get_lv = 35	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+orc_shaman_end

@@ -1,0 +1,150 @@
+prophet_begin
+include_cleric
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag71]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag72]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag73]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_cle51]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_cle52]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_cle53]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_cle51]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_cle52]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_cle53]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_pro11]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_pro12]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_pro13]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence71]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence72]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence73]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 마나] */	skill_name = [s_boost_mana3]	get_lv = 40	lv_up_sp = 31000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 스펠 캐스팅] */	skill_name = [s_fast_spell_casting2]	get_lv = 40	lv_up_sp = 31000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 HP] */	skill_name = [s_boost_hp1]	get_lv = 40	lv_up_sp = 31000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag81]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag82]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag83]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_cle61]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_cle62]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_cle63]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_cle61]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_cle62]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_cle63]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_pro21]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_pro22]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_pro23]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence81]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence82]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence83]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 HP 리커버리] */	skill_name = [s_fast_hp_recovery2]	get_lv = 44	lv_up_sp = 41000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 마나 리커버리] */	skill_name = [s_fast_mana_recovery3]	get_lv = 44	lv_up_sp = 41000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 HP] */	skill_name = [s_boost_hp2]	get_lv = 44	lv_up_sp = 41000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag91]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag92]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag93]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_cle71]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_cle72]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_cle73]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_cle71]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_cle72]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_cle73]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_pro31]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_pro32]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_pro33]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence91]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence92]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence93]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 마나] */	skill_name = [s_boost_mana4]	get_lv = 48	lv_up_sp = 67000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [퀵 리커버리] */	skill_name = [s_fast_spell_recovery3]	get_lv = 48	lv_up_sp = 67000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 HP] */	skill_name = [s_boost_hp3]	get_lv = 48	lv_up_sp = 67000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag101]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag102]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag103]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_cle81]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_cle82]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_cle83]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_cle81]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_cle82]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_cle83]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_pro41]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_pro42]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_pro43]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence101]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence102]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence103]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 HP 리커버리] */	skill_name = [s_fast_hp_recovery3]	get_lv = 52	lv_up_sp = 130000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 마나 리커버리] */	skill_name = [s_fast_mana_recovery4]	get_lv = 52	lv_up_sp = 130000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 HP] */	skill_name = [s_boost_hp4]	get_lv = 52	lv_up_sp = 130000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag111]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag112]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag113]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_cle91]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_cle92]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_cle93]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_cle91]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_cle92]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_cle93]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_pro51]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_pro52]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_pro53]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence111]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence112]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence113]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 마나] */	skill_name = [s_boost_mana5]	get_lv = 56	lv_up_sp = 200000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 스펠 캐스팅] */	skill_name = [s_fast_spell_casting3]	get_lv = 56	lv_up_sp = 200000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 HP] */	skill_name = [s_boost_hp5]	get_lv = 56	lv_up_sp = 200000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드라이어드 루트] */	skill_name = [s_dryad_root41]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드라이어드 루트] */	skill_name = [s_dryad_root42]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드라이어드 루트] */	skill_name = [s_dryad_root43]	get_lv = 40	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [마이트] */	skill_name = [s_might3]	get_lv = 40	lv_up_sp = 31000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [레지스트 파이어] */	skill_name = [s_fire_resist2]	get_lv = 40	lv_up_sp = 31000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [멘탈 실드] */	skill_name = [s_mental_shield2]	get_lv = 40	lv_up_sp = 31000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [가이던스] */	skill_name = [s_guidance1]	get_lv = 40	lv_up_sp = 31000	auto_get = false	item_needed = {{[sb_guidance1];1}}	skill_end
+skill_begin	/* [데스 위스퍼] */	skill_name = [s_death_whisper1]	get_lv = 40	lv_up_sp = 31000	auto_get = false	item_needed = {{[sb_death_whisper1];1}}	skill_end
+skill_begin	/* [리콜] */	skill_name = [s_return1]	get_lv = 40	lv_up_sp = 31000	auto_get = false	item_needed = {{[sb_return1];1}}	skill_end
+skill_begin	/* [인비거] */	skill_name = [s_invigor1]	get_lv = 40	lv_up_sp = 31000	auto_get = false	item_needed = {{[sb_invigor1];1}}	skill_end
+skill_begin	/* [블레스 실드] */	skill_name = [s_bless_shield1]	get_lv = 40	lv_up_sp = 31000	auto_get = false	item_needed = {{[sb_bless_shield1];1}}	skill_end
+skill_begin	/* [드라이어드 루트] */	skill_name = [s_dryad_root51]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드라이어드 루트] */	skill_name = [s_dryad_root52]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드라이어드 루트] */	skill_name = [s_dryad_root53]	get_lv = 44	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [레지스트 파이어] */	skill_name = [s_fire_resist3]	get_lv = 44	lv_up_sp = 41000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [실드] */	skill_name = [s_shield3]	get_lv = 44	lv_up_sp = 41000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스] */	skill_name = [s_focus2]	get_lv = 44	lv_up_sp = 41000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [그레이터 콘센트레이션] */	skill_name = [s_greater_concentration1]	get_lv = 44	lv_up_sp = 41000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 배리어] */	skill_name = [s_magic_barrier1]	get_lv = 44	lv_up_sp = 41000	auto_get = false	item_needed = {{[sb_magic_barrier1];1}}	skill_end
+skill_begin	/* [블레스 더 바디] */	skill_name = [s_bless_the_body1]	get_lv = 44	lv_up_sp = 41000	auto_get = false	item_needed = {{[sb_bless_the_body1];1}}	skill_end
+skill_begin	/* [블레스 더 소울] */	skill_name = [s_bless_the_soul1]	get_lv = 44	lv_up_sp = 41000	auto_get = false	item_needed = {{[sb_bless_the_soul1];1}}	skill_end
+skill_begin	/* [헤이스트] */	skill_name = [s_haste1]	get_lv = 44	lv_up_sp = 41000	auto_get = false	item_needed = {{[sb_haste1];1}}	skill_end
+skill_begin	/* [드라이어드 루트] */	skill_name = [s_dryad_root61]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드라이어드 루트] */	skill_name = [s_dryad_root62]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드라이어드 루트] */	skill_name = [s_dryad_root63]	get_lv = 48	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [가이던스] */	skill_name = [s_guidance2]	get_lv = 48	lv_up_sp = 67000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [데스 위스퍼] */	skill_name = [s_death_whisper2]	get_lv = 48	lv_up_sp = 67000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [리제네레이션] */	skill_name = [s_regeneration2]	get_lv = 48	lv_up_sp = 67000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블레스 더 바디] */	skill_name = [s_bless_the_body2]	get_lv = 48	lv_up_sp = 67000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블레스 더 소울] */	skill_name = [s_bless_the_soul2]	get_lv = 48	lv_up_sp = 67000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [인비거] */	skill_name = [s_invigor2]	get_lv = 48	lv_up_sp = 67000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [그레이터 아큐멘] */	skill_name = [s_greater_arcane_acumen1]	get_lv = 48	lv_up_sp = 67000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블레스 실드] */	skill_name = [s_bless_shield2]	get_lv = 48	lv_up_sp = 67000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [멘탈 실드] */	skill_name = [s_mental_shield3]	get_lv = 48	lv_up_sp = 67000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드라이어드 루트] */	skill_name = [s_dryad_root71]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드라이어드 루트] */	skill_name = [s_dryad_root72]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드라이어드 루트] */	skill_name = [s_dryad_root73]	get_lv = 52	lv_up_sp = 43000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블레스 더 바디] */	skill_name = [s_bless_the_body3]	get_lv = 52	lv_up_sp = 130000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블레스 더 소울] */	skill_name = [s_bless_the_soul3]	get_lv = 52	lv_up_sp = 130000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스] */	skill_name = [s_focus3]	get_lv = 52	lv_up_sp = 130000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [그레이터 콘센트레이션] */	skill_name = [s_greater_concentration2]	get_lv = 52	lv_up_sp = 130000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 배리어] */	skill_name = [s_magic_barrier2]	get_lv = 52	lv_up_sp = 130000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [버저커 스피릿] */	skill_name = [s_berserker_spirit2]	get_lv = 52	lv_up_sp = 130000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [키스 오브 에바] */	skill_name = [s_water_breathing2]	get_lv = 52	lv_up_sp = 130000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤이스트] */	skill_name = [s_haste2]	get_lv = 52	lv_up_sp = 130000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드라이어드 루트] */	skill_name = [s_dryad_root81]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드라이어드 루트] */	skill_name = [s_dryad_root82]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드라이어드 루트] */	skill_name = [s_dryad_root83]	get_lv = 56	lv_up_sp = 69000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블레스 더 바디] */	skill_name = [s_bless_the_body4]	get_lv = 56	lv_up_sp = 200000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블레스 더 소울] */	skill_name = [s_bless_the_soul4]	get_lv = 56	lv_up_sp = 200000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [가이던스] */	skill_name = [s_guidance3]	get_lv = 56	lv_up_sp = 200000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [데스 위스퍼] */	skill_name = [s_death_whisper3]	get_lv = 56	lv_up_sp = 200000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [리제네레이션] */	skill_name = [s_regeneration3]	get_lv = 56	lv_up_sp = 200000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [인비거] */	skill_name = [s_invigor3]	get_lv = 56	lv_up_sp = 200000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [리콜] */	skill_name = [s_return2]	get_lv = 56	lv_up_sp = 200000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블레스 실드] */	skill_name = [s_bless_shield3]	get_lv = 56	lv_up_sp = 200000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [멘탈 실드] */	skill_name = [s_mental_shield4]	get_lv = 56	lv_up_sp = 200000	auto_get = false	item_needed = {}	skill_end
+prophet_end

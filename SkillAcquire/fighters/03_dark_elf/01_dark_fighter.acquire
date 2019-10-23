@@ -1,0 +1,47 @@
+dark_fighter_begin
+skill_begin	/* [럭키] */	skill_name = [s_lucky]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 D] */	skill_name = [s_expertise_d]	get_lv = 20	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 C] */	skill_name = [s_expertise_c]	get_lv = 40	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 B] */	skill_name = [s_expertise_b]	get_lv = 52	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 A] */	skill_name = [s_expertise_a]	get_lv = 61	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 S] */	skill_name = [s_expertise_s]	get_lv = 67	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery1]	get_lv = 5	lv_up_sp = 160	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery11]	get_lv = 5	lv_up_sp = 160	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike11]	get_lv = 5	lv_up_sp = 60	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike12]	get_lv = 5	lv_up_sp = 60	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike13]	get_lv = 5	lv_up_sp = 60	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot11]	get_lv = 5	lv_up_sp = 60	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot12]	get_lv = 5	lv_up_sp = 60	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot13]	get_lv = 5	lv_up_sp = 60	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow11]	get_lv = 5	lv_up_sp = 60	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow12]	get_lv = 5	lv_up_sp = 60	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow13]	get_lv = 5	lv_up_sp = 60	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [디펜스 오라] */	skill_name = [s_advanced_defence_power1]	get_lv = 5	lv_up_sp = 160	auto_get = false	item_needed = {{[sb_adv_defence_power1];1}}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery2]	get_lv = 10	lv_up_sp = 920	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery21]	get_lv = 10	lv_up_sp = 460	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery22]	get_lv = 10	lv_up_sp = 460	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike21]	get_lv = 10	lv_up_sp = 310	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike22]	get_lv = 10	lv_up_sp = 310	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike23]	get_lv = 10	lv_up_sp = 310	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot21]	get_lv = 10	lv_up_sp = 310	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot22]	get_lv = 10	lv_up_sp = 310	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot23]	get_lv = 10	lv_up_sp = 310	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow21]	get_lv = 10	lv_up_sp = 310	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow22]	get_lv = 10	lv_up_sp = 310	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow23]	get_lv = 10	lv_up_sp = 310	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [어택 오라] */	skill_name = [s_advanced_attack_power1]	get_lv = 10	lv_up_sp = 920	auto_get = false	item_needed = {{[sb_advanced_attack_power1];1}}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery3]	get_lv = 15	lv_up_sp = 3300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery31]	get_lv = 15	lv_up_sp = 1700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery32]	get_lv = 15	lv_up_sp = 1700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike31]	get_lv = 15	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike32]	get_lv = 15	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 스트라이크] */	skill_name = [s_power_strike33]	get_lv = 15	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot31]	get_lv = 15	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot32]	get_lv = 15	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot33]	get_lv = 15	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow31]	get_lv = 15	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow32]	get_lv = 15	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow33]	get_lv = 15	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy11]	get_lv = 15	lv_up_sp = 1700	auto_get = false	item_needed = {{[sb_drain_energy1];1}}	skill_end
+skill_begin	/* [드레인 에너지] */	skill_name = [s_drain_energy12]	get_lv = 15	lv_up_sp = 1700	auto_get = false	item_needed = {}	skill_end
+dark_fighter_end

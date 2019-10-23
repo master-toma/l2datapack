@@ -1,0 +1,107 @@
+swordsinger_begin
+include_elven_knight
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery61]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery62]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery63]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance61]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance62]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance63]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal71]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal72]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal73]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm61]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm62]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm63]	get_lv = 40	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포이즌 리커버리] */	skill_name = [s_poison_recovery2]	get_lv = 40	lv_up_sp = 57000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피릿 배리어] */	skill_name = [s_spirit_barrier1]	get_lv = 40	lv_up_sp = 57000	auto_get = false	item_needed = {{[sb_spirit_barrier1];1}}	skill_end
+skill_begin	/* [송 오브 와딩] */	skill_name = [s_song_of_warding]	get_lv = 40	lv_up_sp = 57000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery71]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery72]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery73]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance71]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance72]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance73]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal81]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal82]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal83]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm71]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm72]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm73]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스 마인드] */	skill_name = [s_focus_mind2]	get_lv = 43	lv_up_sp = 65000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [홀리 블레이드] */	skill_name = [s_holy_blade1]	get_lv = 43	lv_up_sp = 65000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [송 오브 인보케이션] */	skill_name = [s_song_of_invocation]	get_lv = 43	lv_up_sp = 65000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery81]	get_lv = 46	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery82]	get_lv = 46	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery83]	get_lv = 46	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance81]	get_lv = 46	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance82]	get_lv = 46	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance83]	get_lv = 46	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal91]	get_lv = 46	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal92]	get_lv = 46	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal93]	get_lv = 46	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm81]	get_lv = 46	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm82]	get_lv = 46	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm83]	get_lv = 46	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [큐어 브리딩] */	skill_name = [s_cure_bleeding2]	get_lv = 46	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [송 오브 윈드] */	skill_name = [s_song_of_wind]	get_lv = 46	lv_up_sp = 100000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery91]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery92]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery93]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance91]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance92]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance93]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal101]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal102]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal103]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm91]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm92]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm93]	get_lv = 49	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스 마인드] */	skill_name = [s_focus_mind3]	get_lv = 49	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피릿 배리어] */	skill_name = [s_spirit_barrier2]	get_lv = 49	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [인탱글] */	skill_name = [s_zero_g2]	get_lv = 49	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [송 오브 헌터] */	skill_name = [s_song_of_hunter]	get_lv = 49	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery101]	get_lv = 52	lv_up_sp = 83000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery102]	get_lv = 52	lv_up_sp = 83000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery103]	get_lv = 52	lv_up_sp = 83000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance101]	get_lv = 52	lv_up_sp = 83000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance102]	get_lv = 52	lv_up_sp = 83000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance103]	get_lv = 52	lv_up_sp = 83000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal111]	get_lv = 52	lv_up_sp = 83000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal112]	get_lv = 52	lv_up_sp = 83000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal113]	get_lv = 52	lv_up_sp = 83000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm101]	get_lv = 52	lv_up_sp = 83000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm102]	get_lv = 52	lv_up_sp = 83000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm103]	get_lv = 52	lv_up_sp = 83000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스프린트] */	skill_name = [s_speed_walk2]	get_lv = 52	lv_up_sp = 250000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [송 오브 라이프] */	skill_name = [s_song_of_life]	get_lv = 52	lv_up_sp = 250000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery111]	get_lv = 55	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery112]	get_lv = 55	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery113]	get_lv = 55	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance111]	get_lv = 55	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance112]	get_lv = 55	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance113]	get_lv = 55	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal121]	get_lv = 55	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal122]	get_lv = 55	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal123]	get_lv = 55	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm111]	get_lv = 55	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm112]	get_lv = 55	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm113]	get_lv = 55	lv_up_sp = 110000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스 마인드] */	skill_name = [s_focus_mind4]	get_lv = 55	lv_up_sp = 350000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드 심포니] */	skill_name = [s_sword_symphony]	get_lv = 55	lv_up_sp = 350000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [송 오브 어스] */	skill_name = [s_song_of_earth]	get_lv = 55	lv_up_sp = 350000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery121]	get_lv = 58	lv_up_sp = 160000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery122]	get_lv = 58	lv_up_sp = 160000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery123]	get_lv = 58	lv_up_sp = 160000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance121]	get_lv = 58	lv_up_sp = 160000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance122]	get_lv = 58	lv_up_sp = 160000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [매직 레지스턴스] */	skill_name = [s_magic_resistance123]	get_lv = 58	lv_up_sp = 160000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal131]	get_lv = 58	lv_up_sp = 160000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal132]	get_lv = 58	lv_up_sp = 160000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [엘레멘탈 힐] */	skill_name = [s_elemental_heal133]	get_lv = 58	lv_up_sp = 160000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm121]	get_lv = 58	lv_up_sp = 160000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm122]	get_lv = 58	lv_up_sp = 160000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [참] */	skill_name = [s_charm123]	get_lv = 58	lv_up_sp = 160000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [인탱글] */	skill_name = [s_zero_g3]	get_lv = 58	lv_up_sp = 470000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스피릿 배리어] */	skill_name = [s_spirit_barrier3]	get_lv = 58	lv_up_sp = 470000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [송 오브 워터] */	skill_name = [s_song_of_water]	get_lv = 58	lv_up_sp = 470000	auto_get = false	item_needed = {}	skill_end
+swordsinger_end

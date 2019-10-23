@@ -1,0 +1,72 @@
+orc_monk_begin
+include_orc_fighter
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery11]	get_lv = 20	lv_up_sp = 6200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog11]	get_lv = 20	lv_up_sp = 3100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog12]	get_lv = 20	lv_up_sp = 3100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch41]	get_lv = 20	lv_up_sp = 2000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch42]	get_lv = 20	lv_up_sp = 2000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch43]	get_lv = 20	lv_up_sp = 2000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스터닝 피스트] */	skill_name = [s_stunning_fist11]	get_lv = 20	lv_up_sp = 2000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스터닝 피스트] */	skill_name = [s_stunning_fist12]	get_lv = 20	lv_up_sp = 2000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스터닝 피스트] */	skill_name = [s_stunning_fist13]	get_lv = 20	lv_up_sp = 2000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [크리플] */	skill_name = [s_slow_down1]	get_lv = 20	lv_up_sp = 6200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [토템 스피릿 울프] */	skill_name = [s_spirit_of_wolf]	get_lv = 20	lv_up_sp = 6200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery21]	get_lv = 24	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog21]	get_lv = 24	lv_up_sp = 6000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog22]	get_lv = 24	lv_up_sp = 6000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch51]	get_lv = 24	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch52]	get_lv = 24	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch53]	get_lv = 24	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스터닝 피스트] */	skill_name = [s_stunning_fist21]	get_lv = 24	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스터닝 피스트] */	skill_name = [s_stunning_fist22]	get_lv = 24	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스터닝 피스트] */	skill_name = [s_stunning_fist23]	get_lv = 24	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike11]	get_lv = 24	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike12]	get_lv = 24	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike13]	get_lv = 24	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스 포스] */	skill_name = [s_focus_force1]	get_lv = 24	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery31]	get_lv = 28	lv_up_sp = 10000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery32]	get_lv = 28	lv_up_sp = 10000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog31]	get_lv = 28	lv_up_sp = 10000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog32]	get_lv = 28	lv_up_sp = 10000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch61]	get_lv = 28	lv_up_sp = 6700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch62]	get_lv = 28	lv_up_sp = 6700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch63]	get_lv = 28	lv_up_sp = 6700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스터닝 피스트] */	skill_name = [s_stunning_fist31]	get_lv = 28	lv_up_sp = 6700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스터닝 피스트] */	skill_name = [s_stunning_fist32]	get_lv = 28	lv_up_sp = 6700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스터닝 피스트] */	skill_name = [s_stunning_fist33]	get_lv = 28	lv_up_sp = 6700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike21]	get_lv = 28	lv_up_sp = 6700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike22]	get_lv = 28	lv_up_sp = 6700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike23]	get_lv = 28	lv_up_sp = 6700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [토템 스피릿 베어] */	skill_name = [s_spirit_of_bear]	get_lv = 28	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery41]	get_lv = 32	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery42]	get_lv = 32	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog41]	get_lv = 32	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog42]	get_lv = 32	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch71]	get_lv = 32	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch72]	get_lv = 32	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch73]	get_lv = 32	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스터닝 피스트] */	skill_name = [s_stunning_fist41]	get_lv = 32	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스터닝 피스트] */	skill_name = [s_stunning_fist42]	get_lv = 32	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스터닝 피스트] */	skill_name = [s_stunning_fist43]	get_lv = 32	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike31]	get_lv = 32	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike32]	get_lv = 32	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike33]	get_lv = 32	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스 포스] */	skill_name = [s_focus_force2]	get_lv = 32	lv_up_sp = 33000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery51]	get_lv = 36	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피스트 마스터리] */	skill_name = [s_fist_mastery52]	get_lv = 36	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog51]	get_lv = 36	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog52]	get_lv = 36	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch81]	get_lv = 36	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch82]	get_lv = 36	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이언 펀치] */	skill_name = [s_iron_punch83]	get_lv = 36	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스터닝 피스트] */	skill_name = [s_stunning_fist51]	get_lv = 36	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스터닝 피스트] */	skill_name = [s_stunning_fist52]	get_lv = 36	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스터닝 피스트] */	skill_name = [s_stunning_fist53]	get_lv = 36	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike41]	get_lv = 36	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike42]	get_lv = 36	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포스 블래스터] */	skill_name = [s_force_strike43]	get_lv = 36	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 어택 스피드] */	skill_name = [s_fast_attack1]	get_lv = 36	lv_up_sp = 44000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault11]	get_lv = 36	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault12]	get_lv = 36	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [허리케인 어설트] */	skill_name = [s_hurricane_assault13]	get_lv = 36	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+orc_monk_end

@@ -1,0 +1,236 @@
+gladiator_begin
+include_warrior
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war61]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war62]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war63]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery11]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery12]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery13]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war61]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war62]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war63]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war61]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war62]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war63]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush11]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush12]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush13]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash11]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash12]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash13]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike11]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike12]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike13]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster11]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster12]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster13]	get_lv = 40	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [디텍트 애니멀 위크니스] */	skill_name = [s_detect_animail_weakness]	get_lv = 40	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스 소닉] */	skill_name = [s_focus_sonic1]	get_lv = 40	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 HP 리커버리] */	skill_name = [s_fast_hp_recovery3]	get_lv = 40	lv_up_sp = 37000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war71]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war72]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war73]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery21]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery22]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery23]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war71]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war72]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war73]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war71]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war72]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war73]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush21]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush22]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush23]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash21]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash22]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash23]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike21]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike22]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike23]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster21]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster22]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster23]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster11]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster12]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster13]	get_lv = 43	lv_up_sp = 14000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스 소닉] */	skill_name = [s_focus_sonic2]	get_lv = 43	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [워 크라이] */	skill_name = [s_war_cry2]	get_lv = 43	lv_up_sp = 42000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war81]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war82]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war83]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery31]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery32]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery33]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war81]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war82]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war83]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war81]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war82]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war83]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush31]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush32]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush33]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash31]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash32]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash33]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike31]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike32]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike33]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster31]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster32]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster33]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster21]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster22]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster23]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [더블 소닉 슬래시] */	skill_name = [s_double_sonic_slash11]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [더블 소닉 슬래시] */	skill_name = [s_double_sonic_slash12]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [더블 소닉 슬래시] */	skill_name = [s_double_sonic_slash13]	get_lv = 46	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [디텍트 플랜트 위크니스] */	skill_name = [s_detect_plant_weakness]	get_lv = 46	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 HP 리커버리] */	skill_name = [s_fast_hp_recovery4]	get_lv = 46	lv_up_sp = 50000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war91]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war92]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war93]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery41]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery42]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery43]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war91]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war92]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war93]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war91]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war92]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war93]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush41]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush42]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush43]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash41]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash42]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash43]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike41]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike42]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike43]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster41]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster42]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster43]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster31]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster32]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster33]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [더블 소닉 슬래시] */	skill_name = [s_double_sonic_slash21]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [더블 소닉 슬래시] */	skill_name = [s_double_sonic_slash22]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [더블 소닉 슬래시] */	skill_name = [s_double_sonic_slash23]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 스톰] */	skill_name = [s_sonic_storm11]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 스톰] */	skill_name = [s_sonic_storm12]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 스톰] */	skill_name = [s_sonic_storm13]	get_lv = 49	lv_up_sp = 26000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스 소닉] */	skill_name = [s_focus_sonic3]	get_lv = 49	lv_up_sp = 76000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이온하트] */	skill_name = [s_lionheart2]	get_lv = 49	lv_up_sp = 76000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war101]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war102]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war103]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery51]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery52]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery53]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war101]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war102]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war103]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war101]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war102]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war103]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush51]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush52]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush53]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash51]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash52]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash53]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike51]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike52]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike53]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster51]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster52]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster53]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster41]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster42]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster43]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [더블 소닉 슬래시] */	skill_name = [s_double_sonic_slash31]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [더블 소닉 슬래시] */	skill_name = [s_double_sonic_slash32]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [더블 소닉 슬래시] */	skill_name = [s_double_sonic_slash33]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 스톰] */	skill_name = [s_sonic_storm21]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 스톰] */	skill_name = [s_sonic_storm22]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 스톰] */	skill_name = [s_sonic_storm23]	get_lv = 52	lv_up_sp = 38000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [디텍트 비스트 위크니스] */	skill_name = [s_detect_beast_weakness]	get_lv = 52	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 HP 리커버리] */	skill_name = [s_fast_hp_recovery5]	get_lv = 52	lv_up_sp = 120000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war111]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war112]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war113]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery61]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery62]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery63]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war111]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war112]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war113]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war111]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war112]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war113]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush61]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush62]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush63]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash61]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash62]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash63]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike61]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike62]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike63]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster61]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster62]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster63]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster51]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster52]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster53]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [더블 소닉 슬래시] */	skill_name = [s_double_sonic_slash41]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [더블 소닉 슬래시] */	skill_name = [s_double_sonic_slash42]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [더블 소닉 슬래시] */	skill_name = [s_double_sonic_slash43]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 스톰] */	skill_name = [s_sonic_storm31]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 스톰] */	skill_name = [s_sonic_storm32]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 스톰] */	skill_name = [s_sonic_storm33]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 소닉 슬래시] */	skill_name = [s_triple_sonic_slash11]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 소닉 슬래시] */	skill_name = [s_triple_sonic_slash12]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 소닉 슬래시] */	skill_name = [s_triple_sonic_slash13]	get_lv = 55	lv_up_sp = 62000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [포커스 소닉] */	skill_name = [s_focus_sonic4]	get_lv = 55	lv_up_sp = 180000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war121]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war122]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소드/블런트 마스터리] */	skill_name = [s_sword_blunt_mastery_war123]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery71]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery72]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [듀얼 웨폰 마스터리] */	skill_name = [s_dual_weapon_mastery73]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war121]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war122]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war123]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war121]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war122]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war123]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush71]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush72]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [햄머 크러시] */	skill_name = [s_hammer_crush73]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash71]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash72]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 슬래시] */	skill_name = [s_triple_slash73]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike71]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike72]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [페이탈 스트라이크] */	skill_name = [s_fatal_strike73]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster71]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster72]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 블래스터] */	skill_name = [s_sonic_blaster73]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster61]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster62]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 버스터] */	skill_name = [s_sonic_buster63]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [더블 소닉 슬래시] */	skill_name = [s_double_sonic_slash51]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [더블 소닉 슬래시] */	skill_name = [s_double_sonic_slash52]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [더블 소닉 슬래시] */	skill_name = [s_double_sonic_slash53]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 스톰] */	skill_name = [s_sonic_storm41]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 스톰] */	skill_name = [s_sonic_storm42]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소닉 스톰] */	skill_name = [s_sonic_storm43]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 소닉 슬래시] */	skill_name = [s_triple_sonic_slash21]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 소닉 슬래시] */	skill_name = [s_triple_sonic_slash22]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [트리플 소닉 슬래시] */	skill_name = [s_triple_sonic_slash23]	get_lv = 58	lv_up_sp = 79000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [디텍트 드래곤 위크니스] */	skill_name = [s_detect_dragon_weakness]	get_lv = 58	lv_up_sp = 230000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 HP 리커버리] */	skill_name = [s_fast_hp_recovery6]	get_lv = 58	lv_up_sp = 230000	auto_get = false	item_needed = {}	skill_end
+gladiator_end

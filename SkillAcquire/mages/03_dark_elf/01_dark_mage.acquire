@@ -1,0 +1,49 @@
+dark_mage_begin
+skill_begin	/* [럭키] */	skill_name = [s_lucky]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [스펠 크래프트] */	skill_name = [s_spell_casting]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [매지션즈 무브먼트] */	skill_name = [s_magicians_movement]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [마나 리커버리] */	skill_name = [s_mana_recovery]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 D] */	skill_name = [s_expertise_d]	get_lv = 20	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 C] */	skill_name = [s_expertise_c]	get_lv = 40	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 B] */	skill_name = [s_expertise_b]	get_lv = 52	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 A] */	skill_name = [s_expertise_a]	get_lv = 61	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 S] */	skill_name = [s_expertise_s]	get_lv = 67	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag11]	get_lv = 7	lv_up_sp = 470	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery_mag11]	get_lv = 7	lv_up_sp = 470	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence11]	get_lv = 7	lv_up_sp = 240	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence12]	get_lv = 7	lv_up_sp = 240	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_mag21]	get_lv = 14	lv_up_sp = 2100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery_mag21]	get_lv = 14	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아머 마스터리] */	skill_name = [s_armor_mastery_mag22]	get_lv = 14	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence21]	get_lv = 14	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence22]	get_lv = 14	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [윈드 스트라이크] */	skill_name = [s_wind_strike11]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [셀프 힐] */	skill_name = [s_self_heal]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [윈드 스트라이크] */	skill_name = [s_wind_strike21]	get_lv = 7	lv_up_sp = 240	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [윈드 스트라이크] */	skill_name = [s_wind_strike22]	get_lv = 7	lv_up_sp = 240	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이스 볼트] */	skill_name = [s_ice_bolt11]	get_lv = 7	lv_up_sp = 240	auto_get = false	item_needed = {{[sb_ice_bolt1];1}}	skill_end
+skill_begin	/* [아이스 볼트] */	skill_name = [s_ice_bolt12]	get_lv = 7	lv_up_sp = 240	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [힐] */	skill_name = [s_heal11]	get_lv = 7	lv_up_sp = 160	auto_get = false	item_needed = {{[sb_heal1];1}}	skill_end
+skill_begin	/* [힐] */	skill_name = [s_heal12]	get_lv = 7	lv_up_sp = 160	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [힐] */	skill_name = [s_heal13]	get_lv = 7	lv_up_sp = 160	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [마이트] */	skill_name = [s_might1]	get_lv = 7	lv_up_sp = 470	auto_get = false	item_needed = {{[sb_might1];1}}	skill_end
+skill_begin	/* [실드] */	skill_name = [s_shield1]	get_lv = 7	lv_up_sp = 470	auto_get = false	item_needed = {{[sb_shield1];1}}	skill_end
+skill_begin	/* [큐어 포이즌] */	skill_name = [s_cure_poison1]	get_lv = 7	lv_up_sp = 470	auto_get = false	item_needed = {{[sb_cure_poison1];1}}	skill_end
+skill_begin	/* [커스 포이즌] */	skill_name = [s_curse_poison1]	get_lv = 7	lv_up_sp = 470	auto_get = false	item_needed = {{[sb_curse:poison1];1}}	skill_end
+skill_begin	/* [윈드 스트라이크] */	skill_name = [s_wind_strike31]	get_lv = 14	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [윈드 스트라이크] */	skill_name = [s_wind_strike32]	get_lv = 14	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이스 볼트] */	skill_name = [s_ice_bolt21]	get_lv = 14	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아이스 볼트] */	skill_name = [s_ice_bolt22]	get_lv = 14	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [힐] */	skill_name = [s_heal21]	get_lv = 14	lv_up_sp = 700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [힐] */	skill_name = [s_heal22]	get_lv = 14	lv_up_sp = 700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [힐] */	skill_name = [s_heal23]	get_lv = 14	lv_up_sp = 700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [뱀피릭 터치] */	skill_name = [s_vampiric_touch11]	get_lv = 14	lv_up_sp = 1100	auto_get = false	item_needed = {{[sb_vampiric_touch1];1}}	skill_end
+skill_begin	/* [뱀피릭 터치] */	skill_name = [s_vampiric_touch12]	get_lv = 14	lv_up_sp = 1100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [배틀 힐] */	skill_name = [s_battle_heal11]	get_lv = 14	lv_up_sp = 700	auto_get = false	item_needed = {{[sb_battle_heal1];1}}	skill_end
+skill_begin	/* [배틀 힐] */	skill_name = [s_battle_heal12]	get_lv = 14	lv_up_sp = 700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [배틀 힐] */	skill_name = [s_battle_heal13]	get_lv = 14	lv_up_sp = 700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [그룹 힐] */	skill_name = [s_group_heal11]	get_lv = 14	lv_up_sp = 700	auto_get = false	item_needed = {{[sb_group_heal1];1}}	skill_end
+skill_begin	/* [그룹 힐] */	skill_name = [s_group_heal12]	get_lv = 14	lv_up_sp = 700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [그룹 힐] */	skill_name = [s_group_heal13]	get_lv = 14	lv_up_sp = 700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [윈드 셰클] */	skill_name = [s_breeze1]	get_lv = 14	lv_up_sp = 2100	auto_get = false	item_needed = {{[sb_breeze1];1}}	skill_end
+dark_mage_end

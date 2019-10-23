@@ -1,0 +1,40 @@
+orc_mage_begin
+skill_begin	/* [럭키] */	skill_name = [s_lucky]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [터프니스] */	skill_name = [s_toughness]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [스펠 크래프트] */	skill_name = [s_spell_casting]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [매지션즈 무브먼트] */	skill_name = [s_magicians_movement]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [마나 리커버리] */	skill_name = [s_mana_recovery]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 D] */	skill_name = [s_expertise_d]	get_lv = 20	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 C] */	skill_name = [s_expertise_c]	get_lv = 40	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 B] */	skill_name = [s_expertise_b]	get_lv = 52	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 A] */	skill_name = [s_expertise_a]	get_lv = 61	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [엑스퍼티즈 S] */	skill_name = [s_expertise_s]	get_lv = 67	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_sha11]	get_lv = 7	lv_up_sp = 520	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_sha11]	get_lv = 7	lv_up_sp = 260	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_sha12]	get_lv = 7	lv_up_sp = 260	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_sha11]	get_lv = 7	lv_up_sp = 260	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_sha12]	get_lv = 7	lv_up_sp = 260	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence11]	get_lv = 7	lv_up_sp = 260	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence12]	get_lv = 7	lv_up_sp = 260	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨폰 마스터리] */	skill_name = [s_weapon_mastery_sha21]	get_lv = 14	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_sha21]	get_lv = 14	lv_up_sp = 950	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [로브 마스터리] */	skill_name = [s_robe_mastery_sha22]	get_lv = 14	lv_up_sp = 950	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_sha21]	get_lv = 14	lv_up_sp = 950	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_sha22]	get_lv = 14	lv_up_sp = 950	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_sha11]	get_lv = 14	lv_up_sp = 950	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_sha12]	get_lv = 14	lv_up_sp = 950	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence21]	get_lv = 14	lv_up_sp = 950	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [안티 매직] */	skill_name = [s_advanced_magic_defence22]	get_lv = 14	lv_up_sp = 950	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [소울 크라이] */	skill_name = [s_soul_cry1]	get_lv = 1	lv_up_sp = 0	auto_get = true	item_needed = {}	skill_end
+skill_begin	/* [칠 플레임] */	skill_name = [s_chill_flame1]	get_lv = 7	lv_up_sp = 520	auto_get = false	item_needed = {{[sb_chill_flame1];1}}	skill_end
+skill_begin	/* [소울 실드] */	skill_name = [s_devotioin_of_shine1]	get_lv = 7	lv_up_sp = 520	auto_get = false	item_needed = {{[sb_devotioin_of_shine1];1}}	skill_end
+skill_begin	/* [베넘] */	skill_name = [s_pain_thorn1]	get_lv = 7	lv_up_sp = 520	auto_get = false	item_needed = {{[sb_pain_thorn1];1}}	skill_end
+skill_begin	/* [라이프 드레인] */	skill_name = [s_blood_lust1]	get_lv = 7	lv_up_sp = 520	auto_get = false	item_needed = {{[sb_blood_lust1];1}}	skill_end
+skill_begin	/* [드리밍 스피릿] */	skill_name = [s_night_murmur1]	get_lv = 7	lv_up_sp = 520	auto_get = false	item_needed = {{[sb_night_murmur1];1}}	skill_end
+skill_begin	/* [소울 크라이] */	skill_name = [s_soul_cry2]	get_lv = 14	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [칠 플레임] */	skill_name = [s_chill_flame2]	get_lv = 14	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [챈트 오브 배틀] */	skill_name = [s_mass_frenzy1]	get_lv = 14	lv_up_sp = 1900	auto_get = false	item_needed = {{[sb_mass_frenzy1];1}}	skill_end
+skill_begin	/* [베넘] */	skill_name = [s_pain_thorn2]	get_lv = 14	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [피어] */	skill_name = [s_external_fear1]	get_lv = 14	lv_up_sp = 1900	auto_get = false	item_needed = {{[sb_external_fear1];1}}	skill_end
+skill_begin	/* [라이프 드레인] */	skill_name = [s_blood_lust2]	get_lv = 14	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+orc_mage_end

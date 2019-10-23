@@ -1,0 +1,91 @@
+rogue_begin
+include_fighter
+skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery11]	get_lv = 20	lv_up_sp = 1200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery12]	get_lv = 20	lv_up_sp = 1200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery13]	get_lv = 20	lv_up_sp = 1200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [대거 마스터리] */	skill_name = [s_dagger_mastery11]	get_lv = 20	lv_up_sp = 3700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog11]	get_lv = 20	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog12]	get_lv = 20	lv_up_sp = 1900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow41]	get_lv = 20	lv_up_sp = 1200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow42]	get_lv = 20	lv_up_sp = 1200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow43]	get_lv = 20	lv_up_sp = 1200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot41]	get_lv = 20	lv_up_sp = 1200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot42]	get_lv = 20	lv_up_sp = 1200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot43]	get_lv = 20	lv_up_sp = 1200	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [롱 샷] */	skill_name = [s_long_range_shot1]	get_lv = 20	lv_up_sp = 3700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 브레스] */	skill_name = [s_lung_capacity1]	get_lv = 20	lv_up_sp = 3700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아크로뱃] */	skill_name = [s_acrobat1]	get_lv = 20	lv_up_sp = 3700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [대시] */	skill_name = [s_dash1]	get_lv = 20	lv_up_sp = 3700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [언락] */	skill_name = [s_unlock1]	get_lv = 20	lv_up_sp = 3700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery21]	get_lv = 24	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery22]	get_lv = 24	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery23]	get_lv = 24	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [대거 마스터리] */	skill_name = [s_dagger_mastery21]	get_lv = 24	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog21]	get_lv = 24	lv_up_sp = 3500	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog22]	get_lv = 24	lv_up_sp = 3500	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow51]	get_lv = 24	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow52]	get_lv = 24	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow53]	get_lv = 24	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot51]	get_lv = 24	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot52]	get_lv = 24	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot53]	get_lv = 24	lv_up_sp = 2300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [크리티컬 파워] */	skill_name = [s_critical_power1]	get_lv = 24	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 이베이전] */	skill_name = [s_physical_evasion1]	get_lv = 24	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [바이탈 포스] */	skill_name = [s_meditation1]	get_lv = 24	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블리드] */	skill_name = [s_bleed1]	get_lv = 24	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [어큐러시] */	skill_name = [s_accuracy]	get_lv = 24	lv_up_sp = 7000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery31]	get_lv = 28	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery32]	get_lv = 28	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery33]	get_lv = 28	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [대거 마스터리] */	skill_name = [s_dagger_mastery31]	get_lv = 28	lv_up_sp = 6000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [대거 마스터리] */	skill_name = [s_dagger_mastery32]	get_lv = 28	lv_up_sp = 6000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog31]	get_lv = 28	lv_up_sp = 6000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog32]	get_lv = 28	lv_up_sp = 6000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow61]	get_lv = 28	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow62]	get_lv = 28	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow63]	get_lv = 28	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot61]	get_lv = 28	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot62]	get_lv = 28	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot63]	get_lv = 28	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [크리티컬 챈스] */	skill_name = [s_critical_chance1]	get_lv = 28	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [퀵 스텝] */	skill_name = [s_quick step1]	get_lv = 28	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [아크로뱃 무브] */	skill_name = [s_acrobat_move1]	get_lv = 28	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [언락] */	skill_name = [s_unlock2]	get_lv = 28	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [얼터미트 이베이전] */	skill_name = [s_ultimate_evasion1]	get_lv = 28	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery41]	get_lv = 32	lv_up_sp = 7400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery42]	get_lv = 32	lv_up_sp = 7400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery43]	get_lv = 32	lv_up_sp = 7400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [대거 마스터리] */	skill_name = [s_dagger_mastery41]	get_lv = 32	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [대거 마스터리] */	skill_name = [s_dagger_mastery42]	get_lv = 32	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog41]	get_lv = 32	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog42]	get_lv = 32	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow71]	get_lv = 32	lv_up_sp = 7400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow72]	get_lv = 32	lv_up_sp = 7400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow73]	get_lv = 32	lv_up_sp = 7400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot71]	get_lv = 32	lv_up_sp = 7400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot72]	get_lv = 32	lv_up_sp = 7400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot73]	get_lv = 32	lv_up_sp = 7400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [래피드 샷] */	skill_name = [s_rapid_shot1]	get_lv = 32	lv_up_sp = 23000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [크리티컬 파워] */	skill_name = [s_critical_power2]	get_lv = 32	lv_up_sp = 23000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [바이탈 포스] */	skill_name = [s_meditation2]	get_lv = 32	lv_up_sp = 23000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블리드] */	skill_name = [s_bleed2]	get_lv = 32	lv_up_sp = 23000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery51]	get_lv = 36	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery52]	get_lv = 36	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery53]	get_lv = 36	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [대거 마스터리] */	skill_name = [s_dagger_mastery51]	get_lv = 36	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [대거 마스터리] */	skill_name = [s_dagger_mastery52]	get_lv = 36	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog51]	get_lv = 36	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_rog52]	get_lv = 36	lv_up_sp = 17000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow81]	get_lv = 36	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow82]	get_lv = 36	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [모탈 블로우] */	skill_name = [s_mortal_blow83]	get_lv = 36	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot81]	get_lv = 36	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot82]	get_lv = 36	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [파워 샷] */	skill_name = [s_power_shot83]	get_lv = 36	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 샷] */	skill_name = [s_stun_shot11]	get_lv = 36	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 샷] */	skill_name = [s_stun_shot12]	get_lv = 36	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 샷] */	skill_name = [s_stun_shot13]	get_lv = 36	lv_up_sp = 11000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 어택 스피드] */	skill_name = [s_fast_attack1]	get_lv = 36	lv_up_sp = 35000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [에스프리] */	skill_name = [s_full_of_energy1]	get_lv = 36	lv_up_sp = 35000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [언락] */	skill_name = [s_unlock3]	get_lv = 36	lv_up_sp = 35000	auto_get = false	item_needed = {}	skill_end
+rogue_end

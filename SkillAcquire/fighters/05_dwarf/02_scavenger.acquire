@@ -1,0 +1,87 @@
+scavenger_begin
+include_dwarven_fighter
+skill_begin	/* [블런트 마스터리] */	skill_name = [s_blunt_mastery11]	get_lv = 20	lv_up_sp = 4100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery11]	get_lv = 20	lv_up_sp = 4100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war11]	get_lv = 20	lv_up_sp = 2100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war12]	get_lv = 20	lv_up_sp = 2100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war11]	get_lv = 20	lv_up_sp = 2100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war12]	get_lv = 20	lv_up_sp = 2100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack11]	get_lv = 20	lv_up_sp = 1400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack12]	get_lv = 20	lv_up_sp = 1400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack13]	get_lv = 20	lv_up_sp = 1400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [와일드 스위프] */	skill_name = [s_wild_sweep11]	get_lv = 20	lv_up_sp = 1400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [와일드 스위프] */	skill_name = [s_wild_sweep12]	get_lv = 20	lv_up_sp = 1400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [와일드 스위프] */	skill_name = [s_wild_sweep13]	get_lv = 20	lv_up_sp = 1400	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 HP] */	skill_name = [s_boost_hp1]	get_lv = 20	lv_up_sp = 4100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [밴디지] */	skill_name = [s_bandage1]	get_lv = 20	lv_up_sp = 4100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스포일] */	skill_name = [s_spoil2]	get_lv = 20	lv_up_sp = 4100	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블런트 마스터리] */	skill_name = [s_blunt_mastery21]	get_lv = 24	lv_up_sp = 7700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery21]	get_lv = 24	lv_up_sp = 7700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war21]	get_lv = 24	lv_up_sp = 3900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war22]	get_lv = 24	lv_up_sp = 3900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war21]	get_lv = 24	lv_up_sp = 3900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war22]	get_lv = 24	lv_up_sp = 3900	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack21]	get_lv = 24	lv_up_sp = 2600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack22]	get_lv = 24	lv_up_sp = 2600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack23]	get_lv = 24	lv_up_sp = 2600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [와일드 스위프] */	skill_name = [s_wild_sweep21]	get_lv = 24	lv_up_sp = 2600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [와일드 스위프] */	skill_name = [s_wild_sweep22]	get_lv = 24	lv_up_sp = 2600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [와일드 스위프] */	skill_name = [s_wild_sweep23]	get_lv = 24	lv_up_sp = 2600	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 HP 리커버리] */	skill_name = [s_fast_hp_recovery1]	get_lv = 24	lv_up_sp = 7700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [바이탈 포스] */	skill_name = [s_meditation1]	get_lv = 24	lv_up_sp = 7700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [웨이트 리미트] */	skill_name = [s_weight_limit2]	get_lv = 24	lv_up_sp = 7700	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블런트 마스터리] */	skill_name = [s_blunt_mastery31]	get_lv = 28	lv_up_sp = 7500	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블런트 마스터리] */	skill_name = [s_blunt_mastery32]	get_lv = 28	lv_up_sp = 7500	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery31]	get_lv = 28	lv_up_sp = 7500	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery32]	get_lv = 28	lv_up_sp = 7500	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war31]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war32]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war33]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war31]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war32]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war33]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack31]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack32]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack33]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [와일드 스위프] */	skill_name = [s_wild_sweep31]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [와일드 스위프] */	skill_name = [s_wild_sweep32]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [와일드 스위프] */	skill_name = [s_wild_sweep33]	get_lv = 28	lv_up_sp = 5000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 HP] */	skill_name = [s_boost_hp2]	get_lv = 28	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스포일] */	skill_name = [s_spoil3]	get_lv = 28	lv_up_sp = 15000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블런트 마스터리] */	skill_name = [s_blunt_mastery41]	get_lv = 32	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블런트 마스터리] */	skill_name = [s_blunt_mastery42]	get_lv = 32	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery41]	get_lv = 32	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery42]	get_lv = 32	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war41]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war42]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war43]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war41]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war42]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war43]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack41]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack42]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack43]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [와일드 스위프] */	skill_name = [s_wild_sweep41]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [와일드 스위프] */	skill_name = [s_wild_sweep42]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [와일드 스위프] */	skill_name = [s_wild_sweep43]	get_lv = 32	lv_up_sp = 8300	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [패스트 HP 리커버리] */	skill_name = [s_fast_hp_recovery2]	get_lv = 32	lv_up_sp = 25000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [바이탈 포스] */	skill_name = [s_meditation2]	get_lv = 32	lv_up_sp = 25000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블런트 마스터리] */	skill_name = [s_blunt_mastery51]	get_lv = 36	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [블런트 마스터리] */	skill_name = [s_blunt_mastery52]	get_lv = 36	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery51]	get_lv = 36	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [폴암 마스터리] */	skill_name = [s_polearm_mastery52]	get_lv = 36	lv_up_sp = 19000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war51]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war52]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [라이트 아머 마스터리] */	skill_name = [s_light_armor_mastery_war53]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war51]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war52]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [헤비 아머 마스터리] */	skill_name = [s_heavy_armor_mastery_war53]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack51]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack52]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스턴 어택] */	skill_name = [s_stun_attack53]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [와일드 스위프] */	skill_name = [s_wild_sweep51]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [와일드 스위프] */	skill_name = [s_wild_sweep52]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [와일드 스위프] */	skill_name = [s_wild_sweep53]	get_lv = 36	lv_up_sp = 13000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [부스트 HP] */	skill_name = [s_boost_hp3]	get_lv = 36	lv_up_sp = 39000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [스포일] */	skill_name = [s_spoil4]	get_lv = 36	lv_up_sp = 39000	auto_get = false	item_needed = {}	skill_end
+scavenger_end
