@@ -29,7 +29,7 @@ skill_begin	/* [더블 샷] */	skill_name = [s_double_shot22]	get_lv = 43	lv_up_
 skill_begin	/* [더블 샷] */	skill_name = [s_double_shot23]	get_lv = 43	lv_up_sp = 22000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [아크로뱃 무브] */	skill_name = [s_acrobat_move2]	get_lv = 43	lv_up_sp = 65000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [에스프리] */	skill_name = [s_full_of_energy2]	get_lv = 43	lv_up_sp = 65000	auto_get = false	item_needed = {}	skill_end
-skill_begin	/* [퀵 스텝] */	skill_name = [s_quick step2]	get_lv = 43	lv_up_sp = 65000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [퀵 스텝] */	skill_name = [s_quick_step2]	get_lv = 43	lv_up_sp = 65000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery81]	get_lv = 46	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery82]	get_lv = 46	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [보우 마스터리] */	skill_name = [s_bow_mastery83]	get_lv = 46	lv_up_sp = 29000	auto_get = false	item_needed = {}	skill_end

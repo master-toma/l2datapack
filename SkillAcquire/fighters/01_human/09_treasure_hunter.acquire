@@ -33,7 +33,7 @@ skill_begin	/* [백스탭] */	skill_name = [s_backstab23]	get_lv = 43	lv_up_sp =
 skill_begin	/* [언락] */	skill_name = [s_unlock5]	get_lv = 43	lv_up_sp = 46000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [아크로뱃 무브] */	skill_name = [s_acrobat_move2]	get_lv = 43	lv_up_sp = 46000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [에스프리] */	skill_name = [s_full_of_energy2]	get_lv = 43	lv_up_sp = 46000	auto_get = false	item_needed = {}	skill_end
-skill_begin	/* [퀵 스텝] */	skill_name = [s_quick step2]	get_lv = 43	lv_up_sp = 46000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [퀵 스텝] */	skill_name = [s_quick_step2]	get_lv = 43	lv_up_sp = 46000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [스위치] */	skill_name = [s_switch1]	get_lv = 43	lv_up_sp = 46000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [베일] */	skill_name = [s_veil1]	get_lv = 43	lv_up_sp = 46000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [대거 마스터리] */	skill_name = [s_dagger_mastery81]	get_lv = 46	lv_up_sp = 20000	auto_get = false	item_needed = {}	skill_end

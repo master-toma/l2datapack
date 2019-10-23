@@ -48,7 +48,7 @@ skill_begin	/* [파워 샷] */	skill_name = [s_power_shot61]	get_lv = 28	lv_up_s
 skill_begin	/* [파워 샷] */	skill_name = [s_power_shot62]	get_lv = 28	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [파워 샷] */	skill_name = [s_power_shot63]	get_lv = 28	lv_up_sp = 4000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [크리티컬 챈스] */	skill_name = [s_critical_chance1]	get_lv = 28	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
-skill_begin	/* [퀵 스텝] */	skill_name = [s_quick step1]	get_lv = 28	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [퀵 스텝] */	skill_name = [s_quick_step1]	get_lv = 28	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [아크로뱃 무브] */	skill_name = [s_acrobat_move1]	get_lv = 28	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [언락] */	skill_name = [s_unlock2]	get_lv = 28	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [얼터미트 이베이전] */	skill_name = [s_ultimate_evasion1]	get_lv = 28	lv_up_sp = 12000	auto_get = false	item_needed = {}	skill_end

@@ -63,7 +63,7 @@ skill_begin	/* [스팅] */	skill_name = [s_bleed_attack21]	get_lv = 28	lv_up_sp 
 skill_begin	/* [스팅] */	skill_name = [s_bleed_attack22]	get_lv = 28	lv_up_sp = 3300	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [스팅] */	skill_name = [s_bleed_attack23]	get_lv = 28	lv_up_sp = 3300	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [어택 오라] */	skill_name = [s_advanced_attack_power2]	get_lv = 28	lv_up_sp = 10000	auto_get = false	item_needed = {}	skill_end
-skill_begin	/* [퀵 스텝] */	skill_name = [s_quick step1]	get_lv = 28	lv_up_sp = 10000	auto_get = false	item_needed = {}	skill_end
+skill_begin	/* [퀵 스텝] */	skill_name = [s_quick_step1]	get_lv = 28	lv_up_sp = 10000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [아크로뱃 무브] */	skill_name = [s_acrobat_move1]	get_lv = 28	lv_up_sp = 10000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [언락] */	skill_name = [s_unlock2]	get_lv = 28	lv_up_sp = 10000	auto_get = false	item_needed = {}	skill_end
 skill_begin	/* [얼터미트 이베이전] */	skill_name = [s_ultimate_evasion1]	get_lv = 28	lv_up_sp = 10000	auto_get = false	item_needed = {}	skill_end
