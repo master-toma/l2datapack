@@ -1,0 +1,1208 @@
+//-------------------------- 03.12.01 NPC -------------------------------------------------------------------------
+territory_begin	[24_21_NPC_031201_01]	{{131100;114556;-3779;-3579};{131300;114556;-3779;-3579};{131300;114756;-3779;-3579};{131100;114756;-3779;-3579}}	territory_end
+npcmaker_begin	[24_21_NPC_031201_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[watcher_of_antaras_theodric]	pos = {131176;114676;-3718;40960}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------------- 안타라스 결계의 심장 ----------------------------------------------------------------
+territory_begin	[24_21_heart]	{{154556;120988;-3856;-3556};{154756;120988;-3856;-3556};{154756;121188;-3856;-3556};{154556;121188;-3856;-3556}}	territory_end
+npcmaker_begin	[24_21_heart]	initial_spawn = all	maximum_npc = 1
+npc_begin	[heart_of_warding]	pos = {154695;121097;-3757;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------------------------------------------------------------------------------------------------
+//아덴 왕국 기란 영지 던전
+//DATE 2003.11.26
+//Ver 12월 업데이트
+//--------------------------------------------------------------------------------------------------------------
+//--------------- 24_21 용의 던전----------------------------------------------------------------------------------------
+territory_begin	[giran_t24_21_001]	{{135600;113736;-3764;-3564};{135872;113724;-3764;-3564};{135708;115148;-3764;-3564};{135348;115012;-3764;-3564};{135148;114740;-3764;-3564};{135096;114156;-3764;-3564}}	territory_end
+npcmaker_begin	[giran_t24_21_001]	initial_spawn = all	maximum_npc = 9
+npc_begin	[bloody_queen]	pos = {135258;114224;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {135258;114591;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {135670;114261;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {135633;114962;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {135444;114750;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {135434;114413;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {135690;113913;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {135674;114579;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {135443;114049;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_002]	{{136232;113568;-3768;-3568};{137296;114224;-3768;-3568};{137320;114628;-3768;-3568};{136224;115280;-3768;-3568}}	territory_end
+npcmaker_begin	[giran_t24_21_002]	initial_spawn = all	maximum_npc = 12
+npc_begin	[bloody_queen]	pos = {136389;113781;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {136620;113959;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {136653;114256;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {136921;114122;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {136384;114416;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {137015;114389;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {136320;114803;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {137248;114592;-3689;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {136901;114747;-3680;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {136615;114622;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {136377;114046;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {136515;114952;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_003]	{{140400;113484;-3836;-3636};{140928;113748;-3836;-3636};{141356;114152;-3836;-3636};{141140;115264;-3836;-3636};{140736;115708;-3836;-3636};{139368;114548;-3836;-3636};{139376;114216;-3836;-3636}}	territory_end
+npcmaker_begin	[giran_t24_21_003]	initial_spawn = all	maximum_npc = 20
+npc_begin	[bloody_queen]	pos = {139468;114388;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {139696;114156;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {139686;114650;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {139902;114371;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {140299;114477;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {139961;114760;-3676;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {140248;114204;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140247;114559;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {140219;114983;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {140386;113908;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {140792;114184;-3688;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140669;114574;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {140572;114876;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {140493;115265;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {140900;115125;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140759;115480;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {141062;114723;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {141121;114340;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {140920;113974;-3680;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140537;113660;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_004]	{{140520;112248;-3852;-3452};{141956;111932;-3852;-3452};{141744;113116;-3852;-3452};{140924;113488;-3852;-3452};{140468;113260;-3852;-3452}}	territory_end
+npcmaker_begin	[giran_t24_21_004]	initial_spawn = all	maximum_npc = 10
+npc_begin	[bloody_queen]	pos = {140720;113056;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {141111;113193;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {141006;112845;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140683;112644;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {141493;113055;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {141582;112769;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {141356;112216;-3680;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {141771;112147;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {141739;112454;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140783;112321;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_005]	{{140436;107468;-4000;-3800};{141464;108512;-4000;-3800};{141688;109696;-4000;-3800};{141216;110584;-4000;-3800};{140800;111000;-4000;-3800};{140296;110992;-4000;-3800};{139948;110428;-4000;-3800}}	territory_end
+npcmaker_begin	[giran_t24_21_005]	initial_spawn = all	maximum_npc = 19
+npc_begin	[malruk_soldier]	pos = {140387;110792;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {140807;110756;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {140149;110457;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140637;110425;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {141137;110380;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {140959;110021;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {140360;110015;-3908;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {141423;109746;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {140870;109593;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {140276;109556;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {141337;109269;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140553;109200;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {140995;108995;-3916;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {141402;108755;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {140703;108652;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {141111;108396;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {140452;108307;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {140632;107900;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140832;108151;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_006]	{{143240;111704;-3988;-3788};{144896;112268;-3988;-3788};{144268;113048;-3988;-3788};{143852;113104;-3988;-3788};{143328;112892;-3988;-3788};{142768;112244;-3988;-3788}}	territory_end
+npcmaker_begin	[giran_t24_21_006]	initial_spawn = all	maximum_npc = 11
+npc_begin	[bloody_queen]	pos = {142992;112208;-3904;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {143264;111904;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {143425;112236;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {143271;112555;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {143786;112024;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {143534;112794;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {144121;112251;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {143882;112632;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {143898;112951;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {144263;112696;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {144522;112348;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_007]	{{143160;109760;-3984;-3784};{143952;109728;-3984;-3784};{144192;109896;-3984;-3784};{144316;110324;-3984;-3784};{144188;110700;-3984;-3784};{143728;110868;-3984;-3784};{143412;110776;-3984;-3784};{142996;110328;-3984;-3784}}	territory_end
+npcmaker_begin	[giran_t24_21_007]	initial_spawn = all	maximum_npc = 10
+npc_begin	[bloody_queen]	pos = {143279;109920;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {143221;110235;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {143595;110175;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {143440;110523;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {143711;109884;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {143666;110711;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {144056;109960;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {144012;110276;-3848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {143771;110439;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {144035;110646;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_008]	{{143056;108212;-3980;-3780};{143520;108568;-3980;-3780};{143600;108960;-3980;-3780};{143448;109080;-3980;-3780};{142604;108988;-3980;-3780};{142756;108456;-3980;-3780}}	territory_end
+npcmaker_begin	[giran_t24_21_008]	initial_spawn = all	maximum_npc = 7
+npc_begin	[malruk_soldier]	pos = {142752;108864;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {143093;108944;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {143088;108716;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {142832;108592;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {143072;108432;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {143383;108912;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {143379;108627;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_009]	{{141732;107080;-3988;-3788};{142508;106724;-3988;-3788};{143360;107068;-3988;-3788};{142616;107928;-3988;-3788};{141580;107368;-3988;-3788}}	territory_end
+npcmaker_begin	[giran_t24_21_009]	initial_spawn = all	maximum_npc = 12
+npc_begin	[malruk_soldier]	pos = {141756;107304;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {141948;107088;-3904;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {142055;107471;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {142264;107228;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {142409;106876;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {142367;107577;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {142617;107122;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {142760;106945;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {143004;107134;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {142805;107434;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {142686;107694;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {142528;107376;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_010]	{{144872;107076;-3984;-3784};{146120;108028;-3984;-3784};{146216;109136;-3984;-3784};{144164;108936;-3984;-3784};{144000;107696;-3984;-3784};{144140;107204;-3984;-3784}}	territory_end
+npcmaker_begin	[giran_t24_21_010]	initial_spawn = all	maximum_npc = 16
+npc_begin	[malruk_soldier]	pos = {144483;107272;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {144174;107491;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {144553;107680;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {144195;107926;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {144639;107997;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {144920;107408;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {144316;108402;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {145120;107673;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145133;108243;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {144741;108540;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145706;108039;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {144720;108831;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145364;108556;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {145766;108424;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145525;108900;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {146074;108659;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_011]	{{144600;108972;-3996;-3796};{146264;109152;-3996;-3796};{145760;111220;-3996;-3796};{145172;110392;-3996;-3796}}	territory_end
+npcmaker_begin	[giran_t24_21_011]	initial_spawn = all	maximum_npc = 10
+npc_begin	[death_wave]	pos = {145951;109233;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145525;109231;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {144990;109155;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145226;109502;-3916;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {145849;109536;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145567;109883;-3844;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {145164;110046;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145897;110118;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {145306;110354;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145800;110628;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_011-1]	{{146848;109040;-3980;-3780};{148204;109120;-3980;-3780};{148700;109492;-3980;-3780};{148624;110672;-3980;-3780};{148380;110892;-3980;-3780};{148028;110960;-3980;-3780};{146672;110568;-3980;-3780}}	territory_end
+npcmaker_begin	[giran_t24_21_011-1]	initial_spawn = all	maximum_npc = 14
+npc_begin	[death_wave]	pos = {147017;109220;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {147474;109365;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {146920;109675;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {147304;109875;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {147780;109689;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {147870;109208;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {147633;110241;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {148348;109558;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {148217;109942;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {146876;110349;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {147315;110549;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {147791;110675;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {148102;110415;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {148338;110707;-3920;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_012]	{{142768;113308;-3764;-3564};{143164;113644;-3764;-3564};{142860;113992;-3764;-3564};{142052;113788;-3764;-3564};{142408;113304;-3764;-3564}}	territory_end
+npcmaker_begin	[giran_t24_21_012]	initial_spawn = all	maximum_npc = 7
+npc_begin	[bloody_queen]	pos = {142224;113728;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {142400;113504;-3680;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {142528;113808;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {142752;113376;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {142708;113612;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {142848;113872;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {143008;113584;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_013]	{{143688;114152;-3760;-3560};{144304;114244;-3760;-3560};{144424;115232;-3760;-3560};{143496;114976;-3760;-3560};{143208;114624;-3760;-3560};{143112;114328;-3760;-3560}}	territory_end
+npcmaker_begin	[giran_t24_21_013]	initial_spawn = all	maximum_npc = 9
+npc_begin	[bloody_queen]	pos = {143284;114404;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {143424;114711;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {143647;114323;-3696;-40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {143730;114911;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {144010;114359;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {143722;114623;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {144255;114601;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {144187;115052;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {144074;114796;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_014]	{{144948;113844;-3772;-3572};{145288;113956;-3772;-3572};{145432;115092;-3772;-3572};{144812;115456;-3772;-3572};{144428;115212;-3772;-3572};{144316;114276;-3772;-3572};{144528;113920;-3772;-3572}}	territory_end
+npcmaker_begin	[giran_t24_21_014]	initial_spawn = all	maximum_npc = 10
+npc_begin	[bloody_queen]	pos = {144519;114888;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {144539;114384;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {144779;114592;-3690;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {144775;115267;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {144778;114032;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {144922;114950;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {145019;114321;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {145234;114931;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {145179;114615;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {145100;114037;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_015]	{{146736;116112;-3764;-3564};{147504;115972;-3764;-3564};{147840;116520;-3764;-3564};{147240;116984;-3764;-3564};{146808;116940;-3764;-3564};{146524;116576;-3764;-3564}}	territory_end
+npcmaker_begin	[giran_t24_21_015]	initial_spawn = all	maximum_npc = 9
+npc_begin	[death_wave]	pos = {146857;116208;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {146784;116512;-3691;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {147193;116220;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {147492;116154;-3688;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {146948;116696;-3680;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {147180;116474;-3680;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {147155;116838;-3660;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {147405;116705;-3680;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {147556;116433;-3680;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_016]	{{147360;117732;-3760;-3560};{148532;116716;-3760;-3560};{148856;116744;-3760;-3560};{149244;117764;-3760;-3560};{149140;118380;-3760;-3560};{148892;118668;-3760;-3560};{148288;118748;-3760;-3560};{147920;118580;-3760;-3560}}	territory_end
+npcmaker_begin	[giran_t24_21_016]	initial_spawn = all	maximum_npc = 19
+npc_begin	[death_wave]	pos = {147583;117750;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {147889;117901;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {148582;117811;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {147884;117449;-3680;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {148290;117610;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {148198;117187;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {147853;118301;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {148266;118056;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {148587;117349;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {148560;116896;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {148880;117088;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {148943;117501;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {149190;117814;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {148176;118448;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {148544;118160;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {148896;117936;-3680;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {148464;118560;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {148880;118448;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {149136;118208;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_017]	{{139924;117372;-3952;-3752};{141444;117296;-3952;-3752};{141124;119328;-3952;-3752};{140528;119796;-3952;-3752};{139908;119684;-3952;-3752};{139648;118824;-3952;-3752};{139684;118016;-3952;-3752}}	territory_end
+npcmaker_begin	[giran_t24_21_017]	initial_spawn = all	maximum_npc = 18
+npc_begin	[bloody_queen]	pos = {140107;117502;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {140235;117850;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {140863;117870;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140589;117547;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {141213;117562;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {139851;118150;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {140492;118183;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {141102;118186;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {139863;118599;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {140834;118473;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {140385;118541;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140992;118877;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {140608;118880;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {139965;118947;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {140240;119196;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140759;119224;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {140478;119511;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140055;119437;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_018]	{{142844;115768;-3952;-3752};{143584;116124;-3952;-3752};{143792;116612;-3952;-3752};{143816;117796;-3952;-3752};{143232;118280;-3952;-3752};{142608;118048;-3952;-3752};{141624;117108;-3952;-3752};{142116;116044;-3952;-3752}}	territory_end
+npcmaker_begin	[giran_t24_21_018]	initial_spawn = all	maximum_npc = 18
+npc_begin	[bloody_queen]	pos = {141872;117056;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {142160;117392;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {142273;117013;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {142042;116700;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {142568;116699;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {142321;116255;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {142748;115991;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {142781;116352;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {143356;116204;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {143125;116516;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {142765;117143;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {142649;117620;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {142896;117965;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {143076;117520;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {143191;117109;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {143569;117355;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[bloody_queen]	pos = {143437;117881;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {143684;116861;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_019]	{{142404;118464;-3968;-3768};{143016;118424;-3968;-3768};{142900;119196;-3968;-3768};{142500;119812;-3968;-3768};{141404;119376;-3968;-3768};{141556;118876;-3968;-3768}}	territory_end
+npcmaker_begin	[giran_t24_21_019]	initial_spawn = all	maximum_npc = 9
+npc_begin	[cave_beast]	pos = {141584;119132;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {141912;118818;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {141879;119361;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {142191;119114;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_beast]	pos = {142290;119542;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {142635;119327;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {142618;118915;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {142321;118635;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {142716;118602;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_020]	{{140284;120592;-3956;-3756};{140716;120380;-3956;-3756};{141924;121252;-3956;-3756};{142000;121812;-3956;-3756};{141200;122152;-3956;-3756};{140552;122112;-3956;-3756};{140048;121668;-3956;-3756}}	territory_end
+npcmaker_begin	[giran_t24_21_020]	initial_spawn = all	maximum_npc = 24
+npc_begin	[death_wave]	pos = {140380;120656;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {140688;120512;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {140624;120784;-3884;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {140304;120928;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140960;120656;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {140512;121076;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {140936;120904;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {140240;121296;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140368;121552;-3872;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {141248;120896;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {141140;121220;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {141524;121096;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140624;121600;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {140368;121888;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {140664;121844;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {140960;121648;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {140956;121924;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {141264;121428;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {141572;121360;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {141264;121752;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {141240;122012;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {141576;121648;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {141880;121448;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {141716;121852;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_021]	{{143164;119884;-3964;-3764};{144464;120096;-3964;-3764};{144484;121592;-3964;-3764};{143312;121804;-3964;-3764};{142584;121656;-3964;-3764};{142332;120980;-3964;-3764};{142552;120108;-3964;-3764}}	territory_end
+npcmaker_begin	[giran_t24_21_021]	initial_spawn = all	maximum_npc = 17
+npc_begin	[death_wave]	pos = {142770;121536;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {142572;121125;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {142966;121206;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {143246;121502;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {143607;121271;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {144018;121501;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {142801;120827;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {143311;121020;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {143118;120639;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {143686;120723;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {144099;120924;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {144219;120397;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[death_wave]	pos = {143324;120312;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {143160;120051;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {142781;120314;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {143837;120164;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {143702;120388;-3888;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_022]	{{145844;118912;-3952;-3752};{146136;119036;-3952;-3752};{146212;120732;-3952;-3752};{145912;121024;-3952;-3752};{145220;120728;-3952;-3752};{145068;120384;-3952;-3752}}	territory_end
+npcmaker_begin	[giran_t24_21_022]	initial_spawn = all	maximum_npc = 13
+npc_begin	[malruk_soldier]	pos = {145856;120864;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {146072;120624;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145776;120504;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {146064;120224;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145504;120768;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {145424;120400;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145760;120048;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {146048;119776;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145392;120016;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {145728;119680;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145712;119308;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {146032;119392;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145968;119072;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_023]	{{144704;116932;-3972;-3772};{144996;116752;-3972;-3772};{146092;117096;-3972;-3772};{146308;117500;-3972;-3772};{145312;118772;-3972;-3772};{144312;118784;-3972;-3772}}	territory_end
+npcmaker_begin	[giran_t24_21_023]	initial_spawn = all	maximum_npc = 18
+npc_begin	[malruk_soldier]	pos = {144592;118640;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {145072;118656;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {144888;118348;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {145384;118357;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {144517;118336;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {144704;118048;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145120;118007;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {145041;117685;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145530;117815;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {144679;117701;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145016;117433;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {145455;117493;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145849;117566;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {145770;117260;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {146127;117352;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {144897;116954;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {145642;117082;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {145865;117903;-3888;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_024]	{{148436;119484;-4904;-4704};{149400;119284;-4904;-4704};{150332;120916;-4904;-4704};{150332;121640;-4904;-4704};{149920;121900;-4904;-4704};{147920;121748;-4904;-4704}}	territory_end
+npcmaker_begin	[giran_t24_21_024]	initial_spawn = all	maximum_npc = 22
+npc_begin	[malruk_soldier]	pos = {148144;121552;-4800;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {148247;121020;-4768;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {148563;121287;-4832;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {148675;121648;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {149052;121288;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {149244;121666;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {149528;121280;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {149760;121644;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {150152;121325;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {150074;120964;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {149639;120814;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {149152;120889;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {148611;120805;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {148806;120523;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {149319;120459;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {149236;120037;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_soldier]	pos = {149909;120511;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {148384;120320;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {149471;119675;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {148989;119791;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {148508;119787;-4828;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {149085;119468;-4848;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_025]	{{150016;118368;-5008;-4658};{150616;118196;-5008;-4658};{150524;119068;-5008;-4658};{150188;119168;-5008;-4658};{149844;118892;-5008;-4658}}	territory_end
+npcmaker_begin	[giran_t24_21_025]	initial_spawn = all	maximum_npc = 5
+npc_begin	[malruk_lord]	pos = {150080;118912;-4832;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {150168;118572;-4826;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {150400;118864;-4826;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {150504;118604;-4842;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {150476;118348;-4880;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_027]	{{151620;117320;-5292;-5092};{151688;117024;-5292;-5092};{152256;116872;-5292;-5092};{152428;117248;-5292;-5092};{152200;117604;-5292;-5092};{151744;117624;-5292;-5092}}	territory_end
+npcmaker_begin	[giran_t24_21_027]	initial_spawn = all	maximum_npc = 4
+npc_begin	[malruk_lord]	pos = {151872;117424;-5216;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {151888;117104;-5216;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {152192;117328;-5216;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {152240;116992;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_028]	{{152956;116320;-5296;-5096};{154576;116988;-5296;-5096};{154136;117320;-5296;-5096};{153464;117336;-5296;-5096};{152840;117044;-5296;-5096}}	territory_end
+npcmaker_begin	[giran_t24_21_028]	initial_spawn = all	maximum_npc = 7
+npc_begin	[plando]	pos = {153095;116928;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153145;116576;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {153427;116887;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153513;117163;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153877;116873;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {154208;117021;-5225;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153836;117151;-5232;40}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_029]	{{152776;114924;-5296;-5096};{153324;114728;-5296;-5096};{153816;115700;-5296;-5096};{153400;116508;-5296;-5096};{152964;116320;-5296;-5096}}	territory_end
+npcmaker_begin	[giran_t24_21_029]	initial_spawn = all	maximum_npc = 10
+npc_begin	[plando]	pos = {153332;116320;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153159;116036;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {153494;116006;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153287;115807;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {153629;115631;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153407;115382;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {153075;115495;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153172;115190;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {153256;114928;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {152944;115120;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_030]	{{154432;115108;-5332;-5132};{154920;115068;-5332;-5132};{154924;115892;-5332;-5132};{154548;116980;-5332;-5132};{154024;116752;-5332;-5132}}	territory_end
+npcmaker_begin	[giran_t24_21_030]	initial_spawn = all	maximum_npc = 7
+npc_begin	[plando]	pos = {154242;116649;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {154578;116523;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {154440;116251;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {154784;116040;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {154776;115602;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {154572;115448;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {154800;115232;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_031]	{{153784;114220;-5288;-5088};{154508;114196;-5288;-5088};{154872;114580;-5288;-5088};{154920;115056;-5288;-5088};{153516;115076;-5288;-5088};{153312;114712;-5288;-5088}}	territory_end
+npcmaker_begin	[giran_t24_21_031]	initial_spawn = all	maximum_npc = 11
+npc_begin	[plando]	pos = {153595;114886;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153589;114572;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {153965;114932;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153952;114600;-5224;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[plando]	pos = {153813;114352;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {154188;114420;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {154282;114770;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {154503;114627;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {154557;114343;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {154813;114729;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {154566;114955;-5232;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_032]	{{150408;113888;-5528;-5328};{151784;114768;-5528;-5328};{151804;115524;-5528;-5328};{151220;116100;-5528;-5328};{150296;116196;-5528;-5328};{149824;115528;-5528;-5328};{149808;114452;-5528;-5328}}	territory_end
+npcmaker_begin	[giran_t24_21_032]	initial_spawn = all	maximum_npc = 19
+npc_begin	[cave_howler]	pos = {151634;114989;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {150640;115313;-5440;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {151057;114471;-5435;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {151594;115424;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {151261;115189;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {151249;115721;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {150874;115905;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {150974;115488;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {151235;114786;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {150595;115667;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {150178;115809;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {150236;115462;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {149945;115213;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {150198;114852;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {150591;114645;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {150697;115008;-5440;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {149991;114533;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {150696;114264;-5435;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {150336;114252;-5435;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_033]	{{148656;114444;-5524;-5324};{149276;114296;-5524;-5324};{149460;115484;-5524;-5324};{148732;115444;-5524;-5324};{148368;115164;-5524;-5324};{148328;114772;-5524;-5324}}	territory_end
+npcmaker_begin	[giran_t24_21_033]	initial_spawn = all	maximum_npc = 10
+npc_begin	[malruk_knight]	pos = {149136;114512;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {149168;114816;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {149216;115088;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {149264;115360;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {148864;114672;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {148896;114992;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {148944;115264;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {148640;114816;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {148656;115152;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {148480;114960;-5456;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_034]	{{153508;110580;-5564;-5364};{154448;111020;-5564;-5364};{154564;112432;-5564;-5364};{154312;112928;-5564;-5364};{153276;113188;-5564;-5364};{152884;112772;-5564;-5364};{152792;111376;-5564;-5364}}	territory_end
+npcmaker_begin	[giran_t24_21_034]	initial_spawn = all	maximum_npc = 22
+npc_begin	[cave_howler]	pos = {153348;113020;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153101;112808;-5482;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {153904;112000;-5483;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153884;111489;-5488;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {153754;112910;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {154147;112786;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {154247;112481;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153830;112539;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {153386;112569;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153095;112320;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {153753;112252;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153434;112128;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {154389;112120;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {154251;111704;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {153485;111678;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153139;111973;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[cave_howler]	pos = {152987;111584;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153324;111335;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {153661;111156;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153552;110850;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {154265;111048;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {154123;111309;-5488;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_035]	{{152236;110012;-5560;-5360};{153036;110436;-5560;-5360};{152940;110756;-5560;-5360};{152372;110836;-5560;-5360};{151972;110728;-5560;-5360};{151844;110432;-5560;-5360};{151944;110088;-5560;-5360}}	territory_end
+npcmaker_begin	[giran_t24_21_035]	initial_spawn = all	maximum_npc = 7
+npc_begin	[malruk_knight]	pos = {152864;110528;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {152576;110672;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {152676;110316;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {152352;110432;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {152128;110688;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {152208;110112;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {152000;110320;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_036]	{{150704;110624;-5568;-5368};{151496;111076;-5568;-5368};{151236;112316;-5568;-5368};{150604;112808;-5568;-5368};{150072;112788;-5568;-5368};{149764;112140;-5568;-5368};{149724;111092;-5568;-5368}}	territory_end
+npcmaker_begin	[giran_t24_21_036]	initial_spawn = all	maximum_npc = 19
+npc_begin	[malruk_lord]	pos = {150199;112607;-5488;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {150543;111604;-5480;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {151168;111088;-5488;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {151260;111367;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {150991;111542;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {151155;111991;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {150978;112360;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {150823;111966;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {150825;111182;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {150773;110823;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {150322;110964;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {150338;111276;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {149876;111235;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {150047;111508;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {149926;111843;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {150363;111939;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {150596;112672;-5504;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {150545;112361;-5488;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {150128;112240;-5488;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_037]	{{149620;109116;-5500;-5050};{150228;109448;-5500;-5050};{150332;109812;-5500;-5050};{149308;110792;-5500;-5050};{149104;109328;-5500;-5050}}	territory_end
+npcmaker_begin	[giran_t24_21_037]	initial_spawn = all	maximum_npc = 14
+npc_begin	[malruk_knight]	pos = {149392;110512;-5376;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {149280;110224;-5296;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {149648;110304;-5312;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {149520;110016;-5243;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {149296;109856;-5223;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {149856;110000;-5227;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {150048;109792;-5168;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {150032;109520;-5152;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {149776;109712;-5184;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {149488;109632;-5200;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {149264;109456;-5184;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {149696;109408;-5168;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {149440;109248;-5168;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {149920;109328;-5147;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_038]	{{150972;108700;-5220;-5020};{152164;109004;-5220;-5020};{151868;109488;-5220;-5020};{151364;109740;-5220;-5020};{150424;109752;-5220;-5020};{150400;109348;-5220;-5020}}	territory_end
+npcmaker_begin	[giran_t24_21_038]	initial_spawn = all	maximum_npc = 11
+npc_begin	[malruk_knight]	pos = {150955;109313;-5120;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {150581;109595;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {150936;109634;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {151356;109601;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {151648;109372;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {151298;109263;-5120;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {151844;109208;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {151598;109060;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {151237;108961;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {150877;108994;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {150631;109304;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_039]	{{152928;108152;-5208;-5008};{153916;107960;-5208;-5008};{153904;109524;-5208;-5008};{153224;109772;-5208;-5008};{152808;109456;-5208;-5008}}	territory_end
+npcmaker_begin	[giran_t24_21_039]	initial_spawn = all	maximum_npc = 16
+npc_begin	[malruk_lord]	pos = {152928;109360;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {153136;109504;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153424;109648;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {153776;109504;-5120;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {153808;109240;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153776;108960;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {153136;109200;-5126;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {153056;108928;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153344;108960;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {153600;108720;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {153856;108584;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153328;108672;-5118;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {153620;108448;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_knight]	pos = {153308;108384;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153572;108136;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {153132;108212;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_040]	{{153752;106972;-5196;-4996};{154044;107232;-5196;-4996};{153884;107964;-5196;-4996};{152904;108140;-5196;-4996};{152196;107968;-5196;-4996};{152112;107344;-5196;-4996}}	territory_end
+npcmaker_begin	[giran_t24_21_040]	initial_spawn = all	maximum_npc = 16
+npc_begin	[malruk_berserker]	pos = {153336;107908;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {153792;107840;-5120;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {152928;107968;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153584;107632;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {153904;107392;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {153568;107248;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {153408;107440;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {153872;107104;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {153232;107168;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {152988;107656;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {152736;107776;-5104;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {152512;107872;-5072;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {152320;107792;-5032;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {152528;107584;-5072;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {152784;107424;-5120;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {152288;107472;-5024;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_041]	{{154352;108164;-5196;-4996};{154680;107960;-5196;-4996};{154948;108340;-5196;-4996};{154840;108912;-5196;-4996};{154592;108972;-5196;-4996};{154224;108676;-5196;-4996}}	territory_end
+npcmaker_begin	[giran_t24_21_041]	initial_spawn = all	maximum_npc = 7
+npc_begin	[malruk_lord]	pos = {154388;108596;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {154692;108532;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {154532;108748;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {154784;108776;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {154880;108384;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {154496;108336;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {154704;108160;-5136;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_043]	{{150104;107468;-4816;-4366};{150476;107224;-4816;-4366};{150764;107644;-4816;-4366};{150044;108512;-4816;-4366};{149376;108688;-4816;-4366};{149404;108272;-4816;-4366}}	territory_end
+npcmaker_begin	[giran_t24_21_043]	initial_spawn = all	maximum_npc = 9
+npc_begin	[malruk_berserker]	pos = {150528;107456;-4720;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {150144;107648;-4617;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {150352;107920;-4672;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {150000;107964;-4592;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {150112;108256;-4608;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {149824;108192;-4534;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {149792;108448;-4528;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {149600;108272;-4480;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {149552;108528;-4464;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_044]	{{147560;107064;-4304;-3854};{148216;107080;-4304;-3854};{148680;107612;-4304;-3854};{147412;107740;-4304;-3854};{147032;107336;-4304;-3854}}	territory_end
+npcmaker_begin	[giran_t24_21_044]	initial_spawn = all	maximum_npc = 8
+npc_begin	[malruk_berserker]	pos = {148416;107552;-4176;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {148128;107504;-4100;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {148224;107136;-4121;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {147984;107264;-4080;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {147696;107408;-4032;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {147584;107136;-4007;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {147392;107536;-3975;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {147216;107328;-3945;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_045]	{{146524;107696;-3940;-3540};{147072;108016;-3940;-3540};{146820;108712;-3940;-3540};{146184;108388;-3940;-3540};{146180;107964;-3940;-3540}}	territory_end
+npcmaker_begin	[giran_t24_21_045]	initial_spawn = all	maximum_npc = 8
+npc_begin	[malruk_berserker]	pos = {146608;107840;-3776;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {146896;107952;-3808;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {146672;108064;-3728;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_berserker]	pos = {146384;108000;-3696;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {146848;108272;-3701;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {146664;108452;-3632;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[malruk_lord]	pos = {146520;108292;-3648;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npc_begin	[limal_karinness]	pos = {146304;108352;-3606;0}	total = 1	respawn = 4min	respawn_rand = 2min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_046]	{{145984;110768;-3604;-3404};{146616;110576;-3604;-3404};{146724;111676;-3604;-3404};{145928;111816;-3604;-3404}}	territory_end
+npcmaker_begin	[giran_t24_21_046]	initial_spawn = all	maximum_npc = 8
+npc_begin	[malruk_berserker]	pos = {146096;110896;-3520;0}	total = 1	respawn = 15min	respawn_rand = 3min	npc_end
+npc_begin	[malruk_lord]	pos = {146432;110788;-3520;0}	total = 1	respawn = 15min	respawn_rand = 3min	npc_end
+npc_begin	[limal_karinness]	pos = {146288;111040;-3536;0}	total = 1	respawn = 15min	respawn_rand = 3min	npc_end
+npc_begin	[malruk_berserker]	pos = {146096;111280;-3552;0}	total = 1	respawn = 15min	respawn_rand = 3min	npc_end
+npc_begin	[malruk_lord]	pos = {146512;111200;-3536;0}	total = 1	respawn = 15min	respawn_rand = 3min	npc_end
+npc_begin	[limal_karinness]	pos = {146320;111408;-3552;0}	total = 1	respawn = 15min	respawn_rand = 3min	npc_end
+npc_begin	[malruk_lord]	pos = {146252;111648;-3547;0}	total = 1	respawn = 15min	respawn_rand = 3min	npc_end
+npc_begin	[limal_karinness]	pos = {146608;111472;-3520;0}	total = 1	respawn = 15min	respawn_rand = 3min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_047]	{{145900;112360;-3760;-3560};{147060;111896;-3760;-3560};{147876;111836;-3760;-3560};{147716;112908;-3760;-3560};{146836;113124;-3760;-3560};{146012;112912;-3760;-3560}}	territory_end
+npcmaker_begin	[giran_t24_21_047]	initial_spawn = all	maximum_npc = 15
+npc_begin	[malruk_lord]	pos = {146848;112064;-3648;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {146528;112192;-3616;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {146240;112288;-3616;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {146080;112512;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {146176;112784;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {146384;112576;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {146464;112864;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {146704;112608;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {146912;112288;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {146832;112912;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {147232;112848;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {147632;112656;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {147296;112432;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {147344;112096;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {147648;112224;-3696;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_048]	{{148588;111508;-3760;-3560};{149140;111708;-3760;-3560};{149340;112916;-3760;-3560};{148412;113048;-3760;-3560};{147696;112908;-3760;-3560};{147876;111812;-3760;-3560}}	territory_end
+npcmaker_begin	[giran_t24_21_048]	initial_spawn = all	maximum_npc = 17
+npc_begin	[malruk_lord]	pos = {148016;111952;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {148112;112192;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {148356;111976;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {148400;111664;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {148384;112400;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {147984;112624;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {148320;112832;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {148640;112688;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {148832;112912;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {149136;112784;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {148948;112544;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {148740;112332;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {149088;112320;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {148944;112096;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {149120;111904;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {148688;111984;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {148784;111760;-3680;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_049]	{{148812;115172;-3764;-3564};{149432;115096;-3764;-3564};{149668;115928;-3764;-3564};{149224;116324;-3764;-3564};{148604;116128;-3764;-3564};{148324;115600;-3764;-3564}}	territory_end
+npcmaker_begin	[giran_t24_21_049]	initial_spawn = all	maximum_npc = 15
+npc_begin	[malruk_lord]	pos = {149505;115920;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {149456;115728;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {149262;115926;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {149200;116160;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {149024;115984;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {149216;115680;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {148928;115776;-3689;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {148768;115952;-3691;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {148672;115712;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {148432;115632;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {148688;115456;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {148912;115488;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {149216;115392;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {148960;115248;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {149296;115200;-3696;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_050]	{{152188;118860;-3864;-3664};{153220;119020;-3864;-3664};{153264;119932;-3864;-3664};{152800;120392;-3864;-3664};{151832;120284;-3864;-3664};{151644;119444;-3864;-3664}}	territory_end
+npcmaker_begin	[giran_t24_21_050]	initial_spawn = all	maximum_npc = 26
+npc_begin	[malruk_lord]	pos = {151824;119536;-3786;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {152160;119088;-3776;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {152400;119040;-3784;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {152112;119296;-3776;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {152032;119616;-3776;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {152352;119296;-3776;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {152592;119120;-3776;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {152592;119360;-3760;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {152256;119552;-3760;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {151904;119872;-3776;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {152144;119808;-3769;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {152816;119104;-3776;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {153056;119216;-3771;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {152800;119456;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {152768;119696;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {153024;119552;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {152944;119792;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {153168;119792;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {152992;120032;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {152752;119904;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {152720;120176;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {152480;120016;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {152432;120288;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {152192;120144;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {152288;119856;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {152064;120016;-3784;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_051]	{{154064;118196;-3856;-3656};{154560;118312;-3856;-3656};{154764;118632;-3856;-3656};{154692;119188;-3856;-3656};{154172;119500;-3856;-3656};{153412;119636;-3856;-3656};{153120;119056;-3856;-3656};{153560;118336;-3856;-3656}}	territory_end
+npcmaker_begin	[giran_t24_21_051]	initial_spawn = all	maximum_npc = 17
+npc_begin	[malruk_lord]	pos = {153344;119088;-3760;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {153440;119440;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {153568;119152;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {153696;119344;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {153824;119040;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {153984;119280;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {154080;118976;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {154240;119184;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {154304;118896;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {154656;118656;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {154384;118640;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {154320;118368;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {154096;118544;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {153904;118352;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {153792;118560;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {153728;118768;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {153488;118704;-3785;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_052]	{{151512;120888;-3848;-3648};{152200;121068;-3848;-3648};{152776;121556;-3848;-3648};{152812;122240;-3848;-3648};{152168;122124;-3848;-3648};{151604;121652;-3848;-3648}}	territory_end
+npcmaker_begin	[giran_t24_21_052]	initial_spawn = all	maximum_npc = 14
+npc_begin	[malruk_lord]	pos = {151632;121152;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {151840;121152;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {152032;121168;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {151728;121344;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {151968;121408;-3776;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {151760;121616;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {152192;121376;-3769;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {152000;121648;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {152240;121664;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {152128;121936;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {152464;121616;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {152384;121904;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {152544;122064;-3785;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {152592;121776;-3785;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_053]	{{145392;115112;-3780;-3580};{146744;116176;-3780;-3580};{146560;116540;-3780;-3580};{145524;116072;-3780;-3580};{144832;115480;-3780;-3580}}	territory_end
+npcmaker_begin	[giran_t24_21_053]	initial_spawn = all	maximum_npc = 7
+npc_begin	[death_wave]	pos = {145232;115376;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_soldier]	pos = {145299;115732;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[death_wave]	pos = {145697;115542;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_soldier]	pos = {145744;115888;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[death_wave]	pos = {146163;115853;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_soldier]	pos = {146003;116170;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[death_wave]	pos = {146484;116236;-3696;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_054]	{{146808;119896;-4756;-4306};{147236;119840;-4756;-4306};{147406;120778;-4756;-4306};{147168;120891;-4756;-4306};{146890;120356;-4756;-4306}}	territory_end
+npcmaker_begin	[giran_t24_21_054]	initial_spawn = all	maximum_npc = 4
+npc_begin	[cave_howler]	pos = {147264;120776;-4652;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_berserker]	pos = {147240;120504;-4550;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_knight]	pos = {147012;120192;-4496;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_berserker]	pos = {147088;119920;-4440;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_055]	{{146798;118763;-4480;-4030};{147169;118612;-4480;-4030};{147282;119171;-4480;-4030};{147233;119777;-4480;-4030};{146804;119828;-4480;-4030}}	territory_end
+npcmaker_begin	[giran_t24_21_055]	initial_spawn = all	maximum_npc = 6
+npc_begin	[malruk_soldier]	pos = {146816;119584;-4304;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[plando]	pos = {147152;119424;-4304;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_soldier]	pos = {146944;119184;-4203;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[cave_howler]	pos = {147168;119016;-4160;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_soldier]	pos = {146848;118848;-4096;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[cave_howler]	pos = {147120;118752;-4090;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_056]	{{146336;118204;-4092;-3842};{146760;117892;-4092;-3842};{147192;118488;-4092;-3842};{146736;118692;-4092;-3842}}	territory_end
+npcmaker_begin	[giran_t24_21_056]	initial_spawn = all	maximum_npc = 5
+npc_begin	[malruk_soldier]	pos = {146768;118544;-4010;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[plando]	pos = {146976;118432;-4000;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_soldier]	pos = {146736;118272;-3936;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[cave_howler]	pos = {146496;118176;-3904;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_soldier]	pos = {146688;118064;-3908;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_057]	{{150673;118118;-5288;-4888};{151654;117351;-5288;-4888};{151724;117621;-5288;-4888};{150700;118374;-5288;-4888}}	territory_end
+npcmaker_begin	[giran_t24_21_057]	initial_spawn = all	maximum_npc = 4
+npc_begin	[malruk_lord]	pos = {150840;118124;-5008;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {151088;117920;-5088;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {151296;117760;-5143;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {151536;117584;-5184;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_058]	{{148600;113064;-3760;-3560};{149348;112924;-3760;-3560};{149444;113488;-3760;-3560};{149508;114664;-3760;-3560};{149440;115128;-3760;-3560};{148944;115160;-3760;-3560}}	territory_end
+npcmaker_begin	[giran_t24_21_058]	initial_spawn = all	maximum_npc = 20
+npc_begin	[malruk_lord]	pos = {148752;113152;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {148906;113376;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {148976;113088;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {149149;113286;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {149228;113056;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {148852;113614;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {149108;113559;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {149348;113486;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {148960;113810;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {149264;113746;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {149136;113952;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {149008;114192;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {149344;114080;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {149217;114321;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {149056;114512;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {149360;114528;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {149184;114720;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {149008;114896;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {149360;114864;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {149152;115024;-3696;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_059]	{{149215;116324;-3743;-3543};{149669;115948;-3743;-3543};{150339;116807;-3743;-3543};{149961;117135;-3743;-3543}}	territory_end
+npcmaker_begin	[giran_t24_21_059]	initial_spawn = all	maximum_npc = 9
+npc_begin	[malruk_lord]	pos = {149488;116176;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {149520;116416;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {149728;116208;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {149744;116448;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {149728;116688;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {150000;116544;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {149936;116768;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {150192;116800;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {149952;116976;-3680;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_060]	{{149986;117116;-3762;-3562};{150349;116830;-3762;-3562};{150574;116932;-3762;-3562};{150639;117426;-3762;-3562};{150445;117579;-3762;-3562};{150267;117565;-3762;-3562};{150013;117376;-3762;-3562}}	territory_end
+npcmaker_begin	[giran_t24_21_060]	initial_spawn = all	maximum_npc = 7
+npc_begin	[malruk_lord]	pos = {150176;117168;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {150336;117008;-3676;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {150192;117392;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {150352;117216;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {150544;117040;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {150368;117424;-3680;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {150528;117296;-3680;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[giran_t24_21_061]	{{150636;117536;-3976;-3576};{151660;118392;-3976;-3576};{151528;118564;-3976;-3576};{150612;118020;-3976;-3576};{150520;117620;-3976;-3576}}	territory_end
+npcmaker_begin	[giran_t24_21_061]	initial_spawn = all	maximum_npc = 8
+npc_begin	[malruk_lord]	pos = {150656;117696;-3688;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {150736;117840;-3664;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {150880;117968;-3659;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[malruk_lord]	pos = {150976;118128;-3696;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {151152;118176;-3744;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {151232;118304;-3792;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[limal_karinness]	pos = {151408;118272;-3830;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karik]	pos = {151488;118432;-3856;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//----------------------------------------------------------------------------------------------
+// ver 크로니클 I
+// Date 03.12.24
+// 용의 던전 패거리 몬스터
+//----------------------------------------------------------------------------------------------
+territory_begin	[party_giran_t24_21_003]	{{140400;113484;-3836;-3636};{140928;113748;-3836;-3636};{141356;114152;-3836;-3636};{141140;115264;-3836;-3636};{140736;115708;-3836;-3636};{139368;114548;-3836;-3636};{139376;114216;-3836;-3636}}	territory_end
+npcmaker_begin	[party_giran_t24_21_003]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{140683;115180;-3728;0;50%};{140299;114178;-3728;0;50%}}	total=1	respawn=30min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_005]	{{140436;107468;-4000;-3800};{141464;108512;-4000;-3800};{141688;109696;-4000;-3800};{141216;110584;-4000;-3800};{140800;111000;-4000;-3800};{140296;110992;-4000;-3800};{139948;110428;-4000;-3800}}	territory_end
+npcmaker_begin	[party_giran_t24_21_005]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{140568;110645;-3941;0;30%};{141176;110133;-3941;0;40%};{140453;109706;-3941;0;30%}}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npc_begin	[pytan]	pos={{141271;109405;-3941;0;40%};{140738;108745;-3941;0;30%};{140648;108001;-3941;0;30%}}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_006]	{{143240;111704;-3988;-3788};{144896;112268;-3988;-3788};{144268;113048;-3988;-3788};{143852;113104;-3988;-3788};{143328;112892;-3988;-3788};{142768;112244;-3988;-3788}}	territory_end
+npcmaker_begin	[party_giran_t24_21_006]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{144332;112248;-3947;0;25%};{143728;112784;-3952;0;25%};{143216;112384;-3952;0;25%};{143536;111984;-3952;0;25%}}	total=1	respawn=30min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_007]	{{143160;109760;-3984;-3784};{143952;109728;-3984;-3784};{144192;109896;-3984;-3784};{144316;110324;-3984;-3784};{144188;110700;-3984;-3784};{143728;110868;-3984;-3784};{143412;110776;-3984;-3784};{142996;110328;-3984;-3784}}	territory_end
+npcmaker_begin	[party_giran_t24_21_007]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{144000;109984;-3952;0;33%};{143440;110208;-3952;0;34%};{143824;110720;-3952;0;33%}}	total=1	respawn=30min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_010]	{{144872;107076;-3984;-3784};{146120;108028;-3984;-3784};{146216;109136;-3984;-3784};{144164;108936;-3984;-3784};{144000;107696;-3984;-3784};{144140;107204;-3984;-3784}}	territory_end
+npcmaker_begin	[party_giran_t24_21_010]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{144864;107376;-3952;0;50%};{145520;108176;-3952;0;50%}}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npc_begin	[pytan]	pos={{144432;107872;-3952;0;50%};{144592;108280;-3952;0;50%}}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_012]	{{146848;109040;-3980;-3780};{148204;109120;-3980;-3780};{148700;109492;-3980;-3780};{148624;110672;-3980;-3780};{148380;110892;-3980;-3780};{148028;110960;-3980;-3780};{146672;110568;-3980;-3780}}	territory_end
+npcmaker_begin	[party_giran_t24_21_012]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{148240;109456;-3952;0;20%};{148240;110560;-3952;0;45%};{147632;109488;-3952;0;35%}}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npc_begin	[pytan]	pos={{147536;109952;-3952;0;30%};{147616;110480;-3952;0;70%}}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_013]	{{143688;114152;-3760;-3560};{144304;114244;-3760;-3560};{144424;115232;-3760;-3560};{143496;114976;-3760;-3560};{143208;114624;-3760;-3560};{143112;114328;-3760;-3560}}	territory_end
+npcmaker_begin	[party_giran_t24_21_013]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{143575;114522;-3728;0;40%};{144092;114905;-3728;0;60%}}	total=1	respawn=30min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_014]	{{144948;113844;-3772;-3572};{145288;113956;-3772;-3572};{145432;115092;-3772;-3572};{144812;115456;-3772;-3572};{144428;115212;-3772;-3572};{144316;114276;-3772;-3572};{144528;113920;-3772;-3572}}	territory_end
+npcmaker_begin	[party_giran_t24_21_014]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{145060;114888;-3728;0;40%};{144848;114200;-3728;0;60%}}	total=1	respawn=30min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_016]	{{147360;117732;-3760;-3560};{148532;116716;-3760;-3560};{148856;116744;-3760;-3560};{149244;117764;-3760;-3560};{149140;118380;-3760;-3560};{148892;118668;-3760;-3560};{148288;118748;-3760;-3560};{147920;118580;-3760;-3560}}	territory_end
+npcmaker_begin	[party_giran_t24_21_016]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{148976;118080;-3712;0;45%};{148198;118310;-3728;0;55%}}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npc_begin	[pytan]	pos={{148777;117075;-3728;0;45%};{148288;117623;-3728;0;55%}}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_017]	{{139924;117372;-3952;-3752};{141444;117296;-3952;-3752};{141124;119328;-3952;-3752};{140528;119796;-3952;-3752};{139908;119684;-3952;-3752};{139648;118824;-3952;-3752};{139684;118016;-3952;-3752}}	territory_end
+npcmaker_begin	[party_giran_t24_21_017]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{141024;119008;-3920;0;50%};{140864;118048;-3920;0;50%}}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npc_begin	[pytan]	pos={140432;118256;-3920;0}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_018]	{{142844;115768;-3952;-3752};{143584;116124;-3952;-3752};{143792;116612;-3952;-3752};{143816;117796;-3952;-3752};{143232;118280;-3952;-3752};{142608;118048;-3952;-3752};{141624;117108;-3952;-3752};{142116;116044;-3952;-3752}}	territory_end
+npcmaker_begin	[party_giran_t24_21_018]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{143394;117550;-3920;0;50%};{142713;117355;-3920;0;50%}}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npc_begin	[pytan]	pos={142117;117012;-3920;0}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_019]	{{142404;118464;-3968;-3768};{143016;118424;-3968;-3768};{142900;119196;-3968;-3768};{142500;119812;-3968;-3768};{141404;119376;-3968;-3768};{141556;118876;-3968;-3768}}	territory_end
+npcmaker_begin	[party_giran_t24_21_019]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{142644;118772;-3920;0;25%};{142400;119424;-3920;0;50%};{141744;119216;-3920;0;25%}}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_020]	{{140284;120592;-3956;-3756};{140716;120380;-3956;-3756};{141924;121252;-3956;-3756};{142000;121812;-3956;-3756};{141200;122152;-3956;-3756};{140552;122112;-3956;-3756};{140048;121668;-3956;-3756}}	territory_end
+npcmaker_begin	[party_giran_t24_21_020]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{141632;121264;-3920;0;50%};{141072;121840;-3920;0;50%}}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_021]	{{143164;119884;-3964;-3764};{144464;120096;-3964;-3764};{144484;121592;-3964;-3764};{143312;121804;-3964;-3764};{142584;121656;-3964;-3764};{142332;120980;-3964;-3764};{142552;120108;-3964;-3764}}	territory_end
+npcmaker_begin	[party_giran_t24_21_021]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{144064;120256;-3920;0;35%};{143184;120208;-3920;0;65%}}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npc_begin	[pytan]	pos={{143232;120736;-3920;0;20%};{143200;121456;-3920;0;40%};{142736;121008;-3920;0;40%}}	total=1	respawn=25min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_022]	{{145844;118912;-3952;-3752};{146136;119036;-3952;-3752};{146212;120732;-3952;-3752};{145912;121024;-3952;-3752};{145220;120728;-3952;-3752};{145068;120384;-3952;-3752}}	territory_end
+npcmaker_begin	[party_giran_t24_21_022]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{145888;119424;-3920;0;25%};{145973;120073;-3920;0;25%};{145435;120312;-3920;0;25%};{145862;120659;-3920;0;25%}}	total=1	respawn=20min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_023]	{{144704;116932;-3972;-3772};{144996;116752;-3972;-3772};{146092;117096;-3972;-3772};{146308;117500;-3972;-3772};{145312;118772;-3972;-3772};{144312;118784;-3972;-3772}}	territory_end
+npcmaker_begin	[party_giran_t24_21_023]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{144672;118440;-3920;0;50%};{144780;117780;-3920;0;50%}}	total=1	respawn=20min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npc_begin	[pytan]	pos={{145792;117456;-3920;0;50%};{145148;118448;-3920;0;50%}}	total=1	respawn=20min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_024]	{{148436;119484;-4904;-4704};{149400;119284;-4904;-4704};{150332;120916;-4904;-4704};{150332;121640;-4904;-4704};{149920;121900;-4904;-4704};{147920;121748;-4904;-4704}}	territory_end
+npcmaker_begin	[party_giran_t24_21_024]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{148576;121456;-4874;0;50%};{149394;121049;-4874;0;50%}}	total=1	respawn=20min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npc_begin	[pytan]	pos={{148650;120664;-4874;0;50%};{149215;119856;-4874;0;50%}}	total=1	respawn=20min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_028]	{{152956;116320;-5296;-5096};{154576;116988;-5296;-5096};{154136;117320;-5296;-5096};{153464;117336;-5296;-5096};{152840;117044;-5296;-5096}}	territory_end
+npcmaker_begin	[party_giran_t24_21_028]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{153248;116864;-5264;0;50%};{153904;117072;-5264;0;50%}}	total=1	respawn=20min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_029]	{{152776;114924;-5296;-5096};{153324;114728;-5296;-5096};{153816;115700;-5296;-5096};{153400;116508;-5296;-5096};{152964;116320;-5296;-5096}}	territory_end
+npcmaker_begin	[party_giran_t24_21_029]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{153296;116064;-5264;0;50%};{153200;115344;-5264;0;50%}}	total=1	respawn=20min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_030]	{{154432;115108;-5308;-5108};{154920;115068;-5308;-5108};{154924;115892;-5308;-5108};{154548;116980;-5308;-5108};{154024;116752;-5308;-5108}}	territory_end
+npcmaker_begin	[party_giran_t24_21_030]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{154496;116528;-5264;0;50%};{154692;115760;-5264;0;50%}}	total=1	respawn=20min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_031]	{{153784;114220;-5288;-5088};{154508;114196;-5288;-5088};{154872;114580;-5288;-5088};{154920;115056;-5288;-5088};{153516;115076;-5288;-5088};{153312;114712;-5288;-5088}}	territory_end
+npcmaker_begin	[party_giran_t24_21_031]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{153792;114576;-5264;0;50%};{154464;114656;-5264;0;50%}}	total=1	respawn=20min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_032]	{{150408;113888;-5528;-5328};{151784;114768;-5528;-5328};{151804;115524;-5528;-5328};{151220;116100;-5528;-5328};{150296;116196;-5528;-5328};{149824;115528;-5528;-5328};{149808;114452;-5528;-5328}}	territory_end
+npcmaker_begin	[party_giran_t24_21_032]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{151478;115250;-5488;0;33%};{151036;114668;-5488;0;34%};{150391;114315;-5488;0;33%}}	total=1	respawn=15min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npc_begin	[pytan]	pos={{150089;114852;-5488;0;33%};{150257;115657;-5488;0;34%};{150960;115712;-5488;0;33%}}	total=1	respawn=15min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_033]	{{148656;114444;-5524;-5324};{149276;114296;-5524;-5324};{149460;115484;-5524;-5324};{148732;115444;-5524;-5324};{148368;115164;-5524;-5324};{148328;114772;-5524;-5324}}	territory_end
+npcmaker_begin	[party_giran_t24_21_033]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{148832;115200;-5488;0;50%};{149088;114784;-5488;0;50%}}	total=1	respawn=15min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_034]	{{153508;110580;-5564;-5364};{154448;111020;-5564;-5364};{154564;112432;-5564;-5364};{154312;112928;-5564;-5364};{153276;113188;-5564;-5364};{152884;112772;-5564;-5364};{152792;111376;-5564;-5364}}	territory_end
+npcmaker_begin	[party_giran_t24_21_034]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{153532;112820;-5536;0;50%};{153616;111120;-5536;0;50%}}	total=1	respawn=15min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npc_begin	[pytan]	pos={{153488;112320;-5536;0;50%};{153104;111664;-5536;0;50%}}	total=1	respawn=15min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_035]	{{152236;110012;-5560;-5360};{153036;110436;-5560;-5360};{152940;110756;-5560;-5360};{152372;110836;-5560;-5360};{151972;110728;-5560;-5360};{151844;110432;-5560;-5360};{151944;110088;-5560;-5360}}	territory_end
+npcmaker_begin	[party_giran_t24_21_035]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{152144;110384;-5536;0;50%};{152640;110464;-5536;0;50%}}	total=1	respawn=15min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_036]	{{150704;110624;-5568;-5368};{151496;111076;-5568;-5368};{151236;112316;-5568;-5368};{150604;112808;-5568;-5368};{150072;112788;-5568;-5368};{149764;112140;-5568;-5368};{149724;111092;-5568;-5368}}	territory_end
+npcmaker_begin	[party_giran_t24_21_036]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{150272;112336;-5520;0;50%};{150112;111600;-5536;0;50%}}	total=1	respawn=15min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npc_begin	[pytan]	pos={{150464;110976;-5536;0;30%};{150944;111280;-5536;0;50%};{150832;111920;-5536;0;20%}}	total=1	respawn=15min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_037]	{{149620;109116;-5252;-5052};{150228;109448;-5252;-5052};{150332;109812;-5252;-5052};{149308;110792;-5252;-5052};{149104;109328;-5252;-5052}}	territory_end
+npcmaker_begin	[party_giran_t24_21_037]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={149520;109456;-5223;0}	total=1	respawn=10min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_038]	{{150972;108700;-5220;-5020};{152164;109004;-5220;-5020};{151868;109488;-5220;-5020};{151364;109740;-5220;-5020};{150424;109752;-5220;-5020};{150400;109348;-5220;-5020}}	territory_end
+npcmaker_begin	[party_giran_t24_21_038]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{151664;109104;-5168;0;50%};{150897;109397;-5168;0;50%}}	total=1	respawn=10min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_039]	{{152928;108152;-5208;-5008};{153916;107960;-5208;-5008};{153904;109524;-5208;-5008};{153224;109772;-5208;-5008};{152808;109456;-5208;-5008}}	territory_end
+npcmaker_begin	[party_giran_t24_21_039]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{153328;108304;-5168;0;50%};{153120;109088;-5168;0;20%};{153712;109376;-5168;0;30%}}	total=1	respawn=10min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_040]	{{153752;106972;-5196;-4996};{154044;107232;-5196;-4996};{153884;107964;-5196;-4996};{152904;108140;-5196;-4996};{152196;107968;-5196;-4996};{152112;107344;-5196;-4996}}	territory_end
+npcmaker_begin	[party_giran_t24_21_040]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{152448;107696;-5088;0;50%};{153568;107488;-5168;0;50%}}	total=1	respawn=10min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_045]	{{146524;107696;-3800;-3600};{147072;108016;-3800;-3600};{146820;108712;-3800;-3600};{146184;108388;-3800;-3600};{146180;107964;-3800;-3600}}	territory_end
+npcmaker_begin	[party_giran_t24_21_045]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={146608;108176;-3712;0}	total=1	respawn=10min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_046]	{{145984;110768;-3604;-3404};{146616;110576;-3604;-3404};{146724;111676;-3604;-3404};{145928;111816;-3604;-3404}}	territory_end
+npcmaker_begin	[party_giran_t24_21_046]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{146496;111536;-3568;0;50%};{146208;111008;-3564;0;50%}}	total=1	respawn=10min	respawn_rand=5min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_047]	{{145900;112360;-3760;-3560};{147060;111896;-3760;-3560};{147876;111836;-3760;-3560};{147716;112908;-3760;-3560};{146836;113124;-3760;-3560};{146012;112912;-3760;-3560}}	territory_end
+npcmaker_begin	[party_giran_t24_21_047]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{146368;112640;-3728;0;35%};{146960;112512;-3728;0;25%};{147584;112352;-3728;0;40%}}	total=1	respawn=6min	respawn_rand=3min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_048]	{{148588;111508;-3760;-3560};{149140;111708;-3760;-3560};{149340;112916;-3760;-3560};{148412;113048;-3760;-3560};{147696;112908;-3760;-3560};{147876;111812;-3760;-3560}}	territory_end
+npcmaker_begin	[party_giran_t24_21_048]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{148736;112064;-3718;0;35%};{148176;112048;-3728;0;25%};{148960;112720;-3728;0;40%}}	total=1	respawn=6min	respawn_rand=3min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_049]	{{148812;115172;-3764;-3564};{149432;115096;-3764;-3564};{149668;115928;-3764;-3564};{149224;116324;-3764;-3564};{148604;116128;-3764;-3564};{148324;115600;-3764;-3564}}	territory_end
+npcmaker_begin	[party_giran_t24_21_049]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={{149328;115968;-3712;0;35%};{149280;115408;-3728;0;25%};{148656;115696;-3728;0;40%}}	total=1	respawn=6min	respawn_rand=3min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_050]	{{152188;118860;-3864;-3664};{153220;119020;-3864;-3664};{153264;119932;-3864;-3664};{152800;120392;-3864;-3664};{151832;120284;-3864;-3664};{151644;119444;-3864;-3664}}	territory_end
+npcmaker_begin	[party_giran_t24_21_050]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{152912;120096;-3816;0;50%};{153088;119472;-3816;0;50%}}	total=1	respawn=6min	respawn_rand=3min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npc_begin	[pytan]	pos={{152160;120272;-3816;0;50%};{152208;119392;-3808;0;50%}}	total=1	respawn=6min	respawn_rand=3min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_051]	{{154064;118196;-3856;-3656};{154560;118312;-3856;-3656};{154764;118632;-3856;-3656};{154692;119188;-3856;-3656};{154172;119500;-3856;-3656};{153412;119636;-3856;-3656};{153120;119056;-3856;-3656};{153560;118336;-3856;-3656}}	territory_end
+npcmaker_begin	[party_giran_t24_21_051]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{154304;118704;-3816;0;50%};{153984;119328;-3816;0;50%}}	total=1	respawn=6min	respawn_rand=3min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npc_begin	[pytan]	pos={153712;118768;-3816;0}	total=1	respawn=6min	respawn_rand=3min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_giran_t24_21_052]	{{151512;120888;-3848;-3648};{152200;121068;-3848;-3648};{152776;121556;-3848;-3648};{152812;122240;-3848;-3648};{152168;122124;-3848;-3648};{151604;121652;-3848;-3648}}	territory_end
+npcmaker_begin	[party_giran_t24_21_052]	initial_spawn=all	maximum_npc=8
+npc_begin	[pytan]	pos={{152576;121808;-3816;0;50%};{151840;121344;-3816;0;50%}}	total=1	respawn=6min	respawn_rand=3min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npc_begin	[pytan]	pos={152208;121712;-3816;0}	total=1	respawn=6min	respawn_rand=3min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t24_21_053]	{{152838;121580;-3840;-3640};{153701;121029;-3840;-3640};{154191;121860;-3840;-3640};{152838;122195;-3840;-3640}}	territory_end
+npcmaker_begin	[party_t24_21_053]	initial_spawn=all	maximum_npc=4
+npc_begin	[pytan]	pos={153664;121568;-3799;0}	total=1	respawn=4min	respawn_rand=1min	Privates=[pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec;pytan_knight:pytan_knight:1:300sec]	npc_end
+npcmaker_end
+

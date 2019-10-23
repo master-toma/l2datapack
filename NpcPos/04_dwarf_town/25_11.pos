@@ -1,0 +1,282 @@
+//------------------- 25_11 Dwarf -----------------------------------------------------------
+territory_begin	[t25_11_001]	{{163900;-217172;-3748;-3348};{165376;-215296;-3748;-3348};{164324;-213716;-3748;-3348};{163904;-214252;-3748;-3348}}	territory_end
+npcmaker_begin	[t25_11_001]
+npc_begin	[goblin_brigand_sub_ldr]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[magical_weaver]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[barbed_bat]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_002]	{{165400;-215236;-3792;-3392};{166308;-214348;-3792;-3392};{166528;-213032;-3792;-3392};{166128;-211504;-3792;-3392};{164980;-211920;-3792;-3392};{164656;-212420;-3792;-3392};{164276;-213652;-3792;-3392}}	territory_end
+npcmaker_begin	[t25_11_002]
+npc_begin	[goblin_brigand_sub_ldr]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[magical_weaver]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[barbed_bat]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_003]	{{163952;-212200;-3768;-3368};{166004;-211012;-3768;-3368};{165844;-209160;-3768;-3368};{163996;-207908;-3768;-3368}}	territory_end
+npcmaker_begin	[t25_11_003]
+npc_begin	[goblin_brigand_sub_ldr]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[magical_weaver]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[barbed_bat]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_004]	{{163968;-207848;-3764;-3364};{165852;-209060;-3764;-3364};{166676;-208108;-3764;-3364};{166584;-206796;-3764;-3364};{165896;-206320;-3764;-3364};{163932;-206324;-3764;-3364}}	territory_end
+npcmaker_begin	[t25_11_004]
+npc_begin	[goblin_brigand_sub_ldr]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[magical_weaver]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[barbed_bat]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_005]	{{163936;-205932;-3792;-3392};{166184;-206048;-3792;-3392};{168440;-202388;-3792;-3392};{163968;-199828;-3792;-3392}}	territory_end
+npcmaker_begin	[t25_11_005]
+npc_begin	[goblin_brigand_sub_ldr]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[magical_weaver]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[barbed_bat]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_006]	{{164064;-204320;-3640;-3340};{165220;-204544;-3640;-3340};{166192;-202816;-3640;-3340};{164476;-201896;-3640;-3340}}	territory_end
+npcmaker_begin	[t25_11_006]
+npc_begin	[goblin_lord]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_007]	{{171932;-216184;-3700;-3300};{174296;-213924;-3700;-3300};{172932;-211876;-3700;-3300};{170020;-212684;-3700;-3300};{171180;-215596;-3700;-3300}}	territory_end
+npcmaker_begin	[t25_11_007]
+npc_begin	[goblin_brigand_leader]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[obsidian_golem]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_008]	{{170916;-213804;-3716;-3516};{171928;-215440;-3716;-3516};{173256;-214008;-3716;-3516};{172260;-212688;-3716;-3516}}	territory_end
+npcmaker_begin	[t25_11_008]
+npc_begin	[twink_puma]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_009]	{{169948;-212624;-3740;-3340};{172904;-211812;-3740;-3340};{173240;-208032;-3740;-3340};{172356;-207788;-3740;-3340};{171124;-208276;-3740;-3340};{167736;-211632;-3740;-3340};{168640;-212588;-3740;-3340}}	territory_end
+npcmaker_begin	[t25_11_009]
+npc_begin	[goblin_brigand_leader]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[obsidian_golem]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_010]	{{170196;-212020;-3700;-3400};{172572;-211752;-3700;-3400};{171944;-210280;-3700;-3400};{170100;-211212;-3700;-3400}}	territory_end
+npcmaker_begin	[t25_11_010]
+npc_begin	[twink_puma]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_011]	{{174336;-213784;-3772;-3372};{176552;-212848;-3772;-3372};{177148;-210220;-3772;-3372};{173280;-208232;-3772;-3372};{173012;-211896;-3772;-3372}}	territory_end
+npcmaker_begin	[t25_11_011]
+npc_begin	[goblin_brigand_leader]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[obsidian_golem]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_012]	{{173896;-212344;-3768;-3468};{175176;-211696;-3768;-3468};{174552;-210500;-3768;-3468};{173396;-210824;-3768;-3468}}	territory_end
+npcmaker_begin	[t25_11_012]
+npc_begin	[twink_puma]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_013]	{{177720;-213736;-3732;-3332};{178560;-213784;-3732;-3332};{179488;-212336;-3732;-3332};{179592;-210044;-3732;-3332};{177164;-210236;-3732;-3332};{176524;-212852;-3732;-3332}}	territory_end
+npcmaker_begin	[t25_11_013]
+npc_begin	[goblin_brigand_leader]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[obsidian_golem]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_014]	{{177164;-212428;-3720;-3420};{178420;-213452;-3720;-3420};{179076;-211584;-3720;-3420};{177996;-210840;-3720;-3420}}	territory_end
+npcmaker_begin	[t25_11_014]
+npc_begin	[twink_puma]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_015]	{{179496;-211912;-3772;-3372};{182216;-211220;-3772;-3372};{183760;-209388;-3772;-3372};{182124;-208644;-3772;-3372};{179588;-210588;-3772;-3372}}	territory_end
+npcmaker_begin	[t25_11_015]
+npc_begin	[goblin_brigand_leader]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[obsidian_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_016]	{{170916;-207664;-3704;-3304};{172872;-207284;-3704;-3304};{170952;-203776;-3704;-3304};{169348;-206292;-3704;-3304}}	territory_end
+npcmaker_begin	[t25_11_016]
+npc_begin	[goblin_lord]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[obsidian_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_017]	{{173024;-207088;-3688;-3188};{175612;-206520;-3688;-3188};{177556;-204764;-3688;-3188};{172892;-202632;-3688;-3188};{171256;-203912;-3688;-3188}}	territory_end
+npcmaker_begin	[t25_11_017]
+npc_begin	[goblin_lord]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[obsidian_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_018]	{{173048;-205220;-3704;-3304};{175260;-206044;-3704;-3304};{175864;-204616;-3704;-3304};{174300;-204104;-3704;-3304}}	territory_end
+npcmaker_begin	[t25_11_018]
+npc_begin	[goblin_brigand_leader]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_019]	{{178664;-209332;-3412;-3012};{179636;-208728;-3412;-3012};{177672;-205888;-3412;-3012};{173444;-207036;-3412;-3012}}	territory_end
+npcmaker_begin	[t25_11_019]
+npc_begin	[goblin_lord]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[obsidian_golem]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_020]	{{173776;-203012;-3744;-2644};{177584;-204700;-3744;-2644};{178356;-200956;-3744;-2644};{177184;-200400;-3744;-2644}}	territory_end
+npcmaker_begin	[t25_11_020]
+npc_begin	[goblin_lord]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[obsidian_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_021]	{{170928;-201260;-3656;-3156};{174552;-200376;-3656;-3156};{175284;-199808;-3656;-3156};{175452;-199112;-3656;-3156};{174848;-196876;-3656;-3156};{170220;-196876;-3656;-3156};{169400;-199876;-3656;-3156}}	territory_end
+npcmaker_begin	[t25_11_021]
+npc_begin	[goblin_lord]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[obsidian_golem]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_022]	{{171784;-199956;-3644;-3244};{173276;-199776;-3644;-3244};{173516;-198812;-3644;-3244};{172520;-197736;-3644;-3244};{171296;-198244;-3644;-3244};{171068;-199300;-3644;-3244}}	territory_end
+npcmaker_begin	[t25_11_022]
+npc_begin	[goblin_brigand_leader]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_023]	{{166916;-198228;-3680;-3280};{169364;-199852;-3680;-3280};{170208;-196856;-3680;-3280};{166948;-196844;-3680;-3280}}	territory_end
+npcmaker_begin	[t25_11_023]
+npc_begin	[barbed_bat]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[goblin_lord]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_024]	{{181492;-207800;-3580;-2980};{185384;-208604;-3580;-2980};{186364;-202680;-3580;-2980};{183220;-203652;-3580;-2980};{181616;-205552;-3580;-2980}}	territory_end
+npcmaker_begin	[t25_11_024]
+npc_begin	[goblin_brigand_leader]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[obsidian_golem]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[plunder_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_025]	{{182924;-207360;-3544;-3244};{184828;-207424;-3544;-3244};{184196;-205840;-3544;-3244};{182744;-205676;-3544;-3244}}	territory_end
+npcmaker_begin	[t25_11_025]
+npc_begin	[whinstone_golem]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_026]	{{182972;-203656;-3424;-2424};{186212;-202620;-3424;-2424};{187352;-199336;-3424;-2424};{183568;-199568;-3424;-2424};{182632;-201308;-3424;-2424}}	territory_end
+npcmaker_begin	[t25_11_026]
+npc_begin	[goblin_brigand_leader]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[obsidian_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[plunder_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_027]	{{183536;-199532;-3184;-1784};{187368;-199252;-3184;-1784};{188244;-196932;-3184;-1784};{182576;-196992;-3184;-1784}}	territory_end
+npcmaker_begin	[t25_11_027]
+npc_begin	[goblin_brigand_leader]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[obsidian_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[plunder_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_028]	{{183688;-202244;-3452;-2852};{185768;-202336;-3452;-2852};{185548;-200212;-3452;-2852};{183824;-200772;-3452;-2852}}	territory_end
+npcmaker_begin	[t25_11_028]
+npc_begin	[obsidian_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_029]	{{186108;-205020;-3216;-2216};{187204;-205144;-3216;-2216};{189028;-203344;-3216;-2216};{186332;-202924;-3216;-2216}}	territory_end
+npcmaker_begin	[t25_11_029]
+npc_begin	[goblin_brigand_leader]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[obsidian_golem]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[plunder_tarantula]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_030]	{{185476;-208128;-3648;-3148};{187264;-210456;-3648;-3148};{188856;-211344;-3648;-3148};{189064;-207868;-3648;-3148};{185780;-206416;-3648;-3148}}	territory_end
+npcmaker_begin	[t25_11_030]
+npc_begin	[goblin_brigand_leader]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[obsidian_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[plunder_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_031]	{{185644;-211904;-3760;-3360};{186892;-211220;-3760;-3360};{185872;-209184;-3760;-3360};{183796;-208756;-3760;-3360};{184988;-211404;-3760;-3360}}	territory_end
+npcmaker_begin	[t25_11_031]
+npc_begin	[whinstone_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[twink_puma]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_032]	{{187420;-215944;-3792;-3392};{189012;-214584;-3792;-3392};{188324;-211964;-3792;-3392};{186960;-211276;-3792;-3392};{185692;-211920;-3792;-3392}}	territory_end
+npcmaker_begin	[t25_11_032]
+npc_begin	[whinstone_golem]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[twink_puma]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_033]	{{188448;-219776;-3732;-3432};{190264;-219336;-3732;-3432};{189820;-216904;-3732;-3432};{188728;-214852;-3732;-3432};{187784;-215832;-3732;-3432}}	territory_end
+npcmaker_begin	[t25_11_033]
+npc_begin	[whinstone_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[twink_puma]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_034]	{{192416;-219992;-3720;-3120};{193016;-220124;-3720;-3120};{193744;-219856;-3720;-3120};{194292;-219420;-3720;-3120};{194080;-218608;-3720;-3120};{192180;-219320;-3720;-3120}}	territory_end
+npcmaker_begin	[t25_11_034]
+npc_begin	[twink_puma]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[plunder_tarantula]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_035]	{{194264;-219312;-3752;-3352};{196408;-218480;-3752;-3352};{196316;-211532;-3752;-3352};{195688;-211100;-3752;-3352}}	territory_end
+npcmaker_begin	[t25_11_035]
+npc_begin	[twink_puma]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[plunder_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_11_036]	{{195376;-210260;-3680;-3080};{196336;-211340;-3680;-3080};{196336;-206612;-3680;-3080};{194988;-208828;-3680;-3080}}	territory_end
+npcmaker_begin	[t25_11_036]
+npc_begin	[twink_puma]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[plunder_tarantula]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+//---------------0417 스케빈저가 되는길------------------------------------------
+territory_begin	[quest_t25_11_001]	{{170760;-207700;-3704;-3354};{173348;-207320;-3704;-3354};{172076;-203624;-3704;-3354};{170536;-204416;-3704;-3354};{169504;-205908;-3704;-3354}}	territory_end
+npcmaker_begin	[quest_t25_11_001]
+npc_begin	[hunter_bear]	pos = anywhere	total = 7	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[quest_t25_11_002]	{{169364;-209764;-3680;-3480};{170408;-208188;-3680;-3480};{168944;-206824;-3680;-3480};{168524;-206888;-3680;-3480};{168500;-210400;-3680;-3480}}	territory_end
+npcmaker_begin	[quest_t25_11_002]
+npc_begin	[hunter_bear]	pos = anywhere	total = 3	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[quest_t25_11_003]	{{168484;-212372;-3748;-3348};{174152;-213816;-3748;-3348};{176708;-212812;-3748;-3348};{177520;-210104;-3748;-3348};{172460;-207900;-3748;-3348};{171104;-208352;-3748;-3348};{167944;-211568;-3748;-3348}}	territory_end
+npcmaker_begin	[quest_t25_11_003]
+npc_begin	[hunter_bear]	pos = anywhere	total = 2	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[quest_t25_11_004]	{{171248;-215720;-3700;-3400};{171972;-216348;-3700;-3400};{174220;-213888;-3700;-3400};{170296;-212896;-3700;-3400}}	territory_end
+npcmaker_begin	[quest_t25_11_004]
+npc_begin	[hunter_bear]	pos = anywhere	total = 7	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[quest_t25_11_005]	{{176732;-212836;-3760;-3410};{177864;-213780;-3760;-3410};{178672;-213856;-3760;-3410};{179616;-211940;-3760;-3410};{179256;-209808;-3760;-3410};{177536;-210020;-3760;-3410}}	territory_end
+npcmaker_begin	[quest_t25_11_005]
+npc_begin	[hunter_bear]	pos = anywhere	total = 2	respawn = 1min	npc_end
+npcmaker_end
+
+//---------------드워프스타트 25_11
+territory_begin	[event_dwarf_2511]	{{171980;-215220;-3800;-3300};{175364;-212744;-3800;-3300};{175428;-210788;-3800;-3300};{171780;-209644;-3800;-3300};{169740;-211380;-3800;-3300}}	territory_end
+npcmaker_begin	[event_dwarf_2511]	initial_spawn=all	maximum_npc=5
+npc_begin	[rampage_golem_ldr_talos]	pos={{172496;-212416;-3670;0;100%}}	total=1	respawn=5hour	respawn_rand=1hour	Privates=[rampage_golem:rampage_golem:1:1min;rampage_golem:rampage_golem:1:1min;rampage_golem:rampage_golem:1:1min;rampage_golem:rampage_golem:1:1min]	npc_end
+npcmaker_end
+
+territory_begin	[event_dwarf_2511]	{{171360;-206528;-3760;-3160};{176716;-207236;-3760;-3160};{176208;-202720;-3760;-3160};{172156;-203868;-3760;-3160}}	territory_end
+npcmaker_begin	[event_dwarf_2511]	initial_spawn=all	maximum_npc=5
+npc_begin	[rampage_golem_ldr_talos]	pos={{175488;-205232;-3472;0;50%};{172864;-205424;-3606;0;50%}}	total=1	respawn=4hour	respawn_rand=1hour	Privates=[rampage_golem:rampage_golem:1:1min;rampage_golem:rampage_golem:1:1min;rampage_golem:rampage_golem:1:1min;rampage_golem:rampage_golem:1:1min]	npc_end
+npcmaker_end
+
+territory_begin	[event_dwarf_2511]	{{171176;-200548;-3668;-3168};{173800;-200216;-3668;-3168};{174700;-197028;-3668;-3168};{169032;-196996;-3668;-3168}}	territory_end
+npcmaker_begin	[event_dwarf_2511]	initial_spawn=all	maximum_npc=5
+npc_begin	[rampage_golem_ldr_talos]	pos={{171184;-197456;-3588;0;50%};{173616;-199264;-3416;0;50%}}	total=1	respawn=4hour	respawn_rand=1hour	Privates=[rampage_golem:rampage_golem:1:1min;rampage_golem:rampage_golem:1:1min;rampage_golem:rampage_golem:1:1min;rampage_golem:rampage_golem:1:1min]	npc_end
+npcmaker_end
+

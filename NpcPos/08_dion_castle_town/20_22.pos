@@ -1,0 +1,902 @@
+//수성	매스	텔레포터
+territory_begin	[dion_mass_teleporter]	{{21169;160636;-2034;31228};{20215;160636;-2034;31228};{20215;160283;-2034;31228};{21168;160282;-2034;31228}}	territory_end
+npcmaker_begin	[dion_mass_teleporter]	initial_spawn=all	maximum_npc=1
+npc_begin	[dion_mass_teleporter]	pos={20475;160445;-1978;0}	total=1	respawn=1min	npc_end
+npcmaker_end
+
+//외성문	앞.	27
+territory_begin	[dion_siege01]	{{22454;156780;-2985;30177};{22113;156777;-2985;30177};{22119;156559;-2985;30177};{22454;156559;-2985;30177}}	territory_end
+npcmaker_begin	[dion_siege01]	initial_spawn=all	spawn_time=siege_warfare_start(2)	maximum_npc=30
+npc_begin	[dion_bow_guard_s_e]	pos={22403;156725;-2953;48376}	dbname=[dion_siege_001]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22375;156725;-2953;48376}	dbname=[dion_siege_002]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22347;156725;-2953;48376}	dbname=[dion_siege_003]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22319;156725;-2953;48376}	dbname=[dion_siege_004]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22291;156725;-2953;48376}	dbname=[dion_siege_005]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22263;156725;-2953;48376}	dbname=[dion_siege_006]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22235;156725;-2953;48376}	dbname=[dion_siege_007]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22207;156725;-2953;48376}	dbname=[dion_siege_008]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22179;156725;-2953;48376}	dbname=[dion_siege_009]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22403;156705;-2953;48376}	dbname=[dion_siege_010]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={22375;156705;-2953;48376}	dbname=[dion_siege_011]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22347;156705;-2953;48376}	dbname=[dion_siege_012]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={22319;156705;-2953;48376}	dbname=[dion_siege_013]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22291;156705;-2953;48376}	dbname=[dion_siege_014]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={22263;156705;-2953;48376}	dbname=[dion_siege_015]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22235;156705;-2953;48376}	dbname=[dion_siege_016]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={22207;156705;-2953;48376}	dbname=[dion_siege_017]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22179;156705;-2953;48376}	dbname=[dion_siege_018]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22403;156685;-2953;48376}	dbname=[dion_siege_019]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22375;156685;-2953;48376}	dbname=[dion_siege_020]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22347;156685;-2953;48376}	dbname=[dion_siege_021]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22319;156685;-2953;48376}	dbname=[dion_siege_022]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_knight_s]	pos={22291;156685;-2953;48376}	dbname=[dion_siege_023]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22263;156685;-2953;48376}	dbname=[dion_siege_024]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22235;156685;-2953;48376}	dbname=[dion_siege_025]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22207;156685;-2953;48376}	dbname=[dion_siege_026]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22179;156685;-2953;48376}	dbname=[dion_siege_027]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//외성문	뒤	아래.	39
+territory_begin	[dion_siege02]	{{22932;157924;-3016;30146};{22465;157915;-3016;30146};{22478;157038;-3016;30146};{22960;157038;-3016;30146}}	territory_end
+npcmaker_begin	[dion_siege02]	initial_spawn=all	spawn_time=siege_warfare_start(2)	maximum_npc=50
+npc_begin	[dion_sword_guard_s_e]	pos={22546;157103;-2943;32080}	dbname=[dion_siege_028]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22545;157134;-2942;32080}	dbname=[dion_siege_029]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_knight_s]	pos={22545;157164;-2942;32080}	dbname=[dion_siege_030]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22545;157194;-2941;32080}	dbname=[dion_siege_031]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22546;157225;-2942;32080}	dbname=[dion_siege_032]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22544;157254;-2941;32080}	dbname=[dion_siege_033]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_knight_s]	pos={22544;157284;-2941;32080}	dbname=[dion_siege_034]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22544;157314;-2940;32080}	dbname=[dion_siege_035]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22545;157345;-2941;32080}	dbname=[dion_siege_036]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22571;157121;-2961;32080}	dbname=[dion_siege_037]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22571;157151;-2961;32080}	dbname=[dion_siege_038]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={22571;157182;-2960;32080}	dbname=[dion_siege_039]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22572;157212;-2961;32080}	dbname=[dion_siege_040]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22570;157242;-2960;32080}	dbname=[dion_siege_041]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={22570;157272;-2960;32080}	dbname=[dion_siege_042]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22569;157301;-2959;32080}	dbname=[dion_siege_043]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22570;157333;-2960;32080}	dbname=[dion_siege_044]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22592;157105;-2965;32080}	dbname=[dion_siege_045]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22591;157135;-2965;32080}	dbname=[dion_siege_046]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22591;157165;-2964;32080}	dbname=[dion_siege_047]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22590;157196;-2964;32080}	dbname=[dion_siege_048]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22592;157226;-2964;32080}	dbname=[dion_siege_049]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22590;157256;-2963;32080}	dbname=[dion_siege_050]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22590;157286;-2963;32080}	dbname=[dion_siege_051]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22589;157315;-2962;32080}	dbname=[dion_siege_052]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22590;157347;-2963;32080}	dbname=[dion_siege_053]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22738;157123;-2966;32080}	dbname=[dion_siege_054]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22738;157153;-2965;32080}	dbname=[dion_siege_055]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22738;157184;-2965;32080}	dbname=[dion_siege_056]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22737;157214;-2964;32080}	dbname=[dion_siege_057]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22738;157244;-2964;32080}	dbname=[dion_siege_058]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22736;157274;-2964;32080}	dbname=[dion_siege_059]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22735;157304;-2963;32080}	dbname=[dion_siege_060]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22735;157334;-2963;32080}	dbname=[dion_siege_061]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric_s]	pos={22839;157454;-2957;48668}	dbname=[dion_siege_062]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric_s]	pos={22809;157455;-2958;48668}	dbname=[dion_siege_063]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22601;157336;-2941;32080}	dbname=[dion_siege_064]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22602;157272;-2941;32080}	dbname=[dion_siege_065]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22602;157183;-2941;32080}	dbname=[dion_siege_066]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22599;157123;-2941;32080}	dbname=[dion_siege_067]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npcmaker_end
+
+//외성문	뒤	위.	27
+territory_begin	[dion_siege03]	{{22595;157553;-2840;30322};{21671;157556;-2840;30322};{21648;157134;-2840;30322};{22600;157133;-2840;30322}}	territory_end
+npcmaker_begin	[dion_siege03]	initial_spawn=all	spawn_time=siege_warfare_start(2)	maximum_npc=30
+npc_begin	[dion_bow_guard_s_e]	pos={22353;157476;-2692;48668}	dbname=[dion_siege_068]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22323;157477;-2693;48668}	dbname=[dion_siege_069]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22293;157474;-2692;48668}	dbname=[dion_siege_070]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22263;157473;-2692;48668}	dbname=[dion_siege_071]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22234;157472;-2691;48668}	dbname=[dion_siege_072]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22583;157410;-2690;48668}	dbname=[dion_siege_073]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22553;157411;-2691;48668}	dbname=[dion_siege_074]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22524;157408;-2690;48668}	dbname=[dion_siege_075]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22494;157407;-2690;48668}	dbname=[dion_siege_076]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22464;157406;-2689;48668}	dbname=[dion_siege_077]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22050;157272;-2691;64432}	dbname=[dion_siege_078]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22047;157242;-2692;64432}	dbname=[dion_siege_079]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22049;157213;-2691;64432}	dbname=[dion_siege_080]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22048;157183;-2691;64432}	dbname=[dion_siege_081]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22047;157153;-2690;64432}	dbname=[dion_siege_082]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={21783;157478;-2794;32712}	dbname=[dion_siege_083]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_knight_s]	pos={21782;157506;-2794;32712}	dbname=[dion_siege_084]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={21778;157533;-2793;32712}	dbname=[dion_siege_085]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={21804;157477;-2783;32712}	dbname=[dion_siege_086]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={21803;157505;-2784;32712}	dbname=[dion_siege_087]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={21799;157532;-2783;32712}	dbname=[dion_siege_088]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={21822;157478;-2769;32712}	dbname=[dion_siege_089]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={21821;157506;-2770;32712}	dbname=[dion_siege_090]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={21817;157533;-2769;32712}	dbname=[dion_siege_091]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric_s]	pos={22150;157519;-2692;55444}	dbname=[dion_siege_092]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//내성문	뒤.53
+territory_begin	[dion_siege04]	{{22465;160146;-2787;30375};{21523;161493;-2787;30375};{21721;159150;-2787;30375};{22452;159121;-2787;30375}}	territory_end
+npcmaker_begin	[dion_siege04]	initial_spawn=all	spawn_time=siege_warfare_start(2)	maximum_npc=70
+npc_begin	[dion_court_guard_s]	pos={22228;159486;-2687;39088}	dbname=[dion_siege_093]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22211;159511;-2688;39088}	dbname=[dion_siege_094]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={22187;159537;-2687;39088}	dbname=[dion_siege_095]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22168;159560;-2687;39088}	dbname=[dion_siege_096]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={22153;159578;-2686;39088}	dbname=[dion_siege_097]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22131;159604;-2688;39088}	dbname=[dion_siege_098]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={22114;159629;-2688;39088}	dbname=[dion_siege_099]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22094;159650;-2688;39088}	dbname=[dion_siege_100]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={22070;159661;-2689;49844}	dbname=[dion_siege_101]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22045;159642;-2688;58336}	dbname=[dion_siege_102]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={22027;159618;-2688;58336}	dbname=[dion_siege_103]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22014;159598;-2687;58336}	dbname=[dion_siege_104]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={21995;159571;-2689;58336}	dbname=[dion_siege_105]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={21976;159547;-2690;58336}	dbname=[dion_siege_106]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={21957;159517;-2689;58336}	dbname=[dion_siege_107]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={21940;159492;-2689;58336}	dbname=[dion_siege_108]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={21927;159473;-2688;58336}	dbname=[dion_siege_109]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22243;159506;-2689;39088}	dbname=[dion_siege_110]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22225;159530;-2690;39088}	dbname=[dion_siege_111]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22201;159556;-2689;39088}	dbname=[dion_siege_112]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22182;159580;-2689;39088}	dbname=[dion_siege_113]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22167;159598;-2688;39088}	dbname=[dion_siege_114]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22146;159624;-2690;39088}	dbname=[dion_siege_115]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22128;159648;-2690;39088}	dbname=[dion_siege_116]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22109;159669;-2690;39088}	dbname=[dion_siege_117]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22084;159680;-2691;49844}	dbname=[dion_siege_118]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22056;159679;-2688;49844}	dbname=[dion_siege_119]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22031;159660;-2687;58336}	dbname=[dion_siege_120]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22013;159636;-2687;58336}	dbname=[dion_siege_121]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22000;159616;-2686;58336}	dbname=[dion_siege_122]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21981;159589;-2688;58336}	dbname=[dion_siege_123]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={21962;159565;-2689;58336}	dbname=[dion_siege_124]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21943;159535;-2688;58336}	dbname=[dion_siege_125]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={21926;159510;-2688;58336}	dbname=[dion_siege_126]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21913;159491;-2687;58336}	dbname=[dion_siege_127]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22271;159611;-2687;39088}	dbname=[dion_siege_128]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22252;159634;-2687;39088}	dbname=[dion_siege_129]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22237;159652;-2686;39088}	dbname=[dion_siege_130]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22215;159678;-2688;39088}	dbname=[dion_siege_131]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22198;159703;-2689;39088}	dbname=[dion_siege_132]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21970;159669;-2683;58336}	dbname=[dion_siege_133]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21957;159649;-2682;58336}	dbname=[dion_siege_134]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21937;159622;-2684;58336}	dbname=[dion_siege_135]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21919;159598;-2685;58336}	dbname=[dion_siege_136]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21900;159568;-2684;58336}	dbname=[dion_siege_137]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric_s]	pos={21939;159745;-2685;48388}	dbname=[dion_siege_138]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={21905;159745;-2686;48388}	dbname=[dion_siege_139]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22184;159748;-2686;48388}	dbname=[dion_siege_140]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric_s]	pos={22161;159747;-2686;48388}	dbname=[dion_siege_141]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22236;159473;-2684;58336}	dbname=[dion_siege_142]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22245;159527;-2687;39088}	dbname=[dion_siege_143]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22164;159618;-2687;39088}	dbname=[dion_siege_144]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={21979;159609;-2687;39088}	dbname=[dion_siege_145]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={21907;159506;-2687;39088}	dbname=[dion_siege_146]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npcmaker_end
+
+//성물보관소	아래.	58
+territory_begin	[dion_siege05]	{{22863;161892;-2816;30346};{21335;161900;-2816;30346};{21322;161294;-2816;30346};{22863;161295;-2816;30346}}	territory_end
+npcmaker_begin	[dion_siege05]	initial_spawn=all	spawn_time=siege_warfare_start(2)	maximum_npc=60
+npc_begin	[duke_byron_ashton]	pos={22144;161631;-2749;49112}	dbname=[dion_siege_147]	dbsaving={death_time;parameters;pos}	total=1	respawn=5min	npc_end
+npc_begin	[sir_ivano]	pos={22032;161634;-2748;49112}	dbname=[dion_siege_148]	dbsaving={death_time;parameters;pos}	total=1	respawn=3min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={21930;161617;-2754;49112}	dbname=[dion_siege_149]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={21893;161618;-2754;49112}	dbname=[dion_siege_150]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={21860;161618;-2754;49112}	dbname=[dion_siege_151]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={21822;161619;-2754;49112}	dbname=[dion_siege_152]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={21785;161619;-2753;49112}	dbname=[dion_siege_153]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={21747;161620;-2753;49112}	dbname=[dion_siege_154]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={21715;161620;-2753;49112}	dbname=[dion_siege_155]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={21677;161621;-2753;49112}	dbname=[dion_siege_156]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={21930;161583;-2755;49112}	dbname=[dion_siege_157]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={21892;161584;-2755;49112}	dbname=[dion_siege_158]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={21859;161584;-2755;49112}	dbname=[dion_siege_159]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={21822;161585;-2755;49112}	dbname=[dion_siege_160]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={21784;161585;-2754;49112}	dbname=[dion_siege_161]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={21747;161586;-2754;49112}	dbname=[dion_siege_162]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={21714;161586;-2754;49112}	dbname=[dion_siege_163]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={21677;161587;-2754;49112}	dbname=[dion_siege_164]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={21928;161545;-2756;49112}	dbname=[dion_siege_165]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={21890;161546;-2756;49112}	dbname=[dion_siege_166]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_knight]	pos={21858;161546;-2756;49112}	dbname=[dion_siege_167]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={21820;161547;-2756;49112}	dbname=[dion_siege_168]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={21783;161547;-2755;49112}	dbname=[dion_siege_169]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_knight]	pos={21745;161548;-2755;49112}	dbname=[dion_siege_170]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={21713;161548;-2755;49112}	dbname=[dion_siege_171]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={21675;161549;-2755;49112}	dbname=[dion_siege_172]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={22490;161611;-2750;49112}	dbname=[dion_siege_173]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={22452;161611;-2750;49112}	dbname=[dion_siege_174]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={22420;161611;-2750;49112}	dbname=[dion_siege_175]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={22382;161612;-2750;49112}	dbname=[dion_siege_176]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={22345;161613;-2749;49112}	dbname=[dion_siege_177]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={22307;161613;-2749;49112}	dbname=[dion_siege_178]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={22274;161614;-2749;49112}	dbname=[dion_siege_179]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_bow_guard_e]	pos={22237;161614;-2749;49112}	dbname=[dion_siege_180]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={22489;161576;-2751;49112}	dbname=[dion_siege_181]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={22451;161577;-2751;49112}	dbname=[dion_siege_182]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={22419;161577;-2751;49112}	dbname=[dion_siege_183]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={22381;161578;-2751;49112}	dbname=[dion_siege_184]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={22344;161579;-2750;49112}	dbname=[dion_siege_185]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={22306;161579;-2750;49112}	dbname=[dion_siege_186]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={22274;161579;-2750;49112}	dbname=[dion_siege_187]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_court_guard]	pos={22236;161580;-2750;49112}	dbname=[dion_siege_188]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22488;161539;-2752;49112}	dbname=[dion_siege_189]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22450;161540;-2752;49112}	dbname=[dion_siege_190]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_knight]	pos={22417;161540;-2752;49112}	dbname=[dion_siege_191]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22380;161541;-2752;49112}	dbname=[dion_siege_192]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22342;161541;-2751;49112}	dbname=[dion_siege_193]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_knight]	pos={22305;161542;-2751;49112}	dbname=[dion_siege_194]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22272;161542;-2751;49112}	dbname=[dion_siege_195]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22235;161543;-2751;49112}	dbname=[dion_siege_196]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_cleric]	pos={22410;161776;-2749;49112}	dbname=[dion_siege_197]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_cleric]	pos={22326;161776;-2748;49112}	dbname=[dion_siege_198]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_cleric]	pos={22247;161777;-2748;49112}	dbname=[dion_siege_199]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_cleric]	pos={22172;161777;-2748;49112}	dbname=[dion_siege_200]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_cleric]	pos={21995;161777;-2745;49112}	dbname=[dion_siege_201]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_cleric]	pos={21912;161777;-2745;49112}	dbname=[dion_siege_202]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_cleric]	pos={21832;161778;-2745;49112}	dbname=[dion_siege_203]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[dion_cleric]	pos={21758;161778;-2745;49112}	dbname=[dion_siege_204]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npcmaker_end
+
+//성물보관소	위	오른쪽.(성	정면에서)	23
+territory_begin	[dion_siege06]	{{21843;161725;-2586;30576};{21503;161736;-2586;30576};{21503;160601;-2586;30576};{21839;160602;-2586;30576}}	territory_end
+npcmaker_begin	[dion_siege06]	initial_spawn=all	spawn_time=siege_warfare_start(2)	maximum_npc=30
+npc_begin	[dion_sword_guard_s_e]	pos={21570;160651;-2527;48856}	dbname=[dion_siege_205]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_knight_s]	pos={21596;160651;-2527;48856}	dbname=[dion_siege_206]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={21624;160651;-2526;48856}	dbname=[dion_siege_207]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={21570;160673;-2531;48856}	dbname=[dion_siege_208]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={21597;160673;-2531;48856}	dbname=[dion_siege_209]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={21624;160673;-2530;48856}	dbname=[dion_siege_210]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={21571;160698;-2529;48856}	dbname=[dion_siege_211]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={21598;160698;-2529;48856}	dbname=[dion_siege_212]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_court_guard_s]	pos={21625;160697;-2528;48856}	dbname=[dion_siege_213]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric_s]	pos={21511;160775;-2529;48856}	dbname=[dion_siege_214]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric_s]	pos={21537;160775;-2529;48856}	dbname=[dion_siege_215]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric_s]	pos={21565;160775;-2528;48856}	dbname=[dion_siege_216]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21766;161348;-2532;65460}	dbname=[dion_siege_217]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21765;161385;-2532;65460}	dbname=[dion_siege_218]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={21765;161422;-2531;65460}	dbname=[dion_siege_219]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21764;161458;-2531;65460}	dbname=[dion_siege_220]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21764;161494;-2531;65460}	dbname=[dion_siege_221]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={21763;161532;-2531;65460}	dbname=[dion_siege_222]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21763;161563;-2530;65460}	dbname=[dion_siege_223]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21762;161600;-2530;65460}	dbname=[dion_siege_224]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={21761;161635;-2530;65460}	dbname=[dion_siege_225]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21761;161672;-2530;65460}	dbname=[dion_siege_226]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21761;161709;-2530;65460}	dbname=[dion_siege_227]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//성물보관소	위	왼쪽.(성	정면에서)	23
+territory_begin	[dion_siege07]	{{22680;161639;-2586;30576};{22340;161650;-2586;30576};{22340;160515;-2586;30576};{22676;160516;-2586;30576}}	territory_end
+npcmaker_begin	[dion_siege07]	initial_spawn=all	spawn_time=siege_warfare_start(2)	maximum_npc=30
+npc_begin	[dion_sword_guard_s_e]	pos={22545;160585;-2527;48856}	dbname=[dion_siege_228]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[sword]	npc_end
+npc_begin	[dion_knight_s]	pos={22571;160585;-2527;48856}	dbname=[dion_siege_229]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[sword]	npc_end
+npc_begin	[dion_sword_guard_s_e]	pos={22614;160588;-2526;48856}	dbname=[dion_siege_230]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[sword]	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22545;160607;-2531;48856}	dbname=[dion_siege_231]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[spear]	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22572;160607;-2531;48856}	dbname=[dion_siege_232]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[spear]	npc_end
+npc_begin	[dion_spear_guard_s_e]	pos={22599;160607;-2530;48856}	dbname=[dion_siege_233]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[spear]	npc_end
+npc_begin	[dion_court_guard_s]	pos={22546;160632;-2529;48856}	dbname=[dion_siege_234]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[court]	npc_end
+npc_begin	[dion_court_guard_s]	pos={22573;160632;-2529;48856}	dbname=[dion_siege_235]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[court]	npc_end
+npc_begin	[dion_court_guard_s]	pos={22600;160631;-2528;48856}	dbname=[dion_siege_236]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[court]	npc_end
+npc_begin	[dion_cleric_s]	pos={22507;160873;-2529;48856}	dbname=[dion_siege_237]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[cre]	npc_end
+npc_begin	[dion_cleric_s]	pos={22533;160873;-2529;48856}	dbname=[dion_siege_238]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[cre]	npc_end
+npc_begin	[dion_cleric_s]	pos={22561;160873;-2528;48856}	dbname=[dion_siege_239]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[cre]	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22399;161703;-2532;32384}	dbname=[dion_siege_240]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22398;161667;-2532;32384}	dbname=[dion_siege_241]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22397;161630;-2531;32384}	dbname=[dion_siege_242]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22397;161594;-2531;32384}	dbname=[dion_siege_243]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22397;161558;-2531;32384}	dbname=[dion_siege_244]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22396;161520;-2531;32384}	dbname=[dion_siege_245]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22396;161489;-2530;32384}	dbname=[dion_siege_246]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22395;161452;-2530;32384}	dbname=[dion_siege_247]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22395;161417;-2530;32384}	dbname=[dion_siege_248]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22394;161380;-2530;32384}	dbname=[dion_siege_249]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22393;161343;-2530;32384}	dbname=[dion_siege_250]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//외성난간	20
+territory_begin	[dion_siege08]	{{22881;156858;-2655;30507};{21649;156858;-2655;30507};{21614;156485;-2655;30507};{22879;156493;-2655;30507}}	territory_end
+npcmaker_begin	[dion_siege08]	initial_spawn=all	spawn_time=siege_warfare_start(2)	maximum_npc=20
+npc_begin	[dion_bow_guard_s_e]	pos={22047;156721;-2567;0}	dbname=[dion_siege_251]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22047;156609;-2567;0}	dbname=[dion_siege_252]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22000;156550;-2567;57344}	dbname=[dion_siege_253]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21969;156536;-2567;49152}	dbname=[dion_siege_254]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21933;156536;-2567;49152}	dbname=[dion_siege_255]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21898;156536;-2567;49152}	dbname=[dion_siege_256]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22532;156724;-2567;32768}	dbname=[dion_siege_257]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22047;156689;-2567;0}	dbname=[dion_siege_258]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22532;156682;-2567;32768}	dbname=[dion_siege_259]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22531;156602;-2567;32768}	dbname=[dion_siege_260]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22577;156545;-2567;40960}	dbname=[dion_siege_261]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22609;156533;-2567;49152}	dbname=[dion_siege_262]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22649;156533;-2567;49152}	dbname=[dion_siege_263]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22690;156533;-2567;49152}	dbname=[dion_siege_264]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22532;156641;-2566;32768}	dbname=[dion_siege_265]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22543;156570;-2566;40960}	dbname=[dion_siege_266]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22037;156573;-2566;57344}	dbname=[dion_siege_267]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22047;156657;-2567;0}	dbname=[dion_siege_268]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric_s]	pos={22631;156572;-2567;40960}	dbname=[dion_siege_269]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric_s]	pos={21941;156580;-2567;57344}	dbname=[dion_siege_270]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//내성앞	30
+territory_begin	[dion_siege09]	{{22594;158753;-2906;30256};{21612;158753;-2906;30256};{21619;158546;-2906;30256};{22596;158553;-2906;30256}}	territory_end
+npcmaker_begin	[dion_siege09]	initial_spawn=all	spawn_time=siege_warfare_start(2)	maximum_npc=30
+npc_begin	[dion_bow_guard_e]	pos={22147;158717;-2823;49152}	dbname=[dion_siege_271]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_e]	pos={22019;158717;-2823;49152}	dbname=[dion_siege_272]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_e]	pos={21956;158717;-2823;49152}	dbname=[dion_siege_273]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_e]	pos={22211;158717;-2823;49152}	dbname=[dion_siege_274]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_e]	pos={22342;158717;-2822;49152}	dbname=[dion_siege_275]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_e]	pos={22470;158717;-2822;49152}	dbname=[dion_siege_276]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_e]	pos={21828;158717;-2822;49152}	dbname=[dion_siege_277]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_e]	pos={21699;158717;-2822;49152}	dbname=[dion_siege_278]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard]	pos={22275;158717;-2818;49152}	dbname=[dion_siege_279]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard]	pos={21892;158717;-2821;49152}	dbname=[dion_siege_280]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard]	pos={21635;158717;-2818;49152}	dbname=[dion_siege_281]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard]	pos={22534;158717;-2818;49152}	dbname=[dion_siege_282]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric]	pos={22083;158717;-2822;49152}	dbname=[dion_siege_283]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric]	pos={21764;158717;-2818;49152}	dbname=[dion_siege_284]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric]	pos={22406;158717;-2818;49152}	dbname=[dion_siege_285]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22531;158589;-2834;49152}	dbname=[dion_siege_286]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22467;158589;-2834;49152}	dbname=[dion_siege_287]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_e]	pos={21635;158589;-2834;49152}	dbname=[dion_siege_288]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_e]	pos={21699;158589;-2834;49152}	dbname=[dion_siege_289]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_knight]	pos={22083;158589;-2834;49152}	dbname=[dion_siege_290]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22403;158589;-2834;49152}	dbname=[dion_siege_291]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22339;158589;-2834;49152}	dbname=[dion_siege_292]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22275;158589;-2834;49152}	dbname=[dion_siege_293]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_e]	pos={22211;158589;-2834;49152}	dbname=[dion_siege_294]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_knight]	pos={22147;158589;-2834;49152}	dbname=[dion_siege_295]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_knight]	pos={22020;158589;-2834;49152}	dbname=[dion_siege_296]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_e]	pos={21956;158589;-2834;49152}	dbname=[dion_siege_297]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_e]	pos={21892;158589;-2834;49152}	dbname=[dion_siege_298]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_e]	pos={21828;158589;-2834;49152}	dbname=[dion_siege_299]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_sword_guard_e]	pos={21764;158589;-2834;49152}	dbname=[dion_siege_300]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//내성난간	20
+territory_begin	[dion_siege10]	{{22561;159223;-2457;30705};{21599;159221;-2457;30705};{21609;158889;-2457;30705};{22566;158889;-2457;30705}}	territory_end
+npcmaker_begin	[dion_siege10]	initial_spawn=all	spawn_time=siege_warfare_start(2)	maximum_npc=20
+npc_begin	[dion_bow_guard_s_e]	pos={21851;159154;-2385;0}	dbname=[dion_siege_301]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21852;159032;-2385;0}	dbname=[dion_siege_302]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21797;158971;-2385;57344}	dbname=[dion_siege_303]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21772;158952;-2385;49152}	dbname=[dion_siege_304]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21733;158951;-2385;49152}	dbname=[dion_siege_305]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21697;158951;-2385;49152}	dbname=[dion_siege_306]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21851;159111;-2385;0}	dbname=[dion_siege_307]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={21823;158996;-2385;57344}	dbname=[dion_siege_308]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={21851;159072;-2384;0}	dbname=[dion_siege_309]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric_s]	pos={21749;159017;-2386;57344}	dbname=[dion_siege_310]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22304;159160;-2387;32768}	dbname=[dion_siege_311]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22304;159120;-2385;32768}	dbname=[dion_siege_312]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22304;159035;-2386;32768}	dbname=[dion_siege_313]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22362;158970;-2385;40960}	dbname=[dion_siege_314]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22389;158950;-2384;49152}	dbname=[dion_siege_315]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22429;158951;-2385;49152}	dbname=[dion_siege_316]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22468;158950;-2385;49152}	dbname=[dion_siege_317]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22304;159076;-2383;32768}	dbname=[dion_siege_318]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22326;159006;-2386;40960}	dbname=[dion_siege_319]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric_s]	pos={22406;159024;-2383;40960}	dbname=[dion_siege_320]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//***********************************PC수성시	도와주는	가드들************************************
+//외성문	뒤	위.	27
+territory_begin	[dion_siege031]	{{22595;157553;-2840;30322};{21671;157556;-2840;30322};{21648;157134;-2840;30322};{22600;157133;-2840;30322}}	territory_end
+npcmaker_begin	[dion_siege031]	initial_spawn=all	spawn_time=pc_siege_warfare_start(2)	maximum_npc=30
+npc_begin	[dion_bow_guard_s_e]	pos={22353;157476;-2692;48668}	dbname=[dion_siege_321]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22293;157474;-2692;48668}	dbname=[dion_siege_322]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22234;157472;-2691;48668}	dbname=[dion_siege_323]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22583;157410;-2690;48668}	dbname=[dion_siege_324]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22553;157411;-2691;48668}	dbname=[dion_siege_325]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22524;157408;-2690;48668}	dbname=[dion_siege_326]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22494;157407;-2690;48668}	dbname=[dion_siege_327]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22050;157272;-2691;64432}	dbname=[dion_siege_328]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22049;157213;-2691;64432}	dbname=[dion_siege_329]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22047;157153;-2690;64432}	dbname=[dion_siege_330]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//외성난간	20
+territory_begin	[dion_siege081]	{{22881;156858;-2655;30507};{21649;156858;-2655;30507};{21614;156485;-2655;30507};{22879;156493;-2655;30507}}	territory_end
+npcmaker_begin	[dion_siege081]	initial_spawn=all	spawn_time=pc_siege_warfare_start(2)	maximum_npc=20
+npc_begin	[dion_bow_guard_s_e]	pos={22047;156721;-2567;0}	dbname=[dion_siege_331]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22047;156609;-2567;0}	dbname=[dion_siege_332]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22000;156550;-2567;57344}	dbname=[dion_siege_333]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={21933;156536;-2567;49152}	dbname=[dion_siege_334]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22532;156682;-2567;32768}	dbname=[dion_siege_335]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22531;156602;-2567;32768}	dbname=[dion_siege_336]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22577;156545;-2567;40960}	dbname=[dion_siege_337]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_bow_guard_s_e]	pos={22649;156533;-2567;49152}	dbname=[dion_siege_338]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22532;156641;-2566;32768}	dbname=[dion_siege_339]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22543;156570;-2566;40960}	dbname=[dion_siege_340]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22037;156573;-2566;57344}	dbname=[dion_siege_341]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_wizard_s]	pos={22047;156657;-2567;0}	dbname=[dion_siege_342]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric_s]	pos={22631;156572;-2567;40960}	dbname=[dion_siege_343]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_cleric_s]	pos={21941;156580;-2567;57344}	dbname=[dion_siege_344]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//--------------------20_22 NPC 031224--------------------
+territory_begin	[NPC_20_22_031224_01]	{{21756;160780;-2747;-2547};{21956;160780;-2747;-2547};{21956;160980;-2747;-2547};{21756;160980;-2747;-2547}}	territory_end
+npcmaker_begin	[NPC_20_22_031224_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[sanford]	pos = {21849;160883;-2679;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------20_22 NPC 031201--------------------
+territory_begin	[20_22_NPC_031201_01]	{{19148;144573;-3185;-2985};{19348;144573;-3185;-2985};{19348;144773;-3185;-2985};{19148;144773;-3185;-2985}}	territory_end
+npcmaker_begin	[20_22_NPC_031201_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[sophia]	pos = {19264;144672;-3098;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_031201_02]	{{16844;146204;-3164;-2964};{17044;146204;-3164;-2964};{17044;146404;-3164;-2964};{16844;146404;-3164;-2964}}	territory_end
+npcmaker_begin	[20_22_NPC_031201_02]	initial_spawn = all	maximum_npc = 1
+npc_begin	[redfoot]	pos = {16955;146303;-3106;28672}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_031201_03]	{{18972;145659;-3152;-2952};{19172;145659;-3152;-2952};{19172;145859;-3152;-2952};{18972;145859;-3152;-2952}}	territory_end
+npcmaker_begin	[20_22_NPC_031201_03]	initial_spawn = all	maximum_npc = 1
+npc_begin	[morgan]	pos = {19079;145762;-3080;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_031201_04]	{{19196;142764;-3126;-2926};{19396;142764;-3126;-2926};{19396;142964;-3126;-2926};{19196;142964;-3126;-2926}}	territory_end
+npcmaker_begin	[20_22_NPC_031201_04]	initial_spawn = all	maximum_npc = 1
+npc_begin	[pet_manager_waters]	pos = {19296;142864;-3032;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------20_22 NPC 031130--------------------
+territory_begin	[20_22_NPC_031130_01]	{{19900;146109;-3224;-3024};{20100;146109;-3224;-3024};{20100;146309;-3224;-3024};{19900;146309;-3224;-3024}}	territory_end
+npcmaker_begin	[20_22_NPC_031130_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[seth]	pos = {19996;146216;-3111;57344}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_031130_02]	{{20140;145836;-3226;-3026};{20340;145836;-3226;-3026};{20340;146036;-3226;-3026};{20140;146036;-3226;-3026}}	territory_end
+npcmaker_begin	[20_22_NPC_031130_02]	initial_spawn = all	maximum_npc = 1
+npc_begin	[jabilo]	pos = {20237;145941;-3124;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_031130_03]	{{17532;144828;-3121;-2921};{17732;144828;-3121;-2921};{17732;145028;-3121;-2921};{17532;145028;-3121;-2921}}	territory_end
+npcmaker_begin	[20_22_NPC_031130_03]	initial_spawn = all	maximum_npc = 1
+npc_begin	[ron]	pos = {17621;144920;-3037;12288}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_031130_04]	{{17564;145196;-3192;-2992};{17764;145196;-3192;-2992};{17764;145396;-3192;-2992};{17564;145396;-3192;-2992}}	territory_end
+npcmaker_begin	[20_22_NPC_031130_04]	initial_spawn = all	maximum_npc = 1
+npc_begin	[borna]	pos = {17677;145282;-3047;22500}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_031130_05]	{{18540;143244;-3087;-2887};{18740;143244;-3087;-2887};{18740;143444;-3087;-2887};{18540;143444;-3087;-2887}}	territory_end
+npcmaker_begin	[20_22_NPC_031130_05]	initial_spawn = all	maximum_npc = 1
+npc_begin	[flynn]	pos = {18634;143342;-3010;64500}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_031130_06]	{{18844;143292;-3161;-2961};{19044;143292;-3161;-2961};{19044;143492;-3161;-2961};{18844;143492;-3161;-2961}}	territory_end
+npcmaker_begin	[20_22_NPC_031130_06]	initial_spawn = all	maximum_npc = 1
+npc_begin	[jamal]	pos = {18928;143391;-3025;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_031130_07]	{{18748;145836;-3190;-2990};{18948;145836;-3190;-2990};{18948;146036;-3190;-2990};{18748;146036;-3190;-2990}}	territory_end
+npcmaker_begin	[20_22_NPC_031130_07]	initial_spawn = all	maximum_npc = 1
+npc_begin	[auction_dealer_human]	pos = {18853;145939;-3075;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------20_22 NPC 030917--------------------
+territory_begin	[NPC_t20_22_030917_01]	{{9970;156966;-2446;-2246};{10319;156969;-2446;-2246};{10313;157335;-2446;-2246};{9979;157321;-2446;-2246}}	territory_end
+npcmaker_begin	[NPC_t20_22_030917_01]
+npc_begin	[tree_q0225]	pos = {10133;157155;-2383;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t20_22_030917_02]	{{19743;144413;-3168;-2968};{19943;144413;-3168;-2968};{19943;144613;-3168;-2968};{19743;144613;-3168;-2968}}	territory_end
+npcmaker_begin	[NPC_t20_22_030917_02]
+npc_begin	[kash]	pos = {19831;144514;-3098;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t20_22_030917_03]	{{17125;146454;-3214;-3014};{17325;146454;-3214;-3014};{17325;146654;-3214;-3014};{17125;146654;-3214;-3014}}	territory_end
+npcmaker_begin	[NPC_t20_22_030917_03]
+npc_begin	[sir_kiel_nighthawk]	pos = {17220;146554;-3084;12288}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t20_22_030917_04]	{{16576;142270;-2800;-2600};{16776;142270;-2800;-2600};{16776;142470;-2800;-2600};{16576;142470;-2800;-2600}}	territory_end
+npcmaker_begin	[NPC_t20_22_030917_04]
+npc_begin	[bard_rukal]	pos = {16680;142368;-2688;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t20_22_030917_05]	{{19802;143589;-3177;-2977};{20002;143589;-3177;-2977};{20002;143789;-3177;-2977};{19802;143789;-3177;-2977}}	territory_end
+npcmaker_begin	[NPC_t20_22_030917_05]
+npc_begin	[gandi_chief_chianta]	pos = {19900;143688;-3053;57344}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t20_22_030917_06]	{{20893;143745;-3194;-2994};{21093;143745;-3194;-2994};{21093;143945;-3194;-2994};{20893;143945;-3194;-2994}}	territory_end
+npcmaker_begin	[NPC_t20_22_030917_06]
+npc_begin	[mason]	pos = {20983;143844;-3073;4096}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t20_22_030917_07]	{{20509;145884;-3258;-3058};{20709;145884;-3258;-3058};{20709;146084;-3258;-3058};{20509;146084;-3258;-3058}}	territory_end
+npcmaker_begin	[NPC_t20_22_030917_07]
+npc_begin	[emilly]	pos = {20609;145993;-3123;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t20_22_030917_09]	{{18948;145868;-3173;-2973};{19148;145868;-3173;-2973};{19148;146068;-3173;-2973};{18948;146068;-3173;-2973}}	territory_end
+npcmaker_begin	[NPC_t20_22_030917_09]
+npc_begin	[marya]	pos = {19041;145964;-3068;8192}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------20_22 (디온성) 030514--------------------
+territory_begin	[20_22_NPC_101]	{{19620;143212;-3152;-2952};{19820;143212;-3152;-2952};{19820;143412;-3152;-2952};{19620;143412;-3152;-2952}}	territory_end
+npcmaker_begin	[20_22_NPC_101]	initial_spawn = all	maximum_npc = 1
+npc_begin	[head_blacksmith_opix]	pos = {19712;143307;-3025;47152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_102]	{{20908;144380;-3175;-2975};{21108;144380;-3175;-2975};{21108;144580;-3175;-2975};{20908;144580;-3175;-2975}}	territory_end
+npcmaker_begin	[20_22_NPC_102]	initial_spawn = all	maximum_npc = 1
+npc_begin	[warehouse_chief_ranspo]	pos = {21017;144481;-3065;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_103]	{{19724;143467;-3152;-2952};{19924;143467;-3152;-2952};{19924;143667;-3152;-2952};{19724;143667;-3152;-2952}}	territory_end
+npcmaker_begin	[20_22_NPC_103]	initial_spawn = all	maximum_npc = 3
+npc_begin	[high_prefect_cional]	pos = {19856;143568;-3040;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[seer_somak]	pos = {19821;143520;-3040;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[prefect_dowki]	pos = {19824;143616;-3040;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_104]	{{16188;142134;-2752;-2552};{16463;142068;-2752;-2552};{16497;142488;-2752;-2552};{16226;142491;-2752;-2552}}	territory_end
+npcmaker_begin	[20_22_NPC_104]	initial_spawn = all	maximum_npc = 4
+npc_begin	[glyvka]	pos = {16269;142461;-2688;48400}	total = 1	respawn = 1min	npc_end
+npc_begin	[shegfield]	pos = {16456;142447;-2688;48400}	total = 1	respawn = 1min	npc_end
+npc_begin	[magister_mirien]	pos = {16427;142131;-2688;15600}	total = 1	respawn = 1min	npc_end
+npc_begin	[rollant]	pos = {16236;142153;-2688;15600}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_105]	{{15708;142252;-2737;-2537};{15908;142252;-2737;-2537};{15908;142452;-2737;-2537};{15708;142452;-2737;-2537}}	territory_end
+npcmaker_begin	[20_22_NPC_105]	initial_spawn = all	maximum_npc = 1
+npc_begin	[sylvain]	pos = {15795;142347;-2680;64700}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------20_22 (디온성)--------------------
+territory_begin	[20_22_NPC_01]	{{20719;144407;-3209;-3009};{21105;144469;-3209;-3009};{21056;144961;-3209;-3009};{20743;145037;-3209;-3009}}	territory_end
+npcmaker_begin	[20_22_NPC_01]	initial_spawn = all	maximum_npc = 3
+npc_begin	[amidol]	pos = {20777;144971;-3068;53248}	total = 1	respawn = 1min	npc_end
+npc_begin	[holvas]	pos = {20750;144432;-3068;8192}	total = 1	respawn = 1min	npc_end
+npc_begin	[jonas]	pos = {21040;144608;-3069;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_02]	{{19433;144302;-3210;-3010};{19755;144279;-3210;-3010};{19735;144794;-3210;-3010};{19430;144833;-3210;-3010}}	territory_end
+npcmaker_begin	[20_22_NPC_02]	initial_spawn = all	maximum_npc = 5
+npc_begin	[terry]	pos = {19708;144780;-3088;40960}	total = 1	respawn = 1min	npc_end
+npc_begin	[pabris]	pos = {19516;144772;-3088;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[master_wandius]	pos = {19696;144336;-3088;24576}	total = 1	respawn = 1min	npc_end
+npc_begin	[arne]	pos = {19725;144567;-3088;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[master_cardien]	pos = {19472;144334;-3088;8192}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_03]	{{19164;146140;-3198;-2998};{19364;146140;-3198;-2998};{19364;146340;-3198;-2998};{19164;146340;-3198;-2998}}	territory_end
+npcmaker_begin	[20_22_NPC_03]	initial_spawn = all	maximum_npc = 2
+npc_begin	[sonia]	pos = {19313;146229;-3069;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[lars]	pos = {19223;146228;-3069;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_04]	{{17868;144412;-3192;-2992};{18068;144412;-3192;-2992};{18068;144612;-3192;-2992};{17868;144612;-3192;-2992}}	territory_end
+npcmaker_begin	[20_22_NPC_04]	initial_spawn = all	maximum_npc = 2
+npc_begin	[sabrin]	pos = {17999;144484;-3046;6000}	total = 1	respawn = 1min	npc_end
+npc_begin	[kc]	pos = {17948;144560;-3046;6000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_05]	{{17148;146636;-3221;-3021};{17419;146561;-3221;-3021};{17353;147071;-3221;-3021};{17089;146861;-3221;-3021}}	territory_end
+npcmaker_begin	[20_22_NPC_05]	initial_spawn = all	maximum_npc = 3
+npc_begin	[master_ixia]	pos = {17384;146605;-3085;28672}	total = 1	respawn = 1min	npc_end
+npc_begin	[magister_clayton]	pos = {17280;146944;-3085;45056}	total = 1	respawn = 1min	npc_end
+npc_begin	[grandmaster_tronix]	pos = {17168;146720;-3085;2500}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_07]	{{15532;142780;-2835;-2635};{15732;142780;-2835;-2635};{15732;142980;-2835;-2635};{15532;142980;-2835;-2635}}	territory_end
+npcmaker_begin	[20_22_NPC_07]	initial_spawn = all	maximum_npc = 1
+npc_begin	[trishya]	pos = {15631;142885;-2704;24576}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_08]	{{17249;147383;-3217;-3017};{17619;147351;-3217;-3017};{17544;147682;-3217;-3017};{17243;147636;-3217;-3017}}	territory_end
+npcmaker_begin	[20_22_NPC_08]	initial_spawn = all	maximum_npc = 2
+npc_begin	[metty]	pos = {17503;147575;-3124;20480}	total = 1	respawn = 1min	npc_end
+npc_begin	[lucas]	pos = {17282;147500;-3119;20480}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_09]	{{21403;145660;-3276;-3076};{21590;145688;-3276;-3076};{21608;146008;-3276;-3076};{21413;146018;-3276;-3076}}	territory_end
+npcmaker_begin	[20_22_NPC_09]	initial_spawn = all	maximum_npc = 2
+npc_begin	[guard_bright]	pos = {21491;145968;-3155;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[guard_herven]	pos = {21495;145728;-3145;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_10]	{{18684;142335;-3165;-2965};{19082;142263;-3165;-2965};{19130;142518;-3165;-2965};{18758;142590;-3165;-2965}}	territory_end
+npcmaker_begin	[20_22_NPC_10]	initial_spawn = all	maximum_npc = 2
+npc_begin	[xaber]	pos = {18813;142439;-3046;47500}	total = 1	respawn = 1min	npc_end
+npc_begin	[listto]	pos = {19044;142392;-3057;47500}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_11]	{{16828;143932;-3162;-2962};{17028;143932;-3162;-2962};{17028;144132;-3162;-2962};{16828;144132;-3162;-2962}}	territory_end
+npcmaker_begin	[20_22_NPC_11]	initial_spawn = all	maximum_npc = 1
+npc_begin	[hitsran]	pos = {16937;144041;-3014;36864}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_12]	{{15644;144524;-3226;-3026};{15844;144524;-3226;-3026};{15844;144724;-3226;-3026};{15644;144724;-3226;-3026}}	territory_end
+npcmaker_begin	[20_22_NPC_12]	initial_spawn = all	maximum_npc = 1
+npc_begin	[jaycub]	pos = {15757;144638;-3079;36864}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_22_NPC_13]	{{19612;143036;-3178;-2978};{19812;143036;-3178;-2978};{19812;143236;-3178;-2978};{19612;143236;-3178;-2978}}	territory_end
+npcmaker_begin	[20_22_NPC_13]	initial_spawn = all	maximum_npc = 1
+npc_begin	[blacksmith_poitan]	pos = {19737;143122;-3028;29500}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//------------------------- 20_22 디온마을/성 ------------------------------------------------------------------------------------------
+territory_begin	[dion_t20_22_001]	{{136;132116;-3792;-2992};{1380;132580;-3792;-2992};{2032;136944;-3792;-2992};{192;136160;-3792;-2992}}	territory_end
+npcmaker_begin	[dion_t20_22_001]
+npc_begin	[brown_bear]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_002]	{{180;144480;-3808;-3308};{1348;143992;-3808;-3308};{2836;145200;-3808;-3308};{1668;150912;-3808;-3308};{200;151316;-3808;-3308}}	territory_end
+npcmaker_begin	[dion_t20_22_002]
+npc_begin	[brown_bear]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_003]	{{132;151536;-3772;-3172};{1388;151092;-3772;-3172};{2460;154136;-3772;-3172};{248;156272;-3772;-3172}}	territory_end
+npcmaker_begin	[oren_t20_22_003]
+npc_begin	[brown_bear]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_004]	{{260;156500;-3784;-2984};{888;155936;-3784;-2984};{2680;163356;-3784;-2984};{152;163472;-3784;-2984}}	territory_end
+npcmaker_begin	[oren_t20_22_004]
+npc_begin	[brown_bear]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_005]	{{5364;132668;-3308;-2208};{10520;132508;-3308;-2208};{11940;134840;-3308;-2208};{7288;136244;-3308;-2208};{5412;134072;-3308;-2208}}	territory_end
+npcmaker_begin	[oren_t20_22_005]
+npc_begin	[tumran_bugbear]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 5	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_006]	{{7972;136032;-3276;-2276};{11844;135012;-3276;-2276};{14972;138756;-3276;-2276};{12828;139844;-3276;-2276}}	territory_end
+npcmaker_begin	[oren_t20_22_006]
+npc_begin	[tumran_bugbear]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_007]	{{7400;136712;-2968;-1968};{8040;136128;-2968;-1968};{11308;138680;-2968;-1968};{7792;141640;-2968;-1968};{6892;140940;-2968;-1968};{6568;139256;-2968;-1968}}	territory_end
+npcmaker_begin	[oren_t20_22_007]
+npc_begin	[tumran_bugbear]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_008]	{{7936;141660;-2660;-1860};{11252;138880;-2660;-1860};{12612;139956;-2660;-1860};{10444;141788;-2660;-1860};{8568;142136;-2660;-1860}}	territory_end
+npcmaker_begin	[oren_t20_22_008]
+npc_begin	[tumran_bugbear]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_009]	{{11304;131212;-3372;-2272};{14196;131244;-3372;-2272};{13572;133092;-3372;-2272};{12024;134644;-3372;-2272};{10516;132392;-3372;-2272}}	territory_end
+npcmaker_begin	[oren_t20_22_009]
+npc_begin	[tumran_bugbear]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_010]	{{13292;134564;-3592;-2792};{15496;134872;-3592;-2792};{18084;135916;-3592;-2792};{15376;137812;-3592;-2792};{12748;134984;-3592;-2792}}	territory_end
+npcmaker_begin	[oren_t20_22_010]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[tumran_bugbear]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_011]	{{15324;137940;-3692;-2892};{18112;135940;-3692;-2892};{20392;135532;-3692;-2892};{19412;140400;-3692;-2892};{16040;139356;-3692;-2892}}	territory_end
+npcmaker_begin	[oren_t20_22_011]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[tumran_bugbear]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_012]	{{20304;136636;-3684;-2884};{25304;137004;-3684;-2884};{22636;139612;-3684;-2884};{19512;140620;-3684;-2884}}	territory_end
+npcmaker_begin	[oren_t20_22_012]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[tumran_bugbear]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_013]	{{25004;135040;-3360;-2560};{27604;134900;-3360;-2560};{27528;136104;-3360;-2560};{25736;136956;-3360;-2560};{23180;136704;-3360;-2560}}	territory_end
+npcmaker_begin	[oren_t20_22_013]
+npc_begin	[hobgoblin]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_014]	{{27680;134908;-3252;-2652};{29996;133760;-3252;-2652};{31820;134176;-3252;-2652};{30304;136248;-3252;-2652};{28044;136732;-3252;-2652}}	territory_end
+npcmaker_begin	[oren_t20_22_014]
+npc_begin	[hobgoblin]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_015]	{{29556;131232;-3376;-2376};{32484;131252;-3376;-2376};{32512;134044;-3376;-2376};{31848;134168;-3376;-2376};{29312;133556;-3376;-2376}}	territory_end
+npcmaker_begin	[dion_t20_22_015]
+npc_begin	[hobgoblin]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_016]	{{21712;141192;-3540;-2140};{24268;139252;-3540;-2140};{26008;145556;-3540;-2140};{22808;145668;-3540;-2140}}	territory_end
+npcmaker_begin	[oren_t20_22_016]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[hobgoblin]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_017]	{{26648;137684;-3572;-2172};{30436;137040;-3572;-2172};{30776;140356;-3572;-2172};{25104;142452;-3572;-2172};{24380;139364;-3572;-2172}}	territory_end
+npcmaker_begin	[oren_t20_22_017]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 6	respawn = 75sec	npc_end
+npc_begin	[hobgoblin]	pos = anywhere	total = 6	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 5	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_018]	{{25220;142592;-3160;-1960};{30752;140556;-3160;-1960};{30844;143296;-3160;-1960};{26124;145476;-3160;-1960}}	territory_end
+npcmaker_begin	[oren_t20_22_018]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[hobgoblin]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_22_019]	{{30592;137004;-3416;-2416};{32472;134668;-3416;-2416};{32480;143540;-3416;-2416};{30924;143568;-3416;-2416}}	territory_end
+npcmaker_begin	[oren_t20_22_019]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[hobgoblin]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_020]	{{11100;145352;-3412;-1912};{12284;144396;-3412;-1912};{14412;145020;-3412;-1912};{14800;148184;-3412;-1912};{11460;148612;-3412;-1912}}	territory_end
+npcmaker_begin	[dion_t20_22_020]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[hobgoblin]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_021]	{{6772;144436;-3376;-2276};{10944;145756;-3376;-2276};{11360;148912;-3376;-2276};{8684;149492;-3376;-2276};{5828;147632;-3376;-2276};{5864;145796;-3376;-2276}}	territory_end
+npcmaker_begin	[dion_t20_22_021]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[monstereye_searcher]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_022]	{{5228;147972;-3596;-2996};{8516;150616;-3596;-2996};{8532;151196;-3596;-2996};{5080;153328;-3596;-2996}}	territory_end
+npcmaker_begin	[dion_t20_22_022]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[hobgoblin]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_023]	{{8508;150604;-3412;-2812};{11136;149984;-3412;-2812};{13268;150372;-3412;-2812};{11764;151256;-3412;-2812};{8572;151156;-3412;-2812}}	territory_end
+npcmaker_begin	[dion_t20_22_023]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[hobgoblin]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_024]	{{12820;149228;-3472;-3072};{14956;148844;-3472;-3072};{16808;149176;-3472;-3072};{14980;150384;-3472;-3072};{13328;150492;-3472;-3072};{11948;150100;-3472;-3072}}	territory_end
+npcmaker_begin	[dion_t20_22_024]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[hobgoblin]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_025]	{{15416;150236;-3440;-2840};{16832;149272;-3440;-2840};{18000;152168;-3440;-2840};{17952;152624;-3440;-2840};{17028;152804;-3440;-2840}}	territory_end
+npcmaker_begin	[dion_t20_22_025]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[hobgoblin]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_026]	{{12900;150780;-3592;-2492};{15096;150720;-3592;-2492};{16804;152748;-3592;-2492};{12504;154772;-3592;-2492};{11888;151404;-3592;-2492}}	territory_end
+npcmaker_begin	[dion_t20_22_026]
+npc_begin	[hobgoblin]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_027]	{{8708;151324;-3544;-2544};{11756;151412;-3544;-2544};{12192;153476;-3544;-2544};{6816;153960;-3544;-2544};{6020;152952;-3544;-2544}}	territory_end
+npcmaker_begin	[dion_t20_22_027]
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[monstereye_searcher]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_028]	{{12580;154848;-3716;-2616};{18136;152580;-3716;-2616};{18100;154712;-3716;-2616};{17040;157060;-3716;-2616};{12284;157064;-3716;-2616}}	territory_end
+npcmaker_begin	[dion_t20_22_028]
+npc_begin	[hobgoblin]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_029]	{{12272;157168;-3632;-2632};{16692;157180;-3632;-2632};{16340;160112;-3632;-2632};{15704;161328;-3632;-2632};{12536;162568;-3632;-2632}}	territory_end
+npcmaker_begin	[dion_t20_22_029]
+npc_begin	[tumran_bugbear]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_030]	{{6888;154024;-3364;-2364};{12252;154164;-3364;-2364};{12252;159128;-3364;-2364};{9808;159400;-3364;-2364};{6912;156556;-3364;-2364}}	territory_end
+npcmaker_begin	[dion_t20_22_030]
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[monstereye_searcher]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[tumran_bugbear]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_031]	{{9732;159528;-3664;-2664};{12268;159276;-3664;-2664};{12396;162680;-3664;-2664};{10620;162288;-3664;-2664};{9224;161084;-3664;-2664}}	territory_end
+npcmaker_begin	[dion_t20_22_031]
+npc_begin	[tumran_bugbear]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_032]	{{4000;156744;-3768;-2568};{6888;156648;-3768;-2568};{9624;159416;-3768;-2568};{9120;160880;-3768;-2568};{5108;161596;-3768;-2568}}	territory_end
+npcmaker_begin	[dion_t20_22_032]
+npc_begin	[tumran_bugbear]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_033]	{{5336;153388;-3648;-3048};{5908;152920;-3648;-3048};{6812;154068;-3648;-3048};{6788;156628;-3648;-3048};{3756;156784;-3648;-3048}}	territory_end
+npcmaker_begin	[dion_t20_22_033]
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[monstereye_searcher]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_034]	{{5760;162412;-3716;-3116};{8592;161692;-3716;-3116};{11624;163588;-3716;-3116};{6548;163552;-3716;-3116}}	territory_end
+npcmaker_begin	[dion_t20_22_034]
+npc_begin	[bloody_bee]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_035]	{{14124;162644;-3744;-3144};{16372;161608;-3744;-3144};{16568;163564;-3744;-3144};{13436;163628;-3744;-3144}}	territory_end
+npcmaker_begin	[dion_t20_22_035]
+npc_begin	[bloody_bee]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_036]	{{22840;146684;-3420;-2620};{26416;146344;-3420;-2620};{26340;152388;-3420;-2620};{22064;149892;-3420;-2620}}	territory_end
+npcmaker_begin	[dion_t20_22_036]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[hobgoblin]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_037]	{{30568;144432;-3340;-2040};{32424;144560;-3340;-2040};{32384;148076;-3340;-2040};{26384;149112;-3340;-2040};{26456;146332;-3340;-2040}}	territory_end
+npcmaker_begin	[dion_t20_22_037]
+npc_begin	[hobgoblin]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_038]	{{26904;149092;-3416;-1916};{32484;148224;-3416;-1916};{32420;153952;-3416;-1916};{26628;152356;-3416;-1916}}	territory_end
+npcmaker_begin	[dion_t20_22_038]
+npc_begin	[hobgoblin]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 5	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_039]	{{26636;152472;-3640;-2240};{32284;154212;-3640;-2240};{32304;158544;-3640;-2240};{26448;155600;-3640;-2240}}	territory_end
+npcmaker_begin	[dion_t20_22_039]
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_22_040]	{{27692;161312;-3832;-2432};{32360;158768;-3832;-2432};{32284;163400;-3832;-2432};{26332;163444;-3832;-2432}}	territory_end
+npcmaker_begin	[dion_t20_22_040]
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+

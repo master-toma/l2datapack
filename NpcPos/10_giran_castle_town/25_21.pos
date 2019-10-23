@@ -1,0 +1,11 @@
+//--------------------------------------------------------------------------------------------------------------
+//ver 크로니클 I
+//DATE : 03.12.22
+//지룡 안타라스
+//--------------------------------------------------------------------------------------------------------------
+territory_begin	[boss_25_21]	{{173445;110372;-7712;-7112};{181960;110372;-7712;-7112};{181960;119052;-7712;-7112};{173445;119052;-7712;-7112}}	territory_end
+npcmaker_begin	[boss_25_21]	initial_spawn=all	maximum_npc=2
+npc_begin	[antaras]	pos={185708;114298;-8221;32768}	on_delete_create(10sec,{[teleport_cube_antaras]})	total=1	respawn=264hour	respawn_rand=72hour	dbname=[antaras]	dbsaving={death_time;parameters;pos}	ai_parameters={[GM_ID]=[1]}	npc_end
+npc_begin	[teleport_cube_antaras]	nickname=[teleport_cube_antaras]	pos={177615;114941;-7709;0}	total=1	respawn=no	npc_end
+npcmaker_end
+

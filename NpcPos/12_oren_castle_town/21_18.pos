@@ -1,0 +1,283 @@
+//--------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
+//다크엘프 영지
+//ver 크로니컬 I
+//2003.12.22
+//--------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
+//------------------- 21_18 다크엘프영지:북동쪽 해안--------------------------------------------------------
+territory_begin	[oren_t21_18_001]	{{32964;5608;-3732;-3082};{35748;5468;-3732;-3082};{40424;7828;-3732;-3082};{38372;11912;-3732;-3082};{33056;12080;-3732;-3082}}	territory_end
+npcmaker_begin	[oren_t21_18_001]
+npc_begin	[elder_brown_keltir]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npc_begin	[ashen_wolf]	pos = anywhere	total = 10	respawn = 15sec	npc_end
+npc_begin	[goblin]	pos = anywhere	total = 12	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t21_18_002]	{{33004;12100;-3736;-3236};{36692;12040;-3736;-3236};{33488;19512;-3736;-3236};{33028;19508;-3736;-3236}}	territory_end
+npcmaker_begin	[oren_t21_18_002]
+npc_begin	[elder_brown_keltir]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[ashen_wolf]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[goblin]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t21_18_003]	{{38988;7064;-3244;-2894};{41256;6096;-3244;-2894};{42560;7076;-3244;-2894};{40464;7796;-3244;-2894}}	territory_end
+npcmaker_begin	[oren_t21_18_003]
+npc_begin	[goblin]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[imp]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t21_18_004]	{{33660;9088;-3736;-3386};{35256;9452;-3736;-3386};{36064;11256;-3736;-3386};{33988;11588;-3736;-3386}}	territory_end
+npcmaker_begin	[oren_t21_18_004]
+npc_begin	[ashen_wolf]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t21_18_005]	{{36004;6076;-3504;-3104};{37868;7104;-3504;-3104};{38176;9812;-3504;-3104};{37220;9500;-3504;-3104}}	territory_end
+npcmaker_begin	[oren_t21_18_005]
+npc_begin	[goblin]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[imp]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t21_18_006]	{{33548;12288;-3720;-3370};{35388;13308;-3720;-3370};{35156;14656;-3720;-3370};{33444;14740;-3720;-3370}}	territory_end
+npcmaker_begin	[oren_t21_18_006]
+npc_begin	[ashen_wolf]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+//--------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
+//다크엘프 영지 가디언
+//ver 크로니컬 I
+//2003.12.22
+//--------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
+//------------------- 21_18 다크엘프영지:북동쪽 해안--------------------------------------------------------
+territory_begin	[oren_guard_t21_18_001]	{{32964;5608;-3732;-3082};{35748;5468;-3732;-3082};{40424;7828;-3732;-3082};{38372;11912;-3732;-3082};{33056;12080;-3732;-3082}}	territory_end
+npcmaker_begin	[oren_guard_t21_18_001]
+npc_begin	[bloody_pixy]	pos = anywhere	total = 3	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[oren_guard_t21_18_002]	{{33004;12100;-3736;-3236};{36692;12040;-3736;-3236};{33488;19512;-3736;-3236};{33028;19508;-3736;-3236}}	territory_end
+npcmaker_begin	[oren_guard_t21_18_002]
+npc_begin	[bloody_pixy]	pos = anywhere	total = 2	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------- 21_18 포자의 바다 ----------------------------------------------------------------------------------------
+territory_begin	[oren_h_21_18_001]	{{58424;10588;-4176;-3376};{61200;9400;-4176;-3376};{62576;9680;-4176;-3376};{63264;10624;-4176;-3376};{62336;12412;-4176;-3376};{60916;13248;-4176;-3376};{59696;13400;-4176;-3376}}	territory_end
+npcmaker_begin	[oren_h_21_18_001]
+npc_begin	[giant_fungus]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[giant_monstereye]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[dire_wyrm]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_002]	{{56076;11420;-5396;-3596};{58380;10780;-5396;-3596};{60236;14988;-5396;-3596};{57340;14956;-5396;-3596}}	territory_end
+npcmaker_begin	[oren_h_21_18_002]
+npc_begin	[giant_monstereye]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[dire_wyrm]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[rot_tree]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_003]	{{52472;13476;-5804;-4804};{56008;11432;-5804;-4804};{57372;14916;-5804;-4804};{53252;15292;-5804;-4804}}	territory_end
+npcmaker_begin	[oren_h_21_18_003]
+npc_begin	[rot_tree]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[rot_golem]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[trisalim_tote]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_004]	{{48592;14440;-5804;-4804};{52340;13520;-5804;-4804};{53180;15340;-5804;-4804};{48368;15536;-5804;-4804}}	territory_end
+npcmaker_begin	[oren_h_21_18_004]
+npc_begin	[trisalim]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[trisalim_tote]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[spore_zombie]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_005]	{{48280;17060;-5564;-4764};{53428;16112;-5564;-4764};{53472;18708;-5564;-4764};{48300;17744;-5564;-4764}}	territory_end
+npcmaker_begin	[oren_h_21_18_005]
+npc_begin	[trisalim]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[trisalim_tote]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[spore_zombie]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_006]	{{53436;16096;-5540;-4740};{57856;16160;-5540;-4740};{58172;18336;-5540;-4740};{53412;18760;-5540;-4740}}	territory_end
+npcmaker_begin	[oren_h_21_18_006]
+npc_begin	[rot_tree]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[rot_golem]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[trisalim_tote]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_007]	{{58032;16172;-5132;-3932};{60304;15832;-5132;-3932};{61124;17184;-5132;-3932};{60720;18448;-5132;-3932};{58244;18364;-5132;-3932}}	territory_end
+npcmaker_begin	[oren_h_21_18_007]
+npc_begin	[giant_monstereye]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[dire_wyrm]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[rot_tree]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_008]	{{59632;13404;-4084;-3384};{60948;13252;-4084;-3384};{62204;15028;-4084;-3384};{62392;16144;-4084;-3384};{61168;17124;-4084;-3384}}	territory_end
+npcmaker_begin	[oren_h_21_18_008]
+npc_begin	[giant_fungus]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[giant_monstereye]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[dire_wyrm]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_009]	{{60980;17804;-4168;-3368};{63696;15892;-4168;-3368};{64468;15896;-4168;-3368};{63860;17488;-4168;-3368};{61500;19400;-4168;-3368}}	territory_end
+npcmaker_begin	[oren_h_21_18_009]
+npc_begin	[giant_fungus]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[giant_monstereye]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[dire_wyrm]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_010]	{{61812;19248;-4132;-3332};{63452;19444;-4132;-3332};{64200;20132;-4132;-3332};{63232;21904;-4132;-3332};{61512;22160;-4132;-3332};{61500;19476;-4132;-3332}}	territory_end
+npcmaker_begin	[oren_h_21_18_010]
+npc_begin	[giant_fungus]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[giant_monstereye]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[dire_wyrm]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_011]	{{58040;19740;-5356;-3906};{61188;19068;-5356;-3906};{61364;22224;-5356;-3906};{60784;24032;-5356;-3906};{57948;23436;-5356;-3906}}	territory_end
+npcmaker_begin	[oren_h_21_18_011]
+npc_begin	[giant_monstereye]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[dire_wyrm]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[rot_tree]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_012]	{{53532;19776;-5596;-4796};{57932;19792;-5596;-4796};{57920;23492;-5596;-4796};{53512;22180;-5596;-4796}}	territory_end
+npcmaker_begin	[oren_h_21_18_012]
+npc_begin	[rot_tree]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[rot_golem]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[trisalim_tote]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_013]	{{48216;18552;-5616;-5016};{53432;19740;-5616;-5016};{53464;22156;-5616;-5016};{48200;19948;-5616;-5016}}	territory_end
+npcmaker_begin	[oren_h_21_18_013]
+npc_begin	[trisalim]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[trisalim_tote]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[spore_zombie]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_014]	{{48068;21128;-5480;-4580};{53136;23196;-5480;-4580};{52520;25260;-5480;-4580};{49376;24028;-5480;-4580};{47068;21860;-5480;-4580}}	territory_end
+npcmaker_begin	[oren_h_21_18_014]
+npc_begin	[trisalim]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[trisalim_tote]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[spore_zombie]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_015]	{{53148;23100;-5448;-4748};{57720;24420;-5448;-4748};{57420;27128;-5448;-4748};{52528;25300;-5448;-4748}}	territory_end
+npcmaker_begin	[oren_h_21_18_015]
+npc_begin	[rot_tree]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[rot_golem]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[trisalim_tote]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_016]	{{57748;24408;-5068;-3818};{60880;25056;-5068;-3818};{60540;26608;-5068;-3818};{59156;28020;-5068;-3818};{57400;27076;-5068;-3818}}	territory_end
+npcmaker_begin	[oren_h_21_18_016]
+npc_begin	[giant_monstereye]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[dire_wyrm]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[rot_tree]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_017]	{{61472;22340;-4160;-3610};{63144;22084;-4160;-3610};{63472;24676;-4160;-3610};{62508;26224;-4160;-3610};{61388;25708;-4160;-3610};{60700;24500;-4160;-3610}}	territory_end
+npcmaker_begin	[oren_h_21_18_017]
+npc_begin	[giant_fungus]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[giant_monstereye]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[dire_wyrm]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_018]	{{61532;25916;-3924;-3424};{62492;26364;-3924;-3424};{62384;28164;-3924;-3424};{61368;29708;-3924;-3424};{59556;30712;-3924;-3424};{59224;28528;-3924;-3424}}	territory_end
+npcmaker_begin	[oren_h_21_18_018]
+npc_begin	[giant_fungus]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[giant_monstereye]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[dire_wyrm]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_019]	{{56316;30888;-4008;-3508};{59140;28400;-4008;-3508};{59364;30408;-4008;-3508};{57776;31108;-4008;-3508}}	territory_end
+npcmaker_begin	[oren_h_21_18_019]
+npc_begin	[giant_fungus]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[giant_monstereye]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[dire_wyrm]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_020]	{{56964;27608;-5068;-3868};{59088;28332;-5068;-3868};{56576;30176;-5068;-3868};{55440;29900;-5068;-3868}}	territory_end
+npcmaker_begin	[oren_h_21_18_020]
+npc_begin	[giant_monstereye]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[dire_wyrm]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[rot_tree]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_021]	{{52568;25968;-5220;-4420};{56876;27608;-5220;-4420};{55816;29212;-5220;-4420};{52240;27076;-5220;-4420}}	territory_end
+npcmaker_begin	[oren_h_21_18_021]
+npc_begin	[rot_tree]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[rot_golem]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[trisalim_tote]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_022]	{{49628;24608;-5240;-4340};{52496;25828;-5240;-4340};{52108;27112;-5240;-4340};{49036;25684;-5240;-4340}}	territory_end
+npcmaker_begin	[oren_h_21_18_022]
+npc_begin	[trisalim]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[trisalim_tote]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[spore_zombie]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_023]	{{50260;26768;-5096;-3596};{52256;27272;-5096;-3596};{55456;29216;-5096;-3596};{53344;29504;-5096;-3596}}	territory_end
+npcmaker_begin	[oren_h_21_18_023]
+npc_begin	[rot_tree]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[rot_golem]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[trisalim_tote]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_21_18_024]	{{43044;21924;-5216;-3916};{45328;21860;-5216;-3916};{48528;24988;-5216;-3916};{44496;26280;-5216;-3916};{41752;25864;-5216;-3916};{40972;24244;-5216;-3916}}	territory_end
+npcmaker_begin	[oren_h_21_18_024]
+npc_begin	[dire_wyrm]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[rot_golem]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[trisalim_tote]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[spore_zombie]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[t21_18_qmob_031130]	{{63124;30720;-3872;-3672};{65212;30688;-3872;-3672};{65212;32452;-3872;-3672};{63192;32484;-3872;-3672}}	territory_end
+npcmaker_begin	[t21_18_qmob_031130]	initial_spawn = all	maximum_npc = 26
+npc_begin	[abyssal_jewel_2]	pos = {64144;31680;-3760;0}	total = 1	respawn = 3min	npc_end
+npcmaker_end
+
+//--------------------------------------------------------------------------------------------------------------
+// 오르펜 보스전
+// DATE 2003.09.09
+// Ver 9월 업데이트
+// --------------------------------------------------------------------------------------------------------------
+territory_begin	[orphen_t21_18_001]	{{43084;15944;-4468;-4118};{45140;15816;-4468;-4118};{45748;17200;-4468;-4118};{44504;18780;-4468;-4118};{43284;18952;-4468;-4118};{42476;18164;-4468;-4118};{42480;16448;-4468;-4118}}	territory_end
+territory_begin	[orphen_t21_18_002]	{{48800;15112;-5796;-3796};{56556;12040;-5796;-3796};{59068;14288;-5796;-3796};{61064;18492;-5796;-3796};{60380;23672;-5796;-3796};{58724;27412;-5796;-3796};{55696;28496;-5796;-3796};{43976;24664;-5796;-3796}}	territory_end
+npcmaker_begin	[orphen_t21_18_001];[orphen_t21_18_002]		initial_spawn=all	maximum_npc=30
+//-------- 오르펜과 직속 부하------------------------------------------------------------------------------------------------------
+npc_begin	[orfen]	pos={{55024;17368;-5412;0;40%};{53504;21248;-5496;0;30%};{53248;24576;-5272;0;30%}}	total=1	respawn=48hour	respawn_rand=20hour	dbname=[orfen]	dbsaving={death_time;parameters;pos}
+Privates=[raikel_leos:raikel_leos:1:1min;raikel_leos:raikel_leos:1:1min;raikel_leos:raikel_leos:1:1min;raikel_leos:raikel_leos:1:1min;raikel_leos:raikel_leos:1:1min;raikel_leos:raikel_leos:1:1min]	ai_parameters={[b03_x1]=[43728];[b03_y1]=[17220];[b03_z1]=[-4342];[b03_x2]=[55024];[b03_y2]=[17368];[b03_z2]=[-5412];[b03_x3]=[53504];[b03_y3]=[21248];[b03_z3]=[-5486];[b03_x4]=[53248];[b03_y4]=[24576];[b03_z4]=[-5262]}	npc_end
+npcmaker_end
+
+territory_begin	[orphen_t21_18_001_01]	{{43084;15944;-4468;-4118};{45140;15816;-4468;-4118};{45748;17200;-4468;-4118};{44504;18780;-4468;-4118};{43284;18952;-4468;-4118};{42476;18164;-4468;-4118};{42480;16448;-4468;-4118}}	territory_end
+npcmaker_begin	[orphen_t21_18_001_01]		initial_spawn=all	maximum_npc=30
+//-------- 기지 힐------------------------------------------------------------------------------------------------------
+npc_begin	[riba_iren]	pos={43656;17560;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[riba_iren]	pos={43444;17332;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[riba_iren]	pos={43464;17048;-4356;0}	total=1	respawn=1min	npc_end
+npc_begin	[riba_iren]	pos={43700;16900;-4352;0}	total=1	respawn=1min	npc_end
+//-------- 기지 근접 공격------------------------------------------------------------------------------------------------------
+npc_begin	[raikel]	pos={44448;16656;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[raikel]	pos={44440;17060;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[raikel]	pos={44408;17480;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[raikel]	pos={43740;17984;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[raikel]	pos={43832;16552;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[raikel]	pos={44364;17856;-4352;0}	total=1	respawn=1min	npc_end
+//-------- 기지 장거리 마법 공격------------------------------------------------------------------------------------------------------
+npc_begin	[riba]	pos={44168;16908;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[riba]	pos={44128;17580;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[riba]	pos={43916;17776;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[riba]	pos={43972;16740;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[riba]	pos={43488;17768;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[riba]	pos={43224;16844;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[riba]	pos={43128;17220;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[riba]	pos={43504;16644;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[riba]	pos={43196;17580;-4352;0}	total=1	respawn=1min	npc_end
+npc_begin	[riba]	pos={44176;17240;-4352;0}	total=1	respawn=1min	npc_end
+npcmaker_end
+
+//---------------포자의바다 21_18
+territory_begin	[event_spore_2118_01]	{{48536;17068;-5636;-4636};{57600;16648;-5636;-4636};{58104;27248;-5636;-4636};{46068;24316;-5636;-4636}}	territory_end
+npcmaker_begin	[event_spore_2118_01]	initial_spawn=all	maximum_npc=5
+npc_begin	[handmaiden_of_orfen]	pos={{55136;17104;-5529;0;20%};{49104;18752;-5212;0;20%};{53072;20784;-5537;0;20%};{49968;22608;-5515;0;20%};{54896;22688;-5376;0;20%}}	total=1	respawn=2hour	respawn_rand=1hour	Privates=[trisalim_escort:trisalim_escort:1:1min;trisalim_escort:trisalim_escort:1:1min;trisalim_escort:trisalim_escort:1:1min;trisalim_escort:trisalim_escort:1min]	npc_end
+npcmaker_end
+

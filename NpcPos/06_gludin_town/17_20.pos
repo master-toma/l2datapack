@@ -1,0 +1,166 @@
+//------------------- 17_20 다크엘프영지:다크서큐버스 --------------------------------------------------------
+territory_begin	[oren_delf_t17_20_001]	{{-72228;71784;-3428;-2778};{-70084;72576;-3428;-2778};{-69724;73632;-3428;-2778};{-70900;76416;-3428;-2778};{-74288;77356;-3428;-2778};{-74820;72492;-3428;-2778}}	territory_end
+npcmaker_begin	[oren_delf_t17_20_001]
+npc_begin	[dark_succubus]	pos = anywhere	total = 12	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t17_20_002]	{{-68088;74788;-3552;-2952};{-65840;74936;-3552;-2952};{-65888;83740;-3552;-2952};{-69512;82344;-3552;-2952};{-72716;77220;-3552;-2952}}	territory_end
+npcmaker_begin	[oren_delf_t17_20_002]
+npc_begin	[dark_succubus]	pos = anywhere	total = 20	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t17_20_003]	{{-67336;72324;-3416;-3016};{-65820;72056;-3416;-3016};{-65828;74816;-3416;-3016};{-67320;74740;-3416;-3016}}	territory_end
+npcmaker_begin	[oren_delf_t17_20_003]
+npc_begin	[stone_guardian]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[ivory_beast]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t17_20_004]	{{-76868;79404;-3468;-2818};{-72884;77288;-3468;-2818};{-71412;79260;-3468;-2818};{-72184;80516;-3468;-2818};{-75348;82512;-3468;-2818}}	territory_end
+npcmaker_begin	[oren_delf_t17_20_004]
+npc_begin	[dark_succubus]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[ivory_beast]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t17_20_005]	{{-75188;82520;-3588;-2638};{-72680;81048;-3588;-2638};{-68784;82808;-3588;-2638};{-70508;86316;-3588;-2638};{-75028;86452;-3588;-2638}}	territory_end
+npcmaker_begin	[oren_delf_t17_20_005]
+npc_begin	[dark_succubus]	pos = anywhere	total = 14	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t17_20_006]	{{-70144;85996;-3780;-2930};{-65800;84304;-3780;-2930};{-65896;89760;-3780;-2930};{-67144;89520;-3780;-2930}}	territory_end
+npcmaker_begin	[oren_delf_t17_20_006]
+npc_begin	[dark_succubus]	pos = anywhere	total = 11	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t17_20_007]	{{-73628;73276;-3324;-2924};{-72232;72152;-3324;-2924};{-70248;73156;-3324;-2924};{-71632;74328;-3324;-2924}}	territory_end
+npcmaker_begin	[oren_delf_t17_20_007]
+npc_begin	[ivory_beast]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t17_20_008]	{{-73640;74256;-3348;-2948};{-70808;74780;-3348;-2948};{-72436;76364;-3348;-2948};{-73656;75580;-3348;-2948}}	territory_end
+npcmaker_begin	[oren_delf_t17_20_008]
+npc_begin	[ivory_beast]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t17_20_009]	{{-67640;75424;-3420;-3120};{-65976;75512;-3420;-3120};{-66000;76968;-3420;-3120};{-68844;76952;-3420;-3120}}	territory_end
+npcmaker_begin	[oren_delf_t17_20_009]
+npc_begin	[ivory_beast]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t17_20_010]	{{-71076;77864;-3488;-3088};{-68348;77312;-3488;-3088};{-68448;79336;-3488;-3088};{-69936;79508;-3488;-3088}}	territory_end
+npcmaker_begin	[oren_delf_t17_20_010]
+npc_begin	[ivory_beast]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t17_20_011]	{{-68324;80280;-3464;-3164};{-66168;79744;-3464;-3164};{-66144;82616;-3464;-3164};{-68680;82056;-3464;-3164}}	territory_end
+npcmaker_begin	[oren_delf_t17_20_011]
+npc_begin	[ivory_beast]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t17_20_012]	{{-73600;82112;-3596;-3196};{-70676;82820;-3596;-3196};{-70440;84148;-3596;-3196};{-71608;84744;-3596;-3196};{-73820;84216;-3596;-3196}}	territory_end
+npcmaker_begin	[oren_delf_t17_20_012]
+npc_begin	[ivory_beast]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t17_20_013]	{{-68520;86492;-3728;-3328};{-66092;85332;-3728;-3328};{-66300;88588;-3728;-3328};{-67480;88204;-3728;-3328}}	territory_end
+npcmaker_begin	[oren_delf_t17_20_013]
+npc_begin	[ivory_beast]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+//------------------- 17_20 다크엘프영지:다크서큐버스 --------------------------------------------------------
+territory_begin	[oren_guard_delf_t17_20_001]	{{-72228;71784;-3428;-2778};{-70084;72576;-3428;-2778};{-69724;73632;-3428;-2778};{-70900;76416;-3428;-2778};{-74288;77356;-3428;-2778};{-74820;72492;-3428;-2778}}	territory_end
+npcmaker_begin	[oren_guard_delf_t17_20_001]
+npc_begin	[ti_mi_riran]	pos = anywhere	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[oren_guard_delf_t17_20_002]	{{-68088;74788;-3552;-2952};{-65840;74936;-3552;-2952};{-65888;83740;-3552;-2952};{-69512;82344;-3552;-2952};{-72716;77220;-3552;-2952}}	territory_end
+npcmaker_begin	[oren_guard_delf_t17_20_002]
+npc_begin	[ti_mi_riran]	pos = anywhere	total = 2	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[oren_guard_delf_t17_20_004]	{{-76868;79404;-3468;-2818};{-72884;77288;-3468;-2818};{-71412;79260;-3468;-2818};{-72184;80516;-3468;-2818};{-75348;82512;-3468;-2818}}	territory_end
+npcmaker_begin	[oren_guard_delf_t17_20_004]
+npc_begin	[ti_mi_riran]	pos = anywhere	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[oren_guard_delf_t17_20_005]	{{-75188;82520;-3588;-2638};{-72680;81048;-3588;-2638};{-68784;82808;-3588;-2638};{-70508;86316;-3588;-2638};{-75028;86452;-3588;-2638}}	territory_end
+npcmaker_begin	[oren_guard_delf_t17_20_005]
+npc_begin	[ti_mi_riran]	pos = anywhere	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------- 17_20 ----------------------------------------------------------------------------------------
+territory_begin	[gludio_t17_20_001]	{{-85718;78745;-3517;-2667};{-81670;78169;-3517;-2667};{-81194;83949;-3517;-2667};{-85826;85433;-3517;-2667};{-88766;84365;-3517;-2667};{-88966;82701;-3517;-2667}}	territory_end
+npcmaker_begin	[gludio_t17_20_001]
+npc_begin	[selu_lizardman_scout]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npc_begin	[selu_lizardman_warrior]	pos = anywhere	total = 10	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_legion]	pos = anywhere	total = 10	respawn = 35sec	npc_end
+npc_begin	[whispering_wind]	pos = anywhere	total = 8	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_20_002]	{{-85846;85472;-3772;-2922};{-81750;84072;-3772;-2922};{-78534;90180;-3772;-2922};{-80714;94312;-3772;-2922};{-86830;90632;-3772;-2922}}	territory_end
+npcmaker_begin	[gludio_t17_20_002]
+npc_begin	[ol_mahum_scout]	pos = anywhere	total = 8	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_legion]	pos = anywhere	total = 10	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_commander]	pos = anywhere	total = 10	respawn = 35sec	npc_end
+npc_begin	[whispering_wind]	pos = anywhere	total = 8	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_20_003]	{{-88627;84397;-3518;-2718};{-85959;85485;-3518;-2718};{-87067;91821;-3518;-2718};{-90271;91301;-3518;-2718};{-92695;89857;-3518;-2718}}	territory_end
+npcmaker_begin	[gludio_t17_20_003]
+npc_begin	[selu_lizardman_scout]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[selu_lizardman_warrior]	pos = anywhere	total = 10	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_legion]	pos = anywhere	total = 8	respawn = 35sec	npc_end
+npc_begin	[whispering_wind]	pos = anywhere	total = 8	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_20_004]	{{-94040;90697;-3666;-2866};{-90356;91353;-3666;-2866};{-88356;97813;-3666;-2866};{-96232;97849;-3666;-2866};{-95556;92713;-3666;-2866}}	territory_end
+npcmaker_begin	[gludio_t17_20_004]
+npc_begin	[selu_lizardman_scout]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npc_begin	[selu_lizardman_warrior]	pos = anywhere	total = 10	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_legion]	pos = anywhere	total = 10	respawn = 35sec	npc_end
+npc_begin	[whispering_wind]	pos = anywhere	total = 8	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_20_005]	{{-78141;90505;-3783;-2933};{-73797;91917;-3783;-2933};{-66237;96257;-3783;-2933};{-66237;97829;-3783;-2933};{-74769;97885;-3783;-2933};{-80445;94425;-3783;-2933}}	territory_end
+npcmaker_begin	[gludio_t17_20_005]
+npc_begin	[ol_mahum_scout]	pos = anywhere	total = 8	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_legion]	pos = anywhere	total = 10	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_commander]	pos = anywhere	total = 10	respawn = 35sec	npc_end
+npc_begin	[whispering_wind]	pos = anywhere	total = 7	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_20_006]	{{-86086;80336;-3396;-2596};{-84042;79316;-3396;-2596};{-84366;82964;-3396;-2596};{-87338;83424;-3396;-2596}}	territory_end
+npcmaker_begin	[gludio_t17_20_006]
+npc_begin	[whispering_wind]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_20_007]	{{-85260;86854;-3672;-3272};{-83052;85934;-3672;-3272};{-81752;88322;-3672;-3272};{-83584;89702;-3672;-3272};{-85480;88846;-3672;-3272}}	territory_end
+npcmaker_begin	[gludio_t17_20_007]
+npc_begin	[whispering_wind]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_20_008]	{{-90179;87535;-3554;-2954};{-88151;88531;-3554;-2954};{-88439;90143;-3554;-2954};{-90343;90527;-3554;-2954};{-91447;89259;-3554;-2954}}	territory_end
+npcmaker_begin	[gludio_t17_20_008]
+npc_begin	[whispering_wind]	pos = anywhere	total = 7	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_20_009]	{{-94063;92905;-3580;-2980};{-91843;92173;-3580;-2980};{-91019;93977;-3580;-2980};{-92043;95945;-3580;-2980};{-94427;95497;-3580;-2980}}	territory_end
+npcmaker_begin	[gludio_t17_20_009]
+npc_begin	[ol_mahum_legion]	pos = anywhere	total = 7	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_20_010]	{{-77150;91939;-3811;-3411};{-74646;92215;-3811;-3411};{-75282;94767;-3811;-3411};{-77858;94139;-3811;-3411}}	territory_end
+npcmaker_begin	[gludio_t17_20_010]
+npc_begin	[whispering_wind]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npcmaker_end
+
+//---------------2003.11.30 12월 업데이트------------------------------------------
+territory_begin	[t17_20_qmob_031130]	{{-80836;73824;-3432;-3032};{-78988;75672;-3432;-3032};{-81100;77548;-3432;-3032};{-83516;75868;-3432;-3032}}	territory_end
+npcmaker_begin	[t17_20_qmob_031130]	initial_spawn = all	maximum_npc = 26
+npc_begin	[abyssal_jewel_1]	pos = {-81264;75664;-3408;0}	total = 1	respawn = 3min	npc_end
+npcmaker_end
+
+territory_begin	[event_t17_20_001]	{{-87378;81319;-3787;-2587};{-82982;80015;-3787;-2587};{-78714;90583;-3787;-2587};{-87374;91027;-3787;-2587};{-89554;87603;-3787;-2587}}	territory_end
+npcmaker_begin	[event_t17_20_001]	initial_spawn=all	maximum_npc=6
+npc_begin	[priest_of_kuroboros]	pos={{-84784;83069;-3326;0;40%};{-87833;88201;-3409;0;30%};{-82361;88628;-3670;0;30%}}	total=1	respawn=3hour	respawn_rand=1hour	Privates=[follower_of_kuroboros:party_private:1:1min;follower_of_kuroboros:party_private:1:1min;follower_of_kuroboros:party_private:1:1min;follower_of_kuroboros:party_private:1:1min;follower_of_kuroboros:party_private:1:1min]	npc_end
+npcmaker_end
+

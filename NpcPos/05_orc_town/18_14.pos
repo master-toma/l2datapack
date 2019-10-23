@@ -1,0 +1,332 @@
+//---------------------------------------------------------------------
+//ver : 플레이 스타일 적용 0.1 - Close Beta 4차
+//
+//Name : 디온 영지  NPC
+//Date : 2003.03.09
+//---------------------------------------------------------------------
+//---------- (18_14) 오크 마을 031201-------------------------------------------
+territory_begin	[rionNPC_040312_01]	{{-44008;-111899;-377;-177};{-43869;-111757;-377;-177};{-44371;-111366;-377;-177};{-44489;-111493;-377;-177}}	territory_end
+npcmaker_begin	[rionNPC_040312_01]	initial_spawn = all	maximum_npc = 2
+npc_begin	[trader_jakaron]	pos = {-44416;-111486;-222;57600}	total = 1	respawn = 1min	npc_end
+npc_begin	[trader_kunai]	pos = {-43926;-111794;-222;28672}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC_031201_02]	{{-44036;-115588;-284;-84};{-43836;-115588;-284;-84};{-43836;-115388;-284;-84};{-44036;-115388;-284;-84}}	territory_end
+npcmaker_begin	[18_14_NPC_031201_02]	initial_spawn = all	maximum_npc = 2
+npc_begin	[trader_uska]	pos = {-43910;-115518;-194;39000}	total = 1	respawn = 1min	npc_end
+npc_begin	[trader_papuma]	pos = {-43950;-115457;-194;39000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC_031201_03]	{{-43171;-113796;-304;-104};{-43071;-113794;-304;-104};{-43080;-113376;-304;-104};{-43179;-113378;-304;-104}}	territory_end
+npcmaker_begin	[18_14_NPC_031201_03]	initial_spawn = all	maximum_npc = 2
+npc_begin	[warehouse_grookin]	pos = {-43109;-113770;-221;24576}	total = 1	respawn = 1min	npc_end
+npc_begin	[warehouse_imantu]	pos = {-43114;-113404;-221;38000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC_031201_04]	{{-43380;-112628;-323;-123};{-43180;-112628;-323;-123};{-43180;-112428;-323;-123};{-43380;-112428;-323;-123}}	territory_end
+npcmaker_begin	[18_14_NPC_031201_04]	initial_spawn = all	maximum_npc = 1
+npc_begin	[blacksmith_sumari]	pos = {-43264;-112532;-220;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC_031201_05]	{{-45940;-112676;-296;-96};{-45769;-112675;-296;-96};{-45771;-112476;-296;-96};{-45940;-112476;-296;-96}}	territory_end
+npcmaker_begin	[18_14_NPC_031201_05]	initial_spawn = all	maximum_npc = 2
+npc_begin	[seer_tanapi]	pos = {-45863;-112621;-200;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[seer_livina]	pos = {-45864;-112540;-199;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC_031201_06]	{{-46022;-114830;-295;-95};{-45882;-114826;-295;-95};{-45884;-114440;-295;-95};{-46023;-114439;-295;-95}}	territory_end
+npcmaker_begin	[18_14_NPC_031201_06]	initial_spawn = all	maximum_npc = 2
+npc_begin	[prefect_brukurse]	pos = {-45952;-114784;-199;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[prefect_karukia]	pos = {-45952;-114496;-199;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC_031201_07]	{{-46868;-113700;-112;88};{-46668;-113700;-112;88};{-46668;-113500;-112;88};{-46868;-113500;-112;88}}	territory_end
+npcmaker_begin	[18_14_NPC_031201_07]	initial_spawn = all	maximum_npc = 1
+npc_begin	[kakai_the_lord_of_flame]	pos = {-46768;-113610;-3;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//---------- (18_14) 오크 마을 0704-------------------------------------------
+territory_begin	[18_14_030704_01]	{{-45364;-112628;-356;-156};{-45164;-112628;-356;-156};{-45164;-112428;-356;-156};{-45364;-112428;-356;-156}}	territory_end
+npcmaker_begin	[18_14_030704_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[gatekeeper_tamil]	pos = {-45264;-112512;-235;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_030704_02]	{{-45108;-113668;-306;-106};{-44908;-113668;-306;-106};{-44908;-113468;-306;-106};{-45108;-113468;-306;-106}}	territory_end
+npcmaker_begin	[18_14_030704_02]	initial_spawn = all	maximum_npc = 1
+npc_begin	[guide_orc_tanai]	pos = {-45032;-113598;-192;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//---------- (18_14) 오크 마을 0526-------------------------------------------
+territory_begin	[18_14_NPC020]	{{-46757;-113843;-109;91};{-46199;-113899;-109;91};{-46204;-113482;-109;91};{-46797;-113474;-109;91}}	territory_end
+npcmaker_begin	[18_14_NPC020]	initial_spawn = all	maximum_npc = 2
+npc_begin	[neruga_chief_tantus]	pos = {-46247;-113866;-21;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC025]	{{-46884;-114116;-184;16};{-46684;-114116;-184;16};{-46684;-113916;-184;16};{-46884;-113916;-184;16}}	territory_end
+npcmaker_begin	[18_14_NPC025]	initial_spawn = all	maximum_npc = 1
+npc_begin	[atuba_chief_varkees]	pos = {-46802;-114011;-112;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC026]	{{-46900;-113252;-208;-8};{-46700;-113252;-208;-8};{-46700;-113052;-208;-8};{-46900;-113052;-208;-8}}	territory_end
+npcmaker_begin	[18_14_NPC026]	initial_spawn = all	maximum_npc = 1
+npc_begin	[urutu_chief_hatos]	pos = {-46808;-113184;-112;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//---------- (18_14) 오크 마을 -------------------------------------------
+territory_begin	[18_14_NPC001]	{{-49620;-109668;-358;-158};{-49420;-109668;-358;-158};{-49420;-109468;-358;-158};{-49620;-109468;-358;-158}}	territory_end
+npcmaker_begin	[18_14_NPC001]	initial_spawn = all	maximum_npc = 1
+npc_begin	[hestui_totem_spirit]	pos = {-49542;-109564;-238;51000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC002]	{{-57188;-112676;-750;-550};{-56988;-112676;-750;-550};{-56988;-112476;-750;-550};{-57188;-112476;-750;-550}}	territory_end
+npcmaker_begin	[18_14_NPC002]	initial_spawn = all	maximum_npc = 1
+npc_begin	[tokum_priest_of_fire]	pos = {-57094;-112571;-672;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC003]	{{-57220;-114676;-750;-550};{-57020;-114676;-750;-550};{-57020;-114476;-750;-550};{-57220;-114476;-750;-550}}	territory_end
+npcmaker_begin	[18_14_NPC003]	initial_spawn = all	maximum_npc = 1
+npc_begin	[shela_priestess_of_fire]	pos = {-57097;-114574;-670;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC004]	{{-58148;-113700;-751;-551};{-57948;-113700;-751;-551};{-57948;-113500;-751;-551};{-58148;-113500;-751;-551}}	territory_end
+npcmaker_begin	[18_14_NPC004]	initial_spawn = all	maximum_npc = 1
+npc_begin	[guardian_vullkus]	pos = {-58062;-113605;-670;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC005]	{{-47484;-113872;-336;-136};{-47268;-113880;-336;-136};{-47265;-113347;-336;-136};{-47488;-113365;-336;-136}}	territory_end
+npcmaker_begin	[18_14_NPC005]	initial_spawn = all	maximum_npc = 2
+npc_begin	[centurion_nakusin]	pos = {-47360;-113791;-237;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[centurion_tamai]	pos = {-47360;-113424;-235;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC_007]	{{-45828;-113460;-331;-131};{-45628;-113460;-331;-131};{-45628;-113260;-331;-131};{-45828;-113260;-331;-131}}	territory_end
+npcmaker_begin	[18_14_NPC_007]	initial_spawn = all	maximum_npc = 1
+npc_begin	[centurion_vapook]	pos = {-45728;-113360;-237;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC_008]	{{-45828;-113924;-329;-129};{-45628;-113924;-329;-129};{-45628;-113724;-329;-129};{-45828;-113724;-329;-129}}	territory_end
+npcmaker_begin	[18_14_NPC_008]	initial_spawn = all	maximum_npc = 1
+npc_begin	[centurion_petukai]	pos = {-45731;-113844;-237;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC_009]	{{-44724;-111988;-354;-154};{-44524;-111988;-354;-154};{-44524;-111788;-354;-154};{-44724;-111788;-354;-154}}	territory_end
+npcmaker_begin	[18_14_NPC_009]	initial_spawn = all	maximum_npc = 1
+npc_begin	[gantaki_zu_urutu]	pos = {-44624;-111873;-238;40960}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC010]	{{-45428;-114820;-355;-155};{-45228;-114820;-355;-155};{-45228;-114620;-355;-155};{-45428;-114620;-355;-155}}	territory_end
+npcmaker_begin	[18_14_NPC010]	initial_spawn = all	maximum_npc = 1
+npc_begin	[tataru_zu_hestui]	pos = {-45328;-114736;-237;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC011]	{{-45908;-110148;-339;-139};{-45708;-110148;-339;-139};{-45708;-109948;-339;-139};{-45908;-109948;-339;-139}}	territory_end
+npcmaker_begin	[18_14_NPC011]	initial_spawn = all	maximum_npc = 1
+npc_begin	[centurion_tiku]	pos = {-45808;-110055;-255;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC_012]	{{-46644;-110052;-359;-159};{-46444;-110052;-359;-159};{-46444;-109852;-359;-159};{-46644;-109852;-359;-159}}	territory_end
+npcmaker_begin	[18_14_NPC_012]	initial_spawn = all	maximum_npc = 1
+npc_begin	[centurion_orinak]	pos = {-46528;-109968;-250;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC013]	{{-46660;-117412;-332;-132};{-46460;-117412;-332;-132};{-46460;-117212;-332;-132};{-46660;-117212;-332;-132}}	territory_end
+npcmaker_begin	[18_14_NPC013]	initial_spawn = all	maximum_npc = 1
+npc_begin	[praetorian_rukain]	pos = {-46576;-117311;-242;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[18_14_NPC014]	{{-45844;-117284;-308;-108};{-45644;-117284;-308;-108};{-45644;-117084;-308;-108};{-45844;-117084;-308;-108}}	territory_end
+npcmaker_begin	[18_14_NPC014]	initial_spawn = all	maximum_npc = 1
+npc_begin	[centurion_parugon]	pos = {-45744;-117165;-236;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
+//Rion Orc - Open Beta ver 1
+//2003. 07.04
+//--------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
+//------------------- 18_14 Orc ------------------------------------------------------------
+territory_begin	[rion_t18_14_001]	{{-51344;-113300;-388;-88};{-47452;-113280;-388;-88};{-47452;-109232;-388;-88};{-49824;-107692;-388;-88};{-52148;-109344;-388;-88}}	territory_end
+npcmaker_begin	[rion_t18_14_001]
+npc_begin	[tuto_keltir]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npc_begin	[young_crimson_keltir]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[crimson_keltir]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[elder_crimson_keltir]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_002]	{{-48060;-108820;-844;-144};{-45772;-109180;-844;-144};{-45080;-107524;-844;-144};{-46448;-106120;-844;-144};{-49292;-108036;-844;-144}}	territory_end
+npcmaker_begin	[rion_t18_14_002]
+npc_begin	[elder_crimson_keltir]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[kasha_wolf]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_003]	{{-49100;-106012;-2264;-1464};{-44748;-104048;-2264;-1464};{-44984;-102752;-2264;-1464};{-47524;-101604;-2264;-1464};{-50636;-102012;-2264;-1464};{-51388;-105812;-2264;-1464}}	territory_end
+npcmaker_begin	[rion_t18_14_003]
+npc_begin	[kasha_wolf]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[rakeclaw_imp]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[mountain_fungus]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_004]	{{-52944;-108320;-2244;-1244};{-51900;-107744;-2244;-1244};{-50464;-105952;-2244;-1244};{-51524;-105884;-2244;-1244};{-52840;-107260;-2244;-1244}}	territory_end
+npcmaker_begin	[rion_t18_14_004]
+npc_begin	[maraku_werewolf]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_005]	{{-49360;-117304;-356;-56};{-47552;-117340;-356;-56};{-47548;-113956;-356;-56};{-51276;-113952;-356;-56};{-51096;-116048;-356;-56}}	territory_end
+npcmaker_begin	[rion_t18_14_005]
+npc_begin	[tuto_keltir]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[young_crimson_keltir]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[crimson_keltir]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[elder_crimson_keltir]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_006]	{{-44912;-120980;-340;-40};{-44152;-119864;-340;-40};{-45008;-117840;-340;-40};{-47560;-117400;-340;-40};{-49224;-117336;-340;-40};{-46804;-120552;-340;-40}}	territory_end
+npcmaker_begin	[rion_t18_14_006]
+npc_begin	[elder_crimson_keltir]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[kasha_wolf]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_007]	{{-44724;-120768;-788;-38};{-41572;-123288;-788;-38};{-38420;-124536;-788;-38};{-38364;-124356;-788;-38};{-44104;-119924;-788;-38}}	territory_end
+npcmaker_begin	[rion_t18_14_007]
+npc_begin	[elder_crimson_keltir]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[kasha_wolf]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_008]	{{-43820;-106404;-2000;-1150};{-41380;-107636;-2000;-1150};{-40524;-107472;-2000;-1150};{-43376;-104892;-2000;-1150}}	territory_end
+npcmaker_begin	[rion_t18_14_008]
+npc_begin	[elder_crimson_keltir]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[kasha_wolf]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_009]	{{-40532;-107376;-2368;-1618};{-38764;-107280;-2368;-1618};{-37932;-106592;-2368;-1618};{-39672;-106480;-2368;-1618};{-40892;-107100;-2368;-1618}}	territory_end
+npcmaker_begin	[rion_t18_14_009]
+npc_begin	[elder_crimson_keltir]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[kasha_wolf]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t18_14_010]	{{-41128;-104868;-2932;-2532};{-39720;-104368;-2932;-2532};{-39756;-100792;-2932;-2532};{-43728;-101936;-2932;-2532};{-43296;-103496;-2932;-2532}}	territory_end
+npcmaker_begin	[oren_t18_14_010]
+npc_begin	[kasha_wolf]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[goblin_grave_robber]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_011]	{{-40628;-105884;-2860;-2460};{-37900;-105876;-2860;-2460};{-38308;-105216;-2860;-2460};{-39752;-104468;-2860;-2460};{-41100;-104904;-2860;-2460}}	territory_end
+npcmaker_begin	[rion_t18_14_011]
+npc_begin	[rakeclaw_imp]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[kasha_timber_wolf]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_013]	{{-38992;-103980;-3724;-2624};{-38064;-104896;-3724;-2624};{-37232;-103972;-3724;-2624};{-37692;-101816;-3724;-2624};{-38704;-101676;-3724;-2624};{-39144;-102924;-3724;-2624}}	territory_end
+npcmaker_begin	[rion_t18_14_013]
+npc_begin	[rakeclaw_imp]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[kasha_timber_wolf]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_014]	{{-37192;-103796;-3108;-2508};{-35076;-102292;-3108;-2508};{-35088;-101536;-3108;-2508};{-35972;-101532;-3108;-2508};{-36996;-101976;-3108;-2508}}	territory_end
+npcmaker_begin	[rion_t18_14_014]
+npc_begin	[kasha_timber_wolf]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[rakeclaw_imp_hunter]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[riom_t18_14_015]	{{-35048;-102236;-3020;-2620};{-33020;-102276;-3020;-2620};{-33044;-101620;-3020;-2620};{-34916;-101436;-3020;-2620}}	territory_end
+npcmaker_begin	[riom_t18_14_015]
+npc_begin	[kasha_timber_wolf]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[rakeclaw_imp_hunter]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_016]	{{-38044;-122996;-1876;-1426};{-35900;-123416;-1876;-1426};{-36740;-119868;-1876;-1426};{-38972;-119444;-1876;-1426};{-40452;-120852;-1876;-1426};{-39252;-122448;-1876;-1426}}	territory_end
+npcmaker_begin	[rion_t18_14_016]
+npc_begin	[kasha_wolf]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npc_begin	[goblin_grave_robber]	pos = anywhere	total = 13	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_017]	{{-40516;-120840;-2024;-1424};{-39020;-119344;-2024;-1424};{-38852;-116552;-2024;-1424};{-40828;-114648;-2024;-1424};{-42840;-118556;-2024;-1424}}	territory_end
+npcmaker_begin	[rion_t18_14_017]
+npc_begin	[kasha_wolf]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npc_begin	[goblin_grave_robber]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_018]	{{-38972;-119336;-1988;-1588};{-36768;-119796;-1988;-1588};{-35688;-118092;-1988;-1588};{-36288;-116032;-1988;-1588};{-37724;-115116;-1988;-1588};{-38816;-116428;-1988;-1588}}	territory_end
+npcmaker_begin	[rion_t18_14_018]
+npc_begin	[kasha_wolf]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npc_begin	[goblin_grave_robber]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_019]	{{-43340;-109932;-1884;-1384};{-42080;-111408;-1884;-1384};{-40940;-108212;-1884;-1384};{-42904;-107148;-1884;-1384};{-43696;-108380;-1884;-1384}}	territory_end
+npcmaker_begin	[rion_t18_14_019]
+npc_begin	[kasha_wolf]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[goblin_grave_robber]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_020]	{{-41360;-112740;-2140;-1540};{-36324;-109260;-2140;-1540};{-36520;-108044;-2140;-1540};{-39848;-107660;-2140;-1540};{-40924;-108052;-2140;-1540};{-42028;-111392;-2140;-1540}}	territory_end
+npcmaker_begin	[rion_t18_14_020]
+npc_begin	[kasha_wolf]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npc_begin	[goblin_grave_robber]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_021]	{{-40296;-113976;-2208;-1608};{-35624;-114336;-2208;-1608};{-34580;-112472;-2208;-1608};{-35296;-110504;-2208;-1608};{-36268;-109328;-2208;-1608};{-41388;-112776;-2208;-1608}}	territory_end
+npcmaker_begin	[rion_t18_14_021]
+npc_begin	[kasha_wolf]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npc_begin	[goblin_grave_robber]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_022]	{{-34116;-119540;-2236;-1786};{-33032;-118132;-2236;-1786};{-33072;-112792;-2236;-1786};{-34004;-112772;-2236;-1786};{-35000;-117272;-2236;-1786}}	territory_end
+npcmaker_begin	[rion_t18_14_022]
+npc_begin	[rakeclaw_imp]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[kasha_timber_wolf]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t18_14_023]	{{-34036;-112580;-2292;-1892};{-33072;-112676;-2292;-1892};{-33044;-107744;-2292;-1892};{-35808;-107876;-2292;-1892}}	territory_end
+npcmaker_begin	[oren_t18_14_023]
+npc_begin	[rakeclaw_imp]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[kasha_timber_wolf]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_024]	{{-50396;-115956;-284;-84};{-48316;-116952;-284;-84};{-48076;-115460;-284;-84};{-49636;-115048;-284;-84}}	territory_end
+npcmaker_begin	[rion_t18_14_024]
+npc_begin	[elder_crimson_keltir]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[kasha_wolf]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_025]	{{-50444;-112240;-360;-160};{-48956;-112352;-360;-160};{-48032;-111572;-360;-160};{-48080;-110392;-360;-160};{-48980;-109384;-360;-160};{-50064;-109380;-360;-160};{-50796;-109948;-360;-160};{-50996;-111008;-360;-160}}	territory_end
+npcmaker_begin	[rion_t18_14_025]
+npc_begin	[elder_crimson_keltir]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[kasha_wolf]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_026]	{{-50404;-104320;-2184;-1584};{-49124;-105272;-2184;-1584};{-47556;-104088;-2184;-1584};{-47836;-102384;-2184;-1584};{-49832;-102496;-2184;-1584}}	territory_end
+npcmaker_begin	[rion_t18_14_026]
+npc_begin	[maraku_werewolf]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t18_14_027]	{{-42428;-102760;-2900;-2600};{-41088;-103868;-2900;-2600};{-40408;-102604;-2900;-2600};{-40740;-101636;-2900;-2600};{-42100;-101900;-2900;-2600}}	territory_end
+npcmaker_begin	[oren_t18_14_027]
+npc_begin	[rakeclaw_imp_hunter]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_028]	{{-39400;-121576;-1852;-1552};{-38464;-121320;-1852;-1552};{-38208;-120188;-1852;-1552};{-39444;-120004;-1852;-1552};{-39936;-120524;-1852;-1552};{-39988;-121360;-1852;-1552}}	territory_end
+npcmaker_begin	[rion_t18_14_028]
+npc_begin	[goblin_grave_robber]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_029]	{{-41724;-117844;-1996;-1696};{-40844;-119112;-1996;-1696};{-39680;-118880;-1996;-1696};{-39612;-116988;-1996;-1696};{-40944;-116636;-1996;-1696}}	territory_end
+npcmaker_begin	[rion_t18_14_029]
+npc_begin	[kasha_wolf]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_030]	{{-38344;-118740;-1896;-1496};{-37044;-119312;-1896;-1496};{-36420;-118028;-1896;-1496};{-37412;-116632;-1896;-1496};{-38244;-117544;-1896;-1496}}	territory_end
+npcmaker_begin	[rion_t18_14_030]
+npc_begin	[goblin_grave_robber]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[rakeclaw_imp_hunter]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_031]	{{-40328;-110508;-1968;-1668};{-38920;-109932;-1968;-1668};{-38592;-109020;-1968;-1668};{-39324;-108320;-1968;-1668};{-40388;-108492;-1968;-1668};{-40908;-109056;-1968;-1668};{-40964;-109680;-1968;-1668}}	territory_end
+npcmaker_begin	[rion_t18_14_031]
+npc_begin	[goblin_grave_robber]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t18_14_032]	{{-38328;-113608;-2080;-1680};{-36908;-113368;-2080;-1680};{-36168;-112104;-2080;-1680};{-37644;-111340;-2080;-1680};{-39344;-111476;-2080;-1680};{-40084;-112332;-2080;-1680};{-39684;-113380;-2080;-1680}}	territory_end
+npcmaker_begin	[rion_t18_14_032]
+npc_begin	[goblin_grave_robber]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npcmaker_end
+

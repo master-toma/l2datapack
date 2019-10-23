@@ -1,0 +1,312 @@
+//---------------------24_20 거울의 숲-----------------------------------------------
+territory_begin	[aden_t24_20_001]	{{136548;65624;-3780;-3380};{140412;65640;-3780;-3380};{139048;67440;-3780;-3380};{138004;67432;-3780;-3380};{136692;66268;-3780;-3380}}	territory_end
+npcmaker_begin	[aden_t24_20_001]
+npc_begin	[taik_orc]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[taik_orc_archer]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[taik_orc_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_002]	{{131180;65640;-3792;-3392};{135812;65632;-3792;-3392};{136428;67028;-3792;-3392};{132616;68964;-3792;-3392};{131164;68040;-3792;-3392}}	territory_end
+npcmaker_begin	[aden_t24_20_002]
+npc_begin	[taik_orc]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[taik_orc_archer]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[taik_orc_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_003]	{{132524;69020;-3732;-3332};{136736;66912;-3732;-3332};{137608;67744;-3732;-3332};{137592;69460;-3732;-3332};{136916;70500;-3732;-3332};{134800;71124;-3732;-3332}}	territory_end
+npcmaker_begin	[aden_t24_20_003]
+npc_begin	[taik_orc]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[taik_orc_archer]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[taik_orc_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_004]	{{134684;72980;-3728;-3028};{135976;71264;-3728;-3028};{137284;71652;-3728;-3028};{138824;73148;-3728;-3028};{135704;75096;-3728;-3028};{134800;74100;-3728;-3028}}	territory_end
+npcmaker_begin	[aden_t24_20_004]
+npc_begin	[taik_orc_archer]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[taik_orc_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[taik_orc_shaman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_005]	{{138876;73236;-3732;-2832};{141140;73288;-3732;-2832};{141388;77764;-3732;-2832};{135748;75136;-3732;-2832}}	territory_end
+npcmaker_begin	[aden_t24_20_005]
+npc_begin	[taik_orc_archer]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[taik_orc_warrior]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[taik_orc_shaman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_006]	{{142284;73384;-3376;-2776};{145200;72988;-3376;-2776};{146580;73440;-3376;-2776};{146800;75192;-3376;-2776};{145444;76620;-3376;-2776};{142876;75752;-3376;-2776}}	territory_end
+npcmaker_begin	[aden_t24_20_006]
+npc_begin	[taik_orc_shaman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[taik_orc_captain]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[carinkain]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_007]	{{146860;75300;-3368;-2768};{149624;77104;-3368;-2768};{148824;78660;-3368;-2768};{147968;78744;-3368;-2768};{146348;78224;-3368;-2768};{145388;76728;-3368;-2768}}	territory_end
+npcmaker_begin	[aden_t24_20_007]
+npc_begin	[mirrorforest_ghost_b]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_c]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_d]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[mirror]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_008]	{{148856;72504;-3500;-2900};{151304;72768;-3500;-2900};{153356;74008;-3500;-2900};{152272;76072;-3500;-2900};{149644;77064;-3500;-2900};{147816;75940;-3500;-2900};{147696;73444;-3500;-2900}}	territory_end
+npcmaker_begin	[aden_t24_20_008]
+npc_begin	[mirrorforest_ghost_b]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_c]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_d]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[mirror]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_009]	{{148884;73132;-3476;-3076};{150632;73256;-3476;-3076};{149204;75808;-3476;-3076};{148352;74836;-3476;-3076}}	territory_end
+npcmaker_begin	[aden_t24_20_009]
+npc_begin	[carinkain]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_010]	{{143848;77292;-3688;-2488};{145268;77780;-3688;-2488};{147004;79848;-3688;-2488};{143720;82568;-3688;-2488};{142920;80272;-3688;-2488}}	territory_end
+npcmaker_begin	[aden_t24_20_010]
+npc_begin	[mirrorforest_ghost_b]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_c]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_d]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[mirror]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_011]	{{138016;76308;-3676;-2976};{141384;77904;-3676;-2976};{142176;78876;-3676;-2976};{141464;80872;-3676;-2976};{139012;82608;-3676;-2976}}	territory_end
+npcmaker_begin	[aden_t24_20_011]
+npc_begin	[taik_orc_shaman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[taik_orc_captain]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[carinkain]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_012]	{{135728;75256;-3748;-2848};{137864;76280;-3748;-2848};{138272;82780;-3748;-2848};{134868;81944;-3748;-2848};{134888;76540;-3748;-2848}}	territory_end
+npcmaker_begin	[aden_t24_20_012]
+npc_begin	[taik_orc_shaman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[taik_orc_captain]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[carinkain]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_013]	{{134824;81940;-3548;-2848};{137928;82712;-3548;-2848};{136904;84532;-3548;-2848};{134152;85084;-3548;-2848}}	territory_end
+npcmaker_begin	[aden_t24_20_013]
+npc_begin	[mirrorforest_ghost_b]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_c]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_d]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[mirror]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_014]	{{134432;85124;-3736;-2736};{136600;84692;-3736;-2736};{137856;86760;-3736;-2736};{138068;88144;-3736;-2736};{137356;89640;-3736;-2736};{134300;89648;-3736;-2736};{133340;88188;-3736;-2736};{133500;85880;-3736;-2736}}	territory_end
+npcmaker_begin	[aden_t24_20_014]
+npc_begin	[mirrorforest_ghost_b]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_c]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_d]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[mirror]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_015]	{{134320;89772;-3776;-2976};{136936;89772;-3776;-2976};{136720;91100;-3776;-2976};{135868;92256;-3776;-2976};{134452;91688;-3776;-2976}}	territory_end
+npcmaker_begin	[aden_t24_20_015]
+npc_begin	[mirrorforest_ghost_b]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_c]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_d]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[mirror]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_016]	{{139988;83808;-3552;-3152};{141000;85340;-3552;-3152};{141120;87848;-3552;-3152};{139152;87048;-3552;-3152};{137972;85028;-3552;-3152};{138720;84040;-3552;-3152}}	territory_end
+npcmaker_begin	[aden_t24_20_016]
+npc_begin	[mirrorforest_ghost_b]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_c]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_d]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[mirror]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_017]	{{139200;87224;-3604;-2804};{141048;87924;-3604;-2804};{140608;89056;-3604;-2804};{138908;90352;-3604;-2804}}	territory_end
+npcmaker_begin	[aden_t24_20_017]
+npc_begin	[mirrorforest_ghost_b]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_c]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_d]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[mirror]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_018]	{{133416;94356;-3776;-3076};{138476;92484;-3776;-3076};{139632;94328;-3776;-3076};{139308;95060;-3776;-3076};{135808;95352;-3776;-3076}}	territory_end
+npcmaker_begin	[aden_t24_20_018]
+npc_begin	[mirrorforest_ghost_b]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_c]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_d]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[mirror]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_019]	{{143064;90636;-3796;-3296};{144572;91940;-3796;-3296};{142284;94788;-3796;-3296};{139168;93604;-3796;-3296};{139284;92716;-3796;-3296};{142228;90564;-3796;-3296}}	territory_end
+npcmaker_begin	[aden_t24_20_019]
+npc_begin	[mirrorforest_ghost_b]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_c]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_d]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[mirror]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_020]	{{144588;91952;-3784;-3284};{147292;93016;-3784;-3284};{145564;94352;-3784;-3284};{142216;94888;-3784;-3284}}	territory_end
+npcmaker_begin	[aden_t24_20_020]
+npc_begin	[mirrorforest_ghost_b]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_c]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_d]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[mirror]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_021]	{{151996;91236;-3764;-3264};{154152;91024;-3764;-3264};{154140;93108;-3764;-3264};{151532;94388;-3764;-3264};{148824;93192;-3764;-3264}}	territory_end
+npcmaker_begin	[aden_t24_20_021]
+npc_begin	[harit_lizardman_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_shaman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_matriarch]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_022]	{{154212;91064;-3780;-3080};{155000;89924;-3780;-3080};{156672;91268;-3780;-3080};{158168;92932;-3780;-3080};{158756;94952;-3780;-3080};{157716;95748;-3780;-3080};{154200;93072;-3780;-3080}}	territory_end
+npcmaker_begin	[aden_t24_20_022]
+npc_begin	[harit_lizardman_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_shaman]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_matriarch]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_023]	{{156112;88676;-3716;-3216};{157148;87864;-3716;-3216};{158356;88160;-3716;-3216};{160688;90256;-3716;-3216};{158620;91604;-3716;-3216}}	territory_end
+npcmaker_begin	[aden_t24_20_023]
+npc_begin	[harit_lizardman_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_shaman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_matriarch]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_024]	{{158648;91700;-3560;-3060};{160608;90540;-3560;-3060};{162024;91880;-3560;-3060};{162124;93144;-3560;-3060};{160616;94452;-3560;-3060};{158752;94728;-3560;-3060};{158196;92840;-3560;-3060}}	territory_end
+npcmaker_begin	[aden_t24_20_024]
+npc_begin	[harit_lizardman_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_shaman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_matriarch]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_025]	{{147868;86372;-3692;-2892};{149664;86524;-3692;-2892};{150676;88644;-3692;-2892};{148640;90356;-3692;-2892};{146012;89740;-3692;-2892};{145024;88768;-3692;-2892}}	territory_end
+npcmaker_begin	[aden_t24_20_025]
+npc_begin	[harit_lizardman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_grunt]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_archer]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_026]	{{145676;82904;-3744;-3344};{147412;81740;-3744;-3344};{147364;85724;-3744;-3344};{146408;87520;-3744;-3344};{144828;88860;-3744;-3344};{143980;87632;-3744;-3344};{143864;85048;-3744;-3344}}	territory_end
+npcmaker_begin	[aden_t24_20_026]
+npc_begin	[harit_lizardman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_grunt]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_archer]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_027]	{{147960;81672;-3624;-3024};{152880;79876;-3624;-3024};{152372;84300;-3624;-3024};{149332;85080;-3624;-3024}}	territory_end
+npcmaker_begin	[aden_t24_20_027]
+npc_begin	[harit_lizardman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_grunt]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_archer]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_028]	{{149880;85036;-3728;-2928};{153236;84384;-3728;-2928};{154168;86164;-3728;-2928};{150788;88648;-3728;-2928};{149688;86312;-3728;-2928}}	territory_end
+npcmaker_begin	[aden_t24_20_028]
+npc_begin	[harit_lizardman_grunt]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_warrior]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_shaman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_029]	{{153572;79544;-3248;-2848};{156420;76616;-3248;-2848};{159240;78748;-3248;-2848};{154012;83452;-3248;-2848}}	territory_end
+npcmaker_begin	[aden_t24_20_029]
+npc_begin	[harit_lizardman_archer]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_warrior]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_shaman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_030]	{{153992;84368;-3056;-2656};{156952;81048;-3056;-2656};{158028;82280;-3056;-2656};{155268;84292;-3056;-2656}}	territory_end
+npcmaker_begin	[aden_t24_20_030]
+npc_begin	[harit_lizardman_archer]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_031]	{{160456;83688;-2864;-2464};{161740;83536;-2864;-2464};{163504;86032;-2864;-2464};{163536;87452;-2864;-2464};{161856;85872;-2864;-2464}}	territory_end
+npcmaker_begin	[aden_t24_20_031]
+npc_begin	[harit_lizardman_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_032]	{{156952;80944;-3180;-2580};{159284;78828;-3180;-2580};{161872;80340;-3180;-2580};{161672;83184;-3180;-2580};{160116;83416;-3180;-2580};{158256;82588;-3180;-2580}}	territory_end
+npcmaker_begin	[aden_t24_20_032]
+npc_begin	[harit_lizardman_archer]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_warrior]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_matriarch]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_033]	{{161940;80396;-2772;-2372};{163616;79856;-2772;-2372};{163568;85336;-2772;-2372};{161760;82900;-2772;-2372}}	territory_end
+npcmaker_begin	[aden_t24_20_033]
+npc_begin	[harit_lizardman_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_shaman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_034]	{{159564;75468;-3316;-2116};{163516;74276;-3316;-2116};{163508;79704;-3316;-2116};{161932;80260;-3316;-2116};{159444;78752;-3316;-2116}}	territory_end
+npcmaker_begin	[aden_t24_20_034]
+npc_begin	[harit_lizardman]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_grunt]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[harit_lizardman_archer]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_035]	{{156952;74628;-3760;-2960};{158556;75596;-3760;-2960};{158316;77996;-3760;-2960};{156360;76476;-3760;-2960}}	territory_end
+npcmaker_begin	[aden_t24_20_035]
+npc_begin	[mirrorforest_ghost_b]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_c]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_d]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[mirror]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_036]	{{159648;71724;-3740;-3140};{162304;71420;-3740;-3140};{162548;73944;-3740;-3140};{158904;74872;-3740;-3140};{157752;74288;-3740;-3140}}	territory_end
+npcmaker_begin	[aden_t24_20_036]
+npc_begin	[mirrorforest_ghost_b]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_c]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_d]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[mirror]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_037]	{{160252;68212;-3460;-3060};{163588;67688;-3460;-3060};{163568;69848;-3460;-3060};{162220;71404;-3460;-3060};{159760;71664;-3460;-3060};{159564;69136;-3460;-3060}}	territory_end
+npcmaker_begin	[aden_t24_20_037]
+npc_begin	[taik_orc_shaman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[taik_orc_captain]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[carinkain]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_038]	{{156312;67804;-3796;-3196};{159364;69144;-3796;-3196};{159708;71588;-3796;-3196};{156840;74448;-3796;-3196};{154988;70332;-3796;-3196}}	territory_end
+npcmaker_begin	[aden_t24_20_038]
+npc_begin	[mirrorforest_ghost_b]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_c]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[mirrorforest_ghost_d]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[mirror]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_039]	{{159464;65644;-3804;-3404};{163576;65636;-3804;-3404};{163544;66348;-3804;-3404};{161368;67532;-3804;-3404};{159976;67616;-3804;-3404}}	territory_end
+npcmaker_begin	[aden_t24_20_039]
+npc_begin	[taik_orc_archer]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[taik_orc_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[taik_orc_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_040]	{{156128;65648;-3820;-3320};{159360;65660;-3820;-3320};{159932;67744;-3820;-3320};{158760;68716;-3820;-3320};{156328;67776;-3820;-3320}}	territory_end
+npcmaker_begin	[aden_t24_20_040]
+npc_begin	[taik_orc_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[taik_orc_captain]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[carinkain]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_041]	{{151800;65696;-3760;-3260};{155944;65660;-3760;-3260};{156140;67836;-3760;-3260};{154896;70016;-3760;-3260};{151736;69652;-3760;-3260}}	territory_end
+npcmaker_begin	[aden_t24_20_041]
+npc_begin	[taik_orc_archer]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[taik_orc_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[taik_orc_shaman]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_042]	{{146004;65752;-3808;-3308};{151588;65676;-3808;-3308};{151608;69612;-3808;-3308};{147612;70300;-3808;-3308}}	territory_end
+npcmaker_begin	[aden_t24_20_042]
+npc_begin	[taik_orc]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[taik_orc_archer]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[taik_orc_warrior]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_20_043]	{{143244;65740;-3812;-3412};{145816;65728;-3812;-3412};{147496;70304;-3812;-3412};{142288;70272;-3812;-3412};{141124;69472;-3812;-3412};{141236;67504;-3812;-3412}}	territory_end
+npcmaker_begin	[aden_t24_20_043]
+npc_begin	[taik_orc]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[taik_orc_archer]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[taik_orc_warrior]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+

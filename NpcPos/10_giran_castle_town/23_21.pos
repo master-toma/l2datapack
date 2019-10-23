@@ -1,0 +1,665 @@
+//--------------------23_21(NPC) 031201--------------------
+territory_begin	[23_21_NPC_031201_01]	{{105644;114140;-3218;-3018};{105844;114140;-3218;-3018};{105844;114340;-3218;-3018};{105644;114340;-3218;-3018}}	territory_end
+npcmaker_begin	[23_21_NPC_031201_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[hardin]	pos = {105745;114255;-3136;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_21_NPC_031201_02]	{{106460;113260;-3253;-3053};{106660;113260;-3253;-3053};{106660;113460;-3253;-3053};{106460;113460;-3253;-3053}}	territory_end
+npcmaker_begin	[23_21_NPC_031201_02]	initial_spawn = all	maximum_npc = 1
+npc_begin	[lich_king_icarus]	pos = {106581;113352;-3193;28672}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_21_NPC_031201_03]	{{104780;113132;-3241;-3041};{104980;113132;-3241;-3041};{104980;113332;-3241;-3041};{104780;113332;-3241;-3041}}	territory_end
+npcmaker_begin	[23_21_NPC_031201_03]	initial_spawn = all	maximum_npc = 1
+npc_begin	[master_kaspar]	pos = {104870;113221;-3190;4096}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_21_NPC_031201_04]	{{105772;111612;-3112;-2912};{105972;111612;-3112;-2912};{105972;111812;-3112;-2912};{105772;111812;-3112;-2912}}	territory_end
+npcmaker_begin	[23_21_NPC_031201_04]	initial_spawn = all	maximum_npc = 1
+npc_begin	[magic_trader_cema]	pos = {105876;111733;-3062;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_21_NPC_031201_05]	{{105772;109708;-3267;-3067};{105972;109708;-3267;-3067};{105972;109908;-3267;-3067};{105772;109908;-3267;-3067}}	territory_end
+npcmaker_begin	[23_21_NPC_031201_05]	initial_spawn = all	maximum_npc = 1
+npc_begin	[gatekeeper_minevea]	pos = {105888;109808;-3200;45056}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_21_NPC_031201_06]	{{101980;103020;-3568;-3368};{102180;103020;-3568;-3368};{102180;103220;-3568;-3368};{101980;103220;-3568;-3368}}	territory_end
+npcmaker_begin	[23_21_NPC_031201_06]	initial_spawn = all	maximum_npc = 21
+npc_begin	[witch_athrea]	pos = {102069;103120;-3506;6000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_21_NPC_031201_07]	{{103804;116795;-3087;-2887};{104004;116795;-3087;-2887};{104004;116995;-3087;-2887};{103804;116995;-3087;-2887}}	territory_end
+npcmaker_begin	[23_21_NPC_031201_07]	initial_spawn = all	maximum_npc = 5
+npc_begin	[corpse_of_fritz]	pos = {103898;116896;-3022;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_21_NPC_031201_08]	{{112172;112652;-2837;-2637};{112372;112652;-2837;-2637};{112372;112852;-2837;-2637};{112172;112852;-2837;-2637}}	territory_end
+npcmaker_begin	[23_21_NPC_031201_08]	initial_spawn = all	maximum_npc = 5
+npc_begin	[corpse_of_lutz]	pos = {112268;112761;-2773;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_21_NPC_031201_09]	{{124572;109948;-3196;-2996};{124772;109948;-3196;-2996};{124772;110148;-3196;-2996};{124572;110148;-3196;-2996}}	territory_end
+npcmaker_begin	[23_21_NPC_031201_09]	initial_spawn = all	maximum_npc = 1
+npc_begin	[corpse_of_kurtz]	pos = {124664;110047;-3110;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[party_t23_21_001]	{{100560;118520;-3804;-3404};{101692;117072;-3804;-3404};{104632;120516;-3804;-3404};{101776;122992;-3804;-3404}}	territory_end
+npcmaker_begin	[party_t23_21_001]	initial_spawn = all	maximum_npc = 9
+npc_begin	[dragon_bearer_chief]	pos = anywhere	total = 3	respawn = 15min
+Privates = [dragon_bearer_warrior:dragon_bearer_warrior:1:300sec;dragon_bearer_archer:dragon_bearer_archer:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t23_21_002]	{{104884;120556;-3800;-3400};{107492;119588;-3800;-3400};{110412;121728;-3800;-3400};{108556;122668;-3800;-3400};{105988;122532;-3800;-3400}}	territory_end
+npcmaker_begin	[party_t23_21_002]	initial_spawn = all	maximum_npc = 9
+npc_begin	[dragon_bearer_chief]	pos = anywhere	total = 3	respawn = 15min
+Privates = [dragon_bearer_warrior:dragon_bearer_warrior:1:300sec;dragon_bearer_archer:dragon_bearer_archer:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t23_21_003]	{{110000;121956;-3768;-3368};{111332;122048;-3768;-3368};{111432;124908;-3768;-3368};{109656;126924;-3768;-3368};{108904;125608;-3768;-3368}}	territory_end
+npcmaker_begin	[party_t23_21_003]	initial_spawn = all	maximum_npc = 6
+npc_begin	[dragon_bearer_chief]	pos = anywhere	total = 2	respawn = 15min
+Privates = [dragon_bearer_warrior:dragon_bearer_warrior:1:300sec;dragon_bearer_archer:dragon_bearer_archer:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t23_21_004]	{{121144;118964;-3284;-2884};{124484;118636;-3284;-2884};{123636;120572;-3284;-2884};{120140;122720;-3284;-2884};{119752;120380;-3284;-2884}}	territory_end
+npcmaker_begin	[party_t23_21_004]	initial_spawn = all	maximum_npc = 6
+npc_begin	[dragon_bearer_chief]	pos = anywhere	total = 2	respawn = 7min
+Privates = [dragon_bearer_warrior:dragon_bearer_warrior:1:300sec;dragon_bearer_archer:dragon_bearer_archer:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t23_21_005]	{{126828;112492;-3856;-3456};{130496;114020;-3856;-3456};{130512;115080;-3856;-3456};{127256;116672;-3856;-3456};{126240;115420;-3856;-3456}}	territory_end
+npcmaker_begin	[party_t23_21_005]	initial_spawn = all	maximum_npc = 9
+npc_begin	[dragon_bearer_chief]	pos = anywhere	total = 3	respawn = 7min
+Privates = [dragon_bearer_warrior:dragon_bearer_warrior:1:300sec;dragon_bearer_archer:dragon_bearer_archer:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t23_21_006]	{{119904;113432;-3876;-3476};{122572;112172;-3876;-3476};{124516;115516;-3876;-3476};{122736;117020;-3876;-3476};{119556;116756;-3876;-3476}}	territory_end
+npcmaker_begin	[party_t23_21_006]	initial_spawn = all	maximum_npc = 9
+npc_begin	[dragon_bearer_chief]	pos = anywhere	total = 3	respawn = 7min
+Privates = [dragon_bearer_warrior:dragon_bearer_warrior:1:300sec;dragon_bearer_archer:dragon_bearer_archer:1:300sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t23_21_007]	{{121088;107612;-3104;-2704};{122404;107568;-3104;-2704};{124108;108220;-3104;-2704};{119540;110844;-3104;-2704};{117852;110176;-3104;-2704}}	territory_end
+npcmaker_begin	[party_t23_21_007]	initial_spawn = all	maximum_npc = 6
+npc_begin	[dragon_bearer_chief]	pos = anywhere	total = 2	respawn = 7min
+Privates = [dragon_bearer_warrior:dragon_bearer_warrior:1:300sec;dragon_bearer_archer:dragon_bearer_archer:1:300sec]	npc_end
+npcmaker_end
+
+//------------------------- 23_21 기란 북부 필드 --------------------------------------------------------
+territory_begin	[giran_t23_21_001]	{{98452;98468;-3792;-2892};{102768;98364;-3792;-2892};{106036;102044;-3792;-2892};{102576;104760;-3792;-2892};{98416;103876;-3792;-2892}}	territory_end
+npcmaker_begin	[giran_t23_21_001]
+npc_begin	[road_scavenger]	pos = anywhere	total = 7	respawn = 95sec	npc_end
+npc_begin	[crimson_bind]	pos = anywhere	total = 9	respawn = 95sec	npc_end
+npc_begin	[windsus]	pos = anywhere	total = 9	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_002]	{{98468;103936;-3468;-2568};{102604;104820;-3468;-2568};{103348;107740;-3468;-2568};{100532;106436;-3468;-2568}}	territory_end
+npcmaker_begin	[giran_t23_21_002]
+npc_begin	[road_scavenger]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[crimson_bind]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[windsus]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_003]	{{106124;102020;-3752;-2252};{107960;102040;-3752;-2252};{109540;103428;-3752;-2252};{107276;105240;-3752;-2252};{104996;102864;-3752;-2252}}	territory_end
+npcmaker_begin	[giran_t23_21_003]
+npc_begin	[road_scavenger]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[crimson_bind]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[windsus]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_004]	{{109656;103472;-3400;-1900};{114572;101168;-3400;-1900};{115620;106576;-3400;-1900};{109368;106956;-3400;-1900};{108940;105352;-3400;-1900}}	territory_end
+npcmaker_begin	[giran_t23_21_004]
+npc_begin	[road_scavenger]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[crimson_bind]	pos = anywhere	total = 7	respawn = 95sec	npc_end
+npc_begin	[windsus]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_005]	{{115888;101800;-3628;-2328};{117172;100792;-3628;-2328};{119656;102840;-3628;-2328};{117252;106676;-3628;-2328};{115696;106676;-3628;-2328};{115136;103752;-3628;-2328}}	territory_end
+npcmaker_begin	[giran_t23_21_005]
+npc_begin	[crimson_bind]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[windsus]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[grandis]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_006]	{{114416;107032;-2924;-1924};{119208;106740;-2924;-1924};{116796;108320;-2924;-1924};{115636;108128;-2924;-1924}}	territory_end
+npcmaker_begin	[giran_t23_21_006]
+npc_begin	[crimson_bind]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[windsus]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[grandis]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_007]	{{119476;105260;-2640;-1840};{122928;104652;-2640;-1840};{126056;105900;-2640;-1840};{125928;106416;-2640;-1840};{119132;106172;-2640;-1840}}	territory_end
+npcmaker_begin	[giran_t23_21_007]
+npc_begin	[crimson_bind]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[windsus]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[grandis]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_008]	{{123960;100868;-3452;-2652};{125824;100976;-3452;-2652};{126536;104544;-3452;-2652};{122464;103716;-3452;-2652}}	territory_end
+npcmaker_begin	[giran_t23_21_008]
+npc_begin	[crimson_bind]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[windsus]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[grandis]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_009]	{{126752;104060;-3340;-1640};{130868;104012;-3340;-1640};{130732;110116;-3340;-1640};{128676;110144;-3340;-1640};{126828;108588;-3340;-1640}}	territory_end
+npcmaker_begin	[giran_t23_21_009]
+npc_begin	[crimson_bind]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[windsus]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[grandis]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_010]	{{127264;98416;-2836;-1836};{130792;98492;-2836;-1836};{130752;103908;-2836;-1836};{129712;103876;-2836;-1836}}	territory_end
+npcmaker_begin	[giran_t23_21_010]
+npc_begin	[crimson_bind]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[windsus]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[grandis]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_011]	{{119880;98428;-2864;-1864};{127152;98444;-2864;-1864};{127960;100140;-2864;-1864};{125712;100764;-2864;-1864};{123672;100524;-2864;-1864}}	territory_end
+npcmaker_begin	[giran_t23_21_011]
+npc_begin	[crimson_bind]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[windsus]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[grandis]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_012]	{{111976;98416;-3252;-1752};{116864;98492;-3252;-1752};{117116;100612;-3252;-1752};{115676;101596;-3252;-1752}}	territory_end
+npcmaker_begin	[giran_t23_21_012]
+npc_begin	[crimson_bind]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[windsus]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[grandis]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_013]	{{106684;98504;-2748;-1348};{111720;98520;-2748;-1348};{113804;100240;-2748;-1348};{111332;102252;-2748;-1348}}	territory_end
+npcmaker_begin	[giran_t23_21_013]
+npc_begin	[road_scavenger]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[crimson_bind]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[windsus]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_014]	{{99208;98912;-3768;-3368};{102288;98820;-3768;-3368};{103248;100684;-3768;-3368};{99632;101376;-3768;-3368}}	territory_end
+npcmaker_begin	[giran_t23_21_014]
+npc_begin	[grandis]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_015]	{{110372;103680;-3288;-1988};{113684;102688;-3288;-1988};{114296;105436;-3288;-1988};{110572;105180;-3288;-1988}}	territory_end
+npcmaker_begin	[giran_t23_21_015]
+npc_begin	[grandis]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_016]	{{127460;104872;-3300;-2400};{130472;104952;-3300;-2400};{129952;107700;-3300;-2400};{128112;108212;-3300;-2400}}	territory_end
+npcmaker_begin	[giran_t23_21_016]
+npc_begin	[grandis]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_017]	{{103692;127088;-2208;-708};{105244;126988;-2208;-708};{106612;128744;-2208;-708};{101684;129404;-2208;-708};{101180;128800;-2208;-708}}	territory_end
+npcmaker_begin	[giran_t23_21_017]
+npc_begin	[wyrm]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[medusa]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[harpy]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_018]	{{115908;126036;-3640;-1840};{118848;126412;-3640;-1840};{120344;127988;-3640;-1840};{120256;130788;-3640;-1840};{110888;130776;-3640;-1840}}	territory_end
+npcmaker_begin	[giran_t23_21_018]
+npc_begin	[wyrm]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[medusa]	pos = anywhere	total = 9	respawn = 95sec	npc_end
+npc_begin	[harpy]	pos = anywhere	total = 9	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_019]	{{120396;129172;-3616;-2116};{123828;126904;-3616;-2116};{125988;128024;-3616;-2116};{126208;130620;-3616;-2116};{120604;130612;-3616;-2116}}	territory_end
+npcmaker_begin	[giran_t23_21_019]
+npc_begin	[wyrm]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[medusa]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[harpy]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_020]	{{127016;122640;-2776;-1176};{128112;123104;-2776;-1176};{126272;127344;-2776;-1176};{122816;124796;-2776;-1176}}	territory_end
+npcmaker_begin	[giran_t23_21_020]
+npc_begin	[wyrm]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[medusa]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[harpy]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_021]	{{115864;128252;-3452;-2452};{118060;127236;-3452;-2452};{118624;128300;-3452;-2452};{118240;129848;-3452;-2452};{116976;129780;-3452;-2452}}	territory_end
+npcmaker_begin	[giran_t23_21_021]
+npc_begin	[wyrm]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+//--------------------------------- 23_21 용의계곡 ---------------------------------------------------------------------------------
+territory_begin	[giran_t23_21_de_001]	{{99704;110084;-3792;-3492};{102764;110424;-3792;-3492};{103280;110948;-3792;-3492};{103260;113216;-3792;-3492};{101064;112952;-3792;-3492};{99244;110944;-3792;-3492}}	territory_end
+npcmaker_begin	[giran_t23_21_de_001]	initial_spawn = all
+npc_begin	[hunter_gargoyle_hold]	pos = {100080;110864;-3696;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[headless_knight_hold]	pos = {101904;111136;-3706;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[royal_cave_servant_hold]	pos = {101168;112204;-3693;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[hunter_gargoyle_hold]	pos = {102560;112528;-3712;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[headless_knight]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npc_begin	[hunter_gargoyle]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_002]	{{101056;112988;-3800;-3500};{102696;113204;-3800;-3500};{102688;114328;-3800;-3500};{101700;115152;-3800;-3500};{101036;115040;-3800;-3500}}	territory_end
+npcmaker_begin	[giran_t23_21_de_002]	initial_spawn = all
+npc_begin	[royal_cave_servant_hold]	pos = {101552;113536;-3707;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[hunter_gargoyle_hold]	pos = {101664;114672;-3735;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[headless_knight]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[hunter_gargoyle]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_003]	{{100908;115904;-3792;-3492};{101704;115932;-3792;-3492};{102544;117040;-3792;-3492};{102552;117880;-3792;-3492};{100572;118036;-3792;-3492}}	territory_end
+npcmaker_begin	[giran_t23_21_de_003]	initial_spawn = all
+npc_begin	[royal_cave_servant_hold]	pos = {101200;116512;-3696;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[hunter_gargoyle_hold]	pos = {101680;117568;-3687;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[headless_knight]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[hunter_gargoyle]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_004]	{{100456;118124;-3780;-3480};{102548;117960;-3780;-3480};{103860;119164;-3780;-3480};{104236;119796;-3780;-3480};{101696;123380;-3780;-3480};{100732;122248;-3780;-3480}}	territory_end
+npcmaker_begin	[giran_t23_21_de_004]	initial_spawn = all
+npc_begin	[hunter_gargoyle_hold]	pos = {101152;118768;-3664;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind_hold]	pos = {102764;118936;-3696;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm_hold]	pos = {101664;119888;-3600;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[hunter_gargoyle_hold]	pos = {102800;120592;-3648;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind_hold]	pos = {101456;121168;-3721;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm_hold]	pos = {101728;122512;-3648;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[hunter_gargoyle]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npc_begin	[dust_wind]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_005]	{{104344;119792;-3784;-3484};{107452;119384;-3784;-3484};{107928;122812;-3784;-3484};{106136;124076;-3784;-3484};{104792;124764;-3784;-3484};{102272;124864;-3784;-3484};{101716;124332;-3784;-3484};{101636;123484;-3784;-3484}}	territory_end
+npcmaker_begin	[giran_t23_21_de_005]	initial_spawn = all
+npc_begin	[hunter_gargoyle_hold]	pos = {103217;122064;-3696;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind_hold]	pos = {104432;120944;-3712;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm_hold]	pos = {105920;120400;-3680;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[hunter_gargoyle_hold]	pos = {107120;121008;-3696;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind_hold]	pos = {105728;121984;-3677;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm_hold]	pos = {107088;122592;-3696;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[hunter_gargoyle_hold]	pos = {104272;122912;-3734;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind_hold]	pos = {105568;123840;-3712;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm_hold]	pos = {102736;123232;-3672;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind_hold]	pos = {103936;124240;-3712;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm_hold]	pos = {102304;124336;-3728;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[hunter_gargoyle]	pos = anywhere	total = 4	respawn = 115sec	npc_end
+npc_begin	[dust_wind]	pos = anywhere	total = 4	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 4	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_006]	{{107532;119556;-3776;-3476};{112688;122608;-3776;-3476};{111464;123664;-3776;-3476};{109196;123500;-3776;-3476};{107992;122636;-3776;-3476}}	territory_end
+npcmaker_begin	[giran_t23_21_de_006]	initial_spawn = all
+npc_begin	[dust_wind_hold]	pos = {108560;120832;-3735;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm_hold]	pos = {108576;122128;-3689;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_hold]	pos = {110112;121840;-3705;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm_hold]	pos = {110304;123008;-3680;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_hold]	pos = {111792;122640;-3723;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_007]	{{109272;123556;-3760;-3460};{111384;123728;-3760;-3460};{111520;125324;-3760;-3460};{110832;126448;-3760;-3460};{109064;127252;-3760;-3460};{108624;126756;-3760;-3460};{108548;125280;-3760;-3460}}	territory_end
+npcmaker_begin	[giran_t23_21_de_007]	initial_spawn = all
+npc_begin	[dust_wind_hold]	pos = {109664;124384;-3664;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm_hold]	pos = {110816;125376;-3696;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_hold]	pos = {109488;126096;-3712;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_008]	{{113320;120600;-3848;-3448};{114952;121280;-3848;-3448};{114620;122172;-3848;-3448};{113932;122588;-3848;-3448};{112776;122584;-3848;-3448};{111988;122052;-3848;-3448}}	territory_end
+npcmaker_begin	[giran_t23_21_de_008]	initial_spawn = all
+npc_begin	[thunder_wyrm_hold]	pos = {112864;122112;-3724;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_hold]	pos = {113904;121568;-3744;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_009]	{{116920;122432;-3556;-2956};{117984;122712;-3556;-2956};{118516;123052;-3556;-2956};{117556;123796;-3556;-2956};{116180;123688;-3556;-2956};{115144;122852;-3556;-2956};{115524;122468;-3556;-2956}}	territory_end
+npcmaker_begin	[giran_t23_21_de_009]	initial_spawn = all
+npc_begin	[h_malruk_succubus_turen]	pos = {115984;122992;-3228;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {117344;123232;-3120;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_turen]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_010]	{{118080;122660;-3168;-2868};{119380;121536;-3168;-2868};{121532;122144;-3168;-2868};{119624;123068;-3168;-2868}}	territory_end
+npcmaker_begin	[giran_t23_21_de_010]	initial_spawn = all
+npc_begin	[h_malruk_succubus_turen]	pos = {119168;122496;-3067;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {120400;122208;-2983;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_turen]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_011]	{{121556;118600;-3228;-2928};{124220;118624;-3228;-2928};{124556;119316;-3228;-2928};{123428;121012;-3228;-2928};{121532;122108;-3228;-2928};{119300;121480;-3228;-2928};{119512;120404;-3228;-2928};{120140;119336;-3228;-2928}}	territory_end
+npcmaker_begin	[giran_t23_21_de_011]	initial_spawn = all
+npc_begin	[drake_hold]	pos = {120224;121152;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_keeper_hold]	pos = {121984;121248;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = {120960;119968;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {122219;119694;-3166;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_keeper_hold]	pos = {122448;119120;-3168;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = {123696;119568;-3168;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npc_begin	[cave_keeper]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_012]	{{125500;117320;-3352;-2952};{126112;117268;-3352;-2952};{127168;117556;-3352;-2952};{125692;119264;-3352;-2952};{124568;119224;-3352;-2952};{124240;118604;-3352;-2952}}	territory_end
+npcmaker_begin	[giran_t23_21_de_012]	initial_spawn = all
+npc_begin	[cave_keeper_hold]	pos = {125056;118704;-3088;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = {125984;118144;-3088;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[cave_keeper]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_013]	{{129216;112684;-3840;-3440};{130356;113856;-3840;-3440};{130424;115336;-3840;-3440};{127836;116992;-3840;-3440};{126480;116908;-3840;-3440};{125720;114244;-3840;-3440};{127280;112380;-3840;-3440}}	territory_end
+npcmaker_begin	[giran_t23_21_de_013]	initial_spawn = all
+npc_begin	[drake_hold]	pos = {127104;116192;-3728;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = {128688;115632;-3808;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[bloody_queen_hold]	pos = {126880;115008;-3735;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {128240;114272;-3632;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = {129856;114800;-3808;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[bloody_queen_hold]	pos = {126928;113584;-3584;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {128624;113264;-3696;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 4	respawn = 115sec	npc_end
+npc_begin	[cave_maiden]	pos = anywhere	total = 4	respawn = 115sec	npc_end
+npc_begin	[bloody_queen]	pos = anywhere	total = 4	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_014]	{{124280;114036;-3808;-3508};{125676;114284;-3808;-3508};{126100;115736;-3808;-3508};{124588;115760;-3808;-3508}}	territory_end
+npcmaker_begin	[giran_t23_21_de_014]	initial_spawn = all
+npc_begin	[cave_maiden_hold]	pos = {124960;114992;-3735;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_keeper]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_015]	{{119456;113792;-3892;-3492};{122984;112740;-3892;-3492};{124212;114056;-3892;-3492};{124516;115860;-3892;-3492};{122868;117596;-3892;-3492};{118636;117856;-3892;-3492};{118224;115772;-3892;-3492}}	territory_end
+npcmaker_begin	[giran_t23_21_de_015]	initial_spawn = all
+npc_begin	[drake_hold]	pos = {120304;114256;-3673;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_keeper_hold]	pos = {122688;113872;-3815;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = {121488;115360;-3632;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {123584;115520;-3648;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_keeper_hold]	pos = {122224;116976;-3675;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = {119360;116800;-3744;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 4	respawn = 115sec	npc_end
+npc_begin	[cave_keeper]	pos = anywhere	total = 4	respawn = 115sec	npc_end
+npc_begin	[cave_maiden]	pos = anywhere	total = 4	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_016]	{{119264;112080;-3912;-3512};{121392;111916;-3912;-3512};{121724;113080;-3912;-3512};{119436;113752;-3912;-3512};{118904;113280;-3912;-3512};{118916;112452;-3912;-3512}}	territory_end
+npcmaker_begin	[giran_t23_21_de_016]	initial_spawn = all
+npc_begin	[drake_hold]	pos = {121024;112480;-3792;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_keeper_hold]	pos = {119952;113216;-3709;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = {119328;112560;-3696;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[cave_keeper]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_017]	{{121460;111880;-3884;-3584};{122720;110436;-3884;-3584};{123140;110576;-3884;-3584};{122988;112728;-3884;-3584};{121792;113108;-3884;-3584}}	territory_end
+npcmaker_begin	[giran_t23_21_de_017]	initial_spawn = all
+npc_begin	[cave_keeper_hold]	pos = {122528;111280;-3836;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = {122352;112480;-3840;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_keeper]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_018]	{{117276;115952;-3840;-3540};{118208;115928;-3840;-3540};{118540;117864;-3840;-3540};{118340;119980;-3840;-3540};{117416;121248;-3840;-3540};{115940;120796;-3840;-3540};{115212;116856;-3840;-3540}}	territory_end
+npcmaker_begin	[giran_t23_21_de_018]	initial_spawn = all
+npc_begin	[malruk_succubus_hold]	pos = {117360;116880;-3735;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[h_malruk_succubus_turen]	pos = {116128;117840;-3735;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {117920;118736;-3688;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_hold]	pos = {116784;119696;-3708;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_turen]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_019]	{{113688;119152;-3744;-3444};{115496;119064;-3744;-3444};{115808;120804;-3744;-3444};{114776;121260;-3744;-3444};{113116;120488;-3744;-3444}}	territory_end
+npcmaker_begin	[giran_t23_21_de_019]	initial_spawn = all
+npc_begin	[h_malruk_succubus_turen]	pos = {114000;119824;-3744;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {115184;120480;-3648;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_turen]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_020]	{{102924;114956;-3188;-2888};{103296;114956;-3188;-2888};{104056;115976;-3188;-2888};{103864;117252;-3188;-2888};{103272;116364;-3188;-2888}}	territory_end
+npcmaker_begin	[giran_t23_21_de_020]	initial_spawn = all
+npc_begin	[dust_wind_hold]	pos = {103296;115456;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm_hold]	pos = {103520;116256;-3067;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[hunter_gargoyle]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_021]	{{104024;116308;-3136;-2836};{105452;117684;-3136;-2836};{105464;117996;-3136;-2836};{104564;118000;-3136;-2836};{103884;117236;-3136;-2836}}	territory_end
+npcmaker_begin	[giran_t23_21_de_021]	initial_spawn = all
+npc_begin	[thunder_wyrm_hold]	pos = {105210;117664;-3062;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[hunter_gargoyle]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_022]	{{105512;117656;-3116;-2816};{106780;117548;-3116;-2816};{107816;117608;-3116;-2816};{108156;118316;-3116;-2816};{105892;118352;-3116;-2816}}	territory_end
+npcmaker_begin	[giran_t23_21_de_022]	initial_spawn = all
+npc_begin	[dust_wind_hold]	pos = {106112;118000;-3048;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm_hold]	pos = {107424;118000;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[hunter_gargoyle]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_023]	{{109276;114944;-3172;-2872};{109776;114996;-3172;-2872};{109664;116924;-3172;-2872};{108576;118384;-3172;-2872};{108256;118300;-3172;-2872};{107864;117568;-3172;-2872};{108504;115772;-3172;-2872}}	territory_end
+npcmaker_begin	[giran_t23_21_de_023]	initial_spawn = all
+npc_begin	[dust_wind_hold]	pos = {109264;115648;-3120;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm_hold]	pos = {108992;116528;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_hold]	pos = {108448;117408;-3069;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_024]	{{108352;110856;-3248;-2898};{109828;110512;-3248;-2898};{110308;112048;-3248;-2898};{109808;114460;-3248;-2898};{108996;114228;-3248;-2898};{107452;112892;-3248;-2898};{107468;111756;-3248;-2898}}	territory_end
+npcmaker_begin	[giran_t23_21_de_024]	initial_spawn = all
+npc_begin	[dust_wind_hold]	pos = {109264;111280;-3136;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm_hold]	pos = {108272;111664;-3040;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_hold]	pos = {108336;112768;-3052;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm_hold]	pos = {109312;112144;-3168;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_hold]	pos = {109120;113296;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 3	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_025]	{{109944;110512;-3236;-2836};{112480;109236;-3236;-2836};{112872;110520;-3236;-2836};{110320;112000;-3236;-2836}}	territory_end
+npcmaker_begin	[giran_t23_21_de_025]	initial_spawn = all
+npc_begin	[dust_wind_hold]	pos = {112320;110144;-2985;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm_hold]	pos = {111120;110304;-3056;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_hold]	pos = {110640;111152;-3136;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_026]	{{114020;108944;-3148;-2848};{114640;109112;-3148;-2848};{115252;110436;-3148;-2848};{113536;111180;-3148;-2848};{112880;110496;-3148;-2848};{112436;109152;-3148;-2848}}	territory_end
+npcmaker_begin	[giran_t23_21_de_026]	initial_spawn = all
+npc_begin	[malruk_succubus_hold]	pos = {113168;109696;-2985;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[h_malruk_succubus_turen]	pos = {113680;110512;-3056;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {114560;109888;-3033;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_turen]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_027]	{{113524;111280;-3152;-2752};{114520;110840;-3152;-2752};{115412;111992;-3152;-2752};{115396;112548;-3152;-2752};{114544;113272;-3152;-2752};{113036;113216;-3152;-2752};{112808;112180;-3152;-2752}}	territory_end
+npcmaker_begin	[giran_t23_21_de_027]	initial_spawn = all
+npc_begin	[malruk_succubus_hold]	pos = {114192;111536;-3136;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[h_malruk_succubus_turen]	pos = {114032;112768;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {114768;112208;-3048;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_hold]	pos = {113440;112208;-3120;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_turen]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_028]	{{111152;111588;-2964;-2564};{112528;112116;-2964;-2564};{112700;113164;-2964;-2564};{110292;113300;-2964;-2564};{110612;112208;-2964;-2564}}	territory_end
+npcmaker_begin	[giran_t23_21_de_028]	initial_spawn = all
+npc_begin	[malruk_succubus_hold]	pos = {111232;112064;-2784;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[h_malruk_succubus_turen]	pos = {112080;112692;-2784;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {111040;112784;-2808;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_turen]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_029]	{{111584;111220;-2872;-2572};{112828;110960;-2872;-2572};{113160;111324;-2872;-2572};{112544;112064;-2872;-2572};{111164;111560;-2872;-2572}}	territory_end
+npcmaker_begin	[giran_t23_21_de_029]	initial_spawn = all
+npc_begin	[h_malruk_succubus_turen]	pos = {111760;111456;-2752;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {112704;111456;-2768;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_turen]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_030]	{{114852;109404;-3100;-2800};{118428;109516;-3100;-2800};{118876;110904;-3100;-2800};{115628;110776;-3100;-2800}}	territory_end
+npcmaker_begin	[giran_t23_21_de_030]	initial_spawn = all
+npc_begin	[malruk_succubus_hold]	pos = {115648;109904;-3040;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[h_malruk_succubus_turen]	pos = {116864;110432;-3004;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {117968;109968;-2944;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_turen]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_031]	{{118420;109532;-3120;-2720};{119796;108320;-3120;-2720};{122288;109488;-3120;-2720};{120312;111592;-3120;-2720};{118972;110972;-3120;-2720}}	territory_end
+npcmaker_begin	[giran_t23_21_de_031]	initial_spawn = all
+npc_begin	[drake_hold]	pos = {120944;109632;-3008;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_keeper_hold]	pos = {119824;109148;-2955;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = {120144;110416;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {119264;110032;-3033;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[cave_keeper]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[cave_maiden]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_032]	{{119924;108344;-3084;-2684};{120956;107384;-3084;-2684};{122492;107332;-3084;-2684};{123076;109356;-3084;-2684};{122244;109432;-3084;-2684}}	territory_end
+npcmaker_begin	[giran_t23_21_de_032]	initial_spawn = all
+npc_begin	[drake_hold]	pos = {122496;108752;-3015;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_keeper_hold]	pos = {121856;107744;-2953;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = {121376;108672;-3008;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {120496;108000;-2976;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[cave_keeper]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_033]	{{122628;107696;-3156;-2806};{124276;107800;-3156;-2806};{125200;108864;-3156;-2806};{124000;109884;-3156;-2806};{123080;109252;-3156;-2806}}	territory_end
+npcmaker_begin	[giran_t23_21_de_033]	initial_spawn = all
+npc_begin	[cave_keeper_hold]	pos = {123232;108144;-3024;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = {123824;109248;-3048;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {124384;108464;-2976;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[cave_keeper]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_034]	{{124036;109940;-3240;-2840};{124972;109128;-3240;-2840};{125932;110308;-3240;-2840};{126036;111524;-3240;-2840};{123840;112028;-3240;-2840}}	territory_end
+npcmaker_begin	[giran_t23_21_de_034]	initial_spawn = all
+npc_begin	[cave_keeper_hold]	pos = {124928;109968;-3104;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = {124340;111200;-3084;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {125424;111152;-3130;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[cave_keeper]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_035]	{{123876;112016;-3592;-2992};{126076;111564;-3592;-2992};{127120;112436;-3592;-2992};{126172;113384;-3592;-2992};{124776;112984;-3592;-2992}}	territory_end
+npcmaker_begin	[giran_t23_21_de_035]	initial_spawn = all
+npc_begin	[cave_keeper_hold]	pos = {124944;112272;-3136;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden_hold]	pos = {126272;112736;-3456;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[cave_keeper]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_036]	{{112008;115036;-3272;-2922};{112928;114948;-3272;-2922};{113892;116572;-3272;-2922};{113780;117788;-3272;-2922};{112492;118756;-3272;-2922};{111116;117240;-3272;-2922};{111212;115824;-3272;-2922}}	territory_end
+npcmaker_begin	[giran_t23_21_de_036]	initial_spawn = all
+npc_begin	[malruk_succubus_hold]	pos = {112528;117984;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[h_malruk_succubus_turen]	pos = {113216;117216;-3152;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {111712;117096;-3017;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[h_malruk_succubus_turen]	pos = {112688;116272;-3146;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {112000;115824;-3168;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_turen]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_037]	{{112940;114932;-3276;-2926};{114652;114096;-3276;-2926};{117208;114008;-3276;-2926};{116620;114972;-3276;-2926};{113900;116532;-3276;-2926}}	territory_end
+npcmaker_begin	[giran_t23_21_de_037]	initial_spawn = all
+npc_begin	[h_malruk_succubus_turen]	pos = {113776;115392;-3243;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_hold]	pos = {115024;115520;-3209;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[h_malruk_succubus_turen]	pos = {115248;114464;-3131;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {116400;114464;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_turen]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_038]	{{117116;110856;-3144;-2844};{117996;110900;-3144;-2844};{117612;113496;-3144;-2844};{117212;113948;-3144;-2844};{116480;113992;-3144;-2844}}	territory_end
+npcmaker_begin	[giran_t23_21_de_038]	initial_spawn = all
+npc_begin	[malruk_succubus_hold]	pos = {117024;113552;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[h_malruk_succubus_turen]	pos = {117424;112452;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake_hold]	pos = {117504;111168;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus_turen]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[drake]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_039]	{{110868;119468;-3128;-2828};{111904;118220;-3128;-2828};{112468;118844;-3128;-2828};{111668;119496;-3128;-2828}}	territory_end
+npcmaker_begin	[giran_t23_21_de_039]	initial_spawn = all
+npc_begin	[malruk_succubus_hold]	pos = {111568;119088;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_21_de_040]	{{109832;119204;-3160;-2860};{111092;119220;-3160;-2860};{110500;119864;-3160;-2860};{109732;119732;-3160;-2860};{109512;119456;-3160;-2860}}	territory_end
+npcmaker_begin	[giran_t23_21_de_040]	initial_spawn = all
+npc_begin	[malruk_succubus_hold]	pos = {110224;119488;-3072;0}	total = 1	respawn = 115sec	npc_end
+npc_begin	[dust_wind]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[thunder_wyrm]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[malruk_succubus]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[grian_t23_21_de_041]	{{119960;114944;-3844;-3444};{122776;114452;-3844;-3444};{123532;115828;-3844;-3444};{121564;116816;-3844;-3444};{119232;116556;-3844;-3444}}	territory_end
+npcmaker_begin	[grian_t23_21_de_041]	initial_spawn = all
+npc_begin	[drake]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[cave_maiden]	pos = anywhere	total = 1	respawn = 115sec	npc_end
+npc_begin	[bloody_queen]	pos = anywhere	total = 2	respawn = 115sec	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_23_21_001]	{{116152;127176;-3460;-2260};{118560;127056;-3460;-2260};{118776;128632;-3460;-2260};{117652;130068;-3460;-2260};{115928;128716;-3460;-2260}}	territory_end
+npcmaker_begin	[quest_030919_23_21_001]	initial_spawn = all	maximum_npc = 2
+npc_begin	[stenoa_gorgon_queen]	pos = anywhere	total = 1	respawn = 3min
+Privates = [handmaiden_of_stenoa:party_private:1:1min]	npc_end
+npcmaker_end
+
+territory_begin	[event_23_21_031215_01]	{{112532;102048;-3608;-2308};{117860;101844;-3608;-2308};{120064;103328;-3608;-2308};{116928;106276;-3608;-2308};{112804;106244;-3608;-2308}}	territory_end
+npcmaker_begin	[event_23_21_031215_01]	initial_spawn=all	maximum_npc=7
+npc_begin	[rscavenger_leader_rinoket]	pos={{113744;102912;-2582;0;30%};{113936;105216;-3120;0;40%};{116864;105200;-3184;0;30%}}	total=1	respawn=3hour	respawn_rand=1hour	Privates=[rinokets_henchman:rinokets_henchman:1:1min;rinokets_henchman:rinokets_henchman:1:1min;rinokets_henchman:rinokets_henchman:1:1min;rinokets_henchman:rinokets_henchman:1:1min;rinokets_henchman:rinokets_henchman:1:1min;rinokets_henchman:rinokets_henchman:1:1min]	npc_end
+npcmaker_end
+
+territory_begin	[event_23_21_031215_02]	{{104848;120464;-3824;-3324};{107448;119864;-3824;-3324};{111020;121932;-3824;-3324};{106252;123104;-3824;-3324}}	territory_end
+npcmaker_begin	[event_23_21_031215_02]	initial_spawn=all	maximum_npc=4
+npc_begin	[cave_servant_lord_ishka]	pos={{106208;120912;-3688;0;30%};{107136;122064;-3680;0;40%};{108640;121392;-3735;0;30%}}	total=1	respawn=3hour	respawn_rand=1hour	Privates=[cave_servant_general:cave_servant_general:1:1min;cave_servant_general:cave_servant_general:1:1min;cave_servant_general:cave_servant_general:1:1min]	npc_end
+npcmaker_end
+

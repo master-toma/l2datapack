@@ -1,0 +1,308 @@
+//--------------------19_24 NPC 030917--------------------
+territory_begin	[NPC_t19_24_030917_01]	{{-6866;202001;-3735;-3535};{-6666;202001;-3735;-3535};{-6666;202201;-3735;-3535};{-6866;202201;-3735;-3535}}	territory_end
+npcmaker_begin	[NPC_t19_24_030917_01]
+npc_begin	[sir_aron_tanford]	pos = {-6774;202086;-3649;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t19_24_030917_02]	{{-17395;209620;-3724;-3524};{-17195;209620;-3724;-3524};{-17195;209820;-3724;-3524};{-17395;209820;-3724;-3524}}	territory_end
+npcmaker_begin	[NPC_t19_24_030917_02]
+npc_begin	[bodyguard_jax]	pos = {-17305;209742;-3660;61440}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t19_24_030917_03]	{{-24003;207704;-3305;-3105};{-23803;207704;-3305;-3105};{-23803;207904;-3305;-3105};{-24003;207904;-3305;-3105}}	territory_end
+npcmaker_begin	[NPC_t19_24_030917_03]
+npc_begin	[summoner_basillia]	pos = {-23896;207797;-3176;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//-------------- 19_24 퀘스트 NPC + 상인 ----------
+territory_begin	[19_24_NPC_001]	{{-16948;210140;-3801;-3601};{-16748;210140;-3801;-3601};{-16748;210340;-3801;-3601};{-16948;210340;-3801;-3601}}	territory_end
+npcmaker_begin	[19_24_NPC_001]	initial_spawn = all	maximum_npc = 1
+npc_begin	[trader_salient]	pos = {-16832;210256;-3661;55000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_24_NPC_002]	{{-17444;208860;-3812;-3612};{-17244;208860;-3812;-3612};{-17244;209060;-3812;-3612};{-17444;209060;-3812;-3612}}	territory_end
+npcmaker_begin	[19_24_NPC_002]	initial_spawn = all	maximum_npc = 1
+npc_begin	[trader_rolento]	pos = {-17312;208976;-3661;3000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------- 19_24 황무지(패거리 몬스터)-------------------------------------------------------
+territory_begin	[party_t19_24_001]	{{-26788;196713;-4024;-3624};{-24082;196706;-4024;-3624};{-24503;198218;-4024;-3624};{-26450;197617;-4024;-3624}}	territory_end
+npcmaker_begin	[party_t19_24_001]	initial_spawn = all	maximum_npc = 3
+npc_begin	[wild_desperado]	pos = anywhere	total = 1	respawn = 3min
+Privates = [wild_desperado_fellow:wild_desperado_fellow:1:3min;wild_desperado_fellow:wild_desperado_fellow:1:3min]	npc_end
+npcmaker_end
+
+territory_begin	[party_t19_24_002]	{{-22130;199204;-4257;-3857};{-20344;198624;-4257;-3857};{-20418;200356;-4257;-3857};{-21485;200168;-4257;-3857}}	territory_end
+npcmaker_begin	[party_t19_24_002]	initial_spawn = all	maximum_npc = 3
+npc_begin	[wild_desperado]	pos = anywhere	total = 1	respawn = 3min
+Privates = [wild_desperado_fellow:wild_desperado_fellow:1:3min;wild_desperado_fellow:wild_desperado_fellow:1:3min]	npc_end
+npcmaker_end
+
+territory_begin	[party_t19_24_003]	{{-21061;196801;-4257;-3857};{-19355;196714;-4257;-3857};{-19876;198746;-4257;-3857};{-21549;197918;-4257;-3857}}	territory_end
+npcmaker_begin	[party_t19_24_003]	initial_spawn = all	maximum_npc = 3
+npc_begin	[wild_desperado]	pos = anywhere	total = 1	respawn = 3min
+Privates = [wild_desperado_fellow:wild_desperado_fellow:1:3min;wild_desperado_fellow:wild_desperado_fellow:1:3min]	npc_end
+npcmaker_end
+
+territory_begin	[party_t19_24_004]	{{-19046;196737;-4257;-3857};{-17700;196757;-4257;-3857};{-16921;199612;-4257;-3857};{-19488;200340;-4257;-3857}}	territory_end
+npcmaker_begin	[party_t19_24_004]	initial_spawn = all	maximum_npc = 6
+npc_begin	[wild_desperado]	pos = anywhere	total = 1	respawn = 3min
+Privates = [wild_desperado_fellow:wild_desperado_fellow:1:3min;wild_desperado_fellow:wild_desperado_fellow:1:3min]	npc_end
+npc_begin	[wild_desperado]	pos = anywhere	total = 1	respawn = 3min
+Privates = [wild_desperado_fellow:wild_desperado_fellow:1:3min;wild_desperado_fellow:wild_desperado_fellow:1:3min]	npc_end
+npcmaker_end
+
+territory_begin	[party_t19_24_005]	{{-15985;196746;-3987;-3587};{-13199;196746;-3987;-3587};{-13700;198062;-3987;-3587};{-15554;198630;-3987;-3587}}	territory_end
+npcmaker_begin	[party_t19_24_005]	initial_spawn = all	maximum_npc = 3
+npc_begin	[wild_desperado]	pos = anywhere	total = 1	respawn = 3min
+Privates = [wild_desperado_fellow:wild_desperado_fellow:1:3min;wild_desperado_fellow:wild_desperado_fellow:1:3min]	npc_end
+npcmaker_end
+
+//--------------- 19_24 ----------------------------------------------------------------------------------------
+territory_begin	[gludio_t19_24_001]	{{-27500;211072;-3800;-3300};{-24780;211948;-3800;-3300};{-22924;213296;-3800;-3300};{-23176;215072;-3800;-3300};{-27648;213856;-3800;-3300};{-30192;211280;-3800;-3300}}	territory_end
+npcmaker_begin	[gludio_t19_24_001]
+npc_begin	[ratman_warrior]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[poison_predator]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[patoller]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_24_002]	{{-31088;211368;-3804;-3404};{-30216;211364;-3804;-3404};{-27520;214008;-3804;-3404};{-32648;213892;-3804;-3404};{-32664;212208;-3804;-3404}}	territory_end
+npcmaker_begin	[gludio_t19_24_002]
+npc_begin	[ratman_warrior]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[poison_predator]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[patoller]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_24_003]	{{-32608;209060;-3696;-2996};{-30636;208560;-3696;-2996};{-28120;209608;-3696;-2996};{-32552;211244;-3696;-2996}}	territory_end
+npcmaker_begin	[gludio_t19_24_003]
+npc_begin	[ratman_warrior]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[poison_predator]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[patoller]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_24_004]	{{-24040;211132;-3808;-3208};{-21808;211748;-3808;-3208};{-20084;212744;-3808;-3208};{-19856;213616;-3808;-3208};{-22884;213300;-3808;-3208};{-24248;212260;-3808;-3208}}	territory_end
+npcmaker_begin	[gludio_t19_24_004]
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[poison_predator]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[patoller]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_24_005]	{{-22948;213344;-3780;-3380};{-19776;213664;-3780;-3380};{-18468;215588;-3780;-3380};{-21460;215776;-3780;-3380};{-23212;215088;-3780;-3380}}	territory_end
+npcmaker_begin	[gludio_t19_24_005]
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[poison_predator]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[patoller]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_24_006]	{{-19420;213196;-3812;-3412};{-15888;213028;-3812;-3412};{-15324;214216;-3812;-3412};{-18480;215592;-3812;-3412};{-19776;213660;-3812;-3412}}	territory_end
+npcmaker_begin	[gludio_t19_24_006]
+npc_begin	[ratman_warrior]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[poison_predator]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[patoller]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_24_007]	{{-15952;205280;-3392;-2392};{-13704;202896;-3392;-2392};{-11492;206296;-3392;-2392};{-13740;207780;-3392;-2392}}	territory_end
+npcmaker_begin	[gludio_t19_24_007]
+npc_begin	[seer]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_shooter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_captain]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gluido_t19_24_008]	{{-13720;207828;-3740;-2940};{-11456;206336;-3740;-2940};{-10960;207304;-3740;-2940};{-12644;209612;-3740;-2940}}	territory_end
+npcmaker_begin	[gluido_t19_24_008]
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_shooter]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_captain]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_24_009]	{{-13440;202736;-3772;-2472};{-12272;201292;-3772;-2472};{-9828;200712;-3772;-2472};{-7020;203060;-3772;-2472};{-10884;207060;-3772;-2472}}	territory_end
+npcmaker_begin	[gludio_t19_24_009]
+npc_begin	[seer]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_shooter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_captain]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_24_010]	{{-9788;200564;-3528;-2728};{-6544;198292;-3528;-2728};{-6664;200008;-3528;-2728};{-8580;201756;-3528;-2728}}	territory_end
+npcmaker_begin	[gludio_t19_24_010]
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_shooter]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_captain]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_24_011]	{{-4644;196692;-3736;-2836};{-3268;196680;-3736;-2836};{-4060;199028;-3736;-2836};{-5892;200896;-3736;-2836};{-6580;200100;-3736;-2836};{-6448;198248;-3736;-2836}}	territory_end
+npcmaker_begin	[gludio_t19_24_011]
+npc_begin	[seer]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_shooter]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_captain]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_24_012]	{{-32604;198356;-3720;-3020};{-30468;198008;-3720;-3020};{-27428;203952;-3720;-3020};{-32608;205604;-3720;-3020}}	territory_end
+npcmaker_begin	[gludio_t19_24_012]
+npc_begin	[ratman_warrior]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[poison_predator]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_24_013]	{{-32232;202228;-3516;-3016};{-30748;201596;-3516;-3016};{-28888;203092;-3516;-3016};{-30836;204840;-3516;-3016};{-32508;204016;-3516;-3016}}	territory_end
+npcmaker_begin	[gludio_t19_24_013]
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+//---------- (19_24) 황무지 -------------------------------------------------------------
+territory_begin	[w19_24_001]	{{-11268;196660;-3600;-3300};{-6492;196692;-3600;-3300};{-11264;200212;-3600;-3300};{-13640;200488;-3600;-3300}}	territory_end
+npcmaker_begin	[w19_24_001]
+npc_begin	[beamer]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[lesser_basilisk]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[lesser_poison_basilisk]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_002]	{{-15196;202432;-3544;-3344};{-13532;200624;-3544;-3344};{-13104;200740;-3544;-3344};{-14928;202684;-3544;-3344}}	territory_end
+npcmaker_begin	[w19_24_002]
+npc_begin	[beamer]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[lesser_basilisk]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_003]	{{-16724;203512;-3540;-3240};{-15616;202516;-3540;-3240};{-15072;202780;-3540;-3240};{-16836;204480;-3540;-3240}}	territory_end
+npcmaker_begin	[w19_24_003]
+npc_begin	[beamer]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[lesser_basilisk]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_004]	{{-20472;202900;-3920;-3420};{-16860;202456;-3920;-3420};{-17644;205328;-3920;-3420};{-18152;205380;-3920;-3420};{-20944;204088;-3920;-3420}}	territory_end
+npcmaker_begin	[w19_24_004]
+npc_begin	[viewer]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[lesser_basilisk]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_005]	{{-16624;196684;-3980;-3580};{-12384;196684;-3980;-3580};{-13280;198664;-3980;-3580};{-16264;198568;-3980;-3580}}	territory_end
+npcmaker_begin	[w19_24_005]
+npc_begin	[ant]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[ant_captain]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[granitic_golem]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_006]	{{-16232;198596;-4060;-3760};{-14120;198644;-4060;-3760};{-14448;200964;-4060;-3760};{-15792;201516;-4060;-3760}}	territory_end
+npcmaker_begin	[w19_24_006]
+npc_begin	[lesser_poison_basilisk]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[skeleton_raider]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_007]	{{-18424;200608;-4016;-3716};{-15980;200568;-4016;-3716};{-15836;201496;-4016;-3716};{-17748;202300;-4016;-3716};{-18688;201720;-4016;-3716}}	territory_end
+npcmaker_begin	[w19_24_007]
+npc_begin	[beamer]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[lesser_basilisk]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_008]	{{-21396;200616;-4188;-3788};{-18592;200256;-4188;-3788};{-18480;202620;-4188;-3788};{-20292;202840;-4188;-3788}}	territory_end
+npcmaker_begin	[w19_24_008]
+npc_begin	[beamer]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[lesser_basilisk]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_009]	{{-21312;196652;-4300;-4000};{-17224;196704;-4300;-4000};{-16600;200224;-4300;-4000};{-21344;200596;-4300;-4000};{-22408;199316;-4300;-4000}}	territory_end
+npcmaker_begin	[w19_24_009]
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[skeleton_raider]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[ant]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[ant_captain]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_010]	{{-23080;200080;-4056;-3756};{-21312;200944;-4056;-3756};{-20500;202424;-4056;-3756};{-22248;201984;-4056;-3756};{-24384;200120;-4056;-3756}}	territory_end
+npcmaker_begin	[w19_24_010]
+npc_begin	[beamer]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[lesser_basilisk]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_011]	{{-21688;202348;-3760;-3560};{-20608;202960;-3760;-3560};{-21008;204124;-3760;-3560};{-21828;204044;-3760;-3560};{-23456;202552;-3760;-3560}}	territory_end
+npcmaker_begin	[w19_24_011]
+npc_begin	[beamer]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[lesser_basilisk]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_012]	{{-26616;201924;-3888;-3488};{-24296;200648;-3888;-3488};{-22904;202068;-3888;-3488};{-24980;204184;-3888;-3488};{-26644;202892;-3888;-3488}}	territory_end
+npcmaker_begin	[w19_24_012]
+npc_begin	[beamer]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[lesser_basilisk]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[lesser_poison_basilisk]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_013]	{{-26592;200396;-3844;-3444};{-25232;201120;-3844;-3444};{-26548;201836;-3844;-3444};{-26816;201536;-3844;-3444};{-26824;200664;-3844;-3444}}	territory_end
+npcmaker_begin	[w19_24_013]
+npc_begin	[lesser_basilisk]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_014]	{{-27476;200540;-3872;-3672};{-27028;200852;-3872;-3672};{-26996;201660;-3872;-3672};{-27272;201932;-3872;-3672};{-27560;201556;-3872;-3672};{-27640;200884;-3872;-3672}}	territory_end
+npcmaker_begin	[w19_24_014]
+npc_begin	[lesser_basilisk]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_015]	{{-28576;198472;-3824;-3424};{-25772;198684;-3824;-3424};{-27152;200284;-3824;-3424};{-28676;199080;-3824;-3424}}	territory_end
+npcmaker_begin	[w19_24_015]
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[skeleton_raider]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_016]	{{-28604;199792;-3864;-3464};{-28428;199532;-3864;-3464};{-27552;200180;-3864;-3464};{-27796;200596;-3864;-3464}}	territory_end
+npcmaker_begin	[w19_24_016]
+npc_begin	[lesser_basilisk]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_017]	{{-29776;196672;-3812;-3512};{-28040;196696;-3812;-3512};{-27360;198232;-3812;-3512};{-27360;198532;-3812;-3512};{-29084;198064;-3812;-3512}}	territory_end
+npcmaker_begin	[w19_24_017]
+npc_begin	[lesser_basilisk]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[lesser_poison_basilisk]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_018]	{{-27604;196672;-4024;-3624};{-23912;196656;-4024;-3624};{-24392;198268;-4024;-3624};{-27224;198156;-4024;-3624}}	territory_end
+npcmaker_begin	[w19_24_018]
+npc_begin	[ant]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[ant_captain]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_019]	{{-23452;197652;-3948;-3548};{-22744;197944;-3948;-3548};{-23460;198764;-3948;-3548};{-24080;198860;-3948;-3548};{-24024;197752;-3948;-3548}}	territory_end
+npcmaker_begin	[w19_24_019]
+npc_begin	[granitic_golem]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_020]	{{-20108;197104;-4280;-4080};{-19744;197740;-4280;-4080};{-20464;198696;-4280;-4080};{-21172;198424;-4280;-4080};{-21100;197308;-4280;-4080}}	territory_end
+npcmaker_begin	[w19_24_020]
+npc_begin	[puncher]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_021]	{{-19252;197972;-4252;-3852};{-17800;197808;-4252;-3852};{-17668;199268;-4252;-3852};{-19292;199592;-4252;-3852}}	territory_end
+npcmaker_begin	[w19_24_021]
+npc_begin	[granitic_golem]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_022]	{{-10960;197336;-3548;-3348};{-9412;197296;-3548;-3348};{-10168;198576;-3548;-3348};{-11376;199124;-3548;-3348}}	territory_end
+npcmaker_begin	[w19_24_022]
+npc_begin	[granitic_golem]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[w19_24_023]	{{-19048;203008;-3884;-3484};{-17684;203432;-3884;-3484};{-18300;204400;-3884;-3484};{-19568;204180;-3884;-3484}}	territory_end
+npcmaker_begin	[w19_24_023]
+npc_begin	[lesser_poison_basilisk]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_t19_24_001]	{{-12316;210512;-3784;-3284};{-11072;208876;-3784;-3284};{-8792;208660;-3784;-3284};{-11024;211680;-3784;-3284}}	territory_end
+npcmaker_begin	[quest_030919_t19_24_001]	initial_spawn = all
+npc_begin	[orc_betrayer_minsku]	pos = anywhere	total = 1	respawn = 15min	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_19_24_001]	{{-24003;207704;-3305;-3105};{-23803;207704;-3305;-3105};{-23803;207904;-3305;-3105};{-24003;207904;-3305;-3105}}	territory_end
+npcmaker_begin	[quest_030919_19_24_001]	initial_spawn = all
+npc_begin	[mimi_the_cat]	pos = anywhere	total = 1	respawn = 3min	npc_end
+npcmaker_end
+

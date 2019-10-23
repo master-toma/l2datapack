@@ -1,0 +1,568 @@
+//--------------------- 18_21의 NPC --------------------
+territory_begin	[18_21_1129_NPC01]	{{-20468;144636;-3868;-3668};{-20268;144636;-3868;-3668};{-20268;144836;-3868;-3668};{-20468;144836;-3868;-3668}}	territory_end
+npcmaker_begin	[18_21_1129_NPC01]
+npc_begin	[flame_salamander]	pos = {-20352;144736;-3840;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------- 19_22 ----------------------------------------------------------------------------------------
+territory_begin	[gludio_t19_22_001]	{{-30700;131180;-3744;-3144};{-24512;131148;-3744;-3144};{-24484;132380;-3744;-3144};{-28004;134368;-3744;-3144};{-31168;132816;-3744;-3144}}	territory_end
+npcmaker_begin	[gludio_t19_22_001]
+npc_begin	[brown_bear]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_002]	{{-31144;132900;-3948;-3348};{-28020;134472;-3948;-3348};{-28340;136176;-3948;-3348};{-31300;136864;-3948;-3348};{-32512;136204;-3948;-3348};{-32560;133408;-3948;-3348}}	territory_end
+npcmaker_begin	[gludio_t19_22_002]
+npc_begin	[brown_bear]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_003]	{{-22676;131244;-4076;-3476};{-17772;131268;-4076;-3476};{-20484;135424;-4076;-3476};{-22280;135228;-4076;-3476}}	territory_end
+npcmaker_begin	[gludio_t19_22_003]
+npc_begin	[brown_bear]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_004]	{{-17340;131224;-3812;-3212};{-10276;131240;-3812;-3212};{-11092;132112;-3812;-3212};{-18284;132616;-3812;-3212}}	territory_end
+npcmaker_begin	[gludio_t19_22_004]
+npc_begin	[brown_bear]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_005]	{{-9244;131280;-3836;-3236};{-352;131276;-3836;-3236};{-288;134724;-3836;-3236};{-7764;133928;-3836;-3236}}	territory_end
+npcmaker_begin	[gludio_t19_22_005]
+npc_begin	[brown_bear]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_006]	{{-6800;134196;-3796;-3196};{-328;134836;-3796;-3196};{-364;136936;-3796;-3196};{-2740;139124;-3796;-3196};{-4304;139192;-3796;-3196}}	territory_end
+npcmaker_begin	[gludio_t19_22_006]
+npc_begin	[brown_bear]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_007]	{{-7348;141840;-3704;-3104};{-2440;141148;-3704;-3104};{-264;144204;-3704;-3104};{-5952;142904;-3704;-3104}}	territory_end
+npcmaker_begin	[gludio_t19_22_007]
+npc_begin	[brown_bear]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_008]	{{-2476;143644;-3796;-3396};{-252;144224;-3796;-3396};{-224;147288;-3796;-3396};{-2796;146648;-3796;-3396}}	territory_end
+npcmaker_begin	[gludio_t19_22_008]
+npc_begin	[brown_bear]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_009]	{{-3368;146560;-3812;-3012};{-256;147408;-3812;-3012};{-224;152860;-3812;-3012};{-2840;151680;-3812;-3012};{-4132;149244;-3812;-3012};{-4232;147060;-3812;-3012}}	territory_end
+npcmaker_begin	[gludio_t19_22_009]
+npc_begin	[brown_bear]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_010]	{{-7948;147392;-3708;-2708};{-4312;147168;-3708;-2708};{-4280;149372;-3708;-2708};{-4588;150364;-3708;-2708};{-6996;150656;-3708;-2708}}	territory_end
+npcmaker_begin	[gludio_t19_22_010]
+npc_begin	[brown_bear]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_011]	{{-6652;150776;-3364;-2564};{-4556;150528;-3364;-2564};{-2948;151772;-3364;-2564};{-4344;154628;-3364;-2564};{-7328;154668;-3364;-2564}}	territory_end
+npcmaker_begin	[gludio_t19_22_011]
+npc_begin	[brown_bear]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_012]	{{-2836;151812;-3820;-3020};{-296;152952;-3820;-3020};{-296;158596;-3820;-3020};{-1104;159004;-3820;-3020};{-3972;154116;-3820;-3020}}	territory_end
+npcmaker_begin	[gludio_t19_22_012]
+npc_begin	[brown_bear]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_013]	{{-1760;159200;-3492;-2242};{-212;159260;-3492;-2242};{-236;163588;-3492;-2242};{-2960;163516;-3492;-2242}}	territory_end
+npcmaker_begin	[gludio_t19_22_013]
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_shooter]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_014]	{{-10976;150516;-3128;-2528};{-9476;150540;-3128;-2528};{-9624;152476;-3128;-2528};{-10704;153804;-3128;-2528};{-12032;154192;-3128;-2528};{-12840;151488;-3128;-2528}}	territory_end
+npcmaker_begin	[gludio_t19_22_014]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_015]	{{-15080;150808;-3108;-2108};{-12804;152072;-3108;-2108};{-12084;154424;-3108;-2108};{-13496;155884;-3108;-2108};{-17160;155176;-3108;-2108};{-16616;151308;-3108;-2108}}	territory_end
+npcmaker_begin	[gludio_t19_22_015]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_016]	{{-17212;155232;-2980;-1880};{-13652;155900;-2980;-1880};{-13152;158624;-2980;-1880};{-13248;160560;-2980;-1880};{-14524;161756;-2980;-1880};{-16648;161540;-2980;-1880};{-18316;157264;-2980;-1880}}	territory_end
+npcmaker_begin	[gludio_t19_22_016]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_017]	{{-12884;162564;-2784;-2184};{-11660;161264;-2784;-2184};{-10276;162904;-2784;-2184};{-10280;163656;-2784;-2184};{-13092;163636;-2784;-2184}}	territory_end
+npcmaker_begin	[gludio_t19_22_017]
+npc_begin	[seer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_018]	{{-16520;162092;-2952;-1952};{-12980;162396;-2952;-1952};{-13196;163608;-2952;-1952};{-17996;163616;-2952;-1952}}	territory_end
+npcmaker_begin	[gludio_t19_22_018]
+npc_begin	[seer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_019]	{{-20940;162064;-2972;-1572};{-16280;161644;-2972;-1572};{-18132;163588;-2972;-1572};{-21864;163620;-2972;-1572}}	territory_end
+npcmaker_begin	[gludio_t19_22_019]
+npc_begin	[seer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_020]	{{-20516;157684;-2712;-1712};{-18464;157084;-2712;-1712};{-16736;161612;-2712;-1712};{-20120;161900;-2712;-1712}}	territory_end
+npcmaker_begin	[gludio_t19_22_020]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_021]	{{-22428;154520;-3340;-2440};{-21732;154252;-3340;-2440};{-19084;157260;-3340;-2440};{-20836;157704;-3340;-2440}}	territory_end
+npcmaker_begin	[gludio_t19_22_021]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_022]	{{-19940;152692;-3136;-2136};{-17520;152264;-3136;-2136};{-17752;154912;-3136;-2136};{-18540;156900;-3136;-2136};{-19780;156308;-3136;-2136};{-21600;154236;-3136;-2136}}	territory_end
+npcmaker_begin	[gludio_t19_22_022]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_023]	{{-18532;150944;-3132;-2632};{-16880;151188;-3132;-2632};{-17516;152168;-3132;-2632};{-20088;152680;-3132;-2632};{-20440;151636;-3132;-2632}}	territory_end
+npcmaker_begin	[gludio_t19_22_023]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_024]	{{-25652;151440;-3592;-2592};{-20540;151616;-3592;-2592};{-20156;152676;-3592;-2592};{-21680;154212;-3592;-2592};{-22708;154632;-3592;-2592}}	territory_end
+npcmaker_begin	[gludio_t19_22_024]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_025]	{{-32588;149416;-3700;-3200};{-30912;149408;-3700;-3200};{-29676;150792;-3700;-3200};{-30476;151744;-3700;-3200};{-31284;151692;-3700;-3200};{-32640;150716;-3700;-3200}}	territory_end
+npcmaker_begin	[gludio_t19_22_025]
+npc_begin	[brown_bear]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_026]	{{-29500;152684;-3648;-3248};{-28960;151912;-3648;-3248};{-27344;153956;-3648;-3248};{-28740;154996;-3648;-3248};{-29540;154176;-3648;-3248}}	territory_end
+npcmaker_begin	[gludio_t19_22_026]
+npc_begin	[brown_bear]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_027]	{{-28584;155116;-3624;-2824};{-27228;153932;-3624;-2824};{-24880;154776;-3624;-2824};{-23348;156416;-3624;-2824};{-28424;156400;-3624;-2824}}	territory_end
+npcmaker_begin	[gludio_t19_22_027]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_028]	{{-28296;156532;-3568;-2468};{-23324;156488;-3568;-2468};{-22904;159568;-3568;-2468};{-24676;159564;-3568;-2468};{-26812;158560;-3568;-2468};{-28736;157048;-3568;-2468}}	territory_end
+npcmaker_begin	[gludio_t19_22_028]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_029]	{{-30544;157368;-3732;-2632};{-28832;157100;-3732;-2632};{-26872;158560;-3732;-2632};{-28060;159484;-3732;-2632};{-32352;159068;-3732;-2632}}	territory_end
+npcmaker_begin	[gludio_t19_22_029]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_030]	{{-32532;159192;-3384;-2384};{-28068;159564;-3384;-2384};{-27624;163572;-3384;-2384};{-32544;163540;-3384;-2384}}	territory_end
+npcmaker_begin	[gludio_t19_22_030]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_031]	{{-27760;161964;-3324;-2424};{-23504;162076;-3324;-2424};{-23632;163540;-3324;-2424};{-27576;163544;-3324;-2424}}	territory_end
+npcmaker_begin	[gludio_t19_22_031]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_032]	{{-24648;159672;-3480;-2480};{-22920;159716;-3480;-2480};{-23480;162008;-3480;-2480};{-24876;162008;-3480;-2480}}	territory_end
+npcmaker_begin	[gludio_t19_22_032]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_034]	{{-29756;154640;-4024;-3624};{-29224;155340;-4024;-3624};{-29280;156240;-4024;-3624};{-32652;158232;-4024;-3624};{-32648;154632;-4024;-3624}}	territory_end
+npcmaker_begin	[gludio_t19_22_034]
+npc_begin	[brown_bear]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_035]	{{-32632;152016;-4112;-3712};{-31228;152444;-4112;-3712};{-30020;153972;-4112;-3712};{-29908;154608;-4112;-3712};{-32648;154580;-4112;-3712}}	territory_end
+npcmaker_begin	[gludio_t19_22_035]
+npc_begin	[brown_bear]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_036]	{{-31280;141372;-4072;-3172};{-28536;144692;-4072;-3172};{-28708;147364;-4072;-3172};{-30120;148620;-4072;-3172};{-32328;148508;-4072;-3172};{-32352;141440;-4072;-3172}}	territory_end
+npcmaker_begin	[gludio_t19_22_036]
+npc_begin	[brown_bear]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_037]	{{-28444;144776;-3632;-3232};{-27116;144536;-3632;-3232};{-26984;146736;-3632;-3232};{-28636;147348;-3632;-3232}}	territory_end
+npcmaker_begin	[gludio_t19_22_037]
+npc_begin	[brown_bear]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_038]	{{-28484;147388;-3564;-2964};{-27092;146876;-3564;-2964};{-25664;151716;-3564;-2964};{-27476;150836;-3564;-2964};{-28264;149884;-3564;-2964}}	territory_end
+npcmaker_begin	[gludio_t19_22_038]
+npc_begin	[brown_bear]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_039]	{{-32620;139268;-4076;-3676};{-30716;139092;-4076;-3676};{-31660;141296;-4076;-3676};{-32664;141352;-4076;-3676}}	territory_end
+npcmaker_begin	[gludio_t19_22_039]
+npc_begin	[brown_bear]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_040]	{{-27752;151500;-4004;-3604};{-25940;152444;-4004;-3604};{-25148;153080;-4004;-3604};{-25276;154044;-4004;-3604};{-26896;153484;-4004;-3604};{-28208;151840;-4004;-3604}}	territory_end
+npcmaker_begin	[gludio_t19_22_040]
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_041]	{{-22284;159668;-4024;-3624};{-21760;159356;-4024;-3624};{-21820;161188;-4024;-3624};{-22368;162148;-4024;-3624};{-22640;161924;-4024;-3624}}	territory_end
+npcmaker_begin	[gludio_t19_22_041]
+npc_begin	[ol_mahum_captain]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_042]	{{-11328;154736;-4012;-3612};{-10808;155496;-4012;-3612};{-11684;156932;-4012;-3612};{-12400;157132;-4012;-3612};{-12624;156304;-4012;-3612}}	territory_end
+npcmaker_begin	[gludio_t19_22_042]
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_043]	{{-11724;158428;-4028;-3628};{-11452;158988;-4028;-3628};{-11332;159656;-4028;-3628};{-12360;159812;-4028;-3628};{-12356;159232;-4028;-3628}}	territory_end
+npcmaker_begin	[gludio_t19_22_043]
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_044]	{{-9748;162664;-3996;-3596};{-9100;162396;-3996;-3596};{-8888;163564;-3996;-3596};{-9624;163636;-3996;-3596}}	territory_end
+npcmaker_begin	[gludio_t19_22_044]
+npc_begin	[ol_mahum_captain]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+//---------- (19_22) 절망의 폐허 -------------------------------------------------------------
+territory_begin	[gludio_t19_22_045]	{{-24676;141312;-3980;-3180};{-22892;141000;-3980;-3180};{-23488;143336;-3980;-3180};{-24676;144380;-3980;-3180};{-26612;144980;-3980;-3180}}	territory_end
+npcmaker_begin	[gludio_t19_22_045]
+npc_begin	[shield_skeleton]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[skeleton_infantry]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[ruin_imp]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[corpse_eater_bat]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_046]	{{-26940;145572;-3928;-3128};{-23188;143868;-3928;-3128};{-22472;144784;-3928;-3128};{-22048;145784;-3928;-3128};{-24940;146968;-3928;-3128};{-26892;146740;-3928;-3128}}	territory_end
+npcmaker_begin	[gludio_t19_22_046]
+npc_begin	[shield_skeleton]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[skeleton_infantry]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npc_begin	[corpse_eater_bat]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_047]	{{-27064;147000;-3804;-2904};{-22068;145884;-3804;-2904};{-21440;146752;-3804;-2904};{-21892;148976;-3804;-2904};{-26392;149168;-3804;-2904}}	territory_end
+npcmaker_begin	[gludio_t19_22_047]
+npc_begin	[shield_skeleton]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npc_begin	[skeleton_infantry]	pos = anywhere	total = 6	respawn = 55sec	npc_end
+npc_begin	[ruin_imp]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npc_begin	[corpse_eater_bat]	pos = anywhere	total = 6	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_048]	{{-21556;147116;-3776;-3026};{-17544;147104;-3776;-3026};{-17044;148900;-3776;-3026};{-21876;149012;-3776;-3026}}	territory_end
+npcmaker_begin	[gludio_t19_22_048]
+npc_begin	[shield_skeleton]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npc_begin	[skeleton_infantry]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npc_begin	[corpse_eater_bat]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_049]	{{-26368;149200;-3212;-2812};{-23144;149092;-3212;-2812};{-22540;151500;-3212;-2812};{-25688;151388;-3212;-2812}}	territory_end
+npcmaker_begin	[gludio_t19_22_049]
+npc_begin	[shield_skeleton]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[skeleton_infantry]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[corpse_eater_bat]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_050]	{{-22988;149088;-3368;-2968};{-17104;148956;-3368;-2968};{-16880;151116;-3368;-2968};{-22508;151484;-3368;-2968}}	territory_end
+npcmaker_begin	[gludio_t19_22_050]
+npc_begin	[shield_skeleton]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npc_begin	[skeleton_infantry]	pos = anywhere	total = 6	respawn = 55sec	npc_end
+npc_begin	[ruin_imp]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npc_begin	[corpse_eater_bat]	pos = anywhere	total = 6	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_051]	{{-15512;146404;-3728;-3228};{-13700;146828;-3728;-3228};{-14900;147996;-3728;-3228};{-16688;148048;-3728;-3228};{-16952;146504;-3728;-3228}}	territory_end
+npcmaker_begin	[gludio_t19_22_051]
+npc_begin	[zombie_soldier]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npc_begin	[ruin_bat]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npc_begin	[ruin_imp_ribe]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npc_begin	[zombie_warrior]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_052]	{{-16472;148052;-3544;-2894};{-14504;148704;-3544;-2894};{-14976;150724;-3544;-2894};{-16564;151112;-3544;-2894}}	territory_end
+npcmaker_begin	[gludio_t19_22_052]
+npc_begin	[skeleton_infantry]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npc_begin	[corpse_eater_bat]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_053]	{{-14460;148684;-3632;-2732};{-12064;147156;-3632;-2732};{-10652;148136;-3632;-2732};{-10148;150148;-3632;-2732};{-13276;151576;-3632;-2732};{-14904;150780;-3632;-2732}}	territory_end
+npcmaker_begin	[gludio_t19_22_053]
+npc_begin	[shield_skeleton]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npc_begin	[skeleton_infantry]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npc_begin	[corpse_eater_bat]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_054]	{{-11008;147756;-4004;-3004};{-9932;146696;-4004;-3004};{-8412;149440;-4004;-3004};{-9712;150420;-4004;-3004}}	territory_end
+npcmaker_begin	[gludio_t19_22_054]
+npc_begin	[skeleton_infantry]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npc_begin	[corpse_eater_bat]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_055]	{{-12008;146520;-3928;-3328};{-11332;143704;-3928;-3328};{-10104;146064;-3928;-3328};{-11364;147520;-3928;-3328}}	territory_end
+npcmaker_begin	[gludio_t19_22_055]
+npc_begin	[skeleton_infantry]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npc_begin	[corpse_eater_bat]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_056]	{{-10164;144816;-3944;-3444};{-8432;144420;-3944;-3444};{-7952;147000;-3944;-3444};{-8400;148284;-3944;-3444}}	territory_end
+npcmaker_begin	[gludio_t19_22_056]
+npc_begin	[skeleton_infantry]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npc_begin	[corpse_eater_bat]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_057]	{{-7112;142608;-3780;-3380};{-2632;143596;-3780;-3380};{-2892;146316;-3780;-3380};{-4316;146900;-3780;-3380};{-7868;147016;-3780;-3380};{-8392;144384;-3780;-3380}}	territory_end
+npcmaker_begin	[gludio_t19_22_057]
+npc_begin	[shield_skeleton]	pos = anywhere	total = 8	respawn = 55sec	npc_end
+npc_begin	[skeleton_infantry]	pos = anywhere	total = 8	respawn = 55sec	npc_end
+npc_begin	[ruin_imp]	pos = anywhere	total = 8	respawn = 55sec	npc_end
+npc_begin	[corpse_eater_bat]	pos = anywhere	total = 8	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_058]	{{-8904;139476;-3772;-3172};{-7108;142424;-3772;-3172};{-8456;144380;-3772;-3172};{-10340;144576;-3772;-3172};{-10988;143772;-3772;-3172};{-11808;140720;-3772;-3172}}	territory_end
+npcmaker_begin	[gludio_t19_22_058]
+npc_begin	[shield_skeleton]	pos = anywhere	total = 6	respawn = 55sec	npc_end
+npc_begin	[skeleton_infantry]	pos = anywhere	total = 6	respawn = 55sec	npc_end
+npc_begin	[corpse_eater_bat]	pos = anywhere	total = 6	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 6	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_059]	{{-10876;138128;-3880;-3080};{-9352;139540;-3880;-3080};{-12436;140816;-3880;-3080};{-14756;138336;-3880;-3080}}	territory_end
+npcmaker_begin	[gludio_t19_22_059]
+npc_begin	[shield_skeleton]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[skeleton_infantry]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npc_begin	[ruin_imp]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[corpse_eater_bat]	pos = anywhere	total = 5	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_060]	{{-15052;143216;-3732;-3332};{-12532;142796;-3732;-3332};{-11984;144492;-3732;-3332};{-11908;145240;-3732;-3332};{-12968;146408;-3732;-3332};{-13932;146612;-3732;-3332};{-15816;146136;-3732;-3332};{-15584;144128;-3732;-3332}}	territory_end
+npcmaker_begin	[gludio_t19_22_060]	initial_spawn = all
+npc_begin	[ruin_bat]	pos = {-14848;143600;-3677;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[ruin_imp_ribe]	pos = {-14944;145008;-3680;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = {-13408;145104;-3600;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear]	pos = {-13008;143712;-3616;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = {-12192;145120;-3584;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[ruin_bat]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[ruin_imp_ribe]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_061]	{{-14088;139604;-3980;-3480};{-13184;140200;-3980;-3480};{-12452;141784;-3980;-3480};{-12568;142728;-3980;-3480};{-13892;142988;-3980;-3480};{-15024;140932;-3980;-3480}}	territory_end
+npcmaker_begin	[gludio_t19_22_061]	initial_spawn = all
+npc_begin	[zombie_soldier]	pos = {-13888;140224;-3792;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[ruin_bat]	pos = {-13728;141056;-3824;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[zombie_warrior]	pos = {-13552;141984;-3680;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npc_begin	[ruin_bat]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npc_begin	[ruin_imp_ribe]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npc_begin	[zombie_warrior]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_062]	{{-14952;138740;-3920;-3720};{-14136;139556;-3920;-3720};{-15104;140908;-3920;-3720};{-15952;141368;-3920;-3720};{-17268;141308;-3920;-3720};{-18344;138468;-3920;-3720};{-16640;138220;-3920;-3720}}	territory_end
+npcmaker_begin	[gludio_t19_22_062]	initial_spawn = all
+npc_begin	[ruin_bat]	pos = {-17328;139760;-3872;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[ruin_imp_ribe]	pos = {-16656;140768;-3872;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = {-15728;140000;-3820;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear]	pos = {-14384;139536;-3792;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = {-16592;138432;-3808;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[ruin_bat]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[ruin_imp_ribe]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_063]	{{-19276;138084;-3988;-3588};{-18364;138392;-3988;-3588};{-17720;140280;-3988;-3588};{-19208;140048;-3988;-3588};{-20992;138792;-3988;-3588}}	territory_end
+npcmaker_begin	[gludio_t19_22_063]	initial_spawn = all
+npc_begin	[zombie_soldier]	pos = {-19904;138944;-3888;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[ruin_bat]	pos = {-18848;139136;-3888;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[zombie_warrior]	pos = {-18784;139872;-3888;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npc_begin	[ruin_bat]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npc_begin	[ruin_imp_ribe]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npc_begin	[zombie_warrior]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_064]	{{-21108;138816;-3988;-3588};{-19240;140036;-3988;-3588};{-19480;142012;-3988;-3588};{-21308;142148;-3988;-3588};{-22544;141052;-3988;-3588};{-22116;139412;-3988;-3588}}	territory_end
+npcmaker_begin	[gludio_t19_22_064]	initial_spawn = all
+npc_begin	[ruin_bat]	pos = {-21936;139872;-3888;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[ruin_imp_ribe]	pos = {-21568;141328;-3888;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = {-20528;140528;-3888;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear]	pos = {-20208;141696;-3888;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[ruin_bat]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npc_begin	[ruin_imp_ribe]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_065]	{{-22556;141172;-3976;-3576};{-20876;142312;-3976;-3576};{-20500;143488;-3976;-3576};{-22292;144460;-3976;-3576};{-23232;142924;-3976;-3576}}	territory_end
+npcmaker_begin	[gludio_t19_22_065]	initial_spawn = all
+npc_begin	[zombie_soldier]	pos = {-22400;141968;-3888;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[ruin_bat]	pos = {-22480;142896;-3899;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[zombie_warrior]	pos = {-21280;143216;-3856;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npc_begin	[ruin_bat]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npc_begin	[ruin_imp_ribe]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npc_begin	[zombie_warrior]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_066]	{{-20608;143620;-3900;-3500};{-19376;143740;-3900;-3500};{-18144;146316;-3900;-3500};{-19684;146796;-3900;-3500};{-21096;146580;-3900;-3500};{-21776;145804;-3900;-3500};{-22264;144484;-3900;-3500}}	territory_end
+npcmaker_begin	[gludio_t19_22_066]	initial_spawn = all
+npc_begin	[ruin_bat]	pos = {-21856;144640;-3808;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[ruin_imp_ribe]	pos = {-21184;145600;-3744;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = {-20240;144368;-3808;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear]	pos = {-19376;145424;-3776;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = {-19632;146592;-3728;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[ruin_bat]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npc_begin	[ruin_imp_ribe]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npc_begin	[zombie_soldier]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear]	pos = anywhere	total = 4	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_067]	{{-18468;144388;-3948;-3548};{-16044;144108;-3948;-3548};{-15860;146172;-3948;-3548};{-18092;146308;-3948;-3548}}	territory_end
+npcmaker_begin	[gludio_t19_22_067]	initial_spawn = all
+npc_begin	[ruin_bat]	pos = {-17584;144736;-3840;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear]	pos = {-17424;145936;-3776;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear_warrior]	pos = {-16448;145152;-3696;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[ruin_bat]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear_warrior]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_22_068]	{{-19236;142012;-3992;-3792};{-16780;142320;-3992;-3792};{-17096;143740;-3992;-3792};{-18276;143936;-3992;-3792}}	territory_end
+npcmaker_begin	[gludio_t19_22_068]	initial_spawn = all
+npc_begin	[ruin_bat]	pos = {-18448;142512;-3888;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear]	pos = {-17920;143584;-3904;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear_warrior]	pos = {-17232;142656;-3904;0}	total = 1	respawn = 55sec	npc_end
+npc_begin	[ruin_bat]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear]	pos = anywhere	total = 3	respawn = 55sec	npc_end
+npc_begin	[veelan_bugbear_warrior]	pos = anywhere	total = 2	respawn = 55sec	npc_end
+npcmaker_end
+
+territory_begin	[quest_19_18_001]	{{-15080;150008;-3472;-2972};{-11520;147780;-3472;-2972};{-9940;149576;-3472;-2972};{-13964;151396;-3472;-2972}}	territory_end
+npcmaker_begin	[quest_19_18_001]
+npc_begin	[undead_priest]	pos = anywhere	total = 8	respawn = 3min	npc_end
+npcmaker_end
+
+territory_begin	[event_t19_22_001]	{{-21185;139154;-3957;-3557};{-16069;138614;-3957;-3557};{-13097;141086;-3957;-3557};{-12669;145550;-3957;-3557};{-20609;146302;-3957;-3557};{-22657;143282;-3957;-3557}}	territory_end
+npcmaker_begin	[event_t19_22_001]	initial_spawn=all	maximum_npc=5
+npc_begin	[soul_scavenger]	pos={{-20516;140876;-3908;0;20%};{-16721;140353;-3887;0;20%};{-14684;144623;-3636;0;20%};{-17868;142632;-3904;0;20%};{-19967;144341;-3812;0;20%}}	total=1	respawn=2hour	respawn_rand=1hour	Privates=[corpse_scavenger:party_private:1:1min;corpse_scavenger:party_private:1:1min;corpse_scavenger:party_private:1:1min;corpse_scavenger:party_private:1:1min]	npc_end
+npcmaker_end
+
+territory_begin	[event_t19_22_002]	{{-31951;162506;-3462;-2562};{-28055;156958;-3462;-2562};{-24863;155794;-3462;-2562};{-23211;159190;-3462;-2562};{-24471;162854;-3462;-2562}}	territory_end
+npcmaker_begin	[event_t19_22_002]	initial_spawn=all	maximum_npc=7
+npc_begin	[tracker_sharuk]	pos={{-26095;157339;-3013;0;30%};{-29807;161227;-2919;0;30%};{-24505;161077;-2947;0;40%}}	total=1	respawn=3hour	respawn_rand=1hour	Privates=[sharuks_henchmen:party_private:1:1min;sharuks_henchmen:party_private:1:1min;sharuks_henchmen:party_private:1:1min;sharuks_henchmen:party_private:1:1min;sharuks_henchmen:party_private:1:1min;sharuks_henchmen:party_private:1:1min]	npc_end
+npcmaker_end
+

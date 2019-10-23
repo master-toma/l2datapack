@@ -1,0 +1,375 @@
+//--------------------17_21 030917 NPC--------------------
+territory_begin	[NPC_t17_21_030917_01]	{{-97695;106478;-3512;-3312};{-97495;106478;-3512;-3312};{-97495;106678;-3512;-3312};{-97695;106678;-3512;-3312}}	territory_end
+npcmaker_begin	[NPC_t17_21_030917_01]
+npc_begin	[daurin_hammercrush]	pos = {-97611;106574;-3388;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t17_21_030917_02]	{{-85099;105659;-3715;-3515};{-84899;105659;-3715;-3515};{-84899;105859;-3715;-3515};{-85099;105859;-3715;-3515}}	territory_end
+npcmaker_begin	[NPC_t17_21_030917_02]
+npc_begin	[hermit_santiago]	pos = {-85002;105749;-3593;20480}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t17_21_030917_03]	{{-94383;110713;-3677;-3477};{-94183;110713;-3677;-3477};{-94183;110913;-3677;-3477};{-94383;110913;-3677;-3477}}	territory_end
+npcmaker_begin	[NPC_t17_21_030917_03]
+npc_begin	[turek_chief_burai]	pos = {-94294;110818;-3563;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------17_21 030630 NPC--------------------
+territory_begin	[17_21_NPC_0306]	{{-85796;106492;-3619;-3419};{-85596;106492;-3619;-3419};{-85596;106692;-3619;-3419};{-85796;106692;-3619;-3419}}	territory_end
+npcmaker_begin	[17_21_NPC_0306]	initial_spawn = all	maximum_npc = 1
+npc_begin	[piotur]	pos = {-85700;106591;-3555;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------17_21 030514 NPC--------------------
+territory_begin	[17_21_NPC_030514]	{{-69828;116188;-3652;-3452};{-69628;116188;-3652;-3452};{-69628;116388;-3652;-3452};{-69828;116388;-3652;-3452}}	territory_end
+npcmaker_begin	[17_21_NPC_030514]	initial_spawn = all	maximum_npc = 1
+npc_begin	[khavatari_toruku]	pos = {-69734;116264;-3536;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------- 17_21 ----------------------------------------------------------------------------------------
+territory_begin	[gludio_t17_21_010]	{{-85788;109934;-3547;-2347};{-83792;109070;-3547;-2347};{-80744;111826;-3547;-2347};{-83056;112998;-3547;-2347}}	territory_end
+npcmaker_begin	[gludio_t17_21_010]
+npc_begin	[ratman_spy]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[grizzly_bear]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_011]	{{-83215;105014;-3907;-2907};{-78115;101922;-3907;-2907};{-76871;105270;-3907;-2907};{-80243;108538;-3907;-2907};{-83591;108078;-3907;-2907}}	territory_end
+npcmaker_begin	[gludio_t17_21_011]
+npc_begin	[ratman_spy]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npc_begin	[grizzly_bear]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_012]	{{-77791;101979;-3973;-3173};{-71979;100911;-3973;-3173};{-68403;105635;-3973;-3173};{-73203;108795;-3973;-3173};{-76671;105251;-3973;-3173}}	territory_end
+npcmaker_begin	[gludio_t17_21_012]
+npc_begin	[ratman_spy]	pos = anywhere	total = 7	respawn = 35sec	npc_end
+npc_begin	[grizzly_bear]	pos = anywhere	total = 7	respawn = 35sec	npc_end
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_013]	{{-71949;100843;-3964;-3364};{-65789;99787;-3964;-3364};{-65813;105351;-3964;-3364};{-68357;105667;-3964;-3364}}	territory_end
+npcmaker_begin	[gludio_t17_21_013]
+npc_begin	[ratman_spy]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[grizzly_bear]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_014]	{{-73053;98425;-3936;-3386};{-65829;98449;-3936;-3386};{-65821;99665;-3936;-3386};{-77933;101857;-3936;-3386};{-78261;100293;-3936;-3386}}	territory_end
+npcmaker_begin	[gludio_t17_21_014]
+npc_begin	[ratman_spy]	pos = anywhere	total = 8	respawn = 35sec	npc_end
+npc_begin	[grizzly_bear]	pos = anywhere	total = 8	respawn = 35sec	npc_end
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 8	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_015]	{{-68468;105834;-3924;-3224};{-65816;105450;-3924;-3224};{-65824;112606;-3924;-3224};{-69216;113382;-3924;-3224};{-73064;108922;-3924;-3224}}	territory_end
+npcmaker_begin	[gludio_t17_21_015]
+npc_begin	[ratman_spy]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npc_begin	[grizzly_bear]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_tt17_21_016]	{{-67186;113700;-3691;-3291};{-65818;113184;-3691;-3291};{-65818;118440;-3691;-3291};{-68270;118280;-3691;-3291};{-68350;115176;-3691;-3291}}	territory_end
+npcmaker_begin	[gludio_tt17_21_016]
+npc_begin	[puma]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_spy]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[pinrul]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_017]	{{-68328;118346;-3879;-3179};{-65812;118502;-3879;-3179};{-65812;121366;-3879;-3179};{-68344;125386;-3879;-3179};{-71020;123646;-3879;-3179}}	territory_end
+npcmaker_begin	[gludio_t17_21_017]
+npc_begin	[puma]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[ratman_spy]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[pinrul]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_018]	{{-71299;123478;-4344;-3344};{-69647;124522;-4344;-3344};{-71719;128322;-4344;-3344};{-72499;128210;-4344;-3344};{-73575;126794;-4344;-3344};{-73167;125202;-4344;-3344}}	territory_end
+npcmaker_begin	[gludio_t17_21_018]
+npc_begin	[puma]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_spy]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[pinrul]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_019]	{{-72334;128318;-3900;-2900};{-68618;128946;-3900;-2900};{-68446;130902;-3900;-2900};{-71902;130754;-3900;-2900}}	territory_end
+npcmaker_begin	[gludio_t17_21_019]
+npc_begin	[vuku_orc]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_fighter]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_020]	{{-73935;116601;-4073;-2873};{-71391;116473;-4073;-2873};{-69203;118001;-4073;-2873};{-71115;121521;-4073;-2873};{-74011;124573;-4073;-2873};{-77775;122393;-4073;-2873};{-78631;120589;-4073;-2873}}	territory_end
+npcmaker_begin	[gludio_t17_21_020]
+npc_begin	[vuku_orc]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_fighter]	pos = anywhere	total = 7	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_021]	{{-77497;122555;-4337;-3337};{-74109;124719;-4337;-3337};{-74365;128435;-4337;-3337};{-78573;127551;-4337;-3337};{-80593;124663;-4337;-3337}}	territory_end
+npcmaker_begin	[gludio_t17_21_021]
+npc_begin	[vuku_orc]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_fighter]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_022]	{{-84689;126409;-3763;-3363};{-80681;124681;-3763;-3363};{-78597;127577;-3763;-3363};{-80205;129017;-3763;-3363}}	territory_end
+npcmaker_begin	[gludio_t17_21_022]
+npc_begin	[vuku_orc]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_fighter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_023]	{{-83481;129315;-3699;-3299};{-79569;129223;-3699;-3299};{-79485;130755;-3699;-3299};{-84461;130811;-3699;-3299}}	territory_end
+npcmaker_begin	[gludio_t17_21_023]
+npc_begin	[vuku_orc]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_024]	{{-93311;129484;-3354;-2354};{-88791;127828;-3354;-2354};{-85211;130748;-3354;-2354};{-92367;130812;-3354;-2354}}	territory_end
+npcmaker_begin	[gludio_t17_21_024]
+npc_begin	[felim_lizardman_scout]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[felim_lizardman_warrior]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_041]	{{-72814;101878;-3952;-3752};{-72294;102030;-3952;-3752};{-72114;102626;-3952;-3752};{-72622;103102;-3952;-3752};{-72962;102838;-3952;-3752};{-73206;102246;-3952;-3752}}	territory_end
+npcmaker_begin	[gludio_t17_21_041]
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_042]	{{-73534;103940;-3908;-3508};{-71034;103592;-3908;-3508};{-69894;105052;-3908;-3508};{-72786;105928;-3908;-3508}}	territory_end
+npcmaker_begin	[gludio_t17_21_042]
+npc_begin	[grizzly_bear]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_043]	{{-67867;101469;-3838;-3438};{-66351;101577;-3838;-3438};{-66171;104273;-3838;-3438};{-68059;103549;-3838;-3438}}	territory_end
+npcmaker_begin	[gludio_t17_21_043]
+npc_begin	[grizzly_bear]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_044]	{{-70298;109421;-3904;-3454};{-68254;106977;-3904;-3454};{-66262;107601;-3904;-3454};{-67270;111409;-3904;-3454}}	territory_end
+npcmaker_begin	[gludio_t17_21_044]
+npc_begin	[grizzly_bear]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_045]	{{-67268;119399;-3716;-3516};{-66720;119411;-3716;-3516};{-66492;119899;-3716;-3516};{-66708;120163;-3716;-3516};{-67364;119859;-3716;-3516}}	territory_end
+npcmaker_begin	[gludio_t17_21_045]
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_046]	{{-75419;120469;-3733;-3533};{-74363;120413;-3733;-3533};{-73963;121081;-3733;-3533};{-75307;121409;-3733;-3533}}	territory_end
+npcmaker_begin	[gludio_t17_21_046]
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_047]	{{-72956;119947;-3641;-3341};{-71028;118559;-3641;-3341};{-70188;119447;-3641;-3341};{-71364;120987;-3641;-3341}}	territory_end
+npcmaker_begin	[gludio_t17_21_047]
+npc_begin	[pinrul_roader]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_048]	{{-78679;125980;-4073;-3673};{-75403;124784;-4073;-3673};{-74783;126864;-4073;-3673};{-77067;127576;-4073;-3673}}	territory_end
+npcmaker_begin	[gludio_t17_21_048]
+npc_begin	[pinrul_roader]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_t17_21_001]	{{-87084;108648;-3696;-3196};{-84316;107836;-3696;-3196};{-84880;109568;-3696;-3196};{-85676;109872;-3696;-3196}}	territory_end
+npcmaker_begin	[quest_030919_t17_21_001]	initial_spawn = all
+npc_begin	[orc_betrayer_bumbum]	pos = anywhere	total = 1	respawn = 8min	npc_end
+npcmaker_end
+
+//-------------------------------------------------------------------------------
+// 아덴왕국 글루디오영지
+// ver 2003.09.09
+// 투렉 오크 야영지 MAP 17_21
+// 도망가는 AI
+//-------------------------------------------------------------------------------
+territory_begin	[gludio_t17_21_001]	{{-96584;98455;-3777;-3377};{-90944;98459;-3777;-3377};{-92648;103411;-3777;-3377};{-95780;103863;-3777;-3377};{-98176;102999;-3777;-3377};{-98208;99767;-3777;-3377}}	territory_end
+npcmaker_begin	[gludio_t17_21_001]
+npc_begin	[turek_war_hound]	pos=anywhere	total=6	respawn=90sec	ai_parameters={[flee_x]=[-94128];[flee_y]=[100272];[flee_z]=[-3552]}	npc_end
+npc_begin	[turek_orc_sentinel]	pos=anywhere	total=6	respawn=90sec	ai_parameters={[flee_x]=[-94128];[flee_y]=[100272];[flee_z]=[-3552]}	npc_end
+npc_begin	[turek_orc_footman]	pos=anywhere	total=6	respawn=90sec	ai_parameters={[flee_x]=[-94128];[flee_y]=[100272];[flee_z]=[-3552]}	npc_end
+npc_begin	[turek_orc_archer]	pos=anywhere	total=6	respawn=90sec		npc_end
+npc_begin	[turek_orc_supplier]	pos=anywhere	total=6	respawn=90sec	ai_parameters={[flee_x]=[-94128];[flee_y]=[100272];[flee_z]=[-3552]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_002]	{{-90867;98423;-3673;-3273};{-87507;98471;-3673;-3273};{-86667;102683;-3673;-3273};{-89991;104323;-3673;-3273};{-92551;103295;-3673;-3273}}	territory_end
+npcmaker_begin	[gludio_t17_21_002]
+npc_begin	[turek_war_hound]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-90524];[flee_y]=[100268];[flee_z]=[-3576]}	npc_end
+npc_begin	[turek_orc_sentinel]	pos=anywhere	total=5	respawn=90sec	ai_parameters={[flee_x]=[-90524];[flee_y]=[100268];[flee_z]=[-3576]}	npc_end
+npc_begin	[turek_orc_footman]	pos=anywhere	total=5	respawn=90sec	ai_parameters={[flee_x]=[-90524];[flee_y]=[100268];[flee_z]=[-3576]}	npc_end
+npc_begin	[turek_orc_archer]	pos=anywhere	total=4	respawn=90sec		npc_end
+npc_begin	[turek_orc_supplier]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-90524];[flee_y]=[100268];[flee_z]=[-3576]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_003]	{{-92741;103931;-3622;-3222};{-90609;104859;-3622;-3222};{-88933;108087;-3622;-3222};{-94021;109279;-3622;-3222};{-95613;104323;-3622;-3222}}	territory_end
+npcmaker_begin	[gludio_t17_21_003]
+npc_begin	[turek_war_hound]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-91796];[flee_y]=[107228];[flee_z]=[-3576]}	npc_end
+npc_begin	[turek_orc_sentinel]	pos=anywhere	total=5	respawn=90sec	ai_parameters={[flee_x]=[-91796];[flee_y]=[107228];[flee_z]=[-3576]}	npc_end
+npc_begin	[turek_orc_footman]	pos=anywhere	total=5	respawn=90sec	ai_parameters={[flee_x]=[-91796];[flee_y]=[107228];[flee_z]=[-3576]}	npc_end
+npc_begin	[turek_orc_archer]	pos=anywhere	total=4	respawn=90sec		npc_end
+npc_begin	[turek_orc_supplier]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-91796];[flee_y]=[107228];[flee_z]=[-3576]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_004]	{{-98171;103785;-3625;-3225};{-95679;104365;-3625;-3225};{-94071;109289;-3625;-3225};{-96615;111217;-3625;-3225};{-98175;111125;-3625;-3225}}	territory_end
+npcmaker_begin	[gludio_t17_21_004]
+npc_begin	[turek_war_hound]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-97440];[flee_y]=[106656];[flee_z]=[-3392]}	npc_end
+npc_begin	[turek_orc_sentinel]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-97440];[flee_y]=[106656];[flee_z]=[-3392]}	npc_end
+npc_begin	[turek_orc_footman]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-97440];[flee_y]=[106656];[flee_z]=[-3392]}	npc_end
+npc_begin	[turek_orc_archer]	pos=anywhere	total=4	respawn=90sec		npc_end
+npc_begin	[turek_orc_supplier]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-97440];[flee_y]=[106656];[flee_z]=[-3392]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_005]	{{-92570;108924;-3730;-2930};{-88998;108036;-3730;-2930};{-88002;109444;-3730;-2930};{-87890;114768;-3730;-2930};{-92066;113508;-3730;-2930}}	territory_end
+npcmaker_begin	[gludio_t17_21_005]
+npc_begin	[turek_orc_footman]	pos=anywhere	total=5	respawn=90sec	ai_parameters={[flee_x]=[-90784];[flee_y]=[110992];[flee_z]=[-3456]}	npc_end
+npc_begin	[turek_orc_archer]	pos=anywhere	total=5	respawn=90sec		npc_end
+npc_begin	[turek_orc_footman]	pos=anywhere	total=6	respawn=90sec	ai_parameters={[flee_x]=[-90784];[flee_y]=[110992];[flee_z]=[-3456]}	npc_end
+npc_begin	[turek_orc_skimisher]	pos=anywhere	total=6	respawn=90sec	ai_parameters={[flee_x]=[-90784];[flee_y]=[110992];[flee_z]=[-3456]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_006]	{{-94110;109394;-3651;-3201};{-92622;108966;-3651;-3201};{-92146;113402;-3651;-3201};{-94326;114718;-3651;-3201};{-98230;114826;-3651;-3201};{-98198;112378;-3651;-3201}}	territory_end
+npcmaker_begin	[gludio_t17_21_006]
+npc_begin	[turek_orc_footman]	pos=anywhere	total=5	respawn=90sec	ai_parameters={[flee_x]=[-94336];[flee_y]=[110800];[flee_z]=[-3568]}	npc_end
+npc_begin	[turek_orc_archer]	pos=anywhere	total=5	respawn=90sec		npc_end
+npc_begin	[turek_orc_footman]	pos=anywhere	total=6	respawn=90sec	ai_parameters={[flee_x]=[-94336];[flee_y]=[110800];[flee_z]=[-3568]}	npc_end
+npc_begin	[turek_orc_skimisher]	pos=anywhere	total=6	respawn=90sec	ai_parameters={[flee_x]=[-94336];[flee_y]=[110800];[flee_z]=[-3568]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_007]	{{-98148;116460;-3670;-2820};{-92092;113548;-3670;-2820};{-87932;114796;-3670;-2820};{-88380;118716;-3670;-2820};{-92500;120656;-3670;-2820};{-97976;121112;-3670;-2820}}	territory_end
+npcmaker_begin	[gludio_t17_21_007]
+npc_begin	[turek_orc_footman]	pos=anywhere	total=9	respawn=90sec	ai_parameters={[flee_x]=[ -90704];[flee_y]=[118032];[flee_z]=[-3354]}	npc_end
+npc_begin	[turek_orc_archer]	pos=anywhere	total=9	respawn=90sec		npc_end
+npc_begin	[turek_orc_footman]	pos=anywhere	total=9	respawn=90sec	ai_parameters={[flee_x]=[ -90704];[flee_y]=[118032];[flee_z]=[-3354]}	npc_end
+npc_begin	[turek_orc_skimisher]	pos=anywhere	total=9	respawn=90sec	ai_parameters={[flee_x]=[ -90704];[flee_y]=[118032];[flee_z]=[-3354]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_008]	{{-93833;121133;-3391;-2041};{-90501;120345;-3391;-2041};{-89421;121965;-3391;-2041};{-92149;123477;-3391;-2041}}	territory_end
+npcmaker_begin	[gludio_t17_21_008]
+npc_begin	[turek_orc_footman]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[ -90704];[flee_y]=[118032];[flee_z]=[-3354]}	npc_end
+npc_begin	[turek_orc_archer]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[turek_orc_footman]	pos=anywhere	total=3	respawn=90sec	ai_parameters={[flee_x]=[ -90704];[flee_y]=[118032];[flee_z]=[-3354]}	npc_end
+npc_begin	[turek_orc_skimisher]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[ -90704];[flee_y]=[118032];[flee_z]=[-3354]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_009]	{{-87854;110227;-3462;-2462};{-85114;115419;-3462;-2462};{-87794;115743;-3462;-2462}}	territory_end
+npcmaker_begin	[gludio_t17_21_009]
+npc_begin	[turek_orc_footman]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[ -90704];[flee_y]=[118032];[flee_z]=[-3354]}	npc_end
+npc_begin	[turek_orc_archer]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[turek_orc_footman]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[ -90704];[flee_y]=[118032];[flee_z]=[-3354]}	npc_end
+npc_begin	[turek_orc_skimisher]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[ -90704];[flee_y]=[118032];[flee_z]=[-3354]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_025]	{{-94820;99946;-3635;-3435};{-94036;99634;-3635;-3435};{-93412;100346;-3635;-3435};{-94000;100938;-3635;-3435};{-94696;100366;-3635;-3435}}	territory_end
+npcmaker_begin	[gludio_t17_21_025]
+npc_begin	[turek_orc_shaman]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[turek_orc_elder]	pos=anywhere	total=2	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_026]	{{-97353;101261;-3611;-3361};{-95921;100029;-3611;-3361};{-94377;101701;-3611;-3361};{-96025;102633;-3611;-3361}}	territory_end
+npcmaker_begin	[gludio_t17_21_026]
+npc_begin	[turek_orc_sentinel]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-94128];[flee_y]=[100272];[flee_z]=[-3552]}	npc_end
+npc_begin	[turek_orc_footman]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-94128];[flee_y]=[100272];[flee_z]=[-3552]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_027]	{{-91022;100148;-3640;-3390};{-90138;99736;-3640;-3390};{-90034;100364;-3640;-3390};{-90994;100776;-3640;-3390}}	territory_end
+npcmaker_begin	[gludio_t17_21_027]
+npc_begin	[turek_orc_shaman]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[turek_orc_elder]	pos=anywhere	total=2	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_028]	{{-90810;101478;-3488;-3238};{-89086;101338;-3488;-3238};{-88650;102582;-3488;-3238};{-90418;102818;-3488;-3238}}	territory_end
+npcmaker_begin	[gludio_t17_21_028]
+npc_begin	[turek_orc_sentinel]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-90524];[flee_y]=[100268];[flee_z]=[-3576]}	npc_end
+npc_begin	[turek_orc_footman]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-90524];[flee_y]=[100268];[flee_z]=[-3576]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_029]	{{-91762;106794;-3617;-3367};{-91178;107326;-3617;-3367};{-91642;107806;-3617;-3367};{-92186;107738;-3617;-3367};{-92430;107458;-3617;-3367};{-92310;106962;-3617;-3367}}	territory_end
+npcmaker_begin	[gludio_t17_21_029]
+npc_begin	[turek_orc_warlord]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-91796];[flee_y]=[107228];[flee_z]=[-3576]}	npc_end
+npc_begin	[turek_orc_elder]	pos=anywhere	total=2	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_030]	{{-94984;104809;-3576;-3176};{-92868;104477;-3576;-3176};{-91220;105385;-3576;-3176};{-92816;105957;-3576;-3176};{-94032;105881;-3576;-3176}}	territory_end
+npcmaker_begin	[gludio_t17_21_030]
+npc_begin	[turek_orc_footman]	pos=anywhere	total=3	respawn=90sec	ai_parameters={[flee_x]=[-91796];[flee_y]=[107228];[flee_z]=[-3576]}	npc_end
+npc_begin	[turek_orc_supplier]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-91796];[flee_y]=[107228];[flee_z]=[-3576]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_031]	{{-97621;106485;-3483;-3283};{-97165;106405;-3483;-3283};{-96689;106861;-3483;-3283};{-97149;107309;-3483;-3283};{-97589;107181;-3483;-3283}}	territory_end
+npcmaker_begin	[gludio_t17_21_031]
+npc_begin	[turek_orc_shaman]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[turek_orc_elder]	pos=anywhere	total=2	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_032]	{{-97869;109114;-3543;-3143};{-96509;108254;-3543;-3143};{-94905;109050;-3543;-3143};{-96861;110410;-3543;-3143}}	territory_end
+npcmaker_begin	[gludio_t17_21_032]
+npc_begin	[turek_orc_footman]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-97440];[flee_y]=[106656];[flee_z]=[-3392]}	npc_end
+npc_begin	[turek_orc_supplier]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-97440];[flee_y]=[106656];[flee_z]=[-3392]}	npc_end
+npc_begin	[turek_orc_skimisher]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-97440];[flee_y]=[106656];[flee_z]=[-3392]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_033]	{{-91393;110355;-3554;-3354};{-90705;110199;-3554;-3354};{-90369;110979;-3554;-3354};{-90545;111359;-3554;-3354};{-91145;111391;-3554;-3354}}	territory_end
+npcmaker_begin	[gludio_t17_21_033]
+npc_begin	[turek_orc_warlord]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-90784];[flee_y]=[110992];[flee_z]=[-3456]}	npc_end
+npc_begin	[turek_orc_elder]	pos=anywhere	total=2	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_034]	{{-91044;109007;-3612;-3112};{-89424;108939;-3612;-3112};{-88776;109763;-3612;-3112};{-89408;110647;-3612;-3112}}	territory_end
+npcmaker_begin	[gludio_t17_21_034]
+npc_begin	[turek_orc_supplier]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-90784];[flee_y]=[110992];[flee_z]=[-3456]}	npc_end
+npc_begin	[turek_orc_skimisher]	pos=anywhere	total=1	respawn=90sec	ai_parameters={[flee_x]=[-90784];[flee_y]=[110992];[flee_z]=[-3456]}	npc_end
+npc_begin	[turek_orc_shaman]	pos=anywhere	total=1	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_035]	{{-94671;110461;-3684;-3484};{-94131;109917;-3684;-3484};{-93667;110797;-3684;-3484};{-94499;111113;-3684;-3484}}	territory_end
+npcmaker_begin	[gludio_t17_21_035]
+npc_begin	[turek_orc_shaman]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[turek_orc_elder]	pos=anywhere	total=2	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_036]	{{-96817;112514;-3708;-3408};{-93601;111590;-3708;-3408};{-93781;113482;-3708;-3408};{-95721;114286;-3708;-3408}}	territory_end
+npcmaker_begin	[gludio_t17_21_036]
+npc_begin	[turek_orc_supplier]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-94336];[flee_y]=[110800];[flee_z]=[-3568]}	npc_end
+npc_begin	[turek_orc_skimisher]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-94336];[flee_y]=[110800];[flee_z]=[-3568]}	npc_end
+npc_begin	[turek_orc_warlord]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-94336];[flee_y]=[110800];[flee_z]=[-3568]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_037]	{{-90935;117283;-3433;-3233};{-90403;117299;-3433;-3233};{-90151;118111;-3433;-3233};{-90935;118519;-3433;-3233};{-91491;118123;-3433;-3233};{-91415;117591;-3433;-3233}}	territory_end
+npcmaker_begin	[gludio_t17_21_037]
+npc_begin	[turek_orc_shaman]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[turek_orc_warlord]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[ -90704];[flee_y]=[118032];[flee_z]=[-3354]}	npc_end
+npc_begin	[turek_orc_elder]	pos=anywhere	total=2	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_038]	{{-95283;117499;-3525;-3275};{-93975;117035;-3525;-3275};{-93019;119323;-3525;-3275};{-95247;119847;-3525;-3275}}	territory_end
+npcmaker_begin	[gludio_t17_21_038]
+npc_begin	[turek_orc_skimisher]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[ -90704];[flee_y]=[118032];[flee_z]=[-3354]}	npc_end
+npc_begin	[turek_orc_shaman]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[turek_orc_warlord]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[ -90704];[flee_y]=[118032];[flee_z]=[-3354]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_039]	{{-93285;115204;-3633;-3233};{-90873;114468;-3633;-3233};{-90497;115780;-3633;-3233};{-91873;116912;-3633;-3233}}	territory_end
+npcmaker_begin	[gludio_t17_21_039]
+npc_begin	[turek_orc_skimisher]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[ -90704];[flee_y]=[118032];[flee_z]=[-3354]}	npc_end
+npc_begin	[turek_orc_shaman]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[turek_orc_warlord]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[ -90704];[flee_y]=[118032];[flee_z]=[-3354]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_21_040]	{{-92058;121211;-3263;-2813};{-91614;121111;-3263;-2813};{-91462;121411;-3263;-2813};{-91874;121635;-3263;-2813}}	territory_end
+npcmaker_begin	[gludio_t17_21_040]
+npc_begin	[turek_orc_warlord]	pos=anywhere	total=1	respawn=90sec	ai_parameters={[flee_x]=[ -90704];[flee_y]=[118032];[flee_z]=[-3354]}	npc_end
+npc_begin	[turek_orc_elder]	pos=anywhere	total=1	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[event_t17_21_001]	{{-77717;104455;-3970;-3470};{-68897;99367;-3970;-3470};{-66257;101063;-3970;-3470};{-66325;110159;-3970;-3470}}	territory_end
+npcmaker_begin	[event_t17_21_001]	initial_spawn=all	maximum_npc=6
+npc_begin	[tiger_hornet]	pos={{-69421;101236;-3901;0;40%};{-74224;104183;-3774;0;30%};{-67822;106781;-3861;0;30%}}	total=1	respawn=3hour	respawn_rand=1hour	Privates=[yellow_hornet:party_private:1:1min;yellow_hornet:party_private:1:1min;yellow_hornet:party_private:1:1min;yellow_hornet:party_private:1:1min;yellow_hornet:party_private:1:1min]	npc_end
+npcmaker_end
+

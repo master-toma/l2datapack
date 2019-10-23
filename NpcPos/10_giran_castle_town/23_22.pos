@@ -1,0 +1,584 @@
+//------------------------------------------------------------------------------------------------------------------------
+//ver 크로니클 I
+//03.12.22
+//23_22 기란성
+//------------------------------------------------------------------------------------------------------------------------
+//수성측	텔레포터,	시종장,	근위대장,
+territory_begin	[giran_chamberlain_etc]	{{120187;137760;-4566;16886};{120187;148131;-4566;16886};{109114;148130;-4566;16886};{109114;137760;-4566;16886}}	territory_end
+npcmaker_begin	[giran_chamberlain_etc]	initial_spawn=all	maximum_npc=10
+npc_begin	[chamberlain_saul]	pos={117110;144970;-2541;32768}	total=1	respawn=1min	npc_end
+npc_begin	[sir_holmes]	pos={107094;145655;-3375;32768}	total=1	respawn=1min	npc_end
+npc_begin	[giran_default_teleporter1]	pos={113845;144186;-2793;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_default_teleporter2]	pos={115999;145051;-2561;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_default_teleporter3]	pos={117648;144539;-2625;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_outter_doorman]	pos={112676;144730;-2819;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_outter_doorman]	pos={113024;144676;-2819;49152}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_inner_doorman]	pos={115329;144938;-2569;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_inner_doorman]	pos={115590;144837;-2569;49152}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_royal_gatekeeper]	pos={112064;144662;-2831;32768}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//수성	매스	텔레포터
+territory_begin	[giran_mass_teleporter]	{{116741;145956;-1909;14844};{116741;146910;-1909;14844};{116388;146910;-1909;14844};{116387;145957;-1909;14844}}	territory_end
+npcmaker_begin	[giran_mass_teleporter]	initial_spawn=all	maximum_npc=1
+npc_begin	[giran_mass_teleporter]	pos={116550;146650;-1853;49152}	total=1	respawn=1min	npc_end
+npcmaker_end
+
+//외성문	앞.	27
+territory_begin	[giran_siege01]	{{112885;144671;-2860;13793};{112882;145012;-2860;13793};{112664;145006;-2860;13793};{112664;144671;-2860;13793}}	territory_end
+npcmaker_begin	[giran_siege01]	initial_spawn=all	spawn_time=siege_warfare_start(3)	maximum_npc=30
+npc_begin	[giran_bow_guard_s_e]	pos={112830;144722;-2828;31992}	dbname=[giran_siege_001]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112830;144750;-2828;31992}	dbname=[giran_siege_002]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112830;144778;-2828;31992}	dbname=[giran_siege_003]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112830;144806;-2828;31992}	dbname=[giran_siege_004]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112830;144834;-2828;31992}	dbname=[giran_siege_005]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112830;144862;-2828;31992}	dbname=[giran_siege_006]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112830;144890;-2828;31992}	dbname=[giran_siege_007]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112830;144918;-2828;31992}	dbname=[giran_siege_008]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112830;144946;-2828;31992}	dbname=[giran_siege_009]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={112810;144722;-2828;31992}	dbname=[giran_siege_010]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={112810;144750;-2828;31992}	dbname=[giran_siege_011]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={112810;144778;-2828;31992}	dbname=[giran_siege_012]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={112810;144806;-2828;31992}	dbname=[giran_siege_013]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={112810;144834;-2828;31992}	dbname=[giran_siege_014]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={112810;144862;-2828;31992}	dbname=[giran_siege_015]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={112810;144890;-2828;31992}	dbname=[giran_siege_016]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={112810;144918;-2828;31992}	dbname=[giran_siege_017]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={112810;144946;-2828;31992}	dbname=[giran_siege_018]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={112790;144722;-2828;31992}	dbname=[giran_siege_019]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={112790;144750;-2828;31992}	dbname=[giran_siege_020]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={112790;144778;-2828;31992}	dbname=[giran_siege_021]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={112790;144806;-2828;31992}	dbname=[giran_siege_022]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_knight_s]	pos={112790;144834;-2828;31992}	dbname=[giran_siege_023]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={112790;144862;-2828;31992}	dbname=[giran_siege_024]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={112790;144890;-2828;31992}	dbname=[giran_siege_025]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={112790;144918;-2828;31992}	dbname=[giran_siege_026]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={112790;144946;-2828;31992}	dbname=[giran_siege_027]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//외성문	뒤	아래.	39
+territory_begin	[giran_siege02]	{{114029;144193;-2891;13762};{114020;144660;-2891;13762};{113143;144647;-2891;13762};{113143;144165;-2891;13762}}	territory_end
+npcmaker_begin	[giran_siege02]	initial_spawn=all	spawn_time=siege_warfare_start(3)	maximum_npc=50
+npc_begin	[giran_sword_guard_s_e]	pos={113208;144579;-2818;15696}	dbname=[giran_siege_028]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={113239;144580;-2817;15696}	dbname=[giran_siege_029]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_knight_s]	pos={113269;144580;-2817;15696}	dbname=[giran_siege_030]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={113299;144580;-2816;15696}	dbname=[giran_siege_031]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={113330;144579;-2817;15696}	dbname=[giran_siege_032]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={113359;144581;-2816;15696}	dbname=[giran_siege_033]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_knight_s]	pos={113389;144581;-2816;15696}	dbname=[giran_siege_034]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={113419;144581;-2815;15696}	dbname=[giran_siege_035]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={113450;144580;-2816;15696}	dbname=[giran_siege_036]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={113226;144554;-2836;15696}	dbname=[giran_siege_037]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={113256;144554;-2836;15696}	dbname=[giran_siege_038]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={113287;144554;-2835;15696}	dbname=[giran_siege_039]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={113317;144553;-2836;15696}	dbname=[giran_siege_040]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={113347;144555;-2835;15696}	dbname=[giran_siege_041]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={113377;144555;-2835;15696}	dbname=[giran_siege_042]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={113406;144556;-2834;15696}	dbname=[giran_siege_043]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={113438;144555;-2835;15696}	dbname=[giran_siege_044]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113210;144533;-2840;15696}	dbname=[giran_siege_045]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113240;144534;-2840;15696}	dbname=[giran_siege_046]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113270;144534;-2839;15696}	dbname=[giran_siege_047]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113301;144535;-2839;15696}	dbname=[giran_siege_048]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113331;144533;-2839;15696}	dbname=[giran_siege_049]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113361;144535;-2838;15696}	dbname=[giran_siege_050]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113391;144535;-2838;15696}	dbname=[giran_siege_051]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113420;144536;-2837;15696}	dbname=[giran_siege_052]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113452;144535;-2838;15696}	dbname=[giran_siege_053]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113228;144387;-2841;15696}	dbname=[giran_siege_054]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113258;144387;-2840;15696}	dbname=[giran_siege_055]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113289;144387;-2840;15696}	dbname=[giran_siege_056]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113319;144388;-2839;15696}	dbname=[giran_siege_057]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113349;144387;-2839;15696}	dbname=[giran_siege_058]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113379;144389;-2839;15696}	dbname=[giran_siege_059]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113409;144390;-2838;15696}	dbname=[giran_siege_060]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113439;144390;-2838;15696}	dbname=[giran_siege_061]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric_s]	pos={113559;144286;-2832;32284}	dbname=[giran_siege_062]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric_s]	pos={113560;144316;-2833;32284}	dbname=[giran_siege_063]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_e]	pos={113441;144524;-2816;15696}	dbname=[giran_siege_064]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={113377;144523;-2816;15696}	dbname=[giran_siege_065]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={113288;144523;-2816;15696}	dbname=[giran_siege_066]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={113228;144526;-2816;15696}	dbname=[giran_siege_067]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npcmaker_end
+
+//외성문	뒤	위.	27
+territory_begin	[giran_siege03]	{{113658;144530;-2715;13938};{113661;145454;-2715;13938};{113239;145477;-2715;13938};{113238;144525;-2715;13938}}	territory_end
+npcmaker_begin	[giran_siege03]	initial_spawn=all	spawn_time=siege_warfare_start(3)	maximum_npc=30
+npc_begin	[giran_bow_guard_s_e]	pos={113581;144772;-2567;32284}	dbname=[giran_siege_068]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113582;144802;-2568;32284}	dbname=[giran_siege_069]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={113579;144832;-2567;32284}	dbname=[giran_siege_070]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113578;144862;-2567;32284}	dbname=[giran_siege_071]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113577;144891;-2566;32284}	dbname=[giran_siege_072]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113515;144542;-2565;32284}	dbname=[giran_siege_073]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113516;144572;-2566;32284}	dbname=[giran_siege_074]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={113513;144601;-2565;32284}	dbname=[giran_siege_075]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113512;144631;-2565;32284}	dbname=[giran_siege_076]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113511;144661;-2564;32284}	dbname=[giran_siege_077]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113377;145075;-2566;48048}	dbname=[giran_siege_078]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113347;145078;-2567;48048}	dbname=[giran_siege_079]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={113318;145076;-2566;48048}	dbname=[giran_siege_080]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113288;145077;-2566;48048}	dbname=[giran_siege_081]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113258;145078;-2565;48048}	dbname=[giran_siege_082]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={113583;145342;-2669;16328}	dbname=[giran_siege_083]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_knight_s]	pos={113611;145343;-2669;16328}	dbname=[giran_siege_084]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={113638;145347;-2668;16328}	dbname=[giran_siege_085]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={113582;145321;-2658;16328}	dbname=[giran_siege_086]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={113610;145322;-2659;16328}	dbname=[giran_siege_087]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={113637;145326;-2658;16328}	dbname=[giran_siege_088]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={113583;145303;-2644;16328}	dbname=[giran_siege_089]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={113611;145304;-2645;16328}	dbname=[giran_siege_090]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={113638;145308;-2644;16328}	dbname=[giran_siege_091]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric_s]	pos={113624;144975;-2567;39060}	dbname=[giran_siege_092]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//내성문	뒤.53
+territory_begin	[giran_siege04]	{{116251;144660;-2662;13991};{117598;145602;-2662;13991};{115255;145404;-2662;13991};{115226;144673;-2662;13991}}	territory_end
+npcmaker_begin	[giran_siege04]	initial_spawn=all	spawn_time=siege_warfare_start(3)	maximum_npc=70
+npc_begin	[giran_court_guard_s]	pos={115591;144897;-2562;22704}	dbname=[giran_siege_093]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={115616;144914;-2563;22704}	dbname=[giran_siege_094]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={115642;144938;-2562;22704}	dbname=[giran_siege_095]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={115665;144957;-2562;22704}	dbname=[giran_siege_096]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={115683;144972;-2561;22704}	dbname=[giran_siege_097]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={115709;144994;-2563;22704}	dbname=[giran_siege_098]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={115734;145011;-2563;22704}	dbname=[giran_siege_099]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={115755;145031;-2563;22704}	dbname=[giran_siege_100]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={115766;145055;-2564;33460}	dbname=[giran_siege_101]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={115747;145080;-2563;41952}	dbname=[giran_siege_102]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={115723;145098;-2563;41952}	dbname=[giran_siege_103]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={115703;145111;-2562;41952}	dbname=[giran_siege_104]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={115676;145130;-2564;41952}	dbname=[giran_siege_105]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={115652;145149;-2565;41952}	dbname=[giran_siege_106]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={115622;145168;-2564;41952}	dbname=[giran_siege_107]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={115597;145185;-2564;41952}	dbname=[giran_siege_108]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={115578;145198;-2563;41952}	dbname=[giran_siege_109]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={115611;144882;-2564;22704}	dbname=[giran_siege_110]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115635;144900;-2565;22704}	dbname=[giran_siege_111]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={115661;144924;-2564;22704}	dbname=[giran_siege_112]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115685;144943;-2564;22704}	dbname=[giran_siege_113]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={115703;144958;-2563;22704}	dbname=[giran_siege_114]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115729;144979;-2565;22704}	dbname=[giran_siege_115]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={115753;144997;-2565;22704}	dbname=[giran_siege_116]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115774;145016;-2565;22704}	dbname=[giran_siege_117]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={115785;145041;-2566;33460}	dbname=[giran_siege_118]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115784;145069;-2563;33460}	dbname=[giran_siege_119]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={115765;145094;-2562;41952}	dbname=[giran_siege_120]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115741;145112;-2562;41952}	dbname=[giran_siege_121]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={115721;145125;-2561;41952}	dbname=[giran_siege_122]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115694;145144;-2563;41952}	dbname=[giran_siege_123]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={115670;145163;-2564;41952}	dbname=[giran_siege_124]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115640;145182;-2563;41952}	dbname=[giran_siege_125]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={115615;145199;-2563;41952}	dbname=[giran_siege_126]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115596;145212;-2562;41952}	dbname=[giran_siege_127]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115716;144854;-2562;22704}	dbname=[giran_siege_128]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115739;144873;-2562;22704}	dbname=[giran_siege_129]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115757;144888;-2561;22704}	dbname=[giran_siege_130]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115783;144910;-2563;22704}	dbname=[giran_siege_131]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115808;144927;-2564;22704}	dbname=[giran_siege_132]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115774;145155;-2558;41952}	dbname=[giran_siege_133]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115754;145168;-2557;41952}	dbname=[giran_siege_134]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115727;145188;-2559;41952}	dbname=[giran_siege_135]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115703;145206;-2560;41952}	dbname=[giran_siege_136]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115673;145225;-2559;41952}	dbname=[giran_siege_137]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric_s]	pos={115850;145186;-2560;32004}	dbname=[giran_siege_138]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={115850;145220;-2561;32004}	dbname=[giran_siege_139]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={115853;144941;-2561;32004}	dbname=[giran_siege_140]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric_s]	pos={115852;144964;-2561;32004}	dbname=[giran_siege_141]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115578;144889;-2559;41952}	dbname=[giran_siege_142]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_e]	pos={115632;144880;-2562;22704}	dbname=[giran_siege_143]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={115723;144961;-2562;22704}	dbname=[giran_siege_144]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={115714;145146;-2562;22704}	dbname=[giran_siege_145]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={115611;145218;-2562;22704}	dbname=[giran_siege_146]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npcmaker_end
+
+//성물보관소	아래.	58
+territory_begin	[giran_siege05]	{{117997;144262;-2691;13962};{118005;145790;-2691;13962};{117399;145803;-2691;13962};{117400;144262;-2691;13962}}	territory_end
+npcmaker_begin	[giran_siege05]	initial_spawn=all	spawn_time=siege_warfare_start(3)	maximum_npc=60
+npc_begin	[baron_carmon_esthus]	pos={117736;144981;-2624;32728}	dbname=[giran_siege_147]	dbsaving={death_time;parameters;pos}	total=1	respawn=5min	npc_end
+npc_begin	[sir_ulric]	pos={117739;145093;-2623;32728}	dbname=[giran_siege_148]	dbsaving={death_time;parameters;pos}	total=1	respawn=3min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117722;145195;-2629;32728}	dbname=[giran_siege_149]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117723;145232;-2629;32728}	dbname=[giran_siege_150]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117723;145265;-2629;32728}	dbname=[giran_siege_151]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117724;145303;-2629;32728}	dbname=[giran_siege_152]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117724;145340;-2628;32728}	dbname=[giran_siege_153]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117725;145378;-2628;32728}	dbname=[giran_siege_154]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117725;145410;-2628;32728}	dbname=[giran_siege_155]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117726;145448;-2628;32728}	dbname=[giran_siege_156]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117688;145195;-2630;32728}	dbname=[giran_siege_157]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117689;145233;-2630;32728}	dbname=[giran_siege_158]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117689;145266;-2630;32728}	dbname=[giran_siege_159]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117690;145303;-2630;32728}	dbname=[giran_siege_160]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117690;145341;-2629;32728}	dbname=[giran_siege_161]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117691;145378;-2629;32728}	dbname=[giran_siege_162]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117691;145411;-2629;32728}	dbname=[giran_siege_163]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117692;145448;-2629;32728}	dbname=[giran_siege_164]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={117650;145197;-2631;32728}	dbname=[giran_siege_165]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={117651;145235;-2631;32728}	dbname=[giran_siege_166]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_knight]	pos={117651;145267;-2631;32728}	dbname=[giran_siege_167]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={117652;145305;-2631;32728}	dbname=[giran_siege_168]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={117652;145342;-2630;32728}	dbname=[giran_siege_169]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_knight]	pos={117653;145380;-2630;32728}	dbname=[giran_siege_170]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={117653;145412;-2630;32728}	dbname=[giran_siege_171]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={117654;145450;-2630;32728}	dbname=[giran_siege_172]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117716;144635;-2625;32728}	dbname=[giran_siege_173]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117716;144673;-2625;32728}	dbname=[giran_siege_174]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117716;144705;-2625;32728}	dbname=[giran_siege_175]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117717;144743;-2625;32728}	dbname=[giran_siege_176]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117718;144780;-2624;32728}	dbname=[giran_siege_177]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117718;144818;-2624;32728}	dbname=[giran_siege_178]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117719;144851;-2624;32728}	dbname=[giran_siege_179]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_bow_guard_e]	pos={117719;144888;-2624;32728}	dbname=[giran_siege_180]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117681;144636;-2626;32728}	dbname=[giran_siege_181]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117682;144674;-2626;32728}	dbname=[giran_siege_182]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117682;144706;-2626;32728}	dbname=[giran_siege_183]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117683;144744;-2626;32728}	dbname=[giran_siege_184]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117684;144781;-2625;32728}	dbname=[giran_siege_185]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117684;144819;-2625;32728}	dbname=[giran_siege_186]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117684;144851;-2625;32728}	dbname=[giran_siege_187]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_court_guard]	pos={117685;144889;-2625;32728}	dbname=[giran_siege_188]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={117644;144637;-2627;32728}	dbname=[giran_siege_189]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={117645;144675;-2627;32728}	dbname=[giran_siege_190]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_knight]	pos={117645;144708;-2627;32728}	dbname=[giran_siege_191]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={117646;144745;-2627;32728}	dbname=[giran_siege_192]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={117646;144783;-2626;32728}	dbname=[giran_siege_193]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_knight]	pos={117647;144820;-2626;32728}	dbname=[giran_siege_194]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={117647;144853;-2626;32728}	dbname=[giran_siege_195]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_sword_guard_e]	pos={117648;144890;-2626;32728}	dbname=[giran_siege_196]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_cleric]	pos={117881;144715;-2624;32728}	dbname=[giran_siege_197]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_cleric]	pos={117881;144799;-2623;32728}	dbname=[giran_siege_198]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_cleric]	pos={117882;144878;-2623;32728}	dbname=[giran_siege_199]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_cleric]	pos={117882;144953;-2623;32728}	dbname=[giran_siege_200]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_cleric]	pos={117882;145130;-2620;32728}	dbname=[giran_siege_201]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_cleric]	pos={117882;145213;-2620;32728}	dbname=[giran_siege_202]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_cleric]	pos={117883;145293;-2620;32728}	dbname=[giran_siege_203]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[giran_cleric]	pos={117883;145367;-2620;32728}	dbname=[giran_siege_204]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npcmaker_end
+
+//성물보관소	위	오른쪽.(성	정면에서)	23
+territory_begin	[giran_siege06]	{{117830;145282;-2461;14192};{117841;145622;-2461;14192};{116706;145622;-2461;14192};{116707;145286;-2461;14192}}	territory_end
+npcmaker_begin	[giran_siege06]	initial_spawn=all	spawn_time=siege_warfare_start(3)	maximum_npc=30
+npc_begin	[giran_sword_guard_s_e]	pos={116756;145555;-2402;32472}	dbname=[giran_siege_205]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_knight_s]	pos={116756;145529;-2402;32472}	dbname=[giran_siege_206]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={116756;145501;-2401;32472}	dbname=[giran_siege_207]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={116778;145555;-2406;32472}	dbname=[giran_siege_208]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={116778;145528;-2406;32472}	dbname=[giran_siege_209]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={116778;145501;-2405;32472}	dbname=[giran_siege_210]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={116803;145554;-2404;32472}	dbname=[giran_siege_211]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={116803;145527;-2404;32472}	dbname=[giran_siege_212]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_court_guard_s]	pos={116802;145500;-2403;32472}	dbname=[giran_siege_213]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric_s]	pos={116880;145614;-2404;32472}	dbname=[giran_siege_214]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric_s]	pos={116880;145588;-2404;32472}	dbname=[giran_siege_215]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric_s]	pos={116880;145560;-2403;32472}	dbname=[giran_siege_216]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117453;145359;-2407;49076}	dbname=[giran_siege_217]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117490;145360;-2407;49076}	dbname=[giran_siege_218]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={117527;145360;-2406;49076}	dbname=[giran_siege_219]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117563;145361;-2406;49076}	dbname=[giran_siege_220]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117599;145361;-2406;49076}	dbname=[giran_siege_221]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={117637;145362;-2406;49076}	dbname=[giran_siege_222]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117668;145362;-2405;49076}	dbname=[giran_siege_223]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117705;145363;-2405;49076}	dbname=[giran_siege_224]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={117740;145364;-2405;49076}	dbname=[giran_siege_225]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117777;145364;-2405;49076}	dbname=[giran_siege_226]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117814;145364;-2405;49076}	dbname=[giran_siege_227]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//성물보관소	위	왼쪽.(성	정면에서)	23
+territory_begin	[giran_siege07]	{{117744;144445;-2461;14192};{117755;144785;-2461;14192};{116620;144785;-2461;14192};{116621;144449;-2461;14192}}	territory_end
+npcmaker_begin	[giran_siege07]	initial_spawn=all	spawn_time=siege_warfare_start(3)	maximum_npc=30
+npc_begin	[giran_sword_guard_s_e]	pos={116690;144580;-2402;32472}	dbname=[giran_siege_228]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[sword]	npc_end
+npc_begin	[giran_knight_s]	pos={116690;144554;-2402;32472}	dbname=[giran_siege_229]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[sword]	npc_end
+npc_begin	[giran_sword_guard_s_e]	pos={116693;144511;-2401;32472}	dbname=[giran_siege_230]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[sword]	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={116712;144580;-2406;32472}	dbname=[giran_siege_231]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[spear]	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={116712;144553;-2406;32472}	dbname=[giran_siege_232]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[spear]	npc_end
+npc_begin	[giran_spear_guard_s_e]	pos={116712;144526;-2405;32472}	dbname=[giran_siege_233]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[spear]	npc_end
+npc_begin	[giran_court_guard_s]	pos={116737;144579;-2404;32472}	dbname=[giran_siege_234]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[court]	npc_end
+npc_begin	[giran_court_guard_s]	pos={116737;144552;-2404;32472}	dbname=[giran_siege_235]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[court]	npc_end
+npc_begin	[giran_court_guard_s]	pos={116736;144525;-2403;32472}	dbname=[giran_siege_236]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[court]	npc_end
+npc_begin	[giran_cleric_s]	pos={116978;144618;-2404;32472}	dbname=[giran_siege_237]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[cre]	npc_end
+npc_begin	[giran_cleric_s]	pos={116978;144592;-2404;32472}	dbname=[giran_siege_238]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[cre]	npc_end
+npc_begin	[giran_cleric_s]	pos={116978;144564;-2403;32472}	dbname=[giran_siege_239]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[cre]	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117808;144726;-2407;16000}	dbname=[giran_siege_240]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117772;144727;-2407;16000}	dbname=[giran_siege_241]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={117735;144728;-2406;16000}	dbname=[giran_siege_242]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117699;144728;-2406;16000}	dbname=[giran_siege_243]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117663;144728;-2406;16000}	dbname=[giran_siege_244]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={117625;144729;-2406;16000}	dbname=[giran_siege_245]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117594;144729;-2405;16000}	dbname=[giran_siege_246]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117557;144730;-2405;16000}	dbname=[giran_siege_247]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={117522;144730;-2405;16000}	dbname=[giran_siege_248]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117485;144731;-2405;16000}	dbname=[giran_siege_249]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={117448;144732;-2405;16000}	dbname=[giran_siege_250]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//외성난간	20
+territory_begin	[giran_siege08]	{{112963;144244;-2530;14123};{112963;145476;-2530;14123};{112590;145511;-2530;14123};{112598;144246;-2530;14123}}	territory_end
+npcmaker_begin	[giran_siege08]	initial_spawn=all	spawn_time=siege_warfare_start(3)	maximum_npc=20
+npc_begin	[giran_bow_guard_s_e]	pos={112826;145078;-2442;49152}	dbname=[giran_siege_251]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112714;145078;-2442;49152}	dbname=[giran_siege_252]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112655;145125;-2442;40960}	dbname=[giran_siege_253]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112641;145156;-2442;32768}	dbname=[giran_siege_254]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112641;145192;-2442;32768}	dbname=[giran_siege_255]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112641;145227;-2442;32768}	dbname=[giran_siege_256]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112829;144593;-2442;16384}	dbname=[giran_siege_257]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112794;145078;-2442;49152}	dbname=[giran_siege_258]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112787;144593;-2442;16384}	dbname=[giran_siege_259]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112707;144594;-2442;16384}	dbname=[giran_siege_260]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112650;144548;-2442;24576}	dbname=[giran_siege_261]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112638;144516;-2442;32768}	dbname=[giran_siege_262]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112638;144476;-2442;32768}	dbname=[giran_siege_263]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112638;144435;-2442;32768}	dbname=[giran_siege_264]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={112746;144593;-2441;16384}	dbname=[giran_siege_265]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={112675;144582;-2441;24576}	dbname=[giran_siege_266]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={112678;145088;-2441;40960}	dbname=[giran_siege_267]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={112762;145078;-2442;49152}	dbname=[giran_siege_268]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric_s]	pos={112677;144494;-2442;24576}	dbname=[giran_siege_269]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric_s]	pos={112685;145184;-2442;40960}	dbname=[giran_siege_270]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//내성앞	30
+territory_begin	[giran_siege09]	{{114858;144531;-2781;13872};{114858;145513;-2781;13872};{114651;145506;-2781;13872};{114658;144529;-2781;13872}}	territory_end
+npcmaker_begin	[giran_siege09]	initial_spawn=all	spawn_time=siege_warfare_start(3)	maximum_npc=30
+npc_begin	[giran_bow_guard_e]	pos={114822;144978;-2698;32768}	dbname=[giran_siege_271]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_e]	pos={114822;145106;-2698;32768}	dbname=[giran_siege_272]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_e]	pos={114822;145169;-2698;32768}	dbname=[giran_siege_273]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_e]	pos={114822;144914;-2698;32768}	dbname=[giran_siege_274]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_e]	pos={114822;144783;-2697;32768}	dbname=[giran_siege_275]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_e]	pos={114822;144655;-2697;32768}	dbname=[giran_siege_276]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_e]	pos={114822;145297;-2697;32768}	dbname=[giran_siege_277]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_e]	pos={114822;145426;-2697;32768}	dbname=[giran_siege_278]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard]	pos={114822;144850;-2693;32768}	dbname=[giran_siege_279]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard]	pos={114822;145233;-2696;32768}	dbname=[giran_siege_280]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard]	pos={114822;145490;-2693;32768}	dbname=[giran_siege_281]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard]	pos={114822;144591;-2693;32768}	dbname=[giran_siege_282]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric]	pos={114822;145042;-2697;32768}	dbname=[giran_siege_283]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric]	pos={114822;145361;-2693;32768}	dbname=[giran_siege_284]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric]	pos={114822;144719;-2693;32768}	dbname=[giran_siege_285]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_e]	pos={114694;144594;-2709;32768}	dbname=[giran_siege_286]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_e]	pos={114694;144658;-2709;32768}	dbname=[giran_siege_287]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_e]	pos={114694;145490;-2709;32768}	dbname=[giran_siege_288]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_e]	pos={114694;145426;-2709;32768}	dbname=[giran_siege_289]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_knight]	pos={114694;145042;-2709;32768}	dbname=[giran_siege_290]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_e]	pos={114694;144722;-2709;32768}	dbname=[giran_siege_291]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_e]	pos={114694;144786;-2709;32768}	dbname=[giran_siege_292]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_e]	pos={114694;144850;-2709;32768}	dbname=[giran_siege_293]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_e]	pos={114694;144914;-2709;32768}	dbname=[giran_siege_294]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_knight]	pos={114694;144978;-2709;32768}	dbname=[giran_siege_295]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_knight]	pos={114694;145105;-2709;32768}	dbname=[giran_siege_296]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_e]	pos={114694;145169;-2709;32768}	dbname=[giran_siege_297]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_e]	pos={114694;145233;-2709;32768}	dbname=[giran_siege_298]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_e]	pos={114694;145297;-2709;32768}	dbname=[giran_siege_299]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_sword_guard_e]	pos={114694;145361;-2709;32768}	dbname=[giran_siege_300]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//내성난간	20
+territory_begin	[giran_siege10]	{{115328;144564;-2332;14321};{115326;145526;-2332;14321};{114994;145516;-2332;14321};{114994;144559;-2332;14321}}	territory_end
+npcmaker_begin	[giran_siege10]	initial_spawn=all	spawn_time=siege_warfare_start(3)	maximum_npc=20
+npc_begin	[giran_bow_guard_s_e]	pos={115259;145274;-2260;49152}	dbname=[giran_siege_301]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115137;145273;-2260;49152}	dbname=[giran_siege_302]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115076;145328;-2260;40960}	dbname=[giran_siege_303]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115057;145353;-2260;32768}	dbname=[giran_siege_304]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115056;145392;-2260;32768}	dbname=[giran_siege_305]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115056;145428;-2260;32768}	dbname=[giran_siege_306]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115216;145274;-2260;49152}	dbname=[giran_siege_307]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={115101;145302;-2260;40960}	dbname=[giran_siege_308]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={115177;145274;-2259;49152}	dbname=[giran_siege_309]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric_s]	pos={115122;145376;-2261;40960}	dbname=[giran_siege_310]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115265;144821;-2262;16384}	dbname=[giran_siege_311]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115225;144821;-2260;16384}	dbname=[giran_siege_312]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115140;144821;-2261;16384}	dbname=[giran_siege_313]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115075;144763;-2260;24576}	dbname=[giran_siege_314]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115055;144736;-2259;32768}	dbname=[giran_siege_315]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115056;144696;-2260;32768}	dbname=[giran_siege_316]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={115055;144657;-2260;32768}	dbname=[giran_siege_317]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={115181;144821;-2258;16384}	dbname=[giran_siege_318]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={115111;144799;-2261;24576}	dbname=[giran_siege_319]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric_s]	pos={115129;144719;-2258;24576}	dbname=[giran_siege_320]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//***********************************PC수성시	도와주는	가드들************************************
+//외성문	뒤	위.	27
+territory_begin	[giran_siege031]	{{113658;144530;-2715;13938};{113661;145454;-2715;13938};{113239;145477;-2715;13938};{113238;144525;-2715;13938}}	territory_end
+npcmaker_begin	[giran_siege031]	initial_spawn=all	spawn_time=pc_siege_warfare_start(3)	maximum_npc=30
+npc_begin	[giran_bow_guard_s_e]	pos={113581;144772;-2567;32284}	dbname=[giran_siege_321]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={113579;144832;-2567;32284}	dbname=[giran_siege_322]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113577;144891;-2566;32284}	dbname=[giran_siege_323]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113515;144542;-2565;32284}	dbname=[giran_siege_324]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113516;144572;-2566;32284}	dbname=[giran_siege_325]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={113513;144601;-2565;32284}	dbname=[giran_siege_326]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113512;144631;-2565;32284}	dbname=[giran_siege_327]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113377;145075;-2566;48048}	dbname=[giran_siege_328]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={113318;145076;-2566;48048}	dbname=[giran_siege_329]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={113258;145078;-2565;48048}	dbname=[giran_siege_330]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//외성난간	20
+territory_begin	[giran_siege081]	{{112963;144244;-2530;14123};{112963;145476;-2530;14123};{112590;145511;-2530;14123};{112598;144246;-2530;14123}}	territory_end
+npcmaker_begin	[giran_siege081]	initial_spawn=all	spawn_time=pc_siege_warfare_start(3)	maximum_npc=20
+npc_begin	[giran_bow_guard_s_e]	pos={112826;145078;-2442;49152}	dbname=[giran_siege_331]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112714;145078;-2442;49152}	dbname=[giran_siege_332]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112655;145125;-2442;40960}	dbname=[giran_siege_333]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112641;145192;-2442;32768}	dbname=[giran_siege_334]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112787;144593;-2442;16384}	dbname=[giran_siege_335]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112707;144594;-2442;16384}	dbname=[giran_siege_336]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112650;144548;-2442;24576}	dbname=[giran_siege_337]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_bow_guard_s_e]	pos={112638;144476;-2442;32768}	dbname=[giran_siege_338]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={112746;144593;-2441;16384}	dbname=[giran_siege_339]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={112675;144582;-2441;24576}	dbname=[giran_siege_340]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={112678;145088;-2441;40960}	dbname=[giran_siege_341]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_wizard_s]	pos={112762;145078;-2442;49152}	dbname=[giran_siege_342]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric_s]	pos={112677;144494;-2442;24576}	dbname=[giran_siege_343]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[giran_cleric_s]	pos={112685;145184;-2442;40960}	dbname=[giran_siege_344]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//--------------------23_22 (NPC) 031224--------------------
+territory_begin	[NPC_23_22_031224_01]	{{116876;145180;-2613;-2413};{117076;145180;-2613;-2413};{117076;145380;-2613;-2413};{116876;145380;-2613;-2413}}	territory_end
+npcmaker_begin	[NPC_23_22_031224_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[arvid]	pos = {116984;145278;-2555;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------23_22 (NPC) 030917--------------------
+territory_begin	[NPC_t23_22_030917_01]	{{106252;135416;-3531;-3331};{106452;135416;-3531;-3331};{106452;135616;-3531;-3331};{106252;135616;-3531;-3331}}	territory_end
+npcmaker_begin	[NPC_t23_22_030917_01]
+npc_begin	[summoner_brynthea]	pos = {106345;135523;-3415;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//------------------------- 23_22 기란 동부/인나드릴 --------------------------------------------------------
+territory_begin	[giran_t23_22_001]	{{98568;131285;-3710;-3110};{105704;131257;-3710;-3110};{101544;136277;-3710;-3110};{98580;136645;-3710;-3110}}	territory_end
+npcmaker_begin	[giran_t23_22_001]
+npc_begin	[amber_basilisk]	pos = anywhere	total = 12	respawn = 95sec	npc_end
+npc_begin	[turak_bugbear]	pos = anywhere	total = 12	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_002]	{{108656;133410;-3702;-3102};{111336;134830;-3702;-3102};{110404;137474;-3702;-3102};{104064;139002;-3702;-3102};{101940;136322;-3702;-3102};{104604;132874;-3702;-3102}}	territory_end
+npcmaker_begin	[giran_t23_22_002]
+npc_begin	[harpy]	pos = anywhere	total = 10	respawn = 95sec	npc_end
+npc_begin	[turak_bugbear_warrior]	pos = anywhere	total = 10	respawn = 95sec	npc_end
+npc_begin	[medusa]	pos = anywhere	total = 10	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_003]	{{114170;134557;-3695;-3295};{115286;135489;-3695;-3295};{114142;138361;-3695;-3295};{111762;138781;-3695;-3295};{110450;137501;-3695;-3295};{111418;134737;-3695;-3295}}	territory_end
+npcmaker_begin	[giran_t23_22_003]
+npc_begin	[harpy]	pos = anywhere	total = 10	respawn = 95sec	npc_end
+npc_begin	[medusa]	pos = anywhere	total = 10	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_004]	{{105900;131240;-3695;-2695};{115576;131244;-3695;-2695};{114304;133808;-3695;-2695};{111184;134520;-3695;-2695};{104752;132720;-3695;-2695}}	territory_end
+npcmaker_begin	[giran_t23_22_004]
+npc_begin	[turak_bugbear]	pos = anywhere	total = 8	respawn = 95sec	npc_end
+npc_begin	[turak_bugbear_warrior]	pos = anywhere	total = 8	respawn = 95sec	npc_end
+npc_begin	[medusa]	pos = anywhere	total = 8	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_005]	{{115707;131281;-3661;-2861};{123119;131241;-3661;-2861};{123587;132421;-3661;-2861};{114923;134173;-3661;-2861}}	territory_end
+npcmaker_begin	[giran_t23_22_005]
+npc_begin	[turak_bugbear]	pos = anywhere	total = 7	respawn = 95sec	npc_end
+npc_begin	[turak_bugbear_warrior]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[medusa]	pos = anywhere	total = 7	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_006]	{{115333;135579;-3628;-3228};{117481;134227;-3628;-3228};{119213;136751;-3628;-3228};{116845;138411;-3628;-3228};{115649;138407;-3628;-3228};{114593;137567;-3628;-3228}}	territory_end
+npcmaker_begin	[giran_t23_22_006]
+npc_begin	[harpy]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[turak_bugbear_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[medusa]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_007]	{{117654;134241;-3744;-2944};{123458;132553;-3744;-2944};{126494;135081;-3744;-2944};{121894;138029;-3744;-2944};{119230;136561;-3744;-2944}}	territory_end
+npcmaker_begin	[giran_t23_22_007]
+npc_begin	[harpy]	pos = anywhere	total = 9	respawn = 95sec	npc_end
+npc_begin	[turak_bugbear_warrior]	pos = anywhere	total = 8	respawn = 95sec	npc_end
+npc_begin	[medusa]	pos = anywhere	total = 8	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_008]	{{126509;135214;-3746;-2946};{128513;138706;-3746;-2946};{126013;139638;-3746;-2946};{122021;138090;-3746;-2946}}	territory_end
+npcmaker_begin	[giran_t23_22_008]
+npc_begin	[harpy]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[medusa]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[wyrm]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_009]	{{126609;135200;-3727;-2727};{130761;132872;-3727;-2727};{130729;137436;-3727;-2727};{128533;138524;-3727;-2727}}	territory_end
+npcmaker_begin	[giran_t23_22_009]
+npc_begin	[harpy]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[medusa]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[wyrm]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_010]	{{104041;139195;-3672;-3272};{106201;138567;-3672;-3272};{106325;144315;-3672;-3272};{104661;143699;-3672;-3272};{103705;140663;-3672;-3272}}	territory_end
+npcmaker_begin	[giran_t23_22_010]
+npc_begin	[turak_bugbear]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[harpy]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[turak_bugbear_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_011]	{{104032;143947;-3757;-3357};{105972;145027;-3757;-3357};{105888;147427;-3757;-3357};{102596;147267;-3757;-3357}}	territory_end
+npcmaker_begin	[giran_t23_22_011]
+npc_begin	[amber_basilisk]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[turak_bugbear]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[turak_bugbear_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_012]	{{98534;137614;-3614;-3014};{100414;137018;-3614;-3014};{102406;138386;-3614;-3014};{102150;140358;-3614;-3014};{98430;139234;-3614;-3014}}	territory_end
+npcmaker_begin	[giran_t23_22_012]
+npc_begin	[amber_basilisk]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[turak_bugbear]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_013]	{{102108;140406;-3769;-3169};{103400;141834;-3769;-3169};{103880;143818;-3769;-3169};{102488;147410;-3769;-3169};{100596;145302;-3769;-3169};{100508;139890;-3769;-3169}}	territory_end
+npcmaker_begin	[giran_t23_22_013]
+npc_begin	[amber_basilisk]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[turak_bugbear]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[turak_bugbear_warrior]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_014]	{{100435;145385;-3838;-2838};{101571;146661;-3838;-2838};{102767;151713;-3838;-2838};{98599;152713;-3838;-2838};{98551;145261;-3838;-2838}}	territory_end
+npcmaker_begin	[giran_t23_22_014]
+npc_begin	[amber_basilisk]	pos = anywhere	total = 9	respawn = 95sec	npc_end
+npc_begin	[turak_bugbear]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[turak_bugbear_warrior]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_020]	{{99260;131834;-3648;-3248};{102548;132310;-3648;-3248};{101096;134430;-3648;-3248};{98976;133934;-3648;-3248}}	territory_end
+npcmaker_begin	[giran_t23_22_020]
+npc_begin	[turak_bugbear_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_021]	{{103010;136290;-3685;-3285};{104614;134422;-3685;-3285};{106534;137434;-3685;-3285};{104314;137610;-3685;-3285}}	territory_end
+npcmaker_begin	[giran_t23_22_021]
+npc_begin	[medusa]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_022]	{{108971;134343;-3427;-3027};{110355;135147;-3427;-3027};{109611;136455;-3427;-3027};{106811;135347;-3427;-3027}}	territory_end
+npcmaker_begin	[giran_t23_22_022]
+npc_begin	[wyrm]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_023]	{{113699;135118;-3687;-3287};{114375;135770;-3687;-3287};{113459;137370;-3687;-3287};{111423;137014;-3687;-3287};{111979;135406;-3687;-3287}}	territory_end
+npcmaker_begin	[giran_t23_22_023]
+npc_begin	[wyrm]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_024]	{{120034;134368;-3741;-3141};{123102;133248;-3741;-3141};{124806;135560;-3741;-3141};{121918;136436;-3741;-3141}}	territory_end
+npcmaker_begin	[giran_t23_22_024]
+npc_begin	[wyrm]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_025]	{{124399;137888;-3793;-3193};{126711;136368;-3793;-3193};{127651;138368;-3793;-3193};{126099;138992;-3793;-3193}}	territory_end
+npcmaker_begin	[giran_t23_22_025]
+npc_begin	[wyrm]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t23_22_026]	{{128054;134646;-3386;-2986};{130370;133610;-3386;-2986};{130430;135518;-3386;-2986};{128666;136166;-3386;-2986}}	territory_end
+npcmaker_begin	[giran_t23_22_026]
+npc_begin	[wyrm]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_23_22_001]	{{106252;135416;-3531;-3331};{106452;135416;-3531;-3331};{106452;135616;-3531;-3331};{106252;135616;-3531;-3331}}	territory_end
+npcmaker_begin	[quest_030919_23_22_001]	initial_spawn = all
+npc_begin	[silhouette_tilfo]	pos = anywhere	total = 1	respawn = 3min	npc_end
+npcmaker_end
+
+territory_begin	[23_22_event_031216_01]	{{115440;131412;-3648;-3148};{122856;131384;-3648;-3148};{128600;135944;-3648;-3148};{123676;138276;-3648;-3148};{116356;135528;-3648;-3148}}	territory_end
+npcmaker_begin	[23_22_event_031216_01]	initial_spawn=all	maximum_npc=7
+npc_begin	[adherent_of_antaras_skyla]	pos={{118208;132320;-3472;0;25%};{117632;135312;-3560;0;25%};{123824;136736;-3531;0;25%};{123632;133824;-3648;0;25%}}	total=1	respawn=2hour	respawn_rand=1hour	Privates=[skylas_retainer:skylas_retainer:1:1min;skylas_retainer:skylas_retainer:1:1min;skylas_retainer:skylas_retainer:1:1min;skylas_retainer:skylas_retainer:1:1min;skylas_retainer:skylas_retainer:1:1min;skylas_retainer:skylas_retainer:1:1min]	npc_end
+npcmaker_end
+

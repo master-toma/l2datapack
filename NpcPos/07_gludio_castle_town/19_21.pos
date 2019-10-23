@@ -1,0 +1,855 @@
+//---------------------------------------------------------------------
+//ver 크로니클 I
+//03.12.22
+//19_21 (글루디오 성)
+//---------------------------------------------------------------------
+//수성측	텔레포터,	시종장,	근위대장,
+territory_begin	[gludio_chamberlain_etc]	{{-25394;105739;-4497;502};{-15023;105739;-4497;502};{-15024;116812;-4497;502};{-25394;116812;-4497;502}}	territory_end
+npcmaker_begin	[gludio_chamberlain_etc]	initial_spawn=all	maximum_npc=10
+npc_begin	[chamberlain_saius]	pos={-18184;108816;-2472;16384}	total=1	respawn=1min	npc_end
+npc_begin	[sir_tyron]	pos={-15144;116712;-3216;16384}	total=1	respawn=1min	npc_end
+npc_begin	[gludio_default_teleporter1]	pos={-18968;112081;-2724;16384}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_default_teleporter2]	pos={-18103;109927;-2492;16384}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_default_teleporter3]	pos={-18615;108278;-2556;16384}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_outter_doorman]	pos={-18424;113250;-2750;16384}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_outter_doorman]	pos={-18478;112902;-2750;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_inner_doorman]	pos={-18216;110597;-2500;16384}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_inner_doorman]	pos={-18317;110336;-2500;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_royal_gatekeeper]	pos={-18492;113862;-2762;16384}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//수성	매스	텔레포터
+territory_begin	[gludio_mass_teleporter]	{{-17198;109185;-1840;-1540};{-16244;109185;-1840;-1540};{-16244;109538;-1840;-1540};{-17197;109539;-1840;-1540}}	territory_end
+npcmaker_begin	[gludio_mass_teleporter]	initial_spawn=all	maximum_npc=1
+npc_begin	[gludio_mass_teleporter]	pos={-16504;109376;-1784;32768}	total=1	respawn=1min	npc_end
+npcmaker_end
+
+//외성문	앞.	27
+territory_begin	[gludio_siege01]	{{-18483;113041;-2791;-2591};{-18142;113044;-2791;-2591};{-18148;113262;-2791;-2591};{-18483;113262;-2791;-2591}}	territory_end
+npcmaker_begin	[gludio_siege01]	initial_spawn=all	spawn_time=siege_warfare_start(1)	maximum_npc=30
+npc_begin	[gludio_bow_guard_s_e]	pos={-18432;113096;-2759;15608}	dbname=[gludio_siege_001]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18404;113096;-2759;15608}	dbname=[gludio_siege_002]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18376;113096;-2759;15608}	dbname=[gludio_siege_003]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18348;113096;-2759;15608}	dbname=[gludio_siege_004]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18320;113096;-2759;15608}	dbname=[gludio_siege_005]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18292;113096;-2759;15608}	dbname=[gludio_siege_006]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18264;113096;-2759;15608}	dbname=[gludio_siege_007]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18236;113096;-2759;15608}	dbname=[gludio_siege_008]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18208;113096;-2759;15608}	dbname=[gludio_siege_009]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18432;113116;-2759;15608}	dbname=[gludio_siege_010]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-18404;113116;-2759;15608}	dbname=[gludio_siege_011]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18376;113116;-2759;15608}	dbname=[gludio_siege_012]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-18348;113116;-2759;15608}	dbname=[gludio_siege_013]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18320;113116;-2759;15608}	dbname=[gludio_siege_014]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-18292;113116;-2759;15608}	dbname=[gludio_siege_015]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18264;113116;-2759;15608}	dbname=[gludio_siege_016]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-18236;113116;-2759;15608}	dbname=[gludio_siege_017]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18208;113116;-2759;15608}	dbname=[gludio_siege_018]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18432;113136;-2759;15608}	dbname=[gludio_siege_019]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18404;113136;-2759;15608}	dbname=[gludio_siege_020]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18376;113136;-2759;15608}	dbname=[gludio_siege_021]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18348;113136;-2759;15608}	dbname=[gludio_siege_022]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_knight_s]	pos={-18320;113136;-2759;15608}	dbname=[gludio_siege_023]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18292;113136;-2759;15608}	dbname=[gludio_siege_024]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18264;113136;-2759;15608}	dbname=[gludio_siege_025]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18236;113136;-2759;15608}	dbname=[gludio_siege_026]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18208;113136;-2759;15608}	dbname=[gludio_siege_027]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//외성문	뒤	아래.	39
+territory_begin	[gludio_siege02]	{{-18961;111897;-2822;-2622};{-18494;111906;-2822;-2622};{-18507;112783;-2822;-2622};{-18989;112783;-2822;-2622}}	territory_end
+npcmaker_begin	[gludio_siege02]	initial_spawn=all	spawn_time=siege_warfare_start(1)	maximum_npc=50
+npc_begin	[gludio_sword_guard_s_e]	pos={-18575;112718;-2749;-688}	dbname=[gludio_siege_028]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18574;112687;-2748;-688}	dbname=[gludio_siege_029]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_knight_s]	pos={-18574;112657;-2748;-688}	dbname=[gludio_siege_030]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18574;112627;-2747;-688}	dbname=[gludio_siege_031]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18575;112596;-2748;-688}	dbname=[gludio_siege_032]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18573;112567;-2747;-688}	dbname=[gludio_siege_033]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_knight_s]	pos={-18573;112537;-2747;-688}	dbname=[gludio_siege_034]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18573;112507;-2746;-688}	dbname=[gludio_siege_035]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18574;112476;-2747;-688}	dbname=[gludio_siege_036]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18600;112700;-2767;-688}	dbname=[gludio_siege_037]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18600;112670;-2767;-688}	dbname=[gludio_siege_038]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-18600;112639;-2766;-688}	dbname=[gludio_siege_039]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18601;112609;-2767;-688}	dbname=[gludio_siege_040]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18599;112579;-2766;-688}	dbname=[gludio_siege_041]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-18599;112549;-2766;-688}	dbname=[gludio_siege_042]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18598;112520;-2765;-688}	dbname=[gludio_siege_043]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18599;112488;-2766;-688}	dbname=[gludio_siege_044]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18621;112716;-2771;-688}	dbname=[gludio_siege_045]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18620;112686;-2771;-688}	dbname=[gludio_siege_046]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18620;112656;-2770;-688}	dbname=[gludio_siege_047]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18619;112625;-2770;-688}	dbname=[gludio_siege_048]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18621;112595;-2770;-688}	dbname=[gludio_siege_049]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18619;112565;-2769;-688}	dbname=[gludio_siege_050]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18619;112535;-2769;-688}	dbname=[gludio_siege_051]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18618;112506;-2768;-688}	dbname=[gludio_siege_052]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18619;112474;-2769;-688}	dbname=[gludio_siege_053]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18767;112698;-2772;-688}	dbname=[gludio_siege_054]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18767;112668;-2771;-688}	dbname=[gludio_siege_055]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18767;112637;-2771;-688}	dbname=[gludio_siege_056]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18766;112607;-2770;-688}	dbname=[gludio_siege_057]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18767;112577;-2770;-688}	dbname=[gludio_siege_058]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18765;112547;-2770;-688}	dbname=[gludio_siege_059]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18764;112517;-2769;-688}	dbname=[gludio_siege_060]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18764;112487;-2769;-688}	dbname=[gludio_siege_061]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric_s]	pos={-18868;112367;-2763;15900}	dbname=[gludio_siege_062]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric_s]	pos={-18838;112366;-2764;15900}	dbname=[gludio_siege_063]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18630;112485;-2747;-688}	dbname=[gludio_siege_064]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18631;112549;-2747;-688}	dbname=[gludio_siege_065]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18631;112638;-2747;-688}	dbname=[gludio_siege_066]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18628;112698;-2747;-688}	dbname=[gludio_siege_067]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npcmaker_end
+
+//외성문	뒤	위.	27
+territory_begin	[gludio_siege03]	{{-18624;112268;-2646;-2446};{-17700;112265;-2646;-2446};{-17677;112687;-2646;-2446};{-18629;112688;-2646;-2446}}	territory_end
+npcmaker_begin	[gludio_siege03]	initial_spawn=all	spawn_time=siege_warfare_start(1)	maximum_npc=30
+npc_begin	[gludio_bow_guard_s_e]	pos={-18382;112345;-2498;15900}	dbname=[gludio_siege_068]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18352;112344;-2499;15900}	dbname=[gludio_siege_069]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18322;112347;-2498;15900}	dbname=[gludio_siege_070]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18292;112348;-2498;15900}	dbname=[gludio_siege_071]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18263;112349;-2497;15900}	dbname=[gludio_siege_072]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18612;112411;-2496;15900}	dbname=[gludio_siege_073]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18582;112410;-2497;15900}	dbname=[gludio_siege_074]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18553;112413;-2496;15900}	dbname=[gludio_siege_075]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18523;112414;-2496;15900}	dbname=[gludio_siege_076]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18493;112415;-2495;15900}	dbname=[gludio_siege_077]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18079;112549;-2497;31664}	dbname=[gludio_siege_078]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18076;112579;-2498;31664}	dbname=[gludio_siege_079]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18078;112608;-2497;31664}	dbname=[gludio_siege_080]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18077;112638;-2497;31664}	dbname=[gludio_siege_081]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18076;112668;-2496;31664}	dbname=[gludio_siege_082]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-17812;112343;-2600;-56}	dbname=[gludio_siege_083]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_knight_s]	pos={-17811;112315;-2600;-56}	dbname=[gludio_siege_084]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-17807;112288;-2599;-56}	dbname=[gludio_siege_085]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-17833;112344;-2589;-56}	dbname=[gludio_siege_086]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-17832;112316;-2590;-56}	dbname=[gludio_siege_087]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-17828;112289;-2589;-56}	dbname=[gludio_siege_088]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-17851;112343;-2575;-56}	dbname=[gludio_siege_089]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-17850;112315;-2576;-56}	dbname=[gludio_siege_090]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-17846;112288;-2575;-56}	dbname=[gludio_siege_091]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric_s]	pos={-18179;112302;-2498;22676}	dbname=[gludio_siege_092]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//내성문	뒤.53
+territory_begin	[gludio_siege04]	{{-18494;109675;-2593;-2393};{-17552;108328;-2593;-2393};{-17750;110671;-2593;-2393};{-18481;110700;-2593;-2393}}	territory_end
+npcmaker_begin	[gludio_siege04]	initial_spawn=all	spawn_time=siege_warfare_start(1)	maximum_npc=70
+npc_begin	[gludio_court_guard_s]	pos={-18257;110335;-2493;6320}	dbname=[gludio_siege_093]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18240;110310;-2494;6320}	dbname=[gludio_siege_094]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-18216;110284;-2493;6320}	dbname=[gludio_siege_095]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18197;110261;-2493;6320}	dbname=[gludio_siege_096]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-18182;110243;-2492;6320}	dbname=[gludio_siege_097]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18160;110217;-2494;6320}	dbname=[gludio_siege_098]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-18143;110192;-2494;6320}	dbname=[gludio_siege_099]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18123;110171;-2494;6320}	dbname=[gludio_siege_100]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-18099;110160;-2495;17076}	dbname=[gludio_siege_101]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18074;110179;-2494;25568}	dbname=[gludio_siege_102]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-18056;110203;-2494;25568}	dbname=[gludio_siege_103]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18043;110223;-2493;25568}	dbname=[gludio_siege_104]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-18024;110250;-2495;25568}	dbname=[gludio_siege_105]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18005;110274;-2496;25568}	dbname=[gludio_siege_106]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-17986;110304;-2495;25568}	dbname=[gludio_siege_107]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-17969;110329;-2495;25568}	dbname=[gludio_siege_108]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-17956;110348;-2494;25568}	dbname=[gludio_siege_109]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18272;110315;-2495;6320}	dbname=[gludio_siege_110]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18254;110291;-2496;6320}	dbname=[gludio_siege_111]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18230;110265;-2495;6320}	dbname=[gludio_siege_112]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18211;110241;-2495;6320}	dbname=[gludio_siege_113]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18196;110223;-2494;6320}	dbname=[gludio_siege_114]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18175;110197;-2496;6320}	dbname=[gludio_siege_115]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18157;110173;-2496;6320}	dbname=[gludio_siege_116]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18138;110152;-2496;6320}	dbname=[gludio_siege_117]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18113;110141;-2497;17076}	dbname=[gludio_siege_118]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18085;110142;-2494;17076}	dbname=[gludio_siege_119]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18060;110161;-2493;25568}	dbname=[gludio_siege_120]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18042;110185;-2493;25568}	dbname=[gludio_siege_121]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18029;110205;-2492;25568}	dbname=[gludio_siege_122]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18010;110232;-2494;25568}	dbname=[gludio_siege_123]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-17991;110256;-2495;25568}	dbname=[gludio_siege_124]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17972;110286;-2494;25568}	dbname=[gludio_siege_125]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-17955;110311;-2494;25568}	dbname=[gludio_siege_126]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17942;110330;-2493;25568}	dbname=[gludio_siege_127]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18300;110210;-2493;6320}	dbname=[gludio_siege_128]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18281;110187;-2493;6320}	dbname=[gludio_siege_129]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18266;110169;-2492;6320}	dbname=[gludio_siege_130]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18244;110143;-2494;6320}	dbname=[gludio_siege_131]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18227;110118;-2495;6320}	dbname=[gludio_siege_132]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17999;110152;-2489;25568}	dbname=[gludio_siege_133]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17986;110172;-2488;25568}	dbname=[gludio_siege_134]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17966;110199;-2490;25568}	dbname=[gludio_siege_135]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17948;110223;-2491;25568}	dbname=[gludio_siege_136]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17929;110253;-2490;25568}	dbname=[gludio_siege_137]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric_s]	pos={-17968;110076;-2491;15620}	dbname=[gludio_siege_138]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-17934;110076;-2492;15620}	dbname=[gludio_siege_139]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18213;110073;-2492;15620}	dbname=[gludio_siege_140]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric_s]	pos={-18190;110074;-2492;15620}	dbname=[gludio_siege_141]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18265;110348;-2490;25568}	dbname=[gludio_siege_142]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18274;110294;-2493;6320}	dbname=[gludio_siege_143]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18193;110203;-2493;6320}	dbname=[gludio_siege_144]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18008;110212;-2493;6320}	dbname=[gludio_siege_145]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-17936;110315;-2493;6320}	dbname=[gludio_siege_146]	dbsaving={death_time;parameters;pos}	total=1	respawn=1min	npc_end
+npcmaker_end
+
+//성물보관소	아래.	58
+territory_begin	[gludio_siege05]	{{-18892;107929;-2622;-2422};{-17364;107921;-2622;-2422};{-17351;108527;-2622;-2422};{-18892;108526;-2622;-2422}}	territory_end
+npcmaker_begin	[gludio_siege05]	initial_spawn=all	spawn_time=siege_warfare_start(1)	maximum_npc=60
+npc_begin	[duke_lewin_waldner]	pos={-18173;108190;-2555;16344}	dbname=[gludio_siege_147]	dbsaving={death_time;parameters;pos}	total=1	respawn=5min	npc_end
+npc_begin	[sir_cronenberg]	pos={-18061;108187;-2554;16344}	dbname=[gludio_siege_148]	dbsaving={death_time;parameters;pos}	total=1	respawn=3min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-17959;108204;-2560;16344}	dbname=[gludio_siege_149]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-17922;108203;-2560;16344}	dbname=[gludio_siege_150]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-17889;108203;-2560;16344}	dbname=[gludio_siege_151]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-17851;108202;-2560;16344}	dbname=[gludio_siege_152]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-17814;108202;-2559;16344}	dbname=[gludio_siege_153]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-17776;108201;-2559;16344}	dbname=[gludio_siege_154]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-17744;108201;-2559;16344}	dbname=[gludio_siege_155]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-17706;108200;-2559;16344}	dbname=[gludio_siege_156]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-17959;108238;-2561;16344}	dbname=[gludio_siege_157]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-17921;108237;-2561;16344}	dbname=[gludio_siege_158]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-17888;108237;-2561;16344}	dbname=[gludio_siege_159]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-17851;108236;-2561;16344}	dbname=[gludio_siege_160]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-17813;108236;-2560;16344}	dbname=[gludio_siege_161]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-17776;108235;-2560;16344}	dbname=[gludio_siege_162]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-17743;108235;-2560;16344}	dbname=[gludio_siege_163]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-17706;108234;-2560;16344}	dbname=[gludio_siege_164]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-17957;108276;-2562;16344}	dbname=[gludio_siege_165]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-17919;108275;-2562;16344}	dbname=[gludio_siege_166]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_knight]	pos={-17887;108275;-2562;16344}	dbname=[gludio_siege_167]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-17849;108274;-2562;16344}	dbname=[gludio_siege_168]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-17812;108274;-2561;16344}	dbname=[gludio_siege_169]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_knight]	pos={-17774;108273;-2561;16344}	dbname=[gludio_siege_170]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-17742;108273;-2561;16344}	dbname=[gludio_siege_171]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-17704;108272;-2561;16344}	dbname=[gludio_siege_172]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-18519;108210;-2556;16344}	dbname=[gludio_siege_173]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-18481;108210;-2556;16344}	dbname=[gludio_siege_174]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-18449;108210;-2556;16344}	dbname=[gludio_siege_175]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-18411;108209;-2556;16344}	dbname=[gludio_siege_176]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-18374;108208;-2555;16344}	dbname=[gludio_siege_177]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-18336;108208;-2555;16344}	dbname=[gludio_siege_178]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-18303;108207;-2555;16344}	dbname=[gludio_siege_179]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-18266;108207;-2555;16344}	dbname=[gludio_siege_180]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-18518;108245;-2557;16344}	dbname=[gludio_siege_181]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-18480;108244;-2557;16344}	dbname=[gludio_siege_182]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-18448;108244;-2557;16344}	dbname=[gludio_siege_183]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-18410;108243;-2557;16344}	dbname=[gludio_siege_184]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-18373;108242;-2556;16344}	dbname=[gludio_siege_185]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-18335;108242;-2556;16344}	dbname=[gludio_siege_186]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-18303;108242;-2556;16344}	dbname=[gludio_siege_187]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_court_guard]	pos={-18265;108241;-2556;16344}	dbname=[gludio_siege_188]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18517;108282;-2558;16344}	dbname=[gludio_siege_189]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18479;108281;-2558;16344}	dbname=[gludio_siege_190]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_knight]	pos={-18446;108281;-2558;16344}	dbname=[gludio_siege_191]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18409;108280;-2558;16344}	dbname=[gludio_siege_192]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18371;108280;-2557;16344}	dbname=[gludio_siege_193]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_knight]	pos={-18334;108279;-2557;16344}	dbname=[gludio_siege_194]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18301;108279;-2557;16344}	dbname=[gludio_siege_195]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18264;108278;-2557;16344}	dbname=[gludio_siege_196]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_cleric]	pos={-18439;108045;-2555;16344}	dbname=[gludio_siege_197]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_cleric]	pos={-18355;108045;-2554;16344}	dbname=[gludio_siege_198]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_cleric]	pos={-18276;108044;-2554;16344}	dbname=[gludio_siege_199]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_cleric]	pos={-18201;108044;-2554;16344}	dbname=[gludio_siege_200]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_cleric]	pos={-18024;108044;-2551;16344}	dbname=[gludio_siege_201]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_cleric]	pos={-17941;108044;-2551;16344}	dbname=[gludio_siege_202]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_cleric]	pos={-17861;108043;-2551;16344}	dbname=[gludio_siege_203]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[gludio_cleric]	pos={-17787;108043;-2551;16344}	dbname=[gludio_siege_204]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npcmaker_end
+
+//성물보관소	위	오른쪽.(성	정면에서)	23
+territory_begin	[gludio_siege06]	{{-17872;108096;-2392;-2192};{-17532;108085;-2392;-2192};{-17532;109220;-2392;-2192};{-17868;109219;-2392;-2192}}	territory_end
+npcmaker_begin	[gludio_siege06]	initial_spawn=all	spawn_time=siege_warfare_start(1)	maximum_npc=30
+npc_begin	[gludio_sword_guard_s_e]	pos={-17599;109170;-2333;16088}	dbname=[gludio_siege_205]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_knight_s]	pos={-17625;109170;-2333;16088}	dbname=[gludio_siege_206]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-17653;109170;-2332;16088}	dbname=[gludio_siege_207]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-17599;109148;-2337;16088}	dbname=[gludio_siege_208]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-17626;109148;-2337;16088}	dbname=[gludio_siege_209]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-17653;109148;-2336;16088}	dbname=[gludio_siege_210]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-17600;109123;-2335;16088}	dbname=[gludio_siege_211]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-17627;109123;-2335;16088}	dbname=[gludio_siege_212]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-17654;109124;-2334;16088}	dbname=[gludio_siege_213]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric_s]	pos={-17540;109046;-2335;16088}	dbname=[gludio_siege_214]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric_s]	pos={-17566;109046;-2335;16088}	dbname=[gludio_siege_215]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric_s]	pos={-17594;109046;-2334;16088}	dbname=[gludio_siege_216]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17795;108473;-2338;32692}	dbname=[gludio_siege_217]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17794;108436;-2338;32692}	dbname=[gludio_siege_218]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-17794;108399;-2337;32692}	dbname=[gludio_siege_219]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17793;108363;-2337;32692}	dbname=[gludio_siege_220]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17793;108327;-2337;32692}	dbname=[gludio_siege_221]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-17792;108289;-2337;32692}	dbname=[gludio_siege_222]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17792;108258;-2336;32692}	dbname=[gludio_siege_223]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17791;108221;-2336;32692}	dbname=[gludio_siege_224]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-17790;108186;-2336;32692}	dbname=[gludio_siege_225]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17790;108149;-2336;32692}	dbname=[gludio_siege_226]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17790;108112;-2336;32692}	dbname=[gludio_siege_227]	dbname=[gludio_siege_227]	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//성물보관소	위	왼쪽.(성	정면에서)	23
+territory_begin	[gludio_siege07]	{{-18709;108182;-2392;-2192};{-18369;108171;-2392;-2192};{-18369;109306;-2392;-2192};{-18705;109305;-2392;-2192}}	territory_end
+npcmaker_begin	[gludio_siege07]	initial_spawn=all	spawn_time=siege_warfare_start(1)	maximum_npc=30
+npc_begin	[gludio_sword_guard_s_e]	pos={-18574;109236;-2333;16088}	dbname=[gludio_siege_228]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[sword]	npc_end
+npc_begin	[gludio_knight_s]	pos={-18600;109236;-2333;16088}	dbname=[gludio_siege_229]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[sword]	npc_end
+npc_begin	[gludio_sword_guard_s_e]	pos={-18643;109233;-2332;16088}	dbname=[gludio_siege_230]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[sword]	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18574;109214;-2337;16088}	dbname=[gludio_siege_231]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[spear]	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18601;109214;-2337;16088}	dbname=[gludio_siege_232]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[spear]	npc_end
+npc_begin	[gludio_spear_guard_s_e]	pos={-18628;109214;-2336;16088}	dbname=[gludio_siege_233]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[spear]	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-18575;109189;-2335;16088}	dbname=[gludio_siege_234]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[court]	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-18602;109189;-2335;16088}	dbname=[gludio_siege_235]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[court]	npc_end
+npc_begin	[gludio_court_guard_s]	pos={-18629;109190;-2334;16088}	dbname=[gludio_siege_236]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[court]	npc_end
+npc_begin	[gludio_cleric_s]	pos={-18536;108948;-2335;16088}	dbname=[gludio_siege_237]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[cre]	npc_end
+npc_begin	[gludio_cleric_s]	pos={-18562;108948;-2335;16088}	dbname=[gludio_siege_238]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[cre]	npc_end
+npc_begin	[gludio_cleric_s]	pos={-18590;108948;-2334;16088}	dbname=[gludio_siege_239]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	nickname=[cre]	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18428;108118;-2338;65152}	dbname=[gludio_siege_240]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18427;108154;-2338;65152}	dbname=[gludio_siege_241]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18426;108191;-2337;65152}	dbname=[gludio_siege_242]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18426;108227;-2337;65152}	dbname=[gludio_siege_243]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18426;108263;-2337;65152}	dbname=[gludio_siege_244]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18425;108301;-2337;65152}	dbname=[gludio_siege_245]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18425;108332;-2336;65152}	dbname=[gludio_siege_246]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18424;108369;-2336;65152}	dbname=[gludio_siege_247]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18424;108404;-2336;65152}	dbname=[gludio_siege_248]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18423;108441;-2336;65152}	dbname=[gludio_siege_249]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18422;108478;-2336;65152}	dbname=[gludio_siege_250]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//외성난간	20
+territory_begin	[gludio_siege08]	{{-18910;112963;-2461;-2261};{-17678;112963;-2461;-2261};{-17643;113336;-2461;-2261};{-18908;113328;-2461;-2261}}	territory_end
+npcmaker_begin	[gludio_siege08]	initial_spawn=all	spawn_time=siege_warfare_start(1)	maximum_npc=20
+npc_begin	[gludio_bow_guard_s_e]	pos={-18076;113100;-2373;32768}	dbname=[gludio_siege_251]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18076;113212;-2373;32768}	dbname=[gludio_siege_252]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18029;113271;-2373;24576}	dbname=[gludio_siege_253]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17998;113285;-2373;16384}	dbname=[gludio_siege_254]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17962;113285;-2373;16384}	dbname=[gludio_siege_255]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17927;113285;-2373;16384}	dbname=[gludio_siege_256]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18561;113097;-2373;0}	dbname=[gludio_siege_257]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18076;113132;-2373;32768}	dbname=[gludio_siege_258]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18561;113139;-2373;0}	dbname=[gludio_siege_259]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18560;113219;-2373;0}	dbname=[gludio_siege_260]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18606;113276;-2373;8192}	dbname=[gludio_siege_261]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18638;113288;-2373;16384}	dbname=[gludio_siege_262]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18678;113288;-2373;16384}	dbname=[gludio_siege_263]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18719;113288;-2373;16384}	dbname=[gludio_siege_264]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18561;113180;-2372;0}	dbname=[gludio_siege_265]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18572;113251;-2372;8192}	dbname=[gludio_siege_266]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18066;113248;-2372;24576}	dbname=[gludio_siege_267]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18076;113164;-2373;32768}	dbname=[gludio_siege_268]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric_s]	pos={-18660;113249;-2373;8192}	dbname=[gludio_siege_269]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric_s]	pos={-17970;113241;-2373;24576}	dbname=[gludio_siege_270]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//내성앞	30
+territory_begin	[gludio_siege09]	{{-18623;111068;-2712;-2512};{-17641;111068;-2712;-2512};{-17648;111275;-2712;-2512};{-18625;111268;-2712;-2512}}	territory_end
+npcmaker_begin	[gludio_siege09]	initial_spawn=all	spawn_time=siege_warfare_start(1)	maximum_npc=30
+npc_begin	[gludio_bow_guard_e]	pos={-18176;111104;-2629;16384}	dbname=[gludio_siege_271]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-18048;111104;-2629;16384}	dbname=[gludio_siege_272]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-17985;111104;-2629;16384}	dbname=[gludio_siege_273]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-18240;111104;-2629;16384}	dbname=[gludio_siege_274]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-18371;111104;-2628;16384}	dbname=[gludio_siege_275]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-18499;111104;-2628;16384}	dbname=[gludio_siege_276]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-17857;111104;-2628;16384}	dbname=[gludio_siege_277]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_e]	pos={-17728;111104;-2628;16384}	dbname=[gludio_siege_278]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard]	pos={-18304;111104;-2624;16384}	dbname=[gludio_siege_279]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard]	pos={-17921;111104;-2627;16384}	dbname=[gludio_siege_280]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard]	pos={-17664;111104;-2624;16384}	dbname=[gludio_siege_281]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard]	pos={-18563;111104;-2624;16384}	dbname=[gludio_siege_282]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric]	pos={-18112;111104;-2628;16384}	dbname=[gludio_siege_283]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric]	pos={-17793;111104;-2624;16384}	dbname=[gludio_siege_284]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric]	pos={-18435;111104;-2624;16384}	dbname=[gludio_siege_285]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18560;111232;-2640;16384}	dbname=[gludio_siege_286]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18496;111232;-2640;16384}	dbname=[gludio_siege_287]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-17664;111232;-2640;16384}	dbname=[gludio_siege_288]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-17728;111232;-2640;16384}	dbname=[gludio_siege_289]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_knight]	pos={-18112;111232;-2640;16384}	dbname=[gludio_siege_290]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18432;111232;-2640;16384}	dbname=[gludio_siege_291]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18368;111232;-2640;16384}	dbname=[gludio_siege_292]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18304;111232;-2640;16384}	dbname=[gludio_siege_293]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-18240;111232;-2640;16384}	dbname=[gludio_siege_294]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_knight]	pos={-18176;111232;-2640;16384}	dbname=[gludio_siege_295]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_knight]	pos={-18049;111232;-2640;16384}	dbname=[gludio_siege_296]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-17985;111232;-2640;16384}	dbname=[gludio_siege_297]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-17921;111232;-2640;16384}	dbname=[gludio_siege_298]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-17857;111232;-2640;16384}	dbname=[gludio_siege_299]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_sword_guard_e]	pos={-17793;111232;-2640;16384}	dbname=[gludio_siege_300]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//내성난간	20
+territory_begin	[gludio_siege10]	{{-18590;110598;-2263;-2063};{-17628;110600;-2263;-2063};{-17638;110932;-2263;-2063};{-18595;110932;-2263;-2063}}	territory_end
+npcmaker_begin	[gludio_siege10]	initial_spawn=all	spawn_time=siege_warfare_start(1)	maximum_npc=20
+npc_begin	[gludio_bow_guard_s_e]	pos={-17880;110667;-2191;32768}	dbname=[gludio_siege_301]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17881;110789;-2191;32768}	dbname=[gludio_siege_302]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17826;110850;-2191;24576}	dbname=[gludio_siege_303]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17801;110869;-2191;16384}	dbname=[gludio_siege_304]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17762;110870;-2191;16384}	dbname=[gludio_siege_305]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17726;110870;-2191;16384}	dbname=[gludio_siege_306]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17880;110710;-2191;32768}	dbname=[gludio_siege_307]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-17852;110825;-2191;24576}	dbname=[gludio_siege_308]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-17880;110749;-2190;32768}	dbname=[gludio_siege_309]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric_s]	pos={-17778;110804;-2192;24576}	dbname=[gludio_siege_310]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18333;110661;-2193;0}	dbname=[gludio_siege_311]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18333;110701;-2191;0}	dbname=[gludio_siege_312]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18333;110786;-2192;0}	dbname=[gludio_siege_313]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18391;110851;-2191;8192}	dbname=[gludio_siege_314]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18418;110871;-2190;16384}	dbname=[gludio_siege_315]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18458;110870;-2191;16384}	dbname=[gludio_siege_316]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18497;110871;-2191;16384}	dbname=[gludio_siege_317]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18333;110745;-2189;0}	dbname=[gludio_siege_318]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18355;110815;-2192;8192}	dbname=[gludio_siege_319]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric_s]	pos={-18435;110797;-2189;8192}	dbname=[gludio_siege_320]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//***********************************PC수성시	도와주는	가드들************************************
+//외성문	뒤	위.	27
+territory_begin	[gludio_siege031]	{{-18624;112268;-2646;-2446};{-17700;112265;-2646;-2446};{-17677;112687;-2646;-2446};{-18629;112688;-2646;-2446}}	territory_end
+npcmaker_begin	[gludio_siege031]	initial_spawn=all	spawn_time=pc_siege_warfare_start(1)	maximum_npc=30
+npc_begin	[gludio_bow_guard_s_e]	pos={-18382;112345;-2498;15900}	dbname=[gludio_siege_321]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18322;112347;-2498;15900}	dbname=[gludio_siege_322]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18263;112349;-2497;15900}	dbname=[gludio_siege_323]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18612;112411;-2496;15900}	dbname=[gludio_siege_324]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18582;112410;-2497;15900}	dbname=[gludio_siege_325]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18553;112413;-2496;15900}	dbname=[gludio_siege_326]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18523;112414;-2496;15900}	dbname=[gludio_siege_327]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18079;112549;-2497;31664}	dbname=[gludio_siege_328]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18078;112608;-2497;31664}	dbname=[gludio_siege_329]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18076;112668;-2496;31664}	dbname=[gludio_siege_330]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//외성난간	20
+territory_begin	[gludio_siege081]	{{-18910;112963;-2461;-2261};{-17678;112963;-2461;-2261};{-17643;113336;-2461;-2261};{-18908;113328;-2461;-2261}}	territory_end
+npcmaker_begin	[gludio_siege081]	initial_spawn=all	spawn_time=pc_siege_warfare_start(1)	maximum_npc=20
+npc_begin	[gludio_bow_guard_s_e]	pos={-18076;113100;-2373;32768}	dbname=[gludio_siege_331]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18076;113212;-2373;32768}	dbname=[gludio_siege_332]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18029;113271;-2373;24576}	dbname=[gludio_siege_333]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-17962;113285;-2373;16384}	dbname=[gludio_siege_334]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18561;113139;-2373;0}	dbname=[gludio_siege_335]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18560;113219;-2373;0}	dbname=[gludio_siege_336]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18606;113276;-2373;8192}	dbname=[gludio_siege_337]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_bow_guard_s_e]	pos={-18678;113288;-2373;16384}	dbname=[gludio_siege_338]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18561;113180;-2372;0}	dbname=[gludio_siege_339]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18572;113251;-2372;8192}	dbname=[gludio_siege_340]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18066;113248;-2372;24576}	dbname=[gludio_siege_341]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_wizard_s]	pos={-18076;113164;-2373;32768}	dbname=[gludio_siege_342]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric_s]	pos={-18660;113249;-2373;8192}	dbname=[gludio_siege_343]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[gludio_cleric_s]	pos={-17970;113241;-2373;24576}	dbname=[gludio_siege_344]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//--------------------17_22 030514 NPC--------------------
+territory_begin	[17_22_NPC_0514_01]	{{-12893;121612;-3013;-2813};{-12693;121612;-3013;-2813};{-12693;121812;-3013;-2813};{-12893;121812;-3013;-2813}}	territory_end
+npcmaker_begin	[17_22_NPC_0514_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[bishop_raimund]	pos = {-12784;121709;-2952;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[17_22_NPC_0514_02]	{{-13513;121493;-3008;-2808};{-13221;121503;-3008;-2808};{-13226;121944;-3008;-2808};{-13515;121920;-3008;-2808}}	territory_end
+npcmaker_begin	[17_22_NPC_0514_02]	initial_spawn = all	maximum_npc = 4
+npc_begin	[vivi]	pos = {-13269;121884;-2966;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[magister_ramoniell]	pos = {-13487;121884;-2960;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[magister_rohmer]	pos = {-13269;121540;-2966;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[father_manuell]	pos = {-13487;121541;-2966;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[17_22_NPC_0514_03]	{{-15284;124652;-3259;-3059};{-15084;124652;-3259;-3059};{-15084;124852;-3259;-3059};{-15284;124852;-3259;-3059}}	territory_end
+npcmaker_begin	[17_22_NPC_0514_03]	initial_spawn = all	maximum_npc = 1
+npc_begin	[head_blacksmith_mendio]	pos = {-15190;124756;-3112;48152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[17_22_NPC_0514_04]	{{-13412;124892;-3271;-3071};{-13212;124892;-3271;-3071};{-13212;125092;-3271;-3071};{-13412;125092;-3271;-3071}}	territory_end
+npcmaker_begin	[17_22_NPC_0514_04]	initial_spawn = all	maximum_npc = 1
+npc_begin	[warehouse_chief_rikadio]	pos = {-13323;124989;-3118;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[17_22_NPC_0514_05]	{{-12996;124636;-3210;-3010};{-12796;124636;-3210;-3010};{-12796;124836;-3210;-3010};{-12996;124836;-3210;-3010}}	territory_end
+npcmaker_begin	[17_22_NPC_0514_05]	initial_spawn = all	maximum_npc = 3
+npc_begin	[high_prefect_drikus]	pos = {-12874;124726;-3120;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[seer_racoy]	pos = {-12896;124773;-3120;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[prefect_buka]	pos = {-12896;124675;-3120;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------19_21 NPC 031224--------------------
+territory_begin	[NPC_031224_01]	{{-17972;108845;-2554;-2354};{-17772;108845;-2554;-2354};{-17772;109045;-2554;-2354};{-17972;109045;-2554;-2354}}	territory_end
+npcmaker_begin	[NPC_031224_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[greenspan]	pos = {-17876;108944;-2485;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------19_21 NPC 031130--------------------
+territory_begin	[19_21_NPC_031130_01]	{{-15988;123692;-3241;-3041};{-15788;123692;-3241;-3041};{-15788;123892;-3241;-3041};{-15988;123892;-3241;-3041}}	territory_end
+npcmaker_begin	[19_21_NPC_031130_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[renny]	pos = {-15882;123788;-3115;13288}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_NPC_031130_02]	{{-16260;123628;-3197;-2997};{-16060;123628;-3197;-2997};{-16060;123828;-3197;-2997};{-16260;123828;-3197;-2997}}	territory_end
+npcmaker_begin	[19_21_NPC_031130_02]	initial_spawn = all	maximum_npc = 1
+npc_begin	[black]	pos = {-16159;123728;-3102;53248}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_NPC_031130_03]	{{-12772;123708;-3193;-2993};{-12572;123708;-3193;-2993};{-12572;123908;-3193;-2993};{-12772;123908;-3193;-2993}}	territory_end
+npcmaker_begin	[19_21_NPC_031130_03]	initial_spawn = all	maximum_npc = 1
+npc_begin	[latif]	pos = {-12693;123815;-3115;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_NPC_031130_04]	{{-12964;124060;-3179;-2979};{-12764;124060;-3179;-2979};{-12764;124260;-3179;-2979};{-12964;124260;-3179;-2979}}	territory_end
+npcmaker_begin	[19_21_NPC_031130_04]	initial_spawn = all	maximum_npc = 1
+npc_begin	[dillon]	pos = {-12866;124166;-3096;57344}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_NPC_031130_05]	{{-14820;125532;-3218;-3018};{-14620;125532;-3218;-3018};{-14620;125732;-3218;-3018};{-14820;125732;-3218;-3018}}	territory_end
+npcmaker_begin	[19_21_NPC_031130_05]	initial_spawn = all	maximum_npc = 1
+npc_begin	[baback]	pos = {-14731;125630;-3141;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_NPC_031130_06]	{{-14948;125324;-3231;-3031};{-14748;125324;-3231;-3031};{-14748;125524;-3231;-3031};{-14948;125524;-3231;-3031}}	territory_end
+npcmaker_begin	[19_21_NPC_031130_06]	initial_spawn = all	maximum_npc = 1
+npc_begin	[boyer]	pos = {-14852;125413;-3130;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_NPC_031130_07]	{{-14260;125452;-3228;-3028};{-14060;125452;-3228;-3028};{-14060;125652;-3228;-3028};{-14260;125652;-3228;-3028}}	territory_end
+npcmaker_begin	[19_21_NPC_031130_07]	initial_spawn = all	maximum_npc = 1
+npc_begin	[loring]	pos = {-14145;125551;-3140;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_NPC_031130_08]	{{-13876;125468;-3229;-3029};{-13676;125468;-3229;-3029};{-13676;125668;-3229;-3029};{-13876;125668;-3229;-3029}}	territory_end
+npcmaker_begin	[19_21_NPC_031130_08]	initial_spawn = all	maximum_npc = 1
+npc_begin	[tim]	pos = {-13745;125573;-3129;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_NPC_031130_09]	{{-14852;122860;-3226;-3026};{-14652;122860;-3226;-3026};{-14652;123060;-3226;-3026};{-14852;123060;-3226;-3026}}	territory_end
+npcmaker_begin	[19_21_NPC_031130_09]	initial_spawn = all	maximum_npc = 1
+npc_begin	[auction_dealer_human]	pos = {-14767;122955;-3120;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_NPC_031201_10]	{{-14004;123228;-3186;-2986};{-13804;123228;-3186;-2986};{-13804;123428;-3186;-2986};{-14004;123428;-3186;-2986}}	territory_end
+npcmaker_begin	[19_21_NPC_031201_10]	initial_spawn = all	maximum_npc = 1
+npc_begin	[pet_manager_lundy]	pos = {-13908;123322;-3116;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------19_21 NPC 030917--------------------
+territory_begin	[NPC_t19_21_030917_01]	{{-28201;120552;-3816;-3616};{-28001;120552;-3816;-3616};{-28001;120752;-3816;-3616};{-28201;120752;-3816;-3616}}	territory_end
+npcmaker_begin	[NPC_t19_21_030917_01]
+npc_begin	[father_gupu]	pos = {-28103;120634;-3724;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t19_21_030917_02]	{{-29165;121804;-3805;-3605};{-28551;121884;-3805;-3605};{-28613;122846;-3805;-3605};{-29240;122853;-3805;-3605}}	territory_end
+npcmaker_begin	[NPC_t19_21_030917_02]
+npc_begin	[orphan_girl]	pos = {-28696;121931;-3662;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[orphan_girl]	pos = {-28634;121898;-3670;18000}	total = 1	respawn = 1min	npc_end
+npc_begin	[orphan_girl]	pos = {-28882;121966;-3672;15500}	total = 1	respawn = 1min	npc_end
+npc_begin	[orphan_girl]	pos = {-29025;122017;-3672;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[orphan_girl]	pos = {-29120;122422;-3652;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[orphan_girl]	pos = {-28975;122590;-3642;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[orphan_girl]	pos = {-28957;122744;-3638;57344}	total = 1	respawn = 1min	npc_end
+npc_begin	[orphan_girl]	pos = {-28997;122553;-3646;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[orphan_girl]	pos = {-28978;122028;-3669;45056}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t19_21_030917_03]	{{-2254;124302;-3802;-3602};{-2054;124302;-3802;-3602};{-2054;124502;-3802;-3602};{-2254;124502;-3802;-3602}}	territory_end
+npcmaker_begin	[NPC_t19_21_030917_03]
+npc_begin	[vuku_chief_driko]	pos = {-2150;124443;-3724;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t19_21_030917_04]	{{-15561;124815;-3195;-2995};{-15361;124815;-3195;-2995};{-15361;125015;-3195;-2995};{-15561;125015;-3195;-2995}}	territory_end
+npcmaker_begin	[NPC_t19_21_030917_04]
+npc_begin	[drunkard_borys]	pos = {-15443;124913;-3130;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------- 19_21의 NPC --------------------
+territory_begin	[19_21_1129_NPC01]	{{-12004;123428;-3198;-2998};{-11806;123418;-3198;-2998};{-11811;123850;-3198;-2998};{-12004;123855;-3198;-2998}}	territory_end
+npcmaker_begin	[19_21_1129_NPC01]
+npc_begin	[guard_moretti]	pos = {-11940;123789;-3082;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[guard_melville]	pos = {-11950;123473;-3087;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_1129_NPC02]	{{-14798;120862;-3109;-2909};{-14303;120860;-3109;-2909};{-14295;121060;-3109;-2909};{-14823;121082;-3109;-2909}}	territory_end
+npcmaker_begin	[19_21_1129_NPC02]
+npc_begin	[captain_bathia]	pos = {-14409;121023;-2989;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[guard_thoma]	pos = {-14708;121020;-2989;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_1129_NPC03]	{{-16740;123921;-3238;-3038};{-16540;123919;-3238;-3038};{-16540;124422;-3238;-3038};{-16740;124426;-3238;-3038}}	territory_end
+npcmaker_begin	[19_21_1129_NPC03]
+npc_begin	[guard_praga]	pos = {-16623;124028;-3118;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[guard_babenco]	pos = {-16621;124330;-3118;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_1129_NPC04]	{{-14423;126492;-3258;-3058};{-13940;126492;-3258;-3058};{-13878;126692;-3258;-3058};{-14423;126692;-3258;-3058}}	territory_end
+npcmaker_begin	[19_21_1129_NPC04]
+npc_begin	[guard_brynner]	pos = {-14336;126546;-3148;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[guard_curtiz]	pos = {-14005;126542;-3148;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_1129_NPC05]	{{-15569;124738;-3275;-3075};{-15398;124746;-3275;-3075};{-15394;124860;-3275;-3075};{-15557;124862;-3275;-3075}}	territory_end
+npcmaker_begin	[19_21_1129_NPC05]
+npc_begin	[blacksmith_pinter]	pos = {-15349;124763;-3113;57344}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_1129_NPC06]	{{-14999;124380;-3266;-3066};{-14895;124370;-3266;-3066};{-14899;124615;-3266;-3066};{-15009;124618;-3266;-3066}}	territory_end
+npcmaker_begin	[19_21_1129_NPC06]
+npc_begin	[trader_harmony]	pos = {-14934;124468;-3114;61440}	total = 1	respawn = 1min	npc_end
+npc_begin	[trader_varanket]	pos = {-14933;124540;-3115;4096}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_1129_NPC07]	{{-15317;123206;-3271;-3071};{-15075;123211;-3271;-3071};{-15123;123467;-3271;-3071};{-15321;123468;-3271;-3071}}	territory_end
+npcmaker_begin	[19_21_1129_NPC07]
+npc_begin	[trader_simplon]	pos = {-15132;123282;-3107;12288}	total = 1	respawn = 1min	npc_end
+npc_begin	[trader_sydney]	pos = {-15238;123282;-3107;20480}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_1129_NPC08]	{{-13649;122582;-3246;-3046};{-13414;122578;-3246;-3046};{-13422;123059;-3246;-3046};{-13647;123056;-3246;-3046}}	territory_end
+npcmaker_begin	[19_21_1129_NPC08]
+npc_begin	[master_rains]	pos = {-13579;123017;-3103;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[master_sorius]	pos = {-13440;122643;-3103;28672}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_1129_NPC09]	{{-13035;123019;-3251;-3051};{-12219;123032;-3251;-3051};{-12276;123481;-3251;-3051};{-12994;123479;-3251;-3051}}	territory_end
+npcmaker_begin	[19_21_1129_NPC09]
+npc_begin	[master_tobias]	pos = {-12892;123143;-3102;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[master_virgil]	pos = {-12791;123259;-3102;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[master_sidra]	pos = {-12503;123054;-3102;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[triskel]	pos = {-12506;123405;-3111;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_21_1129_NPC10]	{{-13214;124700;-3258;-3058};{-12956;124700;-3258;-3058};{-12956;125068;-3258;-3058};{-13200;125069;-3258;-3058}}	territory_end
+npcmaker_begin	[19_21_1129_NPC10]
+npc_begin	[harprock]	pos = {-13132;124988;-3118;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[warehouse_keeper_balcon]	pos = {-13049;124737;-3118;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------19_21 글루디오성 앞 마을 NPC--------------------
+territory_begin	[19_21_NPC01]	{{-17140;120778;-3176;-2976};{-11694;120813;-3176;-2976};{-11727;127313;-3176;-2976};{-17031;127645;-3176;-2976}}	territory_end
+npcmaker_begin	[19_21_NPC01]
+npc_begin	[gatekeeper_belladonna]	pos = {-12736;122816;-3114;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[master_audiberti]	pos = {-13419;123068;-3104;40960}	total = 1	respawn = 1min	npc_end
+npc_begin	[master_leona]	pos = {-13691;123068;-3103;57344}	total = 1	respawn = 1min	npc_end
+npc_begin	[master_reoria]	pos = {-13693;122583;-3103;8192}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//-------------- 19_21 퀘스트 NPC ----------
+territory_begin	[Quest_030129_NPC02]	{{-15076;125980;-3291;-3091};{-14876;125980;-3291;-3091};{-14876;126180;-3291;-3091};{-15076;126180;-3291;-3091}}	territory_end
+npcmaker_begin	[Quest_030129_NPC02]
+npc_begin	[samed]	pos = {-14977;126035;-3143;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//-------------- 19_21 ----------
+territory_begin	[Quest_030130_NPC01]	{{-12260;122780;-3243;-3043};{-12060;122780;-3243;-3043};{-12060;122980;-3243;-3043};{-12260;122980;-3243;-3043}}	territory_end
+npcmaker_begin	[Quest_030130_NPC01]
+npc_begin	[varsak]	pos = {-12188;122899;-3100;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------- 19_21 ----------------------------------------------------------------------------------------
+territory_begin	[gludio_t19_21_001]	{{-32518;98439;-3819;-3419};{-25518;98435;-3819;-3419};{-25498;99075;-3819;-3419};{-28638;101995;-3819;-3419};{-32614;100811;-3819;-3419}}	territory_end
+npcmaker_begin	[gludio_t19_21_001]
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_fighter]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_002]	{{-32484;100963;-3747;-2947};{-28660;102079;-3747;-2947};{-28244;104179;-3747;-2947};{-31400;104035;-3747;-2947}}	territory_end
+npcmaker_begin	[gludio_t19_21_002]
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_fighter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_003]	{{-25253;98419;-3834;-3034};{-22569;98435;-3834;-3034};{-22121;101835;-3834;-3034};{-25457;106563;-3834;-3034};{-27429;103523;-3834;-3034};{-27353;101555;-3834;-3034}}	territory_end
+npcmaker_begin	[gludio_t19_21_003]
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_fighter]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_004]	{{-31450;104124;-3859;-2659};{-28246;104328;-3859;-2659};{-25714;108604;-3859;-2659};{-25422;112860;-3859;-2659};{-31598;112292;-3859;-2659}}	territory_end
+npcmaker_begin	[gludio_t19_21_004]
+npc_begin	[vuku_orc]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_005]	{{-30278;112537;-3783;-2783};{-25590;113081;-3783;-2783};{-25126;118817;-3783;-2783};{-30894;118829;-3783;-2783}}	territory_end
+npcmaker_begin	[gludio_t19_21_005]
+npc_begin	[vuku_orc]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_006]	{{-30898;118849;-3762;-2962};{-25142;118945;-3762;-2962};{-26034;123345;-3762;-2962};{-31614;123301;-3762;-2962}}	territory_end
+npcmaker_begin	[gludio_t19_21_006]
+npc_begin	[vuku_orc]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_007]	{{-31204;123382;-3683;-3083};{-26004;123370;-3683;-3083};{-25148;124970;-3683;-3083};{-27308;127086;-3683;-3083};{-29020;127030;-3683;-3083}}	territory_end
+npcmaker_begin	[gludio_t19_21_007]
+npc_begin	[vuku_orc]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_008]	{{-23632;118824;-3738;-3038};{-18660;121224;-3738;-3038};{-18760;123556;-3738;-3038};{-24692;124204;-3738;-3038}}	territory_end
+npcmaker_begin	[gludio_t19_21_008]
+npc_begin	[red_bear]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[grizzly_bear]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_21_009]	{{-29286;129340;-3837;-3237};{-24238;125772;-3837;-3237};{-23378;130844;-3837;-3237};{-29518;130844;-3837;-3237}}	territory_end
+npcmaker_begin	[gludio_t18_21_009]
+npc_begin	[brown_bear]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_010]	{{-32588;127706;-3771;-3171};{-30920;126066;-3771;-3171};{-29088;128622;-3771;-3171};{-32616;128646;-3771;-3171}}	territory_end
+npcmaker_begin	[gludio_t19_21_010]
+npc_begin	[brown_bear]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_011]	{{-23448;125453;-3811;-3011};{-19432;124945;-3811;-3011};{-17384;127769;-3811;-3011};{-18492;130769;-3811;-3011};{-22960;129193;-3811;-3011}}	territory_end
+npcmaker_begin	[gludio_t19_21_011]
+npc_begin	[red_bear]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[grizzly_bear]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_012]	{{-2313;120272;-3806;-3406};{-1037;119340;-3806;-3406};{-969;126768;-3806;-3406};{-3849;126652;-3806;-3406};{-3965;125688;-3806;-3406}}	territory_end
+npcmaker_begin	[gludio_t19_21_012]
+npc_begin	[brown_bear]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_support]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_013]	{{-7440;116939;-3520;-2720};{-3852;114607;-3520;-2720};{-2424;115699;-3520;-2720};{-6172;123011;-3520;-2720}}	territory_end
+npcmaker_begin	[gludio_t19_21_013]
+npc_begin	[vuku_orc]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_014]	{{-7317;112051;-3651;-3051};{-2509;111855;-3651;-3051};{-3161;114495;-3651;-3051};{-7621;116915;-3651;-3051};{-8621;114443;-3651;-3051}}	territory_end
+npcmaker_begin	[gludio_t19_21_014]
+npc_begin	[vuku_orc]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_015]	{{-2482;111777;-3804;-3404};{-230;111673;-3804;-3404};{-234;113945;-3804;-3404};{-1626;115833;-3804;-3404};{-3106;114497;-3804;-3404}}	territory_end
+npcmaker_begin	[gludio_t19_21_015]
+npc_begin	[vuku_orc]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_016]	{{-4790;105673;-3788;-2988};{-366;108969;-3788;-2988};{-394;111537;-3788;-2988};{-7302;111957;-3788;-2988};{-7146;108305;-3788;-2988}}	territory_end
+npcmaker_begin	[gludio_t19_21_016]
+npc_begin	[vuku_orc]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_017]	{{-5328;104104;-3814;-2814};{-260;103280;-3814;-2814};{-240;108988;-3814;-2814};{-4632;105680;-3814;-2814}}	territory_end
+npcmaker_begin	[gludio_t19_21_017]
+npc_begin	[vuku_orc]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_018]	{{-7833;102176;-3760;-2760};{-4145;100096;-3760;-2760};{-2329;100860;-3760;-2760};{-341;102840;-3760;-2760};{-345;103268;-3760;-2760};{-5565;104148;-3760;-2760}}	territory_end
+npcmaker_begin	[gludio_t19_21_018]
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_fighter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_019]	{{-3304;98384;-3847;-3547};{-196;98376;-3847;-3547};{-188;101992;-3847;-3547};{-2824;99784;-3847;-3547}}	territory_end
+npcmaker_begin	[gludio_t19_21_019]
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_fighter]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_020]	{{-5636;98378;-3800;-3500};{-3320;98382;-3800;-3500};{-3100;99050;-3800;-3500};{-4788;99550;-3800;-3500}}	territory_end
+npcmaker_begin	[gludio_t19_21_020]
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_fighter]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_021]	{{-20346;98601;-3784;-2484};{-9854;98545;-3784;-2484};{-9462;102877;-3784;-2484}}	territory_end
+npcmaker_begin	[gludio_t19_21_021]
+npc_begin	[vuku_orc_archer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[vuku_orc_fighter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_022]	{{-29680;100017;-3729;-3429};{-28976;99925;-3729;-3429};{-28916;100381;-3729;-3429};{-29460;100517;-3729;-3429}}	territory_end
+npcmaker_begin	[gludio_t19_21_022]
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_023]	{{-25663;102312;-3707;-3107};{-24031;102308;-3707;-3107};{-25207;104200;-3707;-3107};{-26659;103756;-3707;-3107}}	territory_end
+npcmaker_begin	[gludio_t19_21_023]
+npc_begin	[pinrul_roader]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_024]	{{-29256;108676;-3775;-3525};{-28292;108684;-3775;-3525};{-28116;109752;-3775;-3525};{-29248;109820;-3775;-3525}}	territory_end
+npcmaker_begin	[gludio_t19_21_024]
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_025]	{{-30204;105496;-3770;-3070};{-28580;104856;-3770;-3070};{-27296;107216;-3770;-3070};{-29824;107544;-3770;-3070}}	territory_end
+npcmaker_begin	[gludio_t19_21_025]
+npc_begin	[ratman_spy]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_026]	{{-28805;116925;-3799;-3549};{-27137;116361;-3799;-3549};{-26125;118001;-3799;-3549};{-29161;118365;-3799;-3549}}	territory_end
+npcmaker_begin	[gludio_t19_21_026]
+npc_begin	[ratman_spy]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_027]	{{-3996;112204;-3578;-3328};{-2944;112256;-3578;-3328};{-2868;113420;-3578;-3328};{-3920;113364;-3578;-3328}}	territory_end
+npcmaker_begin	[gludio_t19_21_027]
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_028]	{{-6028;109403;-3545;-3095};{-3704;108755;-3545;-3095};{-2936;111095;-3545;-3095};{-6204;111367;-3545;-3095}}	territory_end
+npcmaker_begin	[gludio_t19_21_028]
+npc_begin	[ratman_spy]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_029]	{{-3782;105052;-3735;-2935};{-602;105100;-3735;-2935};{-862;107156;-3735;-2935};{-3470;105984;-3735;-2935}}	territory_end
+npcmaker_begin	[gludio_t19_21_029]
+npc_begin	[ratman_spy]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_030]	{{-5467;101351;-3694;-3044};{-4051;100459;-3694;-3044};{-2303;101199;-3694;-3044};{-3175;101995;-3694;-3044}}	territory_end
+npcmaker_begin	[gludio_t19_21_030]
+npc_begin	[pinrul_roader]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_21_031]	{{-15078;99033;-3302;-2652};{-11402;98953;-3302;-2652};{-10866;101225;-3302;-2652};{-13062;100797;-3302;-2652}}	territory_end
+npcmaker_begin	[gludio_t19_21_031]
+npc_begin	[pinrul_roader]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+//--------------- 0402_나이트가 되는길---------------
+territory_begin	[quest_19_21_001]	{{-3792;109752;-3848;-3348};{-552;109284;-3848;-3348};{-448;113748;-3848;-3348};{-5032;112820;-3848;-3348}}	territory_end
+npcmaker_begin	[quest_19_21_001]
+npc_begin	[bugbear_raider]	pos = anywhere	total = 10	respawn = 3min	npc_end
+npcmaker_end
+

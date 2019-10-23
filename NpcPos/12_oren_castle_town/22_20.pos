@@ -1,0 +1,528 @@
+//---------------------22_20(패거리몬스터)-----------------------------------------------
+territory_begin	[oren_2220_17_party]	{{65609;65619;-3854;-3354};{68601;65615;-3854;-3354};{69077;74975;-3854;-3354};{67705;74939;-3854;-3354};{65705;72743;-3854;-3354}}	territory_end
+npcmaker_begin	[oren_2220_17_party]	initial_spawn = all	maximum_npc = 8
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_18_party]	{{68810;65650;-3791;-3191};{72522;65722;-3791;-3191};{72414;75086;-3791;-3191};{69238;74974;-3791;-3191}}	territory_end
+npcmaker_begin	[oren_2220_18_party]	initial_spawn = all	maximum_npc = 8
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_27_party]	{{72775;65927;-3889;-3339};{74731;65651;-3889;-3339};{76243;73055;-3889;-3339};{72523;75007;-3889;-3339}}	territory_end
+npcmaker_begin	[oren_2220_27_party]	initial_spawn = all	maximum_npc = 8
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_30_party]	{{76258;67408;-4027;-2727};{82326;67448;-4027;-2727};{82674;70720;-4027;-2727};{77754;70596;-4027;-2727};{76426;68520;-4027;-2727}}	territory_end
+npcmaker_begin	[oren_2220_30_party]	initial_spawn = all	maximum_npc = 8
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_31_party]	{{82310;65765;-3785;-2985};{87274;65561;-3785;-2985};{85110;69777;-3785;-2985};{82866;70577;-3785;-2985}}	territory_end
+npcmaker_begin	[oren_2220_31_party]	initial_spawn = all	maximum_npc = 8
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_32_party]	{{87367;65640;-3801;-3051};{93739;65660;-3801;-3051};{91927;69908;-3801;-3051};{89383;70436;-3801;-3051};{85319;69548;-3801;-3051}}	territory_end
+npcmaker_begin	[oren_2220_32_party]	initial_spawn = all	maximum_npc = 8
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_33_party]	{{93797;65633;-3946;-3146};{98049;69117;-3946;-3146};{97997;75101;-3946;-3146};{92097;69905;-3946;-3146}}	territory_end
+npcmaker_begin	[oren_2220_33_party]	initial_spawn = all	maximum_npc = 8
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_34_party]	{{78386;74086;-3828;-3328};{81010;74702;-3828;-3328};{81222;80410;-3828;-3328};{78410;79802;-3828;-3328}}	territory_end
+npcmaker_begin	[oren_2220_34_party]	initial_spawn = all	maximum_npc = 8
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_35_party]	{{81232;80508;-3770;-3120};{83576;84452;-3770;-3120};{80624;84752;-3770;-3120};{78952;84080;-3770;-3120};{78468;80044;-3770;-3120}}	territory_end
+npcmaker_begin	[oren_2220_35_party]	initial_spawn = all	maximum_npc = 8
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_36_party]	{{81169;80373;-3952;-3252};{84873;78097;-3952;-3252};{87013;82053;-3952;-3252};{83509;84201;-3952;-3252}}	territory_end
+npcmaker_begin	[oren_2220_36_party]	initial_spawn = all	maximum_npc = 8
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_37_party]	{{81098;74673;-3851;-3251};{85274;73449;-3851;-3251};{84890;78005;-3851;-3251};{81250;80413;-3851;-3251}}	territory_end
+npcmaker_begin	[oren_2220_37_party]	initial_spawn = all	maximum_npc = 8
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_38_party]	{{84931;77805;-3766;-3166};{90311;78265;-3766;-3166};{89831;82637;-3766;-3166};{87159;81937;-3766;-3166}}	territory_end
+npcmaker_begin	[oren_2220_38_party]	initial_spawn = all	maximum_npc = 8
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_39_party]	{{90081;72226;-3810;-3210};{92305;76974;-3810;-3210};{90321;78150;-3810;-3210};{85017;77734;-3810;-3210};{85329;73422;-3810;-3210};{87589;71774;-3810;-3210}}	territory_end
+npcmaker_begin	[oren_2220_39_party]	initial_spawn = all	maximum_npc = 12
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_40_party]	{{90310;72491;-3777;-3277};{93338;73067;-3777;-3277};{95890;76435;-3777;-3277};{92466;76983;-3777;-3277}}	territory_end
+npcmaker_begin	[oren_2220_40_party]	initial_spawn = all	maximum_npc = 8
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_41_party]	{{95952;76531;-3763;-3263};{97948;76899;-3763;-3263};{98000;79127;-3763;-3263};{95456;80471;-3763;-3263};{92244;77087;-3763;-3263}}	territory_end
+npcmaker_begin	[oren_2220_41_party]	initial_spawn = all	maximum_npc = 8
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_42_party]	{{92258;77175;-3818;-3218};{95370;80511;-3818;-3218};{93318;81943;-3818;-3218};{89962;82611;-3818;-3218};{90426;78247;-3818;-3218}}	territory_end
+npcmaker_begin	[oren_2220_42_party]	initial_spawn = all	maximum_npc = 8
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_43_party]	{{93413;82004;-3852;-3352};{94917;80996;-3852;-3352};{96001;83260;-3852;-3352};{96609;86184;-3852;-3352};{93865;85592;-3852;-3352}}	territory_end
+npcmaker_begin	[oren_2220_43_party]	initial_spawn = all	maximum_npc = 4
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_45_party]	{{91842;86306;-3740;-3340};{94174;86518;-3740;-3340};{93614;89874;-3740;-3340};{90890;89706;-3740;-3340}}	territory_end
+npcmaker_begin	[oren_2220_45_party]	initial_spawn = all	maximum_npc = 4
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_50_party]	{{85897;90801;-3510;-3110};{92825;91029;-3510;-3110};{92965;92377;-3510;-3110};{89521;93273;-3510;-3110};{85993;92713;-3510;-3110}}	territory_end
+npcmaker_begin	[oren_2220_50_party]	initial_spawn = all	maximum_npc = 4
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_54_party]	{{81913;90779;-3666;-3266};{85033;90767;-3666;-3266};{85105;92407;-3666;-3266};{82025;92367;-3666;-3266}}	territory_end
+npcmaker_begin	[oren_2220_54_party]	initial_spawn = all	maximum_npc = 4
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_55_party]	{{77084;91946;-3711;-3311};{82568;92966;-3711;-3311};{82384;94334;-3711;-3311};{79416;93762;-3711;-3311}}	territory_end
+npcmaker_begin	[oren_2220_55_party]	initial_spawn = all	maximum_npc = 4
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+territory_begin	[oren_2220_56_party]	{{80603;89913;-3735;-3335};{81819;90745;-3735;-3335};{81923;92613;-3735;-3335};{77043;91793;-3735;-3335};{77795;90209;-3735;-3335}}	territory_end
+npcmaker_begin	[oren_2220_56_party]	initial_spawn = all	maximum_npc = 4
+npc_begin	[lord_of_plain]	pos = anywhere	total = 1	respawn = 270sec
+Privates = [shaman_of_plain:shaman_of_plain:1:270sec;warrior_of_plain:warrior_of_plain:1:270sec;scout_of_plain:scout_of_plain:1:270sec]	npc_end
+npcmaker_end
+
+//--------------- 22_20 ----------------------------------------------------------------------------------------
+territory_begin	[oren_h_22_20_01]	{{65721;90736;-3816;-3266};{70365;93692;-3816;-3266};{66985;97940;-3816;-3266};{65689;97952;-3816;-3266}}	territory_end
+npcmaker_begin	[oren_h_22_20_01]
+npc_begin	[guardian_basilisk]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[road_scavenger]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_02]	{{71803;93764;-3808;-3358};{76719;96748;-3808;-3358};{76499;98028;-3808;-3358};{68087;98080;-3808;-3358};{68403;96912;-3808;-3358}}	territory_end
+npcmaker_begin	[oren_h_22_20_02]
+npc_begin	[guardian_basilisk]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[road_scavenger]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[crimson_bind]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_03]	{{81517;96471;-3868;-3468};{86353;97695;-3868;-3468};{86313;98123;-3868;-3468};{76685;98043;-3868;-3468};{76857;96747;-3868;-3468}}	territory_end
+npcmaker_begin	[oren_h_22_20_03]
+npc_begin	[road_scavenger]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[windsus]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_04]	{{86753;97598;-3773;-3373};{89257;96946;-3773;-3373};{89285;98094;-3773;-3373};{86637;98102;-3773;-3373}}	territory_end
+npcmaker_begin	[oren_h_22_20_04]
+npc_begin	[windsus]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_05]	{{89373;96939;-3795;-3395};{91265;95559;-3795;-3395};{92277;95747;-3795;-3395};{93373;98123;-3795;-3395};{89393;98071;-3795;-3395}}	territory_end
+npcmaker_begin	[oren_h_22_20_05]
+npc_begin	[road_scavenger]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[windsus]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_06]	{{93332;97637;-3863;-3663};{98080;97905;-3863;-3663};{98048;98069;-3863;-3663};{93516;98101;-3863;-3663}}	territory_end
+npcmaker_begin	[oren_h_22_20_06]
+npc_begin	[crimson_bind]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_07]	{{68460;89266;-3531;-2881};{75032;89562;-3531;-2881};{72732;91322;-3531;-2881}}	territory_end
+npcmaker_begin	[oren_h_22_20_07]
+npc_begin	[leto_lizardman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_archer]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_08]	{{77268;84475;-3785;-3085};{77140;87591;-3785;-3085};{75084;89443;-3785;-3085};{71816;89179;-3785;-3085};{72176;84703;-3785;-3085}}	territory_end
+npcmaker_begin	[oren_h_22_20_08]
+npc_begin	[leto_lizardman]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_archer]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_09]	{{68155;84497;-3703;-3103};{72027;84633;-3703;-3103};{71695;89085;-3703;-3103};{68383;88929;-3703;-3103}}	territory_end
+npcmaker_begin	[oren_h_22_20_09]
+npc_begin	[leto_lizardman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_archer]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_10]	{{72104;79507;-3767;-3167};{72032;84495;-3767;-3167};{68088;84307;-3767;-3167};{68016;80095;-3767;-3167}}	territory_end
+npcmaker_begin	[oren_h_22_20_10]
+npc_begin	[leto_lizardman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_11]	{{72386;79347;-3708;-3108};{76758;78659;-3708;-3108};{77138;84255;-3708;-3108};{72310;84511;-3708;-3108}}	territory_end
+npcmaker_begin	[oren_h_22_20_11]
+npc_begin	[leto_lizardman]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_12]	{{69270;86398;-3623;-3123};{70154;85374;-3623;-3123};{71038;87382;-3623;-3123};{70062;88378;-3623;-3123}}	territory_end
+npcmaker_begin	[oren_h_22_20_12]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_13]	{{73850;83933;-3764;-3164};{75838;83701;-3764;-3164};{75610;86129;-3764;-3164};{73650;86317;-3764;-3164}}	territory_end
+npcmaker_begin	[oren_h_22_20_13]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_14]	{{72141;80664;-4021;-3521};{72753;81384;-4021;-3521};{72505;81876;-4021;-3521};{71545;81772;-4021;-3521};{71001;81076;-4021;-3521};{71385;80468;-4021;-3521}}	territory_end
+npcmaker_begin	[oren_h_22_20_14]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_15]	{{67763;75199;-3749;-3249};{72219;75223;-3749;-3249};{72059;79275;-3749;-3249};{67987;79827;-3749;-3249}}	territory_end
+npcmaker_begin	[oren_h_22_20_15]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_16]	{{72480;75372;-3816;-3016};{76936;73164;-3816;-3016};{76728;78460;-3816;-3016};{72368;79128;-3816;-3016}}	territory_end
+npcmaker_begin	[oren_h_22_20_16]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 9	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_17]	{{65609;65619;-3854;-3354};{68601;65615;-3854;-3354};{69077;74975;-3854;-3354};{67705;74939;-3854;-3354};{65705;72743;-3854;-3354}}	territory_end
+npcmaker_begin	[oren_h_22_20_17]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_18]	{{68810;65650;-3791;-3191};{72522;65722;-3791;-3191};{72414;75086;-3791;-3191};{69238;74974;-3791;-3191}}	territory_end
+npcmaker_begin	[oren_h_22_20_18]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_19]	{{74149;78108;-3611;-3111};{75449;77804;-3611;-3111};{75561;80068;-3611;-3111};{74181;80172;-3611;-3111}}	territory_end
+npcmaker_begin	[oren_h_22_20_19]
+npc_begin	[leto_lizardman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_20]	{{69146;77166;-4008;-3608};{69450;77142;-4008;-3608};{69474;77442;-4008;-3608};{69174;77442;-4008;-3608}}	territory_end
+npcmaker_begin	[oren_h_22_20_20]
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_21]	{{69234;76023;-3944;-3644};{69494;76063;-3944;-3644};{69506;76323;-3944;-3644};{69222;76299;-3944;-3644}}	territory_end
+npcmaker_begin	[oren_h_22_20_21]
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_22]	{{70035;75582;-3863;-3663};{70375;75590;-3863;-3663};{70303;75842;-3863;-3663};{70051;75830;-3863;-3663}}	territory_end
+npcmaker_begin	[oren_h_22_20_22]
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_23]	{{70980;76113;-3767;-3567};{71308;76105;-3767;-3567};{71312;76313;-3767;-3567};{71064;76313;-3767;-3567}}	territory_end
+npcmaker_begin	[oren_h_22_20_23]
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_24]	{{71070;77161;-3730;-3530};{71266;77245;-3730;-3530};{71266;77445;-3730;-3530};{70954;77421;-3730;-3530}}	territory_end
+npcmaker_begin	[oren_h_22_20_24]
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_25]	{{70080;77733;-3753;-3553};{70364;77769;-3753;-3553};{70352;78001;-3753;-3553};{70152;78001;-3753;-3553}}	territory_end
+npcmaker_begin	[oren_h_22_20_25]
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_26]	{{74159;72843;-3708;-3308};{75347;72587;-3708;-3308};{75147;75539;-3708;-3308};{74115;75651;-3708;-3308}}	territory_end
+npcmaker_begin	[oren_h_22_20_26]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_27]	{{72775;65927;-3889;-3339};{74731;65651;-3889;-3339};{76243;73055;-3889;-3339};{72523;75007;-3889;-3339}}	territory_end
+npcmaker_begin	[oren_h_22_20_27]
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_28]	{{67261;68996;-3949;-3549};{68149;69000;-3949;-3549};{68161;70256;-3949;-3549};{67285;70264;-3949;-3549}}	territory_end
+npcmaker_begin	[oren_h_22_20_28]
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_29]	{{70518;72011;-3931;-3531};{71222;70975;-3931;-3531};{72194;71871;-3931;-3531};{71522;72803;-3931;-3531}}	territory_end
+npcmaker_begin	[oren_h_22_20_29]
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_30]	{{76258;67408;-4027;-2727};{82326;67448;-4027;-2727};{82674;70720;-4027;-2727};{77754;70596;-4027;-2727};{76426;68520;-4027;-2727}}	territory_end
+npcmaker_begin	[oren_h_22_20_30]
+npc_begin	[leto_lizardman_overlord]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_31]	{{82310;65765;-3785;-2985};{87274;65561;-3785;-2985};{85110;69777;-3785;-2985};{82866;70577;-3785;-2985}}	territory_end
+npcmaker_begin	[oren_h_22_20_31]
+npc_begin	[leto_lizardman_overlord]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_32]	{{87367;65640;-3801;-3051};{93739;65660;-3801;-3051};{91927;69908;-3801;-3051};{89383;70436;-3801;-3051};{85319;69548;-3801;-3051}}	territory_end
+npcmaker_begin	[oren_h_22_20_32]
+npc_begin	[leto_lizardman_overlord]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_33]	{{93797;65633;-3946;-3146};{98049;69117;-3946;-3146};{97997;75101;-3946;-3146};{92097;69905;-3946;-3146}}	territory_end
+npcmaker_begin	[oren_h_22_20_33]
+npc_begin	[leto_lizardman_overlord]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_34]	{{78386;74086;-3828;-3328};{81010;74702;-3828;-3328};{81222;80410;-3828;-3328};{78410;79802;-3828;-3328}}	territory_end
+npcmaker_begin	[oren_h_22_20_34]
+npc_begin	[leto_lizardman_overlord]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_35]	{{81232;80508;-3770;-3120};{83576;84452;-3770;-3120};{80624;84752;-3770;-3120};{78952;84080;-3770;-3120};{78468;80044;-3770;-3120}}	territory_end
+npcmaker_begin	[oren_h_22_20_35]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_36]	{{81169;80373;-3952;-3252};{84873;78097;-3952;-3252};{87013;82053;-3952;-3252};{83509;84201;-3952;-3252}}	territory_end
+npcmaker_begin	[oren_h_22_20_36]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_37]	{{81098;74673;-3851;-3251};{85274;73449;-3851;-3251};{84890;78005;-3851;-3251};{81250;80413;-3851;-3251}}	territory_end
+npcmaker_begin	[oren_h_22_20_37]
+npc_begin	[leto_lizardman_overlord]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_38]	{{84931;77805;-3766;-3166};{90311;78265;-3766;-3166};{89831;82637;-3766;-3166};{87159;81937;-3766;-3166}}	territory_end
+npcmaker_begin	[oren_h_22_20_38]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_39]	{{90081;72226;-3810;-3210};{92305;76974;-3810;-3210};{90321;78150;-3810;-3210};{85017;77734;-3810;-3210};{85329;73422;-3810;-3210};{87589;71774;-3810;-3210}}	territory_end
+npcmaker_begin	[oren_h_22_20_39]
+npc_begin	[leto_lizardman_overlord]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_40]	{{90310;72491;-3777;-3277};{93338;73067;-3777;-3277};{95890;76435;-3777;-3277};{92466;76983;-3777;-3277}}	territory_end
+npcmaker_begin	[oren_h_22_20_40]
+npc_begin	[leto_lizardman_overlord]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_41]	{{95952;76531;-3763;-3263};{97948;76899;-3763;-3263};{98000;79127;-3763;-3263};{95456;80471;-3763;-3263};{92244;77087;-3763;-3263}}	territory_end
+npcmaker_begin	[oren_h_22_20_41]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_42]	{{92258;77175;-3818;-3218};{95370;80511;-3818;-3218};{93318;81943;-3818;-3218};{89962;82611;-3818;-3218};{90426;78247;-3818;-3218}}	territory_end
+npcmaker_begin	[oren_h_22_20_42]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_43]	{{93413;82004;-3852;-3352};{94917;80996;-3852;-3352};{96001;83260;-3852;-3352};{96609;86184;-3852;-3352};{93865;85592;-3852;-3352}}	territory_end
+npcmaker_begin	[oren_h_22_20_43]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_44]	{{91485;83042;-3794;-3394};{92905;82910;-3794;-3394};{93309;85618;-3794;-3394};{91653;85598;-3794;-3394}}	territory_end
+npcmaker_begin	[oren_h_22_20_44]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_45]	{{91842;86306;-3740;-3340};{94174;86518;-3740;-3340};{93614;89874;-3740;-3340};{90890;89706;-3740;-3340}}	territory_end
+npcmaker_begin	[oren_h_22_20_45]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_46]	{{95066;85905;-3801;-3201};{95702;86073;-3801;-3201};{96562;90161;-3801;-3201};{94342;89929;-3801;-3201}}	territory_end
+npcmaker_begin	[oren_h_22_20_46]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_47]	{{95988;90223;-3866;-3366};{98048;91207;-3866;-3366};{98104;94499;-3866;-3366};{96056;94395;-3866;-3366}}	territory_end
+npcmaker_begin	[oren_h_22_20_47]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_48]	{{96895;94460;-3985;-3485};{98091;94540;-3985;-3485};{98071;97800;-3985;-3485};{96895;96592;-3985;-3485}}	territory_end
+npcmaker_begin	[oren_h_22_20_48]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_49]	{{94018;90792;-3752;-3352};{95406;90896;-3752;-3352};{95414;92636;-3752;-3352};{93854;92664;-3752;-3352}}	territory_end
+npcmaker_begin	[oren_h_22_20_49]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_50]	{{85897;90801;-3510;-3110};{92825;91029;-3510;-3110};{92965;92377;-3510;-3110};{89521;93273;-3510;-3110};{85993;92713;-3510;-3110}}	territory_end
+npcmaker_begin	[oren_h_22_20_50]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_51]	{{88536;91403;-3578;-3078};{90620;91399;-3578;-3078};{90720;92407;-3578;-3078};{88444;92483;-3578;-3078}}	territory_end
+npcmaker_begin	[oren_h_22_20_51]
+npc_begin	[leto_lizardman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_52]	{{87483;93754;-3586;-3186};{85655;93838;-3586;-3186};{85291;94866;-3586;-3186};{85695;95506;-3586;-3186};{88339;94506;-3586;-3186}}	territory_end
+npcmaker_begin	[oren_h_22_20_52]
+npc_begin	[leto_lizardman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_archer]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_53]	{{84976;92972;-3665;-3265};{85612;93824;-3665;-3265};{85220;94932;-3665;-3265};{83204;94556;-3665;-3265};{83136;92840;-3665;-3265}}	territory_end
+npcmaker_begin	[oren_h_22_20_53]
+npc_begin	[leto_lizardman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_54]	{{81913;90779;-3666;-3266};{85033;90767;-3666;-3266};{85105;92407;-3666;-3266};{82025;92367;-3666;-3266}}	territory_end
+npcmaker_begin	[oren_h_22_20_54]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_55]	{{77084;91946;-3711;-3311};{82568;92966;-3711;-3311};{82384;94334;-3711;-3311};{79416;93762;-3711;-3311}}	territory_end
+npcmaker_begin	[oren_h_22_20_55]
+npc_begin	[leto_lizardman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_archer]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_56]	{{80603;89913;-3735;-3335};{81819;90745;-3735;-3335};{81923;92613;-3735;-3335};{77043;91793;-3735;-3335};{77795;90209;-3735;-3335}}	territory_end
+npcmaker_begin	[oren_h_22_20_56]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_57]	{{76720;91734;-3821;-3321};{79192;94542;-3821;-3321};{77008;94406;-3821;-3321};{73900;92550;-3821;-3321};{75004;91546;-3821;-3321}}	territory_end
+npcmaker_begin	[oren_h_22_20_57]
+npc_begin	[leto_lizardman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_58]	{{77180;89421;-3835;-3135};{77748;90189;-3835;-3135};{76896;91693;-3835;-3135};{75124;91477;-3835;-3135}}	territory_end
+npcmaker_begin	[oren_h_22_20_58]
+npc_begin	[leto_lizardman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_59]	{{78078;88835;-3745;-3245};{81662;86291;-3745;-3245};{81846;89539;-3745;-3245};{78950;89615;-3745;-3245}}	territory_end
+npcmaker_begin	[oren_h_22_20_59]
+npc_begin	[leto_lizardman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_20_60]	{{83416;86327;-3629;-3129};{85572;88135;-3629;-3129};{85492;89651;-3629;-3129};{81892;89563;-3629;-3129};{81776;86351;-3629;-3129}}	territory_end
+npcmaker_begin	[oren_h_22_20_60]
+npc_begin	[leto_lizardman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[quest_22_20_0922_100]	{{80498;76214;-3790;-3290};{90182;73142;-3790;-3290};{94074;76774;-3790;-3290};{93862;78826;-3790;-3290};{81218;79846;-3790;-3290}}	territory_end
+npcmaker_begin	[quest_22_20_0922_100]	initial_spawn = all	maximum_npc = 40
+npc_begin	[bloody_axe_elite]	pos = anywhere	total = 40	respawn = 3min	npc_end
+npcmaker_end
+
+//--------------------------------------------------------------------------------------------------------------
+//Event Mob
+//DATE.03.12.17
+// 크로니컬 1 - 이벤트 몬스터
+//--------------------------------------------------------------------------------------------------------------
+//--------------------오렌인간 22_20
+territory_begin	[event_oren_h_01]	{{68284;70368;-3960;-3260};{75188;69740;-3960;-3260};{76732;83720;-3960;-3260};{68668;83716;-3960;-3260}}	territory_end
+npcmaker_begin	[event_oren_h_01]	initial_spawn=all	maximum_npc=5
+npc_begin	[dread_avenger_kraven]	pos={{70256;76624;-3637;0;20%};{71872;81216;-3607;0;20%};{74656;80288;-3386;0;20%};{74288;75920;-3403;0;20%};{71600;72016;-3584;0;20%}}	total=1	respawn=2hour	respawn_rand=1hour	Privates=[dread_panther:dread_panther:1:1min;dread_panther:dread_panther:1:1min;dread_panther:dread_panther:1:1min;dread_panther:dread_panther:1:1min]	npc_end
+npcmaker_end
+
+territory_begin	[event_oren_h_02]	{{81068;76344;-3776;-3176};{93372;75104;-3776;-3176};{93556;81608;-3776;-3176};{81800;83120;-3776;-3176}}	territory_end
+npcmaker_begin	[event_oren_h_02]	initial_spawn=all	maximum_npc=5
+npc_begin	[dread_avenger_kraven]	pos={{82128;78112;-3701;0;20%};{86304;80064;-3497;0;20%};{87312;77152;-3520;0;20%};{92608;80416;-3604;0;20%};{91440;76800;-3708;0;20%}}	total=1	respawn=2hour	respawn_rand=1hour	Privates=[dread_panther:dread_panther:1:1min;dread_panther:dread_panther:1:1min;dread_panther:dread_panther:1:1min;dread_panther:dread_panther:1:1min]	npc_end
+npcmaker_end
+

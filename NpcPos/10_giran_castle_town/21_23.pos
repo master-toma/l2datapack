@@ -1,0 +1,153 @@
+//--------------------22_23 (NPC) 031201 선착장--------------------
+territory_begin	[21_23_NPC_031201_01]	{{48444;186444;-3524;-3324};{48644;186444;-3524;-3324};{48644;186644;-3524;-3324};{48444;186644;-3524;-3324}}	territory_end
+npcmaker_begin	[21_23_NPC_031201_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[wharf_manager_felton]	pos = {48564;186548;-3445;42000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[21_23_NPC_031201_02]	{{47884;186716;-3521;-3321};{48084;186716;-3521;-3321};{48084;186916;-3521;-3321};{47884;186916;-3521;-3321}}	territory_end
+npcmaker_begin	[21_23_NPC_031201_02]	initial_spawn = all	maximum_npc = 1
+npc_begin	[gatekeeper_angelina]	pos = {47984;186832;-3445;42000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//------------------------- 21_23 기란 항 --------------------------------------------------------
+territory_begin	[giran_t21_23_001]	{{32924;163998;-3892;-2792};{43224;164062;-3892;-2792};{35012;166042;-3892;-2792};{32872;164994;-3892;-2792}}	territory_end
+npcmaker_begin	[giran_t21_23_001]
+npc_begin	[ol_mahum_captain]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t21_23_002]	{{45372;164113;-3259;-2159};{50956;163993;-3259;-2159};{46620;166825;-3259;-2159};{45032;165753;-3259;-2159}}	territory_end
+npcmaker_begin	[giran_t21_23_002]
+npc_begin	[ol_mahum_captain]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t21_23_003]	{{33049;169229;-3816;-2816};{36189;171281;-3816;-2816};{33861;172793;-3816;-2816};{33057;172437;-3816;-2816}}	territory_end
+npcmaker_begin	[giran_t21_23_003]
+npc_begin	[ol_mahum_captain]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t21_23_004]	{{33061;173203;-3763;-2763};{37233;174315;-3763;-2763};{38001;175123;-3763;-2763};{36377;177819;-3763;-2763};{33073;175715;-3763;-2763}}	territory_end
+npcmaker_begin	[giran_t21_23_004]
+npc_begin	[ol_mahum_captain]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t21_23_005]	{{39063;168558;-3416;-2416};{43195;169318;-3416;-2416};{41975;170338;-3416;-2416};{37963;169410;-3416;-2416}}	territory_end
+npcmaker_begin	[giran_t21_23_005]
+npc_begin	[beamer]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t21_23_006]	{{42187;170540;-3681;-2681};{44703;170504;-3681;-2681};{46935;173540;-3681;-2681};{46843;175980;-3681;-2681};{45171;175396;-3681;-2681};{42759;173120;-3681;-2681}}	territory_end
+npcmaker_begin	[giran_t21_23_006]
+npc_begin	[delu_lizardman]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman_scout]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t21_23_007]	{{47128;175385;-3710;-2110};{49920;175849;-3710;-2110};{48536;177613;-3710;-2110};{46440;178389;-3710;-2110};{45100;175657;-3710;-2110}}	territory_end
+npcmaker_begin	[giran_t21_23_007]
+npc_begin	[delu_lizardman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman_scout]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t21_23_008]	{{48664;170858;-3717;-3117};{51472;171194;-3717;-3117};{50708;172438;-3717;-3117};{47096;173502;-3717;-3117};{46148;172530;-3717;-3117}}	territory_end
+npcmaker_begin	[giran_t21_23_008]
+npc_begin	[delu_lizardman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman_scout]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[silenos]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t21_23_009]	{{51831;171977;-3624;-2824};{53139;171741;-3624;-2824};{54207;172337;-3624;-2824};{54223;173273;-3624;-2824};{52995;173393;-3624;-2824};{51343;172825;-3624;-2824}}	territory_end
+npcmaker_begin	[giran_t21_23_009]
+npc_begin	[delu_lizardman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman_scout]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t21_23_010]	{{54786;169108;-3058;-2058};{58758;169812;-3058;-2058};{60414;172184;-3058;-2058};{59710;173772;-3058;-2058};{57150;175748;-3058;-2058};{54794;171428;-3058;-2058}}	territory_end
+npcmaker_begin	[giran_t21_23_010]
+npc_begin	[delu_lizardman]	pos = anywhere	total = 8	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman_scout]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[silenos]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t21_23_011]	{{63112;165468;-3333;-2133};{65276;165852;-3333;-2133};{65272;170256;-3333;-2133};{62988;171860;-3333;-2133};{61688;171764;-3333;-2133}}	territory_end
+npcmaker_begin	[giran_t21_23_011]
+npc_begin	[delu_lizardman]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman_scout]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[silenos]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t21_23_012]	{{59946;174362;-2924;-2324};{62066;175146;-2924;-2324};{63174;176486;-2924;-2324};{63262;178014;-2924;-2324};{60926;177722;-2924;-2324};{58558;175958;-2924;-2324}}	territory_end
+npcmaker_begin	[giran_t21_23_012]
+npc_begin	[delu_lizardman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman_scout]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[silenos]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[grian_t21_23_013]	{{55239;176934;-3246;-2446};{58443;176114;-3246;-2446};{60879;177838;-3246;-2446};{59575;179354;-3246;-2446};{56003;181342;-3246;-2446}}	territory_end
+npcmaker_begin	[grian_t21_23_013]
+npc_begin	[delu_lizardman]	pos = anywhere	total = 8	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman_scout]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[silenos]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[grian_t21_23_014]	{{33061;178311;-3679;-2579};{37993;182279;-3679;-2579};{38049;184299;-3679;-2579};{33001;186667;-3679;-2579}}	territory_end
+npcmaker_begin	[grian_t21_23_014]
+npc_begin	[ol_mahum_captain]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 8	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 7	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t21_23_015]	{{33001;186861;-3361;-2761};{38093;184481;-3361;-2761};{37645;189277;-3361;-2761};{35009;190037;-3361;-2761};{32993;188949;-3361;-2761}}	territory_end
+npcmaker_begin	[giran_t21_23_015]
+npc_begin	[ol_mahum_captain]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[quest_21_23_001]	{{34972;174816;-3284;-2784};{36672;174540;-3284;-2784};{37168;175460;-3284;-2784};{36468;176640;-3284;-2784};{35144;175932;-3284;-2784}}	territory_end
+npcmaker_begin	[quest_21_23_001]	initial_spawn = all
+npc_begin	[orc_betrayer_sue]	pos = anywhere	total = 1	respawn = 5min	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_21_23_001]	{{56080;179228;-2736;-2336};{57616;179048;-2736;-2336};{57692;179788;-2736;-2336};{56488;180260;-2736;-2336}}	territory_end
+npcmaker_begin	[quest_030919_21_23_001]	initial_spawn = all	maximum_npc = 5
+npc_begin	[delu_chief_kalkis]	pos = anywhere	total = 1	respawn = 3min
+Privates = [delu_lizardman_warrior:party_private:1:1min;delu_lizardman_warrior:party_private:1:1min;delu_lizardman_warrior:party_private:1:1min;delu_lizardman_warrior:party_private:1:1min]	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_21_23_002]	{{43928;171096;-3664;-3164};{46960;172404;-3664;-3164};{46628;173876;-3664;-3164};{44672;174112;-3664;-3164};{42944;172408;-3664;-3164}}	territory_end
+npcmaker_begin	[quest_030919_21_23_002]	initial_spawn = all
+npc_begin	[delu_lizardman_shaman]	pos = anywhere	total = 3	respawn = 3min	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_21_23_003]	{{56560;169164;-2976;-2276};{58724;170020;-2976;-2276};{59264;171904;-2976;-2276};{57140;173784;-2976;-2276};{55280;171004;-2976;-2276}}	territory_end
+npcmaker_begin	[quest_030919_21_23_003]	initial_spawn = all
+npc_begin	[delu_lizardman_shaman]	pos = anywhere	total = 4	respawn = 3min	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_21_23_004]	{{58692;177288;-2892;-2492};{59972;175288;-2892;-2492};{62428;176220;-2892;-2492};{62304;177468;-2892;-2492}}	territory_end
+npcmaker_begin	[quest_030919_21_23_004]	initial_spawn = all
+npc_begin	[delu_lizardman_shaman]	pos = anywhere	total = 2	respawn = 3min	npc_end
+npcmaker_end
+
+territory_begin	[event_t21_23_kylon_01]	{{59566;169872;-3563;-2063};{61820;174237;-3563;-2063};{60559;178154;-3563;-2063};{54814;180246;-3563;-2063};{48113;178731;-3563;-2063};{54946;168533;-3563;-2063}}	territory_end
+territory_begin	[event_t21_23_kylon_02]	{{40249;169765;-3655;-2155};{51150;170786;-3655;-2155};{52867;172622;-3655;-2155};{48530;178732;-3655;-2155};{42359;173934;-3655;-2155}}	territory_end
+npcmaker_begin	[event_t21_23_kylon_01];[event_t21_23_kylon_02]	initial_spawn = all	maximum_npc=5
+npc_begin	[corsair_captain_kylon]	pos = {{57600;171056;-2544;0;35%};{58464;177632;-2804;0;25%};{44305;171286;-3256;0;40%}}	total = 1	respawn=3hour	respawn_rand=1hour	Privates=[kylons_pirate:kylons_pirate:1:1min;kylons_pirate:kylons_pirate:1:1min;kylons_pirate:kylons_pirate:1:1min;kylons_pirate:kylons_pirate:1:1min;kylons_pirate:kylons_pirate:1:1min]	npc_end
+npcmaker_end
+

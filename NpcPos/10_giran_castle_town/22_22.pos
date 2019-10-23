@@ -1,0 +1,331 @@
+//--------------------22_22 031201 (NPC)--------------------
+territory_begin	[22_22_NPC_031201_01]	{{80412;147806;-3625;-3425};{80612;147806;-3625;-3425};{80612;148006;-3625;-3425};{80412;148006;-3625;-3425}}	territory_end
+npcmaker_begin	[22_22_NPC_031201_01]	initial_spawn = all	maximum_npc = 2
+npc_begin	[helvetia]	pos = {80518;147922;-3506;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[denkus]	pos = {80518;147873;-3506;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_031201_02]	{{79676;146380;-3621;-3421};{79876;146380;-3621;-3421};{79876;146580;-3621;-3421};{79676;146580;-3621;-3421}}	territory_end
+npcmaker_begin	[22_22_NPC_031201_02]	initial_spawn = all	maximum_npc = 2
+npc_begin	[grabner]	pos = {79747;146492;-3518;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[stany]	pos = {79801;146493;-3518;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_031201_03]	{{79580;150684;-3626;-3426};{79780;150684;-3626;-3426};{79780;150884;-3626;-3426};{79580;150884;-3626;-3426}}	territory_end
+npcmaker_begin	[22_22_NPC_031201_03]	initial_spawn = all	maximum_npc = 2
+npc_begin	[phojett]	pos = {79711;150788;-3520;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[radia]	pos = {79654;150788;-3520;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_031201_04]	{{83279;150485;-3609;-3409};{83370;150487;-3609;-3409};{83357;150880;-3609;-3409};{83276;150881;-3609;-3409}}	territory_end
+npcmaker_begin	[22_22_NPC_031201_04]	initial_spawn = all	maximum_npc = 2
+npc_begin	[groot]	pos = {83305;150521;-3514;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[gentler]	pos = {83317;150821;-3514;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_031201_05]	{{83218;146577;-3600;-3400};{83312;146576;-3600;-3400};{83312;146768;-3600;-3400};{83216;146768;-3600;-3400}}	territory_end
+npcmaker_begin	[22_22_NPC_031201_05]	initial_spawn = all	maximum_npc = 3
+npc_begin	[warehouse_chief_gesto]	pos = {83263;146667;-3464;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[valkon]	pos = {83264;146602;-3464;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[parman]	pos = {83263;146736;-3464;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_031201_06]	{{77447;148068;-3715;-3515};{77735;148071;-3715;-3515};{77736;148324;-3715;-3515};{77448;148322;-3715;-3515}}	territory_end
+npcmaker_begin	[22_22_NPC_031201_06]	initial_spawn = all	maximum_npc = 3
+npc_begin	[head_blacksmith_kusto]	pos = {77659;148089;-3595;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[blacksmith_pushkin]	pos = {77458;148169;-3595;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[blacksmith_rupio]	pos = {77712;148288;-3595;28672}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_031201_07]	{{85216;152902;-3593;-3393};{86423;152900;-3593;-3393};{86426;153390;-3593;-3393};{85216;153395;-3593;-3393}}	territory_end
+npcmaker_begin	[22_22_NPC_031201_07]	initial_spawn = all	maximum_npc = 6
+npc_begin	[jurek]	pos = {85823;153248;-3494;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[iker]	pos = {85289;153341;-3494;57344}	total = 1	respawn = 1min	npc_end
+npc_begin	[dieter]	pos = {86359;152970;-3494;24576}	total = 1	respawn = 1min	npc_end
+npc_begin	[clinch]	pos = {86362;153337;-3494;40960}	total = 1	respawn = 1min	npc_end
+npc_begin	[juria]	pos = {85253;153153;-3494;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[roa]	pos = {85297;152963;-3494;8192}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_031201_08]	{{81036;145740;-3614;-3414};{81236;145740;-3614;-3414};{81236;145940;-3614;-3414};{81036;145940;-3614;-3414}}	territory_end
+npcmaker_begin	[22_22_NPC_031201_08]	initial_spawn = all	maximum_npc = 1
+npc_begin	[pet_manager_cooper]	pos = {81150;145840;-3531;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_031201_09]	{{84428;146284;-3499;-3299};{84628;146284;-3499;-3299};{84628;146484;-3499;-3299};{84428;146484;-3499;-3299}}	territory_end
+npcmaker_begin	[22_22_NPC_031201_09]	initial_spawn = all	maximum_npc = 2
+npc_begin	[sir_kristof_rodemai]	pos = {84521;146372;-3404;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[gabrielle]	pos = {81296;149728;-3469;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------22_22 (NPC)--------------------
+territory_begin	[22_22_NPC_100]	{{86860;148604;-3446;-3246};{87089;148606;-3446;-3246};{87101;148804;-3446;-3246};{86875;148853;-3446;-3246}}	territory_end
+npcmaker_begin	[22_22_NPC_100]	initial_spawn = all	maximum_npc = 2
+npc_begin	[maximilian]	pos = {87058;148634;-3392;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[dustin]	pos = {86912;148802;-3392;40960}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_101]	{{85781;148298;-3461;-3261};{86580;148348;-3461;-3261};{86580;148898;-3461;-3261};{85775;148948;-3461;-3261}}	territory_end
+npcmaker_begin	[22_22_NPC_101]	initial_spawn = all	maximum_npc = 4
+npc_begin	[pupina]	pos = {86485;148384;-3392;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[primoz]	pos = {86472;148848;-3392;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[priest_bandellos]	pos = {85829;148365;-3392;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[isabellin]	pos = {85828;148894;-3392;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_102]	{{84956;146460;-3531;-3331};{85156;146460;-3531;-3331};{85156;146660;-3531;-3331};{84956;146660;-3531;-3331}}	territory_end
+npcmaker_begin	[22_22_NPC_102]	initial_spawn = all	maximum_npc = 1
+npc_begin	[macken]	pos = {85055;146560;-3399;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_103]	{{85207;146167;-3517;-3317};{85730;146171;-3517;-3317};{85704;146858;-3517;-3317};{85196;146837;-3517;-3317}}	territory_end
+npcmaker_begin	[22_22_NPC_103]	initial_spawn = all	maximum_npc = 5
+npc_begin	[hannavalt]	pos = {85655;146471;-3399;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[genwiter]	pos = {85505;146208;-3399;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[goldian]	pos = {85502;146752;-3399;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[dufner]	pos = {85234;146634;-3399;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[master_riberia]	pos = {85231;146328;-3399;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_106]	{{80308;144162;-3633;-3433};{80502;144180;-3633;-3433};{80501;144631;-3633;-3433};{80303;144619;-3633;-3433}}	territory_end
+npcmaker_begin	[22_22_NPC_106]	initial_spawn = all	maximum_npc = 3
+npc_begin	[high_prefect_penatus]	pos = {80444;144368;-3520;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[seer_manakia]	pos = {80399;144496;-3520;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[prefect_vokiyan]	pos = {80399;144254;-3520;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------22_22 (NPC) 030917--------------------
+territory_begin	[NPC_t22_22_030917_01]	{{84170;143639;-3499;-3299};{84370;143639;-3499;-3299};{84370;143839;-3499;-3299};{84170;143839;-3499;-3299}}	territory_end
+npcmaker_begin	[NPC_t22_22_030917_01]
+npc_begin	[martian]	pos = {84274;143740;-3403;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t22_22_030917_02]	{{79156;146947;-3643;-3443};{79356;146947;-3643;-3443};{79356;147147;-3643;-3443};{79156;147147;-3643;-3443}}	territory_end
+npcmaker_begin	[NPC_t22_22_030917_02]
+npc_begin	[veteran_ascalon]	pos = {79253;147049;-3529;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t22_22_030917_03]	{{87416;149556;-3509;-3309};{87616;149556;-3509;-3309};{87616;149756;-3509;-3309};{87416;149756;-3509;-3309}}	territory_end
+npcmaker_begin	[NPC_t22_22_030917_03]
+npc_begin	[brother_metheus]	pos = {87509;149655;-3402;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------22_22 (NPC) 030708--------------------
+territory_begin	[t22_22_NPC_030708]	{{80132;148956;-3592;-3392};{80628;148956;-3592;-3392};{80628;149680;-3592;-3392};{80132;149680;-3592;-3392}}	territory_end
+npcmaker_begin	[t22_22_NPC_030708]	initial_spawn = all	maximum_npc = 2
+npc_begin	[sandra]	pos = {80511;149183;-3508;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[elliany]	pos = {80510;149250;-3508;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------22_22 (4차 클로즈 NPC)--------------------
+territory_begin	[22_22_NPC_02]	{{78688;148901;-3703;-3503};{79101;148888;-3703;-3503};{79113;149529;-3703;-3503};{78691;149526;-3703;-3503}}	territory_end
+npcmaker_begin	[22_22_NPC_02]	initial_spawn = all	maximum_npc = 4
+npc_begin	[grandmaster_angus]	pos = {79059;149457;-3596;41500}	total = 1	respawn = 1min	npc_end
+npc_begin	[master_stapiin]	pos = {78766;149239;-3596;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[magister_kaira]	pos = {78928;149041;-3596;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_08]	{{79500;145388;-3633;-3433};{79700;145388;-3633;-3433};{79700;145588;-3633;-3433};{79500;145588;-3633;-3433}}	territory_end
+npcmaker_begin	[22_22_NPC_08]	initial_spawn = all	maximum_npc = 2
+npc_begin	[galladuchi]	pos = {79599;145522;-3494;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[alexandria]	pos = {79599;145457;-3494;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_16]	{{90417;147103;-3625;-3425};{90612;147099;-3625;-3425};{90621;147582;-3625;-3425};{90413;147589;-3625;-3425}}	territory_end
+npcmaker_begin	[22_22_NPC_16]	initial_spawn = all	maximum_npc = 2
+npc_begin	[atanas]	pos = {90498;147535;-3528;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[guard_reikin]	pos = {90501;147180;-3530;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_17]	{{83649;141341;-3644;-3444};{84179;141340;-3644;-3444};{84193;141540;-3644;-3444};{83628;141540;-3644;-3444}}	territory_end
+npcmaker_begin	[22_22_NPC_17]	initial_spawn = all	maximum_npc = 2
+npc_begin	[rarshints]	pos = {84064;141438;-3526;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[beltkem]	pos = {83705;141439;-3530;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_18]	{{81370;143372;-3645;-3445};{81649;143372;-3645;-3445};{81679;143572;-3645;-3445};{81361;143572;-3645;-3445}}	territory_end
+npcmaker_begin	[22_22_NPC_18]	initial_spawn = all	maximum_npc = 2
+npc_begin	[vesa]	pos = {81424;143472;-3529;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[zerome]	pos = {81616;143472;-3529;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_19]	{{76908;148375;-3725;-3525};{77106;148354;-3725;-3525};{77112;148932;-3725;-3525};{76908;148935;-3725;-3525}}	territory_end
+npcmaker_begin	[22_22_NPC_19]	initial_spawn = all	maximum_npc = 2
+npc_begin	[guard_kurtys]	pos = {77026;148813;-3598;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[sir_ortho_lancer]	pos = {77029;148447;-3599;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_20]	{{81404;152844;-3634;-3434};{81696;152847;-3634;-3434};{81700;153044;-3634;-3434};{81406;153044;-3634;-3434}}	territory_end
+npcmaker_begin	[22_22_NPC_20]	initial_spawn = all	maximum_npc = 2
+npc_begin	[jeronin]	pos = {81436;152950;-3532;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[blas]	pos = {81642;152955;-3526;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_21]	{{80236;145388;-3653;-3453};{80436;145388;-3653;-3453};{80436;145588;-3653;-3453};{80236;145588;-3653;-3453}}	territory_end
+npcmaker_begin	[22_22_NPC_21]	initial_spawn = all	maximum_npc = 1
+npc_begin	[pochi]	pos = {80329;145482;-3533;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_22]	{{80636;146300;-3641;-3441};{80836;146300;-3641;-3441};{80836;146500;-3641;-3441};{80636;146500;-3641;-3441}}	territory_end
+npcmaker_begin	[22_22_NPC_22]	initial_spawn = all	maximum_npc = 1
+npc_begin	[taurin]	pos = {80752;146400;-3533;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_23]	{{79148;149452;-3660;-3460};{79348;149452;-3660;-3460};{79348;149652;-3660;-3460};{79148;149652;-3660;-3460}}	territory_end
+npcmaker_begin	[22_22_NPC_23]	initial_spawn = all	maximum_npc = 1
+npc_begin	[collob]	pos = {79248;149552;-3531;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_24]	{{82300;149804;-3629;-3429};{82500;149804;-3629;-3429};{82500;150004;-3629;-3429};{82300;150004;-3629;-3429}}	territory_end
+npcmaker_begin	[22_22_NPC_24]	initial_spawn = all	maximum_npc = 1
+npc_begin	[landolf]	pos = {82405;149905;-3520;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_22_NPC_25]	{{83260;147820;-3524;-3324};{83460;147820;-3524;-3324};{83460;148020;-3524;-3324};{83260;148020;-3524;-3324}}	territory_end
+npcmaker_begin	[22_22_NPC_25]	initial_spawn = all	maximum_npc = 1
+npc_begin	[clavier]	pos = {83396;147904;-3404;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//------------------------- 22_22 기란 거대시장 마을 --------------------------------------------------------
+territory_begin	[giran_t22_22_001]	{{65689;131232;-3888;-3488};{70017;131200;-3888;-3488};{70285;133172;-3888;-3488};{69161;133608;-3888;-3488};{65693;132844;-3888;-3488}}	territory_end
+npcmaker_begin	[giran_t22_22_001]
+npc_begin	[wyrm]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[guardian_basilisk]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_002]	{{70840;131233;-3757;-2757};{78424;131257;-3757;-2757};{76744;133405;-3757;-2757};{72988;134097;-3757;-2757}}	territory_end
+npcmaker_begin	[giran_t22_22_002]
+npc_begin	[wyrm]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[guardian_basilisk]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_003]	{{87482;131194;-3785;-3185};{96118;131206;-3785;-3185};{93554;133302;-3785;-3185};{88718;133330;-3785;-3185}}	territory_end
+npcmaker_begin	[giran_t22_22_003]
+npc_begin	[breka_orc]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[breka_orc_archer]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[breka_orc_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_004]	{{88643;134140;-3668;-3268};{89579;133516;-3668;-3268};{90191;134600;-3668;-3268};{89315;135392;-3668;-3268}}	territory_end
+npcmaker_begin	[giran_t22_22_004]
+npc_begin	[breka_orc_overlord]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_005]	{{96206;131377;-3709;-3109};{98010;131317;-3709;-3109};{97966;136893;-3709;-3109};{96066;137553;-3709;-3109};{94854;137037;-3709;-3109};{94754;132681;-3709;-3109}}	territory_end
+npcmaker_begin	[giran_t22_22_005]
+npc_begin	[breka_orc]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[breka_orc_archer]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[breka_orc_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_009]	{{65767;139450;-3807;-3107};{70151;141342;-3807;-3107};{69983;144754;-3807;-3107};{65823;145886;-3807;-3107}}	territory_end
+npcmaker_begin	[giran_t22_22_009]
+npc_begin	[skeleton_raider]	pos = anywhere	total = 9	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_010]	{{65720;145925;-3769;-3269};{67340;145441;-3769;-3269};{66720;149689;-3769;-3269};{65740;150137;-3769;-3269}}	territory_end
+npcmaker_begin	[giran_t22_22_010]
+npc_begin	[skeleton_raider]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_tt22_22_011]	{{66327;149777;-3788;-3188};{67447;150953;-3788;-3188};{65655;154077;-3788;-3188};{65711;150121;-3788;-3188}}	territory_end
+npcmaker_begin	[giran_tt22_22_011]
+npc_begin	[skeleton_raider]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_012]	{{67709;155098;-3783;-2933};{68585;155586;-3783;-2933};{69869;160642;-3783;-2933};{65701;161590;-3783;-2933};{65825;155466;-3783;-2933}}	territory_end
+npcmaker_begin	[giran_t22_22_012]
+npc_begin	[skeleton_raider]	pos = anywhere	total = 8	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_013]	{{65787;161627;-3522;-1922};{67379;161267;-3522;-1922};{67703;163559;-3522;-1922};{65715;163491;-3522;-1922}}	territory_end
+npcmaker_begin	[giran_t22_22_013]
+npc_begin	[skeleton_raider]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_014]	{{74261;158065;-3555;-2755};{76405;156901;-3555;-2755};{79577;157457;-3555;-2755};{78149;160153;-3555;-2755};{75081;160425;-3555;-2755}}	territory_end
+npcmaker_begin	[giran_t22_22_014]
+npc_begin	[skeleton_raider]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[silenos]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_015]	{{78156;153322;-3615;-2815};{80284;155014;-3615;-2815};{79508;157438;-3615;-2815};{76468;156902;-3615;-2815};{76488;156046;-3615;-2815}}	territory_end
+npcmaker_begin	[giran_t22_22_015]
+npc_begin	[beamer]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_016]	{{81413;154704;-3595;-2995};{83497;155596;-3595;-2995};{83309;156560;-3595;-2995};{81701;158176;-3595;-2995};{80665;156504;-3595;-2995}}	territory_end
+npcmaker_begin	[giran_t22_22_016]
+npc_begin	[beamer]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_024]	{{94871;147897;-3766;-2566};{97947;145501;-3766;-2566};{97931;152657;-3766;-2566};{94947;152985;-3766;-2566}}	territory_end
+npcmaker_begin	[giran_t22_22_024]
+npc_begin	[skeleton_raider]	pos = anywhere	total = 9	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_025]	{{89014;151701;-3723;-2923};{90406;149809;-3723;-2923};{91378;150273;-3723;-2923};{91394;152109;-3723;-2923};{89578;152357;-3723;-2923}}	territory_end
+npcmaker_begin	[giran_t22_22_025]
+npc_begin	[skeleton_raider]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[silenos]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_026]	{{85694;139720;-3636;-3036};{89270;139592;-3636;-3036};{89922;141016;-3636;-3036};{89446;142740;-3636;-3036};{87794;142916;-3636;-3036};{85582;141840;-3636;-3036}}	territory_end
+npcmaker_begin	[giran_t22_22_026]
+npc_begin	[skeleton_raider]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[silenos]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_027]	{{78243;139076;-3679;-2879};{80855;139068;-3679;-2879};{80295;140744;-3679;-2879};{78447;140648;-3679;-2879};{77275;139800;-3679;-2879}}	territory_end
+npcmaker_begin	[giran_t22_22_027]
+npc_begin	[skeleton_raider]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[skeleton_rapid_shooter]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[silenos]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_028]	{{72362;131529;-3711;-3111};{76550;131573;-3711;-3111};{75070;132945;-3711;-3111};{73102;132721;-3711;-3111}}	territory_end
+npcmaker_begin	[giran_t22_22_028]
+npc_begin	[road_scavenger]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_030]	{{66356;141015;-3841;-3241};{68936;141951;-3841;-3241};{67636;144455;-3841;-3241};{66392;144643;-3841;-3241}}	territory_end
+npcmaker_begin	[giran_t22_22_030]
+npc_begin	[silenos]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_031]	{{66104;156543;-3740;-3340};{67892;156707;-3740;-3340};{67560;159023;-3740;-3340};{66216;160311;-3740;-3340}}	territory_end
+npcmaker_begin	[giran_t22_22_031]
+npc_begin	[silenos]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_032]	{{76477;157430;-3563;-3063};{78669;157842;-3563;-3063};{77689;159358;-3563;-3063};{75681;159126;-3563;-3063}}	territory_end
+npcmaker_begin	[giran_t22_22_032]
+npc_begin	[silenos]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_039]	{{95483;148332;-3767;-3167};{97547;147012;-3767;-3167};{97551;149976;-3767;-3167};{95587;150732;-3767;-3167}}	territory_end
+npcmaker_begin	[giran_t22_22_039]
+npc_begin	[amber_basilisk]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_040]	{{95349;134485;-3734;-3334};{97445;133497;-3734;-3334};{97273;136309;-3734;-3334};{95933;136705;-3734;-3334}}	territory_end
+npcmaker_begin	[giran_t22_22_040]
+npc_begin	[amber_basilisk]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_22_041]	{{88840;131531;-3742;-3342};{92412;131567;-3742;-3342};{92824;132595;-3742;-3342};{89588;132879;-3742;-3342}}	territory_end
+npcmaker_begin	[giran_t22_22_041]
+npc_begin	[amber_basilisk]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+

@@ -1,0 +1,348 @@
+//--------------------- 19_20의 NPC --------------------
+territory_begin	[19_20_1129_NPC01]	{{-9188;72860;-3558;-3358};{-8988;72860;-3558;-3358};{-8988;73060;-3558;-3358};{-9188;73060;-3558;-3358}}	territory_end
+npcmaker_begin	[19_20_1129_NPC01]
+npc_begin	[prigun]	pos = {-9076;72969;-3457;57344}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------- 19_20 중립지대 설명 NPC ---------------
+territory_begin	[19_20_1130_NPC01]	{{-15206;70970;-3563;-3363};{-15463;71310;-3563;-3363};{-15848;71618;-3563;-3363};{-16231;71283;-3563;-3363};{-16167;70786;-3563;-3363};{-15578;70623;-3563;-3363}}	territory_end
+npcmaker_begin	[19_20_1130_NPC01]
+npc_begin	[sentry_irine]	pos = {-15404;71131;-3445;-25096}	total = 1	respawn = 1min	npc_end
+npc_begin	[sentry_cathyday]	pos = {-15648;71405;-3451;-24928}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[19_20_1130_NPC02]	{{-1090;75585;-3696;-3496};{-846;75687;-3696;-3496};{-720;75932;-3696;-3496};{-1056;76309;-3696;-3496};{-1420;75763;-3696;-3496}}	territory_end
+npcmaker_begin	[19_20_1130_NPC02]
+npc_begin	[sentinel_trionell]	pos = {-1152;76125;-3566;-8920}	total = 1	respawn = 1min	npc_end
+npc_begin	[sentinel_eriel]	pos = {-1301;75883;-3566;-4628}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//------------------- 19_20 다크엘프영지:중립지대 근처 --------------------------------------------------------
+territory_begin	[oren_delf_t19_20_001]	{{-32456;65836;-3740;-3140};{-26000;65836;-3740;-3140};{-24292;68564;-3740;-3140};{-27524;69640;-3740;-3140};{-32424;69356;-3740;-3140}}	territory_end
+npcmaker_begin	[oren_delf_t19_20_001]
+npc_begin	[stone_soldier]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[redeye_bat]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[stone_guardian]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t19_20_002]	{{-24824;65832;-3764;-3464};{-18352;65768;-3764;-3464};{-18652;67444;-3764;-3464};{-23380;67860;-3764;-3464}}	territory_end
+npcmaker_begin	[oren_delf_t19_20_002]
+npc_begin	[scavenger_spider]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[red_scavenger_spider]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[moonstone_beast]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t19_20_003]	{{-18120;65820;-3764;-3364};{-12088;65748;-3764;-3364};{-11616;67880;-3764;-3364};{-14740;70512;-3764;-3364};{-18352;67548;-3764;-3364}}	territory_end
+npcmaker_begin	[oren_delf_t19_20_003]
+npc_begin	[scavenger_spider]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[red_scavenger_spider]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[moonstone_beast]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t19_20_004]	{{-18624;68648;-3708;-3308};{-17428;69532;-3708;-3308};{-16296;71120;-3708;-3308};{-21424;76504;-3708;-3308};{-25612;70380;-3708;-3308};{-21892;68492;-3708;-3308}}	territory_end
+npcmaker_begin	[oren_delf_t19_20_004]
+npc_begin	[scavenger_spider]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npc_begin	[moonstone_beast]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t19_20_005]	{{-32508;70548;-3732;-3232};{-25776;70408;-3732;-3232};{-21596;76712;-3732;-3232};{-23528;79416;-3732;-3232};{-32508;80860;-3732;-3232}}	territory_end
+npcmaker_begin	[oren_delf_t19_20_005]
+npc_begin	[red_scavenger_spider]	pos = anywhere	total = 10	respawn = 15sec	npc_end
+npc_begin	[moonstone_beast]	pos = anywhere	total = 10	respawn = 15sec	npc_end
+npc_begin	[scavenger_wererat]	pos = anywhere	total = 10	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t19_20_006]	{{-30732;80672;-3716;-3216};{-23952;79632;-3716;-3216};{-23100;85288;-3716;-3216};{-23004;87808;-3716;-3216};{-23520;88900;-3716;-3216};{-29976;84928;-3716;-3216}}	territory_end
+npcmaker_begin	[oren_delf_t19_20_006]
+npc_begin	[red_scavenger_spider]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npc_begin	[scavenger_wererat]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npc_begin	[lycanthrope]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t19_20_007]	{{-32556;81064;-3584;-2984};{-30824;80780;-3584;-2984};{-30108;84816;-3584;-2984};{-32572;85160;-3584;-2984}}	territory_end
+npcmaker_begin	[oren_delf_t19_20_007]
+npc_begin	[red_scavenger_spider]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[scavenger_wererat]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[lycanthrope]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t19_20_008]	{{-30904;66816;-3672;-3272};{-27480;66124;-3672;-3272};{-28048;67796;-3672;-3272};{-29204;69072;-3672;-3272}}	territory_end
+npcmaker_begin	[oren_delf_t19_20_008]
+npc_begin	[stopper]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t19_20_009]	{{-16568;67588;-3692;-3242};{-13344;66328;-3692;-3242};{-13780;68800;-3692;-3242};{-14996;69224;-3692;-3242}}	territory_end
+npcmaker_begin	[oren_delf_t19_20_009]
+npc_begin	[scavenger_wererat]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t19_20_010]	{{-22076;69164;-3676;-3276};{-20056;69460;-3676;-3276};{-22524;73104;-3676;-3276};{-24184;71204;-3676;-3276}}	territory_end
+npcmaker_begin	[oren_delf_t19_20_010]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t19_20_011]	{{-26512;76132;-3672;-3272};{-24556;75676;-3672;-3272};{-23284;77204;-3672;-3272};{-24364;79076;-3672;-3272};{-26744;78460;-3672;-3272}}	territory_end
+npcmaker_begin	[oren_delf_t19_20_011]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[lycanthrope]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t19_20_012]	{{-28348;71704;-3640;-3240};{-26400;71548;-3640;-3240};{-25360;74908;-3640;-3240};{-27588;75616;-3640;-3240};{-30420;74648;-3640;-3240}}	territory_end
+npcmaker_begin	[oren_delf_t19_20_012]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[lycanthrope]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t19_20_013]	{{-27968;84024;-3776;-3376};{-24444;83476;-3776;-3376};{-23648;86148;-3776;-3376};{-24580;87236;-3776;-3376}}	territory_end
+npcmaker_begin	[oren_delf_t19_20_013]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[lycanthrope]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_delf_t19_20_014]	{{-29272;80780;-3832;-3432};{-26776;80404;-3832;-3432};{-26868;83140;-3832;-3432};{-28452;82732;-3832;-3432}}	territory_end
+npcmaker_begin	[oren_delf_t19_20_014]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[lycanthrope]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+//------------------- 19_20 엘프영지:중립지대 DMZ-------------------------------------------------------------
+territory_begin	[oren_t19_20_elf_001]	{{-6472;65972;-3784;-3384};{-404;65928;-3784;-3384};{-428;71156;-3784;-3384};{-2424;72576;-3784;-3384};{-6508;71044;-3784;-3384}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_001]
+npc_begin	[lirein]	pos = anywhere	total = 12	respawn = 15sec	npc_end
+npc_begin	[lirein_ribe]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_002]	{{-9128;66592;-3788;-3388};{-6588;65900;-3788;-3388};{-6660;70880;-3788;-3388};{-8648;69948;-3788;-3388};{-9916;68176;-3788;-3388}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_002]
+npc_begin	[lirein]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[lirein_ribe]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_003]	{{-9620;71924;-3676;-3276};{-6528;72980;-3676;-3276};{-3540;76312;-3676;-3276};{-4384;76712;-3676;-3276};{-10528;75136;-3676;-3276};{-13304;72596;-3676;-3276};{-12540;71740;-3676;-3276}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_003]
+npc_begin	[red_scavenger_spider]	pos = anywhere	total = 4	respawn = 25sec	npc_end
+npc_begin	[moonstone_beast]	pos = anywhere	total = 5	respawn = 25sec	npc_end
+npc_begin	[lirein]	pos = anywhere	total = 4	respawn = 25sec	npc_end
+npc_begin	[lirein_ribe]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_004]	{{-6624;77128;-3648;-3248};{-4788;77992;-3648;-3248};{-8796;81656;-3648;-3248};{-10096;76472;-3648;-3248}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_004]
+npc_begin	[scavenger_spider]	pos = anywhere	total = 3	respawn = 25sec	npc_end
+npc_begin	[moonstone_beast]	pos = anywhere	total = 4	respawn = 25sec	npc_end
+npc_begin	[scavenger_wererat]	pos = anywhere	total = 3	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_005]	{{-2836;78004;-3748;-3348};{-456;79728;-3748;-3348};{-468;83616;-3748;-3348};{-4244;83352;-3748;-3348};{-6984;80072;-3748;-3348};{-4668;78028;-3748;-3348}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_005]
+npc_begin	[scavenger_spider]	pos = anywhere	total = 5	respawn = 25sec	npc_end
+npc_begin	[moonstone_beast]	pos = anywhere	total = 5	respawn = 25sec	npc_end
+npc_begin	[scavenger_wererat]	pos = anywhere	total = 5	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_006]	{{-4240;83504;-3780;-3380};{-444;83712;-3780;-3380};{-528;87528;-3780;-3380};{-5744;86412;-3780;-3380}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_006]
+npc_begin	[red_scavenger_spider]	pos = anywhere	total = 3	respawn = 25sec	npc_end
+npc_begin	[scavenger_spider]	pos = anywhere	total = 4	respawn = 25sec	npc_end
+npc_begin	[lycanthrope]	pos = anywhere	total = 3	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_007]	{{-7064;80160;-3772;-3372};{-4344;83468;-3772;-3372};{-5840;86328;-3772;-3372};{-9020;86048;-3772;-3372};{-8912;81788;-3772;-3372}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_007]
+npc_begin	[red_scavenger_spider]	pos = anywhere	total = 4	respawn = 25sec	npc_end
+npc_begin	[scavenger_spider]	pos = anywhere	total = 5	respawn = 25sec	npc_end
+npc_begin	[lycanthrope]	pos = anywhere	total = 4	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_008]	{{-14372;73248;-3648;-3248};{-11124;76644;-3648;-3248};{-10432;80164;-3648;-3248};{-14984;80120;-3648;-3248};{-18636;77272;-3648;-3248};{-17140;74804;-3648;-3248}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_008]
+npc_begin	[red_scavenger_spider]	pos = anywhere	total = 7	respawn = 25sec	npc_end
+npc_begin	[moonstone_beast]	pos = anywhere	total = 7	respawn = 25sec	npc_end
+npc_begin	[scavenger_wererat]	pos = anywhere	total = 7	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_009]	{{-14976;80456;-3768;-3368};{-10520;80432;-3768;-3368};{-10104;83400;-3768;-3368};{-11024;85068;-3768;-3368};{-15228;85984;-3768;-3368}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_009]
+npc_begin	[red_scavenger_spider]	pos = anywhere	total = 5	respawn = 25sec	npc_end
+npc_begin	[scavenger_spider]	pos = anywhere	total = 5	respawn = 25sec	npc_end
+npc_begin	[lycanthrope]	pos = anywhere	total = 5	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_010]	{{-19332;78240;-3780;-3380};{-15112;80684;-3780;-3380};{-15340;85844;-3780;-3380};{-20616;88164;-3780;-3380};{-20604;81548;-3780;-3380}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_010]
+npc_begin	[red_scavenger_spider]	pos = anywhere	total = 7	respawn = 25sec	npc_end
+npc_begin	[scavenger_spider]	pos = anywhere	total = 7	respawn = 25sec	npc_end
+npc_begin	[lycanthrope]	pos = anywhere	total = 8	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_011]	{{-5796;67352;-3708;-3308};{-3420;67104;-3708;-3308};{-2228;69108;-3708;-3308};{-3816;70680;-3708;-3308};{-5384;69620;-3708;-3308}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_011]
+npc_begin	[pincer_spider]	pos = anywhere	total = 3	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_012]	{{-8228;67360;-3664;-3264};{-6944;68192;-3664;-3264};{-7572;69896;-3664;-3264};{-9068;68496;-3664;-3264}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_012]
+npc_begin	[pincer_spider]	pos = anywhere	total = 2	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_013]	{{-9100;77164;-3564;-3264};{-6684;77900;-3564;-3264};{-8448;80608;-3564;-3264}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_013]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 2	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_014]	{{-3164;79012;-3668;-3268};{-1436;80156;-3668;-3268};{-1880;82032;-3668;-3268};{-4824;81096;-3668;-3268};{-4620;79560;-3668;-3268}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_014]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 3	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_015]	{{-8424;82764;-3668;-3268};{-7056;81444;-3668;-3268};{-4936;83444;-3668;-3268};{-8084;84440;-3668;-3268}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_015]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 2	respawn = 25sec	npc_end
+npc_begin	[lycanthrope]	pos = anywhere	total = 2	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_016]	{{-2936;83968;-3788;-3388};{-1376;84732;-3788;-3388};{-1484;86408;-3788;-3388};{-2644;86672;-3788;-3388};{-4288;85184;-3788;-3388}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_016]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 2	respawn = 25sec	npc_end
+npc_begin	[lycanthrope]	pos = anywhere	total = 2	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_017]	{{-13528;76536;-3528;-3128};{-12088;76868;-3528;-3128};{-11956;79236;-3528;-3128};{-14376;79376;-3528;-3128}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_017]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 2	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_018]	{{-17080;76348;-3636;-3236};{-14692;74380;-3636;-3236};{-14092;76708;-3636;-3236};{-15748;78624;-3636;-3236}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_018]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 2	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_019]	{{-13968;81740;-3736;-3336};{-11632;81556;-3736;-3336};{-12016;84336;-3736;-3336};{-14044;84652;-3736;-3336}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_019]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 2	respawn = 25sec	npc_end
+npc_begin	[lycanthrope]	pos = anywhere	total = 2	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_020]	{{-18828;79860;-3764;-3364};{-16048;80908;-3764;-3364};{-17100;83224;-3764;-3364};{-19340;82204;-3764;-3364}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_020]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 2	respawn = 25sec	npc_end
+npc_begin	[lycanthrope]	pos = anywhere	total = 2	respawn = 25sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_20_elf_021]	{{-19892;83992;-3760;-3360};{-18076;84388;-3760;-3360};{-18356;86428;-3760;-3360};{-19796;87064;-3760;-3360}}	territory_end
+npcmaker_begin	[oren_t19_20_elf_021]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 2	respawn = 25sec	npc_end
+npc_begin	[lycanthrope]	pos = anywhere	total = 2	respawn = 25sec	npc_end
+npcmaker_end
+
+//------------------- 19_20 다크엘프영지:중립지대 근처 --------------------------------------------------------
+territory_begin	[oren_guard_delf_t19_20_004]	{{-18624;68648;-3708;-3308};{-17428;69532;-3708;-3308};{-16296;71120;-3708;-3308};{-21424;76504;-3708;-3308};{-25612;70380;-3708;-3308};{-21892;68492;-3708;-3308}}	territory_end
+npcmaker_begin	[oren_guard_delf_t19_20_004]
+npc_begin	[bloody_pixy]	pos = anywhere	total = 2	respawn = 1min	npc_end
+npc_begin	[ti_mi_riran]	pos = anywhere	total = 2	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[oren_guard_delf_t19_20_005]	{{-32508;70548;-3732;-3232};{-25776;70408;-3732;-3232};{-21596;76712;-3732;-3232};{-23528;79416;-3732;-3232};{-32508;80860;-3732;-3232}}	territory_end
+npcmaker_begin	[oren_guard_delf_t19_20_005]
+npc_begin	[bloody_pixy]	pos = anywhere	total = 2	respawn = 1min	npc_end
+npc_begin	[ti_mi_riran]	pos = anywhere	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[oren_guard_delf_t19_20_006]	{{-30732;80672;-3716;-3216};{-23952;79632;-3716;-3216};{-23100;85288;-3716;-3216};{-23004;87808;-3716;-3216};{-23520;88900;-3716;-3216};{-29976;84928;-3716;-3216}}	territory_end
+npcmaker_begin	[oren_guard_delf_t19_20_006]
+npc_begin	[bloody_pixy]	pos = anywhere	total = 2	respawn = 1min	npc_end
+npc_begin	[ti_mi_riran]	pos = anywhere	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------- 19_20 ----------------------------------------------------------------------------------------
+territory_begin	[gludio_t19_20_001]	{{-29411;92654;-3812;-3162};{-27959;91482;-3812;-3162};{-24607;92806;-3812;-3162};{-23155;95570;-3812;-3162};{-22975;97938;-3812;-3162};{-29411;97982;-3812;-3162}}	territory_end
+npcmaker_begin	[gludio_t19_20_001]
+npc_begin	[pinrul_roader]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[pinrul]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[ratman_hunter]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_20_002]	{{-32634;92686;-3783;-3183};{-29462;92538;-3783;-3183};{-29422;98074;-3783;-3183};{-32646;98062;-3783;-3183}}	territory_end
+npcmaker_begin	[gludio_t19_20_002]
+npc_begin	[pinrul_roader]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[pinrul]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ratman_hunter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_20_003]	{{-26207;89361;-3697;-3097};{-23803;89949;-3697;-3097};{-24827;92681;-3697;-3097};{-27875;91505;-3697;-3097}}	territory_end
+npcmaker_begin	[gludio_t19_20_003]
+npc_begin	[pinrul_roader]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[pinrul]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_hunter]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_20_004]	{{-21434;90644;-3840;-2990};{-19802;90492;-3840;-2990};{-16314;92516;-3840;-2990};{-16978;97984;-3840;-2990};{-20766;97936;-3840;-2990};{-21850;92724;-3840;-2990}}	territory_end
+npcmaker_begin	[gludio_t19_20_004]
+npc_begin	[pinrul_roader]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[pinrul]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[ratman_hunter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_20_005]	{{-16118;92726;-3573;-2973};{-13074;93558;-3573;-2973};{-10470;96238;-3573;-2973};{-10466;98014;-3573;-2973};{-16862;97966;-3573;-2973}}	territory_end
+npcmaker_begin	[gludio_t19_20_005]
+npc_begin	[pinrul_roader]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[pinrul]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[ratman_hunter]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_20_006]	{{-8211;95685;-3766;-3066};{-6243;95789;-3766;-3066};{-4919;97985;-3766;-3066};{-9007;98001;-3766;-3066};{-8987;97005;-3766;-3066}}	territory_end
+npcmaker_begin	[gludio_t19_20_006]
+npc_begin	[pinrul_roader]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[pinrul]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_hunter]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_20_007]	{{-5001;92964;-3786;-3136};{-265;91484;-3786;-3136};{-305;98012;-3786;-3136};{-4861;97996;-3786;-3136};{-6237;95740;-3786;-3136}}	territory_end
+npcmaker_begin	[gludio_t19_20_007]
+npc_begin	[pinrul_roader]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[pinrul]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[ratman_hunter]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_20_008]	{{-28061;94542;-3730;-3430};{-26513;93346;-3730;-3430};{-24569;94674;-3730;-3430};{-25665;96190;-3730;-3430};{-27825;96386;-3730;-3430}}	territory_end
+npcmaker_begin	[gludio_t19_20_008]
+npc_begin	[ratman_spy]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_20_009]	{{-20318;94101;-3689;-3239};{-18322;94405;-3689;-3239};{-17370;95573;-3689;-3239};{-19202;96817;-3689;-3239};{-20522;96013;-3689;-3239}}	territory_end
+npcmaker_begin	[gludio_t19_20_009]
+npc_begin	[ratman_spy]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_20_010]	{{-14731;96346;-3522;-3272};{-14027;96222;-3522;-3272};{-13595;96438;-3522;-3272};{-13367;96942;-3522;-3272};{-13527;97374;-3522;-3272};{-13891;97810;-3522;-3272};{-14571;97742;-3522;-3272};{-14919;97406;-3522;-3272};{-15067;96786;-3522;-3272}}	territory_end
+npcmaker_begin	[gludio_t19_20_010]
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_20_011]	{{-4285;95279;-3758;-3508};{-2257;94279;-3758;-3508};{-1001;95095;-3758;-3508};{-1509;96627;-3758;-3508};{-3261;96795;-3758;-3508}}	territory_end
+npcmaker_begin	[gludio_t19_20_011]
+npc_begin	[ratman_spy]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+//--------------- 0407_엘븐 스카우트가 되는길---------------
+territory_begin	[quest_19_20_001]	{{-9276;72188;-3596;-3096};{-8520;72308;-3596;-3096};{-8312;72740;-3596;-3096};{-9140;72780;-3596;-3096}}	territory_end
+npcmaker_begin	[quest_19_20_001]
+npc_begin	[ol_mahum_sentry]	pos = anywhere	total = 2	respawn = 3min	npc_end
+npcmaker_end
+
+territory_begin	[quest_t19_20_001]	{{-15308;66925;-3627;-3127};{-13072;66693;-3627;-3127};{-12004;67857;-3627;-3127};{-13800;69149;-3627;-3127}}	territory_end
+npcmaker_begin	[quest_t19_20_001]	initial_spawn = all
+npc_begin	[orc_betrayer_picubo]	pos = anywhere	total = 1	respawn = 15min	npc_end
+npcmaker_end
+
+territory_begin	[quest_t_19_20_002]	{{-16848;77283;-3555;-3255};{-13018;77766;-3555;-3255};{-12035;79716;-3555;-3255};{-13596;80548;-3555;-3255};{-16425;78884;-3555;-3255}}	territory_end
+npcmaker_begin	[quest_t_19_20_002]	initial_spawn = all
+npc_begin	[orc_betrayer_umbar]	pos = anywhere	total = 1	respawn = 16min	npc_end
+npcmaker_end
+
+territory_begin	[event_t19_20_001]	{{-13959;76124;-3783;-3183};{-3411;80276;-3783;-3183};{-3859;84864;-3783;-3183};{-18075;84528;-3783;-3183}}	territory_end
+npcmaker_begin	[event_t19_20_001]	initial_spawn=all	maximum_npc=5
+npc_begin	[sukar_wererat_chief]	pos={{-13327;78062;-3442;0;25%};{-15398;82781;-3564;0;25%};{-5431;83623;-3600;0;25%};{-7029;79838;-3493;0;25%}}	total=1	respawn=2hour	respawn_rand=1hour	Privates=[sukar_wererat_warrior:party_private:1:1min;sukar_wererat_warrior:party_private:1:1min;sukar_wererat_warrior:party_private:1:1min;sukar_wererat_warrior:party_private:1:1min]	npc_end
+npcmaker_end
+

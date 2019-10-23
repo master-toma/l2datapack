@@ -1,0 +1,856 @@
+//------------------------------------------------------------------------------------------------------
+//ver 크로니클 I
+//03.12.22
+//24_18 아덴 성
+//------------------------------------------------------------------------------------------------------
+//수성측	텔레포터,	시종장,	근위대장,
+territory_begin	[aden_chamberlain_etc]	{{142431;362;-3184;6816};{152319;344;-3184;6816};{152282;15197;-3184;6816};{142393;15215;-3184;6816}}	territory_end
+npcmaker_begin	[aden_chamberlain_etc]	initial_spawn=all	maximum_npc=20
+npc_begin	[chamberlain_logan]	pos={147412;3355;-46;16389}	total=1	respawn=1min	npc_end
+npc_begin	[sir_ruford]	pos={147551;19577;-1991;16389}	total=1	respawn=1min	npc_end
+npc_begin	[aden_outter_doorman]	pos={147292;8693;-480;16389}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_outter_doorman]	pos={147293;8158;-470;49152}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_inner_doorman]	pos={145725;4799;-425;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_inner_doorman]	pos={146275;4468;-400;0}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_inner_doorman2]	pos={149208;4339;-440;0}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_inner_doorman2]	pos={148636;4756;-400;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_hall_doorman]	pos={147702;6345;-400;16389}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_hall_doorman]	pos={147362;6111;-400;49152}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_default_teleporter1]	pos={147722;7958;-470;49152}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_default_teleporter2]	pos={146281;4792;-400;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_default_teleporter3]	pos={148583;4518;-400;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_default_teleporter4]	pos={147531;6130;-400;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_default_teleporter5]	pos={147514;2560;-465;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_royal_gatekeeper]	pos={147608;8738;-480;49152}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//수성	매스	텔레포터
+territory_begin	[aden_mass_teleporter]	{{146934;4082;-2844;-2544};{147982;4082;-2844;-2544};{147982;5134;-2844;-2544};{146934;5134;-2844;-2544}}	territory_end
+npcmaker_begin	[aden_mass_teleporter]	initial_spawn=all	maximum_npc=1
+npc_begin	[aden_mass_teleporter]	pos={147457;4609;-2789;0}	total=1	respawn=1min	npc_end
+npcmaker_end
+
+//외성문	앞.	35
+territory_begin	[aden_siege01]	{{147265;8447;-525;-325};{147647;8447;-525;-325};{147647;8647;-525;-325};{147265;8647;-525;-325}}	territory_end
+npcmaker_begin	[aden_siege01]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=40
+npc_begin	[aden_cleric_s]	pos={147290;8527;-470;16389}	dbname=[aden_siege_001]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={147356;8527;-470;16389}	dbname=[aden_siege_002]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={147423;8527;-470;16389}	dbname=[aden_siege_003]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={147490;8527;-470;16389}	dbname=[aden_siege_004]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={147556;8527;-470;16389}	dbname=[aden_siege_005]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147290;8547;-470;16389}	dbname=[aden_siege_006]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147323;8547;-470;16389}	dbname=[aden_siege_007]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147356;8547;-470;16389}	dbname=[aden_siege_008]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147390;8547;-470;16389}	dbname=[aden_siege_009]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147423;8547;-470;16389}	dbname=[aden_siege_010]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147456;8547;-470;16389}	dbname=[aden_siege_011]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147490;8547;-470;16389}	dbname=[aden_siege_012]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147523;8547;-470;16389}	dbname=[aden_siege_013]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147556;8547;-470;16389}	dbname=[aden_siege_014]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147590;8547;-470;16389}	dbname=[aden_siege_015]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147290;8567;-470;16389}	dbname=[aden_siege_016]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147323;8567;-470;16389}	dbname=[aden_siege_017]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_court_guard_s]	pos={147356;8567;-470;16389}	dbname=[aden_siege_018]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147390;8567;-470;16389}	dbname=[aden_siege_019]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_court_guard_s]	pos={147423;8567;-470;16389}	dbname=[aden_siege_020]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147456;8567;-470;16389}	dbname=[aden_siege_021]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_court_guard_s]	pos={147490;8567;-470;16389}	dbname=[aden_siege_022]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147523;8567;-470;16389}	dbname=[aden_siege_023]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_court_guard_s]	pos={147556;8567;-470;16389}	dbname=[aden_siege_024]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147590;8567;-470;16389}	dbname=[aden_siege_025]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_court_guard_s]	pos={147290;8587;-470;16389}	dbname=[aden_siege_026]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_sword_guard_s_e]	pos={147323;8587;-470;16389}	dbname=[aden_siege_027]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_sword_guard_s_e]	pos={147356;8587;-470;16389}	dbname=[aden_siege_028]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_sword_guard_s_e]	pos={147390;8587;-470;16389}	dbname=[aden_siege_029]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_sword_guard_s_e]	pos={147423;8587;-470;16389}	dbname=[aden_siege_030]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_knight_s]	pos={147456;8587;-470;16389}	dbname=[aden_siege_031]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_sword_guard_s_e]	pos={147490;8587;-470;16389}	dbname=[aden_siege_032]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_sword_guard_s_e]	pos={147523;8587;-470;16389}	dbname=[aden_siege_033]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_sword_guard_s_e]	pos={147556;8587;-470;16389}	dbname=[aden_siege_034]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_sword_guard_s_e]	pos={147590;8587;-470;16389}	dbname=[aden_siege_035]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//외성 우측 사대	33
+territory_begin	[aden_siege02]	{{147775;8399;-273;-73};{148102;8399;-273;-73};{148102;8489;-273;-73};{147777;8519;-273;-73}}	territory_end
+npcmaker_begin	[aden_siege02]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=35
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8527;-212;32768}	dbname=[aden_siege_036]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8567;-212;32768}	dbname=[aden_siege_037]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8608;-212;32768}	dbname=[aden_siege_038]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8649;-212;32768}	dbname=[aden_siege_039]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8689;-212;32768}	dbname=[aden_siege_040]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8730;-212;32768}	dbname=[aden_siege_041]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8771;-212;32768}	dbname=[aden_siege_042]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8811;-212;32768}	dbname=[aden_siege_043]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8852;-212;32768}	dbname=[aden_siege_044]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8893;-212;32768}	dbname=[aden_siege_045]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8933;-212;32768}	dbname=[aden_siege_046]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8974;-212;32768}	dbname=[aden_siege_047]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;9015;-212;32768}	dbname=[aden_siege_048]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;9055;-212;32768}	dbname=[aden_siege_049]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;9096;-212;32768}	dbname=[aden_siege_050]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;9137;-212;32768}	dbname=[aden_siege_051]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;9177;-212;32768}	dbname=[aden_siege_052]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;9218;-212;32768}	dbname=[aden_siege_053]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;9259;-212;32768}	dbname=[aden_siege_054]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;9300;-212;32768}	dbname=[aden_siege_055]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={148231;8724;-212;32768}	dbname=[aden_siege_056]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={148231;8839;-212;32768}	dbname=[aden_siege_057]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={148231;8954;-212;32768}	dbname=[aden_siege_058]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={148231;9069;-212;32768}	dbname=[aden_siege_059]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={148231;8954;-212;32768}	dbname=[aden_siege_060]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={148231;9069;-212;32768}	dbname=[aden_siege_061]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={148261;8621;-212;32768}	dbname=[aden_siege_062]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={148261;8757;-212;32768}	dbname=[aden_siege_063]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={148261;8894;-212;32768}	dbname=[aden_siege_064]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={148261;9030;-212;32768}	dbname=[aden_siege_065]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={148261;9167;-212;32768}	dbname=[aden_siege_066]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//외성난간우측	12
+territory_begin	[aden_siege03]	{{147775;8399;-273;-73};{148102;8399;-273;-73};{148102;8489;-273;-73};{147777;8519;-273;-73}}	territory_end
+npcmaker_begin	[aden_siege03]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=20
+npc_begin	[aden_bow_guard_s_e]	pos={147984;8486;-212;16389}	dbname=[aden_siege_067]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147955;8486;-212;16389}	dbname=[aden_siege_068]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147927;8486;-212;16389}	dbname=[aden_siege_069]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147896;8485;-212;16389}	dbname=[aden_siege_070]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147865;8485;-212;16389}	dbname=[aden_siege_071]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147835;8485;-212;16389}	dbname=[aden_siege_072]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147983;8467;-212;16389}	dbname=[aden_siege_073]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={147954;8467;-212;16389}	dbname=[aden_siege_074]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={147925;8467;-212;16389}	dbname=[aden_siege_075]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={147895;8466;-212;16389}	dbname=[aden_siege_076]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={147864;8466;-212;16389}	dbname=[aden_siege_077]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={147833;8466;-212;16389}	dbname=[aden_siege_078]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//외성난간좌측	12
+territory_begin	[aden_siege04]	{{146795;8400;-272;-72};{147093;8400;-272;-72};{147095;8513;-272;-72};{146793;8489;-272;-72}}	territory_end
+npcmaker_begin	[aden_siege04]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=20
+npc_begin	[aden_bow_guard_s_e]	pos={147064;8489;-212;16389}	dbname=[aden_siege_079]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147035;8489;-212;16389}	dbname=[aden_siege_080]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147007;8489;-212;16389}	dbname=[aden_siege_081]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={146976;8488;-212;16389}	dbname=[aden_siege_082]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={146945;8488;-212;16389}	dbname=[aden_siege_083]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={146915;8488;-212;16389}	dbname=[aden_siege_084]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147065;8466;-212;16389}	dbname=[aden_siege_085]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={147036;8466;-212;16389}	dbname=[aden_siege_086]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={147007;8466;-212;16389}	dbname=[aden_siege_087]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={146977;8465;-212;16389}	dbname=[aden_siege_088]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={146946;8465;-212;16389}	dbname=[aden_siege_089]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={146915;8465;-212;16389}	dbname=[aden_siege_090]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//독존우측	21
+territory_begin	[aden_siege05]	{{148901;6171;-520;-320};{149368;6168;-520;-320};{149368;6368;-520;-320};{148901;6371;-520;-320}}	territory_end
+npcmaker_begin	[aden_siege05]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=30
+npc_begin	[aden_spear_guard_s_e]	pos={149105;6657;-470;16389}	dbname=[aden_siege_091]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={149142;6657;-470;16389}	dbname=[aden_siege_092]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={149180;6657;-470;16389}	dbname=[aden_siege_093]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={149217;6657;-470;16389}	dbname=[aden_siege_094]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={149255;6657;-470;16389}	dbname=[aden_siege_095]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={149292;6657;-470;16389}	dbname=[aden_siege_096]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={149330;6657;-470;16389}	dbname=[aden_siege_097]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149105;6637;-470;16389}	dbname=[aden_siege_098]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149142;6637;-470;16389}	dbname=[aden_siege_099]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149180;6637;-470;16389}	dbname=[aden_siege_100]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149217;6637;-470;16389}	dbname=[aden_siege_101]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149255;6637;-470;16389}	dbname=[aden_siege_102]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149292;6637;-470;16389}	dbname=[aden_siege_103]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149330;6637;-470;16389}	dbname=[aden_siege_104]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149105;6617;-470;16389}	dbname=[aden_siege_105]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={149142;6617;-470;16389}	dbname=[aden_siege_106]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149180;6617;-470;16389}	dbname=[aden_siege_107]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={149217;6617;-470;16389}	dbname=[aden_siege_108]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149255;6617;-470;16389}	dbname=[aden_siege_109]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={149292;6617;-470;16389}	dbname=[aden_siege_110]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149330;6617;-470;16389}	dbname=[aden_siege_111]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//독존좌측	21
+territory_begin	[aden_siege06]	{{145519;6153;-525;-325};{145998;6154;-525;-325};{145998;6354;-525;-325};{145519;6353;-525;-325}}	territory_end
+npcmaker_begin	[aden_siege06]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=30
+npc_begin	[aden_spear_guard_s_e]	pos={145569;6657;-470;16389}	dbname=[aden_siege_112]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={145606;6657;-470;16389}	dbname=[aden_siege_113]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={145644;6657;-470;16389}	dbname=[aden_siege_114]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={145682;6657;-470;16389}	dbname=[aden_siege_115]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={145719;6657;-470;16389}	dbname=[aden_siege_116]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={145757;6657;-470;16389}	dbname=[aden_siege_117]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={145795;6657;-470;16389}	dbname=[aden_siege_118]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145569;6637;-470;16389}	dbname=[aden_siege_119]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145606;6637;-470;16389}	dbname=[aden_siege_120]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145644;6637;-470;16389}	dbname=[aden_siege_121]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145682;6637;-470;16389}	dbname=[aden_siege_122]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145719;6637;-470;16389}	dbname=[aden_siege_123]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145757;6637;-470;16389}	dbname=[aden_siege_124]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145795;6637;-470;16389}	dbname=[aden_siege_125]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145569;6617;-470;16389}	dbname=[aden_siege_126]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={145606;6617;-470;16389}	dbname=[aden_siege_127]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145644;6617;-470;16389}	dbname=[aden_siege_128]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={145682;6617;-470;16389}	dbname=[aden_siege_129]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145719;6617;-470;16389}	dbname=[aden_siege_130]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={145757;6617;-470;16389}	dbname=[aden_siege_131]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145795;6617;-470;16389}	dbname=[aden_siege_132]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//외성정원이동	12
+territory_begin	[aden_siege07]	{{145519;6153;-525;-325};{145998;6154;-525;-325};{145998;6354;-525;-325};{145519;6353;-525;-325}}	territory_end
+npcmaker_begin	[aden_siege07]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=30
+npc_begin	[aden_spear_guard_e]	pos={145762;7588;-470;16389}	dbname=[aden_siege_133]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_e]	pos={146067;7588;-470;16389}	dbname=[aden_siege_134]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_e]	pos={146372;7588;-470;16389}	dbname=[aden_siege_135]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_e]	pos={146678;7588;-470;16389}	dbname=[aden_siege_136]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_e]	pos={146983;7588;-470;16389}	dbname=[aden_siege_137]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_court_guard_s]	pos={147288;7588;-470;16389}	dbname=[aden_siege_138]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_e]	pos={147594;7588;-470;16389}	dbname=[aden_siege_139]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_e]	pos={147899;7588;-470;16389}	dbname=[aden_siege_140]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_court_guard_s]	pos={148204;7588;-470;16389}	dbname=[aden_siege_141]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_e]	pos={148510;7588;-470;16389}	dbname=[aden_siege_142]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_e]	pos={148815;7588;-470;16389}	dbname=[aden_siege_143]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_e]	pos={149121;7588;-470;16389}	dbname=[aden_siege_144]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//우측 내성문 위 왼쪽	11
+territory_begin	[aden_siege08]	{{148901;4101;-81;118};{149101;4101;-81;118};{149104;5108;-81;118};{148904;5108;-81;118}}	territory_end
+npcmaker_begin	[aden_siege08]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=30
+npc_begin	[aden_cleric_s]	pos={149083;4965;-20;0}	dbname=[aden_siege_145]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149082;4926;-20;0}	dbname=[aden_siege_146]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149081;4886;-20;0}	dbname=[aden_siege_147]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149081;4843;-20;0}	dbname=[aden_siege_148]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149057;4810;-20;0}	dbname=[aden_siege_149]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149034;4790;-20;0}	dbname=[aden_siege_150]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149008;4773;-20;0}	dbname=[aden_siege_151]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148980;4766;-20;0}	dbname=[aden_siege_152]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={148951;4766;-20;0}	dbname=[aden_siege_153]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148921;4766;-20;0}	dbname=[aden_siege_154]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={149006;4835;-20;0}	dbname=[aden_siege_155]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//우측 내성문 위 오른쪽	11
+territory_begin	[aden_siege09]	{{148901;4101;-81;118};{149101;4101;-81;118};{149104;5108;-81;118};{148904;5108;-81;118}}	territory_end
+npcmaker_begin	[aden_siege09]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=30
+npc_begin	[aden_cleric_s]	pos={149056;4219;-20;0}	dbname=[aden_siege_156]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149080;4252;-20;0}	dbname=[aden_siege_157]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149080;4295;-20;0}	dbname=[aden_siege_158]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149081;4335;-20;0}	dbname=[aden_siege_159]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149082;4374;-20;0}	dbname=[aden_siege_160]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149038;4416;-20;0}	dbname=[aden_siege_161]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={149011;4439;-20;0}	dbname=[aden_siege_162]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148984;4449;-20;0}	dbname=[aden_siege_163]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={148955;4450;-20;0}	dbname=[aden_siege_164]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148922;4451;-20;0}	dbname=[aden_siege_165]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={149006;4362;-20;0}	dbname=[aden_siege_166]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//좌측 내성문 위 왼쪽	11
+territory_begin	[aden_siege10]	{{145802;4105;-49;150};{146002;4105;-49;150};{146006;5113;-49;150};{145806;5113;-49;150}}	territory_end
+npcmaker_begin	[aden_siege10]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=30
+npc_begin	[aden_cleric_s]	pos={145831;4252;-20;32768}	dbname=[aden_siege_167]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145909;4440;-20;32768}	dbname=[aden_siege_168]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145883;4421;-20;32768}	dbname=[aden_siege_169]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145833;4374;-20;32768}	dbname=[aden_siege_170]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145833;4335;-20;32768}	dbname=[aden_siege_171]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145832;4295;-20;32768}	dbname=[aden_siege_172]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145852;4404;-20;32768}	dbname=[aden_siege_173]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145936;4450;-20;32768}	dbname=[aden_siege_174]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={145966;4450;-20;32768}	dbname=[aden_siege_175]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145995;4449;-20;32768}	dbname=[aden_siege_176]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={145926;4377;-20;32768}	dbname=[aden_siege_177]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//좌측 내성문 위 오른쪽	11
+territory_begin	[aden_siege11]	{{145802;4105;-49;150};{146002;4105;-49;150};{146006;5113;-49;150};{145806;5113;-49;150}}	territory_end
+npcmaker_begin	[aden_siege11]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=30
+npc_begin	[aden_cleric_s]	pos={145836;4968;-20;32768}	dbname=[aden_siege_178]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145836;4929;-20;32768}	dbname=[aden_siege_179]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145835;4889;-20;32768}	dbname=[aden_siege_180]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145834;4846;-20;32768}	dbname=[aden_siege_181]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145853;4815;-20;32768}	dbname=[aden_siege_182]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145874;4797;-20;32768}	dbname=[aden_siege_183]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145901;4774;-20;32768}	dbname=[aden_siege_184]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145989;4766;-20;32768}	dbname=[aden_siege_185]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={145958;4767;-20;32768}	dbname=[aden_siege_186]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={145928;4767;-20;32768}	dbname=[aden_siege_187]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={145921;4829;-20;32768}	dbname=[aden_siege_188]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//홀입구 뒤	45
+territory_begin	[aden_siege12]	{{146883;4501;-450;-250};{147989;4501;-450;-250};{147990;5905;-450;-250};{146884;5905;-450;-250}}	territory_end
+npcmaker_begin	[aden_siege12]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=50
+npc_begin	[aden_bow_guard_s_e]	pos={147146;5459;-340;16389}	dbname=[aden_siege_189]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147196;5459;-340;16389}	dbname=[aden_siege_190]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147247;5459;-340;16389}	dbname=[aden_siege_191]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147298;5459;-340;16389}	dbname=[aden_siege_192]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147349;5459;-340;16389}	dbname=[aden_siege_193]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147400;5459;-340;16389}	dbname=[aden_siege_194]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147451;5459;-340;16389}	dbname=[aden_siege_195]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147501;5459;-340;16389}	dbname=[aden_siege_196]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147552;5459;-340;16389}	dbname=[aden_siege_197]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147603;5459;-340;16389}	dbname=[aden_siege_198]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147654;5459;-340;16389}	dbname=[aden_siege_199]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147705;5459;-340;16389}	dbname=[aden_siege_200]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147756;5459;-340;16389}	dbname=[aden_siege_201]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={147554;5354;-340;16389}	dbname=[aden_siege_202]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={147352;5354;-340;32768}	dbname=[aden_siege_203]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={147560;5754;-340;32768}	dbname=[aden_siege_204]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={147356;5754;-340;32768}	dbname=[aden_siege_205]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={147457;5754;-340;32768}	dbname=[aden_siege_206]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147556;5857;-400;16389}	dbname=[aden_siege_207]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147522;5857;-400;16389}	dbname=[aden_siege_208]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147488;5857;-400;16389}	dbname=[aden_siege_209]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147455;5857;-400;16389}	dbname=[aden_siege_210]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147421;5857;-400;16389}	dbname=[aden_siege_211]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147387;5857;-400;16389}	dbname=[aden_siege_212]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147353;5857;-400;16389}	dbname=[aden_siege_213]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147320;5857;-400;16389}	dbname=[aden_siege_214]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147455;3221;-400;16389}	dbname=[aden_siege_215]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147334;5827;-400;16389}	dbname=[aden_siege_216]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147367;5827;-400;16389}	dbname=[aden_siege_217]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147401;5827;-400;16389}	dbname=[aden_siege_218]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147435;5827;-400;16389}	dbname=[aden_siege_219]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147468;5827;-400;16389}	dbname=[aden_siege_220]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147502;5827;-400;16389}	dbname=[aden_siege_221]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147536;5827;-400;16389}	dbname=[aden_siege_222]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147570;5827;-400;16389}	dbname=[aden_siege_223]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147590;5857;-400;16389}	dbname=[aden_siege_224]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//성물보관소 2층 막자	45
+territory_begin	[aden_siege13]	{{146622;915;-206;-6};{148368;915;-206;-6};{148365;2019;-206;-6};{146620;2020;-206;-6}}	territory_end
+npcmaker_begin	[aden_siege13]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=50
+npc_begin	[aden_spear_guard_s_e]	pos={148161;1600;-150;16389}	dbname=[aden_siege_225]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={148199;1600;-150;16389}	dbname=[aden_siege_226]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={148161;1620;-150;16389}	dbname=[aden_siege_227]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={148199;1620;-150;16389}	dbname=[aden_siege_228]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={148161;1640;-150;16389}	dbname=[aden_siege_229]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={148199;1640;-150;16389}	dbname=[aden_siege_230]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={148161;1660;-150;16389}	dbname=[aden_siege_231]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={148199;1660;-150;16389}	dbname=[aden_siege_232]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={148161;1680;-150;16389}	dbname=[aden_siege_233]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={148199;1680;-150;16389}	dbname=[aden_siege_234]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148161;1700;-150;16389}	dbname=[aden_siege_235]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148199;1700;-150;16389}	dbname=[aden_siege_236]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148161;1720;-150;16389}	dbname=[aden_siege_237]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148199;1720;-150;16389}	dbname=[aden_siege_238]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={146750;1600;-150;16389}	dbname=[aden_siege_239]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={146707;1600;-150;16389}	dbname=[aden_siege_240]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={146750;1620;-150;16389}	dbname=[aden_siege_241]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={146707;1620;-150;16389}	dbname=[aden_siege_242]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={146750;1640;-150;16389}	dbname=[aden_siege_243]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={146707;1640;-150;16389}	dbname=[aden_siege_244]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={146750;1660;-150;16389}	dbname=[aden_siege_245]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={146707;1660;-150;16389}	dbname=[aden_siege_246]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={146750;1680;-150;16389}	dbname=[aden_siege_247]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={146707;1680;-150;16389}	dbname=[aden_siege_248]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={146750;1700;-150;16389}	dbname=[aden_siege_249]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={146707;1700;-150;16389}	dbname=[aden_siege_250]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={146750;1720;-150;16389}	dbname=[aden_siege_251]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={146707;1720;-150;16389}	dbname=[aden_siege_252]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//성물보관소 2층뒤	16
+territory_begin	[aden_siege14]	{{146622;915;-206;-6};{148368;915;-206;-6};{148365;2019;-206;-6};{146620;2020;-206;-6}}	territory_end
+npcmaker_begin	[aden_siege14]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=30
+npc_begin	[aden_bow_guard_s_e]	pos={146818;1300;-150;16389}	dbname=[aden_siege_253]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={146861;1300;-150;16389}	dbname=[aden_siege_254]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={146905;1300;-150;16389}	dbname=[aden_siege_255]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={146949;1300;-150;16389}	dbname=[aden_siege_256]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={146993;1300;-150;16389}	dbname=[aden_siege_257]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147037;1300;-150;16389}	dbname=[aden_siege_258]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147351;1300;-150;16389}	dbname=[aden_siege_259]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147393;1300;-150;16389}	dbname=[aden_siege_260]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147435;1300;-150;16389}	dbname=[aden_siege_261]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147477;1300;-150;16389}	dbname=[aden_siege_262]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147519;1300;-150;16389}	dbname=[aden_siege_263]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147561;1300;-150;16389}	dbname=[aden_siege_264]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={147461;1245;-150;16391}	dbname=[aden_siege_265]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={146933;1245;-150;16392}	dbname=[aden_siege_266]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={147441;1245;-150;16391}	dbname=[aden_siege_267]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={146953;1245;-150;16392}	dbname=[aden_siege_268]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//성물보관소아래	45
+territory_begin	[aden_siege15]	{{146413;607;-491;-291};{148508;601;-491;-291};{148490;2620;-491;-291};{146396;2626;-491;-291}}	territory_end
+npcmaker_begin	[aden_siege15]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=60
+npc_begin	[king_amadeo_cadmus]	pos={147468;1671;-338;16389}	dbname=[aden_siege_269]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_cleric_s]	pos={147428;1671;-338;16389}	dbname=[aden_siege_270]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_court_guard_s]	pos={147508;1671;-338;16389}	dbname=[aden_siege_271]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147482;1933;-468;16389}	dbname=[aden_siege_272]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_spear_guard_s_e]	pos={147449;1933;-468;16389}	dbname=[aden_siege_273]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147740;2020;-450;16389}	dbname=[aden_siege_274]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147690;2020;-450;16389}	dbname=[aden_siege_275]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+//npc_begin	[aden_bow_guard_s_e]	pos={147641;2020;-450;16389}	dbname=[aden_siege_276]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147592;2020;-450;16389}	dbname=[aden_siege_277]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147542;2020;-450;16389}	dbname=[aden_siege_278]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+//npc_begin	[aden_bow_guard_s_e]	pos={147493;2020;-450;16389}	dbname=[aden_siege_279]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147444;2020;-450;16389}	dbname=[aden_siege_280]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147395;2020;-450;16389}	dbname=[aden_siege_281]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+//npc_begin	[aden_bow_guard_s_e]	pos={147345;2020;-450;16389}	dbname=[aden_siege_282]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147296;2020;-450;16389}	dbname=[aden_siege_283]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147247;2020;-450;16389}	dbname=[aden_siege_284]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+//npc_begin	[aden_bow_guard_s_e]	pos={147198;2020;-450;16389}	dbname=[aden_siege_285]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147740;2040;-450;16389}	dbname=[aden_siege_286]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147690;2040;-450;16389}	dbname=[aden_siege_287]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+//npc_begin	[aden_bow_guard_s_e]	pos={147641;2040;-450;16389}	dbname=[aden_siege_288]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147592;2040;-450;16389}	dbname=[aden_siege_289]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147542;2040;-450;16389}	dbname=[aden_siege_290]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+//npc_begin	[aden_bow_guard_s_e]	pos={147493;2040;-450;16389}	dbname=[aden_siege_291]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147444;2040;-450;16389}	dbname=[aden_siege_292]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147395;2040;-450;16389}	dbname=[aden_siege_293]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+//npc_begin	[aden_bow_guard_s_e]	pos={147345;2040;-450;16389}	dbname=[aden_siege_294]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147296;2040;-450;16389}	dbname=[aden_siege_295]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={147247;2040;-450;16389}	dbname=[aden_siege_296]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+//npc_begin	[aden_bow_guard_s_e]	pos={147198;2040;-450;16389}	dbname=[aden_siege_297]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147740;2060;-450;16389}	dbname=[aden_siege_298]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147690;2060;-450;16389}	dbname=[aden_siege_299]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147641;2060;-450;16389}	dbname=[aden_siege_300]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147592;2060;-450;16389}	dbname=[aden_siege_301]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147542;2060;-450;16389}	dbname=[aden_siege_302]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147493;2060;-450;16389}	dbname=[aden_siege_303]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147444;2060;-450;16389}	dbname=[aden_siege_304]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147395;2060;-450;16389}	dbname=[aden_siege_305]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147345;2060;-450;16389}	dbname=[aden_siege_306]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147296;2060;-450;16389}	dbname=[aden_siege_307]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147247;2060;-450;16389}	dbname=[aden_siege_308]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147198;2060;-450;16389}	dbname=[aden_siege_309]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147740;2080;-450;16389}	dbname=[aden_siege_310]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147690;2080;-450;16389}	dbname=[aden_siege_311]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147641;2080;-450;16389}	dbname=[aden_siege_312]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147592;2080;-450;16389}	dbname=[aden_siege_313]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147542;2080;-450;16389}	dbname=[aden_siege_314]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147493;2080;-450;16389}	dbname=[aden_siege_315]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147444;2080;-450;16389}	dbname=[aden_siege_316]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147395;2080;-450;16389}	dbname=[aden_siege_317]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147345;2080;-450;16389}	dbname=[aden_siege_318]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147296;2080;-450;16389}	dbname=[aden_siege_319]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147247;2080;-450;16389}	dbname=[aden_siege_320]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npc_begin	[aden_sword_guard_e]	pos={147198;2080;-450;16389}	dbname=[aden_siege_321]	dbsaving={death_time;parameters;pos}	total=1	respawn=200sec	npc_end
+npcmaker_end
+
+//우측2층홀입구	20
+territory_begin	[aden_siege16]	{{148348;5228;-64;136};{148548;5228;-64;136};{148548;5428;-64;136};{148348;5428;-64;136}}	territory_end
+npcmaker_begin	[aden_siege16]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=60
+npc_begin	[aden_cleric_s]	pos = {148404;5289;-21;0}	dbname=[aden_siege_322]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_wizard_s]	pos = {148404;5309;-21;0}	dbname=[aden_siege_323]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_cleric_s]	pos = {148404;5328;-21;0}	dbname=[aden_siege_324]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_wizard_s]	pos = {148404;5348;-21;0}	dbname=[aden_siege_325]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_cleric_s]	pos = {148404;5368;-21;0}	dbname=[aden_siege_326]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {148424;5289;-21;0}	dbname=[aden_siege_327]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {148424;5309;-21;0}	dbname=[aden_siege_328]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {148424;5328;-21;0}	dbname=[aden_siege_329]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {148424;5348;-21;0}	dbname=[aden_siege_330]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {148424;5368;-21;0}	dbname=[aden_siege_331]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {148444;5289;-21;0}	dbname=[aden_siege_332]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {148444;5309;-21;0}	dbname=[aden_siege_333]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {148444;5328;-21;0}	dbname=[aden_siege_334]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {148444;5348;-21;0}	dbname=[aden_siege_335]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {148444;5368;-21;0}	dbname=[aden_siege_336]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_sword_guard_e]	pos = {148464;5289;-21;0}	dbname=[aden_siege_337]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_sword_guard_e]	pos = {148464;5309;-21;0}	dbname=[aden_siege_338]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_sword_guard_e]	pos = {148464;5328;-21;0}	dbname=[aden_siege_339]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_sword_guard_e]	pos = {148464;5348;-21;0}	dbname=[aden_siege_340]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_sword_guard_e]	pos = {148464;5368;-21;0}	dbname=[aden_siege_341]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npcmaker_end
+
+//좌측2층홀입구	20
+territory_begin	[aden_siege17]	{{146376;5228;-70;130};{146576;5228;-70;130};{146576;5428;-70;130};{146376;5428;-70;130}}	territory_end
+npcmaker_begin	[aden_siege17]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=60
+npc_begin	[aden_cleric_s]	pos = {146520;5289;-21;32768}	dbname=[aden_siege_342]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_wizard_s]	pos = {146520;5308;-21;32768}	dbname=[aden_siege_343]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_cleric_s]	pos = {146520;5328;-21;32768}	dbname=[aden_siege_344]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_wizard_s]	pos = {146520;5348;-21;32768}	dbname=[aden_siege_345]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_cleric_s]	pos = {146520;5368;-21;32768}	dbname=[aden_siege_346]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {146500;5289;-21;32768}	dbname=[aden_siege_347]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {146500;5308;-21;32768}	dbname=[aden_siege_348]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {146500;5328;-21;32768}	dbname=[aden_siege_349]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {146500;5348;-21;32768}	dbname=[aden_siege_350]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {146500;5368;-21;32768}	dbname=[aden_siege_351]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {146480;5289;-21;32768}	dbname=[aden_siege_352]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {146480;5308;-21;32768}	dbname=[aden_siege_353]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {146480;5328;-21;32768}	dbname=[aden_siege_354]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {146480;5348;-21;32768}	dbname=[aden_siege_355]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {146480;5368;-21;32768}	dbname=[aden_siege_356]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_sword_guard_e]	pos = {146460;5289;-21;32768}	dbname=[aden_siege_357]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_sword_guard_e]	pos = {146460;5308;-21;32768}	dbname=[aden_siege_358]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_sword_guard_e]	pos = {146460;5328;-21;32768}	dbname=[aden_siege_359]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_sword_guard_e]	pos = {146460;5348;-21;32768}	dbname=[aden_siege_360]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_sword_guard_e]	pos = {146460;5368;-21;32768}	dbname=[aden_siege_361]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npcmaker_end
+
+//우측성벽위	12
+territory_begin	[aden_siege18]	{{149331;5066;-145;54};{150093;5066;-145;54};{150093;5938;-145;54};{149331;5939;-145;54}}	territory_end
+npcmaker_begin	[aden_siege18]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=60
+npc_begin	[aden_bow_guard_s_e]	pos = {149936;5168;-80;8192}	dbname=[aden_siege_362]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {149893;5230;-80;8192}	dbname=[aden_siege_363]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {149851;5293;-80;8192}	dbname=[aden_siege_364]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {149809;5355;-80;8192}	dbname=[aden_siege_365]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {149767;5418;-80;8192}	dbname=[aden_siege_366]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {149725;5480;-80;8192}	dbname=[aden_siege_367]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {149682;5543;-80;8192}	dbname=[aden_siege_368]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {149640;5605;-80;8192}	dbname=[aden_siege_369]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {149598;5668;-80;8192}	dbname=[aden_siege_370]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {149556;5730;-80;8192}	dbname=[aden_siege_371]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {149514;5793;-80;8192}	dbname=[aden_siege_372]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {149472;5856;-80;8192}	dbname=[aden_siege_373]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npcmaker_end
+
+//좌측성벽위	12
+territory_begin	[aden_siege19]	{{144811;5048;-177;22};{145574;5048;-177;22};{145574;5920;-177;22};{144811;5921;-177;22}}	territory_end
+npcmaker_begin	[aden_siege19]	initial_spawn=all	spawn_time=siege_warfare_start(5)	maximum_npc=60
+npc_begin	[aden_bow_guard_s_e]	pos = {144976;5136;-80;8192}	dbname=[aden_siege_374]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {145015;5197;-80;8192}	dbname=[aden_siege_375]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {145054;5258;-80;8192}	dbname=[aden_siege_376]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {145093;5319;-80;8192}	dbname=[aden_siege_377]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {145133;5380;-80;8192}	dbname=[aden_siege_378]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {145172;5441;-80;8192}	dbname=[aden_siege_379]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {145211;5502;-80;8192}	dbname=[aden_siege_380]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {145250;5563;-80;8192}	dbname=[aden_siege_381]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {145290;5624;-80;8192}	dbname=[aden_siege_382]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {145329;5685;-80;8192}	dbname=[aden_siege_383]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {145368;5746;-80;8192}	dbname=[aden_siege_384]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos = {145408;5808;-80;8192}	dbname=[aden_siege_385]	dbsaving={death_time;parameters;pos}	total=1	respawn=2min	npc_end
+npcmaker_end
+
+//***********************************PC수성시 기본으로 도와주는 가드들************************************
+territory_begin	[aden_siege092]	{{147775;8399;-273;-73};{148102;8399;-273;-73};{148102;8489;-273;-73};{147777;8519;-273;-73}}	territory_end
+npcmaker_begin	[aden_siege092]	initial_spawn=all	spawn_time=pc_siege_warfare_start(5)	maximum_npc=35
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8527;-212;32768}	dbname=[aden_siege_386]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8567;-212;32768}	dbname=[aden_siege_387]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8649;-212;32768}	dbname=[aden_siege_388]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8689;-212;32768}	dbname=[aden_siege_389]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8771;-212;32768}	dbname=[aden_siege_390]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8811;-212;32768}	dbname=[aden_siege_391]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8893;-212;32768}	dbname=[aden_siege_392]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;8933;-212;32768}	dbname=[aden_siege_393]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;9015;-212;32768}	dbname=[aden_siege_394]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;9055;-212;32768}	dbname=[aden_siege_395]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;9137;-212;32768}	dbname=[aden_siege_396]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;9177;-212;32768}	dbname=[aden_siege_397]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;9259;-212;32768}	dbname=[aden_siege_398]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_bow_guard_s_e]	pos={148185;9300;-212;32768}	dbname=[aden_siege_399]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={148231;8724;-212;32768}	dbname=[aden_siege_400]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={148231;8839;-212;32768}	dbname=[aden_siege_401]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={148231;9069;-212;32768}	dbname=[aden_siege_402]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_wizard_s]	pos={148231;8954;-212;32768}	dbname=[aden_siege_403]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={148261;8621;-212;32768}	dbname=[aden_siege_404]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={148261;8894;-212;32768}	dbname=[aden_siege_405]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npc_begin	[aden_cleric_s]	pos={148261;9167;-212;32768}	dbname=[aden_siege_406]	dbsaving={death_time;parameters;pos}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//-------------------------- 03.12.24 NPC -------------------------------------------------------------------------
+territory_begin	[NPC_24_18_031224_01]	{{147852;3628;-409;-209};{148052;3628;-409;-209};{148052;3828;-409;-209};{147852;3828;-409;-209}}	territory_end
+npcmaker_begin	[NPC_24_18_031224_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[eldon]	pos = {147952;3742;-307;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//-------------------------- 03.12.01 NPC -------------------------------------------------------------------------
+territory_begin	[24_18_NPC_031201_01]	{{160556;21132;-3779;-3579};{160756;21132;-3779;-3579};{160756;21332;-3779;-3579};{160556;21332;-3779;-3579}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_01]	initial_spawn = all	maximum_npc = 5
+npc_begin	[witch_cleo]	pos = {160611;21236;-3714;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_02]	{{146684;26124;-2309;-2109};{146884;26124;-2309;-2109};{146884;26324;-2309;-2109};{146684;26324;-2309;-2109}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_02]	initial_spawn = all	maximum_npc = 1
+npc_begin	[trader_woodrow]	pos = {146787;26255;-2189;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_03]	{{145916;27180;-2297;-2097};{146116;27180;-2297;-2097};{146116;27380;-2297;-2097};{145916;27380;-2297;-2097}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_03]	initial_spawn = all	maximum_npc = 1
+npc_begin	[trader_woodley]	pos = {146046;27293;-2189;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_04]	{{146764;28908;-2356;-2156};{146964;28908;-2356;-2156};{146964;29108;-2356;-2156};{146764;29108;-2356;-2156}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_04]	initial_spawn = all	maximum_npc = 1
+npc_begin	[trader_alexis]	pos = {146893;28982;-2250;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_05]	{{145980;27884;-2360;-2160};{146180;27884;-2360;-2160};{146180;28084;-2360;-2160};{145980;28084;-2360;-2160}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_05]	initial_spawn = all	maximum_npc = 1
+npc_begin	[trader_carson]	pos = {146054;27988;-2250;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_06]	{{148732;27868;-2381;-2181};{148932;27868;-2381;-2181};{148932;28068;-2381;-2181};{148732;28068;-2381;-2181}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_06]	initial_spawn = all	maximum_npc = 1
+npc_begin	[trader_holly]	pos = {148860;27959;-2253;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_07]	{{147900;28908;-2373;-2173};{148100;28908;-2373;-2173};{148100;29108;-2373;-2173};{147900;29108;-2373;-2173}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_07]	initial_spawn = all	maximum_npc = 1
+npc_begin	[trader_lorenzo]	pos = {148000;28985;-2253;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_08]	{{148876;26588;-2281;-2081};{149076;26588;-2281;-2081};{149076;26788;-2281;-2081};{148876;26788;-2281;-2081}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_08]	initial_spawn = all	maximum_npc = 3
+npc_begin	[warehouse_chief_klump]	pos = {148959;26687;-2189;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[warehouse_keeper_romp]	pos = {148959;26733;-2189;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[warehouse_keeper_walderal]	pos = {148959;26641;-2189;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_09]	{{150268;28284;-2349;-2149};{150468;28284;-2349;-2149};{150468;28484;-2349;-2149};{150268;28484;-2349;-2149}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_09]	initial_spawn = all	maximum_npc = 1
+npc_begin	[head_blacksmith_ferris]	pos = {150337;28398;-2246;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_10]	{{150508;28396;-2349;-2149};{150708;28396;-2349;-2149};{150708;28596;-2349;-2149};{150508;28596;-2349;-2149}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_10]	initial_spawn = all	maximum_npc = 1
+npc_begin	[blacksmith_wilbert]	pos = {150608;28510;-2247;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_11]	{{146620;25708;-2121;-1921};{146820;25708;-2121;-1921};{146820;25908;-2121;-1921};{146620;25908;-2121;-1921}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_11]	initial_spawn = all	maximum_npc = 1
+npc_begin	[gatekeeper_elisabeth]	pos = {146737;25807;-2013;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_12]	{{148936;24945;-2233;-2033};{149552;24967;-2233;-2033};{149538;25703;-2233;-2033};{148940;25705;-2233;-2033}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_12]	initial_spawn = all	maximum_npc = 5
+npc_begin	[grandmaster_sedrick]	pos = {149216;24960;-2122;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[master_aiken]	pos = {148960;25120;-2121;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[master_sidnen]	pos = {148960;25408;-2121;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[master_kendra]	pos = {149216;25648;-2121;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[trainer_raien]	pos = {149488;25504;-2121;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_13]	{{145495;22724;-2213;-2013};{145976;22721;-2213;-2013};{145958;23598;-2213;-2013};{145547;23592;-2213;-2013}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_13]	initial_spawn = all	maximum_npc = 3
+npc_begin	[grandmagister_drikiyan]	pos = {145856;23168;-2115;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[magister_desmond]	pos = {145648;22752;-2116;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[magister_winonin]	pos = {145646;23568;-2116;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_14]	{{147168;22536;-2093;-1893};{147729;22536;-2093;-1893};{147729;23188;-2093;-1893};{147174;23176;-2093;-1893}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_14]	initial_spawn = all	maximum_npc = 5
+npc_begin	[highpriest_orven]	pos = {147456;22576;-1989;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[priest_ross]	pos = {147216;22848;-1992;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[priestess_flownia]	pos = {147692;22848;-1991;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[priest_linette]	pos = {147214;23067;-1991;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[priestess_vivian]	pos = {147693;23067;-1991;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_15]	{{143728;23537;-2213;-2013};{144197;23562;-2213;-2013};{144216;24306;-2213;-2013};{143722;24306;-2213;-2013}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_15]	initial_spawn = all	maximum_npc = 3
+npc_begin	[master_ghest]	pos = {143968;24256;-2118;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[grandmaster_oltlin]	pos = {143776;23936;-2118;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[magister_hanellin]	pos = {144096;23584;-2117;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_16]	{{143810;25298;-2233;-2033};{144604;25303;-2233;-2033};{144583;25811;-2233;-2033};{143810;25827;-2233;-2033}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_16]	initial_spawn = all	maximum_npc = 3
+npc_begin	[high_prefect_ladanza]	pos = {144512;25696;-2125;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[prefect_marestella]	pos = {144496;25360;-2124;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[seer_reva]	pos = {143856;25696;-2125;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_17]	{{147308;27388;-2293;-2093};{147508;27388;-2293;-2093};{147508;27588;-2293;-2093};{147308;27588;-2293;-2093}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_17]	initial_spawn = all	maximum_npc = 1
+npc_begin	[sir_eric_rodemai]	pos = {147456;27488;-2204;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_18]	{{145052;30332;-2569;-2369};{145252;30332;-2569;-2369};{145252;30532;-2569;-2369};{145052;30532;-2569;-2369}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_18]	initial_spawn = all	maximum_npc = 1
+npc_begin	[pet_manager_lemper]	pos = {145168;30432;-2461;57344}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_19]	{{147155;32035;-2560;-2360};{147781;32020;-2560;-2360};{147783;32228;-2560;-2360};{147157;32225;-2560;-2360}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_19]	initial_spawn = all	maximum_npc = 2
+npc_begin	[guard_conroy]	pos = {147191;32128;-2475;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[guard_coleman]	pos = {147727;32126;-2471;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_20]	{{147211;19740;-2096;-1896};{147740;19729;-2096;-1896};{147737;19942;-2096;-1896};{147214;19950;-2096;-1896}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_20]	initial_spawn = all	maximum_npc = 2
+npc_begin	[captain_kurtis]	pos = {147274;19838;-2009;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[guard_bret]	pos = {147648;19840;-2009;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_21]	{{142476;26061;-2496;-2296};{142673;26067;-2496;-2296};{142686;26644;-2496;-2296};{142493;26642;-2496;-2296}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_21]	initial_spawn = all	maximum_npc = 2
+npc_begin	[guard_aldis]	pos = {142589;26137;-2396;32768}	total = 1	respawn = 1min	npc_end
+npc_begin	[guard_carlton]	pos = {142592;26564;-2397;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[24_18_NPC_031201_22]	{{151896;24801;-2232;-2032};{152091;24803;-2232;-2032};{152086;25409;-2232;-2032};{151899;25409;-2232;-2032}}	territory_end
+npcmaker_begin	[24_18_NPC_031201_22]	initial_spawn = all	maximum_npc = 2
+npc_begin	[guard_grayson]	pos = {152004;25352;-2129;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[guard_eastan]	pos = {152007;24856;-2137;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//---------------------24_18(aden)-----------------------------------------------
+territory_begin	[aden_t24_18_01]	{{136908;27616;-3908;-2508};{138068;28120;-3908;-2508};{138696;32384;-3908;-2508};{131220;32608;-3908;-2508};{131252;27904;-3908;-2508}}	territory_end
+npcmaker_begin	[aden_t24_18_01]
+npc_begin	[vanor_silenos]	pos = anywhere	total = 8	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_02]	{{133924;28980;-4016;-3116};{136576;28828;-4016;-3116};{136784;30988;-4016;-3116};{134024;31036;-4016;-3116}}	territory_end
+npcmaker_begin	[aden_t24_18_02]
+npc_begin	[vanor_silenos]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_03]	{{135772;21856;-3952;-3052};{136932;23020;-3952;-3052};{137172;27520;-3952;-3052};{131160;27756;-3952;-3052};{131184;23548;-3952;-3052}}	territory_end
+npcmaker_begin	[aden_t24_18_03]
+npc_begin	[vanor_silenos]	pos = anywhere	total = 8	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_04]	{{133196;24524;-3912;-3412};{135364;23960;-3912;-3412};{135652;25908;-3912;-3412};{133224;26124;-3912;-3412}}	territory_end
+npcmaker_begin	[aden_t24_18_04]
+npc_begin	[vanor_silenos]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_05]	{{131120;21672;-3672;-2872};{132176;21248;-3672;-2872};{132796;22744;-3672;-2872};{131168;23340;-3672;-2872}}	territory_end
+npcmaker_begin	[aden_t24_18_05]
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_06]	{{132396;21480;-3484;-2684};{134564;20968;-3484;-2684};{133616;22160;-3484;-2684};{132684;22196;-3484;-2684}}	territory_end
+npcmaker_begin	[aden_t24_18_06]
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_07]	{{134628;20920;-3648;-2948};{135964;20608;-3648;-2948};{135680;21668;-3648;-2948};{133992;22300;-3648;-2948}}	territory_end
+npcmaker_begin	[aden_t24_18_07]
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_08]	{{135444;17064;-3552;-2952};{136188;17168;-3552;-2952};{136836;17680;-3552;-2952};{136656;18672;-3552;-2952};{135288;19092;-3552;-2952}}	territory_end
+npcmaker_begin	[aden_t24_18_08]
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_09]	{{137508;19068;-3780;-3280};{137828;20844;-3780;-3280};{137272;23120;-3780;-3280};{135796;21660;-3780;-3280};{136268;19640;-3780;-3280}}	territory_end
+npcmaker_begin	[aden_t24_18_09]
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_10]	{{132440;14288;-3984;-3284};{133248;14120;-3984;-3284};{132896;15620;-3984;-3284};{132124;15556;-3984;-3284}}	territory_end
+npcmaker_begin	[aden_t24_18_10]
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_11]	{{131992;13548;-3888;-3088};{132340;14288;-3888;-3088};{132036;15592;-3888;-3088};{131160;16180;-3888;-3088};{131100;13324;-3888;-3088}}	territory_end
+npcmaker_begin	[aden_t24_18_11]
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_12]	{{140920;14592;-4080;-3580};{141156;15468;-4080;-3580};{139240;18348;-4080;-3580};{137684;16524;-4080;-3580};{139644;13272;-4080;-3580}}	territory_end
+npcmaker_begin	[aden_t24_18_12]
+npc_begin	[vanor_silenos]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_13]	{{138464;11608;-4308;-3608};{139476;13220;-4308;-3608};{137556;16456;-4308;-3608};{135884;15568;-4308;-3608};{135064;13552;-4308;-3608}}	territory_end
+npcmaker_begin	[aden_t24_18_13]
+npc_begin	[vanor_silenos]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_14]	{{134936;9972;-4360;-3860};{138040;9348;-4360;-3860};{138464;11540;-4360;-3860};{135132;13372;-4360;-3860};{133828;11956;-4360;-3860}}	territory_end
+npcmaker_begin	[aden_t24_18_14]
+npc_begin	[vanor_silenos]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_15]	{{133928;5656;-4516;-3816};{134768;9912;-4516;-3816};{133576;11908;-4516;-3816};{131160;12168;-4516;-3816};{131404;5400;-4516;-3816}}	territory_end
+npcmaker_begin	[aden_t24_18_15]
+npc_begin	[vanor_silenos_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_16]	{{135656;4876;-4524;-4024};{137856;7320;-4524;-4024};{138044;9212;-4524;-4024};{134916;9824;-4524;-4024};{134208;5740;-4524;-4024}}	territory_end
+npcmaker_begin	[aden_t24_18_16]
+npc_begin	[vanor_silenos_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_17]	{{135820;4824;-4592;-3892};{135892;448;-4592;-3892};{137676;436;-4592;-3892};{137940;7148;-4592;-3892}}	territory_end
+npcmaker_begin	[aden_t24_18_17]
+npc_begin	[vanor_silenos_shaman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_18]	{{134116;168;-4248;-3048};{135740;84;-4248;-3048};{135468;3944;-4248;-3048};{134092;4788;-4248;-3048};{131464;4500;-4248;-3048};{131208;3532;-4248;-3048}}	territory_end
+npcmaker_begin	[aden_t24_18_18]
+npc_begin	[vanor_silenos_shaman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_19]	{{137752;172;-4588;-4088};{142252;104;-4588;-4088};{140824;2504;-4588;-4088};{137824;2532;-4588;-4088}}	territory_end
+npcmaker_begin	[aden_t24_18_19]
+npc_begin	[vanor_silenos_shaman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_20]	{{139104;2600;-4612;-4112};{140812;2588;-4612;-4112};{141244;5276;-4612;-4112};{140484;7160;-4612;-4112};{138224;7368;-4612;-4112};{138156;3932;-4612;-4112}}	territory_end
+npcmaker_begin	[aden_t24_18_20]
+npc_begin	[vanor_silenos_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_21]	{{138256;7520;-4372;-3872};{140356;7356;-4372;-3872};{141776;9932;-4372;-3872};{141268;11520;-4372;-3872};{138492;10640;-4372;-3872}}	territory_end
+npcmaker_begin	[aden_t24_18_21]
+npc_begin	[vanor_silenos_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_22]	{{138716;10928;-4344;-3844};{141244;11752;-4344;-3844};{141668;14348;-4344;-3844};{140316;13712;-4344;-3844}}	territory_end
+npcmaker_begin	[aden_t24_18_22]
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_23]	{{156316;8180;-4476;-3976};{156176;10580;-4476;-3976};{154988;12952;-4476;-3976};{153320;14360;-4476;-3976};{154144;8352;-4476;-3976}}	territory_end
+npcmaker_begin	[aden_t24_18_23]
+npc_begin	[vanor_silenos_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_scout]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_24]	{{154512;3196;-4536;-4036};{156308;2920;-4536;-4036};{156252;7996;-4536;-4036};{154212;8120;-4536;-4036};{153516;5596;-4536;-4036}}	territory_end
+npcmaker_begin	[aden_t24_18_24]
+npc_begin	[vanor_silenos_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_scout]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_25]	{{152964;112;-4564;-3864};{159208;232;-4564;-3864};{159420;1480;-4564;-3864};{157064;2772;-4564;-3864};{154328;3036;-4564;-3864};{152952;1344;-4564;-3864}}	territory_end
+npcmaker_begin	[aden_t24_18_25]
+npc_begin	[vanor_silenos_cheiftain]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_shaman]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_26]	{{159496;1708;-4552;-3652};{161908;2992;-4552;-3652};{159824;7528;-4552;-3652};{156904;10240;-4552;-3652};{157084;2904;-4552;-3652}}	territory_end
+npcmaker_begin	[aden_t24_18_26]
+npc_begin	[vanor_silenos_shaman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_scout]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_27]	{{162136;3092;-4108;-3308};{163528;2648;-4108;-3308};{163608;10872;-4108;-3308};{160132;7628;-4108;-3308}}	territory_end
+npcmaker_begin	[aden_t24_18_27]
+npc_begin	[vanor_silenos_cheiftain]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_shaman]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_28]	{{163568;11060;-4224;-3524};{163436;15732;-4224;-3524};{156572;15596;-4224;-3524};{155440;13104;-4224;-3524};{156932;10344;-4224;-3524};{160140;7800;-4224;-3524}}	territory_end
+npcmaker_begin	[aden_t24_18_28]
+npc_begin	[vanor_silenos_warrior]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_scout]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 9	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_29]	{{159196;15876;-4008;-3308};{163552;16012;-4008;-3308};{163524;19328;-4008;-3308};{159992;19712;-4008;-3308}}	territory_end
+npcmaker_begin	[aden_t24_18_29]
+npc_begin	[vanor_silenos_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_30]	{{160700;20728;-3908;-3308};{163404;20808;-3908;-3308};{163520;27128;-3908;-3308};{160880;24536;-3908;-3308}}	territory_end
+npcmaker_begin	[aden_t24_18_30]
+npc_begin	[vanor_silenos]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_31]	{{160100;25348;-3828;-3028};{162920;28552;-3828;-3028};{161656;32528;-3828;-3028};{158840;32524;-3828;-3028};{157644;25968;-3828;-3028}}	territory_end
+npcmaker_begin	[aden_t24_18_31]
+npc_begin	[vanor_silenos]	pos = anywhere	total = 8	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t24_18_32]	{{155732;25144;-3720;-2720};{157592;25928;-3720;-2720};{158632;32540;-3720;-2720};{154236;32500;-3720;-2720};{154116;26952;-3720;-2720}}	territory_end
+npcmaker_begin	[aden_t24_18_32]
+npc_begin	[vanor_silenos]	pos = anywhere	total = 8	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+

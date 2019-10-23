@@ -1,0 +1,212 @@
+//------------------------- 23_17 NPC 031201 -----------------------------------------------------------
+territory_begin	[23_17_NPC_031201_01]	{{110812;-10692;-2068;-1868};{111012;-10692;-2068;-1868};{111012;-10492;-2068;-1868};{110812;-10492;-2068;-1868}}	territory_end
+npcmaker_begin	[23_17_NPC_031201_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[rowan]	pos = {110916;-10560;-1996;22500}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_17_NPC_031201_02]	{{109746;-10900;-1572;-1372};{109797;-10885;-1572;-1372};{109782;-10832;-1572;-1372};{109730;-10845;-1572;-1372}}	territory_end
+npcmaker_begin	[23_17_NPC_031201_02]	initial_spawn = all	maximum_npc = 1
+npc_begin	[bowman]	pos = {109763;-10866;-1448;19000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_17_NPC_031201_03]	{{110376;-10752;-1832;-1632};{110453;-10726;-1832;-1632};{110427;-10652;-1832;-1632};{110352;-10677;-1832;-1632}}	territory_end
+npcmaker_begin	[23_17_NPC_031201_03]	initial_spawn = all	maximum_npc = 1
+npc_begin	[bowman]	pos = {110400;-10700;-1771;19500}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_17_NPC_031201_04]	{{111269;-10219;-1776;-1576};{111328;-10180;-1776;-1576};{111288;-10120;-1776;-1576};{111229;-10161;-1776;-1576}}	territory_end
+npcmaker_begin	[23_17_NPC_031201_04]	initial_spawn = all	maximum_npc = 1
+npc_begin	[bowman]	pos = {111276;-10166;-1720;23000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_17_NPC_031201_05]	{{111292;-11492;-1920;-1720};{111492;-11492;-1920;-1720};{111492;-11292;-1920;-1720};{111292;-11292;-1920;-1720}}	territory_end
+npcmaker_begin	[23_17_NPC_031201_05]	initial_spawn = all	maximum_npc = 1
+npc_begin	[trent]	pos = {111396;-11396;-1824;21500}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_17_NPC_031201_06]	{{110460;-11620;-1904;-1704};{110660;-11620;-1904;-1704};{110660;-11420;-1904;-1704};{110460;-11420;-1904;-1704}}	territory_end
+npcmaker_begin	[23_17_NPC_031201_06]	initial_spawn = all	maximum_npc = 1
+npc_begin	[harlow]	pos = {110560;-11520;-1824;12288}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_17_NPC_031201_07]	{{112012;-14644;-1940;-1740};{112212;-14644;-1940;-1740};{112212;-14444;-1940;-1740};{112012;-14444;-1940;-1740}}	territory_end
+npcmaker_begin	[23_17_NPC_031201_07]	initial_spawn = all	maximum_npc = 1
+npc_begin	[calder]	pos = {112132;-14560;-1872;28672}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_17_NPC_031201_08]	{{111980;-15892;-1972;-1772};{112180;-15892;-1972;-1772};{112180;-15692;-1972;-1772};{111980;-15692;-1972;-1772}}	territory_end
+npcmaker_begin	[23_17_NPC_031201_08]	initial_spawn = all	maximum_npc = 1
+npc_begin	[dino]	pos = {112032;-15788;-1872;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_17_NPC_031201_09]	{{111804;-17860;-1888;-1688};{112004;-17860;-1888;-1688};{112004;-17660;-1888;-1688};{111804;-17660;-1888;-1688}}	territory_end
+npcmaker_begin	[23_17_NPC_031201_09]	initial_spawn = all	maximum_npc = 1
+npc_begin	[venedict]	pos = {111888;-17792;-1805;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_17_NPC_031201_10]	{{112623;-18031;-1964;-1764};{112919;-18016;-1964;-1764};{112904;-17793;-1964;-1764};{112620;-17820;-1964;-1764}}	territory_end
+npcmaker_begin	[23_17_NPC_031201_10]	initial_spawn = all	maximum_npc = 3
+npc_begin	[biktor_van_dake]	pos = {112816;-17856;-1872;26000}	total = 1	respawn = 1min	npc_end
+npc_begin	[sanders]	pos = {112740;-17944;-1872;20480}	total = 1	respawn = 1min	npc_end
+npc_begin	[oskar_blackbird]	pos = {112668;-17960;-1868;20480}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[23_17_NPC_031201_11]	{{111356;-12340;-1960;-1760};{111556;-12340;-1960;-1760};{111556;-12140;-1960;-1760};{111356;-12140;-1960;-1760}}	territory_end
+npcmaker_begin	[23_17_NPC_031201_11]	initial_spawn = all	maximum_npc = 1
+npc_begin	[sutton]	pos = {111468;-12224;-1856;20480}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//-------------------- 23_17(국경수비대 부근) -----------------------------------------------
+territory_begin	[aden_t23_17_001]	{{98382;-22628;-3213;-2513};{99701;-22439;-3213;-2513};{102113;-19213;-3213;-2513};{101037;-17118;-3213;-2513};{98438;-16710;-3213;-2513}}	territory_end
+npcmaker_begin	[aden_t23_17_001]
+npc_begin	[oel_mahum]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[oel_mahum_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[oel_mahum_witch_doctor]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_002]	{{98513;-21370;-3260;-2460};{101242;-18711;-3260;-2460};{99985;-17777;-3260;-2460};{98598;-18341;-3260;-2460}}	territory_end
+npcmaker_begin	[aden_t23_17_002]
+npc_begin	[oel_mahum_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[oel_mahum_witch_doctor]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_003]	{{100239;-22263;-3109;-1309};{102893;-21548;-3109;-1309};{104780;-19056;-3109;-1309};{103814;-18790;-3109;-1309}}	territory_end
+npcmaker_begin	[aden_t23_17_003]
+npc_begin	[oel_mahum_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[oel_mahum_witch_doctor]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_004]	{{101997;-17033;-2453;-1253};{104999;-18274;-2453;-1253};{105808;-15059;-2453;-1253};{104908;-13441;-2453;-1253};{102492;-15145;-2453;-1253}}	territory_end
+npcmaker_begin	[aden_t23_17_004]
+npc_begin	[oel_mahum]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[oel_mahum_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[oel_mahum_witch_doctor]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_005]	{{101324;-16358;-3477;-2677};{101732;-14308;-3477;-2677};{101397;-11226;-3477;-2677};{98402;-10556;-3477;-2677};{98714;-14534;-3477;-2677}}	territory_end
+npcmaker_begin	[aden_t23_17_005]
+npc_begin	[tarlk_basilisk]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[elder_tarlk_basilisk]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_006]	{{98431;-10428;-3667;-2767};{101477;-11059;-3667;-2767};{100988;-6437;-3667;-2767};{100216;-4394;-3667;-2767};{98482;-6365;-3667;-2767}}	territory_end
+npcmaker_begin	[aden_t23_17_006]
+npc_begin	[tarlk_bugbear_high_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[elder_tarlk_basilisk]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_007]	{{101892;-14170;-3387;-2287};{104616;-11515;-3387;-2287};{104697;-10240;-3387;-2287};{101098;-6547;-3387;-2287}}	territory_end
+npcmaker_begin	[aden_t23_17_007]
+npc_begin	[tarlk_bugbear_high_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[tarlk_basilisk]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[elder_tarlk_basilisk]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_008]	{{98383;-4131;-3793;-3093};{102803;-514;-3793;-3093};{102299;-202;-3793;-3093};{98424;-227;-3793;-3093}}	territory_end
+npcmaker_begin	[aden_t23_17_008]
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[timak_orc_overlord]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_009]	{{105835;-4969;-3632;-2832};{105638;-2700;-3632;-2832};{104415;-1230;-3632;-2832};{101776;-2896;-3632;-2832};{103488;-5402;-3632;-2832}}	territory_end
+npcmaker_begin	[aden_t23_17_009]
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[timak_orc_overlord]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_010]	{{106940;-2274;-4006;-2906};{112334;-1619;-4006;-2906};{113570;-308;-4006;-2906};{105176;-305;-4006;-2906}}	territory_end
+npcmaker_begin	[aden_t23_17_010]
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_scout]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_011]	{{109346;-5870;-3843;-2343};{111071;-4616;-3843;-2343};{110397;-3071;-3843;-2343};{106966;-3412;-3843;-2343};{106976;-4355;-3843;-2343}}	territory_end
+npcmaker_begin	[aden_t23_17_011]
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_scout]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_012]	{{113744;-5916;-3935;-2835};{116818;-3634;-3935;-2835};{114556;-2355;-3935;-2835};{110464;-2983;-3935;-2835};{111242;-4697;-3935;-2835}}	territory_end
+npcmaker_begin	[aden_t23_17_012]
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_013]	{{117022;-9108;-4048;-2948};{118819;-8752;-4048;-2948};{120075;-7457;-4048;-2948};{116377;-5461;-4048;-2948};{115643;-7423;-4048;-2948}}	territory_end
+npcmaker_begin	[aden_t23_17_013]
+npc_begin	[vanor_silenos_shaman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_cheiftain]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_014]	{{116933;-9815;-4102;-2602};{118605;-9979;-4102;-2602};{122837;-7309;-4102;-2602};{116922;-3761;-4102;-2602};{113917;-6020;-4102;-2602}}	territory_end
+npcmaker_begin	[aden_t23_17_014]
+npc_begin	[vanor_silenos_scout]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_warrior]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_015]	{{125955;-12826;-4064;-3064};{128896;-12527;-4064;-3064};{128246;-10078;-4064;-3064};{124980;-9945;-4064;-3064}}	territory_end
+npcmaker_begin	[aden_t23_17_015]
+npc_begin	[vanor_silenos_shaman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_cheiftain]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_016]	{{125226;-12820;-4151;-2851};{126369;-13467;-4151;-2851};{130759;-13638;-4151;-2851};{130674;-8935;-4151;-2851};{123669;-7579;-4151;-2851}}	territory_end
+npcmaker_begin	[aden_t23_17_016]
+npc_begin	[vanor_silenos_scout]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_warrior]	pos = anywhere	total = 6	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_cheiftain]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_017]	{{113959;-1262;-3946;-3146};{121136;-4841;-3946;-3146};{122544;-277;-3946;-3146};{113898;-264;-3946;-3146}}	territory_end
+npcmaker_begin	[aden_t23_17_017]
+npc_begin	[vanor_silenos_scout]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_warrior]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_cheiftain]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_018]	{{117635;-1814;-4080;-3280};{119859;-3286;-4080;-3280};{121771;-501;-4080;-3280};{118263;-411;-4080;-3280}}	territory_end
+npcmaker_begin	[aden_t23_17_018]
+npc_begin	[vanor_silenos_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_cheiftain]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_019]	{{124159;-6448;-4032;-2832};{125472;-6421;-4032;-2832};{125440;-4562;-4032;-2832};{122288;-1666;-4032;-2832};{121223;-4877;-4032;-2832}}	territory_end
+npcmaker_begin	[aden_t23_17_019]
+npc_begin	[vanor_silenos_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_cheiftain]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_020]	{{124701;-2720;-2434;-1734};{125494;-2550;-2434;-1734};{125835;-386;-2434;-1734};{123551;-920;-2434;-1734};{123573;-1649;-2434;-1734}}	territory_end
+npcmaker_begin	[aden_t23_17_020]
+npc_begin	[vanor_silenos_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_cheiftain]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_021]	{{126115;-4292;-3296;-1696};{127989;-3888;-3296;-1696};{126971;-888;-3296;-1696};{126012;-288;-3296;-1696};{125617;-2667;-3296;-1696}}	territory_end
+npcmaker_begin	[aden_t23_17_021]
+npc_begin	[vanor_silenos_grunt]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_022]	{{130752;-7234;-3704;-2404};{130758;-5853;-3704;-2404};{128062;-3969;-3704;-2404};{126081;-4399;-3704;-2404};{126291;-5932;-3704;-2404}}	territory_end
+npcmaker_begin	[aden_t23_17_022]
+npc_begin	[vanor_silenos_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[vanor_silenos_cheiftain]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_023]	{{109306;-7577;-3256;-2356};{108763;-6624;-3256;-2356};{106162;-4936;-3256;-2356};{105222;-5188;-3256;-2356};{108289;-7810;-3256;-2356}}	territory_end
+npcmaker_begin	[aden_t23_17_023]
+npc_begin	[hunter_gargoyle]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_024]	{{99073;-14665;-3463;-2763};{100944;-15284;-3463;-2763};{101006;-12685;-3463;-2763};{99250;-12738;-3463;-2763}}	territory_end
+npcmaker_begin	[aden_t23_17_024]
+npc_begin	[hunter_gargoyle]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[aden_t23_17_025]	{{99018;-10202;-3463;-2763};{101221;-10513;-3463;-2763};{100928;-7676;-3463;-2763};{99337;-8406;-3463;-2763}}	territory_end
+npcmaker_begin	[aden_t23_17_025]
+npc_begin	[hunter_gargoyle]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+

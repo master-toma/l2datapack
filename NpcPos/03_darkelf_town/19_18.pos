@@ -1,0 +1,188 @@
+//------------------- 19_18 다크엘프영지:북서쪽해안 --------------------------------------------------------
+territory_begin	[oren_t19_18_001]	{{-5856;3352;-3724;-2774};{-4536;4176;-3724;-2774};{-7744;9128;-3724;-2774};{-12004;5896;-3724;-2774};{-10724;4548;-3724;-2774}}	territory_end
+npcmaker_begin	[oren_t19_18_001]
+npc_begin	[forest_walking_fungus]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[goblin_thief]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[blood_fungus]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_002]	{{-12136;5932;-3800;-2450};{-7216;9852;-3800;-2450};{-6716;12048;-3800;-2450};{-8576;15740;-3800;-2450};{-16580;7808;-3800;-2450};{-14192;6300;-3800;-2450}}	territory_end
+npcmaker_begin	[oren_t19_18_002]
+npc_begin	[goblin_lookout]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npc_begin	[forest_walking_fungus]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npc_begin	[goblin_thief]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_003]	{{-24536;14068;-3780;-2780};{-16680;7836;-3780;-2780};{-10312;14416;-3780;-2780};{-17296;20564;-3780;-2780};{-22876;18244;-3780;-2780}}	territory_end
+npcmaker_begin	[oren_t19_18_003]
+npc_begin	[imp_ribe]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[goblin_lookout]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npc_begin	[forest_walking_fungus]	pos = anywhere	total = 10	respawn = 15sec	npc_end
+npc_begin	[goblin_thief]	pos = anywhere	total = 12	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_004]	{{-14052;19268;-3804;-2954};{-10428;15740;-3804;-2954};{-7016;19428;-3804;-2954};{-12428;23844;-3804;-2954}}	territory_end
+npcmaker_begin	[oren_t19_18_004]
+npc_begin	[goblin]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[imp]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[imp_ribe]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_005]	{{-20576;20488;-3796;-2846};{-14372;19536;-3796;-2846};{-12896;24276;-3796;-2846};{-16956;27352;-3796;-2846};{-23616;25260;-3796;-2846};{-23372;23080;-3796;-2846}}	territory_end
+npcmaker_begin	[oren_t19_18_005]
+npc_begin	[imp]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[imp_ribe]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[goblin_lookout]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npc_begin	[forest_walking_fungus]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_006]	{{-27288;15844;-3800;-3100};{-24612;14104;-3800;-3100};{-23028;18316;-3800;-3100};{-25428;26624;-3800;-3100};{-29428;24408;-3800;-3100};{-29076;18844;-3800;-3100}}	territory_end
+npcmaker_begin	[oren_t19_18_006]
+npc_begin	[balor_orc_archer]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[forest_walking_fungus]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npc_begin	[balor_orc_fighter]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[goblin_thief]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_007]	{{-29552;24516;-3692;-2242};{-25488;26760;-3692;-2242};{-22292;31968;-3692;-2242};{-31540;32016;-3692;-2242}}	territory_end
+npcmaker_begin	[oren_t19_18_007]
+npc_begin	[balor_orc_archer]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[forest_walking_fungus]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npc_begin	[balor_orc_fighter]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npc_begin	[goblin_thief]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_008]	{{-8864;23044;-3752;-2502};{-5428;22956;-3752;-2502};{-5896;27684;-3752;-2502};{-8744;29348;-3752;-2502};{-10500;28104;-3752;-2502};{-11108;24596;-3752;-2502}}	territory_end
+npcmaker_begin	[oren_t19_18_008]
+npc_begin	[goblin]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[imp]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[imp_ribe]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_009]	{{-16748;32476;-3768;-2518};{-13436;27360;-3768;-2518};{-10540;32448;-3768;-2518}}	territory_end
+npcmaker_begin	[oren_t19_18_009]
+npc_begin	[balor_orc_archer]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[forest_walking_fungus]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[balor_orc_fighter]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[balor_orc_sub_leader]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_010]	{{-2284;31120;-3768;-3418};{-284;30888;-3768;-3418};{-308;32464;-3768;-3418};{-7888;32484;-3768;-3418}}	territory_end
+npcmaker_begin	[oren_t19_18_010]
+npc_begin	[balor_orc_sub_leader]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[balor_orc_leader]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[blood_fungus]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[festering_bat]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_011]	{{-10704;5756;-3772;-3272};{-7960;5508;-3772;-3272};{-7096;6416;-3772;-3272};{-9180;7536;-3772;-3272}}	territory_end
+npcmaker_begin	[oren_t19_18_011]
+npc_begin	[blood_fungus]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_012]	{{-15856;7728;-3628;-3128};{-12768;6392;-3628;-3128};{-9464;8576;-3628;-3128}}	territory_end
+npcmaker_begin	[oren_t19_18_012]
+npc_begin	[blood_fungus]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_013]	{{-17052;13320;-3812;-3312};{-14092;11812;-3812;-3312};{-11464;14372;-3812;-3312};{-15120;15908;-3812;-3312}}	territory_end
+npcmaker_begin	[oren_t19_18_013]
+npc_begin	[imp]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[imp_ribe]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_014]	{{-22372;13300;-3748;-2948};{-16680;8684;-3748;-2948};{-14980;11444;-3748;-2948};{-21500;15444;-3748;-2948}}	territory_end
+npcmaker_begin	[oren_t19_18_014]
+npc_begin	[goblin_lookout]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[goblin_thief]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_015]	{{-20756;15816;-3788;-3588};{-16888;17204;-3788;-3588};{-18028;19356;-3788;-3588};{-21856;17808;-3788;-3588}}	territory_end
+npcmaker_begin	[oren_t19_18_015]
+npc_begin	[goblin_lookout]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[forest_walking_fungus]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_016]	{{-12940;19832;-3764;-3414};{-11120;17828;-3764;-3414};{-9480;20500;-3764;-3414};{-12276;22780;-3764;-3414}}	territory_end
+npcmaker_begin	[oren_t19_18_016]
+npc_begin	[goblin_lookout]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_017]	{{-19532;21816;-3816;-3466};{-14892;20616;-3816;-3466};{-13896;23468;-3816;-3466};{-15588;24096;-3816;-3466}}	territory_end
+npcmaker_begin	[oren_t19_18_017]
+npc_begin	[goblin]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[imp]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_018]	{{-27496;17280;-3764;-3414};{-25316;15488;-3764;-3414};{-24300;18080;-3764;-3414};{-25856;20544;-3764;-3414};{-28244;19604;-3764;-3414}}	territory_end
+npcmaker_begin	[oren_t19_18_018]
+npc_begin	[forest_walking_fungus]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[goblin_thief]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_019]	{{-9124;23820;-3760;-3310};{-7084;23552;-3760;-3310};{-6792;25552;-3760;-3310};{-8152;26256;-3760;-3310};{-10472;25008;-3760;-3310}}	territory_end
+npcmaker_begin	[oren_t19_18_019]
+npc_begin	[goblin]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t19_18_020]	{{-1464;7480;-3400;-3000};{-280;6584;-3400;-3000};{-276;17704;-3400;-3000};{-1656;10128;-3400;-3000}}	territory_end
+npcmaker_begin	[oren_t19_18_020]
+npc_begin	[goblin]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[imp]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+//------------------- 19_18 다크엘프영지:북서쪽해안 --------------------------------------------------------
+territory_begin	[oren_guard_t19_18_001]	{{-5856;3352;-3724;-2774};{-4536;4176;-3724;-2774};{-7744;9128;-3724;-2774};{-12004;5896;-3724;-2774};{-10724;4548;-3724;-2774}}	territory_end
+npcmaker_begin	[oren_guard_t19_18_001]
+npc_begin	[bloody_pixy]	pos = anywhere	total = 2	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[oren_guard_t19_18_002]	{{-12136;5932;-3800;-2450};{-7216;9852;-3800;-2450};{-6716;12048;-3800;-2450};{-8576;15740;-3800;-2450};{-16580;7808;-3800;-2450};{-14192;6300;-3800;-2450}}	territory_end
+npcmaker_begin	[oren_guard_t19_18_002]
+npc_begin	[ti_mi_riran]	pos = anywhere	total = 2	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[oren_guard_t19_18_003]	{{-24536;14068;-3780;-2780};{-16680;7836;-3780;-2780};{-10312;14416;-3780;-2780};{-17296;20564;-3780;-2780};{-22876;18244;-3780;-2780}}	territory_end
+npcmaker_begin	[oren_guard_t19_18_003]
+npc_begin	[bloody_pixy]	pos = anywhere	total = 3	respawn = 1min	npc_end
+npc_begin	[ti_mi_riran]	pos = anywhere	total = 2	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[oren_guard_t19_18_004]	{{-14052;19268;-3804;-2954};{-10428;15740;-3804;-2954};{-7016;19428;-3804;-2954};{-12428;23844;-3804;-2954}}	territory_end
+npcmaker_begin	[oren_guard_t19_18_004]
+npc_begin	[bloody_pixy]	pos = anywhere	total = 2	respawn = 1min	npc_end
+npc_begin	[ti_mi_riran]	pos = anywhere	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[oren_guard_t19_18_005]	{{-20576;20488;-3796;-2846};{-14372;19536;-3796;-2846};{-12896;24276;-3796;-2846};{-16956;27352;-3796;-2846};{-23616;25260;-3796;-2846};{-23372;23080;-3796;-2846}}	territory_end
+npcmaker_begin	[oren_guard_t19_18_005]
+npc_begin	[bloody_pixy]	pos = anywhere	total = 3	respawn = 1min	npc_end
+npc_begin	[ti_mi_riran]	pos = anywhere	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[oren_guard_t19_18_006]	{{-27288;15844;-3800;-3100};{-24612;14104;-3800;-3100};{-23028;18316;-3800;-3100};{-25428;26624;-3800;-3100};{-29428;24408;-3800;-3100};{-29076;18844;-3800;-3100}}	territory_end
+npcmaker_begin	[oren_guard_t19_18_006]
+npc_begin	[bloody_pixy]	pos = anywhere	total = 3	respawn = 1min	npc_end
+npc_begin	[ti_mi_riran]	pos = anywhere	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[oren_guard_t19_18_007]	{{-29552;24516;-3692;-2242};{-25488;26760;-3692;-2242};{-22292;31968;-3692;-2242};{-31540;32016;-3692;-2242}}	territory_end
+npcmaker_begin	[oren_guard_t19_18_007]
+npc_begin	[ti_mi_riran]	pos = anywhere	total = 2	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[oren_guard_t19_18_008]	{{-8864;23044;-3752;-2502};{-5428;22956;-3752;-2502};{-5896;27684;-3752;-2502};{-8744;29348;-3752;-2502};{-10500;28104;-3752;-2502};{-11108;24596;-3752;-2502}}	territory_end
+npcmaker_begin	[oren_guard_t19_18_008]
+npc_begin	[ti_mi_riran]	pos = anywhere	total = 2	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[oren_guard_t19_18_009]	{{-16748;32476;-3768;-2518};{-13436;27360;-3768;-2518};{-10540;32448;-3768;-2518}}	territory_end
+npcmaker_begin	[oren_guard_t19_18_009]
+npc_begin	[ti_mi_riran]	pos = anywhere	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[event_t19_18_001]	{{-26271;16359;-3825;-2925};{-13375;6607;-3825;-2925};{-8783;9955;-3825;-2925};{-10531;21319;-3825;-2925};{-20923;24631;-3825;-2925}}	territory_end
+npcmaker_begin	[event_t19_18_001]	initial_spawn=all	maximum_npc=5
+npc_begin	[varikan_brigand_ldr]	pos={{-16418;10419;-3565;0;20%};{-12458;13831;-3727;0;20%};{-15470;21939;-3700;0;20%};{-21262;22773;-3675;0;20%};{-21534;15802;-3592;0;20%}}	total=1	respawn=2hour	respawn_rand=1hour	Privates=[varikan_brigand:party_private:1:1min;varikan_brigand:party_private:1:1min;varikan_brigand:party_private:1:1min;varikan_brigand:party_private:1:1min;varikan_brigand:party_private:1:1min]	npc_end
+npcmaker_end
+

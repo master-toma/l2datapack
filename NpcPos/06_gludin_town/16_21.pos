@@ -1,0 +1,71 @@
+//--------------- 16_21 ----------------------------------------------------------------------------------------
+territory_begin	[gludio_t16_21_001]	{{-100587;99798;-3638;-3238};{-98527;99862;-3638;-3238};{-98531;103390;-3638;-3238};{-101699;103654;-3638;-3238};{-102675;102190;-3638;-3238};{-101931;100694;-3638;-3238}}	territory_end
+npcmaker_begin	[gludio_t16_21_001]
+npc_begin	[selu_lizardman_scout]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[selu_lizardman_warrior]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_legion]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[whispering_wind]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t16_21_002]	{{-101620;103765;-3634;-3234};{-98548;103537;-3634;-3234};{-98560;110549;-3634;-3234};{-100388;109481;-3634;-3234};{-101984;105417;-3634;-3234}}	territory_end
+npcmaker_begin	[gludio_t16_21_002]
+npc_begin	[ol_mahum_scout]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_legion]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_commander]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[whispering_wind]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t16_21_003]	{{-102120;103100;-3620;-3220};{-101676;103740;-3620;-3220};{-102032;105528;-3620;-3220};{-103908;105728;-3620;-3220};{-104000;104320;-3620;-3220}}	territory_end
+npcmaker_begin	[gludio_t16_21_003]
+npc_begin	[selu_lizardman_scout]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[selu_lizardman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_legion]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[whispering_wind]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t16_21_004]	{{-103853;105760;-3617;-3217};{-101993;105536;-3617;-3217};{-100421;109480;-3617;-3217};{-102293;111236;-3617;-3217};{-103337;109280;-3617;-3217}}	territory_end
+npcmaker_begin	[gludio_t16_21_004]
+npc_begin	[selu_lizardman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_scout]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[selu_lizardman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_legion]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_commander]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[whispering_wind]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t16_21_005]	{{-100398;109558;-3670;-3170};{-98626;110714;-3670;-3170};{-98634;119882;-3670;-3170};{-101954;114234;-3670;-3170};{-102470;113094;-3670;-3170};{-102414;111418;-3670;-3170}}	territory_end
+npcmaker_begin	[gludio_t16_21_005]
+npc_begin	[selu_lizardman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_scout]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[selu_lizardman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_legion]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ol_mahum_commander]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[whispering_wind]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t16_21_006]	{{-101577;101976;-3638;-3238};{-100121;102300;-3638;-3238};{-100377;103312;-3638;-3238};{-101545;103312;-3638;-3238}}	territory_end
+npcmaker_begin	[gludio_t16_21_006]
+npc_begin	[whispering_wind]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t16_21_007]	{{-103345;104495;-3574;-3174};{-102585;103791;-3574;-3174};{-102153;104775;-3574;-3174};{-102797;105415;-3574;-3174}}	territory_end
+npcmaker_begin	[gludio_t16_21_007]
+npc_begin	[whispering_wind]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t16_21_008]	{{-102366;107072;-3633;-3233};{-101886;106412;-3633;-3233};{-100746;109344;-3633;-3233};{-101906;109256;-3633;-3233}}	territory_end
+npcmaker_begin	[gludio_t16_21_008]
+npc_begin	[whispering_wind]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t16_21_009]	{{-102003;112225;-3627;-3127};{-100499;110213;-3627;-3127};{-99719;111793;-3627;-3127};{-100243;113421;-3627;-3127}}	territory_end
+npcmaker_begin	[gludio_t16_21_009]
+npc_begin	[whispering_wind]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+//---------------0414 오크 레이더가 되는 길 ------------------------------------------
+territory_begin	[quest_t16_21_001]	{{-102100;112628;-3616;-3116};{-99572;112340;-3616;-3116};{-99184;114132;-3616;-3116};{-100708;114864;-3616;-3116}}	territory_end
+npcmaker_begin	[quest_t16_21_001]	initial_spawn = all
+npc_begin	[orc_betrayer_heitafu]	pos = anywhere	total = 1	respawn = 11min	npc_end
+npcmaker_end
+

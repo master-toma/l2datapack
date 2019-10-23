@@ -1,0 +1,741 @@
+//---------- (25_12) 어스웜의 동굴  ----------------------------------------
+territory_begin	[25_12_NPC01]	{{178764;-184436;-408;-208};{178964;-184436;-408;-208};{178964;-184236;-408;-208};{178764;-184236;-408;-208}}	territory_end
+npcmaker_begin	[25_12_NPC01]	initial_spawn = all	maximum_npc = 4
+npc_begin	[master_toma]	pos = {178849;-184342;-342;45056}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//------------------- 25_12 Dwarf -----------------------------------------------------------
+territory_begin	[t25_12_001]	{{163992;-195952;-3580;-2580};{164592;-195812;-3580;-2580};{165952;-193880;-3580;-2580};{163920;-193236;-3580;-2580}}	territory_end
+npcmaker_begin	[t25_12_001]
+npc_begin	[goblin_brigand_leader]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[magical_weaver]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[barbed_bat]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_002]	{{163980;-190748;-2748;-1648};{164568;-189928;-2748;-1648};{165260;-187196;-2748;-1648};{165316;-186044;-2748;-1648};{163956;-185988;-2748;-1648}}	territory_end
+npcmaker_begin	[t25_12_002]
+npc_begin	[goblin_brigand_leader]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[magical_weaver]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[barbed_bat]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_003]	{{164000;-185892;-1868;-518};{165248;-185912;-1868;-518};{166040;-184884;-1868;-518};{165636;-183068;-1868;-518};{163900;-183296;-1868;-518}}	territory_end
+npcmaker_begin	[t25_12_003]
+npc_begin	[magical_weaver]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[barbed_bat]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[goblin_lord]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_004]	{{163956;-183192;-828;622};{165576;-183008;-828;622};{165912;-181752;-828;622};{165460;-181220;-828;622};{163872;-181600;-828;622}}	territory_end
+npcmaker_begin	[t25_12_004]
+npc_begin	[magical_weaver]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[barbed_bat]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[goblin_lord]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_005]	{{163884;-175908;2012;2812};{164960;-176072;2012;2812};{165320;-174500;2012;2812};{164660;-174040;2012;2812};{163912;-174024;2012;2812}}	territory_end
+npcmaker_begin	[t25_12_005]
+npc_begin	[magical_weaver]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[barbed_bat]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[goblin_lord]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+//t25_12_006
+//
+//
+//
+//magical_weaver
+//barbed_bat
+//goblin_lord
+territory_begin	[t25_12_007]	{{165620;-180716;-272;728};{166572;-180116;-272;728};{166772;-179308;-272;728};{166188;-178064;-272;728};{165132;-180296;-272;728}}	territory_end
+npcmaker_begin	[t25_12_007]
+npc_begin	[magical_weaver]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[barbed_bat]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[goblin_lord]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_008]	{{166468;-184880;-2168;-568};{167532;-185096;-2168;-568};{167260;-182336;-2168;-568};{166172;-182116;-2168;-568};{166044;-182984;-2168;-568}}	territory_end
+npcmaker_begin	[t25_12_008]
+npc_begin	[magical_weaver]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[barbed_bat]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[goblin_lord]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_009]	{{167568;-190360;-3136;-2536};{168108;-190040;-3136;-2536};{168140;-187828;-3136;-2536};{166576;-188132;-3136;-2536}}	territory_end
+npcmaker_begin	[t25_12_009]
+npc_begin	[magical_weaver]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[barbed_bat]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[goblin_lord]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_010]	{{166932;-194436;-3620;-3020};{167348;-194704;-3620;-3020};{168228;-193948;-3620;-3020};{168584;-193404;-3620;-3020};{168496;-193008;-3620;-3020};{167680;-192056;-3620;-3020}}	territory_end
+npcmaker_begin	[t25_12_010]
+npc_begin	[barbed_bat]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[goblin_lord]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_011]	{{165804;-196544;-3692;-3292};{166632;-196536;-3692;-3292};{166692;-195588;-3692;-3292};{166360;-195312;-3692;-3292};{165768;-196136;-3692;-3292}}	territory_end
+npcmaker_begin	[t25_12_011]
+npc_begin	[barbed_bat]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[goblin_lord]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_012]	{{168860;-193076;-3348;-2448};{169792;-192172;-3348;-2448};{169384;-190728;-3348;-2448};{168584;-190116;-3348;-2448};{168128;-190408;-3348;-2448};{168056;-191980;-3348;-2448}}	territory_end
+npcmaker_begin	[t25_12_012]
+npc_begin	[barbed_bat]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[goblin_lord]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_013]	{{168504;-194408;-3568;-2568};{171164;-194816;-3568;-2568};{170408;-192364;-3568;-2568};{169772;-192160;-3568;-2568};{168876;-192976;-3568;-2568}}	territory_end
+npcmaker_begin	[t25_12_013]
+npc_begin	[barbed_bat]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[goblin_lord]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_014]	{{167084;-196516;-3664;-3064};{171820;-196532;-3664;-3064};{171524;-195100;-3664;-3064};{171036;-194788;-3664;-3064};{168444;-194336;-3664;-3064};{167044;-195944;-3664;-3064}}	territory_end
+npcmaker_begin	[t25_12_014]
+npc_begin	[barbed_bat]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[goblin_lord]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_015]	{{167892;-196352;-3708;-3308};{169852;-196372;-3708;-3308};{169188;-194980;-3708;-3308};{167880;-195460;-3708;-3308}}	territory_end
+npcmaker_begin	[t25_12_015]
+npc_begin	[whinstone_golem]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_016]	{{171932;-196500;-3664;-3264};{175624;-196528;-3664;-3264};{174724;-195472;-3664;-3264};{171600;-195012;-3664;-3264}}	territory_end
+npcmaker_begin	[t25_12_016]
+npc_begin	[barbed_bat]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[goblin_lord]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_017]	{{172288;-194996;-3604;-3204};{174740;-195384;-3604;-3204};{175164;-194812;-3604;-3204};{175128;-193952;-3604;-3204};{173128;-192828;-3604;-3204}}	territory_end
+npcmaker_begin	[t25_12_017]
+npc_begin	[barbed_bat]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[goblin_lord]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_018]	{{173292;-192692;-3380;-2180};{175140;-193796;-3380;-2180};{176652;-192232;-3380;-2180};{175856;-190740;-3380;-2180};{173708;-189720;-3380;-2180};{173144;-190744;-3380;-2180}}	territory_end
+npcmaker_begin	[t25_12_018]
+npc_begin	[barbed_bat]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[goblin_lord]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_019]	{{172748;-189324;-2428;-1428};{173228;-190628;-2428;-1428};{173824;-189624;-2428;-1428};{173788;-189052;-2428;-1428}}	territory_end
+npcmaker_begin	[t25_12_019]
+npc_begin	[barbed_bat]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_020]	{{172724;-188100;-1664;536};{174056;-188604;-1664;536};{174016;-185776;-1664;536};{172856;-185828;-1664;536}}	territory_end
+npcmaker_begin	[t25_12_020]
+npc_begin	[goblin_lord]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_021]	{{173972;-189816;-2608;-1608};{175804;-190716;-2608;-1608};{176468;-188704;-2608;-1608};{174584;-188664;-2608;-1608}}	territory_end
+npcmaker_begin	[t25_12_021]
+npc_begin	[goblin_lord]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_022]	{{174632;-188644;-2004;-1354};{176428;-188696;-2004;-1354};{176456;-187752;-2004;-1354};{174708;-187424;-2004;-1354}}	territory_end
+npcmaker_begin	[t25_12_022]
+npc_begin	[goblin_lord]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_023]	{{174572;-187316;-1600;-750};{176520;-187664;-1600;-750};{176984;-186756;-1600;-750};{176056;-185944;-1600;-750};{174744;-185824;-1600;-750};{174440;-186280;-1600;-750}}	territory_end
+npcmaker_begin	[t25_12_023]
+npc_begin	[goblin_lord]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_024]	{{175292;-185508;-804;-4};{176624;-185612;-804;-4};{176804;-185076;-804;-4};{175472;-184252;-804;-4}}	territory_end
+npcmaker_begin	[t25_12_024]
+npc_begin	[goblin_lord]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_025]	{{175500;-184196;-124;276};{176812;-184984;-124;276};{177584;-183984;-124;276};{175940;-182872;-124;276}}	territory_end
+npcmaker_begin	[t25_12_025]
+npc_begin	[goblin_lord]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_026]	{{177128;-188832;-1548;-748};{177752;-188888;-1548;-748};{178080;-187472;-1548;-748};{177380;-187124;-1548;-748};{176832;-188104;-1548;-748}}	territory_end
+npcmaker_begin	[t25_12_026]
+npc_begin	[barbed_bat]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_027]	{{176604;-191324;-2396;-1596};{177076;-191072;-2396;-1596};{176996;-189992;-2396;-1596};{176580;-189648;-2396;-1596};{176208;-190536;-2396;-1596}}	territory_end
+npcmaker_begin	[t25_12_027]
+npc_begin	[barbed_bat]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_028]	{{175632;-196148;-3292;-2892};{176520;-196048;-3292;-2892};{175900;-195004;-3292;-2892};{175168;-195360;-3292;-2892}}	territory_end
+npcmaker_begin	[t25_12_028]
+npc_begin	[goblin_lord]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[whinstone_golem]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_029]	{{178352;-192412;-2248;-1048};{179376;-191500;-2248;-1048};{179324;-190276;-2248;-1048};{177548;-190588;-2248;-1048}}	territory_end
+npcmaker_begin	[t25_12_029]
+npc_begin	[barbed_bat]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_030]	{{184716;-196436;-2668;-1468};{186992;-196532;-2668;-1468};{187548;-193424;-2668;-1468};{184648;-193092;-2668;-1468};{184264;-195320;-2668;-1468}}	territory_end
+npcmaker_begin	[t25_12_030]
+npc_begin	[twink_puma]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[plunder_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_031]	{{185472;-196268;-2612;-2012};{186652;-196288;-2612;-2012};{186484;-195304;-2612;-2012};{185292;-195492;-2612;-2012}}	territory_end
+npcmaker_begin	[t25_12_031]
+npc_begin	[obsidian_golem]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_032]	{{184944;-194348;-2228;-1628};{186604;-194648;-2228;-1628};{186840;-193900;-2228;-1628};{185756;-193356;-2228;-1628}}	territory_end
+npcmaker_begin	[t25_12_032]
+npc_begin	[obsidian_golem]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_033]	{{187220;-192212;-1372;278};{187852;-193204;-1372;278};{188712;-191788;-1372;278};{188884;-190316;-1372;278};{188376;-190272;-1372;278}}	territory_end
+npcmaker_begin	[t25_12_033]
+npc_begin	[twink_puma]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[plunder_tarantula]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_034]	{{184860;-192612;-1784;-584};{186700;-192744;-1784;-584};{185848;-188304;-1784;-584};{184704;-189296;-1784;-584}}	territory_end
+npcmaker_begin	[t25_12_034]
+npc_begin	[twink_puma]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[plunder_tarantula]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_035]	{{186340;-190564;-1272;-472};{187048;-191052;-1272;-472};{187252;-189256;-1272;-472};{186568;-189212;-1272;-472}}	territory_end
+npcmaker_begin	[t25_12_035]
+npc_begin	[twink_puma]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[plunder_tarantula]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_036]	{{184720;-189116;-964;236};{185836;-188344;-964;236};{186020;-185820;-964;236};{185032;-185868;-964;236}}	territory_end
+npcmaker_begin	[t25_12_036]
+npc_begin	[hunter_tarantula]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[plunder_tarantula]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+//------------------- 25_12 Dwarf DG -------------------------------------------------------
+territory_begin	[t25_12_dg_001]	{{176692;-173796;3152;3352};{177496;-173784;3152;3352};{177400;-172212;3152;3352};{176824;-172052;3152;3352};{176596;-172096;3152;3352};{176228;-172376;3152;3352};{176144;-173320;3152;3352}}	territory_end
+npcmaker_begin	[t25_12_dg_001]	initial_spawn = all	maximum_npc = 7
+npc_begin	[monster_eye_tracker]	pos = {176830;-173486;3175;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {177360;-173536;3175;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {176887;-172924;3175;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[monster_eye_tracker]	pos = {177305;-172815;3175;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {177053;-172459;3175;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {176584;-172506;3175;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[monster_eye_tracker]	pos = {176507;-173222;3175;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_002]	{{173276;-177288;2284;2484};{175204;-177248;2284;2484};{175216;-175652;2284;2484};{174136;-175168;2284;2484};{173020;-175652;2284;2484};{172880;-176460;2284;2484}}	territory_end
+npcmaker_begin	[t25_12_dg_002]	initial_spawn = all	maximum_npc = 11
+npc_begin	[monster_eye_tracker]	pos = {173434;-177038;2320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {173744;-176586;2320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {174031;-176088;2320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[monster_eye_tracker]	pos = {174094;-175578;2320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {174250;-176998;2320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {174560;-176547;2320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[monster_eye_tracker]	pos = {174847;-176048;2320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {173089;-176500;2320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {173399;-176048;2320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[monster_eye_tracker]	pos = {173498;-175597;2320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {174866;-176912;2320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_003]	{{175236;-176864;2848;3048};{175916;-176836;2848;3048};{175896;-175764;2848;3048};{175252;-175756;2848;3048}}	territory_end
+npcmaker_begin	[t25_12_dg_003]	initial_spawn = all	maximum_npc = 4
+npc_begin	[darkstone_golem]	pos = {175484;-175936;2873;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {175752;-176202;2873;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {175431;-176432;2873;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {175703;-176617;2873;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t15_12_dg_004]	{{178164;-180224;1992;2142};{178340;-179900;1992;2142};{178408;-179140;1992;2142};{178300;-178784;1992;2142};{177924;-178588;1992;2142};{177628;-178616;1992;2142};{177324;-178780;1992;2142};{177268;-180124;1992;2142};{177672;-180400;1992;2142}}	territory_end
+npcmaker_begin	[t15_12_dg_004]	initial_spawn = all	maximum_npc = 6
+npc_begin	[darkstone_golem]	pos = {177468;-179981;2016;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {177923;-180119;2016;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {178125;-179686;2016;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {177692;-179517;2016;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {177587;-179052;2016;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {178020;-178981;2016;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_005]	{{176060;-180160;1980;2130};{177244;-180108;1980;2130};{177288;-178772;1980;2130};{176232;-178544;1980;2130};{175724;-178680;1980;2130};{175584;-179124;1980;2130};{175608;-179916;1980;2130}}	territory_end
+npcmaker_begin	[t25_12_dg_005]	initial_spawn = all	maximum_npc = 8
+npc_begin	[darkstone_golem]	pos = {175810;-179821;2016;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {176385;-179958;2016;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {176872;-179921;2016;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {176133;-179389;2016;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {176762;-179515;2016;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {176986;-179192;2016;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {176531;-178892;2016;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {175868;-178952;2016;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_006]	{{176704;-176740;1308;1508};{178108;-176940;1308;1508};{178320;-174256;1308;1508};{177588;-173900;1308;1508};{176532;-173936;1308;1508}}	territory_end
+npcmaker_begin	[t25_12_dg_006]	initial_spawn = all	maximum_npc = 10
+npc_begin	[akaste_bone_archer]	pos = {178021;-174385;1344;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {177416;-174266;1344;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {176895;-174424;1344;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {177078;-174937;1344;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {177763;-174940;1344;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {177974;-175490;1344;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {177386;-175679;1344;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {176808;-175560;1344;-320}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {177811;-176201;1344;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {177604;-176715;1344;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_007]	{{173636;-179880;1008;1208};{175852;-179944;1008;1208};{176184;-179732;1008;1208};{176036;-178484;1008;1208};{173644;-178468;1008;1208};{173124;-179612;1008;1208}}	territory_end
+npcmaker_begin	[t25_12_dg_007]	initial_spawn = all	maximum_npc = 14
+npc_begin	[akaste_bone_archer]	pos = {174495;-179206;1040;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {174536;-179749;1040;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {174477;-178665;1040;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {174985;-179216;1040;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {175027;-179759;1040;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {175408;-179191;1040;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {175424;-179751;1040;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {174959;-178674;1040;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {175424;-178667;1040;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {173917;-179182;1040;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {173959;-179725;1040;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {173899;-178640;1040;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {173450;-179166;1040;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {173492;-179709;1040;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_008]	{{173796;-176628;684;834};{174372;-176548;684;834};{175020;-176372;684;834};{174852;-175764;684;834};{174308;-175628;684;834};{173640;-175720;684;834};{173600;-176420;684;834}}	territory_end
+npcmaker_begin	[t25_12_dg_008]	initial_spawn = all	maximum_npc = 6
+npc_begin	[will_o_wisp]	pos = {174651;-175836;736;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {174764;-176268;736;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {174123;-175819;736;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {174311;-176199;736;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {173931;-176437;736;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {173781;-176170;736;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_009]	{{176804;-176528;408;608};{177424;-176508;408;608};{177576;-176268;408;608};{177588;-175792;408;608};{177380;-175556;408;608};{176776;-175572;408;608};{176596;-175812;408;608}}	territory_end
+npcmaker_begin	[t25_12_dg_009]	initial_spawn = all	maximum_npc = 6
+npc_begin	[akaste_bone_archer]	pos = {177328;-176400;432;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {176879;-176318;432;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {176764;-175980;432;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {177163;-176019;432;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {177484;-175888;432;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {176965;-175703;432;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_010]	{{177136;-180204;92;242};{177432;-180100;92;242};{177632;-179812;92;242};{177688;-179364;92;242};{176620;-179120;92;242};{176308;-179944;92;242}}	territory_end
+npcmaker_begin	[t25_12_dg_010]	initial_spawn = all	maximum_npc = 7
+npc_begin	[will_o_wisp]	pos = {177168;-180096;128;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {177417;-179812;128;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {177365;-179449;128;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {176959;-179382;128;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {177021;-179793;128;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {176610;-179845;128;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {176621;-179413;128;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_011]	{{173020;-182580;-1932;-1732};{174080;-182584;-1932;-1732};{174124;-181260;-1932;-1732};{172992;-181304;-1932;-1732}}	territory_end
+npcmaker_begin	[t25_12_dg_011]	initial_spawn = all	maximum_npc = 6
+npc_begin	[ore_bat]	pos = {173184;-182352;-1897;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {173072;-182000;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {173536;-182064;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[ore_bat]	pos = {173744;-182368;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {173600;-181488;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {173792;-181760;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_012]	{{174244;-182624;-2132;-1932};{176080;-182596;-2132;-1932};{175992;-179264;-2132;-1932};{174576;-179236;-2132;-1932}}	territory_end
+territory_begin	[t25_12_dg_013]	{{176408;-185412;-1936;-1786};{176876;-185296;-1936;-1786};{176924;-184760;-1936;-1786};{175732;-184640;-1936;-1786};{175664;-185264;-1936;-1786}}	territory_end
+npcmaker_begin	[t25_12_dg_013]	initial_spawn = all	maximum_npc = 7
+npc_begin	[opal_beast]	pos = {176656;-185232;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {176656;-184896;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {176336;-185344;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {176304;-185072;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {176176;-184864;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {176064;-185216;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {175968;-185008;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_014]	{{177572;-184332;-1944;-1744};{178408;-184384;-1944;-1744};{179132;-184068;-1944;-1744};{179164;-182168;-1944;-1744};{177832;-182208;-1944;-1744};{177084;-182936;-1944;-1744};{177184;-183860;-1944;-1744}}	territory_end
+npcmaker_begin	[t25_12_dg_014]	initial_spawn = all	maximum_npc = 14
+npc_begin	[corpse_candle]	pos = {179056;-182416;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {178486;-182419;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {177887;-182443;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {178694;-182856;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {178125;-182860;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {177526;-182883;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {177738;-183296;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {179034;-183300;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {178435;-183324;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {177407;-183747;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {178703;-183751;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {178104;-183774;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {178292;-184131;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {177693;-184155;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_015]	{{177592;-180916;-1932;-1732};{178492;-180956;-1932;-1732};{178528;-179844;-1932;-1732};{178120;-179588;-1932;-1732};{177592;-180080;-1932;-1732}}	territory_end
+npcmaker_begin	[t25_12_dg_015]	initial_spawn = all	maximum_npc = 5
+npc_begin	[corpse_candle]	pos = {178401;-180208;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {178060;-179875;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {178060;-180431;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {178255;-180752;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {177755;-180766;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_016]	{{181236;-176244;-3604;-3404};{181856;-176024;-3604;-3404};{182272;-175472;-3604;-3404};{182228;-174420;-3604;-3404};{181888;-174032;-3604;-3404};{180964;-173776;-3604;-3404};{180416;-174020;-3604;-3404};{179916;-174848;-3604;-3404};{180104;-175680;-3604;-3404}}	territory_end
+npcmaker_begin	[t25_12_dg_016]	initial_spawn = all	maximum_npc = 16
+npc_begin	[opal_beast]	pos = {182000;-175520;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {182002;-175013;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {181993;-174432;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {181599;-175871;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {181601;-175365;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {181593;-174783;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {181599;-174212;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {181111;-175884;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {181103;-175293;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {181109;-174721;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {181089;-174186;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {180577;-175553;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {180579;-175047;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {180571;-174466;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {180156;-175230;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {180159;-174723;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_017]	{{184620;-172912;-3600;-3400};{185096;-172968;-3600;-3400};{185488;-172668;-3600;-3400};{185428;-172244;-3600;-3400};{184332;-172372;-3600;-3400}}	territory_end
+npcmaker_begin	[t25_12_dg_017]	initial_spawn = all	maximum_npc = 5
+npc_begin	[akaste_bone_warlord]	pos = {184746;-172801;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {185119;-172785;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {185204;-172461;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {184714;-172535;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {184730;-172519;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_018]	{{180756;-173232;-2848;-2698};{181624;-173120;-2848;-2698};{181408;-172116;-2848;-2698};{180744;-172200;-2848;-2698}}	territory_end
+territory_begin	[t25_12_dg_019]	{{186768;-175724;-3916;-3566};{187180;-175716;-3916;-3566};{187124;-173984;-3916;-3566};{186784;-173952;-3916;-3566}}	territory_end
+npcmaker_begin	[t25_12_dg_019]	initial_spawn = all	maximum_npc = 5
+npc_begin	[boogle_ratman_leader]	pos = {186960;-175616;-3696;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman_leader]	pos = {186949;-175259;-3712;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman_leader]	pos = {186948;-174967;-3760;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman_leader]	pos = {186982;-174575;-3787;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman_leader]	pos = {186966;-174157;-3820;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_020]	{{186432;-175728;-3916;-3716};{186652;-175744;-3916;-3716};{186576;-174320;-3916;-3716};{186300;-174308;-3916;-3716};{186060;-174696;-3916;-3716};{186112;-175372;-3916;-3716}}	territory_end
+npcmaker_begin	[t25_12_dg_020]	initial_spawn = all	maximum_npc = 5
+npc_begin	[ore_bat]	pos = {186272;-175328;-3882;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[ore_bat]	pos = {186592;-175360;-3882;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[ore_bat]	pos = {186496;-174976;-3882;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[ore_bat]	pos = {186480;-174672;-3882;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[ore_bat]	pos = {186288;-174880;-3882;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_021]	{{187644;-175588;-3912;-3712};{187848;-175248;-3912;-3712};{187872;-174504;-3912;-3712};{187380;-174036;-3912;-3712};{187264;-174936;-3912;-3712};{187340;-175760;-3912;-3712}}	territory_end
+npcmaker_begin	[t25_12_dg_021]	initial_spawn = all	maximum_npc = 5
+npc_begin	[ore_bat]	pos = {187408;-175488;-3882;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[ore_bat]	pos = {187648;-175280;-3882;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[ore_bat]	pos = {187424;-174912;-3882;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[ore_bat]	pos = {187680;-174784;-3882;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[ore_bat]	pos = {187456;-174544;-3882;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_024]	{{187172;-176584;-3756;-3456};{187957;-176504;-3756;-3456};{188316;-175132;-3756;-3456};{188016;-175336;-3756;-3456}}	territory_end
+npcmaker_begin	[t25_12_dg_024]	initial_spawn = all	maximum_npc = 6
+npc_begin	[akaste_bone_warlord]	pos = {187472;-176464;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {187904;-176288;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {187712;-176096;-3568;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {188048;-175952;-3584;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {187984;-175760;-3605;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {188176;-175520;-3626;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_025]	{{185923;-176461;-3736;-3436};{186716;-176636;-3736;-3436};{186012;-175424;-3736;-3436};{185512;-175500;-3736;-3436}}	territory_end
+npcmaker_begin	[t25_12_dg_025]	initial_spawn = all	maximum_npc = 5
+npc_begin	[akaste_bone_warlord]	pos = {186304;-176448;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {185888;-176176;-3573;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {186216;-176032;-3577;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {185808;-175920;-3578;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {185952;-175712;-3592;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_026]	{{183779;-179528;-3712;-3412};{187718;-180921;-3712;-3412};{188027;-180282;-3712;-3412};{188034;-179741;-3712;-3412};{187876;-179351;-3712;-3412};{185297;-178242;-3712;-3412};{184343;-178474;-3712;-3412}}	territory_end
+npcmaker_begin	[t25_12_dg_026]	initial_spawn = all	maximum_npc = 9
+npc_begin	[askaste_bone_lord]	pos = {185030;-179625;-3664;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {184331;-179417;-3600;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {185679;-179203;-3664;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[askaste_bone_lord]	pos = {184979;-178994;-3600;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {187185;-179390;-3664;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {186485;-179182;-3600;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[askaste_bone_lord]	pos = {186117;-179708;-3600;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {185033;-178443;-3600;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_warlord]	pos = {187037;-180143;-3600;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_027]	{{183468;-182124;-3812;-3612};{184528;-182764;-3812;-3612};{185220;-181716;-3812;-3612};{185216;-180136;-3812;-3612};{183792;-180016;-3812;-3612}}	territory_end
+npcmaker_begin	[t25_12_dg_027]	initial_spawn = all	maximum_npc = 7
+npc_begin	[pitchstone_golem]	pos = {184794;-181942;-3770;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman_leader]	pos = {184875;-181449;-3770;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {184196;-181650;-3770;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman_leader]	pos = {184695;-180955;-3770;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {184017;-180918;-3770;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman_leader]	pos = {184234;-180375;-3770;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {184901;-180381;-3770;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_028]	{{185026;-183152;-3764;-3164};{187857;-184081;-3764;-3164};{187444;-180967;-3764;-3164};{185748;-180296;-3764;-3164}}	territory_end
+npcmaker_begin	[t25_12_dg_028]	initial_spawn = all	maximum_npc = 11
+npc_begin	[askaste_bone_lord]	pos = {185602;-183067;-3280;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {186528;-183326;-3264;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman_leader]	pos = {187363;-182364;-3215;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[askaste_bone_lord]	pos = {186686;-181835;-3338;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {185849;-181699;-3286;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman_leader]	pos = {187369;-183571;-3264;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[askaste_bone_lord]	pos = {186032;-182544;-3271;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {187024;-182831;-3271;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman_leader]	pos = {187163;-181409;-3368;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[askaste_bone_lord]	pos = {186501;-181122;-3368;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {185908;-180857;-3368;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_029]	{{186145;-187233;-3360;-3160};{186835;-187053;-3360;-3160};{187712;-185279;-3360;-3160};{187821;-184171;-3360;-3160};{184827;-183188;-3360;-3160};{184130;-183777;-3360;-3160}}	territory_end
+npcmaker_begin	[t25_12_dg_029]	initial_spawn = all	maximum_npc = 14
+npc_begin	[nightmare_weaver]	pos = {186230;-186837;-3320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[askaste_bone_lord]	pos = {186743;-186302;-3320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {185969;-186015;-3320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[nightmare_weaver]	pos = {186504;-185321;-3320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[askaste_bone_lord]	pos = {185571;-185328;-3320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {187304;-185222;-3320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[nightmare_weaver]	pos = {185310;-184754;-3320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[askaste_bone_lord]	pos = {186161;-184670;-3320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {187058;-184722;-3320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[nightmare_weaver]	pos = {187616;-184300;-3320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[askaste_bone_lord]	pos = {186684;-184013;-3320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[pitchstone_golem]	pos = {185909;-183997;-3320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[nightmare_weaver]	pos = {185248;-183529;-3320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[askaste_bone_lord]	pos = {184857;-183965;-3320;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_030]	{{182407;-185267;-3540;-3240};{184135;-184290;-3540;-3240};{183975;-183930;-3540;-3240};{182176;-184810;-3540;-3240}}	territory_end
+npcmaker_begin	[t25_12_dg_030]	initial_spawn = all	maximum_npc = 5
+npc_begin	[akaste_succubus_turen]	pos = {182489;-184973;-3497;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {182786;-184774;-3456;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {183152;-184605;-3416;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {183468;-184413;-3360;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {183847;-184188;-3344;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_031]	{{181242;-186558;-3560;-3360};{182128;-185995;-3560;-3360};{182198;-185267;-3560;-3360};{181998;-183842;-3560;-3360};{180691;-184154;-3560;-3360};{180005;-184840;-3560;-3360};{180216;-185966;-3560;-3360}}	territory_end
+npcmaker_begin	[t25_12_dg_031]	initial_spawn = all	maximum_npc = 11
+npc_begin	[nightmare_weaver]	pos = {180464;-184576;-3520;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {180999;-184447;-3520;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[askaste_bone_lord]	pos = {181670;-184340;-3520;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[nightmare_weaver]	pos = {181754;-184844;-3520;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {181182;-184918;-3520;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[askaste_bone_lord]	pos = {180634;-185015;-3520;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[nightmare_weaver]	pos = {180469;-185541;-3520;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {181117;-185547;-3520;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[askaste_bone_lord]	pos = {181698;-185486;-3520;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[nightmare_weaver]	pos = {181443;-186035;-3520;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {180827;-185974;-3520;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_032]	{{178032;-185332;-3744;-3344};{179728;-185368;-3744;-3344};{179580;-184896;-3744;-3344};{178000;-184816;-3744;-3344}}	territory_end
+npcmaker_begin	[t25_12_dg_032]	initial_spawn = all	maximum_npc = 4
+npc_begin	[akaste_succubus_tilfo]	pos = {178222;-185071;-3550;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {178584;-185100;-3550;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {178994;-185090;-3550;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {179450;-185142;-3550;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_033]	{{176037;-186918;-3760;-3560};{176447;-186708;-3760;-3560};{177890;-185261;-3760;-3560};{177104;-183939;-3760;-3560};{176167;-183828;-3760;-3560};{175160;-184550;-3760;-3560};{174814;-185331;-3760;-3560}}	territory_end
+npcmaker_begin	[t25_12_dg_033]	initial_spawn = all	maximum_npc = 26
+npc_begin	[akaste_succubus_turen]	pos = {175200;-184864;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {175008;-185216;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {175619;-185109;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {175589;-185519;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {175397;-185871;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {176008;-185765;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {175916;-184197;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {175724;-184549;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {176147;-184443;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {176597;-184673;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {176473;-185105;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {176893;-184999;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {177104;-184190;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {177076;-184542;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {176578;-184124;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {176562;-185528;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {176370;-185880;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {176982;-185773;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {177209;-185446;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {177462;-184995;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {176710;-186250;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {175731;-186171;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {176095;-186566;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {176186;-186208;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_turen]	pos = {176000;-184832;-3728;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_succubus_tilfo]	pos = {176312;-185472;-3712;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_034]	{{178828;-180776;208;408};{179944;-180716;208;408};{180256;-179828;208;408};{180152;-177844;208;408};{179164;-177980;208;408};{178788;-178128;208;408};{178644;-179640;208;408}}	territory_end
+npcmaker_begin	[t25_12_dg_034]	initial_spawn = all	maximum_npc = 13
+npc_begin	[monster_eye_tracker]	pos = {179008;-180567;240;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {179546;-180501;240;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {179397;-180078;240;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[monster_eye_tracker]	pos = {179948;-180049;240;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {178853;-179975;240;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {179205;-179573;240;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[monster_eye_tracker]	pos = {179780;-179508;240;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {179438;-179042;240;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {179988;-179014;240;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[monster_eye_tracker]	pos = {178894;-178939;240;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {179159;-178537;240;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {179734;-178472;240;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[monster_eye_tracker]	pos = {179489;-178132;240;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_035]	{{180452;-174716;288;488};{180868;-174768;288;488};{181444;-174660;288;488};{181452;-174180;288;488};{180472;-174156;288;488}}	territory_end
+npcmaker_begin	[t25_12_dg_035]	initial_spawn = all	maximum_npc = 4
+npc_begin	[darkstone_golem]	pos = {181360;-174608;304;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {181278;-174285;304;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {180931;-174575;304;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {180641;-174364;304;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_036]	{{179673;-174693;-280;-80};{182085;-174151;-280;-80};{182096;-172928;-280;-80};{181661;-172210;-280;-80};{179561;-172381;-280;-80};{179184;-172734;-280;-80};{178949;-174228;-280;-80};{179126;-174616;-280;-80}}	territory_end
+npcmaker_begin	[t25_12_dg_036]	initial_spawn = all	maximum_npc = 16
+npc_begin	[akaste_bone_soldier]	pos = {179936;-172496;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {180537;-172493;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {181264;-172491;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {179366;-173023;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {179968;-173021;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {180695;-173019;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {179340;-173621;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {179942;-173619;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {180669;-173617;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {181324;-173031;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {181298;-173628;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {181828;-172890;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {181802;-173487;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {179488;-174059;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {180034;-174252;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {179450;-174501;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_037]	{{176349;-174345;-276;-76};{177037;-174219;-276;-76};{177164;-173341;-276;-76};{176869;-172947;-276;-76};{175235;-172952;-276;-76};{174494;-173362;-276;-76};{174447;-173914;-276;-76};{174967;-174371;-276;-76}}	territory_end
+npcmaker_begin	[t25_12_dg_037]	initial_spawn = all	maximum_npc = 15
+npc_begin	[darkstone_golem]	pos = {175712;-173184;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {174762;-173447;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {174720;-173935;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {175507;-173755;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {175295;-174154;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {176240;-173168;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {176080;-173440;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[ore_bat]	pos = {176000;-173792;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {176304;-174016;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {176720;-173280;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {176576;-173472;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {176560;-173728;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[darkstone_golem]	pos = {175896;-174212;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {175103;-173687;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {175274;-173363;-246;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_038]	{{177292;-178920;-568;-368};{178126;-178565;-568;-368};{178102;-177778;-568;-368};{177780;-177583;-568;-368};{176192;-177316;-568;-368};{175434;-177316;-568;-368};{175239;-178123;-568;-368};{176057;-179056;-568;-368}}	territory_end
+npcmaker_begin	[t25_12_dg_038]	initial_spawn = all	maximum_npc = 16
+npc_begin	[mineshaft_bat]	pos = {175376;-177968;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {175662;-177829;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {175639;-177482;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {175727;-178287;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {176033;-177978;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {176128;-177536;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {176239;-178467;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {176421;-178028;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {176728;-177718;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {176933;-178207;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {177282;-178063;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {177588;-177754;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {177794;-178243;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_soldier]	pos = {176739;-178637;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[akaste_bone_archer]	pos = {177316;-178523;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[mineshaft_bat]	pos = {176086;-178842;-528;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_039]	{{182148;-178665;-820;-620};{182761;-178618;-820;-620};{182896;-178410;-820;-620};{182863;-178068;-820;-620};{182773;-177699;-820;-620};{182153;-177723;-820;-620};{181899;-177898;-820;-620};{181883;-178470;-820;-620}}	territory_end
+npcmaker_begin	[t25_12_dg_039]	initial_spawn = all	maximum_npc = 5
+npc_begin	[will_o_wisp]	pos = {182624;-178384;-780;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {182208;-178548;-780;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {182737;-177936;-780;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {182363;-178185;-780;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {182087;-177988;-780;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_040]	{{182175;-182103;-1692;-1492};{184193;-182192;-1692;-1492};{184460;-181656;-1692;-1492};{184121;-180925;-1692;-1492};{182947;-180768;-1692;-1492};{182117;-181143;-1692;-1492}}	territory_end
+npcmaker_begin	[t25_12_dg_040]	initial_spawn = all	maximum_npc = 11
+npc_begin	[will_o_wisp]	pos = {183456;-182000;-1664;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {183958;-181997;-1664;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[ore_bat]	pos = {184322;-181731;-1664;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {183949;-181437;-1664;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {183631;-181045;-1664;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[ore_bat]	pos = {183383;-181502;-1664;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {182940;-181903;-1664;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {182399;-181860;-1664;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[ore_bat]	pos = {182777;-181510;-1664;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[will_o_wisp]	pos = {183002;-180993;-1664;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {182364;-181325;-1664;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_041]	{{179372;-184385;-1936;-1736};{180023;-184922;-1936;-1736};{180720;-184693;-1936;-1736};{181202;-184083;-1936;-1736};{181230;-182774;-1936;-1736};{181070;-182368;-1936;-1736};{180068;-181976;-1936;-1736};{179385;-182397;-1936;-1736}}	territory_end
+npcmaker_begin	[t25_12_dg_041]	initial_spawn = all	maximum_npc = 13
+npc_begin	[corpse_candle]	pos = {179680;-184320;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {180196;-184665;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {180755;-184385;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {180186;-184132;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {179730;-183755;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {180524;-183781;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {181097;-183612;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {180125;-183304;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {180781;-183232;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {179865;-182813;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {179937;-182268;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[boogle_ratman]	pos = {180565;-182377;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {180825;-182799;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t25_12_dg_042]	{{178584;-180996;-1948;-1748};{179660;-181216;-1948;-1748};{180348;-179868;-1948;-1748};{178632;-179804;-1948;-1748}}	territory_end
+npcmaker_begin	[t25_12_dg_042]	initial_spawn = all	maximum_npc = 8
+npc_begin	[corpse_candle]	pos = {178754;-180751;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {179270;-180930;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {179731;-180747;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {179288;-180537;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {178818;-180382;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {179877;-180352;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[corpse_candle]	pos = {179128;-180099;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npc_begin	[opal_beast]	pos = {179740;-180016;-1904;0}	total = 1	respawn = 1min	respawn_rand = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_25_12]	{{176532;-185904;-3752;-3452};{177204;-185692;-3752;-3452};{177216;-184776;-3752;-3452};{176528;-184756;-3752;-3452}}	territory_end
+npcmaker_begin	[quest_030919_25_12]	initial_spawn = all	maximum_npc = 4
+npc_begin	[queen_of_succubus]	pos = anywhere	total = 1	respawn = 3min
+Privates = [claw_succubus:party_private:1:1min;claw_succubus:party_private:1:1min]	npc_end
+npcmaker_end
+

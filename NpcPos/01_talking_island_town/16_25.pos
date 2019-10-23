@@ -1,0 +1,307 @@
+//--------------------16_25 031103 NPC--------------------
+territory_begin	[bow_guard_01]	{{-100587;237258;-3641;-3441};{-99508;237119;-3641;-3441};{-99481;237889;-3641;-3441};{-100588;237869;-3641;-3441}}	territory_end
+npcmaker_begin	[bow_guard_01]	initial_spawn = all	maximum_npc = 3
+npc_begin	[bowman]	pos = {-100536;237822;-3572;24576}	total = 1	respawn = 1min	npc_end
+npc_begin	[bowman]	pos = {-100531;237302;-3568;40960}	total = 1	respawn = 1min	npc_end
+npc_begin	[bowman]	pos = {-99843;237523;-3568;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[bow_guard_02]	{{-109974;255526;-3586;-3386};{-109730;255497;-3586;-3386};{-109677;256257;-3586;-3386};{-109960;256252;-3586;-3386}}	territory_end
+npcmaker_begin	[bow_guard_02]	initial_spawn = all	maximum_npc = 2
+npc_begin	[bowman]	pos = {-109715;256200;-3520;36864}	total = 1	respawn = 1min	npc_end
+npc_begin	[bowman]	pos = {-109935;255573;-3520;57344}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------16_25 030917 NPC--------------------
+territory_begin	[NPC_t16_25_030917_01]	{{-112317;244198;-3586;-3386};{-112117;244198;-3586;-3386};{-112117;244398;-3586;-3386};{-112317;244398;-3586;-3386}}	territory_end
+npcmaker_begin	[NPC_t16_25_030917_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[ramus]	pos = {-112206;244303;-3450;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t16_25_030917_02]	{{-118719;233139;-3029;-2829};{-118519;233139;-3029;-2829};{-118519;233339;-3029;-2829};{-118719;233339;-3029;-2829}}	territory_end
+npcmaker_begin	[NPC_t16_25_030917_02]	initial_spawn = all	maximum_npc = 1
+npc_begin	[summoner_almors]	pos = {-118618;233239;-2910;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------16_25 1104 NPC--------------------
+territory_begin	[16_25_New_NPC01]	{{-106564;233292;-3675;-3475};{-106364;233292;-3675;-3475};{-106364;233492;-3675;-3475};{-106564;233492;-3675;-3475}}	territory_end
+npcmaker_begin	[16_25_New_NPC01]
+npc_begin	[lemoniell]	pos = {-106485;233377;-3629;12288}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------16_25 1104 NPC--------------------
+territory_begin	[16_25_1104_NPC02]	{{-100452;237932;-3626;-3426};{-100252;237932;-3626;-3426};{-100252;238132;-3626;-3426};{-100452;238132;-3626;-3426}}	territory_end
+npcmaker_begin	[16_25_1104_NPC02]
+npc_begin	[sir_collin_windawood]	pos = {-100332;238019;-3573;36864}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------- 던전 텔레포트 NPC --------------------
+territory_begin	[dg_teleport_NPC01]	{{-113636;235420;-3786;-3586};{-113436;235420;-3786;-3586};{-113436;235620;-3786;-3586};{-113636;235620;-3786;-3586}}	territory_end
+npcmaker_begin	[dg_teleport_NPC01]
+npc_begin	[gatekeeper_ciffon]	pos = {-113490;235526;-3646;57800}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//---------- 16_25 글루디오영지:말하는섬 --------------------------------------------------------
+territory_begin	[t16_25_001]	{{-99516;245948;-3732;-2882};{-98584;246888;-3732;-2882};{-98592;255596;-3732;-2882};{-103852;255596;-3732;-2882};{-105740;251128;-3732;-2882};{-105300;249036;-3732;-2882}}	territory_end
+npcmaker_begin	[t16_25_001]
+npc_begin	[orc]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npc_begin	[orc_grunt]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npc_begin	[orc_archer]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[goblin_scout]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_002]	{{-103468;252516;-3424;-3174};{-102708;252668;-3424;-3174};{-103500;253912;-3424;-3174};{-104400;253660;-3424;-3174}}	territory_end
+npcmaker_begin	[t16_25_002]
+npc_begin	[werewolf]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[werewolf_hunter]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_003]	{{-100576;253600;-3524;-3224};{-99300;254412;-3524;-3224};{-100936;255520;-3524;-3224};{-101564;254612;-3524;-3224}}	territory_end
+npcmaker_begin	[t16_25_003]
+npc_begin	[werewolf]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[werewolf_hunter]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_004]	{{-100956;250632;-3628;-3278};{-98896;251264;-3628;-3278};{-99308;253344;-3628;-3278};{-101832;252440;-3628;-3278}}	territory_end
+npcmaker_begin	[t16_25_004]
+npc_begin	[orc_grunt]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[goblin_scout]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[werewolf]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_005]	{{-103772;250392;-3508;-3308};{-103056;250308;-3508;-3308};{-102600;250752;-3508;-3308};{-102620;251208;-3508;-3308};{-103144;251580;-3508;-3308};{-103692;251516;-3508;-3308};{-103972;251256;-3508;-3308};{-104112;250804;-3508;-3308}}	territory_end
+npcmaker_begin	[t16_25_005]
+npc_begin	[werewolf_chieftain]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_006]	{{-104392;249020;-3468;-3218};{-101908;248060;-3468;-3218};{-101924;249440;-3468;-3218};{-104604;250192;-3468;-3218}}	territory_end
+npcmaker_begin	[t16_25_006]
+npc_begin	[orc_grunt]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[werewolf]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_007]	{{-103492;244096;-3756;-3306};{-102020;245020;-3756;-3306};{-101796;247176;-3756;-3306};{-105144;248968;-3756;-3306};{-104720;245872;-3756;-3306}}	territory_end
+npcmaker_begin	[t16_25_007]
+npc_begin	[orc]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[orc_grunt]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[orc_archer]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[goblin_scout]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_008]	{{-103420;244052;-3792;-3592};{-101972;245148;-3792;-3592};{-102444;245572;-3792;-3592};{-105488;244116;-3792;-3592};{-104860;243724;-3792;-3592}}	territory_end
+npcmaker_begin	[t16_25_008]
+npc_begin	[giant_toad]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_009]	{{-101904;246464;-3796;-3346};{-100384;246468;-3796;-3346};{-100456;247240;-3796;-3346};{-101820;247296;-3796;-3346}}	territory_end
+npcmaker_begin	[t16_25_009]
+npc_begin	[giant_toad]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25-010]	{{-99612;245480;-3788;-3438};{-98476;246332;-3788;-3438};{-98508;247440;-3788;-3438};{-100524;247268;-3788;-3438};{-100276;245908;-3788;-3438}}	territory_end
+npcmaker_begin	[t16_25-010]
+npc_begin	[giant_toad]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_011]	{{-105612;244232;-3696;-2746};{-104484;244712;-3696;-2746};{-106680;250684;-3696;-2746};{-109000;250792;-3696;-2746};{-109340;248364;-3696;-2746};{-108608;246396;-3696;-2746};{-107188;244524;-3696;-2746}}	territory_end
+npcmaker_begin	[t16_25_011]
+npc_begin	[orc_archer]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[goblin_scout]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[werewolf]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npc_begin	[orc_fighter]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_012]	{{-108568;250796;-3504;-3154};{-106724;250744;-3504;-3154};{-105924;252868;-3504;-3154};{-106380;253472;-3504;-3154};{-109024;253492;-3504;-3154}}	territory_end
+npcmaker_begin	[t16_25_012]
+npc_begin	[orc_grunt]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[werewolf]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[orc_fighter]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[werewolf_hunter]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_013]	{{-116268;250028;-3456;-3006};{-113116;249284;-3456;-3006};{-110548;253908;-3456;-3006};{-112104;254728;-3456;-3006};{-115032;252640;-3456;-3006}}	territory_end
+npcmaker_begin	[t16_25_013]
+npc_begin	[orc_archer]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[orc_fighter]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[werewolf_hunter]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[orc_fighter_sub_leader]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_014]	{{-117932;243508;-3336;-2536};{-113604;243864;-3336;-2536};{-113300;249068;-3336;-2536};{-116124;249772;-3336;-2536}}	territory_end
+npcmaker_begin	[t16_25_014]
+npc_begin	[werewolf]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[orc_fighter_leader]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[werewolf_hunter]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[orc_fighter_sub_leader]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_015]	{{-116252;248256;-3332;-2982};{-114056;248284;-3332;-2982};{-113880;249544;-3332;-2982};{-115248;250160;-3332;-2982}}	territory_end
+npcmaker_begin	[t16_25_015]
+npc_begin	[werewolf_hunter]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_016]	{{-116928;244152;-3296;-2996};{-115188;244648;-3296;-2996};{-115136;246804;-3296;-2996};{-116548;247196;-3296;-2996}}	territory_end
+npcmaker_begin	[t16_25_016]
+npc_begin	[werewolf_chieftain]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_017]	{{-113484;244152;-3492;-3292};{-111364;244232;-3492;-3292};{-111312;244404;-3492;-3292};{-113488;244728;-3492;-3292}}	territory_end
+npcmaker_begin	[t16_25_017]
+npc_begin	[giant_spider]	pos = anywhere	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_018]	{{-106300;236204;-3776;-3376};{-98608;239144;-3776;-3376};{-98584;243176;-3776;-3376};{-103364;241724;-3776;-3376};{-107940;239436;-3776;-3376};{-108864;238404;-3776;-3376};{-108888;237128;-3776;-3376}}	territory_end
+npcmaker_begin	[t16_25_018]
+npc_begin	[orc]	pos = anywhere	total = 10	respawn = 15sec	npc_end
+npc_begin	[orc_grunt]	pos = anywhere	total = 10	respawn = 15sec	npc_end
+npc_begin	[orc_archer]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[werewolf]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_019]	{{-102148;238928;-3616;-3216};{-100604;239196;-3616;-3216};{-100436;241088;-3616;-3216};{-102000;240756;-3616;-3216}}	territory_end
+npcmaker_begin	[t16_25_019]
+npc_begin	[orc_grunt]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[orc_fighter]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_020]	{{-104316;237916;-3632;-3282};{-102436;238376;-3632;-3282};{-102572;241216;-3632;-3282};{-105376;240032;-3632;-3282}}	territory_end
+npcmaker_begin	[t16_25_020]
+npc_begin	[orc_grunt]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[werewolf]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[werewolf_hunter]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_021]	{{-108324;237836;-3728;-3478};{-106444;236664;-3728;-3478};{-104872;238260;-3728;-3478};{-106440;239512;-3728;-3478}}	territory_end
+npcmaker_begin	[t16_25_021]
+npc_begin	[orc_grunt]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[werewolf]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[orc_fighter]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_022]	{{-110632;237904;-3684;-3334};{-109548;237532;-3684;-3334};{-108136;239984;-3684;-3334};{-109332;239604;-3684;-3334}}	territory_end
+npcmaker_begin	[t16_25_022]
+npc_begin	[orc_grunt]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[werewolf]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_023]	{{-99180;231444;-3640;-3340};{-98624;231480;-3640;-3340};{-98616;237500;-3640;-3340};{-99868;236056;-3640;-3340};{-100452;234168;-3640;-3340}}	territory_end
+npcmaker_begin	[t16_25_023]
+npc_begin	[orc]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[orc_grunt]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[orc_archer]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_024]	{{-100412;229464;-3768;-3518};{-98556;229472;-3768;-3518};{-98508;231212;-3768;-3518};{-99060;231144;-3768;-3518}}	territory_end
+npcmaker_begin	[t16_25_024]
+npc_begin	[orc]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[orc_grunt]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[orc_archer]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_025]	{{-105772;235780;-3800;-3300};{-100952;233944;-3800;-3300};{-100236;236036;-3800;-3300};{-101356;237580;-3800;-3300}}	territory_end
+npcmaker_begin	[t16_25_025]
+npc_begin	[orc_grunt]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[orc_archer]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[werewolf]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_026]	{{-104604;229520;-3764;-3264};{-100964;229464;-3764;-3264};{-99680;231444;-3764;-3264};{-100928;233836;-3764;-3264};{-104060;235016;-3764;-3264}}	territory_end
+npcmaker_begin	[t16_25_026]
+npc_begin	[orc_archer]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[goblin_scout]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[orc_fighter]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[orc_fighter_sub_leader]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_027]	{{-109732;229480;-3816;-3366};{-104700;229520;-3816;-3366};{-104140;235092;-3816;-3366};{-105748;235752;-3816;-3366};{-110228;231436;-3816;-3366}}	territory_end
+npcmaker_begin	[t16_25_027]
+npc_begin	[werewolf_hunter]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[orc_fighter_sub_leader]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[werewolf_chieftain]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[orc_fighter_leader]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_028]	{{-102756;229908;-3764;-3264};{-101260;229748;-3764;-3264};{-100164;231540;-3764;-3264};{-101664;231868;-3764;-3264};{-102964;231432;-3764;-3264};{-103196;230528;-3764;-3264}}	territory_end
+npcmaker_begin	[t16_25_028]
+npc_begin	[werewolf_hunter]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[orc_fighter_leader]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_029]	{{-103588;235136;-3568;-3318};{-101652;233252;-3568;-3318};{-101236;235348;-3568;-3318};{-102352;236464;-3568;-3318}}	territory_end
+npcmaker_begin	[t16_25_029]
+npc_begin	[werewolf_hunter]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[orc_fighter_leader]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_030]	{{-103332;241752;-3792;-3392};{-99784;242828;-3792;-3392};{-101140;244048;-3792;-3392};{-101940;244196;-3792;-3392};{-103420;243080;-3792;-3392}}	territory_end
+npcmaker_begin	[t16_25_030]
+npc_begin	[giant_toad]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_031]	{{-118732;239608;-3332;-2782};{-116624;239528;-3332;-2782};{-114760;243788;-3332;-2782};{-117968;243464;-3332;-2782};{-119492;240684;-3332;-2782}}	territory_end
+npcmaker_begin	[t16_25_031]
+npc_begin	[werewolf]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[orc_fighter]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[werewolf_hunter]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[orc_fighter_sub_leader]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_032]	{{-118672;239872;-3316;-2966};{-117212;239836;-3316;-2966};{-117220;241368;-3316;-2966};{-117956;242700;-3316;-2966};{-118900;241152;-3316;-2966}}	territory_end
+npcmaker_begin	[t16_25_032]
+npc_begin	[werewolf_hunter]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_033]	{{-120404;234320;-3072;-2472};{-117856;234264;-3072;-2472};{-116672;239496;-3072;-2472};{-118764;239532;-3072;-2472};{-120092;236856;-3072;-2472}}	territory_end
+npcmaker_begin	[t16_25_033]
+npc_begin	[orc_fighter_leader]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[werewolf_chieftain]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[stone_golem]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_034]	{{-120016;234756;-3032;-2832};{-118232;234456;-3032;-2832};{-118612;236388;-3032;-2832};{-119932;236456;-3032;-2832}}	territory_end
+npcmaker_begin	[t16_25_034]
+npc_begin	[stone_golem]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_035]	{{-119576;229492;-2988;-2638};{-116556;229468;-2988;-2638};{-117132;232212;-2988;-2638};{-120068;233252;-2988;-2638}}	territory_end
+npcmaker_begin	[t16_25_035]
+npc_begin	[orc_fighter_leader]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[stone_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[crasher]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_036]	{{-119860;232356;-2980;-2780};{-118440;230968;-2980;-2780};{-118864;234148;-2980;-2780};{-120292;234176;-2980;-2780}}	territory_end
+npcmaker_begin	[t16_25_036]
+npc_begin	[poker]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[mirror_02]	{{-121998;236299;-3789;-3389};{-121382;235219;-3789;-3389};{-121138;235995;-3789;-3389};{-121310;237847;-3789;-3389}}	territory_end
+npcmaker_begin	[mirror_02]
+npc_begin	[spirit_of_mirrors3]	pos = anywhere	total = 1	respawn = 3min	npc_end
+npcmaker_end
+
+territory_begin	[mirror_03]	{{-100177;234305;-3623;-3173};{-98517;234345;-3623;-3173};{-98537;237421;-3623;-3173};{-99565;236309;-3623;-3173}}	territory_end
+npcmaker_begin	[mirror_03]
+npc_begin	[spirit_of_mirrors2]	pos = anywhere	total = 1	respawn = 3min	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_16_24_003]	{{-118719;233139;-3029;-2829};{-118519;233139;-3029;-2829};{-118519;233339;-3029;-2829};{-118719;233339;-3029;-2829}}	territory_end
+npcmaker_begin	[quest_030919_16_24_003]	initial_spawn = all	maximum_npc = 1
+npc_begin	[pako_the_cat]	pos = anywhere	total = 1	respawn = 3min	npc_end
+npcmaker_end
+
+//--------------------------------------------------------------------------------------------------------------
+//  이벤트 몬스터
+// DATE 2003.09.21
+// Ver 9월 업데이트
+// --------------------------------------------------------------------------------------------------------------
+territory_begin	[event_16_25_001]	{{-107523;236287;-3789;-3289};{-101647;233351;-3789;-3289};{-101007;235755;-3789;-3289};{-102975;241579;-3789;-3289};{-107763;239279;-3789;-3289};{-108627;237647;-3789;-3289}}	territory_end
+npcmaker_begin	[event_16_25_001]	initial_spawn=all	maximum_npc=5
+npc_begin	[vrykolakas]	pos={{-102741;235241;-3452;0;25%};{-106809;237880;-3710;0;45%};{-103510;239767;-3495;0;30%}}	total=1	respawn=3hour	respawn_rand=1hour	Privates=[vrykolakas_wolfkin:party_private:1:1min;vrykolakas_wolfkin:party_private:1:1min;vrykolakas_wolfkin:party_private:1:1min;vrykolakas_wolfkin:party_private:1:1min]	npc_end
+npcmaker_end
+
+territory_begin	[even_t16_25_002]	{{-105547;252038;-3562;-3162};{-104187;247018;-3562;-3162};{-100275;248834;-3562;-3162};{-100675;253730;-3562;-3162}}	territory_end
+npcmaker_begin	[even_t16_25_002]	initial_spawn=all	maximum_npc=6
+npc_begin	[pirate_captain_uthanka]	pos={{-102875;248997;-3401;0;20%};{-103579;251956;-3403;0;40%};{-101152;252590;-3428;0;40%}}	total=1	respawn=3hour	respawn_rand=1hour	Privates=[uthanka_pirate:party_private:1:1min;uthanka_pirate:party_private:1:1min;uthanka_pirate:party_private:1:1min;uthanka_pirate:party_private:1:1min;uthanka_pirate:party_private:1:1min]	npc_end
+npcmaker_end
+

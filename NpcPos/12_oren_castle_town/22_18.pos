@@ -1,0 +1,546 @@
+//-------------------------------------------------------------------------------------------------------
+//ver 크로니클 I
+//03.12.22
+//22_19 오렌성
+//-------------------------------------------------------------------------------------------------------
+//수성측	텔레포터,	시종장,	근위대장,
+territory_begin	[oren_chamberlain_etc]	{{86265;29908;-4287;16886};{86265;40279;-4287;16886};{75192;40278;-4287;16886};{75192;29908;-4287;16886}}	territory_end
+npcmaker_begin	[oren_chamberlain_etc]	initial_spawn=all	maximum_npc=10
+npc_begin	[chamberlain_brasseur]	pos={83188;37118;-2262;32768}	total=1	respawn=1min	npc_end
+npc_begin	[messenger_sherwood]	pos={75292;40158;-3006;32768}	total=1	respawn=1min	npc_end
+npc_begin	[oren_default_teleporter1]	pos={79923;36334;-2514;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[oren_default_teleporter2]	pos={82077;37199;-2282;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[oren_default_teleporter3]	pos={83726;36687;-2346;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[oren_outter_doorman]	pos={78754;36878;-2540;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[oren_outter_doorman]	pos={79102;36824;-2540;49152}	total=1	respawn=3hour	npc_end
+npc_begin	[oren_inner_doorman]	pos={81407;37086;-2290;32768}	total=1	respawn=3hour	npc_end
+npc_begin	[oren_inner_doorman]	pos={81668;36985;-2290;49152}	total=1	respawn=3hour	npc_end
+npc_begin	[oren_royal_gatekeeper]	pos={78142;36810;-2552;32768}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//---------------------22_18 (oren_human)-----------------------------------------------
+territory_begin	[22_18_NPC_031201_01]	{{70417;30504;-1472;-1072};{70653;30496;-1472;-1072};{70664;30932;-1472;-1072};{70417;30927;-1472;-1072}}	territory_end
+npcmaker_begin	[22_18_NPC_031201_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[drake_exarion]	pos = {70525;30754;-1299;28672}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_18_NPC_031201_02]	{{89292;6988;-3173;-2973};{89492;6988;-3173;-2973};{89492;7188;-3173;-2973};{89292;7188;-3173;-2973}}	territory_end
+npcmaker_begin	[22_18_NPC_031201_02]	initial_spawn = all	maximum_npc = 11
+npc_begin	[alchemist_matild]	pos = {89384;7084;-3090;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[22_18_NPC_031201_03]	{{95260;22140;-2967;-2767};{95460;22140;-2967;-2767};{95460;22340;-2967;-2767};{95260;22340;-2967;-2767}}	territory_end
+npcmaker_begin	[22_18_NPC_031201_03]	initial_spawn = all	maximum_npc = 2
+npc_begin	[statue_of_offering]	pos = {95348;22298;-2882;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[witch_kalis]	pos = {95359;22208;-2879;4096}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//-----------------------22_18 NPC 030917 --------------
+territory_begin	[NPC_t22_18_030917_01]	{{84440;16272;-4345;-4145};{84925;15474;-4345;-4145};{85211;15581;-4345;-4145};{84669;16385;-4345;-4145}}	territory_end
+npcmaker_begin	[NPC_t22_18_030917_01]
+npc_begin	[marty]	pos = {85005;15638;-4271;11000}	total = 1	respawn = 1min	npc_end
+npc_begin	[radic]	pos = {84689;16198;-4271;0}	total = 1	respawn = 1min	npc_end
+npc_begin	[karin]	pos = {84814;15886;-4291;5200}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t22_18_030917_02]	{{84911;16607;-4340;-4140};{85757;16594;-4340;-4140};{85764;16825;-4340;-4140};{84949;16794;-4340;-4140}}	territory_end
+npcmaker_begin	[NPC_t22_18_030917_02]
+npc_begin	[bandor]	pos = {85655;16767;-4271;43500}	total = 1	respawn = 1min	npc_end
+npc_begin	[rapin]	pos = {85004;16760;-4271;54000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t22_18_030917_03]	{{85590;15641;-4339;-4139};{85672;15512;-4339;-4139};{86118;16249;-4339;-4139};{86015;16322;-4339;-4139}}	territory_end
+npcmaker_begin	[NPC_t22_18_030917_03]
+npc_begin	[iz]	pos = {85655;15638;-4271;22000}	total = 1	respawn = 1min	npc_end
+npc_begin	[rex]	pos = {85982;16193;-4271;32768}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t22_18_030917_04]	{{85265;16020;-3742;-3542};{85537;16061;-3742;-3542};{85538;16387;-3742;-3542};{85255;16321;-3742;-3542}}	territory_end
+npcmaker_begin	[NPC_t22_18_030917_04]
+npc_begin	[gatekeeper_verona]	pos = {85336;16194;-3664;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t22_18_030917_05]	{{84861;15915;-2863;-2663};{85699;15896;-2863;-2663};{85739;16668;-2863;-2663};{85023;16591;-2863;-2663}}	territory_end
+npcmaker_begin	[NPC_t22_18_030917_05]
+npc_begin	[gatekeeper_cecile]	pos = {85336;16194;-2799;59500}	total = 1	respawn = 1min	npc_end
+npc_begin	[az]	pos = {85332;16592;-2799;48500}	total = 1	respawn = 1min	npc_end
+npc_begin	[yan]	pos = {85675;15994;-2799;27000}	total = 1	respawn = 1min	npc_end
+npc_begin	[magister_marina]	pos = {84985;15991;-2799;5300}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t22_18_030917_06]	{{84893;15927;-2392;-2192};{85715;15820;-2392;-2192};{85654;16704;-2392;-2192};{85051;16651;-2392;-2192}}	territory_end
+npcmaker_begin	[NPC_t22_18_030917_06]
+npc_begin	[magister_gauen]	pos = {85332;16592;-2285;48500}	total = 1	respawn = 1min	npc_end
+npc_begin	[biralri]	pos = {85675;15994;-2285;27000}	total = 1	respawn = 1min	npc_end
+npc_begin	[magister_joan]	pos = {84985;15991;-2285;5300}	total = 1	respawn = 1min	npc_end
+npc_begin	[gatekeeper_mariell]	pos = {85336;16194;-2285;59500}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t22_18_030917_07]	{{84784;15912;-1899;-1699};{85780;15862;-1899;-1699};{85849;16357;-1899;-1699};{85121;16708;-1899;-1699}}	territory_end
+npcmaker_begin	[NPC_t22_18_030917_07]
+npc_begin	[fairen]	pos = {85675;15994;-1769;27000}	total = 1	respawn = 1min	npc_end
+npc_begin	[magister_kaiena]	pos = {85332;16592;-1769;48500}	total = 1	respawn = 1min	npc_end
+npc_begin	[magister_ladd]	pos = {84985;15991;-1769;5300}	total = 1	respawn = 1min	npc_end
+npc_begin	[gatekeeper_merian]	pos = {85336;16194;-1769;59500}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t22_18_030917_08]	{{85075;17375;-3559;-3359};{85577;17375;-3559;-3359};{85584;17575;-3559;-3359};{85055;17575;-3559;-3359}}	territory_end
+npcmaker_begin	[NPC_t22_18_030917_08]
+npc_begin	[guard_tebose]	pos = {85516;17458;-3511;16384}	total = 1	respawn = 1min	npc_end
+npc_begin	[guard_yening]	pos = {85149;17458;-3511;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t22_18_030917_09]	{{85051;14809;-3573;-3373};{85585;14809;-3573;-3373};{85573;15009;-3573;-3373};{85092;15009;-3573;-3373}}	territory_end
+npcmaker_begin	[NPC_t22_18_030917_09]
+npc_begin	[captain_roy]	pos = {85518;14911;-3510;49152}	total = 1	respawn = 1min	npc_end
+npc_begin	[guard_tavillian]	pos = {85143;14911;-3511;49152}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------- 22_18 (패거리몬스터)----------------------------------------------------------------------------------------
+territory_begin	[party_t22_18_001]	{{93858;1861;-3811;-3211};{96810;2088;-3811;-3211};{96167;4246;-3811;-3211};{93952;3678;-3811;-3211}}	territory_end
+npcmaker_begin	[party_t22_18_001]	initial_spawn = all	maximum_npc = 4
+npc_begin	[timak_orc_troop_leader]	pos = anywhere	total = 1	respawn = 200sec
+Privates = [timak_orc_troop_shaman:timak_orc_troop_shaman:1:200sec;timak_orc_troop_warrior:timak_orc_troop_warrior:1:200sec;timak_orc_troop_archer:timak_orc_troop_archer:1:200sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t22_18_002]	{{88115;3399;-3068;-2468};{90254;4166;-3068;-2468};{90859;5756;-3068;-2468};{87755;5879;-3068;-2468};{87146;4833;-3068;-2468}}	territory_end
+npcmaker_begin	[party_t22_18_002]	initial_spawn = all	maximum_npc = 4
+npc_begin	[timak_orc_troop_leader]	pos = anywhere	total = 1	respawn = 200sec
+Privates = [timak_orc_troop_shaman:timak_orc_troop_shaman:1:200sec;timak_orc_troop_warrior:timak_orc_troop_warrior:1:200sec;timak_orc_troop_archer:timak_orc_troop_archer:1:200sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t22_18_003]	{{87648;6746;-3492;-2892};{91168;6992;-3492;-2892};{90808;8999;-3492;-2892};{88092;8043;-3492;-2892}}	territory_end
+npcmaker_begin	[party_t22_18_003]	initial_spawn = all	maximum_npc = 4
+npc_begin	[timak_orc_troop_leader]	pos = anywhere	total = 1	respawn = 200sec
+Privates = [timak_orc_troop_shaman:timak_orc_troop_shaman:1:200sec;timak_orc_troop_warrior:timak_orc_troop_warrior:1:200sec;timak_orc_troop_archer:timak_orc_troop_archer:1:200sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t22_18_004]	{{92629;10725;-3714;-3114};{94910;11567;-3714;-3114};{94598;14169;-3714;-3114};{92383;11899;-3714;-3114}}	territory_end
+npcmaker_begin	[party_t22_18_004]	initial_spawn = all	maximum_npc = 4
+npc_begin	[timak_orc_troop_leader]	pos = anywhere	total = 1	respawn = 200sec
+Privates = [timak_orc_troop_shaman:timak_orc_troop_shaman:1:200sec;timak_orc_troop_warrior:timak_orc_troop_warrior:1:200sec;timak_orc_troop_archer:timak_orc_troop_archer:1:200sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t22_18_005]	{{81455;2986;-3106;-2506};{83754;4272;-3106;-2506};{83386;6269;-3106;-2506};{80414;5342;-3106;-2506}}	territory_end
+npcmaker_begin	[party_t22_18_005]	initial_spawn = all	maximum_npc = 4
+npc_begin	[timak_orc_troop_leader]	pos = anywhere	total = 1	respawn = 200sec
+Privates = [timak_orc_troop_shaman:timak_orc_troop_shaman:1:200sec;timak_orc_troop_warrior:timak_orc_troop_warrior:1:200sec;timak_orc_troop_archer:timak_orc_troop_archer:1:200sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t22_18_006]	{{76174;6198;-3652;-2852};{78748;6302;-3652;-2852};{77869;8555;-3652;-2852};{74982;8564;-3652;-2852}}	territory_end
+npcmaker_begin	[party_t22_18_006]	initial_spawn = all	maximum_npc = 4
+npc_begin	[timak_orc_troop_leader]	pos = anywhere	total = 1	respawn = 200sec
+Privates = [timak_orc_troop_shaman:timak_orc_troop_shaman:1:200sec;timak_orc_troop_warrior:timak_orc_troop_warrior:1:200sec;timak_orc_troop_archer:timak_orc_troop_archer:1:200sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t22_18_007]	{{75273;11568;-3833;-3033};{77582;11851;-3833;-3033};{76665;14529;-3833;-3033};{74280;14435;-3833;-3033}}	territory_end
+npcmaker_begin	[party_t22_18_007]	initial_spawn = all	maximum_npc = 4
+npc_begin	[timak_orc_troop_leader]	pos = anywhere	total = 1	respawn = 200sec
+Privates = [timak_orc_troop_shaman:timak_orc_troop_shaman:1:200sec;timak_orc_troop_warrior:timak_orc_troop_warrior:1:200sec;timak_orc_troop_archer:timak_orc_troop_archer:1:200sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t22_18_008]	{{73908;17429;-3969;-3169};{77324;17675;-3969;-3169};{78156;20163;-3969;-3169};{75790;20381;-3969;-3169}}	territory_end
+npcmaker_begin	[party_t22_18_008]	initial_spawn = all	maximum_npc = 4
+npc_begin	[timak_orc_troop_leader]	pos = anywhere	total = 1	respawn = 200sec
+Privates = [timak_orc_troop_shaman:timak_orc_troop_shaman:1:200sec;timak_orc_troop_warrior:timak_orc_troop_warrior:1:200sec;timak_orc_troop_archer:timak_orc_troop_archer:1:200sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t22_18_009]	{{88953;28283;-3969;-3169};{92898;26751;-3969;-3169};{94232;28379;-3969;-3169};{89813;29410;-3969;-3169}}	territory_end
+npcmaker_begin	[party_t22_18_009]	initial_spawn = all	maximum_npc = 4
+npc_begin	[timak_orc_troop_leader]	pos = anywhere	total = 1	respawn = 200sec
+Privates = [timak_orc_troop_shaman:timak_orc_troop_shaman:1:200sec;timak_orc_troop_warrior:timak_orc_troop_warrior:1:200sec;timak_orc_troop_archer:timak_orc_troop_archer:1:200sec]	npc_end
+npcmaker_end
+
+territory_begin	[party_t22_18_010]	{{90983;22700;-3720;-2920};{92167;20317;-3720;-2920};{94654;20536;-3720;-2920};{92610;23468;-3720;-2920}}	territory_end
+npcmaker_begin	[party_t22_18_010]	initial_spawn = all	maximum_npc = 4
+npc_begin	[timak_orc_troop_leader]	pos = anywhere	total = 1	respawn = 200sec
+Privates = [timak_orc_troop_shaman:timak_orc_troop_shaman:1:200sec;timak_orc_troop_warrior:timak_orc_troop_warrior:1:200sec;timak_orc_troop_archer:timak_orc_troop_archer:1:200sec]	npc_end
+npcmaker_end
+
+//--------------- 22_18 (오렌의 상아탑)----------------------------------------------------------------------------------------
+territory_begin	[oren_h_22_18_001]	{{92687;31024;-3658;-3258};{97999;31607;-3658;-3258};{97990;32483;-3658;-3258};{91483;32530;-3658;-3258}}	territory_end
+npcmaker_begin	[oren_h_22_18_001]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_002]	{{81730;30595;-3769;-2869};{86107;31568;-3769;-2869};{87255;32509;-3769;-2869};{80851;32509;-3769;-2869}}	territory_end
+npcmaker_begin	[oren_h_22_18_002]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_003]	{{76301;30334;-3667;-2767};{81141;31510;-3667;-2767};{80724;32515;-3667;-2767};{76524;32506;-3667;-2767};{75605;31008;-3667;-2767}}	territory_end
+npcmaker_begin	[oren_h_22_18_003]
+npc_begin	[leto_lizardman_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_004]	{{72595;29572;-3804;-3104};{74978;28983;-3804;-3104};{75172;32556;-3804;-3104};{72502;32503;-3804;-3104}}	territory_end
+npcmaker_begin	[oren_h_22_18_004]
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_005]	{{70811;26766;-3735;-3035};{72800;26375;-3735;-3035};{74303;29043;-3735;-3035};{72143;29436;-3735;-3035};{70567;28198;-3735;-3035}}	territory_end
+npcmaker_begin	[oren_h_22_18_005]
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_overlord]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_006]	{{70384;20505;-3804;-3104};{72237;21699;-3804;-3104};{73099;26147;-3804;-3104};{70941;26659;-3804;-3104};{69536;22158;-3804;-3104}}	territory_end
+npcmaker_begin	[oren_h_22_18_006]
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_overlord]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_007]	{{69519;22531;-3804;-3104};{70804;26318;-3804;-3104};{70423;28034;-3804;-3104};{68242;27430;-3804;-3104};{67136;23188;-3804;-3104}}	territory_end
+npcmaker_begin	[oren_h_22_18_007]
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_overlord]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_008]	{{67015;23195;-3830;-3230};{68219;27596;-3830;-3230};{66817;29186;-3830;-3230};{65615;29184;-3830;-3230};{65629;22540;-3830;-3230}}	territory_end
+npcmaker_begin	[oren_h_22_18_008]
+npc_begin	[leto_lizardman_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_overlord]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_009]	{{69207;17966;-3770;-3170};{70568;15327;-3770;-3170};{72529;21773;-3770;-3170};{70362;20199;-3770;-3170}}	territory_end
+npcmaker_begin	[oren_h_22_18_009]
+npc_begin	[leto_lizardman_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[leto_lizardman_overlord]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_010]	{{94444;25635;-3759;-3159};{98016;25878;-3759;-3159};{97952;29296;-3759;-3159};{93866;28758;-3759;-3159};{93261;26211;-3759;-3159}}	territory_end
+npcmaker_begin	[oren_h_22_18_010]
+npc_begin	[timak_orc_archer]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_011]	{{89267;27744;-3771;-3171};{93110;26220;-3771;-3171};{93740;28891;-3771;-3171};{90143;30038;-3771;-3171};{88152;29449;-3771;-3171}}	territory_end
+npcmaker_begin	[oren_h_22_18_011]
+npc_begin	[timak_orc_archer]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_012]	{{89114;27781;-3857;-3157};{88066;29499;-3857;-3157};{85784;29804;-3857;-3157};{83031;28876;-3857;-3157};{82923;28086;-3857;-3157};{86223;27461;-3857;-3157}}	territory_end
+npcmaker_begin	[oren_h_22_18_012]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_013]	{{82807;28144;-3790;-3190};{82896;28919;-3790;-3190};{79800;29313;-3790;-3190};{76975;28601;-3790;-3190};{77848;27443;-3790;-3190}}	territory_end
+npcmaker_begin	[oren_h_22_18_013]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_014]	{{95163;18734;-3628;-2328};{98118;18872;-3628;-2328};{98072;21359;-3628;-2328};{94827;20409;-3628;-2328}}	territory_end
+npcmaker_begin	[oren_h_22_18_014]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_015]	{{92425;18758;-3722;-3122};{94973;19198;-3722;-3122};{93608;24676;-3722;-3122};{90654;22933;-3722;-3122}}	territory_end
+npcmaker_begin	[oren_h_22_18_015]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_016]	{{93445;24735;-3821;-3221};{89997;26546;-3821;-3221};{85585;26640;-3821;-3221};{85706;24661;-3821;-3221};{90916;23351;-3821;-3221}}	territory_end
+npcmaker_begin	[oren_h_22_18_016]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_017]	{{84841;26705;-3791;-3191};{82330;27150;-3791;-3191};{78573;26208;-3791;-3191};{79674;22898;-3791;-3191};{84927;24776;-3791;-3191}}	territory_end
+npcmaker_begin	[oren_h_22_18_017]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_018]	{{78375;26241;-3791;-3191};{75889;27607;-3791;-3191};{74397;25186;-3791;-3191};{75112;20630;-3791;-3191};{78290;21367;-3791;-3191};{79617;22667;-3791;-3191}}	territory_end
+npcmaker_begin	[oren_h_22_18_018]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_019]	{{78167;21130;-4080;-3280};{75147;20525;-4080;-3280};{73492;18187;-4080;-3280};{73612;14760;-4080;-3280};{77230;16494;-4080;-3280}}	territory_end
+npcmaker_begin	[oren_h_22_18_019]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_020]	{{76466;15925;-4029;-3329};{73605;14509;-4029;-3329};{74919;10532;-4029;-3329};{77045;10168;-4029;-3329};{79012;12436;-4029;-3329}}	territory_end
+npcmaker_begin	[oren_h_22_18_020]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_021]	{{82848;8200;-3722;-2822};{78498;11700;-3722;-2822};{77154;10111;-3722;-2822};{80217;6035;-3722;-2822}}	territory_end
+npcmaker_begin	[oren_h_22_18_021]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_022]	{{79108;4839;-3463;-2463};{78484;3080;-3463;-2463};{81507;2059;-3463;-2463};{84135;1753;-3463;-2463};{84575;6894;-3463;-2463};{83543;8413;-3463;-2463}}	territory_end
+npcmaker_begin	[oren_h_22_18_022]
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_023]	{{77161;9926;-3768;-2768};{74774;10325;-3768;-2768};{73946;8477;-3768;-2768};{77361;3790;-3768;-2768};{80145;5878;-3768;-2768}}	territory_end
+npcmaker_begin	[oren_h_22_18_023]
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_overlord]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_024]	{{86682;6966;-3573;-2573};{88638;5574;-3573;-2573};{91692;7082;-3573;-2573};{91366;8599;-3573;-2573};{90112;9546;-3573;-2573};{86707;8752;-3573;-2573}}	territory_end
+npcmaker_begin	[oren_h_22_18_024]
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[timak_orc_overlord]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_025]	{{86592;2025;-3269;-2269};{89923;2885;-3269;-2269};{90301;4213;-3269;-2269};{86700;6888;-3269;-2269};{85768;6763;-3269;-2269}}	territory_end
+npcmaker_begin	[oren_h_22_18_025]
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[timak_orc_overlord]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_026]	{{92968;4410;-3250;-2550};{95697;6792;-3250;-2550};{95742;8351;-3250;-2550};{95068;8752;-3250;-2550};{92477;5417;-3250;-2550}}	territory_end
+npcmaker_begin	[oren_h_22_18_026]
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_overlord]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_027]	{{91445;8787;-3948;-3248};{94391;10539;-3948;-3248};{95414;12243;-3948;-3248};{92566;12383;-3948;-3248};{90222;9649;-3948;-3248}}	territory_end
+npcmaker_begin	[oren_h_22_18_027]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_028]	{{92586;12476;-3726;-3126};{95434;12356;-3726;-3126};{95982;17555;-3726;-3126};{94144;16388;-3726;-3126}}	territory_end
+npcmaker_begin	[oren_h_22_18_028]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_029]	{{95574;12379;-3559;-2559};{98104;11923;-3559;-2559};{98045;17897;-3559;-2559};{96172;17597;-3559;-2559}}	territory_end
+npcmaker_begin	[oren_h_22_18_029]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_030]	{{94531;10395;-3830;-3130};{98060;7316;-3830;-3130};{98081;11775;-3830;-3130};{95535;12198;-3830;-3130}}	territory_end
+npcmaker_begin	[oren_h_22_18_030]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_031]	{{94975;9925;-4017;-3517};{94416;10456;-4017;-3517};{92659;9366;-4017;-3517};{92126;8705;-4017;-3517};{92627;6803;-4017;-3517}}	territory_end
+npcmaker_begin	[oren_h_22_18_031]
+npc_begin	[timak_orc_overlord]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[shackle]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_032]	{{98073;7201;-3786;-3286};{96749;8257;-3786;-3286};{95954;5280;-3786;-3286};{98056;3316;-3786;-3286}}	territory_end
+npcmaker_begin	[oren_h_22_18_032]
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_overlord]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_033]	{{91805;1172;-3804;-3104};{98058;3131;-3804;-3104};{95473;5490;-3804;-3104};{92208;2685;-3804;-3104}}	territory_end
+npcmaker_begin	[oren_h_22_18_033]
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_overlord]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_034]	{{91800;70;-3821;-3321};{98116;64;-3821;-3321};{98117;3025;-3821;-3321};{91806;1055;-3821;-3321}}	territory_end
+npcmaker_begin	[oren_h_22_18_034]
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[timak_orc_overlord]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_035]	{{84951;81;-3840;-3140};{91701;91;-3840;-3140};{91175;2111;-3840;-3140};{85172;1035;-3840;-3140}}	territory_end
+npcmaker_begin	[oren_h_22_18_035]
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[timak_orc_overlord]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_036]	{{77156;95;-3840;-3140};{84164;105;-3840;-3140};{84228;841;-3840;-3140};{77553;2673;-3840;-3140}}	territory_end
+npcmaker_begin	[oren_h_22_18_036]
+npc_begin	[byfoot]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[byfoot_sigel]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[tarlk_bugbear]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_037]	{{72981;89;-3840;-3140};{76985;107;-3840;-3140};{77188;2755;-3840;-3140};{75203;5023;-3840;-3140};{72350;2133;-3840;-3140}}	territory_end
+npcmaker_begin	[oren_h_22_18_037]
+npc_begin	[byfoot]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[byfoot_sigel]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[tarlk_bugbear]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_038]	{{69651;2471;-3809;-3109};{72214;2220;-3809;-3109};{75254;5201;-3809;-3109};{73518;7792;-3809;-3109};{70961;6955;-3809;-3109};{68261;3759;-3809;-3109}}	territory_end
+npcmaker_begin	[oren_h_22_18_038]
+npc_begin	[byfoot]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[byfoot_sigel]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[tarlk_bugbear]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_039]	{{82831;10066;-5368;-4868};{85009;10284;-5368;-4868};{85018;13653;-5368;-4868};{83661;13978;-5368;-4868};{81472;12255;-5368;-4868}}	territory_end
+npcmaker_begin	[oren_h_22_18_039]
+npc_begin	[manashen]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[enchanted_monstereye]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[enchanted_stone_golem]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_040]	{{81511;12393;-5368;-4868};{83344;13819;-5368;-4868};{82832;15185;-5368;-4868};{80368;14384;-5368;-4868};{80263;13434;-5368;-4868}}	territory_end
+npcmaker_begin	[oren_h_22_18_040]
+npc_begin	[enchanted_monstereye]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[enchanted_stone_golem]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_041]	{{80462;14540;-5368;-4868};{82513;15208;-5368;-4868};{83205;16332;-5368;-4868};{80617;15978;-5368;-4868};{79525;15264;-5368;-4868}}	territory_end
+npcmaker_begin	[oren_h_22_18_041]
+npc_begin	[manashen]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[enchanted_stone_golem]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_042]	{{80565;16046;-5368;-4868};{82970;16416;-5368;-4868};{82495;17671;-5368;-4868};{79416;18242;-5368;-4868};{78920;17205;-5368;-4868}}	territory_end
+npcmaker_begin	[oren_h_22_18_042]
+npc_begin	[enchanted_monstereye]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[enchanted_stone_golem]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[enchanted_iron_golem]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_043]	{{79217;18370;-5377;-4877};{82409;17752;-5377;-4877};{83629;18501;-5377;-4877};{80573;21014;-5377;-4877};{80037;20926;-5377;-4877}}	territory_end
+npcmaker_begin	[oren_h_22_18_043]
+npc_begin	[enchanted_monstereye]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[enchanted_iron_golem]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[enchanted_gargoyle]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_044]	{{80664;21058;-5377;-4877};{83735;18607;-5377;-4877};{84449;19425;-5377;-4877};{83565;22116;-5377;-4877};{82277;22183;-5377;-4877}}	territory_end
+npcmaker_begin	[oren_h_22_18_044]
+npc_begin	[enchanted_iron_golem]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[enchanted_gargoyle]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[shackle]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_045]	{{83668;21977;-5361;-4861};{84463;19669;-5361;-4861};{85963;19668;-5361;-4861};{87752;22173;-5361;-4861};{86501;22458;-5361;-4861}}	territory_end
+npcmaker_begin	[oren_h_22_18_045]
+npc_begin	[enchanted_gargoyle]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[shackle]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_046]	{{87814;22153;-5361;-4861};{85783;19272;-5361;-4861};{87033;18415;-5361;-4861};{89208;20206;-5361;-4861};{89050;21881;-5361;-4861}}	territory_end
+npcmaker_begin	[oren_h_22_18_046]
+npc_begin	[enchanted_gargoyle]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[shackle]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_047]	{{89792;20419;-5391;-4891};{87363;18529;-5391;-4891};{88239;17505;-5391;-4891};{90375;18099;-5391;-4891};{90591;19413;-5391;-4891}}	territory_end
+npcmaker_begin	[oren_h_22_18_047]
+npc_begin	[enchanted_iron_golem]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[enchanted_gargoyle]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_048]	{{90284;17990;-5391;-4891};{87662;17232;-5391;-4891};{87844;15944;-5391;-4891};{90996;15554;-5391;-4891};{91367;16720;-5391;-4891}}	territory_end
+npcmaker_begin	[oren_h_22_18_048]
+npc_begin	[enchanted_monstereye]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[enchanted_stone_golem]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_049]	{{91406;15322;-5391;-4891};{87907;15872;-5391;-4891};{87568;15147;-5391;-4891};{90366;13129;-5391;-4891};{91598;14803;-5391;-4891}}	territory_end
+npcmaker_begin	[oren_h_22_18_049]
+npc_begin	[manashen]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[enchanted_stone_golem]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_050]	{{88863;14129;-5391;-4891};{87520;14581;-5391;-4891};{85734;13487;-5391;-4891};{85641;10817;-5391;-4891};{88680;10600;-5391;-4891};{90282;12649;-5391;-4891}}	territory_end
+npcmaker_begin	[oren_h_22_18_050]
+npc_begin	[manashen]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[enchanted_monstereye]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npc_begin	[enchanted_stone_golem]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_051]	{{92845;17728;-3889;-3289};{94498;18502;-3889;-3289};{93647;20614;-3889;-3289};{92299;20243;-3889;-3289}}	territory_end
+npcmaker_begin	[oren_h_22_18_051]
+npc_begin	[enchanted_gargoyle]	pos = anywhere	total = 2	respawn = 100sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_052]	{{71079;3183;-3760;-3160};{72802;3440;-3760;-3160};{72839;6153;-3760;-3160};{71406;6089;-3760;-3160};{70336;4542;-3760;-3160}}	territory_end
+npcmaker_begin	[oren_h_22_18_052]
+npc_begin	[enchanted_gargoyle]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[byfoot_sigel]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_053]	{{95575;23631;-3607;-2807};{97944;23607;-3607;-2807};{98045;24691;-3607;-2807};{96984;24967;-3607;-2807};{94887;24547;-3607;-2807}}	territory_end
+npcmaker_begin	[oren_h_22_18_053]
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_054]	{{80288;3091;-3165;-2565};{83288;2649;-3165;-2565};{83796;4673;-3165;-2565};{81021;5860;-3165;-2565}}	territory_end
+npcmaker_begin	[oren_h_22_18_054]
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[timak_orc_overlord]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_055]	{{75076;7542;-3507;-2907};{76813;5252;-3507;-2907};{78355;6881;-3507;-2907};{76764;8661;-3507;-2907}}	territory_end
+npcmaker_begin	[oren_h_22_18_055]
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[timak_orc_overlord]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_056]	{{75296;11144;-3833;-3233};{76828;10403;-3833;-3233};{78144;12242;-3833;-3233};{76183;13681;-3833;-3233}}	territory_end
+npcmaker_begin	[oren_h_22_18_056]
+npc_begin	[timak_orc_warrior]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 1	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_057]	{{75947;22116;-3833;-3233};{77659;22172;-3833;-3233};{78397;24778;-3833;-3233};{75669;25280;-3833;-3233}}	territory_end
+npcmaker_begin	[oren_h_22_18_057]
+npc_begin	[timak_orc_soldier]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_h_22_18_058]	{{91681;3655;-3157;-2557};{92874;4348;-3157;-2557};{91253;6775;-3157;-2557};{88729;5520;-3157;-2557}}	territory_end
+npcmaker_begin	[oren_h_22_18_058]
+npc_begin	[timak_orc_shaman]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npc_begin	[timak_orc_overlord]	pos = anywhere	total = 2	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_22_18_001]	{{69732;13420;-3692;-3492};{69580;10224;-3692;-3492};{70808;10964;-3692;-3492};{70736;13716;-3692;-3492}}	territory_end
+npcmaker_begin	[quest_030919_22_18_001]	initial_spawn = all	maximum_npc = 3
+npc_begin	[singing_flower_nightmare]	pos = anywhere	total = 3	respawn = 3min	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_22_18_002]	{{79892;15052;-5348;-5048};{82008;15024;-5348;-5048};{84252;20204;-5348;-5048};{82604;22312;-5348;-5048};{80436;20496;-5348;-5048};{79172;18188;-5348;-5048}}	territory_end
+npcmaker_begin	[quest_030919_22_18_002]	initial_spawn = all	maximum_npc = 4
+npc_begin	[ghost_fire]	pos = anywhere	total = 4	respawn = 3min	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_22_18_003]	{{88572;15016;-5396;-5096};{91048;15508;-5396;-5096};{89376;20648;-5396;-5096};{86664;22120;-5396;-5096};{86512;20164;-5396;-5096}}	territory_end
+npcmaker_begin	[quest_030919_22_18_003]	initial_spawn = all	maximum_npc = 4
+npc_begin	[ghost_fire]	pos = anywhere	total = 4	respawn = 3min	npc_end
+npcmaker_end
+

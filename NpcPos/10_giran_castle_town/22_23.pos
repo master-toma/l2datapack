@@ -1,0 +1,48 @@
+//------------------------- 22_23 기란남부/인나드릴 --------------------------------------------------------
+territory_begin	[giran_t22_23_001]	{{65602;166341;-3549;-2949};{70086;165033;-3549;-2949};{70638;168489;-3549;-2949};{66442;170981;-3549;-2949};{65638;170857;-3549;-2949}}	territory_end
+npcmaker_begin	[giran_t22_23_001]
+npc_begin	[delu_lizardman_scout]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman_warrior]	pos = anywhere	total = 10	respawn = 95sec	npc_end
+npc_begin	[silenos]	pos = anywhere	total = 11	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_23_002]	{{66435;170933;-3622;-2822};{69447;169173;-3622;-2822};{69875;171953;-3622;-2822};{67547;172141;-3622;-2822}}	territory_end
+npcmaker_begin	[giran_t22_23_002]
+npc_begin	[delu_lizardman_warrior]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npc_begin	[silenos]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_23_003]	{{70906;173500;-3731;-2931};{75774;169760;-3731;-2931};{75186;171144;-3731;-2931};{71786;173792;-3731;-2931}}	territory_end
+npcmaker_begin	[giran_t22_23_003]
+npc_begin	[delu_lizardman_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[silenos]	pos = anywhere	total = 5	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_23_004]	{{67630;172205;-3523;-2323};{69870;172037;-3523;-2323};{71242;173133;-3523;-2323};{70110;173705;-3523;-2323}}	territory_end
+npcmaker_begin	[giran_t22_23_004]
+npc_begin	[delu_lizardman_warrior]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[silenos]	pos = anywhere	total = 3	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_23_005]	{{65746;176619;-3451;-2151};{69306;177831;-3451;-2151};{67778;181431;-3451;-2151};{66802;182271;-3451;-2151};{65802;181643;-3451;-2151}}	territory_end
+npcmaker_begin	[giran_t22_23_005]
+npc_begin	[delu_lizardman_scout]	pos = anywhere	total = 4	respawn = 95sec	npc_end
+npc_begin	[delu_lizardman_warrior]	pos = anywhere	total = 7	respawn = 95sec	npc_end
+npc_begin	[silenos]	pos = anywhere	total = 9	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[giran_t22_23_030]	{{67805;166730;-3573;-3173};{69501;165870;-3573;-3173};{69645;168094;-3573;-3173};{67477;169518;-3573;-3173}}	territory_end
+npcmaker_begin	[giran_t22_23_030]
+npc_begin	[silenos]	pos = anywhere	total = 7	respawn = 95sec	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_22_23_001]	{{67572;166920;-3560;-3160};{69300;165652;-3560;-3160};{70464;168184;-3560;-3160};{67880;169416;-3560;-3160}}	territory_end
+npcmaker_begin	[quest_030919_22_23_001]	initial_spawn = all	maximum_npc = 3
+npc_begin	[delu_lizardman_shaman]	pos = anywhere	total = 3	respawn = 3min	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_22_23_002]	{{75020;165688;-3684;-3284};{75892;165920;-3684;-3284};{75932;166212;-3684;-3284};{74872;166096;-3684;-3284}}	territory_end
+npcmaker_begin	[quest_030919_22_23_002]	initial_spawn = all	maximum_npc = 3
+npc_begin	[singing_flower_darkling]	pos = anywhere	total = 3	respawn = 3min	npc_end
+npcmaker_end
+

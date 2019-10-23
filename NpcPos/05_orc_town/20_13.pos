@@ -1,0 +1,55 @@
+//---------- (20_13) 오크 얼음 폭포 -------------------------------------------
+territory_begin	[20_13_NPC_001]	{{12332;-141892;-1926;-1726};{12532;-141892;-1926;-1726};{12532;-141692;-1926;-1726};{12332;-141692;-1926;-1726}}	territory_end
+npcmaker_begin	[20_13_NPC_001]	initial_spawn = all	maximum_npc = 1
+npc_begin	[khavatari_rosheek]	pos = {12432;-141808;-1877;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//------------------- 20_13 Orc ------------------------------------------------------------
+territory_begin	[rion_t20_13_001]	{{252;-133644;-3448;-2248};{8360;-132800;-3448;-2248};{9432;-131352;-3448;-2248};{176;-131360;-3448;-2248}}	territory_end
+npcmaker_begin	[rion_t20_13_001]
+npc_begin	[grizzly]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npc_begin	[greystone_golem]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npc_begin	[evil_eye_patroller]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_13_002]	{{7716;-138436;-1272;-372};{10452;-136140;-1272;-372};{8764;-134760;-1272;-372};{5340;-135256;-1272;-372};{6256;-137512;-1272;-372}}	territory_end
+npcmaker_begin	[rion_t20_13_002]
+npc_begin	[grizzly]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npc_begin	[greystone_golem]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npc_begin	[evil_eye_patroller]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_13_003]	{{10992;-135132;-1928;-1078};{12372;-135076;-1928;-1078};{14204;-131388;-1928;-1078};{10796;-131464;-1928;-1078};{9276;-134068;-1928;-1078}}	territory_end
+npcmaker_begin	[rion_t20_13_003]
+npc_begin	[grizzly]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npc_begin	[greystone_golem]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npc_begin	[evil_eye_patroller]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_13_004]	{{14640;-138080;-1892;-692};{15816;-138192;-1892;-692};{18508;-135324;-1892;-692};{16076;-134756;-1892;-692};{14788;-135196;-1892;-692};{12892;-137140;-1892;-692}}	territory_end
+npcmaker_begin	[rion_t20_13_004]
+npc_begin	[maraku_werewolf_chief]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npc_begin	[kasha_bear]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[kasha_poker_spider]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_13_005]	{{19796;-132792;-1888;-1088};{22504;-132144;-1888;-1088};{22440;-131416;-1888;-1088};{18620;-131452;-1888;-1088};{18432;-132368;-1888;-1088}}	territory_end
+npcmaker_begin	[rion_t20_13_005]
+npc_begin	[kasha_spider]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[kasha_poker_spider]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[kasha_blade_spider]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_13_006]	{{10096;-141852;-1908;-1508};{10896;-142592;-1908;-1508};{13404;-142056;-1908;-1508};{15244;-140060;-1908;-1508};{12020;-137648;-1908;-1508};{10112;-139972;-1908;-1508}}	territory_end
+npcmaker_begin	[rion_t20_13_006]
+npc_begin	[evil_eye_patroller]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npc_begin	[kasha_spider]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npc_begin	[kasha_bear]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npcmaker_end
+
+//---------------오크스타트 20_13
+territory_begin	[event_orc_2013]	{{10876;-142260;-1924;-1424};{13680;-140928;-1924;-1424};{14884;-138952;-1924;-1424};{11660;-138248;-1924;-1424};{10168;-140480;-1924;-1424}}	territory_end
+npcmaker_begin	[event_orc_2013]	initial_spawn=all	maximum_npc=6
+npc_begin	[betrayer_of_urutu_freki]	pos={{11232;-141648;-1879;0;25%};{11712;-139488;-1879;0;25%};{12512;-140512;-1879;0;25%};{14048;-139952;-1879;0;25%}}	total=1	respawn=2hour	respawn_rand=1hour	Privates=[frekis_bloodseeker_bats:frekis_bloodseeker_bats:1:1min;frekis_bloodseeker_bats:frekis_bloodseeker_bats:1:1min;frekis_bloodseeker_bats:frekis_bloodseeker_bats:1:1min;frekis_bloodseeker_bats:frekis_bloodseeker_bats:1:1min]	npc_end
+npcmaker_end
+

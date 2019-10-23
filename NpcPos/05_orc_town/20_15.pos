@@ -1,0 +1,107 @@
+//------------------- 20_15 Orc ------------------------------------------------------------
+territory_begin	[rion_t20_15_001]	{{1716;-95584;-3208;-2808};{3340;-95232;-3208;-2808};{3896;-93496;-3208;-2808};{3680;-92144;-3208;-2808};{2248;-91716;-3208;-2808};{164;-92840;-3208;-2808};{188;-94416;-3208;-2808}}	territory_end
+npcmaker_begin	[rion_t20_15_001]
+npc_begin	[evil_eye_patroller]	pos = anywhere	total = 7	respawn = 15sec	npc_end
+npc_begin	[kasha_spider]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_15_002]	{{176;-98184;-2136;-1736};{3456;-98240;-2136;-1736};{3292;-97196;-2136;-1736};{176;-96260;-2136;-1736}}	territory_end
+npcmaker_begin	[rion_t20_15_002]
+npc_begin	[maraku_werewolf_chief]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[kasha_bear]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[kasha_poker_spider]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_15_003]	{{3480;-98192;-2064;-1664};{6012;-98212;-2064;-1664};{5852;-95556;-2064;-1664};{4512;-95688;-2064;-1664}}	territory_end
+npcmaker_begin	[rion_t20_15_003]
+npc_begin	[maraku_werewolf_chief]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[kasha_bear]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npc_begin	[kasha_poker_spider]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_15_004]	{{132;-91464;-2256;-1656};{1584;-90888;-2256;-1656};{3856;-89028;-2256;-1656};{2224;-87424;-2256;-1656};{112;-87468;-2256;-1656}}	territory_end
+npcmaker_begin	[rion_t20_15_004]
+npc_begin	[maraku_werewolf_chief]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[kasha_bear]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[kasha_poker_spider]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_15_005]	{{104;-87432;-2432;-1732};{2132;-87404;-2432;-1732};{1536;-84616;-2432;-1732};{1212;-84224;-2432;-1732};{128;-84380;-2432;-1732}}	territory_end
+npcmaker_begin	[rion_t20_15_005]
+npc_begin	[maraku_werewolf_chief]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[kasha_bear]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[kasha_poker_spider]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_15_006]	{{144;-83108;-2808;-2408};{1752;-84096;-2808;-2408};{1536;-82792;-2808;-2408};{152;-81664;-2808;-2408}}	territory_end
+npcmaker_begin	[rion_t20_15_006]
+npc_begin	[maraku_werewolf_chief]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[kasha_bear]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_15_007]	{{140;-81596;-2792;-2492};{1840;-82356;-2792;-2492};{1448;-81084;-2792;-2492};{588;-79828;-2792;-2492};{124;-79688;-2792;-2492}}	territory_end
+npcmaker_begin	[rion_t20_15_007]
+npc_begin	[maraku_werewolf_chief]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[kasha_bear]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_15_008]	{{1876;-80128;-2572;-1672};{2832;-80016;-2572;-1672};{3868;-79408;-2572;-1672};{3920;-77012;-2572;-1672};{2508;-75780;-2572;-1672};{140;-76092;-2572;-1672};{212;-79092;-2572;-1672}}	territory_end
+npcmaker_begin	[rion_t20_15_008]
+npc_begin	[maraku_werewolf_chief]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npc_begin	[kasha_bear]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_15_009]	{{180;-75956;-2104;-1704};{2492;-75668;-2104;-1704};{2964;-74392;-2104;-1704};{2280;-73340;-2104;-1704};{1368;-73352;-2104;-1704};{156;-74496;-2104;-1704}}	territory_end
+npcmaker_begin	[rion_t20_15_009]
+npc_begin	[maraku_werewolf_chief]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[kasha_bear]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_15_010]	{{2896;-84964;-2736;-1936};{4296;-84972;-2736;-1936};{4608;-84028;-2736;-1936};{3560;-81260;-2736;-1936};{2572;-81188;-2736;-1936}}	territory_end
+npcmaker_begin	[rion_t20_15_010]
+npc_begin	[evil_eye_patroller]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[kasha_spider]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_15_011]	{{5352;-89560;-1796;-996};{7108;-90876;-1796;-996};{9076;-88068;-1796;-996};{6560;-86600;-1796;-996};{4844;-88584;-1796;-996}}	territory_end
+npcmaker_begin	[rion_t20_15_011]
+npc_begin	[kasha_bear]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[kasha_poker_spider]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[kasha_blade_spider]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_15_012]	{{15752;-98104;-2952;-2552};{16304;-96572;-2952;-2552};{14656;-94140;-2952;-2552};{11096;-94424;-2952;-2552};{12476;-98124;-2952;-2552}}	territory_end
+npcmaker_begin	[rion_t20_15_012]
+npc_begin	[kasha_bear]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[kasha_poker_spider]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[kasha_blade_spider]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_15_013]	{{11264;-94340;-2884;-2284};{14592;-94004;-2884;-2284};{14872;-92360;-2884;-2284};{12216;-91088;-2884;-2284};{11064;-91476;-2884;-2284};{10752;-93136;-2884;-2284}}	territory_end
+npcmaker_begin	[rion_t20_15_013]
+npc_begin	[kasha_bear]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[kasha_poker_spider]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[kasha_blade_spider]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[oren_t20_15_014]	{{864;-94328;-3296;-2696};{2052;-94724;-3296;-2696};{3064;-94240;-3296;-2696};{3268;-93432;-3296;-2696};{2796;-92184;-3296;-2696};{1736;-92060;-3296;-2696};{988;-92468;-3296;-2696};{544;-93292;-3296;-2696};{508;-93896;-3296;-2696}}	territory_end
+npcmaker_begin	[oren_t20_15_014]
+npc_begin	[kasha_bear]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_15_015]	{{5996;-88740;-1508;-1108};{6948;-90052;-1508;-1108};{7772;-88540;-1508;-1108};{6620;-87696;-1508;-1108}}	territory_end
+npcmaker_begin	[rion_t20_15_015]
+npc_begin	[kasha_bear]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t20_15_016]	{{13684;-96912;-2892;-2492};{15344;-96732;-2892;-2492};{15388;-95596;-2892;-2492};{14252;-94828;-2892;-2492};{13032;-95872;-2892;-2492}}	territory_end
+npcmaker_begin	[rion_t20_15_016]
+npc_begin	[kasha_bear]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_20_15_001]	{{9688;-92960;-3100;-2400};{10460;-93268;-3100;-2400};{11136;-90396;-3100;-2400};{9608;-88708;-3100;-2400};{9044;-89312;-3100;-2400}}	territory_end
+npcmaker_begin	[quest_030919_20_15_001]	initial_spawn = all
+npc_begin	[ragna_orc_overlord]	pos = anywhere	total = 4	respawn = 3min	npc_end
+npc_begin	[ragna_orc_seer]	pos = anywhere	total = 4	respawn = 3min	npc_end
+npcmaker_end
+

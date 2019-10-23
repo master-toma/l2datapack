@@ -1,0 +1,73 @@
+//
+// // Miss Queen
+// // Gludin Village
+// npc_begin	[miss_queen]	pos={-81967;150160;-3122;16500}	total=1	respawn=1min	npc_end,
+// // Talking Island Village
+// npc_begin	[miss_queen]	pos={-84047;243193;-3725;8000}	total=1	respawn=1min	npc_end,
+// // Talking Island Village
+// npc_begin	[miss_queen]	pos={-84294;242204;-3725;24500}	total=1	respawn=1min	npc_end,
+// // Orc Village
+// npc_begin	[miss_queen]	pos={-44983;-113554;-194;32000}	total=1	respawn=1min	npc_end,
+// // Town of Gludio
+// npc_begin	[miss_queen]	pos={-14050;123229;-3115;32000}	total=1	respawn=1min	npc_end,
+// // Dark Elven Village
+// npc_begin	[miss_queen]	pos={11353;16022;-4577;14000}	total=1	respawn=1min	npc_end,
+// // Dark Elven Village
+// npc_begin	[miss_queen]	pos={10918;17511;-4567;55000}	total=1	respawn=1min	npc_end,
+// // Town of Dion
+// npc_begin	[miss_queen]	pos={15631;142778;-2699;16500}	total=1	respawn=1min	npc_end,
+// // Floran Village
+// npc_begin	[miss_queen]	pos={17913;170536;-3499;48000}	total=1	respawn=1min	npc_end,
+// // Elven Village
+// npc_begin	[miss_queen]	pos={45414;49296;-3067;53000}	total=1	respawn=1min	npc_end,
+// // Elven Village
+// npc_begin	[miss_queen]	pos={47680;51255;-2989;38500}	total=1	respawn=1min	npc_end,
+// // Town of Oren
+// npc_begin	[miss_queen]	pos={81126;54519;-1517;32000}	total=1	respawn=1min	npc_end,
+// // Town of Giran
+// npc_begin	[miss_queen]	pos={83082;147845;-3467;32000}	total=1	respawn=1min	npc_end,
+// // Dwarven Village
+// npc_begin	[miss_queen]	pos={116218;-181793;-1379;0}	total=1	respawn=1min	npc_end,
+// // Dwarven Village
+// npc_begin	[miss_queen]	pos={114880;-178196;-827;0}	total=1	respawn=1min	npc_end,
+// // Hunters Village
+// npc_begin	[miss_queen]	pos={117160;75784;-2725;25000}	total=1	respawn=1min	npc_end,
+// // Town of Aden
+// npc_begin	[miss_queen]	pos={147761;27408;-2198;16500}	total=1	respawn=1min	npc_end;
+//
+// // Mr. Cat
+// // duplicates Miss Queen in location
+// // Gludin Village
+// npc_begin	[mr_cat]	pos={-82032;150160;-3122;16500}	total=1	respawn=1min	npc_end,
+// // Talking Island Village
+// npc_begin	[mr_cat]	pos={-84119;243254;-3725;8000}	total=1	respawn=1min	npc_end,
+// // Talking Island Village
+// npc_begin	[mr_cat]	pos={-84336;242156;-3725;24500}	total=1	respawn=1min	npc_end,
+// // Orc Village
+// npc_begin	[mr_cat]	pos={-44979;-113508;-194;32000}	total=1	respawn=1min	npc_end,
+// // Town of Gludio
+// npc_begin	[mr_cat]	pos={-14048;123184;-3115;32000}	total=1	respawn=1min	npc_end,
+// // Dark Elven Village
+// npc_begin	[mr_cat]	pos={11340;15972;-4577;14000}	total=1	respawn=1min	npc_end,
+// // Dark Elven Village
+// npc_begin	[mr_cat]	pos={10968;17540;-4567;55000}	total=1	respawn=1min	npc_end,
+// // Town of Dion
+// npc_begin	[mr_cat]	pos={15584;142784;-2699;16500}	total=1	respawn=1min	npc_end,
+// // Floran Village
+// npc_begin	[mr_cat]	pos={17956;170536;-3499;48000}	total=1	respawn=1min	npc_end,
+// // Elven Village
+// npc_begin	[mr_cat]	pos={45472;49312;-3067;53000}	total=1	respawn=1min	npc_end,
+// // Elven Village
+// npc_begin	[mr_cat]	pos={47648;51296;-2989;38500}	total=1	respawn=1min	npc_end,
+// // Town of Oren
+// npc_begin	[mr_cat]	pos={81136;54576;-1517;32000}	total=1	respawn=1min	npc_end,
+// // Town of Giran
+// npc_begin	[mr_cat]	pos={83076;147912;-3467;32000}	total=1	respawn=1min	npc_end,
+// // Dwarven Village
+// npc_begin	[mr_cat]	pos={116224;-181728;-1373;0}	total=1	respawn=1min	npc_end,
+// // Dwarven Village
+// npc_begin	[mr_cat]	pos={114880;-178144;-827;0}	total=1	respawn=1min	npc_end,
+// // Hunters Village
+// npc_begin	[mr_cat]	pos={117200;75824;-2725;25000}	total=1	respawn=1min	npc_end,
+// // Town of Aden
+// npc_begin	[mr_cat]	pos={147728;27408;-2198;16500}	total=1	respawn=1min	npc_end;

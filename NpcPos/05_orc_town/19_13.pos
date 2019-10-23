@@ -1,0 +1,66 @@
+//------------------- 19_13 Orc ------------------------------------------------------------
+territory_begin	[rion_t19_13_001]	{{-23344;-133108;-1024;-524};{-21836;-133164;-1024;-524};{-21484;-132108;-1024;-524};{-21560;-131320;-1024;-524};{-24184;-131308;-1024;-524};{-23920;-132484;-1024;-524}}	territory_end
+npcmaker_begin	[rion_t19_13_001]
+npc_begin	[rakeclaw_imp_hunter]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[mountain_fungus]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t19_13_002]	{{-17660;-134340;-2244;-1744};{-17092;-133428;-2244;-1744};{-18256;-131368;-2244;-1744};{-19996;-131356;-2244;-1744};{-19048;-134712;-2244;-1744};{-18252;-134752;-2244;-1744}}	territory_end
+npcmaker_begin	[rion_t19_13_002]
+npc_begin	[mountain_fungus]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[maraku_werewolf]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[rakeclaw_imp_chieftain]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t19_13_003]	{{-16624;-133320;-2064;-1164};{-15320;-133048;-2064;-1164};{-15348;-131392;-2064;-1164};{-17700;-131348;-2064;-1164}}	territory_end
+npcmaker_begin	[rion_t19_13_003]
+npc_begin	[mountain_fungus]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[maraku_werewolf]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[rakeclaw_imp_chieftain]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t19_13_004]	{{-20476;-137852;-1708;-608};{-18760;-138800;-1708;-608};{-17552;-137224;-1708;-608};{-17912;-136152;-1708;-608};{-20508;-136264;-1708;-608}}	territory_end
+npcmaker_begin	[rion_t19_13_004]
+npc_begin	[maraku_werewolf]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[rakeclaw_imp_chieftain]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[darkwing_bat]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t19_13_005]	{{-17724;-136636;-1572;-672};{-14992;-137828;-1572;-672};{-14564;-136640;-1572;-672};{-14844;-135484;-1572;-672};{-15728;-134864;-1572;-672};{-17512;-136084;-1572;-672}}	territory_end
+npcmaker_begin	[rion_t19_13_005]
+npc_begin	[maraku_werewolf]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[rakeclaw_imp_chieftain]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[darkwing_bat]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t19_14_006]	{{-13352;-133508;-3024;-2424};{-10300;-133132;-3024;-2424};{-10384;-131392;-3024;-2424};{-14244;-131340;-3024;-2424}}	territory_end
+npcmaker_begin	[rion_t19_14_006]
+npc_begin	[maraku_werewolf]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[rakeclaw_imp_chieftain]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[darkwing_bat]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t19_13_007]	{{-10968;-140160;-2772;-1272};{-8972;-140308;-2772;-1272};{-8524;-139016;-2772;-1272};{-8856;-137040;-2772;-1272};{-10740;-135176;-2772;-1272};{-12800;-136768;-2772;-1272};{-12524;-139136;-2772;-1272}}	territory_end
+npcmaker_begin	[rion_t19_13_007]
+npc_begin	[rakeclaw_imp_chieftain]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npc_begin	[darkwing_bat]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npc_begin	[goblin_tomb_raider]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t19_13_008]	{{-4888;-136476;-3180;-2380};{-396;-135180;-3180;-2380};{-412;-131400;-3180;-2380};{-8060;-131408;-3180;-2380};{-7820;-133976;-3180;-2380};{-6696;-135660;-3180;-2380};{-5876;-136380;-3180;-2380}}	territory_end
+npcmaker_begin	[rion_t19_13_008]
+npc_begin	[darkwing_bat]	pos = anywhere	total = 12	respawn = 15sec	npc_end
+npc_begin	[grizzly]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npc_begin	[goblin_tomb_raider]	pos = anywhere	total = 10	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t19_13_009]	{{-5636;-135572;-2944;-2544};{-4964;-133836;-2944;-2544};{-5448;-132536;-2944;-2544};{-6936;-133612;-2944;-2544}}	territory_end
+npcmaker_begin	[rion_t19_13_009]
+npc_begin	[darkwing_bat]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[rion_t19_13_010]	{{-4340;-135280;-2960;-2460};{-1916;-135016;-2960;-2460};{-2080;-133748;-2960;-2460};{-3684;-133512;-2960;-2460}}	territory_end
+npcmaker_begin	[rion_t19_13_010]
+npc_begin	[greystone_golem]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npcmaker_end
+

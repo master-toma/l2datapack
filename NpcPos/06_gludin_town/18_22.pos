@@ -1,0 +1,417 @@
+//--------------- 18_22 ----------------------------------------------------------------------------------------
+territory_begin	[gludio_t18_22_001]	{{-65305;140263;-2593;-1743};{-61341;139119;-2593;-1743};{-60017;140383;-2593;-1743};{-61225;142335;-2593;-1743};{-65369;141479;-2593;-1743}}	territory_end
+npcmaker_begin	[gludio_t18_22_001]
+npc_begin	[red_bear]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_002]	{{-62692;134231;-2538;-1688};{-61280;136571;-2538;-1688};{-61340;139027;-2538;-1688};{-63688;139731;-2538;-1688};{-63860;137031;-2538;-1688}}	territory_end
+npcmaker_begin	[gludio_t18_22_002]
+npc_begin	[red_bear]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_003]	{{-63630;132720;-2687;-1837};{-61750;131868;-2687;-1837};{-59050;133788;-2687;-1837};{-61270;136468;-2687;-1837}}	territory_end
+npcmaker_begin	[gludio_t18_22_003]
+npc_begin	[red_bear]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_004]	{{-60846;132492;-2801;-1801};{-58910;131900;-2801;-1801};{-55114;132064;-2801;-1801};{-54018;133480;-2801;-1801};{-58198;134328;-2801;-1801}}	territory_end
+npcmaker_begin	[gludio_t18_22_004]
+npc_begin	[red_bear]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_005]	{{-51280;131293;-3205;-2005};{-46688;131197;-3205;-2005};{-45736;133757;-3205;-2005};{-47924;135773;-3205;-2005};{-49708;136033;-3205;-2005};{-51360;133193;-3205;-2005}}	territory_end
+npcmaker_begin	[gludio_t18_22_005]
+npc_begin	[red_bear]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_006]	{{-49267;136498;-2753;-2153};{-45679;134226;-2753;-2153};{-45663;137818;-2753;-2153};{-46843;139190;-2753;-2153};{-48655;138910;-2753;-2153}}	territory_end
+npcmaker_begin	[gludio_t18_22_006]
+npc_begin	[red_bear]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_007]	{{-44848;131147;-3063;-2463};{-41200;131183;-3063;-2463};{-40336;132255;-3063;-2463};{-44068;137055;-3063;-2463}}	territory_end
+npcmaker_begin	[gludio_t18_22_007]
+npc_begin	[red_bear]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[pinrul_roader]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_008]	{{-35433;131216;-3412;-2612};{-33013;131196;-3412;-2612};{-33045;132156;-3412;-2612};{-36053;134624;-3412;-2612};{-36925;134200;-3412;-2612}}	territory_end
+npcmaker_begin	[gludio_t18_22_008]
+npc_begin	[brown_bear]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_009]	{{-37324;135690;-3586;-2586};{-36200;136038;-3586;-2586};{-34288;138730;-3586;-2586};{-35100;142982;-3586;-2586};{-37856;141554;-3586;-2586}}	territory_end
+npcmaker_begin	[gludio_t18_22_009]
+npc_begin	[brown_bear]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_010]	{{-36997;142036;-3560;-2760};{-33841;143980;-3560;-2760};{-33829;146256;-3560;-2760};{-35637;148536;-3560;-2760}}	territory_end
+npcmaker_begin	[gludio_t18_22_010]
+npc_begin	[brown_bear]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_011]	{{-38552;152106;-3599;-2599};{-37168;150762;-3599;-2599};{-35636;150670;-3599;-2599};{-33848;152510;-3599;-2599};{-33936;155942;-3599;-2599};{-38504;154038;-3599;-2599}}	territory_end
+npcmaker_begin	[gludio_t18_22_011]
+npc_begin	[brown_bear]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_012]	{{-35424;135371;-3983;-3083};{-33052;133151;-3983;-3083};{-33104;138251;-3983;-3083};{-33668;138291;-3983;-3083};{-35440;136291;-3983;-3083}}	territory_end
+npcmaker_begin	[gludio_t18_22_012]
+npc_begin	[brown_bear]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_013]	{{-33609;139339;-4050;-3650};{-33033;139247;-4050;-3650};{-33057;143467;-4050;-3650};{-34169;142687;-4050;-3650}}	territory_end
+npcmaker_begin	[gludio_t18_22_013]
+npc_begin	[brown_bear]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_014]	{{-33332;146948;-4044;-3594};{-32980;146936;-4044;-3594};{-32980;149144;-4044;-3594};{-34736;150532;-4044;-3594};{-35108;150552;-4044;-3594};{-34892;148708;-4044;-3594}}	territory_end
+npcmaker_begin	[gludio_t18_22_014]
+npc_begin	[brown_bear]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[seer]	pos = anywhere	total = 1	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_015]	{{-65364;153863;-3491;-2241};{-62436;154555;-3491;-2241};{-61040;155367;-3491;-2241};{-62964;158179;-3491;-2241};{-65168;158207;-3491;-2241}}	territory_end
+npcmaker_begin	[gludio_t18_22_015]
+npc_begin	[red_bear]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_016]	{{-51874;153941;-3111;-2661};{-50910;154289;-3111;-2661};{-51078;156693;-3111;-2661};{-53234;157113;-3111;-2661};{-55238;155821;-3111;-2661}}	territory_end
+npcmaker_begin	[gludio_t18_22_016]
+npc_begin	[red_bear]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[grizzly_bear]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_017]	{{-51232;150078;-3072;-2622};{-47336;151130;-3072;-2622};{-47584;154638;-3072;-2622};{-51016;153414;-3072;-2622}}	territory_end
+npcmaker_begin	[gludio_t18_22_017]
+npc_begin	[red_bear]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[puma]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[les_werewolf]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npc_begin	[grizzly_bear]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_021]	{{-63733;140452;-2318;-1918};{-62089;138524;-2318;-1918};{-60921;140464;-2318;-1918};{-62309;140808;-2318;-1918}}	territory_end
+npcmaker_begin	[gludio_t18_22_021]
+npc_begin	[pinrul]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_022]	{{-61618;132474;-2480;-2030};{-60170;133874;-2480;-2030};{-61074;135278;-2480;-2030};{-62586;133474;-2480;-2030}}	territory_end
+npcmaker_begin	[gludio_t18_22_022]
+npc_begin	[pinrul]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_023]	{{-58598;132223;-2588;-2038};{-56314;132363;-2588;-2038};{-56114;133467;-2588;-2038};{-57898;133431;-2588;-2038};{-58946;132939;-2588;-2038}}	territory_end
+npcmaker_begin	[gludio_t18_22_023]
+npc_begin	[pinrul]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_024]	{{-42372;131923;-3119;-2819};{-41448;132011;-3119;-2819};{-41460;132723;-3119;-2819};{-42372;132743;-3119;-2819}}	territory_end
+npcmaker_begin	[gludio_t18_22_024]
+npc_begin	[ol_mahum_deserter]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_025]	{{-36254;137392;-3475;-3075};{-34838;138852;-3475;-3075};{-35642;141476;-3475;-3075};{-36746;139836;-3475;-3075}}	territory_end
+npcmaker_begin	[gludio_t18_22_025]
+npc_begin	[patoller]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_026]	{{-37380;152799;-3552;-3152};{-35796;151707;-3552;-3152};{-34584;153367;-3552;-3152};{-36416;153731;-3552;-3152}}	territory_end
+npcmaker_begin	[gludio_t18_22_026]
+npc_begin	[patoller]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+//--------------- 0403 나이트가 되는길 ---------------
+territory_begin	[quest_18_22_001]	{{-46966;142770;-3071;-2671};{-44626;144138;-3071;-2671};{-46306;147658;-3071;-2671};{-48814;146894;-3071;-2671}}	territory_end
+npcmaker_begin	[quest_18_22_001]	initial_spawn = all	maximum_npc = 10
+npc_begin	[catseye_bandit]	pos = anywhere	total = 10	respawn = 3min	npc_end
+npcmaker_end
+
+//---------------0406 엘븐 나이트가 되는길 ---------------
+territory_begin	[quest_18_22_002]	{{-38096;150680;-3592;-2692};{-34328;151308;-3592;-2692};{-33952;153420;-3592;-2692};{-37032;154860;-3592;-2692};{-39260;153648;-3592;-2692}}	territory_end
+npcmaker_begin	[quest_18_22_002]
+npc_begin	[ol_mahum_rookie]	pos = anywhere	total = 15	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[quest_t18_22_001]	{{-50769;152273;-3092;-2592};{-49011;152114;-3092;-2592};{-48270;153477;-3092;-2592};{-50302;153751;-3092;-2592}}	territory_end
+npcmaker_begin	[quest_t18_22_001]	initial_spawn = all
+npc_begin	[orc_betrayer_zakan]	pos = anywhere	total = 1	respawn = 9min	npc_end
+npcmaker_end
+
+//-------------------------------------------------------------------------------
+// 아덴왕국 글루디오영지
+// ver 2003.09.09
+// 버려진 야영지  MAP 18_22
+// 도망가는 AI
+//-------------------------------------------------------------------------------
+territory_begin	[gludio_t18_22_018]	{{-48419;146107;-3046;-2596};{-45923;147715;-3046;-2596};{-48231;150163;-3046;-2596};{-49255;150467;-3046;-2596};{-51159;149927;-3046;-2596};{-51043;148967;-3046;-2596}}	territory_end
+npcmaker_begin	[gludio_t18_22_018]
+npc_begin	[ol_mahum_patrol]	pos=anywhere	total=8	respawn=90sec		npc_end
+npc_begin	[ol_mahum_guard]	pos=anywhere	total=6	respawn=90sec	ai_parameters={[flee_x]=[-47968];[flee_y]=[146816];[flee_z]=[-2880]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_019]	{{-46806;141825;-3153;-2653};{-44106;143085;-3153;-2653};{-46018;146689;-3153;-2653};{-48418;145881;-3153;-2653};{-47798;143577;-3153;-2653}}	territory_end
+npcmaker_begin	[gludio_t18_22_019]
+npc_begin	[ol_mahum_rookie]	pos=anywhere	total=9	respawn=90sec		npc_end
+npc_begin	[ol_mahum_guard]	pos=anywhere	total=7	respawn=90sec	ai_parameters={[flee_x]=[-44900];[flee_y]=[140332];[flee_z]=[-2912]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_020]	{{-44949;139274;-3084;-2684};{-42789;140858;-3084;-2684};{-43501;143170;-3084;-2684};{-46773;141738;-3084;-2684}}	territory_end
+npcmaker_begin	[gludio_t18_22_020]
+npc_begin	[ol_mahum_rookie]	pos=anywhere	total=6	respawn=90sec		npc_end
+npc_begin	[ol_mahum_guard]	pos=anywhere	total=6	respawn=90sec	ai_parameters={[flee_x]=[-44900];[flee_y]=[140332];[flee_z]=[-2912]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_027]	{{-47981;146627;-3001;-2801};{-47569;146947;-3001;-2801};{-47777;147115;-3001;-2801};{-48097;147063;-3001;-2801};{-48301;146719;-3001;-2801}}	territory_end
+npcmaker_begin	[gludio_t18_22_027]
+npc_begin	[ol_mahum_commander]	pos=anywhere	total=2	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_028]	{{-49962;148408;-2978;-2528};{-48198;148252;-2978;-2528};{-48858;149884;-2978;-2528};{-50110;149844;-2978;-2528}}	territory_end
+npcmaker_begin	[gludio_t18_22_028]
+npc_begin	[ol_mahum_guard]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-47968];[flee_y]=[146816];[flee_z]=[-2880]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_029]	{{-44906;139712;-3037;-2737};{-44034;140372;-3037;-2737};{-44158;140792;-3037;-2737};{-44578;140936;-3037;-2737};{-45250;140284;-3037;-2737}}	territory_end
+npcmaker_begin	[gludio_t18_22_029]
+npc_begin	[ol_mahum_commander]	pos=anywhere	total=3	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_030]	{{-51684;139064;-3048;-2848};{-49636;138832;-3048;-2848};{-49024;139700;-3048;-2848};{-49276;141184;-3048;-2848};{-50184;142648;-3048;-2848};{-52228;141804;-3048;-2848};{-52272;140384;-3048;-2848}}	territory_end
+npcmaker_begin	[gludio_t18_22_030]
+npc_begin	[ol_mahum_patrol]	pos=anywhere	total=4	respawn=90sec		npc_end
+npc_begin	[ol_mahum_recruit]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-50723];[flee_y]=[140350];[flee_z]=[-2864]}	npc_end
+npc_begin	[ol_mahum_guard]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-50723];[flee_y]=[140350];[flee_z]=[-2864]}	npc_end
+npc_begin	[ol_mahum_remnants]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-50723];[flee_y]=[140350];[flee_z]=[-2864]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_031]	{{-52328;136652;-2988;-2788};{-50708;136668;-2988;-2788};{-49716;137156;-2988;-2788};{-49488;137752;-2988;-2788};{-49488;138792;-2988;-2788};{-53888;139144;-2988;-2788};{-53136;137036;-2988;-2788}}	territory_end
+npcmaker_begin	[gludio_t18_22_031]
+npc_begin	[ol_mahum_patrol]	pos=anywhere	total=4	respawn=90sec		npc_end
+npc_begin	[ol_mahum_recruit]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-52960];[flee_y]=[137872];[flee_z]=[-2928]}	npc_end
+npc_begin	[ol_mahum_guard]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-52960];[flee_y]=[137872];[flee_z]=[-2928]}	npc_end
+npc_begin	[ol_mahum_remnants]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-52960];[flee_y]=[137872];[flee_z]=[-2928]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_032]	{{-54544;139260;-3024;-2824};{-51816;139032;-3024;-2824};{-52340;141796;-3024;-2824};{-53236;142840;-3024;-2824};{-54368;142616;-3024;-2824}}	territory_end
+npcmaker_begin	[gludio_t18_22_032]
+npc_begin	[ol_mahum_patrol]	pos=anywhere	total=4	respawn=90sec		npc_end
+npc_begin	[ol_mahum_recruit]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-50723];[flee_y]=[140350];[flee_z]=[-2864]}	npc_end
+npc_begin	[ol_mahum_guard]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-50723];[flee_y]=[140350];[flee_z]=[-2864]}	npc_end
+npc_begin	[ol_mahum_remnants]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-50723];[flee_y]=[140350];[flee_z]=[-2864]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_033]	{{-52296;141820;-2968;-2718};{-50220;142688;-2968;-2718};{-50844;145104;-2968;-2718};{-52392;146644;-2968;-2718};{-53072;146044;-2968;-2718};{-53176;142848;-2968;-2718}}	territory_end
+npcmaker_begin	[gludio_t18_22_033]
+npc_begin	[ol_mahum_patrol]	pos=anywhere	total=4	respawn=90sec		npc_end
+npc_begin	[ol_mahum_recruit]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-52016];[flee_y]=[143520];[flee_z]=[-2896]}	npc_end
+npc_begin	[ol_mahum_guard]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-52016];[flee_y]=[143520];[flee_z]=[-2896]}	npc_end
+npc_begin	[ol_mahum_remnants]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-52016];[flee_y]=[143520];[flee_z]=[-2896]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_034]	{{-54572;142660;-2996;-2796};{-53248;142900;-2996;-2796};{-53152;146036;-2996;-2796};{-54376;145408;-2996;-2796}}	territory_end
+npcmaker_begin	[gludio_t18_22_034]
+npc_begin	[ol_mahum_patrol]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[ol_mahum_recruit]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-52016];[flee_y]=[143520];[flee_z]=[-2896]}	npc_end
+npc_begin	[ol_mahum_guard]	pos=anywhere	total=1	respawn=90sec	ai_parameters={[flee_x]=[-52016];[flee_y]=[143520];[flee_z]=[-2896]}	npc_end
+npc_begin	[ol_mahum_remnants]	pos=anywhere	total=1	respawn=90sec	ai_parameters={[flee_x]=[-52016];[flee_y]=[143520];[flee_z]=[-2896]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_022_035]	{{-54452;145496;-2924;-2724};{-53224;146140;-2924;-2724};{-53604;147424;-2924;-2724};{-55088;147200;-2924;-2724};{-55240;146372;-2924;-2724}}	territory_end
+npcmaker_begin	[gludio_t18_022_035]
+npc_begin	[ol_mahum_officer]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-54544];[flee_y]=[146576];[flee_z]=[-2887]}	npc_end
+npc_begin	[ol_mahum_captain]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[ol_mahum_general]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-54544];[flee_y]=[146576];[flee_z]=[-2887]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_036]	{{-52552;147112;-2684;-2084};{-52000;147116;-2684;-2084};{-51708;147476;-2684;-2084};{-52348;148040;-2684;-2084};{-52776;147736;-2684;-2084}}	territory_end
+npcmaker_begin	[gludio_t18_22_036]
+npc_begin	[ol_mahum_guard]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-51184];[flee_y]=[146752];[flee_z]=[-2272]}	npc_end
+npc_begin	[ol_mahum_supplier]	pos=anywhere	total=1	respawn=90sec	ai_parameters={[flee_x]=[-51184];[flee_y]=[146752];[flee_z]=[-2272]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_037]	{{-51688;146332;-2796;-2196};{-51112;145872;-2796;-2196};{-50996;146812;-2796;-2196};{-51568;147360;-2796;-2196};{-51860;147044;-2796;-2196}}	territory_end
+npcmaker_begin	[gludio_t18_22_037]
+npc_begin	[ol_mahum_guard]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-51184];[flee_y]=[146752];[flee_z]=[-2272]}	npc_end
+npc_begin	[ol_mahum_supplier]	pos=anywhere	total=1	respawn=90sec	ai_parameters={[flee_x]=[-51184];[flee_y]=[146752];[flee_z]=[-2272]}	npc_end
+npcmaker_end
+
+territory_begin	[glduio_t18_22_038]	{{-50224;144360;-2596;-2196};{-49436;143940;-2596;-2196};{-49632;145648;-2596;-2196};{-50248;144756;-2596;-2196}}	territory_end
+npcmaker_begin	[glduio_t18_22_038]
+npc_begin	[ol_mahum_patrol]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[ol_mahum_remnants]	pos=anywhere	total=1	respawn=90sec	ai_parameters={[flee_x]=[-49404];[flee_y]=[142896];[flee_z]=[-2512]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_039]	{{-49280;141484;-2908;-2308};{-48560;142124;-2908;-2308};{-49036;143792;-2908;-2308};{-49752;143744;-2908;-2308};{-49880;142960;-2908;-2308}}	territory_end
+npcmaker_begin	[gludio_t18_22_039]
+npc_begin	[ol_mahum_recruit]	pos=anywhere	total=3	respawn=90sec	ai_parameters={[flee_x]=[-49404];[flee_y]=[142896];[flee_z]=[-2512]}	npc_end
+npc_begin	[ol_mahum_remnants]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-49404];[flee_y]=[142896];[flee_z]=[-2512]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_040]	{{-48396;140396;-2788;-2388};{-47616;141068;-2788;-2388};{-48480;142132;-2788;-2388};{-49060;141636;-2788;-2388};{-48884;140416;-2788;-2388}}	territory_end
+npcmaker_begin	[gludio_t18_22_040]
+npc_begin	[ol_mahum_guard]	pos=anywhere	total=3	respawn=90sec	ai_parameters={[flee_x]=[-49404];[flee_y]=[142896];[flee_z]=[-2512]}	npc_end
+npc_begin	[ol_mahum_remnants]	pos=anywhere	total=1	respawn=90sec	ai_parameters={[flee_x]=[-49404];[flee_y]=[142896];[flee_z]=[-2512]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_041]	{{-54408;135320;-2980;-2630};{-53152;136836;-2980;-2630};{-53792;138536;-2980;-2630};{-55884;137008;-2980;-2630};{-56520;135964;-2980;-2630};{-55656;135392;-2980;-2630}}	territory_end
+npcmaker_begin	[gludio_t18_22_041]
+npc_begin	[ol_mahum_supplier]	pos=anywhere	total=3	respawn=90sec	ai_parameters={[flee_x]=[-54576];[flee_y]=[136048];[flee_z]=[-2760]}	npc_end
+npc_begin	[ol_mahum_remnants]	pos=anywhere	total=3	respawn=90sec	ai_parameters={[flee_x]=[-54576];[flee_y]=[136048];[flee_z]=[-2760]}	npc_end
+npc_begin	[ol_mahum_shooter]	pos=anywhere	total=3	respawn=90sec		npc_end
+npc_begin	[ol_mahum_officer]	pos=anywhere	total=3	respawn=90sec	ai_parameters={[flee_x]=[-54576];[flee_y]=[136048];[flee_z]=[-2760]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_042]	{{-56612;136076;-2840;-2590};{-55776;137176;-2840;-2590};{-57472;139580;-2840;-2590};{-58388;138700;-2840;-2590};{-58896;137228;-2840;-2590};{-58104;136352;-2840;-2590}}	territory_end
+npcmaker_begin	[gludio_t18_22_042]
+npc_begin	[ol_mahum_supplier]	pos=anywhere	total=4	respawn=90sec	ai_parameters={[flee_x]=[-58352];[flee_y]=[136048];[flee_z]=[-2794]}	npc_end
+npc_begin	[ol_mahum_remnants]	pos=anywhere	total=3	respawn=90sec	ai_parameters={[flee_x]=[-58352];[flee_y]=[136048];[flee_z]=[-2794]}	npc_end
+npc_begin	[ol_mahum_shooter]	pos=anywhere	total=4	respawn=90sec		npc_end
+npc_begin	[ol_mahum_officer]	pos=anywhere	total=3	respawn=90sec	ai_parameters={[flee_x]=[-58352];[flee_y]=[136048];[flee_z]=[-2794]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_043]	{{-56632;138500;-2716;-2466};{-56212;138592;-2716;-2466};{-55148;140808;-2716;-2466};{-55748;141792;-2716;-2466};{-57180;141648;-2716;-2466};{-57616;141028;-2716;-2466};{-57476;139600;-2716;-2466}}	territory_end
+npcmaker_begin	[gludio_t18_22_043]
+npc_begin	[ol_mahum_supplier]	pos=anywhere	total=3	respawn=90sec	ai_parameters={[flee_x]=[-56912];[flee_y]=[140720];[flee_z]=[-2640]}	npc_end
+npc_begin	[ol_mahum_remnants]	pos=anywhere	total=3	respawn=90sec	ai_parameters={[flee_x]=[-56912];[flee_y]=[140720];[flee_z]=[-2640]}	npc_end
+npc_begin	[ol_mahum_shooter]	pos=anywhere	total=3	respawn=90sec		npc_end
+npc_begin	[ol_mahum_officer]	pos=anywhere	total=3	respawn=90sec	ai_parameters={[flee_x]=[-56912];[flee_y]=[140720];[flee_z]=[-2640]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_044]	{{-56552;142756;-2688;-2388};{-55028;143456;-2688;-2388};{-55148;144076;-2688;-2388};{-56564;143996;-2688;-2388};{-57532;143408;-2688;-2388};{-57888;142480;-2688;-2388}}	territory_end
+npcmaker_begin	[gludio_t18_22_044]
+npc_begin	[ol_mahum_supplier]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-56912];[flee_y]=[140720];[flee_z]=[-2640]}	npc_end
+npc_begin	[ol_mahum_remnants]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-56912];[flee_y]=[140720];[flee_z]=[-2640]}	npc_end
+npc_begin	[ol_mahum_shooter]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[ol_mahum_officer]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-56912];[flee_y]=[140720];[flee_z]=[-2640]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_045]	{{-59176;141148;-2784;-2384};{-57696;141036;-2784;-2384};{-56408;142696;-2784;-2384};{-58472;142168;-2784;-2384}}	territory_end
+npcmaker_begin	[gludio_t18_22_045]
+npc_begin	[ol_mahum_supplier]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-56912];[flee_y]=[140720];[flee_z]=[-2640]}	npc_end
+npc_begin	[ol_mahum_remnants]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-56912];[flee_y]=[140720];[flee_z]=[-2640]}	npc_end
+npc_begin	[ol_mahum_shooter]	pos=anywhere	total=1	respawn=90sec		npc_end
+npc_begin	[ol_mahum_officer]	pos=anywhere	total=1	respawn=90sec	ai_parameters={[flee_x]=[-56912];[flee_y]=[140720];[flee_z]=[-2640]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_046]	{{-58456;138744;-2764;-2414};{-57576;139612;-2764;-2414};{-57668;140964;-2764;-2414};{-59100;141040;-2764;-2414};{-59624;139916;-2764;-2414}}	territory_end
+npcmaker_begin	[gludio_t18_22_046]
+npc_begin	[ol_mahum_officer]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-58352];[flee_y]=[136048];[flee_z]=[-2794]}	npc_end
+npc_begin	[ol_mahum_captain]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[ol_mahum_general]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-58352];[flee_y]=[136048];[flee_z]=[-2794]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_047]	{{-60668;136728;-2544;-2244};{-59412;137032;-2544;-2244};{-59108;139220;-2544;-2244};{-59704;139848;-2544;-2244};{-61012;138668;-2544;-2244}}	territory_end
+npcmaker_begin	[gludio_t18_22_047]
+npc_begin	[ol_mahum_officer]	pos=anywhere	total=3	respawn=90sec	ai_parameters={[flee_x]=[-60496];[flee_y]=[137120];[flee_z]=[-2336]}	npc_end
+npc_begin	[ol_mahum_captain]	pos=anywhere	total=3	respawn=90sec		npc_end
+npc_begin	[ol_mahum_general]	pos=anywhere	total=3	respawn=90sec	ai_parameters={[flee_x]=[-60496];[flee_y]=[137120];[flee_z]=[-2336]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_048]	{{-58144;135308;-2536;-2236};{-58200;135812;-2536;-2236};{-59460;136964;-2536;-2236};{-60508;136744;-2536;-2236};{-59360;135156;-2536;-2236}}	territory_end
+npcmaker_begin	[gludio_t18_22_048]
+npc_begin	[ol_mahum_officer]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-59104];[flee_y]=[135696];[flee_z]=[-2464]}	npc_end
+npc_begin	[ol_mahum_captain]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[ol_mahum_general]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-59104];[flee_y]=[135696];[flee_z]=[-2464]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_049]	{{-56784;134576;-2544;-2344};{-56276;134584;-2544;-2344};{-55960;134880;-2544;-2344};{-57208;135792;-2544;-2344};{-58156;135824;-2544;-2344};{-58000;135460;-2544;-2344}}	territory_end
+npcmaker_begin	[gludio_t18_22_049]
+npc_begin	[ol_mahum_officer]	pos=anywhere	total=2	respawn=90sec	ai_parameters={[flee_x]=[-59104];[flee_y]=[135696];[flee_z]=[-2464]}	npc_end
+npc_begin	[ol_mahum_captain]	pos=anywhere	total=2	respawn=90sec		npc_end
+npc_begin	[ol_mahum_general]	pos=anywhere	total=1	respawn=90sec	ai_parameters={[flee_x]=[-59104];[flee_y]=[135696];[flee_z]=[-2464]}	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_050]	{{-50736;139972;-2916;-2716};{-50136;140188;-2916;-2716};{-50508;140872;-2916;-2716};{-50908;140728;-2916;-2716};{-51104;140288;-2916;-2716}}	territory_end
+npcmaker_begin	[gludio_t18_22_050]
+npc_begin	[ol_mahum_commander]	pos=anywhere	total=4	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_051]	{{-51984;143252;-2964;-2764};{-51588;143468;-2964;-2764};{-51744;144128;-2964;-2764};{-52344;143880;-2964;-2764};{-52324;143456;-2964;-2764}}	territory_end
+npcmaker_begin	[gludio_t18_22_051]
+npc_begin	[ol_mahum_commander]	pos=anywhere	total=4	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_052]	{{-54436;146228;-2936;-2736};{-54032;146540;-2936;-2736};{-54372;146800;-2936;-2736};{-54728;146572;-2936;-2736}}	territory_end
+npcmaker_begin	[gludio_t18_22_052]
+npc_begin	[ol_mahum_commander]	pos=anywhere	total=4	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[glduio_t18_22_053]	{{-51520;146700;-2440;-2140};{-51116;146584;-2440;-2140};{-51064;146800;-2440;-2140};{-51360;147052;-2440;-2140}}	territory_end
+npcmaker_begin	[glduio_t18_22_053]
+npc_begin	[ol_mahum_commander]	pos=anywhere	total=4	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_054]	{{-49556;142736;-2668;-2368};{-49084;142732;-2668;-2368};{-49300;143268;-2668;-2368};{-49632;143160;-2668;-2368}}	territory_end
+npcmaker_begin	[gludio_t18_22_054]
+npc_begin	[ol_mahum_commander]	pos=anywhere	total=4	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_055]	{{-54836;135984;-2796;-2596};{-54448;135892;-2796;-2596};{-54228;136372;-2796;-2596};{-54596;136684;-2796;-2596};{-55072;136408;-2796;-2596}}	territory_end
+npcmaker_begin	[gludio_t18_22_055]
+npc_begin	[ol_mahum_commander]	pos=anywhere	total=4	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_056]	{{-58340;137536;-2844;-2644};{-57800;137496;-2844;-2644};{-57584;137988;-2844;-2644};{-58096;138232;-2844;-2644};{-58460;137956;-2844;-2644}}	territory_end
+npcmaker_begin	[gludio_t18_22_056]
+npc_begin	[ol_mahum_commander]	pos=anywhere	total=4	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_057]	{{-56620;140128;-2688;-2488};{-56300;140492;-2688;-2488};{-56492;140976;-2688;-2488};{-57000;140796;-2688;-2488};{-57036;140328;-2688;-2488}}	territory_end
+npcmaker_begin	[gludio_t18_22_057]
+npc_begin	[ol_mahum_commander]	pos=anywhere	total=4	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_058]	{{-60612;136864;-2400;-2200};{-60164;136984;-2400;-2200};{-60280;137376;-2400;-2200};{-60668;137320;-2400;-2200}}	territory_end
+npcmaker_begin	[gludio_t18_22_058]
+npc_begin	[ol_mahum_commander]	pos=anywhere	total=4	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_059]	{{-59264;135292;-2528;-2228};{-58464;135468;-2528;-2228};{-58996;135840;-2528;-2228};{-59468;135668;-2528;-2228}}	territory_end
+npcmaker_begin	[gludio_t18_22_059]
+npc_begin	[ol_mahum_commander]	pos=anywhere	total=4	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[gludio_t18_22_060]	{{-52844;137568;-2976;-2776};{-52324;137568;-2976;-2776};{-52312;138408;-2976;-2776};{-53028;138368;-2976;-2776};{-53160;137904;-2976;-2776}}	territory_end
+npcmaker_begin	[gludio_t18_22_060]
+npc_begin	[ol_mahum_commander]	pos=anywhere	total=4	respawn=90sec		npc_end
+npcmaker_end
+
+territory_begin	[event_t18_22_001]	{{-50802;132092;-2996;-2096};{-48718;131408;-2996;-2096};{-46642;131908;-2996;-2096};{-47438;134276;-2996;-2096};{-50366;133460;-2996;-2096}}	territory_end
+territory_begin	[event_t18_22_002]	{{-44386;131256;-3101;-2601};{-41366;131384;-3101;-2601};{-40702;132572;-3101;-2601};{-43354;134536;-3101;-2601}}	territory_end
+npcmaker_begin	[event_t18_22_001];[event_t18_22_002]	initial_spawn=all	maximum_npc=6
+npc_begin	[priest_of_kuroboros]	pos={{-49446;132688;-2647;0;50%};{-42073;132372;-2989;0;50%}}	total=1	respawn=4hour	respawn_rand=1hour	Privates=[follower_of_kuroboros:party_private:1:1min;follower_of_kuroboros:party_private:1:1min;follower_of_kuroboros:party_private:1:1min;follower_of_kuroboros:party_private:1:1min;follower_of_kuroboros:party_private:1:1min]	npc_end
+npcmaker_end
+

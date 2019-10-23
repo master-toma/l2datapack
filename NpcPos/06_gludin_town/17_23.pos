@@ -1,0 +1,133 @@
+//--------------- 17_23 ----------------------------------------------------------------------------------------
+territory_begin	[gludio_17_23_001]	{{-81952;163924;-3756;-2656};{-78896;164016;-3756;-2656};{-78096;166156;-3756;-2656};{-79900;168328;-3756;-2656}}	territory_end
+npcmaker_begin	[gludio_17_23_001]
+npc_begin	[langk_lizardman]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[langk_lizardman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[brown_bear]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_002]	{{-79912;168232;-3832;-3032};{-78116;166288;-3832;-3032};{-76500;169108;-3832;-3032};{-78332;170944;-3832;-3032}}	territory_end
+npcmaker_begin	[gludio_t17_23_002]
+npc_begin	[langk_lizardman]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[langk_lizardman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[brown_bear]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_003]	{{-78368;170980;-3832;-3232};{-76464;169188;-3832;-3232};{-74680;170620;-3832;-3232};{-73516;172624;-3832;-3232};{-75432;174108;-3832;-3232}}	territory_end
+npcmaker_begin	[gludio_t17_23_003]
+npc_begin	[langk_lizardman]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[langk_lizardman_warrior]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[brown_bear]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_004]	{{-75252;174256;-3744;-3344};{-73488;172948;-3744;-3344};{-71272;175072;-3744;-3344};{-69348;177732;-3744;-3344};{-71300;178944;-3744;-3344}}	territory_end
+npcmaker_begin	[gludio_t17_23_004]
+npc_begin	[langk_lizardman_warrior]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[langk_lizardman_scout]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_005]	{{-71168;179052;-3808;-3408};{-69240;177940;-3808;-3408};{-65940;180680;-3808;-3408};{-65852;183952;-3808;-3408}}	territory_end
+npcmaker_begin	[gludio_t17_23_005]
+npc_begin	[langk_lizardman_warrior]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[langk_lizardman_scout]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_23_006]	{{-78048;163944;-3772;-3372};{-72960;164008;-3772;-3372};{-71348;168780;-3772;-3372};{-74444;170000;-3772;-3372};{-76720;167152;-3772;-3372}}	territory_end
+npcmaker_begin	[gludio_t19_23_006]
+npc_begin	[brown_bear]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t19_23_007]	{{-72800;164048;-3776;-3276};{-65972;164092;-3776;-3276};{-65892;168600;-3776;-3276};{-71264;168724;-3776;-3276}}	territory_end
+npcmaker_begin	[gludio_t19_23_007]
+npc_begin	[brown_bear]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_008]	{{-74264;170112;-3784;-3284};{-71276;169028;-3784;-3284};{-69512;172928;-3784;-3284};{-71336;174060;-3784;-3284}}	territory_end
+npcmaker_begin	[gludio_t17_23_008]
+npc_begin	[brown_bear]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_009]	{{-71092;168864;-3784;-3284};{-65828;168700;-3784;-3284};{-65828;172892;-3784;-3284};{-69432;172860;-3784;-3284}}	territory_end
+npcmaker_begin	[gludio_t17_23_009]
+npc_begin	[brown_bear]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 5	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 6	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_010]	{{-71148;173916;-3764;-3264};{-69436;172956;-3764;-3264};{-67492;176792;-3764;-3264};{-69420;176456;-3764;-3264}}	territory_end
+npcmaker_begin	[gludio_t17_23_010]
+npc_begin	[brown_bear]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_011]	{{-69412;172936;-3784;-3284};{-65804;172964;-3784;-3284};{-65764;176904;-3784;-3284};{-67420;176768;-3784;-3284}}	territory_end
+npcmaker_begin	[gludio_t17_23_011]
+npc_begin	[brown_bear]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[poison_spider]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npc_begin	[ratman_warrior]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_012]	{{-81232;164452;-3608;-3008};{-79472;164924;-3608;-3008};{-78720;165856;-3608;-3008};{-79772;167140;-3608;-3008}}	territory_end
+npcmaker_begin	[gludio_t17_23_012]
+npc_begin	[langk_lizardman_scout]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_013]	{{-79076;167740;-3716;-3316};{-78148;167164;-3716;-3316};{-77580;168488;-3716;-3316};{-78648;168644;-3716;-3316}}	territory_end
+npcmaker_begin	[gludio_t17_23_013]
+npc_begin	[langk_lizardman_scout]	pos = anywhere	total = 2	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_014]	{{-76532;169908;-3788;-3388};{-75016;170924;-3788;-3388};{-74472;172488;-3788;-3388};{-75692;172968;-3788;-3388};{-77384;171200;-3788;-3388}}	territory_end
+npcmaker_begin	[gludio_t17_23_014]
+npc_begin	[langk_lizardman_scout]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_015]	{{-73692;174924;-3748;-3348};{-72668;174136;-3748;-3348};{-70760;176588;-3748;-3348};{-72336;177160;-3748;-3348}}	territory_end
+npcmaker_begin	[gludio_t17_23_015]
+npc_begin	[langk_lizardman]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_016]	{{-76540;166420;-3748;-3248};{-75108;165420;-3748;-3248};{-74252;167320;-3748;-3248};{-74692;168976;-3748;-3248}}	territory_end
+npcmaker_begin	[gludio_t17_23_016]
+npc_begin	[ratman_warrior]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_017]	{{-74144;166472;-3812;-3312};{-72916;165508;-3812;-3312};{-71868;168400;-3812;-3312};{-73336;169128;-3812;-3312}}	territory_end
+npcmaker_begin	[gludio_t17_23_017]
+npc_begin	[bind_poison_spider]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_018]	{{-72156;164364;-3756;-3156};{-68736;164296;-3756;-3156};{-68828;165196;-3756;-3156};{-71480;165520;-3756;-3156}}	territory_end
+npcmaker_begin	[gludio_t17_23_018]
+npc_begin	[ratman_warrior]	pos = anywhere	total = 3	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_019]	{{-71356;166744;-3724;-3324};{-68344;165676;-3724;-3324};{-67536;168120;-3724;-3324};{-70832;168096;-3724;-3324}}	territory_end
+npcmaker_begin	[gludio_t17_23_019]
+npc_begin	[ratman_warrior]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_020]	{{-69192;169080;-3760;-3360};{-67744;169472;-3760;-3360};{-67044;171084;-3760;-3360};{-69200;171440;-3760;-3360};{-70312;169852;-3760;-3360}}	territory_end
+npcmaker_begin	[gludio_t17_23_020]
+npc_begin	[patoller]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[gludio_t17_23_021]	{{-68084;174292;-3820;-3420};{-65960;174504;-3820;-3420};{-66488;176348;-3820;-3420};{-67572;175948;-3820;-3420}}	territory_end
+npcmaker_begin	[gludio_t17_23_021]
+npc_begin	[patoller]	pos = anywhere	total = 4	respawn = 35sec	npc_end
+npcmaker_end
+
+territory_begin	[event_t17_23_001]	{{-74831;165579;-3780;-3280};{-66703;164811;-3780;-3280};{-66967;174271;-3780;-3280};{-71575;171383;-3780;-3280}}	territory_end
+npcmaker_begin	[event_t17_23_001]	initial_spawn=all	maximum_npc=6
+npc_begin	[tiger_hornet]	pos={{-68656;166101;-3657;0;35%};{-72343;168039;-3712;0;25%};{-68206;170834;-3591;0;40%}}	total=1	respawn=3hour	respawn_rand=1hour	Privates=[yellow_hornet:party_private:1:1min;yellow_hornet:party_private:1:1min;yellow_hornet:party_private:1:1min;yellow_hornet:party_private:1:1min;yellow_hornet:party_private:1:1min]	npc_end
+npcmaker_end
+

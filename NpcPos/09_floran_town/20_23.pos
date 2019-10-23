@@ -1,0 +1,445 @@
+//---------------------------------------------------------------------
+//ver 크로니클 I
+//03.12.22
+//20_22 디온영지
+//---------------------------------------------------------------------
+//수성측	텔레포터,	시종장,	근위대장,
+territory_begin	[dion_chamberlain_etc]	{{29365;164082;-4691;33270};{18994;164082;-4691;33270};{18995;153009;-4691;33270};{29365;153009;-4691;33270}}	territory_end
+npcmaker_begin	[dion_chamberlain_etc]	initial_spawn=all	maximum_npc=10
+npc_begin	[chamberlain_crosby]	pos={22155;161005;-2666;49152}	total=1	respawn=1min	npc_end
+npc_begin	[sir_gibbson]	pos={19115;153109;-3410;49152}	total=1	respawn=1min	npc_end
+npc_begin	[dion_default_teleporter1]	pos={22939;157740;-2918;49152}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_default_teleporter2]	pos={22074;159894;-2686;49152}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_default_teleporter3]	pos={22586;161543;-2750;49152}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_outter_doorman]	pos={22395;156571;-2944;49152}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_outter_doorman]	pos={22449;156919;-2944;0}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_inner_doorman]	pos={22187;159224;-2694;49152}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_inner_doorman]	pos={22288;159485;-2694;0}	total=1	respawn=3hour	npc_end
+npc_begin	[dion_royal_gatekeeper]	pos={22463;155959;-2956;49152}	total=1	respawn=3hour	npc_end
+npcmaker_end
+
+//--------------------20_23 NPC 030917--------------------
+territory_begin	[NPC_t20_23_030917_01]	{{20843;171263;-3652;-3452};{21043;171263;-3652;-3452};{21043;171463;-3652;-3452};{20843;171463;-3652;-3452}}	territory_end
+npcmaker_begin	[NPC_t20_23_030917_01]
+npc_begin	[alankell]	pos = {20943;171358;-3548;12288}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t20_23_030917_02]	{{10608;171374;-3696;-3496};{10808;171374;-3696;-3496};{10808;171574;-3696;-3496};{10608;171574;-3696;-3496}}	territory_end
+npcmaker_begin	[NPC_t20_23_030917_02]
+npc_begin	[militiaman_leirynn]	pos = {10699;171474;-3572;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t20_23_030917_03]	{{13168;169691;-3852;-3652};{13368;169691;-3852;-3652};{13368;169891;-3852;-3652};{13168;169891;-3852;-3652}}	territory_end
+npcmaker_begin	[NPC_t20_23_030917_03]
+npc_begin	[fisher_evert]	pos = {13258;169790;-3705;1000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t20_23_030917_04]	{{15641;174702;-3766;-3566};{15841;174702;-3766;-3566};{15841;174902;-3766;-3566};{15641;174902;-3766;-3566}}	territory_end
+npcmaker_begin	[NPC_t20_23_030917_04]
+npc_begin	[sagittarius_hamil]	pos = {15734;174805;-3636;0}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t20_23_030917_05]	{{17374;169456;-3621;-3421};{17574;169456;-3621;-3421};{17574;169656;-3621;-3421};{17374;169656;-3621;-3421}}	territory_end
+npcmaker_begin	[NPC_t20_23_030917_05]
+npc_begin	[astrologer_creta]	pos = {17475;169556;-3493;57344}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t20_23_030917_06]	{{17638;189741;-3686;-3486};{17838;189741;-3686;-3486};{17838;189941;-3686;-3486};{17638;189941;-3686;-3486}}	territory_end
+npcmaker_begin	[NPC_t20_23_030917_06]
+npc_begin	[enku_chief_kepra]	pos = {17744;189834;-3581;20480}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[NPC_t20_23_030917_07]	{{23354;187991;-3721;-3521};{23554;187991;-3721;-3521};{23554;188191;-3721;-3521};{23354;188191;-3721;-3521}}	territory_end
+npcmaker_begin	[NPC_t20_23_030917_07]
+npc_begin	[summoner_camoniell]	pos = {23471;188092;-3604;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------20_23 (플로란 마을)--------------------
+territory_begin	[20_23_NPC_01]	{{17724;169772;-3659;-3459};{17924;169772;-3659;-3459};{17924;169972;-3659;-3459};{17724;169972;-3659;-3459}}	territory_end
+npcmaker_begin	[20_23_NPC_01]	initial_spawn = all	maximum_npc = 1
+npc_begin	[barder]	pos = {17836;169853;-3494;20000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[20_23_NPC_02]	{{16876;170284;-3660;-3460};{17076;170284;-3660;-3460};{17076;170484;-3660;-3460};{16876;170484;-3660;-3460}}	territory_end
+npcmaker_begin	[20_23_NPC_02]	initial_spawn = all	maximum_npc = 1
+npc_begin	[pano]	pos = {16970;170391;-3496;61440}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//------------------------- 20_23 플로란 마을 ------------------------------------------------------------------------------------------
+territory_begin	[dion_t20_23_001]	{{60;163896;-3856;-3056};{2552;163980;-3856;-3056};{3624;166548;-3856;-3056};{2472;167404;-3856;-3056};{152;167484;-3856;-3056}}	territory_end
+npcmaker_begin	[dion_t20_23_001]
+npc_begin	[bloody_bee]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_002]	{{132;167564;-3704;-2904};{2468;167492;-3704;-2904};{2596;171340;-3704;-2904};{12;171968;-3704;-2904}}	territory_end
+npcmaker_begin	[dion_t20_23_002]
+npc_begin	[bloody_bee]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_003]	{{68;172232;-3608;-2808};{2608;171580;-3608;-2808};{5212;172956;-3608;-2808};{4884;174704;-3608;-2808};{3292;176088;-3608;-2808};{152;176080;-3608;-2808}}	territory_end
+npcmaker_begin	[dion_t20_23_003]
+npc_begin	[bloody_bee]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_004]	{{5416;172508;-3776;-3176};{8028;172656;-3776;-3176};{8108;174552;-3776;-3176};{5012;174704;-3776;-3176}}	territory_end
+npcmaker_begin	[dion_t20_23_004]
+npc_begin	[bloody_bee]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_005]	{{4916;174788;-3768;-2968};{7972;174652;-3768;-2968};{11044;177208;-3768;-2968};{9112;179292;-3768;-2968};{5852;180900;-3768;-2968};{3336;176128;-3768;-2968}}	territory_end
+npcmaker_begin	[dion_t20_23_005]
+npc_begin	[dire_wolf]	pos = anywhere	total = 6	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 5	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_006]	{{236;176240;-3824;-3024};{3240;176192;-3824;-3024};{5792;180980;-3824;-3024};{4736;182640;-3824;-3024};{212;182728;-3824;-3024}}	territory_end
+npcmaker_begin	[dion_t20_23_006]
+npc_begin	[dire_wolf]	pos = anywhere	total = 5	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_007]	{{168;182868;-3868;-2868};{4412;182724;-3868;-2868};{4776;185276;-3868;-2868};{2276;186224;-3868;-2868};{264;186232;-3868;-2868}}	territory_end
+npcmaker_begin	[dion_t20_23_007]
+npc_begin	[dire_wolf]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_008]	{{284;187028;-3780;-3380};{3504;186872;-3780;-3380};{6096;189484;-3780;-3380};{216;192808;-3780;-3380}}	territory_end
+npcmaker_begin	[dion_t20_23_008]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_009]	{{7408;181288;-3616;-2816};{11480;178524;-3616;-2816};{12528;179200;-3616;-2816};{13228;180392;-3616;-2816};{10900;182168;-3616;-2816}}	territory_end
+npcmaker_begin	[dion_t20_23_009]
+npc_begin	[dire_wolf]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_010]	{{8980;181808;-3056;-2256};{10008;182056;-3056;-2256};{10456;183844;-3056;-2256};{8952;185060;-3056;-2256};{7928;184384;-3056;-2256};{7824;183712;-3056;-2256}}	territory_end
+npcmaker_begin	[dion_t20_23_010]
+npc_begin	[dire_wolf]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_011]	{{5856;181064;-3352;-2352};{8580;181736;-3352;-2352};{7080;184108;-3352;-2352};{4872;182756;-3352;-2352}}	territory_end
+npcmaker_begin	[dion_t20_23_011]
+npc_begin	[dire_wolf]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_012]	{{13368;180244;-3736;-3336};{15484;180652;-3736;-3336};{16160;181672;-3736;-3336};{14388;182948;-3736;-3336};{13208;182340;-3736;-3336}}	territory_end
+npcmaker_begin	[dion_t20_23_012]
+npc_begin	[dire_wolf]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_013]	{{10956;182228;-3760;-2960};{11936;181440;-3760;-2960};{13924;183712;-3760;-2960};{14112;184576;-3760;-2960};{11956;186984;-3760;-2960}}	territory_end
+npcmaker_begin	[dion_t20_23_013]
+npc_begin	[dire_wolf]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_014]	{{9092;184928;-3532;-2432};{11296;184516;-3532;-2432};{11756;186584;-3532;-2432};{11080;187224;-3532;-2432};{9872;186788;-3532;-2432};{8796;185504;-3532;-2432}}	territory_end
+npcmaker_begin	[dion_t20_23_014]
+npc_begin	[dire_wolf]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_015]	{{8132;188304;-3864;-3264};{10780;187952;-3864;-3264};{14628;189812;-3864;-3264};{14052;191424;-3864;-3264};{8332;189324;-3864;-3264}}	territory_end
+npcmaker_begin	[dion_t20_23_015]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_016]	{{14656;189928;-3784;-3184};{20872;190852;-3784;-3184};{20392;192316;-3784;-3184};{14104;191524;-3784;-3184}}	territory_end
+npcmaker_begin	[dion_t20_23_016]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[ol_mahum_ranger]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_017]	{{16104;188984;-3712;-3112};{18568;187504;-3712;-3112};{20596;189536;-3712;-3112};{20520;190388;-3712;-3112};{20164;190584;-3712;-3112};{16032;189996;-3712;-3112}}	territory_end
+npcmaker_begin	[dion_t20_23_017]
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_018]	{{15908;186184;-3568;-2968};{18624;186004;-3568;-2968};{18692;187344;-3568;-2968};{15760;189252;-3568;-2968};{13640;188440;-3568;-2968};{13884;187380;-3568;-2968}}	territory_end
+npcmaker_begin	[dion_t20_23_018]
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_019]	{{14828;185088;-3660;-3060};{17700;184424;-3660;-3060};{17816;186068;-3660;-3060};{16244;186164;-3660;-3060}}	territory_end
+npcmaker_begin	[dion_t20_23_019]
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_020]	{{22244;188504;-3848;-3048};{25648;188236;-3848;-3048};{28208;190736;-3848;-3048};{26592;193644;-3848;-3048};{20372;192384;-3848;-3048}}	territory_end
+npcmaker_begin	[dion_t20_23_020]
+npc_begin	[beamer]	pos = anywhere	total = 5	respawn = 75sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 6	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_021]	{{19356;187076;-3612;-3012};{22432;185820;-3612;-3012};{23372;186244;-3612;-3012};{21540;189612;-3612;-3012};{19848;188116;-3612;-3012}}	territory_end
+npcmaker_begin	[dion_t20_23_021]
+npc_begin	[beamer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_022]	{{23368;186288;-3640;-3040};{25572;186168;-3640;-3040};{25608;188168;-3640;-3040};{24376;188300;-3640;-3040}}	territory_end
+npcmaker_begin	[dion_t20_23_022]
+npc_begin	[beamer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_023]	{{25604;186164;-3740;-3140};{29872;186408;-3740;-3140};{30944;189796;-3740;-3140};{28264;190740;-3740;-3140};{25644;188152;-3740;-3140}}	territory_end
+npcmaker_begin	[dion_t20_23_023]
+npc_begin	[bloody_bee]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_024]	{{30924;189864;-3768;-3168};{32504;190232;-3768;-3168};{32488;192248;-3768;-3168};{29860;194180;-3768;-3168};{27640;191896;-3768;-3168};{28276;190820;-3768;-3168}}	territory_end
+npcmaker_begin	[dion_t20_23_024]
+npc_begin	[bloody_bee]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_025]	{{30036;184140;-3776;-3076};{32488;184308;-3776;-3076};{32532;189336;-3776;-3076};{31448;189384;-3776;-3076};{29920;186376;-3776;-3076}}	territory_end
+npcmaker_begin	[dion_t20_23_025]
+npc_begin	[bloody_bee]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_026]	{{26592;183952;-3780;-2980};{29980;184152;-3780;-2980};{29872;186400;-3780;-2980};{25584;186088;-3780;-2980}}	territory_end
+npcmaker_begin	[dion_t20_23_026]
+npc_begin	[bloody_bee]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_027]	{{30156;177108;-3780;-3180};{32448;177536;-3780;-3180};{32564;181308;-3780;-3180};{28924;180288;-3780;-3180};{26692;178140;-3780;-3180}}	territory_end
+npcmaker_begin	[dion_t20_23_027]
+npc_begin	[bloody_bee]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_028]	{{26492;179032;-3520;-2920};{28504;180564;-3520;-2920};{27160;184000;-3520;-2920};{26360;183848;-3520;-2920}}	territory_end
+npcmaker_begin	[dion_t20_23_028]
+npc_begin	[bloody_bee]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_029]	{{19064;181940;-3612;-2512};{19192;180356;-3612;-2512};{25848;184724;-3612;-2512};{25328;186076;-3612;-2512};{20716;185908;-3612;-2512}}	territory_end
+npcmaker_begin	[dion_t20_23_029]
+npc_begin	[beamer]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 5	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_030]	{{16116;177836;-3776;-3276};{18096;177432;-3776;-3276};{20116;179572;-3776;-3276};{18104;181560;-3776;-3276};{16560;181244;-3776;-3276};{16060;180620;-3776;-3276}}	territory_end
+npcmaker_begin	[dion_t20_23_030]
+npc_begin	[beamer]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_031]	{{19548;176624;-3784;-3084};{22292;175940;-3784;-3084};{23480;176968;-3784;-3084};{19892;179200;-3784;-3084};{18124;177440;-3784;-3084}}	territory_end
+npcmaker_begin	[dion_t20_23_031]
+npc_begin	[beamer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[glass_jaguar]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_032]	{{3420;164000;-3804;-3304};{4060;163984;-3804;-3304};{6188;165732;-3804;-3304};{6676;167020;-3804;-3304};{4216;166536;-3804;-3304}}	territory_end
+npcmaker_begin	[dion_t20_23_032]
+npc_begin	[bloody_bee]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_033]	{{4172;166708;-3760;-3160};{7580;167612;-3760;-3160};{8100;168664;-3760;-3160};{8148;169188;-3760;-3160};{5864;171252;-3760;-3160};{4228;171096;-3760;-3160};{3304;169744;-3760;-3160};{3164;167684;-3760;-3160}}	territory_end
+npcmaker_begin	[dion_t20_23_033]
+npc_begin	[bloody_bee]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_034]	{{7652;164044;-3760;-3560};{12540;164012;-3760;-3560};{11860;166540;-3760;-3560};{9856;169124;-3760;-3560}}	territory_end
+npcmaker_begin	[dion_t20_23_034]
+npc_begin	[bloody_bee]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_035]	{{12668;163972;-3784;-3184};{16872;163948;-3784;-3184};{18124;165712;-3784;-3184};{17864;166236;-3784;-3184};{13544;167584;-3784;-3184};{11904;166696;-3784;-3184}}	territory_end
+npcmaker_begin	[dion_t20_23_035]
+npc_begin	[bloody_bee]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_036]	{{18872;165592;-3596;-2996};{22052;165772;-3596;-2996};{23012;167372;-3596;-2996};{21736;169412;-3596;-2996};{18184;167488;-3596;-2996}}	territory_end
+npcmaker_begin	[dion_t20_23_036]
+npc_begin	[bloody_bee]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_037]	{{17640;163964;-3696;-3096};{22756;163920;-3696;-3096};{22108;165708;-3696;-3096};{18816;165512;-3696;-3096}}	territory_end
+npcmaker_begin	[dion_t20_23_037]
+npc_begin	[bloody_bee]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_038]	{{22824;163936;-3712;-2912};{29220;163944;-3712;-2912};{28136;167344;-3712;-2912};{23052;167312;-3712;-2912};{22152;165804;-3712;-2912}}	territory_end
+npcmaker_begin	[dion_t20_23_038]
+npc_begin	[bloody_bee]	pos = anywhere	total = 5	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_039]	{{23056;167288;-3612;-2912};{29900;167364;-3612;-2912};{29020;172076;-3612;-2912};{22280;171916;-3612;-2912};{21140;170244;-3612;-2912}}	territory_end
+npcmaker_begin	[dion_t20_23_039]
+npc_begin	[bloody_bee]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 4	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_040]	{{29268;163976;-3800;-3200};{32180;163968;-3800;-3200};{31416;165788;-3800;-3200};{29900;167316;-3800;-3200};{28184;167312;-3800;-3200}}	territory_end
+npcmaker_begin	[dion_t20_23_040]
+npc_begin	[bloody_bee]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_041]	{{29948;167320;-3596;-2796};{31200;166124;-3596;-2796};{31652;166752;-3596;-2796};{31828;169412;-3596;-2796};{29564;169468;-3596;-2796}}	territory_end
+npcmaker_begin	[dion_t20_23_041]
+npc_begin	[bloody_bee]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_042]	{{29432;170452;-3772;-3172};{32376;170380;-3772;-3172};{32336;172224;-3772;-3172};{29128;171848;-3772;-3172}}	territory_end
+npcmaker_begin	[dion_t20_23_042]
+npc_begin	[bloody_bee]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[dire_wolf]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[monstereye_gazer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_043]	{{29740;172688;-3792;-3192};{32460;173044;-3792;-3192};{32516;174956;-3792;-3192};{29472;175568;-3792;-3192};{26096;175240;-3792;-3192};{26084;173596;-3792;-3192}}	territory_end
+npcmaker_begin	[dion_t20_23_043]
+npc_begin	[bloody_bee]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 3	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_044]	{{4488;167668;-3596;-3196};{6696;168208;-3596;-3196};{5728;169936;-3596;-3196};{4224;170608;-3596;-3196}}	territory_end
+npcmaker_begin	[dion_t20_23_044]
+npc_begin	[beamer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_045]	{{740;173836;-3304;-2504};{2580;172652;-3304;-2504};{4344;173756;-3304;-2504};{2736;175208;-3304;-2504}}	territory_end
+npcmaker_begin	[dion_t20_23_045]
+npc_begin	[beamer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_046]	{{1064;177336;-3840;-3240};{2900;178268;-3840;-3240};{4200;180184;-3840;-3240};{2412;181792;-3840;-3240};{784;180632;-3840;-3240}}	territory_end
+npcmaker_begin	[dion_t20_23_046]
+npc_begin	[bloody_bee]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[beamer]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_047]	{{184;183800;-3856;-3256};{1148;184388;-3856;-3256};{1204;185316;-3856;-3256};{228;185952;-3856;-3256}}	territory_end
+npcmaker_begin	[dion_t20_23_047]
+npc_begin	[enku_orc_shaman]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[enku_orc_champion]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_048]	{{1196;188228;-3832;-3432};{3288;187856;-3832;-3432};{4220;189404;-3832;-3432};{1452;190572;-3832;-3432}}	territory_end
+npcmaker_begin	[dion_t20_23_048]
+npc_begin	[tumran_bugbear]	pos = anywhere	total = 2	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_049]	{{22516;189732;-3748;-3148};{25348;189108;-3748;-3148};{26528;191836;-3748;-3148};{23484;192132;-3748;-3148}}	territory_end
+npcmaker_begin	[dion_t20_23_049]
+npc_begin	[ol_mahum_captain]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman_scout]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_050]	{{26796;187436;-3768;-3368};{29316;187084;-3768;-3368};{29596;189256;-3768;-3368};{28000;189576;-3768;-3368}}	territory_end
+npcmaker_begin	[dion_t20_23_050]
+npc_begin	[bloody_bee]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npc_begin	[delu_lizardman]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[dion_t20_23_051]	{{29124;178844;-3752;-3352};{31004;179276;-3752;-3352};{30844;180036;-3752;-3352};{28628;179476;-3752;-3352}}	territory_end
+npcmaker_begin	[dion_t20_23_051]
+npc_begin	[delu_lizardman_scout]	pos = anywhere	total = 1	respawn = 75sec	npc_end
+npcmaker_end
+
+territory_begin	[quest_t20_23_001]	{{4480;169116;-3588;-3388};{5880;168820;-3588;-3388};{6016;169132;-3588;-3388};{5132;170220;-3588;-3388};{4392;170588;-3588;-3388};{4032;169960;-3588;-3388}}	territory_end
+npcmaker_begin	[quest_t20_23_001]	initial_spawn = all
+npc_begin	[orc_betrayer_chuchu]	pos = anywhere	total = 1	respawn = 10min	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_20_23_001]	{{6284;184089;-3212;-3012};{6834;184648;-3212;-3012};{6439;184871;-3212;-3012};{6157;184669;-3212;-3012};{6043;184444;-3212;-3012}}	territory_end
+npcmaker_begin	[quest_030919_20_23_001]	initial_spawn = all	maximum_npc = 7
+npc_begin	[gorr]	pos = anywhere	total = 1	respawn = 3min
+Privates = [cave_basilisk:party_private:1:1min;cave_basilisk:party_private:1:1min;cave_basilisk:party_private:1:1min;cave_basilisk:party_private:1:1min;cave_basilisk:party_private:1:1min;cave_basilisk:party_private:1:1min]	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_20_23_002]	{{20671;184509;-3388;-3188};{20945;184213;-3388;-3188};{21388;184856;-3388;-3188};{21085;185004;-3388;-3188};{20742;184815;-3388;-3188}}	territory_end
+npcmaker_begin	[quest_030919_20_23_002]	initial_spawn = all	maximum_npc = 10
+npc_begin	[baraham]	pos = anywhere	total = 1	respawn = 3min
+Privates = [cave_basilisk:party_private:1:1min;cave_basilisk:party_private:1:1min;cave_basilisk:party_private:1:1min;cave_basilisk:party_private:1:1min;cave_basilisk:party_private:1:1min;cave_basilisk:party_private:1:1min]	npc_end
+npcmaker_end
+
+territory_begin	[quest_030919_20_23_003]	{{23354;187991;-3721;-3521};{23554;187991;-3721;-3521};{23554;188191;-3721;-3521};{23354;188191;-3721;-3521}}	territory_end
+npcmaker_begin	[quest_030919_20_23_003]	initial_spawn = all
+npc_begin	[unicorn_racer]	pos = anywhere	total = 1	respawn = 3min	npc_end
+npcmaker_end
+
+territory_begin	[event_t20_23_bereth_01]	{{110;177905;-3842;-3242};{8092;174046;-3842;-3242};{14524;182461;-3842;-3242};{13174;187106;-3842;-3242};{4754;189313;-3842;-3242};{267;184769;-3842;-3242}}	territory_end
+territory_begin	[event_t20_23_bereth_02]	{{13079;180787;-3842;-2642};{19928;176686;-3842;-2642};{32334;179420;-3842;-2642};{32295;187265;-3842;-2642};{26062;192026;-3842;-2642};{11218;188157;-3842;-2642}}	territory_end
+npcmaker_begin	[event_t20_23_bereth_01];[event_t20_23_bereth_02]	initial_spawn = all	maximum_npc = 5
+npc_begin	[eyes_of_bereth]	pos = {{3152;180400;-3723;0;40%};{27360;182688;-3296;0;40%};{16800;185584;-3376;0;20%}}	total = 1	respawn=3hour	respawn_rand=1hour	Privates=[followers_of_the_eye:followers_of_the_eye:1:1min;followers_of_the_eye:followers_of_the_eye:1:1min;followers_of_the_eye:followers_of_the_eye:1:1min;followers_of_the_eye:followers_of_the_eye:1:1min]	npc_end
+npcmaker_end
+

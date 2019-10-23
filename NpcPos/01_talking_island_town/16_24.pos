@@ -1,0 +1,128 @@
+//---------------------------------------------------------------------
+//ver : 플레이 스타일 적용 0.1 -Close Beta
+//
+//Name : 글루디오 영지 NPC
+//Date : 2002.11.29
+//---------------------------------------------------------------------
+//--------------------16_24 1104 NPC--------------------
+territory_begin	[16_24_New_NPC01]	{{-115156;222060;-2976;-2776};{-114956;222060;-2976;-2776};{-114956;222260;-2976;-2776};{-115156;222260;-2976;-2776}}	territory_end
+npcmaker_begin	[16_24_New_NPC01]
+npc_begin	[marius]	pos = {-115080;222168;-2930;42000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+territory_begin	[16_24_New_NPC02]	{{-104340;221980;-3495;-3295};{-104140;221980;-3495;-3295};{-104140;222180;-3495;-3295};{-104340;222180;-3495;-3295}}	territory_end
+npcmaker_begin	[16_24_New_NPC02]
+npc_begin	[mesella]	pos = {-104240;222064;-3437;16384}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//--------------------16_24 030514 NPC--------------------
+territory_begin	[16_24_NPC_030514]	{{-114788;222204;-3063;-2863};{-114588;222204;-3063;-2863};{-114588;222404;-3063;-2863};{-114788;222404;-3063;-2863}}	territory_end
+npcmaker_begin	[16_24_NPC_030514]	initial_spawn = all	maximum_npc = 1
+npc_begin	[edmond]	pos = {-114685;222291;-2925;44000}	total = 1	respawn = 1min	npc_end
+npcmaker_end
+
+//---------- 16_24 글루디오영지:말하는섬 --------------------------------------------------------
+territory_begin	[t16_24_001]	{{-108496;223400;-3764;-2964};{-101364;219192;-3764;-2964};{-100052;224428;-3764;-2964};{-101488;228896;-3764;-2964};{-108784;228996;-3764;-2964}}	territory_end
+npcmaker_begin	[t16_24_001]
+npc_begin	[orc_fighter_leader]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npc_begin	[werewolf_chieftain]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npc_begin	[stone_golem]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npc_begin	[crasher]	pos = anywhere	total = 9	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_24_002]	{{-107680;226640;-3728;-3478};{-105196;226116;-3728;-3478};{-103592;227816;-3728;-3478};{-106328;228440;-3728;-3478};{-107828;227600;-3728;-3478}}	territory_end
+npcmaker_begin	[t16_24_002]
+npc_begin	[werewolf_chieftain]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[stone_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_24_003]	{{-102852;225716;-3752;-3502};{-100996;226072;-3752;-3502};{-101616;228252;-3752;-3502};{-102980;228372;-3752;-3502};{-103984;226348;-3752;-3502}}	territory_end
+npcmaker_begin	[t16_24_003]
+npc_begin	[orc_fighter_sub_leader]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[stone_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_24_004]	{{-103472;224552;-3700;-3300};{-100844;222636;-3700;-3300};{-100444;224276;-3700;-3300};{-101252;225432;-3700;-3300}}	territory_end
+npcmaker_begin	[t16_24_004]
+npc_begin	[stone_golem]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[crasher]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_24_005]	{{-105388;223784;-3696;-3496};{-104788;224184;-3696;-3496};{-104876;224856;-3696;-3496};{-105460;225108;-3696;-3496};{-105884;224844;-3696;-3496};{-106032;224500;-3696;-3496};{-105760;223916;-3696;-3496}}	territory_end
+npcmaker_begin	[t16_24_005]
+npc_begin	[giant_spider]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_24_006]	{{-106368;215296;-3464;-2814};{-104244;215184;-3464;-2814};{-101788;217408;-3464;-2814};{-101320;219100;-3464;-2814};{-105792;221736;-3464;-2814}}	territory_end
+npcmaker_begin	[t16_24_006]
+npc_begin	[stone_golem]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[crasher]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npc_begin	[giant_spider]	pos = anywhere	total = 6	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_24_007]	{{-105076;218364;-3280;-2730};{-102432;217728;-3280;-2730};{-102008;219128;-3280;-2730};{-103448;219736;-3280;-2730}}	territory_end
+npcmaker_begin	[t16_24_007]
+npc_begin	[stone_golem]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_24_008]	{{-105760;215932;-3464;-3114};{-104392;215500;-3464;-3114};{-103020;216676;-3464;-3114};{-105568;216804;-3464;-3114}}	territory_end
+npcmaker_begin	[t16_24_008]
+npc_begin	[crasher]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_24_009]	{{-102428;212248;-3488;-2988};{-100860;212264;-3488;-2988};{-99620;213188;-3488;-2988};{-99236;214828;-3488;-2988};{-100800;217772;-3488;-2988};{-104800;213716;-3488;-2988}}	territory_end
+npcmaker_begin	[t16_24_009]
+npc_begin	[crasher]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[poker]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[blader]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_24_010]	{{-100256;214112;-3440;-3090};{-99628;214900;-3440;-3090};{-100884;216844;-3440;-3090};{-102340;214784;-3440;-3090}}	territory_end
+npcmaker_begin	[t16_24_010]
+npc_begin	[stone_golem]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[poker]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_25_011]	{{-102472;212568;-3356;-3006};{-101204;212436;-3356;-3006};{-101712;214380;-3356;-3006};{-103328;214620;-3356;-3006};{-103784;213548;-3356;-3006}}	territory_end
+npcmaker_begin	[t16_25_011]
+npc_begin	[crasher]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npc_begin	[blader]	pos = anywhere	total = 1	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_24_012]	{{-109796;213896;-3508;-2908};{-106480;214296;-3508;-2908};{-106236;217196;-3508;-2908};{-112784;218960;-3508;-2908};{-113628;217552;-3508;-2908}}	territory_end
+npcmaker_begin	[t16_24_012]
+npc_begin	[crasher]	pos = anywhere	total = 8	respawn = 15sec	npc_end
+npc_begin	[poker]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[blader]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_24_013]	{{-110232;214692;-3452;-3102};{-108680;214840;-3452;-3102};{-109216;217164;-3452;-3102};{-111308;216148;-3452;-3102}}	territory_end
+npcmaker_begin	[t16_24_013]
+npc_begin	[blader]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_24_014]	{{-115920;218912;-3208;-2708};{-113768;217540;-3208;-2708};{-112596;219548;-3208;-2708};{-114320;221792;-3208;-2708};{-117064;222288;-3208;-2708}}	territory_end
+npcmaker_begin	[t16_24_014]
+npc_begin	[crasher]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[giant_spider]	pos = anywhere	total = 3	respawn = 15sec	npc_end
+npc_begin	[poker]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_24_015]	{{-116904;222640;-3104;-2554};{-115156;223856;-3104;-2554};{-115600;228980;-3104;-2554};{-119216;229000;-3104;-2554};{-118888;226512;-3104;-2554}}	territory_end
+npcmaker_begin	[t16_24_015]
+npc_begin	[stone_golem]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npc_begin	[crasher]	pos = anywhere	total = 5	respawn = 15sec	npc_end
+npc_begin	[poker]	pos = anywhere	total = 4	respawn = 15sec	npc_end
+npcmaker_end
+
+territory_begin	[t16_24_016]	{{-118588;226428;-2996;-2796};{-117844;225164;-2996;-2796};{-117068;226464;-2996;-2796};{-118288;228140;-2996;-2796}}	territory_end
+npcmaker_begin	[t16_24_016]
+npc_begin	[giant_spider]	pos = anywhere	total = 2	respawn = 15sec	npc_end
+npcmaker_end
+
+//---------------2003.09.19 2차 전직 퀘스트------------------------------------------
+territory_begin	[quest_030919_16_24_001]	{{-119608;222624;-3812;-3412};{-118932;222764;-3812;-3412};{-118972;223952;-3812;-3412};{-119448;223848;-3812;-3412};{-119768;223184;-3812;-3412}}	territory_end
+npcmaker_begin	[quest_030919_16_24_001]	initial_spawn = all	maximum_npc = 1
+npc_begin	[ol_mahum_betrayer]	pos = anywhere	total = 1	respawn = 3min	npc_end
+npcmaker_end
+
