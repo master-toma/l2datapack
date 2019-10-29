@@ -22,3 +22,19 @@ add_subdirectory(Settings)
 add_subdirectory(SkillAcquire)
 add_subdirectory(SkillData)
 add_subdirectory(VehicleData)
+
+add_custom_target(${PROJECT_NAME}-1-basics
+    DEPENDS AgitData AreaData BuilderAliases CategoryData DoorData FString Manual MultiSell PcParameters PetData Settings VehicleData
+)
+
+add_custom_target(${PROJECT_NAME}-2-complex
+    DEPENDS NpcData NpcPos Recipes SkillAcquire SkillData
+)
+
+add_custom_target(${PROJECT_NAME}-3-ai
+    DEPENDS AIScripts
+)
+
+add_custom_target(${PROJECT_NAME}-0-all
+    DEPENDS ${PROJECT_NAME}-1-basics ${PROJECT_NAME}-2-complex ${PROJECT_NAME}-3-ai
+)
