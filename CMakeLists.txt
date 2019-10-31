@@ -23,9 +23,10 @@ add_subdirectory(Setting)
 add_subdirectory(SkillAcquire)
 add_subdirectory(SkillData)
 add_subdirectory(VehicleData)
+add_subdirectory(WatchList)
 
 add_custom_target(${PROJECT_NAME}-1-basics
-    DEPENDS AgitData AreaData BuilderAliases CategoryData DoorData FString Manual MultiSell PcParameters PetData Recipes Setting VehicleData
+    DEPENDS AgitData AreaData BuilderAliases CategoryData DoorData FString Manual MultiSell PcParameters PetData Recipes Setting VehicleData WatchList
 )
 
 # Order is right to left <---o
@@ -40,3 +41,4 @@ add_custom_target(${PROJECT_NAME}-3-ai
 add_custom_target(${PROJECT_NAME}-0-all
     DEPENDS ${PROJECT_NAME}-3-ai ${PROJECT_NAME}-2-complex ${PROJECT_NAME}-1-basics
 )
+
