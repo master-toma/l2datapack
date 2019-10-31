@@ -1,9 +1,9 @@
 set_begin
 50
-slot_chest=44
-slot_head=2418
-slot_gloves=2479
-slot_feet=2440
+slot_chest=@leather_helmet
+slot_head=@helm_of_nightmare
+slot_gloves=@gloves_of_nightmare
+slot_feet=@boots_of_nightmare
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

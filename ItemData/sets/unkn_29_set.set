@@ -1,7 +1,7 @@
 set_begin
 29
-slot_chest=44
-slot_legs=2402
+slot_chest=@leather_helmet
+slot_legs=@hose_of_shrnoen
 slot_head=503
 slot_gloves=612
 slot_feet=554

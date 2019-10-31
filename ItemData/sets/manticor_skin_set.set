@@ -1,8 +1,8 @@
 set_begin
 6
-slot_chest=395
-slot_legs=417
-slot_feet=2424
+slot_chest=@manticor_skin_shirt
+slot_legs=@manticor_skin_gaiters
+slot_feet=@manticor_skin_boots
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

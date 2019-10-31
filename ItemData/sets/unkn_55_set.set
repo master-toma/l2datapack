@@ -1,11 +1,11 @@
 set_begin
 55
-slot_chest=44
-slot_legs=389
-slot_head=504
-slot_gloves=2476
-slot_feet=2445
-slot_lhand=634
+slot_chest=@leather_helmet
+slot_legs=@dragon_scale_gaiters
+slot_head=@dragon_helmet
+slot_gloves=@dragon_gauntlet
+slot_feet=@dragon_scale_boots
+slot_lhand=@dragon_shield
 slot_additional=[slot_lhand]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

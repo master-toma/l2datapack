@@ -1,9 +1,9 @@
 set_begin
 16
-slot_chest=44
-slot_legs=382
-slot_head=500
-slot_lhand=2496
+slot_chest=@leather_helmet
+slot_legs=@dwarven_chain_gaiters
+slot_head=@great_helmet
+slot_lhand=@dwarven_chain_shield
 slot_additional=[slot_lhand]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

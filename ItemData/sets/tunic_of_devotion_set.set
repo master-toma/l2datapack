@@ -1,8 +1,8 @@
 set_begin
 2
-slot_chest=1101
-slot_legs=1104
-slot_head=44
+slot_chest=@tunic_of_devotion
+slot_legs=@hose_of_devotion
+slot_head=@leather_helmet
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

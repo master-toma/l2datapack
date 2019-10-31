@@ -1,9 +1,9 @@
 set_begin
 13
-slot_chest=354
-slot_legs=381
-slot_head=2413
-slot_lhand=2495
+slot_chest=@chain_mail_shirt
+slot_legs=@chain_gaiters
+slot_head=@chain_hood
+slot_lhand=@chain_shield
 slot_additional=[slot_lhand]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

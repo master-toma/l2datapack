@@ -1,9 +1,9 @@
 set_begin
 3
-slot_chest=58
-slot_legs=59
-slot_head=47
-slot_lhand=628
+slot_chest=@mithril_breastplate
+slot_legs=@mithril_gaiters
+slot_head=@helmet
+slot_lhand=@hoplon
 slot_additional=[slot_lhand]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

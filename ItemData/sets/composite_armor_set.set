@@ -1,8 +1,8 @@
 set_begin
 19
-slot_chest=60
-slot_head=517
-slot_lhand=107
+slot_chest=@composite_armor
+slot_head=@composite_helmet
+slot_lhand=@composite_shield
 slot_additional=[slot_lhand]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

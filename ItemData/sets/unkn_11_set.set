@@ -1,6 +1,6 @@
 set_begin
 11
-slot_chest=44
+slot_chest=@leather_helmet
 slot_gloves=2451
 slot_additional=[none]
 set_skill=[s_set_collected]

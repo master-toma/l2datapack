@@ -1,7 +1,7 @@
 set_begin
 9
-slot_chest=44
-slot_feet=2427
+slot_chest=@leather_helmet
+slot_feet=@slamander_skin_boots
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

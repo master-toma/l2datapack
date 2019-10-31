@@ -1,6 +1,6 @@
 set_begin
 34
-slot_chest=44
+slot_chest=@leather_helmet
 slot_head=2416
 slot_gloves=2487
 slot_feet=2439

@@ -1,9 +1,9 @@
 set_begin
 7
-slot_chest=352
-slot_legs=2378
-slot_head=2411
-slot_lhand=2493
+slot_chest=@brigandine
+slot_legs=@brigandine_gaiters
+slot_head=@brigandine_helmet
+slot_lhand=@brigandine_shield
 slot_additional=[slot_lhand]
 set_skill=[s_set_collected]
 p_def_inc={5.00;0.00}

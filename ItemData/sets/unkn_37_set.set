@@ -1,10 +1,10 @@
 set_begin
 37
-slot_chest=44
-slot_legs=2404
-slot_head=2417
-slot_gloves=2475
-slot_feet=601
+slot_chest=@leather_helmet
+slot_legs=@hose_of_doom
+slot_head=@doom_helmet
+slot_gloves=@doom_gloves
+slot_feet=@doom_boots
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

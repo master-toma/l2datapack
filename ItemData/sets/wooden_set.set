@@ -1,8 +1,8 @@
 set_begin
 1
-slot_chest=23
-slot_legs=2386
-slot_head=43
+slot_chest=@wooden_breastplate
+slot_legs=@wooden_gaiters
+slot_head=@wooden_helmet
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={2.20;0.00}

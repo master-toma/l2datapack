@@ -1,7 +1,7 @@
 set_begin
 22
-slot_chest=401
-slot_feet=2437
+slot_chest=@drake_leather_mail
+slot_feet=@drake_leather_boots
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

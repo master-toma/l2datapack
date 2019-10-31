@@ -1,10 +1,10 @@
 set_begin
 41
-slot_chest=44
-slot_legs=2389
-slot_head=512
-slot_gloves=2472
-slot_feet=563
+slot_chest=@leather_helmet
+slot_legs=@legging_of_dark_crystal
+slot_head=@dark_crystal_helmet
+slot_gloves=@dark_crystal_gloves
+slot_feet=@dark_crystal_boots
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

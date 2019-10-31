@@ -1,9 +1,9 @@
 set_begin
 42
-slot_chest=44
-slot_head=547
-slot_gloves=2478
-slot_feet=598
+slot_chest=@leather_helmet
+slot_head=@blood_bonnet
+slot_gloves=@blood_gloves
+slot_feet=@blood_boots
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

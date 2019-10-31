@@ -1,8 +1,8 @@
 set_begin
 21
-slot_chest=400
-slot_legs=420
-slot_feet=2436
+slot_chest=@theca_leather_mail
+slot_legs=@theca_leather_gaiters
+slot_feet=@theca_leather_boots
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={5.26;0.00}

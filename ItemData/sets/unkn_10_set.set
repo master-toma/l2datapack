@@ -1,9 +1,9 @@
 set_begin
 10
-slot_chest=44
-slot_legs=380
-slot_head=2412
-slot_lhand=2494
+slot_chest=@leather_helmet
+slot_legs=@plate_gaiters
+slot_head=@plate_helmet
+slot_lhand=@plate_shield
 slot_additional=[slot_lhand]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

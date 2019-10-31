@@ -1,8 +1,8 @@
 set_begin
 14
-slot_chest=439
-slot_legs=471
-slot_gloves=2454
+slot_chest=@karmian_tunic
+slot_legs=@karmian_hose
+slot_gloves=@karmian_gloves
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={5.26;0.00}

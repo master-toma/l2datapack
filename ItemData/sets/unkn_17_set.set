@@ -1,7 +1,7 @@
 set_begin
 17
-slot_chest=44
-slot_gloves=2457
+slot_chest=@leather_helmet
+slot_gloves=@gloves_of_seal
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

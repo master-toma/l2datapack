@@ -1,8 +1,8 @@
 set_begin
 24
-slot_chest=442
-slot_legs=473
-slot_gloves=2463
+slot_chest=@divine_tunic
+slot_legs=@divine_hose
+slot_gloves=@blessed_gloves
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={5.26;0.00}

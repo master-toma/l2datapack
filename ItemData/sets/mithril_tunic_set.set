@@ -1,8 +1,8 @@
 set_begin
 8
-slot_chest=437
-slot_legs=470
-slot_gloves=2450
+slot_chest=@mithril_tunic
+slot_legs=@mithril_hose
+slot_gloves=@elven_mithril_gloves
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

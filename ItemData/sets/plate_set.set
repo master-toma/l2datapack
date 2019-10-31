@@ -1,8 +1,8 @@
 set_begin
 15
-slot_chest=398
-slot_legs=418
-slot_feet=2431
+slot_chest=@plate_leather
+slot_legs=@plate_leather_gaiters
+slot_feet=@plate_leather_boots
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

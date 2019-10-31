@@ -1,11 +1,11 @@
 set_begin
 26
-slot_chest=44
-slot_legs=2379
-slot_head=2415
-slot_gloves=2464
-slot_feet=600
-slot_lhand=673
+slot_chest=@leather_helmet
+slot_legs=@avadon_gaiters
+slot_head=@avadon_circlet
+slot_gloves=@avadon_gloves
+slot_feet=@avadon_boots
+slot_lhand=@avadon_shield
 slot_additional=[slot_lhand]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

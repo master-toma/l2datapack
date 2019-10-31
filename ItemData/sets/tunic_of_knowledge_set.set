@@ -1,8 +1,8 @@
 set_begin
 5
-slot_chest=436
-slot_legs=469
-slot_gloves=2447
+slot_chest=@tunic_of_knowledge
+slot_legs=@hose_of_knowledge
+slot_gloves=@gloves_of_knowledge
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

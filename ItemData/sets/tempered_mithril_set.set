@@ -1,8 +1,8 @@
 set_begin
 12
-slot_chest=397
-slot_legs=2387
-slot_feet=62
+slot_chest=@tempered_mithril_shirt
+slot_legs=@tempered_mithril_gaiters
+slot_feet=@mithril_boots
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}

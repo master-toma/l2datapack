@@ -1,8 +1,8 @@
 set_begin
 4
-slot_chest=394
-slot_legs=416
-slot_feet=2422
+slot_chest=@reinforce_leather_shirt
+slot_legs=@reinforce_leather_gaiters
+slot_feet=@reinforce_leather_boots
 slot_additional=[none]
 set_skill=[s_set_collected]
 p_def_inc={0.00;0.00}
