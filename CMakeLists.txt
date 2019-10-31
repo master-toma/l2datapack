@@ -11,6 +11,7 @@ add_subdirectory(BuilderAliases)
 add_subdirectory(CategoryData)
 add_subdirectory(DoorData)
 add_subdirectory(FString)
+add_subdirectory(ItemData)
 add_subdirectory(Manual)
 add_subdirectory(MultiSell)
 add_subdirectory(NpcData)
@@ -28,7 +29,7 @@ add_custom_target(${PROJECT_NAME}-1-basics
 )
 
 add_custom_target(${PROJECT_NAME}-2-complex
-    DEPENDS NpcData NpcPos Recipes SkillAcquire SkillData
+    DEPENDS ItemData NpcData NpcPos Recipes SkillAcquire SkillData
 )
 
 add_custom_target(${PROJECT_NAME}-3-ai

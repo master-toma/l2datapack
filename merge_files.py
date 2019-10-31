@@ -13,11 +13,11 @@ def read_to_utf16(file_path, skip_encoding, join):
             data += "\r\n"
         if skip_encoding:
             return data;
-        
+
         # encode without BOM
         return data.decode('utf-8').encode('utf-16le')
 
-global_id = 1;    
+global_id = 1;
 def get_id(line, id_column):
     global global_id;
     if id_column <= 0:
@@ -38,6 +38,7 @@ parser.add_argument('--root_dir', dest='root_dir', default='./')
 parser.add_argument('--single_file', dest='single_file', default='')
 parser.add_argument('--join_lines', dest='join_lines', action='store_true')
 parser.add_argument('--id_column', dest='id_column', default=-1)
+parser.add_argument('--append', dest='append', default="0")
 
 parser.set_defaults(join_lines=False)
 
@@ -60,25 +61,29 @@ else:
 
             content_utf8 = read_to_utf16(file_path, True, args.join_lines)
             line_id = get_id(content_utf8, int(args.id_column))
-            
-            content = read_to_utf16(file_path, args.skip_encoding, args.join_lines)            
-            
+
+            content = read_to_utf16(file_path, args.skip_encoding, args.join_lines)
+
             #if args.join_lines:
             #    content = content.replace("\r\n".encode('utf-16le'), "\t".encode('utf-16le'))
 
             content_lines[line_id]= content
-   
 
-
-outfile = open(os.path.join(rootdir, out_file_path), "w+b")
-
-newFileByteArray = bytearray(b'\xff\xfe')
-outfile.write(newFileByteArray)
+if args.append == "1":
+    outfile = open(os.path.join(rootdir, out_file_path), "ab")
+else:
+    outfile = open(os.path.join(rootdir, out_file_path), "w+b")
+    newFileByteArray = bytearray(b'\xff\xfe')
+    outfile.write(newFileByteArray)
 
 for key, value in content_lines.iteritems():
     outfile.write(value)
 
 outfile.close()
-print "Files were encoded and merged to " + out_file_path
+
+if args.append == "1":
+    print "%d '*%s' files were encoded and merged to %s" %(len(content_lines), args.extension, out_file_path)
+else:
+    print "%d '*%s' files were encoded and added to %s" %(len(content_lines), args.extension, out_file_path)
 
 
