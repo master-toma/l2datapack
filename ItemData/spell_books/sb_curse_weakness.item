@@ -1,7 +1,7 @@
 item_begin
 etcitem
 1056
-[sb_curse:weakness]
+[sb_curse_weakness]
 item_type=etcitem
 slot_bit_type={none}
 armor_type=none

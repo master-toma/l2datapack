@@ -1,7 +1,7 @@
 item_begin
 armor
 3900
-[wolves_luxury Plate]
+[wolves_luxury_Plate]
 item_type=armor
 slot_bit_type={chest}
 armor_type=light

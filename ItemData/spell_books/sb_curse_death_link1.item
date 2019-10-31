@@ -1,7 +1,7 @@
 item_begin
 etcitem
 3066
-[sb_curse death link1]
+[sb_curse_death_link1]
 item_type=etcitem
 slot_bit_type={none}
 armor_type=none

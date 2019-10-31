@@ -1,7 +1,7 @@
 item_begin
 etcitem
 1055
-[sb_curse:poison1]
+[sb_curse_poison1]
 item_type=etcitem
 slot_bit_type={none}
 armor_type=none
