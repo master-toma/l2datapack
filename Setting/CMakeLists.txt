@@ -1,7 +1,7 @@
-project(Settings)
+project(Setting)
 
 file(GLOB_RECURSE SCRIPT_FILES
-    ./*.settings
+    ./*.setting
 )
 
 add_custom_target(${PROJECT_NAME}
@@ -17,7 +17,7 @@ add_custom_command(
 add_custom_command(
     TARGET  ${PROJECT_NAME}
     WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/install/Script"
-    COMMAND ${SCRIPT_MERGE_SCRIPT_PATH} -e ".settings" --root_dir "${CMAKE_CURRENT_LIST_DIR}" --out_name "${CMAKE_BINARY_DIR}/install/Script/settings.txt"
-    COMMENT "Merging settings to ${CMAKE_BINARY_DIR}/install/Script/settings.txt"
+    COMMAND ${SCRIPT_MERGE_SCRIPT_PATH} -e ".setting" --root_dir "${CMAKE_CURRENT_LIST_DIR}" --out_name "${CMAKE_BINARY_DIR}/install/Script/setting.txt"
+    COMMENT "Merging setting to ${CMAKE_BINARY_DIR}/install/Script/setting.txt"
     VERBATIM
 )

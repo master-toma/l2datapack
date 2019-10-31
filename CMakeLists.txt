@@ -19,17 +19,18 @@ add_subdirectory(NpcPos)
 add_subdirectory(PcParameters)
 add_subdirectory(PetData)
 add_subdirectory(Recipes)
-add_subdirectory(Settings)
+add_subdirectory(Setting)
 add_subdirectory(SkillAcquire)
 add_subdirectory(SkillData)
 add_subdirectory(VehicleData)
 
 add_custom_target(${PROJECT_NAME}-1-basics
-    DEPENDS AgitData AreaData BuilderAliases CategoryData DoorData FString Manual MultiSell PcParameters PetData Settings VehicleData
+    DEPENDS AgitData AreaData BuilderAliases CategoryData DoorData FString Manual MultiSell PcParameters PetData Recipes Setting VehicleData
 )
 
+# Order is right to left <---o
 add_custom_target(${PROJECT_NAME}-2-complex
-    DEPENDS ItemData NpcData NpcPos Recipes SkillAcquire SkillData
+    DEPENDS NpcPos NpcData SkillAcquire SkillData ItemData
 )
 
 add_custom_target(${PROJECT_NAME}-3-ai
@@ -37,5 +38,5 @@ add_custom_target(${PROJECT_NAME}-3-ai
 )
 
 add_custom_target(${PROJECT_NAME}-0-all
-    DEPENDS ${PROJECT_NAME}-1-basics ${PROJECT_NAME}-2-complex ${PROJECT_NAME}-3-ai
+    DEPENDS ${PROJECT_NAME}-3-ai ${PROJECT_NAME}-2-complex ${PROJECT_NAME}-1-basics
 )
