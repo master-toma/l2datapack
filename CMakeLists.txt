@@ -18,6 +18,7 @@ add_subdirectory(NpcData)
 add_subdirectory(NpcPos)
 add_subdirectory(PcParameters)
 add_subdirectory(PetData)
+add_subdirectory(Quests)
 add_subdirectory(Recipes)
 add_subdirectory(Setting)
 add_subdirectory(SkillAcquire)
@@ -26,7 +27,7 @@ add_subdirectory(VehicleData)
 add_subdirectory(WatchList)
 
 add_custom_target(${PROJECT_NAME}-1-basics
-    DEPENDS AgitData AreaData BuilderAliases CategoryData DoorData FString Manual MultiSell PcParameters PetData Recipes Setting VehicleData WatchList
+    DEPENDS AgitData AreaData BuilderAliases CategoryData DoorData FString Manual MultiSell PcParameters PetData Recipes Setting VehicleData Quests WatchList
 )
 
 # Order is right to left <---o
