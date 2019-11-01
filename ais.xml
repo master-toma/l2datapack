@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<!-- Author: Master Toma <master.toma87@gmail.com> //-->
+<!-- Put it inside C:\Users\<username>\AppData\Roaming\QtProject\qtcreator\generic-highlighter\ais.xml //-->
+
+<language name="Artificial intelligence script" version="8" kateversion="5.0" section="Scripts" extensions="*.ais;*.nasc;"
+          mimetype="text/x-ais;application/x-ais;application/ais;text/ais" indenter="cstyle"
+          author="Master Toma (master.toma87@gmail.com)" license="">
+  <highlighting>
+    <list name="controlflow">
+      <item>break</item>
+      <item>case</item>
+      <item>continue</item>
+      <item>do</item>
+      <item>else</item>
+      <item>for</item>
+      <item>if</item>
+      <item>return</item>
+      <item>select</item>
+      <item>while</item>
+    </list>
+    <list name="keywords">
+      <item>handler</item>
+	  <item>property</item>
+	  <item>parameter</item>
+	  
+    </list>
+    <list name="reserved">
+      <item>class</item>
+      <item>EventHandler</item>
+      <item>super</item>
+    </list>
+	<list name="functions">
+	  <item>AddMoveAroundDesire</item>
+	<item>AddDoNothingDesire</item>
+	<item>AddAttackDesire</item>
+	<item>AddAttackDesireEx</item>
+	<item>AddGetItemDesire</item>
+	<item>AddChaseDesire</item>
+	<item>AddFleeDesire</item>
+	<item>AddFollowDesire</item>
+	<item>AddDecayingDesire</item>
+	<item>AddMoveToWayPointDesire</item>
+	<item>AddUseSkillDesire</item>
+	<item>AddUseSkillDesireEx</item>
+	<item>AddMoveToDesire</item>
+	<item>AddEffectActionDesire</item>
+	<item>AddPetDefaultDesire_Follow</item>
+	<item>RemoveAllAttackDesire</item>
+	<item>RemoveAttackDesire</item>
+	<item>RandomizeAttackDesire</item>
+	<item>MakeAttackEvent</item>
+	<item>GetTopDesireValue</item>
+	<item>GetLifeTime</item>
+	<item>GetTick</item>
+	<item>IsSameString</item>
+	<item>GetCurrentTick</item>
+	<item>GetDirection</item>
+	<item>SetCookie</item>
+	<item>GetCookie</item>
+	<item>SetTeleportPosOnLost</item>
+	<item>AddTimerEx</item>
+	<item>GetIndexFromCreature</item>
+	<item>GetCreatureFromIndex</item>
+	<item>RegisterGlobalMap</item>
+	<item>UnregisterGlobalMap</item>
+	<item>GetGlobalMap</item>
+	<item>SendScriptEvent</item>
+	<item>ReportDesire</item>
+	<item>IsSpoiled</item>
+	<item>Say</item>
+	<item>SayInt</item>
+	<item>SayFloat</item>
+	<item>EquipItem</item>
+	<item>Talk</item>
+	<item>Shout</item>
+	<item>DistFromMe</item>
+	<item>SetTimerPeriodByTick</item>
+	<item>SetTimerPeriod</item>
+	<item>GetWayPointDelay</item>
+	<item>Rand</item>
+	<item>IntToStr</item>
+	<item>FloatToInt</item>
+	<item>ShowPage</item>
+	<item>ShowSystemMessage</item>
+	<item>Teleport</item>
+	<item>InstantTeleport</item>
+	<item>Sell</item>
+	<item>Buy</item>
+	<item>IsAlive</item>
+	<item>HPRatio</item>
+	<item>GetLastAttacker</item>
+	<item>GiveItem1</item>
+	<item>GiveItem2</item>
+	<item>GiveItem3</item>
+	<item>DeleteItem1</item>
+	<item>OwnItemCount</item>
+	<item>AtomicDelete3Give1Item</item>
+	<item>GetOneTimeQuestFlag</item>
+	<item>SetOneTimeQuestFlag</item>
+	<item>SetJournal</item>
+	<item>GetMemoCount</item>
+	<item>HaveMemo</item>
+	<item>SetMemo</item>
+	<item>SetMemoState</item>
+	<item>GetMemoState</item>
+	<item>RemoveMemo</item>
+	<item>GetAbnormalLevel</item>
+	<item>SetDBValue</item>
+	<item>Party_GetCount</item>
+	<item>Party_GetCreature</item>
+	<item>Party_GetLeader</item>
+	<item>Pledge_GetCount</item>
+	<item>Pledge_GetCreature</item>
+	<item>Pledge_GetLeader</item>
+	<item>GetParty</item>
+	<item>GetPledge</item>
+	<item>FHTML_SetFileName</item>
+	<item>FHTML_SetInt</item>
+	<item>FHTML_SetFloat</item>
+	<item>FHTML_SetStr</item>
+	<item>ShowFHTML</item>
+	<item>MakeFString</item>
+	<item>IsWaitingDismiss</item>
+	<item>GetPledgeSkillLevel</item>
+	<item>RegisterSiege</item>
+	<item>RegisterSiegeDefender</item>
+	<item>UnregisterSiege</item>
+	<item>ShowSetSiegeTime</item>
+	<item>PrepareSiegeTime</item>
+	<item>ViewSiegeList</item>
+	<item>ApproveBattle</item>
+	<item>CheckSiege</item>
+	<item>IsMyLord</item>
+	<item>Castle_GetPledgeName</item>
+	<item>Castle_GetOwnerName</item>
+	<item>Castle_GetSiegeTime</item>
+	<item>Residence_GetTaxRate</item>
+	<item>Residence_GetTaxRateCurrent</item>
+	<item>Residence_SetTaxRate</item>
+	<item>Residence_GetChildTaxRate</item>
+	<item>Residence_SetVaultEmpty</item>
+	<item>Residence_SetChildTaxRate</item>
+	<item>Residence_SetChildTaxRateEach</item>
+	<item>Residence_VaultTakeOutMoney</item>
+	<item>Castle_IsGateOpen</item>
+	<item>Castle_SetSiegeTime</item>
+	<item>Castle_GateOpenClose</item>
+	<item>Castle_GetPledgeState</item>
+	<item>Castle_IsUnderSiege</item>
+	<item>Castle_GetHPRegen</item>
+	<item>Castle_GetMPRegen</item>
+	<item>Castle_BanishOthers</item>
+	<item>Castle_SetHPRegen</item>
+	<item>Castle_SetMPRegen</item>
+	<item>Castle_GetRawSiegeTime</item>
+	<item>Castle_GetRawSystemTime</item>
+	<item>Castle_IsUnderSiege2</item>
+	<item>Castle_GateOpenClose2</item>
+	<item>Castle_GetPledgeId</item>
+	<item>Castle_GetLifeControlLevel</item>
+	<item>Agit_SetMaster</item>
+	<item>Agit_GetTeleportLevel</item>
+	<item>Agit_SetTeleportLevel</item>
+	<item>AddChoice</item>
+	<item>ShowChoicePage</item>
+	<item>ShowSkillList</item>
+	<item>ShowGrowSkillMessage</item>
+	<item>ShowGrowSkillMessage2</item>
+	<item>ShowRedirectMessage</item>
+	<item>IsRedirect</item>
+	<item>GetRedirectMessage</item>
+	<item>ShowQuestSuggestion</item>
+	<item>SkillQuest_GetQuestID</item>
+	<item>SkillQuest_GetQuestItemID</item>
+	<item>SkillQuest_GetQuestMessage</item>
+	<item>IsInCategory</item>
+	<item>ClassChange</item>
+	<item>IncrementParam</item>
+	<item>Skill_GetTargetType</item>
+	<item>Skill_GetConsumeMP</item>
+	<item>Skill_GetConsumeHP</item>
+	<item>Skill_GetEffectPoint</item>
+	<item>Skill_GetAttribute</item>
+	<item>Skill_GetAbnormalType</item>
+	<item>Skill_GetAbnormalLevel</item>
+	<item>Skill_InReuseDelay</item>
+	<item>UseSkill</item>
+	<item>UseCategorySkill</item>
+	<item>UseItem</item>
+	<item>UseCategoryItem</item>
+	<item>EnableTimeEvent</item>
+	<item>CreatePrivates</item>
+	<item>CreateOnePrivate</item>
+	<item>Maker_GetNpcCount</item>
+	<item>Maker_FindNpcByKey</item>
+	<item>CreateOnePrivateEx</item>
+	<item>SetWeightPoint</item>
+	<item>SoundEffect</item>
+	<item>EffectMusic</item>
+	<item>Despawn</item>
+	<item>EnableMakingSeeEvent</item>
+	<item>InMyTerritory</item>
+	<item>InstantTeleportInMyTerritory</item>
+	<item>Dist</item>
+	<item>EarthQuakeByNPC</item>
+	<item>SpecialCamera</item>
+	<item>SpecialCameraEx</item>
+	<item>PledgeLevelUp</item>
+	<item>PledgeName</item>
+	<item>Castle_GetCropRate</item>
+	<item>Castle_GetCropPrice</item>
+	<item>Castle_GetCropIncome</item>
+	<item>Residence_GetTaxIncome</item>
+	<item>Castle_SetCropPrice</item>
+	<item>Castle_SetCropDrop</item>
+	<item>Castle_DeleteCropDrop</item>
+	<item>Castle_PostCropPurchase</item>
+	<item>ShowTutorialHTML</item>
+	<item>ShowTutorialHTML2</item>
+	<item>ShowQuestionMark</item>
+	<item>ShowQuestionMark2</item>
+	<item>CloseTutorialHTML</item>
+	<item>EnableTutorialEvent</item>
+	<item>ShowRadar</item>
+	<item>DeleteRadar</item>
+	<item>CreatePet</item>
+	<item>AgitAuction</item>
+	<item>GetAgitDeposit</item>
+	<item>GetPledgeMoney</item>
+	<item>SubStr</item>
+	<item>StrToInt</item>
+	<item>OpenSiegeInfo</item>
+	<item>SetDoorHpLevel</item>
+	<item>GetDoorHpLevel</item>
+	<item>SetControlTowerLevel</item>
+	<item>GetControlTowerLevel</item>
+</list>
+    <list name="handlers">
+	<item>NO_DESIRE</item>
+	<item>ATTACKED</item>
+	<item>SPELLED</item>
+	<item>TALKED</item>
+	<item>TALK_SELECTED</item>
+	<item>SEE_CREATURE</item>
+	<item>DISAPPEAR_CREATURE</item>
+	<item>SEE_ITEM</item>
+	<item>DISAPPEAR_ITEM</item>
+	<item>MASTER_ATTACK</item>
+	<item>MY_DYING</item>
+	<item>TIMER_FIRED</item>
+	<item>TIMER_FIRED_EX</item>
+	<item>CREATED</item>
+	<item>TIME</item>
+	<item>SEE_ATTACK</item>
+	<item>SEE_SPELL</item>
+	<item>OUT_OF_TERRITORY</item>
+	<item>DESIRE_MANIPULATION</item>
+	<item>PARTY_ATTACKED</item>
+	<item>PARTY_SPELLED</item>
+	<item>PARTY_DIED</item>
+	<item>FRIEND_ATTACKED</item>
+	<item>CLAN_ATTACKED</item>
+	<item>CLAN_SPELLED</item>
+	<item>STATIC_OBJECT_CLAN_ATTACKED</item>
+	<item>STATIC_OBJECT_CLAN_SPELLED</item>
+	<item>HOLYTHING_SPELLED</item>
+	<item>TELEPORT_REQUESTED</item>
+	<item>BUY_REQUESTED</item>
+	<item>SELL_REQUESTED</item>
+	<item>QUEST_ACCEPTED</item>
+	<item>MENU_SELECTED</item>
+	<item>LEARN_SKILL_REQUESTED</item>
+	<item>ONE_SKILL_SELECTED</item>
+	<item>SKILL_QUEST_ACCEPTED</item>
+	<item>CLASS_CHANGE_REQUESTED</item>
+	<item>CMD_FOLLOW_ME</item>
+	<item>CMD_ATTACK</item>
+	<item>GOD_SHOUT</item>
+	<item>GOD_SELL_GOODS</item>
+	<item>GOD_BUY_GOODS</item>
+	<item>CREATE_PLEDGE</item>
+	<item>DISMISS_PLEDGE</item>
+	<item>REVIVE_PLEDGE</item>
+	<item>LEVEL_UP_PLEDGE</item>
+	<item>ATTACKED_BY_PLEDGE</item>
+	<item>MANAGE_CASTLE_SIEGE</item>
+	<item>CREATE_ALLIANCE</item>
+	<item>SCRIPT_EVENT</item>
+	<item>TUTORIAL_EVENT</item>
+	<item>QUESTION_MARK_CLICKED</item>
+	<item>USER_CONNECTED</item>
+	<item>IDLE_FINISHED</item>
+	<item>MOVE_AROUND_FINISHED</item>
+	<item>ATTACK_FINISHED</item>
+	<item>CHASE_FINISHED</item>
+	<item>FLEE_FINISHED</item>
+	<item>GET_ITEM_FINISHED</item>
+	<item>DECAYING_FINISHED</item>
+	<item>FOLLOW_FINISHED</item>
+	<item>MOVE_TO_WAY_POINT_FINISHED</item>
+	<item>USE_SKILL_FINISHED</item>
+	<item>MOVE_TO_FINISHED</item>
+	<item>IDLE_INTRRUPTED</item>
+	<item>MOVE_AROUND_INTERRUPTED</item>
+	<item>ATTACK_INTERRUPTED</item>
+	<item>CHASE_INTERRUPTED</item>
+	<item>FLEE_INTERRUPTED</item>
+	<item>GET_ITEM_INTERRUPTED</item>
+	<item>DECAYING_INTERRUPTED</item>
+	<item>FOLLOW_INTERRUPTED</item>
+	<item>MOVE_TO_WAY_POINT_INTERRUPTED</item>
+	<item>USE_SKILL_INTERRUPTED</item>
+	<item>MOVE_TO_INTERRUPTED</item>
+	<item>DOOR_HP_LEVEL_INFORMED</item>
+	<item>CONTROLTOWER_LEVEL_INFORMED</item>
+    </list>
+    <list name="primitives">
+      <item>int</item>
+      <item>float</item>
+      <item>False</item>
+      <item>True</item>
+      <item>BuySellList</item>
+	  <item>string</item>
+      <item>TelPosList</item>
+      <item>False</item>
+      <item>True</item>
+      <item>BuySellList</item>
+    </list>
+    <contexts>
+
+      <!-- Shebang: ("#!") Detect shebang and fallthrough to Normal -->
+      <!-- Based on the similar clause from prolog.xml, which notes the following BUG:
+        If the file starts with whitespace and a shebang on a line other than the first line,
+        this rule will still match it as a shebang, even tough the shebang is only valid on
+        the very first line.
+      -->
+      <context name="Shebang" lineEndContext="Normal" attribute="Normal Text" fallthrough="true" fallthroughContext="Normal" >
+        <Detect2Chars column="0" char="#" char1="!" context="Shebang Line" attribute="Comment" />
+      </context>
+      <context name="Shebang Line" attribute="Comment" lineEndContext="#pop!Normal">
+      </context>
+
+      <context attribute="Normal Text" lineEndContext="#stay" name="Normal">
+        <DetectSpaces/>
+        <StringDetect attribute="Region Marker" context="region_marker" String="//BEGIN" beginRegion="Region1" />
+        <StringDetect attribute="Region Marker" context="region_marker" String="//END" endRegion="Region1" />
+
+        <Float attribute="Float" context="NoRegExp" />
+        <HlCOct attribute="Octal" context="NoRegExp" />
+        <HlCHex attribute="Hex" context="NoRegExp" />
+        <Int attribute="Decimal" context="NoRegExp" />
+        <AnyChar context="NoRegExp" String="])" />
+
+        <keyword attribute="ControlFlow" String="controlflow" />
+        <keyword attribute="Keyword" String="keywords" />
+        <keyword attribute="Reserved" String="reserved" />
+        <keyword attribute="Keyword" context="NoRegExp" String="primitives" />
+        <keyword attribute="Handler" String="handlers" />
+		<keyword attribute="Function" String="functions" />
+		
+        <DetectChar attribute="Template" context="Template" char="`" />
+        <StringDetect attribute="Template" context="RawTemplate" String="String.raw`" />
+
+        <!--DetectIdentifier-->
+        <RegExpr attribute="Objects" context="Object Member" String="[a-zA-Z_$][\w$]*(?=\s*\.)" />
+        <!--DetectIdentifier-->
+        <RegExpr attribute="Object Member" context="NoRegExp" String="[a-zA-Z_$][\w$]*(?=\s*\()" />
+        <DetectChar context="Object Member" char="." />
+        <!--DetectIdentifier-->
+        <RegExpr context="NoRegExp" String="[a-zA-Z_$][\w$]*" />
+
+        <DetectChar attribute="String" context="String" char="&quot;" />
+        <DetectChar attribute="String" context="String SQ" char="'" />
+
+        <IncludeRules context="##Doxygen" />
+        <Detect2Chars attribute="Comment" context="Comment" char="/" char1="/" />
+        <Detect2Chars attribute="Comment" context="Multi/inline Comment" char="/" char1="*" beginRegion="Comment" />
+
+        <!-- E4X extension (=xml inside JavaScript), see bug #373713 -->
+        <Detect2Chars attribute="Normal Text" context="NoRegExp" char="&lt;" char1="/" />
+        <Detect2Chars attribute="Normal Text" context="NoRegExp" char="/" char1="&gt;" />
+        <DetectChar attribute="Regular Expression" context="(regex caret first check)" char="/" />
+
+        <DetectChar attribute="Symbol" context="Object" char="{" beginRegion="Brace" />
+        <DetectChar attribute="Symbol" context="Conditional Expression" char="?" />
+
+        <AnyChar attribute="Symbol" String=":!%&amp;+,-/.*&lt;=&gt;?|~^&#59;" />
+      </context>
+
+      <context attribute="Normal Text" lineEndContext="#pop" fallthrough="true" fallthroughContext="#pop" name="Object Member">
+        <DetectChar context="#stay" char="." />
+        <!--DetectIdentifier-->
+        <RegExpr attribute="Objects" context="#stay" String="[a-zA-Z_$][\w$]*(?=\s*\.)" />
+        <!--DetectIdentifier-->
+        <RegExpr attribute="Object Member" context="#pop!NoRegExp" String="[a-zA-Z_$][\w$]*" />
+        <IncludeRules context="NoRegExp" />
+      </context>
+
+      <context attribute="Normal Text" lineEndContext="#stay" fallthrough="true" fallthroughContext="#pop" name="NoRegExp">
+        <Detect2Chars context="#pop" lookAhead="true" char="/" char1="/" />
+        <Detect2Chars context="#pop" lookAhead="true" char="/" char1="*" />
+        <DetectChar context="#pop" char="/" />
+        <DetectSpaces/>
+      </context>
+
+      <context attribute="Normal Text" lineEndContext="#stay" name="Conditional Expression">
+        <DetectChar context="#pop" char=":" />
+        <IncludeRules context="Normal" />
+      </context>
+
+      <context attribute="Normal Text" lineEndContext="#stay" name="Object">
+        <!-- Mostly required for define: in switch blocks -->
+        <keyword attribute="Keyword" String="keywords" />
+        <!--DetectIdentifier-->
+        <RegExpr attribute="JSON" String="[a-zA-Z_$][\w$]*\s*(?=:)" />
+        <DetectChar attribute="Symbol" char="}" endRegion="Brace" context="#pop" />
+        <IncludeRules context="Normal" />
+      </context>
+
+      <context attribute="String" lineEndContext="#pop" name="String">
+        <HlCStringChar attribute="Escape" />
+        <RegExpr attribute="Escape" String="\\u([0-9a-fA-F]{4}|\{[0-9a-fA-F]+\})" />
+        <LineContinue/>
+        <DetectChar attribute="String" context="#pop" char="&quot;" />
+      </context>
+      <context attribute="String" lineEndContext="#pop" name="String SQ">
+        <HlCStringChar attribute="Escape" />
+        <RegExpr attribute="Escape" String="\\u([0-9a-fA-F]{4}|\{[0-9a-fA-F]+\})" />
+        <LineContinue/>
+        <DetectChar attribute="String" context="#pop" char="'" />
+      </context>
+
+      <context attribute="Template" lineEndContext="#stay" name="Template">
+        <HlCStringChar attribute="Escape" />
+        <Detect2Chars attribute="Escape" char="\" char1="`" />
+        <Detect2Chars attribute="Substitution" context="Substitution" char="$" char1="{" />
+        <DetectChar attribute="Template" context="#pop" char="`" />
+      </context>
+      <context attribute="Template" lineEndContext="#stay" name="RawTemplate">
+        <DetectChar attribute="Template" context="#pop" char="`" />
+      </context>
+      <context name="Substitution" attribute="Normal Text" lineEndContext="#stay">
+          <DetectChar attribute="Substitution" char="}" context="#pop"/>
+          <IncludeRules context="Normal"/>
+      </context>
+
+      <context attribute="Comment" lineEndContext="#pop" name="Comment">
+        <IncludeRules context="##Alerts" />
+        <IncludeRules context="##Modelines" />
+      </context>
+      <context attribute="Comment" lineEndContext="#stay" name="Multi/inline Comment">
+        <IncludeRules context="##Alerts" />
+        <IncludeRules context="##Modelines" />
+        <Detect2Chars attribute="Comment" context="#pop" char="*" char1="/" endRegion="Comment" />
+      </context>
+
+      <context attribute="Regular Expression" lineEndContext="#stay" name="Regular Expression">
+        <RegExpr attribute="Regular Expression" context="#pop#pop" String="/\w*" />
+        <RegExpr attribute="Pattern Internal Operator" String="\{[\d, ]+\}" />
+        <RegExpr attribute="Pattern Internal Operator" String="\\[bB]" />
+        <RegExpr attribute="Pattern Character Class" String="\\[nrtvfDdSsWw]" />
+        <DetectChar attribute="Pattern Character Class" context="(charclass caret first check)" char="[" />
+        <RegExpr attribute="Pattern Internal Operator" String="\\." />
+        <RegExpr attribute="Pattern Internal Operator" String="\$(?=/)" />
+        <AnyChar attribute="Pattern Internal Operator" String="?+*()|" />
+      </context>
+      <context attribute="Pattern Character Class" lineEndContext="#stay" name="Regular Expression Character Class">
+        <RegExpr String="\\[\[\]]" />
+        <RegExpr attribute="Pattern Internal Operator" String="\\." />
+        <DetectChar attribute="Pattern Character Class" context="#pop#pop" char="]" />
+      </context>
+      <context attribute="Pattern Internal Operator" lineEndContext="#pop" name="(regex caret first check)" fallthrough="true" fallthroughContext="Regular Expression">
+        <DetectChar attribute="Pattern Internal Operator" context="Regular Expression" char="^" />
+      </context>
+      <context attribute="Pattern Internal Operator" lineEndContext="#pop" name="(charclass caret first check)" fallthrough="true" fallthroughContext="Regular Expression Character Class">
+        <DetectChar attribute="Pattern Internal Operator" context="Regular Expression Character Class" char="^" />
+      </context>
+
+      <context name="region_marker" attribute="Region Marker" lineEndContext="#pop" >
+        <DetectIdentifier/>
+        <DetectSpaces/>
+      </context>
+	  
+	  <context attribute="ReferenceName" name="ReferenceName" lineEndContext="#pop" >
+		<RegExpr attribute="ReferenceName" context="#stay" String="@.*," />
+      </context>
+	  
+    </contexts>
+    <itemDatas>
+	  <itemData name="ReferenceName"  defStyleNum="dsVariable"  spellChecking="false" />
+	  
+	  <itemData name="Function"                  defStyleNum="dsFunction" />
+	  <itemData name="Handler"                  defStyleNum="dsFunction" color="#0067A8" selColor="#C00000" bold="1" />
+		
+      <itemData name="Normal Text"  defStyleNum="dsNormal"  spellChecking="false" />
+      <itemData name="Keyword"      defStyleNum="dsKeyword" spellChecking="false" />
+      <itemData name="ControlFlow"  defStyleNum="dsControlFlow" spellChecking="false" />
+      <itemData name="Reserved"     defStyleNum="dsKeyword" italic="true" spellChecking="false" />
+      <itemData name="Module"       defStyleNum="dsImport" spellChecking="false" />
+      <itemData name="Objects"      defStyleNum="dsVariable" spellChecking="false" />
+      <itemData name="Object Member" defStyleNum="dsAttribute" spellChecking="false" />
+
+      <itemData name="Decimal"      defStyleNum="dsDecVal" spellChecking="false" />
+      <itemData name="Octal"        defStyleNum="dsBaseN" spellChecking="false" />
+      <itemData name="Hex"          defStyleNum="dsBaseN" spellChecking="false" />
+      <itemData name="Float"        defStyleNum="dsFloat" spellChecking="false" />
+      <itemData name="Escape"       defStyleNum="dsSpecialChar" spellChecking="false" />
+      <itemData name="String"       defStyleNum="dsString" />
+      <itemData name="Template"     defStyleNum="dsVerbatimString" />
+      <itemData name="Substitution" defStyleNum="dsSpecialChar" spellChecking="false" />
+
+      <itemData name="Comment"      defStyleNum="dsComment" />
+      <itemData name="Symbol"       defStyleNum="dsOperator" spellChecking="false" />
+      <itemData name="Regular Expression" defStyleNum="dsSpecialString" spellChecking="false" />
+      <itemData name="Pattern Internal Operator" defStyleNum="dsSpecialChar" spellChecking="false" />
+      <itemData name="Pattern Character Class" defStyleNum="dsSpecialChar" spellChecking="false" />
+      <itemData name="Region Marker" defStyleNum="dsRegionMarker" spellChecking="false" />
+      <itemData name="JSON"         defStyleNum="dsDataType" spellChecking="false" />
+    </itemDatas>
+  </highlighting>
+  <general>
+    <comments>
+      <comment name="singleLine" start="//" />
+      <comment name="multiLine" start="/*" end="*/" />
+    </comments>
+    <keywords casesensitive="1" />
+  </general>
+</language>
+
+<!-- kate: space-indent on; indent-width 2; -->
+
