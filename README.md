@@ -29,6 +29,15 @@ Data package for LineageII. Contains original CHN C1 script files, splitted by e
 ![Configuration](https://i.ibb.co/DYF0D5v/data-pack-kit.png)
 11. Click `Configure Project`. First configuration will take some time
 12. Unselect `Hide Generated Files`, now you will see all targets for building scripts
-13.
+![Hide Generated Files](https://i.ibb.co/khhRQKG/hidegen.png)
+13. Setup tools (L2CC, NASC, AI Merger)
+![Setup tools](https://i.ibb.co/QH25TQZ/tools.png)
 
-That's it. Now you will be able to "build" script files bu right-cliking on the "Hammer icon" and choosing `Build <target name>`
+That's it. Now you will be able to "build" script files bu right-cliking on the "Hammer icon" and choosing `Build <target name>`, e.g.
+```
+build 1-basics
+build 2-complex
+build 3-ai
+```
+Those three commands will do full script deployment.
+
