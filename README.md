@@ -1,6 +1,10 @@
 # L2DataPack
 Data package for LineageII. Contains original CHN C1 script files, splitted by entities, plus build system, which allows to integrate it to any IDE, which supports CMake files. Files are keept in UTF-8 endoding, which allows to have nice history view in git.
 
+## Content
+All script entities are original C1 files with fixes only (like typos in name IDs, removals of legacy items/npcs, etc).
+For other chronicles new branches will be created
+
 ## L2DataPack in QtCreator IDE
 [Youtube presentation](https://www.youtube.com/watch?v=K6QPWLvnduc&feature=youtu.be)
 1. File fuzzy search
