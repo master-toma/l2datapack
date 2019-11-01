@@ -278,6 +278,6 @@ npcmaker_end
 //---------------포자의바다 21_18
 territory_begin	[event_spore_2118_01]	{{48536;17068;-5636;-4636};{57600;16648;-5636;-4636};{58104;27248;-5636;-4636};{46068;24316;-5636;-4636}}	territory_end
 npcmaker_begin	[event_spore_2118_01]	initial_spawn=all	maximum_npc=5
-npc_begin	[handmaiden_of_orfen]	pos={{55136;17104;-5529;0;20%};{49104;18752;-5212;0;20%};{53072;20784;-5537;0;20%};{49968;22608;-5515;0;20%};{54896;22688;-5376;0;20%}}	total=1	respawn=2hour	respawn_rand=1hour	Privates=[trisalim_escort:trisalim_escort:1:1min;trisalim_escort:trisalim_escort:1:1min;trisalim_escort:trisalim_escort:1:1min;trisalim_escort:trisalim_escort:1min]	npc_end
+npc_begin	[handmaiden_of_orfen]	pos={{55136;17104;-5529;0;20%};{49104;18752;-5212;0;20%};{53072;20784;-5537;0;20%};{49968;22608;-5515;0;20%};{54896;22688;-5376;0;20%}}	total=1	respawn=2hour	respawn_rand=1hour	Privates=[trisalim_escort:trisalim_escort:1:1min;trisalim_escort:trisalim_escort:1:1min;trisalim_escort:trisalim_escort:1:1min;trisalim_escort:trisalim_escort:1:1min]	npc_end
 npcmaker_end
 
