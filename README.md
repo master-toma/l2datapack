@@ -24,7 +24,7 @@ For other chronicles new branches will be created
 ## How to integrate L2DataPack in QtCreator IDE
 1. Download and install [QtCreator](https://download.qt.io/official_releases/qtcreator/4.10/4.10.1/qt-creator-opensource-windows-x86_64-4.10.1.exe)
 2. Download and install [CMake](https://github.com/Kitware/CMake/releases/download/v3.16.0-rc3/cmake-3.16.0-rc3-win64-x64.msi)
-3. Download [Ninja](https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-win.zip) and copy it into `C:\Program Files\CMake\bin`
+3. Download [Ninja](https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-win.zip) and copy it into `C:\Windows32`
 4. Download [AI merger and NASC](https://drive.google.com/drive/u/1/folders/1ETtuXnaO4RYle9mq_iT1FwCamkF85G-h)
 5. Download [L2CC](https://drive.google.com/drive/u/1/folders/1MXRThY9Cizp7t8wwIT7XMgQoTQFjzNSq)
 6. Copy `ais.xml` to `C:\Users\<username>\AppData\Roaming\QtProject\qtcreator\generic-highlighter\ais.xml`
