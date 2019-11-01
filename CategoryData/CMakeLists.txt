@@ -1,4 +1,4 @@
-project(CategoryData)
+project(CategoryData NONE)
 
 file(GLOB_RECURSE SCRIPT_FILES
     ./*.category

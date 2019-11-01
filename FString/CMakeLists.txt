@@ -1,4 +1,4 @@
-project(FString)
+project(FString NONE)
 
 set(PCH_FILES
     ${CMAKE_CURRENT_LIST_DIR}/fstring.txt

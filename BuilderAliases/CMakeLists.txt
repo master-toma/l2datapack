@@ -1,4 +1,4 @@
-project(BuilderAliases)
+project(BuilderAliases NONE)
 
 file(GLOB_RECURSE SCRIPT_FILES
     ./*.alias

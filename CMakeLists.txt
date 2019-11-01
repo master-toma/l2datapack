@@ -1,4 +1,4 @@
-project(L2DataPack)
+project(L2DataPack NONE)
 cmake_minimum_required(VERSION 3.5)
 
 set(SCRIPT_L2CC_PATH ${CMAKE_BINARY_DIR}/install/L2CC/l2cc.exe CACHE FILEPATH "Path to l2cc.exe")

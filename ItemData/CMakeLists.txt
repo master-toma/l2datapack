@@ -1,4 +1,4 @@
-project(ItemData)
+project(ItemData NONE)
 
 file(GLOB_RECURSE SCRIPT_FILES
     ./*.item

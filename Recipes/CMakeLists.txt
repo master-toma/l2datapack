@@ -1,4 +1,4 @@
-project(Recipes)
+project(Recipes NONE)
 
 file(GLOB_RECURSE RECIPES_FILES
     ./*.recipe

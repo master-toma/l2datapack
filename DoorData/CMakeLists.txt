@@ -1,4 +1,4 @@
-project(DoorData)
+project(DoorData NONE)
 
 file(GLOB_RECURSE SCRIPT_FILES
     ./*.door

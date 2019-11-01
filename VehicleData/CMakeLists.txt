@@ -1,4 +1,4 @@
-project(VehicleData)
+project(VehicleData NONE)
 
 file(GLOB_RECURSE SCRIPT_FILES
     ./*.vehicle

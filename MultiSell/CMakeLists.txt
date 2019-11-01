@@ -1,4 +1,4 @@
-project(MultiSell)
+project(MultiSell NONE)
 
 file(GLOB_RECURSE SCRIPT_FILES
     ./*.msell

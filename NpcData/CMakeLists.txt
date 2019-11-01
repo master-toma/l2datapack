@@ -1,4 +1,4 @@
-project(NpcData)
+project(NpcData NONE)
 
 file(GLOB_RECURSE NPC_FILES
     ./*.npc

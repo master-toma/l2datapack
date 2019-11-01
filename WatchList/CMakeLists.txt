@@ -1,4 +1,4 @@
-project(WatchList)
+project(WatchList NONE)
 
 add_custom_target(${PROJECT_NAME}
     SOURCES watch_list.txt

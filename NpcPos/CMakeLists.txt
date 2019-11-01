@@ -1,4 +1,4 @@
-project(NpcPos)
+project(NpcPos NONE)
 
 file(GLOB_RECURSE SOURCES
     ./*.pos

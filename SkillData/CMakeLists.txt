@@ -1,4 +1,4 @@
-project(SkillData)
+project(SkillData NONE)
 
 file(GLOB_RECURSE SKILL_FILES
     ./*.skill

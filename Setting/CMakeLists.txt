@@ -1,4 +1,4 @@
-project(Setting)
+project(Setting NONE)
 
 file(GLOB_RECURSE SCRIPT_FILES
     ./*.setting

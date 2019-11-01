@@ -1,4 +1,4 @@
-project(PetData)
+project(PetData NONE)
 
 file(GLOB_RECURSE SCRIPT_FILES
     ./*.pet

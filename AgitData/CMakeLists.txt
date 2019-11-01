@@ -1,4 +1,4 @@
-project(AgitData)
+project(AgitData NONE)
 
 file(GLOB_RECURSE SCRIPT_FILES
     ./*.agit

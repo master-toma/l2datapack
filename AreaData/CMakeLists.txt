@@ -1,4 +1,4 @@
-project(AreaData)
+project(AreaData NONE)
 
 file(GLOB_RECURSE SCRIPT_FILES
     ./*.area

@@ -1,4 +1,4 @@
-project(Manual)
+project(Manual NONE)
 
 file(GLOB_RECURSE SCRIPT_FILES
     ./*.manual

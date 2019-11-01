@@ -1,4 +1,4 @@
-project(Quests)
+project(Quests NONE)
 
 set(SCRIPT_FILES
     quest_pch.txt quest_pch2.txt

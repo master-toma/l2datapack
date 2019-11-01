@@ -1,4 +1,4 @@
-project(PcParameters)
+project(PcParameters NONE)
 
 file(GLOB_RECURSE SCRIPT_FILES
     ./*.pcparams

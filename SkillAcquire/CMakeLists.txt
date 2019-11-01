@@ -1,4 +1,4 @@
-project(SkillAcquire)
+project(SkillAcquire NONE)
 
 file(GLOB_RECURSE SKILL_FILES
     ./*.acquire

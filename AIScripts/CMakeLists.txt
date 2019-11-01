@@ -1,4 +1,4 @@
-project(AIScripts)
+project(AIScripts NONE)
 
 file(GLOB_RECURSE SCRIPT_SOURCES
     ./*.ais
