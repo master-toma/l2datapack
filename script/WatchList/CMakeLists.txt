@@ -6,14 +6,20 @@ add_custom_target(${PROJECT_NAME}
 
 add_custom_command(
     TARGET  ${PROJECT_NAME}
-    WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/install/Script"
-    COMMAND ${SCRIPT_MERGE_SCRIPT_PATH} --single_file "${CMAKE_CURRENT_LIST_DIR}/watch_list.txt" --out_name "${CMAKE_BINARY_DIR}/install/Script/watch_list.txt"
-    COMMENT "Encoding watch_list to ${CMAKE_BINARY_DIR}/install/Script/watch_list.txt"
+    COMMAND ${CMAKE_COMMAND} -E make_directory "${DATA_PACK_OUTPUT_DIR}/Script/"
     VERBATIM
 )
 
 add_custom_command(
     TARGET  ${PROJECT_NAME}
-    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_BINARY_DIR}/install/Script/watch_list.txt" "${CMAKE_BINARY_DIR}/install/CachedScript/watch_list.txt"
+    WORKING_DIRECTORY "${DATA_PACK_OUTPUT_DIR}/Script"
+    COMMAND ${SCRIPT_MERGE_SCRIPT_PATH} --single_file "${CMAKE_CURRENT_LIST_DIR}/watch_list.txt" --out_name "${DATA_PACK_OUTPUT_DIR}/Script/watch_list.txt"
+    COMMENT "Encoding watch_list to ${DATA_PACK_OUTPUT_DIR}/Script/watch_list.txt"
+    VERBATIM
+)
+
+add_custom_command(
+    TARGET  ${PROJECT_NAME}
+    COMMAND ${CMAKE_COMMAND} -E copy "${DATA_PACK_OUTPUT_DIR}/Script/watch_list.txt" "${DATA_PACK_OUTPUT_DIR}/CachedScript/watch_list.txt"
     VERBATIM
 )

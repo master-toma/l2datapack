@@ -10,14 +10,14 @@ add_custom_target(${PROJECT_NAME}
 
 add_custom_command(
     TARGET  ${PROJECT_NAME}
-    COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_BINARY_DIR}/install/Script/"
+    COMMAND ${CMAKE_COMMAND} -E make_directory "${DATA_PACK_OUTPUT_DIR}/Script/"
     VERBATIM
 )
 
 add_custom_command(
     TARGET  ${PROJECT_NAME}
-    WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/install/Script"
-    COMMAND ${SCRIPT_MERGE_SCRIPT_PATH} -e ".vehicle" --root_dir "${CMAKE_CURRENT_LIST_DIR}" --out_name "${CMAKE_BINARY_DIR}/install/Script/vehicledata.txt"
-    COMMENT "Merging vehicle data to ${CMAKE_BINARY_DIR}/install/Script/vehicledata.txt"
+    WORKING_DIRECTORY "${DATA_PACK_OUTPUT_DIR}/Script"
+    COMMAND ${SCRIPT_MERGE_SCRIPT_PATH} -e ".vehicle" --root_dir "${CMAKE_CURRENT_LIST_DIR}" --out_name "${DATA_PACK_OUTPUT_DIR}/Script/vehicledata.txt"
+    COMMENT "Merging vehicle data to ${DATA_PACK_OUTPUT_DIR}/Script/vehicledata.txt"
     VERBATIM
 )

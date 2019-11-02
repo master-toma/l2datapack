@@ -34,8 +34,3 @@ add_custom_target(${PROJECT_NAME}-2-complex
 add_custom_target(${PROJECT_NAME}-3-ai
     DEPENDS AIScripts
 )
-
-add_custom_target(${PROJECT_NAME}-0-all
-    DEPENDS ${PROJECT_NAME}-3-ai ${PROJECT_NAME}-2-complex ${PROJECT_NAME}-1-basics
-)
-

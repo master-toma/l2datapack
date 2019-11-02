@@ -10,28 +10,28 @@ add_custom_target(${PROJECT_NAME}
 
 add_custom_command(
     TARGET  ${PROJECT_NAME}
-    COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_BINARY_DIR}/install/Script/"
+    COMMAND ${CMAKE_COMMAND} -E make_directory "${DATA_PACK_OUTPUT_DIR}/Script/"
     VERBATIM
 )
 
 add_custom_command(
     TARGET  ${PROJECT_NAME}
-    WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/install/Script"
-    COMMAND ${SCRIPT_MERGE_SCRIPT_PATH} -e ".skill" --root_dir "${CMAKE_CURRENT_LIST_DIR}" --out_name "${CMAKE_BINARY_DIR}/install/Script/skilldata.txt"
-    COMMENT "Merging skills to ${CMAKE_BINARY_DIR}/install/Script/skilldata.txt"
+    WORKING_DIRECTORY "${DATA_PACK_OUTPUT_DIR}/Script"
+    COMMAND ${SCRIPT_MERGE_SCRIPT_PATH} -e ".skill" --root_dir "${CMAKE_CURRENT_LIST_DIR}" --out_name "${DATA_PACK_OUTPUT_DIR}/Script/skilldata.txt"
+    COMMENT "Merging skills to ${DATA_PACK_OUTPUT_DIR}/Script/skilldata.txt"
     VERBATIM
 )
 
 add_custom_command(
     TARGET  ${PROJECT_NAME}
-    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_BINARY_DIR}/install/Script/skilldata.txt" "${CMAKE_BINARY_DIR}/install/CachedScript/skilldata.txt"
+    COMMAND ${CMAKE_COMMAND} -E copy "${DATA_PACK_OUTPUT_DIR}/Script/skilldata.txt" "${DATA_PACK_OUTPUT_DIR}/CachedScript/skilldata.txt"
     VERBATIM
 )
 
 add_custom_command(
     TARGET  ${PROJECT_NAME}
-    WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/install/Script"
+    WORKING_DIRECTORY "${DATA_PACK_OUTPUT_DIR}/Script"
     COMMAND ${SCRIPT_L2CC_PATH} -s ./ -o ./
-    COMMENT "Compiling skilldata.txt to ${CMAKE_BINARY_DIR}/install/Script/skill*_pch.txt"
+    COMMENT "Compiling skilldata.txt to ${DATA_PACK_OUTPUT_DIR}/Script/skill*_pch.txt"
     VERBATIM
 )
