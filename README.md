@@ -27,7 +27,7 @@ For other chronicles new branches will be created
 3. Download [Ninja](https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-win.zip) and copy it into `C:\Windows32`
 4. Download [AI merger and NASC](https://drive.google.com/drive/u/1/folders/1ETtuXnaO4RYle9mq_iT1FwCamkF85G-h)
 5. Download [L2CC](https://drive.google.com/drive/u/1/folders/1MXRThY9Cizp7t8wwIT7XMgQoTQFjzNSq)
-6. Copy `ais.xml` to `C:\Users\<username>\AppData\Roaming\QtProject\qtcreator\generic-highlighter\ais.xml`
+6. Copy `ais.xml` to `C:\Users\<username>\AppData\Roaming\QtProject\qtcreator\generic-highlighter\syntax\ais.xml`
 7. Create `DataPack Kit` in `QtCreator` (`Tools -> Options -> Kits`)
 ![DataPack Kit](https://github.com/master-toma/l2datapack/blob/master/imgs/configure-data-pack-kit.png?raw=true)
 click `Apply` and `OK` to close the window
