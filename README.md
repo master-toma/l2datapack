@@ -29,7 +29,7 @@ For other chronicles new branches will be created
 5. Download [L2CC](https://drive.google.com/drive/u/1/folders/1MXRThY9Cizp7t8wwIT7XMgQoTQFjzNSq)
 6. Copy `ais.xml` to `C:\Users\<username>\AppData\Roaming\QtProject\qtcreator\generic-highlighter\ais.xml`
 7. Create `DataPack Kit` in `QtCreator` (`Tools -> Options -> Kits`)
-![DataPack Kit](https://i.ibb.co/XzR8psz/data-pack-kit.png)
+![DataPack Kit](https://github.com/master-toma/l2datapack/blob/master/imgs/configure-data-pack-kit.png?raw=true)
 click `Apply` and `OK` to close the window
 8. Clone this repo
    ```
@@ -37,12 +37,13 @@ click `Apply` and `OK` to close the window
    ```
 9. Open `<path>/l2datapack/CMakeLists.txt` by `File -> Open File Or Project`
 10. Select `DataPack` kit, choose `Default` or `Release` and uncheck all other configurations
-![Configuration](https://i.ibb.co/DYF0D5v/data-pack-kit.png)
+![Configuration](https://github.com/master-toma/l2datapack/blob/master/imgs/data-pack-kit.png?raw=true)
 11. Click `Configure Project`. First configuration will take some time
 12. Unselect `Hide Generated Files`, now you will see all targets for building scripts
-![Hide Generated Files](https://i.ibb.co/khhRQKG/hidegen.png)
+![Hide Generated Files](https://github.com/master-toma/l2datapack/blob/master/imgs/hidegen.png?raw=true)
 13. Setup tools (`L2CC`, `NASC`, `AI Merger`)
-![Setup tools](https://i.ibb.co/QH25TQZ/tools.png)
+![Setup tools](https://github.com/master-toma/l2datapack/blob/master/imgs/tools.png?raw=true)
+*Optional*: you can change output dir by changing `DATA_PACK_OUTPUT_DIR` as well here
 
 That's it. Now you will be able to "`build`" script files by right-cliking on the "Hammer icon" and choosing `Build <target name>`, e.g.
 ```
