@@ -1,2 +1,1 @@
 skill_begin	skill_name = [s_int_1]	/* [int_1] */	skill_id = 3001	level = 1	operate_type = P	effect = {}	skill_end
-skill_begin	skill_name = [s_int_2]	/* [int_2] */	skill_id = 3002	level = 1	operate_type = P	effect = {}	skill_end
