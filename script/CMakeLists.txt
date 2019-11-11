@@ -1,3 +1,5 @@
+project(Scripts NONE)
+
 cmake_minimum_required(VERSION 3.5)
 
 add_subdirectory(AgitData)
@@ -22,15 +24,37 @@ add_subdirectory(SkillData)
 add_subdirectory(VehicleData)
 add_subdirectory(WatchList)
 
-add_custom_target(${PROJECT_NAME}-1-basics
+# Target dependencies
+add_dependencies(AIScripts CategoryData FString Manual NpcData SkillData ItemData Quests)
+
+add_custom_target(${PROJECT_NAME}-build-basics
     DEPENDS AgitData AreaData BuilderAliases CategoryData DoorData FString Manual MultiSell PcParameters PetData Recipes Setting VehicleData Quests WatchList
 )
 
-# Order is right to left <---o
-add_custom_target(${PROJECT_NAME}-2-complex
+add_custom_target(${PROJECT_NAME}-build-complex
     DEPENDS NpcPos NpcData SkillAcquire SkillData ItemData
 )
 
-add_custom_target(${PROJECT_NAME}-3-ai
+add_custom_target(${PROJECT_NAME}-build-ai
     DEPENDS AIScripts
+)
+
+add_custom_target(${PROJECT_NAME}-build-all
+    DEPENDS ${PROJECT_NAME}-build-basics ${PROJECT_NAME}-build-complex ${PROJECT_NAME}-build-ai
+)
+
+add_custom_target(${PROJECT_NAME}-clean-all ALL
+    COMMAND echo "Removing ${DATA_PACK_OUTPUT_DIR}/Script/ and ${DATA_PACK_OUTPUT_DIR}/CachedScript/"
+)
+
+add_custom_command(
+    TARGET  ${PROJECT_NAME}-clean-all
+    COMMAND ${CMAKE_COMMAND} -E remove_directory "${DATA_PACK_OUTPUT_DIR}/Script/"
+    VERBATIM
+)
+
+add_custom_command(
+    TARGET  ${PROJECT_NAME}-clean-all
+    COMMAND ${CMAKE_COMMAND} -E remove_directory "${DATA_PACK_OUTPUT_DIR}/CachedScript/"
+    VERBATIM
 )
