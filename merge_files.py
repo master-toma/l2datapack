@@ -9,6 +9,8 @@ def read_to_utf16(file_path, skip_encoding, join):
         data = data.replace("    ", "\t")
         if join:
             data = data.replace("\r\n", "\t")
+            data = data.replace("\n", "\t")
+            data = data.replace("\r", "")
             data = data.strip()
             data += "\r\n"
         if skip_encoding:
@@ -26,7 +28,10 @@ def get_id(line, id_column):
 
     line = line.replace('\t\t', '\t')
     tokens = line.split('\t')
-    return int(tokens[id_column - 1])
+    index = id_column - 1
+    if len(tokens) <= index:
+        raise Exception("Can't extract ID from line: %s" % line)
+    return int(tokens[index])
 
 parser = argparse.ArgumentParser(description='Optional app description')
 
@@ -85,5 +90,3 @@ if args.append == "1":
     print "%d '*%s' files were encoded and merged to %s" %(len(content_lines), args.extension, out_file_path)
 else:
     print "%d '*%s' files were encoded and added to %s" %(len(content_lines), args.extension, out_file_path)
-
-
