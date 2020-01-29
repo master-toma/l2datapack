@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<!-- Author: Master Toma <master.toma87@gmail.com> //-->
+<!-- Put it inside C:\Users\%username%\AppData\Roaming\QtProject\qtcreator\generic-highlighter\syntax\acquire.xml //-->
+
+<language name="Acquire" version="8" kateversion="5.0" section="Scripts" extensions="*.acquire"
+          mimetype="text/x-acquire;application/x-acquire;application/acquire;text/acquire" indenter="cstyle"
+          author="Master Toma (master.toma87@gmail.com)" license="LGPL">
+  <highlighting>
+    <list name="controlflow">
+      <item> skill_begin </item>
+      <item> skill_end </item>
+      <item> fighter_begin </item>
+      <item> warrior_begin </item>
+      <item> gladiator_begin </item>
+      <item> warlord_begin </item>
+      <item> knight_begin </item>
+      <item> paladin_begin </item>
+      <item> dark_avenger_begin </item>
+      <item> rogue_begin </item>
+      <item> treasure_hunter_begin </item>
+      <item> hawkeye_begin </item>
+      <item> mage_begin </item>
+      <item> wizard_begin </item>
+      <item> sorcerer_begin </item>
+      <item> necromancer_begin </item>
+      <item> warlock_begin </item>
+      <item> cleric_begin </item>
+      <item> bishop_begin </item>
+      <item> prophet_begin </item>
+      <item> elven_fighter_begin </item>
+      <item> elven_knight_begin </item>
+      <item> temple_knight_begin </item>
+      <item> swordsinger_begin </item>
+      <item> elven_scout_begin </item>
+      <item> plains_walker_begin </item>
+      <item> silver_ranger_begin </item>
+      <item> elven_mage_begin </item>
+      <item> elven_wizard_begin </item>
+      <item> spellsinger_begin </item>
+      <item> elemental_summoner_begin </item>
+      <item> oracle_begin </item>
+      <item> elder_begin </item>
+      <item> dark_fighter_begin </item>
+      <item> palus_knight_begin </item>
+      <item> shillien_knight_begin </item>
+      <item> bladedancer_begin </item>
+      <item> assassin_begin </item>
+      <item> abyss_walker_begin </item>
+      <item> phantom_ranger_begin </item>
+      <item> dark_mage_begin </item>
+      <item> dark_wizard_begin </item>
+      <item> spellhowler_begin </item>
+      <item> phantom_summoner_begin </item>
+      <item> shillien_oracle_begin </item>
+      <item> shillien_elder_begin </item>
+      <item> orc_fighter_begin </item>
+      <item> orc_raider_begin </item>
+      <item> destroyer_begin </item>
+      <item> orc_monk_begin </item>
+      <item> tyrant_begin </item>
+      <item> orc_mage_begin </item>
+      <item> orc_shaman_begin </item>
+      <item> overlord_begin </item>
+      <item> warcryer_begin </item>
+      <item> dwarven_fighter_begin </item>
+      <item> scavenger_begin </item>
+      <item> bounty_hunter_begin </item>
+      <item> artisan_begin </item>
+      <item> warsmith_begin </item>
+      <item> fighter_end </item>
+      <item> warrior_end </item>
+      <item> gladiator_end </item>
+      <item> warlord_end </item>
+      <item> knight_end </item>
+      <item> paladin_end </item>
+      <item> dark_avenger_end </item>
+      <item> rogue_end </item>
+      <item> treasure_hunter_end </item>
+      <item> hawkeye_end </item>
+      <item> mage_end </item>
+      <item> wizard_end </item>
+      <item> sorcerer_end </item>
+      <item> necromancer_end </item>
+      <item> warlock_end </item>
+      <item> cleric_end </item>
+      <item> bishop_end </item>
+      <item> prophet_end </item>
+      <item> elven_fighter_end </item>
+      <item> elven_knight_end </item>
+      <item> temple_knight_end </item>
+      <item> swordsinger_end </item>
+      <item> elven_scout_end </item>
+      <item> plains_walker_end </item>
+      <item> silver_ranger_end </item>
+      <item> elven_mage_end </item>
+      <item> elven_wizard_end </item>
+      <item> spellsinger_end </item>
+      <item> elemental_summoner_end </item>
+      <item> oracle_end </item>
+      <item> elder_end </item>
+      <item> dark_fighter_end </item>
+      <item> palus_knight_end </item>
+      <item> shillien_knight_end </item>
+      <item> bladedancer_end </item>
+      <item> assassin_end </item>
+      <item> abyss_walker_end </item>
+      <item> phantom_ranger_end </item>
+      <item> dark_mage_end </item>
+      <item> dark_wizard_end </item>
+      <item> spellhowler_end </item>
+      <item> phantom_summoner_end </item>
+      <item> shillien_oracle_end </item>
+      <item> shillien_elder_end </item>
+      <item> orc_fighter_end </item>
+      <item> orc_raider_end </item>
+      <item> destroyer_end </item>
+      <item> orc_monk_end </item>
+      <item> tyrant_end </item>
+      <item> orc_mage_end </item>
+      <item> orc_shaman_end </item>
+      <item> overlord_end </item>
+      <item> warcryer_end </item>
+      <item> dwarven_fighter_end </item>
+      <item> scavenger_end </item>
+      <item> bounty_hunter_end </item>
+      <item> artisan_end </item>
+      <item> warsmith_end </item>
+      <item> include_fighter </item>
+      <item> include_warrior </item>
+      <item> include_gladiator </item>
+      <item> include_warlord </item>
+      <item> include_knight </item>
+      <item> include_paladin </item>
+      <item> include_dark_avenger </item>
+      <item> include_rogue </item>
+      <item> include_treasure_hunter </item>
+      <item> include_hawkeye </item>
+      <item> include_mage </item>
+      <item> include_wizard </item>
+      <item> include_sorcerer </item>
+      <item> include_necromancer </item>
+      <item> include_warlock </item>
+      <item> include_cleric </item>
+      <item> include_bishop </item>
+      <item> include_prophet </item>
+      <item> include_elven_fighter </item>
+      <item> include_elven_knight </item>
+      <item> include_temple_knight </item>
+      <item> include_swordsinger </item>
+      <item> include_elven_scout </item>
+      <item> include_plains_walker </item>
+      <item> include_silver_ranger </item>
+      <item> include_elven_mage </item>
+      <item> include_elven_wizard </item>
+      <item> include_spellsinger </item>
+      <item> include_elemental_summoner </item>
+      <item> include_oracle </item>
+      <item> include_elder </item>
+      <item> include_dark_fighter </item>
+      <item> include_palus_knight </item>
+      <item> include_shillien_knight </item>
+      <item> include_bladedancer </item>
+      <item> include_assassin </item>
+      <item> include_abyss_walker </item>
+      <item> include_phantom_ranger </item>
+      <item> include_dark_mage </item>
+      <item> include_dark_wizard </item>
+      <item> include_spellhowler </item>
+      <item> include_phantom_summoner </item>
+      <item> include_shillien_oracle </item>
+      <item> include_shillien_elder </item>
+      <item> include_orc_fighter </item>
+      <item> include_orc_raider </item>
+      <item> include_destroyer </item>
+      <item> include_orc_monk </item>
+      <item> include_tyrant </item>
+      <item> include_orc_mage </item>
+      <item> include_orc_shaman </item>
+      <item> include_overlord </item>
+      <item> include_warcryer </item>
+      <item> include_dwarven_fighter </item>
+      <item> include_scavenger </item>
+      <item> include_bounty_hunter </item>
+      <item> include_artisan </item>
+      <item> include_warsmith </item>
+    </list>
+    <list name="keywords">
+      <item> skill_name  </item>
+      <item> get_lv  </item>
+      <item> lv_up_sp  </item>
+      <item> auto_get  </item>
+      <item> item_needed  </item>
+    </list>
+    <list name="primitives">
+      <item> false </item>
+      <item> true </item>
+    </list>
+    <contexts>
+
+      <!-- Shebang: ("#!") Detect shebang and fallthrough to Normal -->
+      <!-- Based on the similar clause from prolog.xml, which notes the following BUG:
+        If the file starts with whitespace and a shebang on a line other than the first line,
+        this rule will still match it as a shebang, even tough the shebang is only valid on
+        the very first line.
+      -->
+      <context name="Shebang" lineEndContext="Normal" attribute="Normal Text" fallthrough="true" fallthroughContext="Normal" >
+        <Detect2Chars column="0" char="#" char1="!" context="Shebang Line" attribute="Comment" />
+      </context>
+      <context name="Shebang Line" attribute="Comment" lineEndContext="#pop!Normal">
+      </context>
+
+      <context attribute="Normal Text" lineEndContext="#stay" name="Normal">
+        <DetectSpaces/>
+        <StringDetect attribute="Region Marker" context="region_marker" String="//BEGIN" beginRegion="Region1" />
+        <StringDetect attribute="Region Marker" context="region_marker" String="//END" endRegion="Region1" />
+
+        <Float attribute="Float" context="NoRegExp" />
+        <HlCOct attribute="Octal" context="NoRegExp" />
+        <HlCHex attribute="Hex" context="NoRegExp" />
+        <Int attribute="Decimal" context="NoRegExp" />
+        <AnyChar context="NoRegExp" String="])" />
+
+        <keyword attribute="ControlFlow" String="controlflow" />
+        <keyword attribute="Keyword" String="keywords" />
+        <keyword attribute="Primitive" String="primitives" />
+
+        <DetectChar attribute="Template" context="Template" char="`" />
+        <StringDetect attribute="Template" context="RawTemplate" String="String.raw`" />
+
+        <!--DetectIdentifier-->
+        <RegExpr attribute="Objects" context="Object Member" String="[a-zA-Z_$][\w$]*(?=\s*\.)" />
+        <!--DetectIdentifier-->
+        <RegExpr attribute="Object Member" context="NoRegExp" String="[a-zA-Z_$][\w$]*(?=\s*\()" />
+        <DetectChar context="Object Member" char="." />
+        <!--DetectIdentifier-->
+        <RegExpr context="NoRegExp" String="[a-zA-Z_$][\w$]*" />
+
+        <DetectChar attribute="String" context="String" char="&quot;" />
+        <DetectChar attribute="String" context="String SQ" char="[" />
+
+        <IncludeRules context="##Doxygen" />
+        <Detect2Chars attribute="Comment" context="Comment" char="/" char1="/" />
+        <Detect2Chars attribute="Comment" context="Multi/inline Comment" char="/" char1="*" beginRegion="Comment" />
+
+        <!-- E4X extension (=xml inside JavaScript), see bug #373713 -->
+        <Detect2Chars attribute="Normal Text" context="NoRegExp" char="&lt;" char1="/" />
+        <Detect2Chars attribute="Normal Text" context="NoRegExp" char="/" char1="&gt;" />
+        <DetectChar attribute="Regular Expression" context="(regex caret first check)" char="/" />
+
+        <DetectChar attribute="Symbol" context="Object" char="{" beginRegion="Brace" />
+        <DetectChar attribute="Symbol" context="Conditional Expression" char="?" />
+
+        <AnyChar attribute="Symbol" String=":!%&amp;+,-/.*&lt;=&gt;?|~^&#59;" />
+      </context>
+
+      <context attribute="Normal Text" lineEndContext="#pop" fallthrough="true" fallthroughContext="#pop" name="Object Member">
+        <DetectChar context="#stay" char="." />
+        <!--DetectIdentifier-->
+        <RegExpr attribute="Objects" context="#stay" String="[a-zA-Z_$][\w$]*(?=\s*\.)" />
+        <!--DetectIdentifier-->
+        <RegExpr attribute="Object Member" context="#pop!NoRegExp" String="[a-zA-Z_$][\w$]*" />
+        <IncludeRules context="NoRegExp" />
+      </context>
+
+      <context attribute="Normal Text" lineEndContext="#stay" fallthrough="true" fallthroughContext="#pop" name="NoRegExp">
+        <Detect2Chars context="#pop" lookAhead="true" char="/" char1="/" />
+        <Detect2Chars context="#pop" lookAhead="true" char="/" char1="*" />
+        <DetectChar context="#pop" char="/" />
+        <DetectSpaces/>
+      </context>
+
+      <context attribute="Normal Text" lineEndContext="#stay" name="Conditional Expression">
+        <DetectChar context="#pop" char=":" />
+        <IncludeRules context="Normal" />
+      </context>
+
+      <context attribute="Normal Text" lineEndContext="#stay" name="Object">
+        <!-- Mostly required for define: in switch blocks -->
+        <keyword attribute="Keyword" String="keywords" />
+        <!--DetectIdentifier-->
+        <RegExpr attribute="JSON" String="[a-zA-Z_$][\w$]*\s*(?=:)" />
+        <DetectChar attribute="Symbol" char="}" endRegion="Brace" context="#pop" />
+        <IncludeRules context="Normal" />
+      </context>
+
+      <context attribute="String" lineEndContext="#pop" name="String">
+        <HlCStringChar attribute="Escape" />
+        <RegExpr attribute="Escape" String="\\u([0-9a-fA-F]{4}|\{[0-9a-fA-F]+\})" />
+        <LineContinue/>
+        <DetectChar attribute="String" context="#pop" char="&quot;" />
+      </context>
+      <context attribute="String" lineEndContext="#pop" name="String SQ">
+        <HlCStringChar attribute="Escape" />
+        <RegExpr attribute="Escape" String="\\u([0-9a-fA-F]{4}|\{[0-9a-fA-F]+\})" />
+        <LineContinue/>
+        <DetectChar attribute="String" context="#pop" char="]" />
+      </context>
+
+      <context attribute="Template" lineEndContext="#stay" name="Template">
+        <HlCStringChar attribute="Escape" />
+        <Detect2Chars attribute="Escape" char="\" char1="`" />
+        <Detect2Chars attribute="Substitution" context="Substitution" char="$" char1="{" />
+        <DetectChar attribute="Template" context="#pop" char="`" />
+      </context>
+      <context attribute="Template" lineEndContext="#stay" name="RawTemplate">
+        <DetectChar attribute="Template" context="#pop" char="`" />
+      </context>
+      <context name="Substitution" attribute="Normal Text" lineEndContext="#stay">
+          <DetectChar attribute="Substitution" char="}" context="#pop"/>
+          <IncludeRules context="Normal"/>
+      </context>
+
+      <context attribute="Comment" lineEndContext="#pop" name="Comment">
+        <IncludeRules context="##Alerts" />
+        <IncludeRules context="##Modelines" />
+      </context>
+      <context attribute="Comment" lineEndContext="#stay" name="Multi/inline Comment">
+        <IncludeRules context="##Alerts" />
+        <IncludeRules context="##Modelines" />
+        <Detect2Chars attribute="Comment" context="#pop" char="*" char1="/" endRegion="Comment" />
+      </context>
+
+      <context attribute="Regular Expression" lineEndContext="#stay" name="Regular Expression">
+        <RegExpr attribute="Regular Expression" context="#pop#pop" String="/\w*" />
+        <RegExpr attribute="Pattern Internal Operator" String="\{[\d, ]+\}" />
+        <RegExpr attribute="Pattern Internal Operator" String="\\[bB]" />
+        <RegExpr attribute="Pattern Character Class" String="\\[nrtvfDdSsWw]" />
+        <DetectChar attribute="Pattern Character Class" context="(charclass caret first check)" char="[" />
+        <RegExpr attribute="Pattern Internal Operator" String="\\." />
+        <RegExpr attribute="Pattern Internal Operator" String="\$(?=/)" />
+        <AnyChar attribute="Pattern Internal Operator" String="?+*()|" />
+      </context>
+      <context attribute="Pattern Character Class" lineEndContext="#stay" name="Regular Expression Character Class">
+        <RegExpr String="\\[\[\]]" />
+        <RegExpr attribute="Pattern Internal Operator" String="\\." />
+        <DetectChar attribute="Pattern Character Class" context="#pop#pop" char="]" />
+      </context>
+      <context attribute="Pattern Internal Operator" lineEndContext="#pop" name="(regex caret first check)" fallthrough="true" fallthroughContext="Regular Expression">
+        <DetectChar attribute="Pattern Internal Operator" context="Regular Expression" char="^" />
+      </context>
+      <context attribute="Pattern Internal Operator" lineEndContext="#pop" name="(charclass caret first check)" fallthrough="true" fallthroughContext="Regular Expression Character Class">
+        <DetectChar attribute="Pattern Internal Operator" context="Regular Expression Character Class" char="^" />
+      </context>
+
+      <context name="region_marker" attribute="Region Marker" lineEndContext="#pop" >
+        <DetectIdentifier/>
+        <DetectSpaces/>
+      </context>
+
+      <context attribute="ReferenceName" name="ReferenceName" lineEndContext="#pop" >
+        <RegExpr attribute="ReferenceName" context="#stay" String="@.*," />
+      </context>
+
+    </contexts>
+    <itemDatas>
+      <itemData name="ReferenceName"  defStyleNum="dsVariable"  spellChecking="false" />
+
+      <itemData name="Function"                  defStyleNum="dsFunction" />
+      <itemData name="Handler"                  defStyleNum="dsFunction" color="#0067A8" selColor="#C00000" bold="1" />
+
+      <itemData name="Normal Text"  defStyleNum="dsNormal"  spellChecking="false" />
+      <itemData name="Keyword"      defStyleNum="dsKeyword" spellChecking="false"  />
+      <itemData name="ControlFlow"  defStyleNum="dsAttribute" spellChecking="false" bold="1" />
+      <itemData name="Reserved"     defStyleNum="dsKeyword" italic="true" spellChecking="false" />
+      <itemData name="Primitive"       defStyleNum="dsVerbatimString" spellChecking="false" />
+      <itemData name="Objects"      defStyleNum="dsVariable" spellChecking="false" />
+      <itemData name="Object Member" defStyleNum="dsAttribute" spellChecking="false" />
+
+      <itemData name="Decimal"      defStyleNum="dsDecVal" spellChecking="false" />
+      <itemData name="Octal"        defStyleNum="dsBaseN" spellChecking="false" />
+      <itemData name="Hex"          defStyleNum="dsBaseN" spellChecking="false" />
+      <itemData name="Float"        defStyleNum="dsFloat" spellChecking="false" />
+      <itemData name="Escape"       defStyleNum="dsSpecialChar" spellChecking="false" />
+      <itemData name="String"       defStyleNum="dsAnnotation" />
+      <itemData name="Template"     defStyleNum="dsVerbatimString" />
+      <itemData name="Substitution" defStyleNum="dsSpecialChar" spellChecking="false" />
+
+      <itemData name="Comment"      defStyleNum="dsComment" />
+      <itemData name="Symbol"       defStyleNum="dsOperator" spellChecking="false" />
+      <itemData name="Regular Expression" defStyleNum="dsSpecialString" spellChecking="false" />
+      <itemData name="Pattern Internal Operator" defStyleNum="dsSpecialChar" spellChecking="false" />
+      <itemData name="Pattern Character Class" defStyleNum="dsSpecialChar" spellChecking="false" />
+      <itemData name="Region Marker" defStyleNum="dsRegionMarker" spellChecking="false" />
+      <itemData name="JSON"         defStyleNum="dsDataType" spellChecking="false" />
+    </itemDatas>
+  </highlighting>
+  <general>
+    <comments>
+      <comment name="singleLine" start="//" />
+      <comment name="multiLine" start="/*" end="*/" />
+    </comments>
+    <keywords casesensitive="1" />
+  </general>
+</language>
+
+<!-- kate: space-indent on; indent-width 2; -->
+

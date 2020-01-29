@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<!-- Author: Master Toma <master.toma87@gmail.com> //-->
+<!-- Put it inside C:\Users\%username%\AppData\Roaming\QtProject\qtcreator\generic-highlighter\syntax\npc.xml //-->
+
+<language name="NPC" version="8" kateversion="5.0" section="Scripts" extensions="*.npc"
+          mimetype="text/x-npc;application/x-npc;application/npc;text/npc" indenter="cstyle"
+          author="Master Toma (master.toma87@gmail.com)" license="LGPL">
+  <highlighting>
+    <list name="controlflow">
+      <item> npc_begin </item>
+      <item> npc_end </item>
+    </list>
+    <list name="keywords">
+      <item> level </item>
+      <item> exp </item>
+      <item> acquire_exp_rate </item>
+      <item> undying </item>
+      <item> can_be_attacked </item>
+      <item> acquire_sp </item>
+      <item> race </item>
+      <item> sex </item>
+      <item> temper </item>
+      <item> safe_height </item>
+      <item> org_jump </item>
+      <item> skill_list </item>
+      <item> magic_list </item>
+      <item> max_item </item>
+      <item> item_make_list </item>
+      <item> corpse_make_list </item>
+      <item> additional_make_list </item>
+      <item> additional_make_multi_list </item>
+      <item> slot_chest </item>
+      <item> slot_rhand </item>
+      <item> slot_lhand </item>
+      <item> base_attack_type </item>
+      <item> base_can_penetrate </item>
+      <item> base_attack_range </item>
+      <item> base_damage_range </item>
+      <item> base_rand_dam </item>
+      <item> str </item>
+      <item> int </item>
+      <item> dex </item>
+      <item> wit </item>
+      <item> con </item>
+      <item> men </item>
+      <item> hp_increase </item>
+      <item> mp_increase </item>
+      <item> org_hp_regen </item>
+      <item> org_mp_regen </item>
+      <item> ground_low </item>
+      <item> ground_high </item>
+      <item> underwater_low </item>
+      <item> underwater_high </item>
+      <item> fly_low </item>
+      <item> fly_high </item>
+      <item> float_low </item>
+      <item> float_high </item>
+      <item> org_earshot </item>
+      <item> sight </item>
+      <item> agro_range </item>
+      <item> org_hp </item>
+      <item> org_mp </item>
+      <item> base_defend </item>
+      <item> base_magic_attack </item>
+      <item> base_magic_defend </item>
+      <item> base_physical_attack </item>
+      <item> physical_hit_modify </item>
+      <item> physical_avoid_modify </item>
+      <item> base_attack_speed </item>
+      <item> base_reuse_delay </item>
+      <item> base_critical </item>
+      <item> magic_use_speed_modify </item>
+      <item> status </item>
+      <item> align </item>
+      <item> collision_radius </item>
+      <item> collision_height </item>
+      <item> category </item>
+      <item> clan </item>
+      <item> clan_help_range </item>
+      <item> guild </item>
+      <item> pledge </item>
+      <item> pledge_leader </item>
+      <item> alliance </item>
+      <item> alliance_leader </item>
+      <item> ignore_clan_list </item>
+      <item> ruler </item>
+      <item> ruling_domain </item>
+      <item> npc_ai </item>
+      <item> corpse_time </item>
+      <item> no_sleep_mode </item>
+    </list>
+    <list name="primitives">
+      <item>item_type</item>
+      <item>slot_bit_type</item>
+      <item>armor_type</item>
+      <item>etcitem_type</item>
+      <item>blessed</item>
+      <item>weight</item>
+      <item>default_action</item>
+      <item>consume_type</item>
+      <item>initial_count</item>
+      <item>maximum_count</item>
+      <item>soulshot_count</item>
+      <item>spiritshot_count</item>
+      <item>immediate_effect</item>
+      <item>price</item>
+      <item>default_price</item>
+      <item>item_skill</item>
+      <item>critical_attack_skill</item>
+      <item>material_type</item>
+      <item>crystal_type</item>
+      <item>crystal_count</item>
+      <item>is_trade</item>
+      <item>is_drop</item>
+      <item>is_destruct</item>
+      <item>physical_damage</item>
+      <item>random_damage</item>
+      <item>weapon_type</item>
+      <item>can_penetrate</item>
+      <item>critical</item>
+      <item>hit_modify</item>
+      <item>avoid_modify</item>
+      <item>dual_fhit_rate</item>
+      <item>shield_defense</item>
+      <item>shield_defense_rate</item>
+      <item>attack_range</item>
+      <item>effective_range</item>
+      <item>damage_range</item>
+      <item>attack_speed</item>
+      <item>reuse_delay</item>
+      <item>mp_consume</item>
+      <item>magical_damage</item>
+      <item>durability</item>
+      <item>damaged</item>
+      <item>physical_defense</item>
+      <item>magical_defense</item>
+      <item>mp_bonus</item>
+      <item>category</item>
+      <item>enchanted</item>
+      <item>html</item>
+      <item>equip_pet</item>
+      <item>magic_weapon</item>
+    </list>
+    <list name="primitives">
+      <item>action_none</item>
+      <item>action_skill_reduce</item>
+      <item>action_equip</item>
+      <item>action_soulshot</item>
+      <item>action_spiritshot</item>
+      <item>action_skill_maintain</item>
+      <item>action_map_open</item>
+      <item>none</item>
+      <item>light</item>
+      <item>heavy</item>
+      <item>magic</item>
+      <item>weapon</item>
+      <item>accessary</item>
+      <item>armor</item>
+      <item>asset</item>
+      <item>etcitem</item>
+      <item>questitem</item>
+      <item>consume_type_normal</item>
+      <item>consume_type_charge</item>
+      <item>consume_type_stackable</item>
+      <item>consume_type_asset</item>
+      <item>none</item>
+      <item>underwear</item>
+      <item>rear</item>
+      <item>lear</item>
+      <item>neck</item>
+      <item>rfinger</item>
+      <item>lfinger</item>
+      <item>head</item>
+      <item>rhand</item>
+      <item>lhand</item>
+      <item>rlhand</item>
+      <item>gloves</item>
+      <item>chest</item>
+      <item>legs</item>
+      <item>feet</item>
+      <item>back</item>
+      <item>lrhand</item>
+      <item>onepiece</item>
+      <item>oriharukon</item>
+      <item>mithril</item>
+      <item>gold</item>
+      <item>silver</item>
+      <item>brass</item>
+      <item>bronze</item>
+      <item>diamond</item>
+      <item>steel</item>
+      <item>damascus_steel</item>
+      <item>bone_of_dragon</item>
+      <item>air</item>
+      <item>water</item>
+      <item>wood</item>
+      <item>bone</item>
+      <item>branch_of_orbis_arbor</item>
+      <item>branch_of_worldtree</item>
+      <item>cloth</item>
+      <item>paper</item>
+      <item>leather</item>
+      <item>skull</item>
+      <item>feather</item>
+      <item>sand</item>
+      <item>crystal</item>
+      <item>fur</item>
+      <item>parchment</item>
+      <item>eyeball</item>
+      <item>insect</item>
+      <item>corpse</item>
+      <item>crow</item>
+      <item>hatching_egg</item>
+      <item>skull_of_wyvern</item>
+      <item>drug</item>
+      <item>cotton</item>
+      <item>silk</item>
+      <item>wool</item>
+      <item>flax</item>
+      <item>cobweb</item>
+      <item>dyestuff</item>
+      <item>leather_of_puma</item>
+      <item>leather_of_lion</item>
+      <item>leather_of_manticore</item>
+      <item>leather_of_drake</item>
+      <item>leather_of_salamander</item>
+      <item>leather_of_unicorn</item>
+      <item>leather_of_dragon</item>
+      <item>scale_of_dragon</item>
+      <item>adamantaite</item>
+      <item>blood_steel</item>
+      <item>bone_of_dragon</item>
+      <item>chrysolite</item>
+      <item>damascus</item>
+      <item>fine_steel</item>
+      <item>horn</item>
+      <item>liquid</item>
+      <item>none</item>
+      <item>a</item>
+      <item>b</item>
+      <item>c</item>
+      <item>d</item>
+      <item>s</item>
+      <item>none</item>
+      <item>sword</item>
+      <item>blunt</item>
+      <item>dagger</item>
+      <item>pole</item>
+      <item>fist</item>
+      <item>bow</item>
+      <item>etc</item>
+      <item>dual</item>
+      <item>dualfist</item>
+      <item>none</item>
+      <item>scroll</item>
+      <item>arrow</item>
+      <item>potion</item>
+      <item>spellbook</item>
+      <item>recipe</item>
+      <item>material</item>
+      <item>pet_collar</item>
+      <item>castle_guard</item>
+      <item>slot_underwear</item>
+      <item>slot_rear</item>
+      <item>slot_lear</item>
+      <item>slot_neck</item>
+      <item>slot_rfinger</item>
+      <item>slot_lfinger</item>
+      <item>slot_head</item>
+      <item>slot_rhand</item>
+      <item>slot_lhand</item>
+      <item>slot_gloves</item>
+      <item>slot_chest</item>
+      <item>slot_legs</item>
+      <item>slot_feet</item>
+      <item>slot_back</item>
+      <item>slot_rlhand</item>
+      <item>none</item>
+      <item>human</item>
+      <item>elf</item>
+      <item>darkelf</item>
+      <item>orc</item>
+      <item>dwarf</item>
+      <item>humanoid</item>
+      <item>animal</item>
+      <item>monster</item>
+      <item>creature</item>
+      <item>undead</item>
+      <item>elemental</item>
+      <item>devil</item>
+      <item>dragon</item>
+      <item>angel</item>
+      <item>construct</item>
+      <item>beast</item>
+      <item>plant</item>
+      <item>divine</item>
+      <item>demonic</item>
+      <item>giant</item>
+      <item>bug</item>
+      <item>fairy</item>
+      <item>siege_weapon</item>
+      <item>mercenary</item>
+      <item>castle_guard</item>
+      <item>warrior</item>
+      <item>knight</item>
+      <item>rogue</item>
+      <item>wizard</item>
+      <item>cleric</item>
+      <item>shaman</item>
+      <item>monk</item>
+      <item>collector</item>
+      <item>artisan</item>
+      <item>merchant</item>
+      <item>trainer</item>
+      <item>teleporter</item>
+      <item>warehouse_keeper</item>
+      <item>package_keeper</item>
+      <item>newbie_guide</item>
+      <item>guard</item>
+      <item>citizen</item>
+      <item>guild_master</item>
+      <item>guild_coach</item>
+      <item>summon</item>
+      <item>object</item>
+      <item>chamberlain</item>
+      <item>temptrainer</item>
+      <item>holything</item>
+      <item>castle_gate</item>
+      <item>commander</item>
+      <item>house_master</item>
+      <item>blacksmith</item>
+      <item>pet</item>
+      <item>boss</item>
+      <item>male</item>
+      <item>female</item>
+      <item>p</item>
+      <item>a</item>
+      <item>none</item>
+      <item>sword</item>
+      <item>blunt</item>
+      <item>dagger</item>
+      <item>pole</item>
+      <item>fist</item>
+      <item>bow</item>
+      <item>etc</item>
+      <item>dual</item>
+      <item>dualfist</item>
+      <item>normal</item>
+      <item>berserk</item>
+      <item>confuse</item>
+      <item>silence</item>
+      <item>drunken</item>
+    </list>
+    <contexts>
+
+      <!-- Shebang: ("#!") Detect shebang and fallthrough to Normal -->
+      <!-- Based on the similar clause from prolog.xml, which notes the following BUG:
+        If the file starts with whitespace and a shebang on a line other than the first line,
+        this rule will still match it as a shebang, even tough the shebang is only valid on
+        the very first line.
+      -->
+      <context name="Shebang" lineEndContext="Normal" attribute="Normal Text" fallthrough="true" fallthroughContext="Normal" >
+        <Detect2Chars column="0" char="#" char1="!" context="Shebang Line" attribute="Comment" />
+      </context>
+      <context name="Shebang Line" attribute="Comment" lineEndContext="#pop!Normal">
+      </context>
+
+      <context attribute="Normal Text" lineEndContext="#stay" name="Normal">
+        <DetectSpaces/>
+        <StringDetect attribute="Region Marker" context="region_marker" String="//BEGIN" beginRegion="Region1" />
+        <StringDetect attribute="Region Marker" context="region_marker" String="//END" endRegion="Region1" />
+
+        <Float attribute="Float" context="NoRegExp" />
+        <HlCOct attribute="Octal" context="NoRegExp" />
+        <HlCHex attribute="Hex" context="NoRegExp" />
+        <Int attribute="Decimal" context="NoRegExp" />
+        <AnyChar context="NoRegExp" String="])" />
+
+        <keyword attribute="ControlFlow" String="controlflow" />
+        <keyword attribute="Keyword" String="keywords" />
+        <keyword attribute="Primitive" String="primitives" />
+
+        <DetectChar attribute="Template" context="Template" char="`" />
+        <StringDetect attribute="Template" context="RawTemplate" String="String.raw`" />
+
+        <!--DetectIdentifier-->
+        <RegExpr attribute="Objects" context="Object Member" String="[a-zA-Z_$][\w$]*(?=\s*\.)" />
+        <!--DetectIdentifier-->
+        <RegExpr attribute="Object Member" context="NoRegExp" String="[a-zA-Z_$][\w$]*(?=\s*\()" />
+        <DetectChar context="Object Member" char="." />
+        <!--DetectIdentifier-->
+        <RegExpr context="NoRegExp" String="[a-zA-Z_$][\w$]*" />
+
+        <DetectChar attribute="String" context="String" char="&quot;" />
+        <DetectChar attribute="String" context="String SQ" char="[" />
+
+        <IncludeRules context="##Doxygen" />
+        <Detect2Chars attribute="Comment" context="Comment" char="/" char1="/" />
+        <Detect2Chars attribute="Comment" context="Multi/inline Comment" char="/" char1="*" beginRegion="Comment" />
+
+        <!-- E4X extension (=xml inside JavaScript), see bug #373713 -->
+        <Detect2Chars attribute="Normal Text" context="NoRegExp" char="&lt;" char1="/" />
+        <Detect2Chars attribute="Normal Text" context="NoRegExp" char="/" char1="&gt;" />
+        <DetectChar attribute="Regular Expression" context="(regex caret first check)" char="/" />
+
+        <DetectChar attribute="Symbol" context="Object" char="{" beginRegion="Brace" />
+        <DetectChar attribute="Symbol" context="Conditional Expression" char="?" />
+
+        <AnyChar attribute="Symbol" String=":!%&amp;+,-/.*&lt;=&gt;?|~^&#59;" />
+      </context>
+
+      <context attribute="Normal Text" lineEndContext="#pop" fallthrough="true" fallthroughContext="#pop" name="Object Member">
+        <DetectChar context="#stay" char="." />
+        <!--DetectIdentifier-->
+        <RegExpr attribute="Objects" context="#stay" String="[a-zA-Z_$][\w$]*(?=\s*\.)" />
+        <!--DetectIdentifier-->
+        <RegExpr attribute="Object Member" context="#pop!NoRegExp" String="[a-zA-Z_$][\w$]*" />
+        <IncludeRules context="NoRegExp" />
+      </context>
+
+      <context attribute="Normal Text" lineEndContext="#stay" fallthrough="true" fallthroughContext="#pop" name="NoRegExp">
+        <Detect2Chars context="#pop" lookAhead="true" char="/" char1="/" />
+        <Detect2Chars context="#pop" lookAhead="true" char="/" char1="*" />
+        <DetectChar context="#pop" char="/" />
+        <DetectSpaces/>
+      </context>
+
+      <context attribute="Normal Text" lineEndContext="#stay" name="Conditional Expression">
+        <DetectChar context="#pop" char=":" />
+        <IncludeRules context="Normal" />
+      </context>
+
+      <context attribute="Normal Text" lineEndContext="#stay" name="Object">
+        <!-- Mostly required for define: in switch blocks -->
+        <keyword attribute="Keyword" String="keywords" />
+        <!--DetectIdentifier-->
+        <RegExpr attribute="JSON" String="[a-zA-Z_$][\w$]*\s*(?=:)" />
+        <DetectChar attribute="Symbol" char="}" endRegion="Brace" context="#pop" />
+        <IncludeRules context="Normal" />
+      </context>
+
+      <context attribute="String" lineEndContext="#pop" name="String">
+        <HlCStringChar attribute="Escape" />
+        <RegExpr attribute="Escape" String="\\u([0-9a-fA-F]{4}|\{[0-9a-fA-F]+\})" />
+        <LineContinue/>
+        <DetectChar attribute="String" context="#pop" char="&quot;" />
+      </context>
+      <context attribute="String" lineEndContext="#pop" name="String SQ">
+        <HlCStringChar attribute="Escape" />
+        <RegExpr attribute="Escape" String="\\u([0-9a-fA-F]{4}|\{[0-9a-fA-F]+\})" />
+        <LineContinue/>
+        <DetectChar attribute="String" context="#pop" char="]" />
+      </context>
+
+      <context attribute="Template" lineEndContext="#stay" name="Template">
+        <HlCStringChar attribute="Escape" />
+        <Detect2Chars attribute="Escape" char="\" char1="`" />
+        <Detect2Chars attribute="Substitution" context="Substitution" char="$" char1="{" />
+        <DetectChar attribute="Template" context="#pop" char="`" />
+      </context>
+      <context attribute="Template" lineEndContext="#stay" name="RawTemplate">
+        <DetectChar attribute="Template" context="#pop" char="`" />
+      </context>
+      <context name="Substitution" attribute="Normal Text" lineEndContext="#stay">
+          <DetectChar attribute="Substitution" char="}" context="#pop"/>
+          <IncludeRules context="Normal"/>
+      </context>
+
+      <context attribute="Comment" lineEndContext="#pop" name="Comment">
+        <IncludeRules context="##Alerts" />
+        <IncludeRules context="##Modelines" />
+      </context>
+      <context attribute="Comment" lineEndContext="#stay" name="Multi/inline Comment">
+        <IncludeRules context="##Alerts" />
+        <IncludeRules context="##Modelines" />
+        <Detect2Chars attribute="Comment" context="#pop" char="*" char1="/" endRegion="Comment" />
+      </context>
+
+      <context attribute="Regular Expression" lineEndContext="#stay" name="Regular Expression">
+        <RegExpr attribute="Regular Expression" context="#pop#pop" String="/\w*" />
+        <RegExpr attribute="Pattern Internal Operator" String="\{[\d, ]+\}" />
+        <RegExpr attribute="Pattern Internal Operator" String="\\[bB]" />
+        <RegExpr attribute="Pattern Character Class" String="\\[nrtvfDdSsWw]" />
+        <DetectChar attribute="Pattern Character Class" context="(charclass caret first check)" char="[" />
+        <RegExpr attribute="Pattern Internal Operator" String="\\." />
+        <RegExpr attribute="Pattern Internal Operator" String="\$(?=/)" />
+        <AnyChar attribute="Pattern Internal Operator" String="?+*()|" />
+      </context>
+      <context attribute="Pattern Character Class" lineEndContext="#stay" name="Regular Expression Character Class">
+        <RegExpr String="\\[\[\]]" />
+        <RegExpr attribute="Pattern Internal Operator" String="\\." />
+        <DetectChar attribute="Pattern Character Class" context="#pop#pop" char="]" />
+      </context>
+      <context attribute="Pattern Internal Operator" lineEndContext="#pop" name="(regex caret first check)" fallthrough="true" fallthroughContext="Regular Expression">
+        <DetectChar attribute="Pattern Internal Operator" context="Regular Expression" char="^" />
+      </context>
+      <context attribute="Pattern Internal Operator" lineEndContext="#pop" name="(charclass caret first check)" fallthrough="true" fallthroughContext="Regular Expression Character Class">
+        <DetectChar attribute="Pattern Internal Operator" context="Regular Expression Character Class" char="^" />
+      </context>
+
+      <context name="region_marker" attribute="Region Marker" lineEndContext="#pop" >
+        <DetectIdentifier/>
+        <DetectSpaces/>
+      </context>
+
+      <context attribute="ReferenceName" name="ReferenceName" lineEndContext="#pop" >
+        <RegExpr attribute="ReferenceName" context="#stay" String="@.*," />
+      </context>
+
+    </contexts>
+    <itemDatas>
+      <itemData name="ReferenceName"  defStyleNum="dsVariable"  spellChecking="false" />
+
+      <itemData name="Function"                  defStyleNum="dsFunction" />
+      <itemData name="Handler"                  defStyleNum="dsFunction" color="#0067A8" selColor="#C00000" bold="1" />
+
+      <itemData name="Normal Text"  defStyleNum="dsNormal"  spellChecking="false" />
+      <itemData name="Keyword"      defStyleNum="dsKeyword" spellChecking="false"  />
+      <itemData name="ControlFlow"  defStyleNum="dsAttribute" spellChecking="false" bold="1" />
+      <itemData name="Reserved"     defStyleNum="dsKeyword" italic="true" spellChecking="false" />
+      <itemData name="Primitive"       defStyleNum="dsVerbatimString" spellChecking="false" />
+      <itemData name="Objects"      defStyleNum="dsVariable" spellChecking="false" />
+      <itemData name="Object Member" defStyleNum="dsAttribute" spellChecking="false" />
+
+      <itemData name="Decimal"      defStyleNum="dsDecVal" spellChecking="false" />
+      <itemData name="Octal"        defStyleNum="dsBaseN" spellChecking="false" />
+      <itemData name="Hex"          defStyleNum="dsBaseN" spellChecking="false" />
+      <itemData name="Float"        defStyleNum="dsFloat" spellChecking="false" />
+      <itemData name="Escape"       defStyleNum="dsSpecialChar" spellChecking="false" />
+      <itemData name="String"       defStyleNum="dsAnnotation" />
+      <itemData name="Template"     defStyleNum="dsVerbatimString" />
+      <itemData name="Substitution" defStyleNum="dsSpecialChar" spellChecking="false" />
+
+      <itemData name="Comment"      defStyleNum="dsComment" />
+      <itemData name="Symbol"       defStyleNum="dsOperator" spellChecking="false" />
+      <itemData name="Regular Expression" defStyleNum="dsSpecialString" spellChecking="false" />
+      <itemData name="Pattern Internal Operator" defStyleNum="dsSpecialChar" spellChecking="false" />
+      <itemData name="Pattern Character Class" defStyleNum="dsSpecialChar" spellChecking="false" />
+      <itemData name="Region Marker" defStyleNum="dsRegionMarker" spellChecking="false" />
+      <itemData name="JSON"         defStyleNum="dsDataType" spellChecking="false" />
+    </itemDatas>
+  </highlighting>
+  <general>
+    <comments>
+      <comment name="singleLine" start="//" />
+      <comment name="multiLine" start="/*" end="*/" />
+    </comments>
+    <keywords casesensitive="1" />
+  </general>
+</language>
+
+<!-- kate: space-indent on; indent-width 2; -->
+
