@@ -197,6 +197,7 @@ handler:
                                 DeleteItem1(talker, @green_moss_bundle, OwnItemCount(talker, @green_moss_bundle));
                                 DeleteItem1(talker, @brown_moss_bundle, OwnItemCount(talker, @brown_moss_bundle));
                                 DeleteItem1(talker, @monster_eye_meat, OwnItemCount(talker, @monster_eye_meat));
+                                GiveItem1(talker, @jonas_steak_dish5, 1);
                                 SoundEffect(talker, "ItemSound.quest_jackpot");
                             }
                             else
